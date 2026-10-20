@@ -44,6 +44,7 @@ class Severity(IntEnum):
 class VictimStatus(str, Enum):
     WAITING = "waiting"
     IN_TRANSPORT = "in_transport"
+    AWAITING_TREATMENT = "awaiting_treatment"
     IN_TREATMENT = "in_treatment"
     TREATED = "treated"
     UNSERVED = "unserved"

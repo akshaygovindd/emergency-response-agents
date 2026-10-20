@@ -104,6 +104,7 @@ class RejectionReason(str, Enum):
     AMBULANCE_CAPABILITY_MISMATCH = "ambulance_capability_mismatch"
     AMBULANCE_OVER_CAPACITY = "ambulance_over_capacity"
     RESPONDER_UNAVAILABLE = "responder_unavailable"
+    VICTIM_UNAVAILABLE = "victim_unavailable"
     HOSPITAL_FULL = "hospital_full"
     HOSPITAL_LACKS_CAPABILITY = "hospital_lacks_capability"
     STAFF_UNAVAILABLE = "staff_unavailable"

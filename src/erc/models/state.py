@@ -63,6 +63,12 @@ class SimulationState(StrictModel):
     staff: dict[str, StaffMember]
     incidents: dict[str, Incident]
 
+    # Simulator bookkeeping: agents can read it through tools, never write it
+    reservations: dict[str, str] = Field(default_factory=dict, description="victim_id -> ambulance_id")
+    admissions: dict[str, str] = Field(default_factory=dict, description="victim_id -> hospital_id")
+    first_contact_min: dict[str, int] = Field(default_factory=dict, description="victim_id -> minute")
+    treatment_start_min: dict[str, int] = Field(default_factory=dict, description="victim_id -> minute")
+
     @classmethod
     def from_scenario(cls, scenario: Scenario) -> SimulationState:
         """Deep copy, so one run can never alter the scenario another run uses."""
@@ -85,7 +91,9 @@ class SimulationState(StrictModel):
         return [v for i in self.visible_incidents() for v in i.victims]
 
     def waiting_victims(self) -> list[Victim]:
-        return [v for v in self.victims() if v.status == VictimStatus.WAITING]
+        """Victims still waiting AND not yet reserved by any ambulance."""
+        return [v for v in self.victims()
+                if v.status == VictimStatus.WAITING and v.victim_id not in self.reservations]
 
     def find_victim(self, victim_id: str) -> Victim | None:
         return next((v for v in self.victims() if v.victim_id == victim_id), None)
@@ -95,6 +103,14 @@ class SimulationState(StrictModel):
 
     def available_responders(self) -> list[ResponderTeam]:
         return [r for r in self.responders.values() if r.is_available]
+
+    def incoming_count(self, hospital_id: str) -> int:
+        """Victims admitted to this hospital who have not arrived there yet."""
+        en_route = (VictimStatus.WAITING, VictimStatus.IN_TRANSPORT)
+        return sum(
+            1 for vid, hid in self.admissions.items()
+            if hid == hospital_id and (v := self.find_victim(vid)) is not None and v.status in en_route
+        )
 
     def summary(self) -> dict:
         """Compact snapshot for logs and the dashboard."""
