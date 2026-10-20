@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t037-P03"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t037-P04",
+        "alternative_id": "H-G",
+        "reason": "H-G can take the mixed trauma/general load and is closer to INC-05, improving time to care for two urgency-4 victims."
+      }
+    ],
+    "reasoning": "Keep the urgency-5 victim from INC-04 on H-T because it is the fastest fit for the most urgent case. Redirect INC-05 to H-G since H-T would exceed ER capacity and H-G is a valid unclaimed alternative with better travel time."
+  },
+  "tokens_in": 948,
+  "tokens_out": 130,
+  "requests": 1,
+  "latency_s": 1.288100999998278,
+  "context": null
+}

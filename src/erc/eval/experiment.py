@@ -69,11 +69,11 @@ def run_experiment(modes: list[Mode], scenarios: list[ScenarioName], seeds: list
         for seed in (seeds or seeds_for(name)):
             for mode in modes:
                 m = run_one(name, seed, mode)
+                save_runs([m])            # saved immediately, so a later crash never loses finished runs
                 runs.append(m)
                 if progress:
                     csr = "n/a" if m.critical_service_rate is None else f"{m.critical_service_rate:.0%}"
                     print(f"  {name.value:10} seed {seed}  {mode.value:12} critical service {csr}")
-    save_runs(runs)
     return runs
 
 

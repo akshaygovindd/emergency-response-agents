@@ -1,0 +1,64 @@
+{
+  "output": "Proposed AMB-05 for INC-07, INC-08, and INC-11.",
+  "tokens_in": 2262,
+  "tokens_out": 235,
+  "requests": 2,
+  "latency_s": 2.520563250000123,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t068-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free BLS unit for the lone general victim.",
+        "time_min": 68
+      },
+      {
+        "proposal_id": "t068-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "BLS can take the two burn victims together and is the nearest free ambulance.",
+        "time_min": 68
+      },
+      {
+        "proposal_id": "t068-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "This is the most recent trauma victim and AMB-05 is the closest free BLS unit.",
+        "time_min": 68
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "output": "Proposed FIRE-1 to INC-09.",
+  "tokens_in": 1914,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 2.208015834003163,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t052-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is closest to the newest fire incident and can secure access for urgent burn care.",
+        "time_min": 52
+      }
+    ],
+    "invalid": []
+  }
+}

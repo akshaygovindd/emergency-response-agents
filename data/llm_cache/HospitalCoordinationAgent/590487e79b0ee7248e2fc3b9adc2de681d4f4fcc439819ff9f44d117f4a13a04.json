@@ -1,0 +1,44 @@
+{
+  "output": "Sent AMB-03 to H-G for both trauma victims.",
+  "tokens_in": 2717,
+  "tokens_out": 124,
+  "requests": 3,
+  "latency_s": 2.7993439999991097,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t074-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat trauma and has available ER capacity and trauma slot.",
+        "time_min": 74
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 74,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

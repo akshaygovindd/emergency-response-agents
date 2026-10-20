@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-04.",
+  "tokens_in": 1781,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 2.000071583002864,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t039-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-04 has the oldest waiting victim and still lacks the needed rescue team.",
+        "time_min": 39
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Sent to H-T for trauma specialty coverage.",
+  "tokens_in": 1654,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 2.3709122500004014,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t068-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma specialty is preferred for a high-urgency trauma victim.",
+        "time_min": 68
+      }
+    ],
+    "invalid": []
+  }
+}

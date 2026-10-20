@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-02 to H-G for both general victims.",
+  "tokens_in": 1714,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 1.9715215830001398,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t056-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has general care capacity and avoids overloading the Trauma Center.",
+        "time_min": 56
+      }
+    ],
+    "invalid": []
+  }
+}

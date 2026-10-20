@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-01 to H-T for trauma-capable care.",
+  "tokens_in": 1711,
+  "tokens_out": 78,
+  "requests": 2,
+  "latency_s": 1.6241736660012975,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t064-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-3",
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center best matches the urgent trauma victim and can accept the ambulance without exceeding ER capacity.",
+        "time_min": 64
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Chosen H-B for the burn victims.",
+  "tokens_in": 1697,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.7333466250056517,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t101-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "H-B is the matching burn unit with enough free burn slots and capacity.",
+        "time_min": 101
+      }
+    ],
+    "invalid": []
+  }
+}

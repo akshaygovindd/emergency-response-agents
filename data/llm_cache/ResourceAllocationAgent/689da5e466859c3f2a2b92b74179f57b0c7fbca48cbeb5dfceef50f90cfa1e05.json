@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t068-P03"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-05 should go to the fastest-reached incident among equal-urgency cases; INC-11 is closest at 5 minutes and has the most recent victim, so it wins. No unclaimed ambulance alternatives are available for counter-proposals."
+  },
+  "tokens_in": 748,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 1.0125642090060865,
+  "context": null
+}

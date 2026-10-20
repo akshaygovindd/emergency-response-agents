@@ -1,0 +1,48 @@
+{
+  "output": "Assigned both ambulances to H-T.",
+  "tokens_in": 1986,
+  "tokens_out": 130,
+  "requests": 2,
+  "latency_s": 2.154398124999716,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t039-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-05-2",
+            "V-05-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest appropriate hospital with trauma capacity and no ER overload.",
+        "time_min": 39
+      },
+      {
+        "proposal_id": "t039-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-1",
+            "V-04-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Fastest option and has general treatment capacity without exceeding ER limits.",
+        "time_min": 39
+      }
+    ],
+    "invalid": []
+  }
+}

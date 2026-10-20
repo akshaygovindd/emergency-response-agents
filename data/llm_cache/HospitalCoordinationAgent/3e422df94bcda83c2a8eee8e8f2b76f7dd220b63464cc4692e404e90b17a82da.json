@@ -1,0 +1,64 @@
+{
+  "output": "All three ambulances were assigned to H-T, the closest appropriate hospital for these trauma/general cases.",
+  "tokens_in": 2126,
+  "tokens_out": 181,
+  "requests": 2,
+  "latency_s": 2.1082477910022135,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t007-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center is closest and matches the trauma victims' specialty.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "t007-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center is the closest hospital that can treat general patients.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "t007-P05",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center is closest and best matches the trauma case.",
+        "time_min": 7
+      }
+    ],
+    "invalid": []
+  }
+}

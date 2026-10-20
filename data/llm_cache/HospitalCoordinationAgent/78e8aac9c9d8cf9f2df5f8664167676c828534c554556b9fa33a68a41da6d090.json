@@ -1,0 +1,46 @@
+{
+  "output": "Assigned V-01-1 and V-02-3 to H-T.",
+  "tokens_in": 1871,
+  "tokens_out": 123,
+  "requests": 2,
+  "latency_s": 2.225253208001959,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t007-P05",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with general care and available capacity.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "t007-P06",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma center is nearest and best matches the trauma injury.",
+        "time_min": 7
+      }
+    ],
+    "invalid": []
+  }
+}

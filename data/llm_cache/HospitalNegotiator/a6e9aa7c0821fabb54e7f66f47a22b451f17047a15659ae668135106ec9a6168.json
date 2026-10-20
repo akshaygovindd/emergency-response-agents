@@ -1,0 +1,12 @@
+{
+  "output": {
+    "decision": "accept",
+    "suggested_alternative_id": "none",
+    "reason": "H-G can treat both patients, has enough ER and treatment capacity, and is not overloaded."
+  },
+  "tokens_in": 675,
+  "tokens_out": 43,
+  "requests": 1,
+  "latency_s": 0.9198802920000162,
+  "context": null
+}

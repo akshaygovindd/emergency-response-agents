@@ -23,6 +23,17 @@ from erc.sim.engine import Decision
 
 RA = AgentName.RESOURCE_ALLOCATION
 
+# One event loop for the whole program: the OpenAI client keeps its connections tied to the
+# loop that created them, so every agent system (and every run) must share the same loop.
+_LOOP: asyncio.AbstractEventLoop | None = None
+
+
+def shared_loop() -> asyncio.AbstractEventLoop:
+    global _LOOP
+    if _LOOP is None or _LOOP.is_closed():
+        _LOOP = asyncio.new_event_loop()
+    return _LOOP
+
 
 class AgentSystem:
     def __init__(self, negotiate: bool = False, oracle: bool = False) -> None:
@@ -33,16 +44,12 @@ class AgentSystem:
         self._texts: dict[str, str] | None = None
         self._n_messages = 0
         self._proposal_msg: dict[str, str] = {}
-        self._loop: asyncio.AbstractEventLoop | None = None   # one event loop for the whole run
 
     def bind_log(self, log: EventLog) -> None:
         self.log = log
 
     def decide(self, state: SimulationState) -> list[Decision]:
-        # Reuse one loop: the OpenAI client keeps connections tied to the loop that created them.
-        if self._loop is None or self._loop.is_closed():
-            self._loop = asyncio.new_event_loop()
-        return self._loop.run_until_complete(self._decide(state))
+        return shared_loop().run_until_complete(self._decide(state))
 
     # ───────── One decision round ─────────
     async def _decide(self, state: SimulationState) -> list[Decision]:

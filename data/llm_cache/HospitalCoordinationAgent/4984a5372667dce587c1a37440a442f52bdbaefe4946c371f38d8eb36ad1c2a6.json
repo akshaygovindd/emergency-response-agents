@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-05 to H-T.",
+  "tokens_in": 1657,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.7656959999949322,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Trauma Center has trauma treatment slots available and can handle the patient safely.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

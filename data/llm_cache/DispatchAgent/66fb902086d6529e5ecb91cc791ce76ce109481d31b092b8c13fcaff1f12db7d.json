@@ -1,0 +1,45 @@
+{
+  "output": "Proposed ALS ambulance and medical team to INC-12.",
+  "tokens_in": 4208,
+  "tokens_out": 147,
+  "requests": 3,
+  "latency_s": 3.393841083001462,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t074-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-2",
+            "V-12-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest-urgency victims at INC-12 need rapid ALS access and can ride together.",
+        "time_min": 74
+      },
+      {
+        "proposal_id": "t074-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-12 has an unassigned rescue need and a free medical team can provide immediate on-scene support for urgent victims.",
+        "time_min": 74
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t006-P03"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t006-P01",
+        "alternative_id": "AMB-03",
+        "reason": "ALS unit available; still reaches the urgency-4 ALS victim at INC-01 reasonably fast."
+      }
+    ],
+    "reasoning": "P03 serves two victims including the urgency-4 trauma patient, so it yields more high-urgency benefit from the contested ALS ambulance. P01 can be rerouted to AMB-03 and still reach its single urgency-4 ALS victim."
+  },
+  "tokens_in": 725,
+  "tokens_out": 119,
+  "requests": 1,
+  "latency_s": 1.820292584001436,
+  "context": null
+}

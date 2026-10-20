@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-01 and MED-1 for INC-10.",
+  "tokens_in": 3703,
+  "tokens_out": 148,
+  "requests": 3,
+  "latency_s": 2.893322124997212,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t063-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-3",
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "INC-10 has the most urgent victim and ALS needs; this ambulance can take the urgent general plus one ALS trauma victim.",
+        "time_min": 63
+      },
+      {
+        "proposal_id": "t063-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-10 has ALS trauma victims and needs immediate on-scene medical support.",
+        "time_min": 63
+      }
+    ],
+    "invalid": []
+  }
+}

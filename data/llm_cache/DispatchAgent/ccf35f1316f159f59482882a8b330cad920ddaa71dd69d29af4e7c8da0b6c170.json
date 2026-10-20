@@ -1,0 +1,79 @@
+{
+  "output": "Proposed 3 ambulance pickups and 1 rescue team deployment.",
+  "tokens_in": 2758,
+  "tokens_out": 255,
+  "requests": 2,
+  "latency_s": 3.547169624995149,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t006-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest ALS ambulance for the ALS-required victim.",
+        "time_min": 6
+      },
+      {
+        "proposal_id": "t006-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue team is needed at this trauma incident and is free.",
+        "time_min": 6
+      },
+      {
+        "proposal_id": "t006-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS ambulance for the two most urgent trauma victims.",
+        "time_min": 6
+      },
+      {
+        "proposal_id": "t006-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Next closest available ambulance for the remaining urgent trauma victim.",
+        "time_min": 6
+      }
+    ],
+    "invalid": []
+  }
+}

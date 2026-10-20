@@ -1,0 +1,47 @@
+{
+  "output": "Proposed AMB-05 for INC-11 and INC-08.",
+  "tokens_in": 2169,
+  "tokens_out": 164,
+  "requests": 2,
+  "latency_s": 3.2219030409978586,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t095-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the only waiting victim at this incident.",
+        "time_min": 95
+      },
+      {
+        "proposal_id": "t095-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn victims can be transported together and this unit is the nearest free ambulance.",
+        "time_min": 95
+      }
+    ],
+    "invalid": []
+  }
+}

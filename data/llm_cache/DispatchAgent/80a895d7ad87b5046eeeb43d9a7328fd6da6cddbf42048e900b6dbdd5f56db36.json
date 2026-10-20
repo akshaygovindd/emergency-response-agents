@@ -1,0 +1,64 @@
+{
+  "output": "Proposed AMB-05 for INC-09, INC-07, and INC-08.",
+  "tokens_in": 2685,
+  "tokens_out": 220,
+  "requests": 2,
+  "latency_s": 2.0008826669945847,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t064-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest unit to the most urgent waiting victim.",
+        "time_min": 64
+      },
+      {
+        "proposal_id": "t064-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Best available BLS unit for the lone general-care victim.",
+        "time_min": 64
+      },
+      {
+        "proposal_id": "t064-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Single BLS ambulance can carry both burn victims together.",
+        "time_min": 64
+      }
+    ],
+    "invalid": []
+  }
+}

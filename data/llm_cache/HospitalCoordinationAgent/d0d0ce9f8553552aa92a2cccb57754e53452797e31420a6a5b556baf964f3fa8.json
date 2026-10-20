@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-02 to H-B for the general victim.",
+  "tokens_in": 1665,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.6152193329980946,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t095-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-10-3"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest general-capable hospital with available capacity and beds.",
+        "time_min": 95
+      }
+    ],
+    "invalid": []
+  }
+}

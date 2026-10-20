@@ -1,0 +1,29 @@
+{
+  "output": "Sent AMB-03 to H-T.",
+  "tokens_in": 1650,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.95337570799893,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Trauma Center has trauma capacity available and can treat the victim safely.",
+        "time_min": 112
+      }
+    ],
+    "invalid": []
+  }
+}

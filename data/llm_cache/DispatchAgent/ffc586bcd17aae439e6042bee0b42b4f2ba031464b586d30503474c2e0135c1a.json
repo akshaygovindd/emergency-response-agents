@@ -1,0 +1,60 @@
+{
+  "output": "Proposed AMB-02 to INC-09, FIRE-1 to INC-09, and RESCUE-1 to INC-08.",
+  "tokens_in": 2581,
+  "tokens_out": 206,
+  "requests": 2,
+  "latency_s": 2.2159061659986037,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t055-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the highest-urgency general victims at INC-09.",
+        "time_min": 55
+      },
+      {
+        "proposal_id": "t055-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is free and INC-09 needs fire support.",
+        "time_min": 55
+      },
+      {
+        "proposal_id": "t055-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free rescue team can support the burn incident needing additional scene assistance.",
+        "time_min": 55
+      }
+    ],
+    "invalid": []
+  }
+}

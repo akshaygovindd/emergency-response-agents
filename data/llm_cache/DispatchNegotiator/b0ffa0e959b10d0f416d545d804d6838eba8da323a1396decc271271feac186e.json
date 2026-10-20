@@ -1,0 +1,12 @@
+{
+  "output": {
+    "decision": "accept",
+    "suggested_alternative_id": "none",
+    "reason": "AMB-03 is ALS and reaches the ALS-required victim in 12 minutes, which is still timely care."
+  },
+  "tokens_in": 429,
+  "tokens_out": 52,
+  "requests": 1,
+  "latency_s": 1.1797454170009587,
+  "context": null
+}

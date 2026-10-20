@@ -1,0 +1,44 @@
+{
+  "output": "AMB-04 to H-G for both victims.",
+  "tokens_in": 2726,
+  "tokens_out": 138,
+  "requests": 3,
+  "latency_s": 5.1831462909976835,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t090-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-2",
+            "V-12-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "H-G can treat both victims and has available ER capacity, avoiding overload at H-T.",
+        "time_min": 90
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 90,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-2",
+            "V-12-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

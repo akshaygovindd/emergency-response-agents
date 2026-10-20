@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 for both burn victims at INC-08.",
+  "tokens_in": 1717,
+  "tokens_out": 89,
+  "requests": 2,
+  "latency_s": 4.8929644170057145,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free ALS unit can take both burn victims from the same incident.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

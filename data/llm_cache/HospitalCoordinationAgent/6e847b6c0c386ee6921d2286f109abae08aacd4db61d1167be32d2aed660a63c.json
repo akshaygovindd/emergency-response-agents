@@ -1,0 +1,30 @@
+{
+  "output": "Sent both general victims to H-G for treatment capacity and low load.",
+  "tokens_in": 1725,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 1.9483369170047808,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t037-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital is close and has free general treatment slots with ample ER capacity.",
+        "time_min": 37
+      }
+    ],
+    "invalid": []
+  }
+}

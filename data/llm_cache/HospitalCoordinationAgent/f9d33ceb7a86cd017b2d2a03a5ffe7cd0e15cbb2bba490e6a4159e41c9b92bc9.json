@@ -1,0 +1,47 @@
+{
+  "output": "Assigned AMB-03 to H-B and AMB-05 to H-G.",
+  "tokens_in": 1945,
+  "tokens_out": 132,
+  "requests": 2,
+  "latency_s": 1.9433282079990022,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t054-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest hospital with available general treatment slots and no ER overload.",
+        "time_min": 54
+      },
+      {
+        "proposal_id": "t054-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General care available with ample capacity and reasonable travel time.",
+        "time_min": 54
+      }
+    ],
+    "invalid": []
+  }
+}
