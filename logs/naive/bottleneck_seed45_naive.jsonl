@@ -1,0 +1,243 @@
+{"t": 0, "kind": "snapshot", "time_min": 0, "active_incidents": 0, "waiting_victims": 0, "critical_waiting": 0, "ambulances_available": 2, "ambulances_busy": 0, "responders_available": 3, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 1, "kind": "snapshot", "time_min": 1, "active_incidents": 0, "waiting_victims": 0, "critical_waiting": 0, "ambulances_available": 2, "ambulances_busy": 0, "responders_available": 3, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 2, "kind": "incident_arrived", "incident_id": "INC-01", "victims": 3, "max_severity": 4}
+{"t": 2, "kind": "policy_called", "call": 1}
+{"t": 2, "kind": "action_accepted", "incident_id": "INC-01", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-01", "responder_id": null, "hospital_id": null, "victim_ids": ["V-01-1", "V-01-2"]}}
+{"t": 2, "kind": "action_accepted", "incident_id": "INC-01", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-02", "responder_id": null, "hospital_id": null, "victim_ids": ["V-01-3"]}}
+{"t": 2, "kind": "action_accepted", "incident_id": "INC-01", "source": "naive", "message_id": null, "action": {"action_type": "assign_responder", "ambulance_id": null, "responder_id": "RESCUE-1", "hospital_id": null, "victim_ids": []}}
+{"t": 2, "kind": "snapshot", "time_min": 2, "active_incidents": 1, "waiting_victims": 0, "critical_waiting": 0, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 2, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 3, "kind": "snapshot", "time_min": 3, "active_incidents": 1, "waiting_victims": 0, "critical_waiting": 0, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 2, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 4, "kind": "snapshot", "time_min": 4, "active_incidents": 1, "waiting_victims": 0, "critical_waiting": 0, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 2, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 5, "kind": "incident_arrived", "incident_id": "INC-02", "victims": 1, "max_severity": 4}
+{"t": 5, "kind": "snapshot", "time_min": 5, "active_incidents": 2, "waiting_victims": 1, "critical_waiting": 1, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 2, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 6, "kind": "incident_arrived", "incident_id": "INC-03", "victims": 3, "max_severity": 5}
+{"t": 6, "kind": "snapshot", "time_min": 6, "active_incidents": 3, "waiting_victims": 4, "critical_waiting": 4, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 2, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 7, "kind": "snapshot", "time_min": 7, "active_incidents": 3, "waiting_victims": 4, "critical_waiting": 4, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 2, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 8, "kind": "incident_arrived", "incident_id": "INC-04", "victims": 2, "max_severity": 4}
+{"t": 8, "kind": "incident_arrived", "incident_id": "INC-05", "victims": 1, "max_severity": 4}
+{"t": 8, "kind": "policy_called", "call": 2}
+{"t": 8, "kind": "action_accepted", "incident_id": "INC-04", "source": "naive", "message_id": null, "action": {"action_type": "assign_responder", "ambulance_id": null, "responder_id": "FIRE-1", "hospital_id": null, "victim_ids": []}}
+{"t": 8, "kind": "snapshot", "time_min": 8, "active_incidents": 5, "waiting_victims": 7, "critical_waiting": 6, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 9, "kind": "snapshot", "time_min": 9, "active_incidents": 5, "waiting_victims": 7, "critical_waiting": 6, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 10, "kind": "snapshot", "time_min": 10, "active_incidents": 5, "waiting_victims": 7, "critical_waiting": 6, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 11, "kind": "incident_arrived", "incident_id": "INC-06", "victims": 3, "max_severity": 4}
+{"t": 11, "kind": "snapshot", "time_min": 11, "active_incidents": 6, "waiting_victims": 10, "critical_waiting": 8, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 12, "kind": "incident_arrived", "incident_id": "INC-07", "victims": 3, "max_severity": 5}
+{"t": 12, "kind": "incident_arrived", "incident_id": "INC-08", "victims": 4, "max_severity": 4}
+{"t": 12, "kind": "snapshot", "time_min": 12, "active_incidents": 8, "waiting_victims": 17, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 13, "kind": "snapshot", "time_min": 13, "active_incidents": 8, "waiting_victims": 17, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 14, "kind": "snapshot", "time_min": 14, "active_incidents": 8, "waiting_victims": 17, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 15, "kind": "victim_deteriorated", "victim_id": "V-03-1", "severity": 5}
+{"t": 15, "kind": "snapshot", "time_min": 15, "active_incidents": 8, "waiting_victims": 17, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 16, "kind": "snapshot", "time_min": 16, "active_incidents": 8, "waiting_victims": 17, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 17, "kind": "incident_arrived", "incident_id": "INC-09", "victims": 1, "max_severity": 2}
+{"t": 17, "kind": "responder_arrived", "team_id": "RESCUE-1", "incident_id": "INC-01"}
+{"t": 17, "kind": "snapshot", "time_min": 17, "active_incidents": 9, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 18, "kind": "responder_arrived", "team_id": "FIRE-1", "incident_id": "INC-04"}
+{"t": 18, "kind": "snapshot", "time_min": 18, "active_incidents": 9, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 19, "kind": "incident_arrived", "incident_id": "INC-10", "victims": 4, "max_severity": 5}
+{"t": 19, "kind": "victim_deteriorated", "victim_id": "V-03-2", "severity": 5}
+{"t": 19, "kind": "snapshot", "time_min": 19, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 20, "kind": "victim_deteriorated", "victim_id": "V-01-2", "severity": 4}
+{"t": 20, "kind": "snapshot", "time_min": 20, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 21, "kind": "ambulance_on_scene", "ambulance_id": "AMB-01", "incident_id": "INC-01"}
+{"t": 21, "kind": "victim_deteriorated", "victim_id": "V-02-1", "severity": 4}
+{"t": 21, "kind": "snapshot", "time_min": 21, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 22, "kind": "snapshot", "time_min": 22, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 23, "kind": "snapshot", "time_min": 23, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 24, "kind": "ambulance_on_scene", "ambulance_id": "AMB-02", "incident_id": "INC-01"}
+{"t": 24, "kind": "victim_deteriorated", "victim_id": "V-07-3", "severity": 5}
+{"t": 24, "kind": "snapshot", "time_min": 24, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 25, "kind": "snapshot", "time_min": 25, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 26, "kind": "victims_loaded", "ambulance_id": "AMB-01", "victim_ids": ["V-01-1", "V-01-2"]}
+{"t": 26, "kind": "policy_called", "call": 3}
+{"t": 26, "kind": "action_accepted", "incident_id": "INC-01", "source": "naive", "message_id": null, "action": {"action_type": "admit_patient", "ambulance_id": null, "responder_id": null, "hospital_id": "H-G", "victim_ids": ["V-01-1", "V-01-2"]}}
+{"t": 26, "kind": "snapshot", "time_min": 26, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 27, "kind": "ambulance_departed", "ambulance_id": "AMB-01", "hospital_id": "H-G"}
+{"t": 27, "kind": "victim_deteriorated", "victim_id": "V-05-1", "severity": 4}
+{"t": 27, "kind": "victim_deteriorated", "victim_id": "V-06-2", "severity": 4}
+{"t": 27, "kind": "victim_deteriorated", "victim_id": "V-06-3", "severity": 4}
+{"t": 27, "kind": "snapshot", "time_min": 27, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 28, "kind": "victim_deteriorated", "victim_id": "V-01-3", "severity": 4}
+{"t": 28, "kind": "victim_deteriorated", "victim_id": "V-04-2", "severity": 4}
+{"t": 28, "kind": "snapshot", "time_min": 28, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 29, "kind": "victims_loaded", "ambulance_id": "AMB-02", "victim_ids": ["V-01-3"]}
+{"t": 29, "kind": "policy_called", "call": 4}
+{"t": 29, "kind": "action_accepted", "incident_id": "INC-01", "source": "naive", "message_id": null, "action": {"action_type": "admit_patient", "ambulance_id": null, "responder_id": null, "hospital_id": "H-G", "victim_ids": ["V-01-3"]}}
+{"t": 29, "kind": "snapshot", "time_min": 29, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 30, "kind": "responder_released", "team_id": "RESCUE-1", "incident_id": "INC-01"}
+{"t": 30, "kind": "ambulance_departed", "ambulance_id": "AMB-02", "hospital_id": "H-G"}
+{"t": 30, "kind": "policy_called", "call": 5}
+{"t": 30, "kind": "action_accepted", "incident_id": "INC-02", "source": "naive", "message_id": null, "action": {"action_type": "assign_responder", "ambulance_id": null, "responder_id": "RESCUE-1", "hospital_id": null, "victim_ids": []}}
+{"t": 30, "kind": "snapshot", "time_min": 30, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 31, "kind": "victim_deteriorated", "victim_id": "V-03-3", "severity": 4}
+{"t": 31, "kind": "victim_deteriorated", "victim_id": "V-10-4", "severity": 5}
+{"t": 31, "kind": "snapshot", "time_min": 31, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 32, "kind": "snapshot", "time_min": 32, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 33, "kind": "snapshot", "time_min": 33, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 34, "kind": "victim_deteriorated", "victim_id": "V-08-3", "severity": 4}
+{"t": 34, "kind": "victim_deteriorated", "victim_id": "V-10-1", "severity": 4}
+{"t": 34, "kind": "victim_deteriorated", "victim_id": "V-10-2", "severity": 4}
+{"t": 34, "kind": "snapshot", "time_min": 34, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 35, "kind": "victim_deteriorated", "victim_id": "V-08-4", "severity": 4}
+{"t": 35, "kind": "snapshot", "time_min": 35, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 36, "kind": "ambulance_at_hospital", "ambulance_id": "AMB-01", "hospital_id": "H-G"}
+{"t": 36, "kind": "victim_deteriorated", "victim_id": "V-07-1", "severity": 4}
+{"t": 36, "kind": "snapshot", "time_min": 36, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 37, "kind": "victim_deteriorated", "victim_id": "V-10-3", "severity": 4}
+{"t": 37, "kind": "snapshot", "time_min": 37, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 38, "kind": "victim_deteriorated", "victim_id": "V-06-1", "severity": 3}
+{"t": 38, "kind": "snapshot", "time_min": 38, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 39, "kind": "snapshot", "time_min": 39, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 40, "kind": "snapshot", "time_min": 40, "active_incidents": 10, "waiting_victims": 22, "critical_waiting": 16, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 41, "kind": "handover_complete", "ambulance_id": "AMB-01", "hospital_id": "H-G", "victim_ids": ["V-01-1", "V-01-2"]}
+{"t": 41, "kind": "policy_called", "call": 6}
+{"t": 41, "kind": "action_accepted", "incident_id": "INC-02", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-01", "responder_id": null, "hospital_id": null, "victim_ids": ["V-02-1"]}}
+{"t": 41, "kind": "treatment_started", "victim_id": "V-01-2", "hospital_id": "H-G", "doctor_id": "D-05", "nurse_id": "N-09"}
+{"t": 41, "kind": "treatment_started", "victim_id": "V-01-1", "hospital_id": "H-G", "doctor_id": "D-06", "nurse_id": "N-10"}
+{"t": 41, "kind": "snapshot", "time_min": 41, "active_incidents": 10, "waiting_victims": 21, "critical_waiting": 15, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 42, "kind": "snapshot", "time_min": 42, "active_incidents": 10, "waiting_victims": 21, "critical_waiting": 15, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 43, "kind": "ambulance_at_hospital", "ambulance_id": "AMB-02", "hospital_id": "H-G"}
+{"t": 43, "kind": "snapshot", "time_min": 43, "active_incidents": 10, "waiting_victims": 21, "critical_waiting": 15, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 44, "kind": "victim_deteriorated", "victim_id": "V-04-1", "severity": 3}
+{"t": 44, "kind": "victim_deteriorated", "victim_id": "V-08-1", "severity": 3}
+{"t": 44, "kind": "snapshot", "time_min": 44, "active_incidents": 10, "waiting_victims": 21, "critical_waiting": 15, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 45, "kind": "snapshot", "time_min": 45, "active_incidents": 10, "waiting_victims": 21, "critical_waiting": 15, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 46, "kind": "snapshot", "time_min": 46, "active_incidents": 10, "waiting_victims": 21, "critical_waiting": 15, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 47, "kind": "snapshot", "time_min": 47, "active_incidents": 10, "waiting_victims": 21, "critical_waiting": 15, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.0}}
+{"t": 48, "kind": "handover_complete", "ambulance_id": "AMB-02", "hospital_id": "H-G", "victim_ids": ["V-01-3"]}
+{"t": 48, "kind": "policy_called", "call": 7}
+{"t": 48, "kind": "action_accepted", "incident_id": "INC-03", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-02", "responder_id": null, "hospital_id": null, "victim_ids": ["V-03-1", "V-03-2"]}}
+{"t": 48, "kind": "snapshot", "time_min": 48, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 49, "kind": "snapshot", "time_min": 49, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 50, "kind": "snapshot", "time_min": 50, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 51, "kind": "snapshot", "time_min": 51, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 52, "kind": "snapshot", "time_min": 52, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 53, "kind": "snapshot", "time_min": 53, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 54, "kind": "snapshot", "time_min": 54, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 55, "kind": "snapshot", "time_min": 55, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 56, "kind": "snapshot", "time_min": 56, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 57, "kind": "ambulance_on_scene", "ambulance_id": "AMB-01", "incident_id": "INC-02"}
+{"t": 57, "kind": "snapshot", "time_min": 57, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 58, "kind": "responder_arrived", "team_id": "RESCUE-1", "incident_id": "INC-02"}
+{"t": 58, "kind": "snapshot", "time_min": 58, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 59, "kind": "victim_deteriorated", "victim_id": "V-07-2", "severity": 2}
+{"t": 59, "kind": "snapshot", "time_min": 59, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 60, "kind": "victim_deteriorated", "victim_id": "V-08-2", "severity": 2}
+{"t": 60, "kind": "snapshot", "time_min": 60, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 61, "kind": "treatment_finished", "victim_id": "V-01-1", "hospital_id": "H-G"}
+{"t": 61, "kind": "snapshot", "time_min": 61, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 62, "kind": "victims_loaded", "ambulance_id": "AMB-01", "victim_ids": ["V-02-1"]}
+{"t": 62, "kind": "policy_called", "call": 8}
+{"t": 62, "kind": "action_accepted", "incident_id": "INC-02", "source": "naive", "message_id": null, "action": {"action_type": "admit_patient", "ambulance_id": null, "responder_id": null, "hospital_id": "H-G", "victim_ids": ["V-02-1"]}}
+{"t": 62, "kind": "snapshot", "time_min": 62, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 63, "kind": "responder_released", "team_id": "RESCUE-1", "incident_id": "INC-02"}
+{"t": 63, "kind": "ambulance_departed", "ambulance_id": "AMB-01", "hospital_id": "H-G"}
+{"t": 63, "kind": "policy_called", "call": 9}
+{"t": 63, "kind": "action_accepted", "incident_id": "INC-03", "source": "naive", "message_id": null, "action": {"action_type": "assign_responder", "ambulance_id": null, "responder_id": "RESCUE-1", "hospital_id": null, "victim_ids": []}}
+{"t": 63, "kind": "snapshot", "time_min": 63, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 64, "kind": "snapshot", "time_min": 64, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 65, "kind": "ambulance_on_scene", "ambulance_id": "AMB-02", "incident_id": "INC-03"}
+{"t": 65, "kind": "snapshot", "time_min": 65, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 66, "kind": "snapshot", "time_min": 66, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 67, "kind": "snapshot", "time_min": 67, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 68, "kind": "snapshot", "time_min": 68, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 69, "kind": "victim_deteriorated", "victim_id": "V-09-1", "severity": 2}
+{"t": 69, "kind": "snapshot", "time_min": 69, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 70, "kind": "snapshot", "time_min": 70, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 71, "kind": "snapshot", "time_min": 71, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 72, "kind": "snapshot", "time_min": 72, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 73, "kind": "snapshot", "time_min": 73, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 74, "kind": "snapshot", "time_min": 74, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 75, "kind": "ambulance_at_hospital", "ambulance_id": "AMB-01", "hospital_id": "H-G"}
+{"t": 75, "kind": "snapshot", "time_min": 75, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 76, "kind": "snapshot", "time_min": 76, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 77, "kind": "snapshot", "time_min": 77, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 78, "kind": "responder_arrived", "team_id": "RESCUE-1", "incident_id": "INC-03"}
+{"t": 78, "kind": "victims_loaded", "ambulance_id": "AMB-02", "victim_ids": ["V-03-1", "V-03-2"]}
+{"t": 78, "kind": "policy_called", "call": 10}
+{"t": 78, "kind": "action_accepted", "incident_id": "INC-03", "source": "naive", "message_id": null, "action": {"action_type": "admit_patient", "ambulance_id": null, "responder_id": null, "hospital_id": "H-T", "victim_ids": ["V-03-1", "V-03-2"]}}
+{"t": 78, "kind": "snapshot", "time_min": 78, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 79, "kind": "ambulance_departed", "ambulance_id": "AMB-02", "hospital_id": "H-T"}
+{"t": 79, "kind": "snapshot", "time_min": 79, "active_incidents": 9, "waiting_victims": 19, "critical_waiting": 13, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 80, "kind": "handover_complete", "ambulance_id": "AMB-01", "hospital_id": "H-G", "victim_ids": ["V-02-1"]}
+{"t": 80, "kind": "policy_called", "call": 11}
+{"t": 80, "kind": "action_accepted", "incident_id": "INC-03", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-01", "responder_id": null, "hospital_id": null, "victim_ids": ["V-03-3"]}}
+{"t": 80, "kind": "snapshot", "time_min": 80, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.25}}
+{"t": 81, "kind": "snapshot", "time_min": 81, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.25}}
+{"t": 82, "kind": "snapshot", "time_min": 82, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.25}}
+{"t": 83, "kind": "snapshot", "time_min": 83, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.25}}
+{"t": 84, "kind": "ambulance_at_hospital", "ambulance_id": "AMB-02", "hospital_id": "H-T"}
+{"t": 84, "kind": "snapshot", "time_min": 84, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.25}}
+{"t": 85, "kind": "snapshot", "time_min": 85, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.25}}
+{"t": 86, "kind": "treatment_finished", "victim_id": "V-01-2", "hospital_id": "H-G"}
+{"t": 86, "kind": "treatment_started", "victim_id": "V-02-1", "hospital_id": "H-G", "doctor_id": "D-05", "nurse_id": "N-09"}
+{"t": 86, "kind": "snapshot", "time_min": 86, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 87, "kind": "snapshot", "time_min": 87, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 88, "kind": "snapshot", "time_min": 88, "active_incidents": 8, "waiting_victims": 18, "critical_waiting": 12, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.0, "H-B": 0.0, "H-G": 0.12}}
+{"t": 89, "kind": "handover_complete", "ambulance_id": "AMB-02", "hospital_id": "H-T", "victim_ids": ["V-03-1", "V-03-2"]}
+{"t": 89, "kind": "policy_called", "call": 12}
+{"t": 89, "kind": "action_accepted", "incident_id": "INC-04", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-02", "responder_id": null, "hospital_id": null, "victim_ids": ["V-04-1", "V-04-2"]}}
+{"t": 89, "kind": "treatment_started", "victim_id": "V-03-1", "hospital_id": "H-T", "doctor_id": "D-01", "nurse_id": "N-01"}
+{"t": 89, "kind": "snapshot", "time_min": 89, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 90, "kind": "snapshot", "time_min": 90, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 91, "kind": "ambulance_on_scene", "ambulance_id": "AMB-02", "incident_id": "INC-04"}
+{"t": 91, "kind": "snapshot", "time_min": 91, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 92, "kind": "snapshot", "time_min": 92, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 93, "kind": "ambulance_on_scene", "ambulance_id": "AMB-01", "incident_id": "INC-03"}
+{"t": 93, "kind": "snapshot", "time_min": 93, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 94, "kind": "snapshot", "time_min": 94, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 95, "kind": "snapshot", "time_min": 95, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 96, "kind": "victims_loaded", "ambulance_id": "AMB-02", "victim_ids": ["V-04-1", "V-04-2"]}
+{"t": 96, "kind": "policy_called", "call": 13}
+{"t": 96, "kind": "action_accepted", "incident_id": "INC-04", "source": "naive", "message_id": null, "action": {"action_type": "admit_patient", "ambulance_id": null, "responder_id": null, "hospital_id": "H-B", "victim_ids": ["V-04-1", "V-04-2"]}}
+{"t": 96, "kind": "snapshot", "time_min": 96, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 97, "kind": "responder_released", "team_id": "FIRE-1", "incident_id": "INC-04"}
+{"t": 97, "kind": "ambulance_departed", "ambulance_id": "AMB-02", "hospital_id": "H-B"}
+{"t": 97, "kind": "policy_called", "call": 14}
+{"t": 97, "kind": "action_accepted", "incident_id": "INC-05", "source": "naive", "message_id": null, "action": {"action_type": "assign_responder", "ambulance_id": null, "responder_id": "FIRE-1", "hospital_id": null, "victim_ids": []}}
+{"t": 97, "kind": "snapshot", "time_min": 97, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 98, "kind": "victims_loaded", "ambulance_id": "AMB-01", "victim_ids": ["V-03-3"]}
+{"t": 98, "kind": "policy_called", "call": 15}
+{"t": 98, "kind": "action_accepted", "incident_id": "INC-03", "source": "naive", "message_id": null, "action": {"action_type": "admit_patient", "ambulance_id": null, "responder_id": null, "hospital_id": "H-T", "victim_ids": ["V-03-3"]}}
+{"t": 98, "kind": "snapshot", "time_min": 98, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 99, "kind": "responder_released", "team_id": "RESCUE-1", "incident_id": "INC-03"}
+{"t": 99, "kind": "ambulance_departed", "ambulance_id": "AMB-01", "hospital_id": "H-T"}
+{"t": 99, "kind": "policy_called", "call": 16}
+{"t": 99, "kind": "action_accepted", "incident_id": "INC-08", "source": "naive", "message_id": null, "action": {"action_type": "assign_responder", "ambulance_id": null, "responder_id": "RESCUE-1", "hospital_id": null, "victim_ids": []}}
+{"t": 99, "kind": "snapshot", "time_min": 99, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 100, "kind": "snapshot", "time_min": 100, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 101, "kind": "snapshot", "time_min": 101, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 102, "kind": "responder_arrived", "team_id": "FIRE-1", "incident_id": "INC-05"}
+{"t": 102, "kind": "snapshot", "time_min": 102, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 103, "kind": "snapshot", "time_min": 103, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 104, "kind": "responder_arrived", "team_id": "RESCUE-1", "incident_id": "INC-08"}
+{"t": 104, "kind": "snapshot", "time_min": 104, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 105, "kind": "ambulance_at_hospital", "ambulance_id": "AMB-01", "hospital_id": "H-T"}
+{"t": 105, "kind": "snapshot", "time_min": 105, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 106, "kind": "snapshot", "time_min": 106, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 107, "kind": "snapshot", "time_min": 107, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 108, "kind": "snapshot", "time_min": 108, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 109, "kind": "snapshot", "time_min": 109, "active_incidents": 8, "waiting_victims": 16, "critical_waiting": 11, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.17, "H-B": 0.0, "H-G": 0.12}}
+{"t": 110, "kind": "handover_complete", "ambulance_id": "AMB-01", "hospital_id": "H-T", "victim_ids": ["V-03-3"]}
+{"t": 110, "kind": "policy_called", "call": 17}
+{"t": 110, "kind": "action_accepted", "incident_id": "INC-05", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-01", "responder_id": null, "hospital_id": null, "victim_ids": ["V-05-1"]}}
+{"t": 110, "kind": "snapshot", "time_min": 110, "active_incidents": 7, "waiting_victims": 15, "critical_waiting": 10, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 111, "kind": "snapshot", "time_min": 111, "active_incidents": 7, "waiting_victims": 15, "critical_waiting": 10, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 112, "kind": "ambulance_at_hospital", "ambulance_id": "AMB-02", "hospital_id": "H-B"}
+{"t": 112, "kind": "snapshot", "time_min": 112, "active_incidents": 7, "waiting_victims": 15, "critical_waiting": 10, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 113, "kind": "snapshot", "time_min": 113, "active_incidents": 7, "waiting_victims": 15, "critical_waiting": 10, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 114, "kind": "snapshot", "time_min": 114, "active_incidents": 7, "waiting_victims": 15, "critical_waiting": 10, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 115, "kind": "snapshot", "time_min": 115, "active_incidents": 7, "waiting_victims": 15, "critical_waiting": 10, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 116, "kind": "snapshot", "time_min": 116, "active_incidents": 7, "waiting_victims": 15, "critical_waiting": 10, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 117, "kind": "handover_complete", "ambulance_id": "AMB-02", "hospital_id": "H-B", "victim_ids": ["V-04-1", "V-04-2"]}
+{"t": 117, "kind": "ambulance_on_scene", "ambulance_id": "AMB-01", "incident_id": "INC-05"}
+{"t": 117, "kind": "policy_called", "call": 18}
+{"t": 117, "kind": "action_accepted", "incident_id": "INC-06", "source": "naive", "message_id": null, "action": {"action_type": "assign_ambulance", "ambulance_id": "AMB-02", "responder_id": null, "hospital_id": null, "victim_ids": ["V-06-1", "V-06-2"]}}
+{"t": 117, "kind": "treatment_started", "victim_id": "V-04-2", "hospital_id": "H-B", "doctor_id": "D-03", "nurse_id": "N-05"}
+{"t": 117, "kind": "treatment_started", "victim_id": "V-04-1", "hospital_id": "H-B", "doctor_id": "D-04", "nurse_id": "N-06"}
+{"t": 117, "kind": "snapshot", "time_min": 117, "active_incidents": 6, "waiting_victims": 13, "critical_waiting": 9, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 118, "kind": "snapshot", "time_min": 118, "active_incidents": 6, "waiting_victims": 13, "critical_waiting": 9, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 119, "kind": "snapshot", "time_min": 119, "active_incidents": 6, "waiting_victims": 13, "critical_waiting": 9, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 120, "kind": "snapshot", "time_min": 120, "active_incidents": 6, "waiting_victims": 13, "critical_waiting": 9, "ambulances_available": 0, "ambulances_busy": 2, "responders_available": 1, "staff_available": 18, "er_occupancy": {"H-T": 0.33, "H-B": 0.0, "H-G": 0.12}}
+{"t": 120, "kind": "run_finished", "policy": "naive", "policy_calls": 18, "rejected": 0}

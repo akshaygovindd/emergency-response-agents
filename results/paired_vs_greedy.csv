@@ -1,0 +1,4 @@
+scenario,mode,vs,seeds,mean_diff,diff_95ci,wins/losses/ties,significant
+normal,naive,greedy,10,-0.2274025974025974,"[-0.36, -0.09]",0/8/2,True
+surge,naive,greedy,10,-0.1124667223614592,"[-0.16, -0.06]",0/10/0,True
+bottleneck,naive,greedy,5,-0.08677192088956795,"[-0.13, -0.05]",0/5/0,True
