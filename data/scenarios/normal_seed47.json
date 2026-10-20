@@ -1,0 +1,847 @@
+{
+  "name": "normal",
+  "seed": 47,
+  "hospitals": [
+    {
+      "hospital_id": "H-T",
+      "name": "Trauma Center",
+      "location": {
+        "x": 5.0,
+        "y": 15.0
+      },
+      "er_capacity": 6,
+      "treatment_slots": {
+        "trauma": 3,
+        "general": 1
+      },
+      "beds": 10,
+      "er_occupied": 0,
+      "treatment_occupied": {},
+      "beds_occupied": 0
+    },
+    {
+      "hospital_id": "H-B",
+      "name": "Burn Unit",
+      "location": {
+        "x": 15.0,
+        "y": 13.0
+      },
+      "er_capacity": 5,
+      "treatment_slots": {
+        "burn": 3,
+        "general": 1
+      },
+      "beds": 8,
+      "er_occupied": 0,
+      "treatment_occupied": {},
+      "beds_occupied": 0
+    },
+    {
+      "hospital_id": "H-G",
+      "name": "General Hospital",
+      "location": {
+        "x": 10.0,
+        "y": 4.0
+      },
+      "er_capacity": 8,
+      "treatment_slots": {
+        "general": 4,
+        "trauma": 1
+      },
+      "beds": 14,
+      "er_occupied": 0,
+      "treatment_occupied": {},
+      "beds_occupied": 0
+    }
+  ],
+  "ambulances": [
+    {
+      "ambulance_id": "AMB-01",
+      "ambulance_type": "advanced_life_support",
+      "capacity": 2,
+      "location": {
+        "x": 6.0,
+        "y": 13.0
+      },
+      "base_location": {
+        "x": 6.0,
+        "y": 13.0
+      },
+      "status": "available",
+      "assigned_incident": null,
+      "victims_onboard": []
+    },
+    {
+      "ambulance_id": "AMB-02",
+      "ambulance_type": "basic_life_support",
+      "capacity": 2,
+      "location": {
+        "x": 14.0,
+        "y": 6.0
+      },
+      "base_location": {
+        "x": 14.0,
+        "y": 6.0
+      },
+      "status": "available",
+      "assigned_incident": null,
+      "victims_onboard": []
+    },
+    {
+      "ambulance_id": "AMB-03",
+      "ambulance_type": "advanced_life_support",
+      "capacity": 2,
+      "location": {
+        "x": 16.0,
+        "y": 15.0
+      },
+      "base_location": {
+        "x": 16.0,
+        "y": 15.0
+      },
+      "status": "available",
+      "assigned_incident": null,
+      "victims_onboard": []
+    },
+    {
+      "ambulance_id": "AMB-04",
+      "ambulance_type": "basic_life_support",
+      "capacity": 2,
+      "location": {
+        "x": 4.0,
+        "y": 5.0
+      },
+      "base_location": {
+        "x": 4.0,
+        "y": 5.0
+      },
+      "status": "available",
+      "assigned_incident": null,
+      "victims_onboard": []
+    },
+    {
+      "ambulance_id": "AMB-05",
+      "ambulance_type": "basic_life_support",
+      "capacity": 2,
+      "location": {
+        "x": 10.0,
+        "y": 10.0
+      },
+      "base_location": {
+        "x": 10.0,
+        "y": 10.0
+      },
+      "status": "available",
+      "assigned_incident": null,
+      "victims_onboard": []
+    }
+  ],
+  "responders": [
+    {
+      "team_id": "FIRE-1",
+      "responder_type": "fire",
+      "location": {
+        "x": 12.0,
+        "y": 12.0
+      },
+      "base_location": {
+        "x": 12.0,
+        "y": 12.0
+      },
+      "status": "available",
+      "assigned_incident": null
+    },
+    {
+      "team_id": "RESCUE-1",
+      "responder_type": "rescue",
+      "location": {
+        "x": 7.0,
+        "y": 8.0
+      },
+      "base_location": {
+        "x": 7.0,
+        "y": 8.0
+      },
+      "status": "available",
+      "assigned_incident": null
+    },
+    {
+      "team_id": "MED-1",
+      "responder_type": "medical",
+      "location": {
+        "x": 13.0,
+        "y": 3.0
+      },
+      "base_location": {
+        "x": 13.0,
+        "y": 3.0
+      },
+      "status": "available",
+      "assigned_incident": null
+    }
+  ],
+  "staff": [
+    {
+      "staff_id": "D-01",
+      "role": "doctor",
+      "hospital_id": "H-T",
+      "skills": {
+        "trauma": 3,
+        "burn": 1,
+        "general": 2
+      },
+      "max_patients": 3,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "D-02",
+      "role": "doctor",
+      "hospital_id": "H-T",
+      "skills": {
+        "trauma": 3,
+        "burn": 1,
+        "general": 2
+      },
+      "max_patients": 3,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-01",
+      "role": "nurse",
+      "hospital_id": "H-T",
+      "skills": {
+        "trauma": 2,
+        "burn": 1,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-02",
+      "role": "nurse",
+      "hospital_id": "H-T",
+      "skills": {
+        "trauma": 2,
+        "burn": 1,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-03",
+      "role": "nurse",
+      "hospital_id": "H-T",
+      "skills": {
+        "trauma": 2,
+        "burn": 1,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-04",
+      "role": "nurse",
+      "hospital_id": "H-T",
+      "skills": {
+        "trauma": 2,
+        "burn": 1,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "D-03",
+      "role": "doctor",
+      "hospital_id": "H-B",
+      "skills": {
+        "trauma": 1,
+        "burn": 3,
+        "general": 2
+      },
+      "max_patients": 3,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "D-04",
+      "role": "doctor",
+      "hospital_id": "H-B",
+      "skills": {
+        "trauma": 1,
+        "burn": 3,
+        "general": 2
+      },
+      "max_patients": 3,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-05",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": {
+        "trauma": 1,
+        "burn": 2,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-06",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": {
+        "trauma": 1,
+        "burn": 2,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-07",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": {
+        "trauma": 1,
+        "burn": 2,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-08",
+      "role": "nurse",
+      "hospital_id": "H-B",
+      "skills": {
+        "trauma": 1,
+        "burn": 2,
+        "general": 1
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "D-05",
+      "role": "doctor",
+      "hospital_id": "H-G",
+      "skills": {
+        "trauma": 2,
+        "burn": 1,
+        "general": 3
+      },
+      "max_patients": 3,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "D-06",
+      "role": "doctor",
+      "hospital_id": "H-G",
+      "skills": {
+        "trauma": 2,
+        "burn": 1,
+        "general": 3
+      },
+      "max_patients": 3,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-09",
+      "role": "nurse",
+      "hospital_id": "H-G",
+      "skills": {
+        "trauma": 1,
+        "burn": 1,
+        "general": 2
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-10",
+      "role": "nurse",
+      "hospital_id": "H-G",
+      "skills": {
+        "trauma": 1,
+        "burn": 1,
+        "general": 2
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-11",
+      "role": "nurse",
+      "hospital_id": "H-G",
+      "skills": {
+        "trauma": 1,
+        "burn": 1,
+        "general": 2
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    },
+    {
+      "staff_id": "N-12",
+      "role": "nurse",
+      "hospital_id": "H-G",
+      "skills": {
+        "trauma": 1,
+        "burn": 1,
+        "general": 2
+      },
+      "max_patients": 2,
+      "current_patients": 0,
+      "on_shift": true
+    }
+  ],
+  "incidents": [
+    {
+      "incident_id": "INC-01",
+      "incident_type": "vehicle_collision",
+      "location": {
+        "x": 16.1,
+        "y": 12.1
+      },
+      "arrival_time_min": 5,
+      "victims": [
+        {
+          "victim_id": "V-01-1",
+          "incident_id": "INC-01",
+          "severity": 3,
+          "required_capability": "trauma",
+          "needs_als": false,
+          "deadline_min": 38,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-01-2",
+          "incident_id": "INC-01",
+          "severity": 4,
+          "required_capability": "trauma",
+          "needs_als": true,
+          "deadline_min": 25,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "rescue",
+      "description": null
+    },
+    {
+      "incident_id": "INC-02",
+      "incident_type": "building_fire",
+      "location": {
+        "x": 2.6,
+        "y": 14.9
+      },
+      "arrival_time_min": 7,
+      "victims": [
+        {
+          "victim_id": "V-02-1",
+          "incident_id": "INC-02",
+          "severity": 2,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 49,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-02-2",
+          "incident_id": "INC-02",
+          "severity": 5,
+          "required_capability": "burn",
+          "needs_als": true,
+          "deadline_min": 13,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-02-3",
+          "incident_id": "INC-02",
+          "severity": 3,
+          "required_capability": "burn",
+          "needs_als": false,
+          "deadline_min": 31,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "fire",
+      "description": null
+    },
+    {
+      "incident_id": "INC-03",
+      "incident_type": "medical_emergency",
+      "location": {
+        "x": 14.4,
+        "y": 13.7
+      },
+      "arrival_time_min": 7,
+      "victims": [
+        {
+          "victim_id": "V-03-1",
+          "incident_id": "INC-03",
+          "severity": 5,
+          "required_capability": "general",
+          "needs_als": true,
+          "deadline_min": 12,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": null,
+      "description": null
+    },
+    {
+      "incident_id": "INC-04",
+      "incident_type": "building_fire",
+      "location": {
+        "x": 12.8,
+        "y": 16.9
+      },
+      "arrival_time_min": 8,
+      "victims": [
+        {
+          "victim_id": "V-04-1",
+          "incident_id": "INC-04",
+          "severity": 2,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 46,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-04-2",
+          "incident_id": "INC-04",
+          "severity": 5,
+          "required_capability": "general",
+          "needs_als": true,
+          "deadline_min": 8,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-04-3",
+          "incident_id": "INC-04",
+          "severity": 3,
+          "required_capability": "burn",
+          "needs_als": false,
+          "deadline_min": 38,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "fire",
+      "description": null
+    },
+    {
+      "incident_id": "INC-05",
+      "incident_type": "medical_emergency",
+      "location": {
+        "x": 5.0,
+        "y": 1.0
+      },
+      "arrival_time_min": 24,
+      "victims": [
+        {
+          "victim_id": "V-05-1",
+          "incident_id": "INC-05",
+          "severity": 5,
+          "required_capability": "general",
+          "needs_als": true,
+          "deadline_min": 8,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": null,
+      "description": null
+    },
+    {
+      "incident_id": "INC-06",
+      "incident_type": "vehicle_collision",
+      "location": {
+        "x": 11.2,
+        "y": 5.3
+      },
+      "arrival_time_min": 26,
+      "victims": [
+        {
+          "victim_id": "V-06-1",
+          "incident_id": "INC-06",
+          "severity": 4,
+          "required_capability": "trauma",
+          "needs_als": true,
+          "deadline_min": 18,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-06-2",
+          "incident_id": "INC-06",
+          "severity": 5,
+          "required_capability": "trauma",
+          "needs_als": true,
+          "deadline_min": 8,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-06-3",
+          "incident_id": "INC-06",
+          "severity": 4,
+          "required_capability": "trauma",
+          "needs_als": true,
+          "deadline_min": 23,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "rescue",
+      "description": null
+    },
+    {
+      "incident_id": "INC-07",
+      "incident_type": "building_fire",
+      "location": {
+        "x": 18.5,
+        "y": 8.8
+      },
+      "arrival_time_min": 32,
+      "victims": [
+        {
+          "victim_id": "V-07-1",
+          "incident_id": "INC-07",
+          "severity": 1,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 62,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-07-2",
+          "incident_id": "INC-07",
+          "severity": 3,
+          "required_capability": "burn",
+          "needs_als": false,
+          "deadline_min": 37,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-07-3",
+          "incident_id": "INC-07",
+          "severity": 2,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 53,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "fire",
+      "description": null
+    },
+    {
+      "incident_id": "INC-08",
+      "incident_type": "vehicle_collision",
+      "location": {
+        "x": 1.6,
+        "y": 1.0
+      },
+      "arrival_time_min": 34,
+      "victims": [
+        {
+          "victim_id": "V-08-1",
+          "incident_id": "INC-08",
+          "severity": 5,
+          "required_capability": "trauma",
+          "needs_als": true,
+          "deadline_min": 8,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-08-2",
+          "incident_id": "INC-08",
+          "severity": 5,
+          "required_capability": "trauma",
+          "needs_als": true,
+          "deadline_min": 11,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-08-3",
+          "incident_id": "INC-08",
+          "severity": 2,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 40,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-08-4",
+          "incident_id": "INC-08",
+          "severity": 3,
+          "required_capability": "trauma",
+          "needs_als": false,
+          "deadline_min": 33,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "rescue",
+      "description": null
+    },
+    {
+      "incident_id": "INC-09",
+      "incident_type": "vehicle_collision",
+      "location": {
+        "x": 17.8,
+        "y": 13.2
+      },
+      "arrival_time_min": 40,
+      "victims": [
+        {
+          "victim_id": "V-09-1",
+          "incident_id": "INC-09",
+          "severity": 3,
+          "required_capability": "trauma",
+          "needs_als": false,
+          "deadline_min": 37,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-09-2",
+          "incident_id": "INC-09",
+          "severity": 2,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 51,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-09-3",
+          "incident_id": "INC-09",
+          "severity": 4,
+          "required_capability": "trauma",
+          "needs_als": true,
+          "deadline_min": 15,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "rescue",
+      "description": null
+    },
+    {
+      "incident_id": "INC-10",
+      "incident_type": "structural_collapse",
+      "location": {
+        "x": 3.8,
+        "y": 13.0
+      },
+      "arrival_time_min": 55,
+      "victims": [
+        {
+          "victim_id": "V-10-1",
+          "incident_id": "INC-10",
+          "severity": 3,
+          "required_capability": "trauma",
+          "needs_als": false,
+          "deadline_min": 37,
+          "condition": 100.0,
+          "status": "waiting"
+        },
+        {
+          "victim_id": "V-10-2",
+          "incident_id": "INC-10",
+          "severity": 1,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 82,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "rescue",
+      "description": null
+    },
+    {
+      "incident_id": "INC-11",
+      "incident_type": "vehicle_collision",
+      "location": {
+        "x": 8.1,
+        "y": 8.0
+      },
+      "arrival_time_min": 56,
+      "victims": [
+        {
+          "victim_id": "V-11-1",
+          "incident_id": "INC-11",
+          "severity": 3,
+          "required_capability": "trauma",
+          "needs_als": false,
+          "deadline_min": 27,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": "rescue",
+      "description": null
+    },
+    {
+      "incident_id": "INC-12",
+      "incident_type": "medical_emergency",
+      "location": {
+        "x": 18.7,
+        "y": 17.1
+      },
+      "arrival_time_min": 72,
+      "victims": [
+        {
+          "victim_id": "V-12-1",
+          "incident_id": "INC-12",
+          "severity": 2,
+          "required_capability": "general",
+          "needs_als": false,
+          "deadline_min": 49,
+          "condition": 100.0,
+          "status": "waiting"
+        }
+      ],
+      "required_responder": null,
+      "description": null
+    }
+  ]
+}
