@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t052-P03"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-02 should go to t052-P03: it serves the only urgency-5 victim and arrives fastest. t052-P01 is next best but loses because the system objective favors the more urgent victim already waiting 33 minutes; t052-P02 is lower urgency and should not displace either."
+  },
+  "tokens_in": 715,
+  "tokens_out": 90,
+  "requests": 1,
+  "latency_s": 1.916394500003662,
+  "context": null
+}

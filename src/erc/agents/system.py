@@ -4,7 +4,7 @@ Each decision round:
   assess new incidents -> Dispatch and Hospital propose (via tools) -> Python detects conflicts
   -> conflicts are resolved -> COMMIT messages -> Decisions for the engine, which validates again.
 In this system Resource Allocation resolves conflicts with the fixed priority rule; the
-negotiating system replaces that step with negotiation. Everything is written to the event log.
+negotiating system (negotiation.py) replaces that step with negotiation.
 """
 from __future__ import annotations
 
@@ -64,15 +64,18 @@ class AgentSystem:
         chosen = {p.proposal_id for p in ctx.proposals}
         for conflict in detect_conflicts(ctx.proposals, state, round_id):
             self._record(t, "conflict_detected", **conflict.model_dump(mode="json"))
-            winners, method = await self._resolve(conflict, ctx)
+            winners, method = await self._resolve(conflict, ctx, chosen)
             losers = [pid for pid in conflict.proposal_ids if pid not in winners]
             chosen -= set(losers)
+            chosen |= set(winners)          # may include counter-proposals created by negotiation
             by_id = {p.proposal_id: p for p in ctx.proposals}
+            nid = conflict.conflict_id if method == "negotiation" else None
             for pid in conflict.proposal_ids:
                 p = by_id[pid]
                 verdict = MessageType.ACCEPT if pid in winners else MessageType.REJECT
                 self._message(t, RA, p.proposer, verdict, p.incident_id, p.action, p.priority,
-                              f"{method}: {conflict.reason}", in_reply_to=self._proposal_msg[pid])
+                              f"{method}: {conflict.reason}", in_reply_to=self._proposal_msg.get(pid, pid),
+                              negotiation_id=nid, round_=1 if nid else 0)
             self._record(t, "conflict_resolved", conflict_id=conflict.conflict_id, method=method,
                          winners=sorted(winners), losers=sorted(losers))
 
@@ -84,7 +87,7 @@ class AgentSystem:
                 decisions.append(Decision(p.action, p.incident_id, source=p.proposer.value, message_id=mid))
         return decisions
 
-    async def _resolve(self, conflict: Conflict, ctx: AgentContext) -> tuple[list[str], str]:
+    async def _resolve(self, conflict: Conflict, ctx: AgentContext, chosen: set[str]) -> tuple[list[str], str]:
         """Fixed priority rule. The negotiating system overrides this step."""
         return resolve_by_priority(conflict, ctx), "priority_rule"
 

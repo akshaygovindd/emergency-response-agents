@@ -37,6 +37,5 @@ def test_runs_are_reproducible():
     assert a == b
 
 
-def test_unimplemented_mode_is_refused():
-    with pytest.raises(ValueError):
-        exp.run_one(ScenarioName.NORMAL, 42, Mode.NEGOTIATION)
+def test_every_mode_is_registered():
+    assert set(exp.POLICIES) == set(Mode)

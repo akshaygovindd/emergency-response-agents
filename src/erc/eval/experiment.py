@@ -6,6 +6,7 @@ from collections.abc import Callable
 
 import pandas as pd
 
+from erc.agents.negotiation import NegotiatingSystem
 from erc.agents.system import AgentSystem
 from erc.config import LOG_DIR, RESULTS_DIR, SCENARIO_DIR, Mode, ScenarioName, seeds_for
 from erc.eval.metrics import RunMetrics, compute_metrics
@@ -20,6 +21,8 @@ POLICIES: dict[Mode, Callable[[], Policy]] = {
     Mode.NAIVE: NaivePolicy,
     Mode.GREEDY: GreedyPolicy,
     Mode.AGENTS: lambda: AgentSystem(negotiate=False),
+    Mode.NEGOTIATION: lambda: NegotiatingSystem(),
+    Mode.ORACLE: lambda: NegotiatingSystem(oracle=True),
 }
 RUNS_FILE = RESULTS_DIR / "runs.jsonl"
 KEY_METRICS = ["critical_service_rate", "critical_response_mean", "response_p95",
