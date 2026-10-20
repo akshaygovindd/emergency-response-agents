@@ -59,9 +59,13 @@ class TravelConfig(BaseModel):
 
 
 class DeteriorationConfig(BaseModel):
-    """Synthetic condition model: 100 = stable, lower = worse."""
-    loss_per_min: dict[int, float] = {1: 0.1, 2: 0.2, 3: 0.4, 4: 0.8, 5: 1.5}
-    in_transport_factor: float = 0.5   # crews slow deterioration during transport
+    """Synthetic condition model: 100 = stable, lower = worse.
+
+    The deadline is the time until first medical contact. Once a crew is with
+    the victim (on scene or in transport), decline is slowed by a care factor.
+    """
+    als_care_factor: float = 0.1       # advanced crew nearly stabilizes the victim
+    bls_care_factor: float = 0.5       # basic crew halves the decline
     critical_threshold: float = 40.0   # below this, the victim counts as deteriorated
     deadline_range_min: dict[int, tuple[int, int]] = {
         5: (8, 15), 4: (15, 25), 3: (25, 40), 2: (40, 60), 1: (60, 90),
