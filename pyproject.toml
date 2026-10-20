@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "erc"
+version = "0.1.0"
+description = "Negotiation-based multi-agent emergency resource coordination"
+requires-python = ">=3.12"
+dependencies = [
+    "openai-agents",
+    "pydantic>=2",
+    "numpy",
+    "pandas",
+    "streamlit",
+    "plotly",
+    "python-dotenv",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
