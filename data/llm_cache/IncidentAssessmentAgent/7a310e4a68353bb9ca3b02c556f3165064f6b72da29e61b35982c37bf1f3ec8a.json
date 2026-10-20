@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Structural collapse with trapped victims requires rescue. The first person has altered mental status, breathing difficulty, and heavy bleeding, making this an immediate life threat; the second is stable and ambulatory with moderate pain."
+  },
+  "tokens_in": 570,
+  "tokens_out": 115,
+  "latency_s": 1.1671085839989246
+}

@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 90,
+    "reasoning": "Four trapped victims in a vehicle collision require rescue. Two are urgency 4 with confusion and breathing difficulty, so ALS is needed; the other two are stable but significant trauma cases."
+  },
+  "tokens_in": 627,
+  "tokens_out": 156,
+  "latency_s": 1.3040420000033919
+}

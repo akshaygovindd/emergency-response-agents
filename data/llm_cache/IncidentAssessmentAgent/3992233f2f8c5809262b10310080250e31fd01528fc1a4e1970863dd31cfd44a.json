@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Structural collapse with trapped victims requires rescue. The first person is critical with absent/abnormal breathing or massive bleeding; the second is stable but significantly injured and unable to walk."
+  },
+  "tokens_in": 613,
+  "tokens_out": 110,
+  "latency_s": 1.7733542500063777
+}

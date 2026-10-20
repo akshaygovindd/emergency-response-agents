@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Structural collapse with all three victims trapped. Two are critical with absent/abnormal breathing or massive bleeding; the third is also high acuity with altered mental status, breathing difficulty/heavy bleeding, and severe pain."
+  },
+  "tokens_in": 610,
+  "tokens_out": 140,
+  "latency_s": 1.37571525000385
+}

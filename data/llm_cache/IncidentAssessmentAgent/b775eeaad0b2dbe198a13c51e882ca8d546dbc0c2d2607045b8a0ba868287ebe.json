@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 45,
+    "reasoning": "One alert, walking person has moderate pain and a medical issue, so this is urgency 2 and general care. Rescue is needed because the person is trapped and must be freed."
+  },
+  "tokens_in": 558,
+  "tokens_out": 87,
+  "latency_s": 1.280463666000287
+}

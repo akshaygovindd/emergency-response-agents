@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "Two victims need immediate advanced support, including one with abnormal breathing and one confused with breathing difficulty. An active burning hazard is still present, so fire response is needed."
+  },
+  "tokens_in": 602,
+  "tokens_out": 127,
+  "latency_s": 1.1746992499975022
+}

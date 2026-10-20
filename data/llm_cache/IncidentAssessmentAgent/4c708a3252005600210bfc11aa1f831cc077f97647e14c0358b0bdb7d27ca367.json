@@ -1,0 +1,42 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 5,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "A structural collapse has trapped all five victims, so rescue is required. The first two have life-threatening or severe symptoms, driving a very high priority."
+  },
+  "tokens_in": 630,
+  "tokens_out": 173,
+  "latency_s": 2.539905625002575
+}

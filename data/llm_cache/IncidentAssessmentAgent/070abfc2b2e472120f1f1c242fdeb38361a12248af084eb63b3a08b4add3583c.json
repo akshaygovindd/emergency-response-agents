@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Both victims are trapped in a vehicle collision and show life-threatening trauma with confusion, severe pain, and breathing/bleeding concerns. Rescue is needed for extrication, and both require advanced life support."
+  },
+  "tokens_in": 609,
+  "tokens_out": 115,
+  "latency_s": 1.4898757919945638
+}

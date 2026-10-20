@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Both victims are trapped in a vehicle collision and have reduced consciousness, breathing difficulty, and severe pain, indicating high urgency and need for extrication. No fire is reported, but rescue and advanced life support are required."
+  },
+  "tokens_in": 585,
+  "tokens_out": 118,
+  "latency_s": 1.1133237090034527
+}

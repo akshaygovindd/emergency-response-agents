@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 90,
+    "reasoning": "Active fire/hazard is still burning, so fire team is needed. The first person has reduced consciousness and breathing trouble with burns/smoke exposure, making this the most urgent case and requiring ALS; the others are less severe but still injured."
+  },
+  "tokens_in": 627,
+  "tokens_out": 143,
+  "latency_s": 1.5740663329997915
+}

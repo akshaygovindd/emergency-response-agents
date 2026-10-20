@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Four trapped trauma victims in a vehicle collision, including one unresponsive/barely responsive patient with abnormal breathing and two with reduced consciousness and breathing/bleeding concerns. Highest urgency is immediate and multiple patients require advanced life support and extrication."
+  },
+  "tokens_in": 697,
+  "tokens_out": 169,
+  "latency_s": 1.3164762909946148
+}

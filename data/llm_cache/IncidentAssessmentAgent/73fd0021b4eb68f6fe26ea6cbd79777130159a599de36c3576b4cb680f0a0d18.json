@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 92,
+    "reasoning": "Three trapped victims in a vehicle collision. The first has altered mental status with breathing difficulty/heavy bleeding, making this the highest urgency; the others are stable but still injured and require extrication."
+  },
+  "tokens_in": 609,
+  "tokens_out": 135,
+  "latency_s": 2.134692041996459
+}

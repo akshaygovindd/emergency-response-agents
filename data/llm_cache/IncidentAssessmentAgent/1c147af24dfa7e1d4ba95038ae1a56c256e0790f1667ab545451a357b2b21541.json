@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 96,
+    "reasoning": "Two victims have life-threatening trauma with breathing/bleeding issues and reduced consciousness, and all three are trapped in a structural collapse. Rescue is needed to free them; the third victim is minor."
+  },
+  "tokens_in": 636,
+  "tokens_out": 136,
+  "latency_s": 1.2593363330015563
+}

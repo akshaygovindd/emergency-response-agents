@@ -1,0 +1,2534 @@
+{
+  "rates": {
+    "incidents": 420,
+    "victims": 960,
+    "victim_count_correct": 0.9928571428571429,
+    "severity_exact": 0.91875,
+    "severity_within_1": 0.9958333333333333,
+    "critical_flag_correct": 0.9958333333333333,
+    "care_type_correct": 0.98125,
+    "als_correct": 0.9958333333333333,
+    "team_needed_correct": 1.0
+  },
+  "cost": {
+    "calls": 420,
+    "hits": 20,
+    "tokens_in": 244914,
+    "tokens_out": 48769
+  },
+  "errors": [
+    {
+      "scenario": "normal",
+      "seed": 42,
+      "incident": "INC-04",
+      "truth": [
+        [
+          4,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 42,
+      "incident": "INC-10",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 43,
+      "incident": "INC-04",
+      "truth": [
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": null,
+      "responder_assessed": null
+    },
+    {
+      "scenario": "normal",
+      "seed": 43,
+      "incident": "INC-07",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "trauma"
+        ],
+        [
+          1,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 43,
+      "incident": "INC-09",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ],
+        [
+          4,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "normal",
+      "seed": 43,
+      "incident": "INC-10",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          3,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          3,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 43,
+      "incident": "INC-12",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 44,
+      "incident": "INC-05",
+      "truth": [
+        [
+          4,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "normal",
+      "seed": 44,
+      "incident": "INC-12",
+      "truth": [
+        [
+          3,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 45,
+      "incident": "INC-03",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 45,
+      "incident": "INC-04",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 46,
+      "incident": "INC-03",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "normal",
+      "seed": 47,
+      "incident": "INC-01",
+      "truth": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 48,
+      "incident": "INC-01",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 48,
+      "incident": "INC-09",
+      "truth": [
+        [
+          3,
+          "burn"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "burn"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "normal",
+      "seed": 49,
+      "incident": "INC-04",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 49,
+      "incident": "INC-10",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 50,
+      "incident": "INC-01",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 50,
+      "incident": "INC-06",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 50,
+      "incident": "INC-08",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 50,
+      "incident": "INC-09",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          1,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 51,
+      "incident": "INC-01",
+      "truth": [
+        [
+          4,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "general"
+        ]
+      ],
+      "responder_truth": null,
+      "responder_assessed": null
+    },
+    {
+      "scenario": "normal",
+      "seed": 51,
+      "incident": "INC-02",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 51,
+      "incident": "INC-07",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          1,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "normal",
+      "seed": 51,
+      "incident": "INC-11",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 42,
+      "incident": "INC-05",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 42,
+      "incident": "INC-06",
+      "truth": [
+        [
+          4,
+          "burn"
+        ],
+        [
+          4,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          4,
+          "burn"
+        ],
+        [
+          4,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 42,
+      "incident": "INC-07",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 42,
+      "incident": "INC-09",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 42,
+      "incident": "INC-23",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          5,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          5,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 43,
+      "incident": "INC-02",
+      "truth": [
+        [
+          4,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 43,
+      "incident": "INC-08",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 43,
+      "incident": "INC-13",
+      "truth": [
+        [
+          3,
+          "burn"
+        ],
+        [
+          4,
+          "burn"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "burn"
+        ],
+        [
+          5,
+          "burn"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 43,
+      "incident": "INC-14",
+      "truth": [
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 43,
+      "incident": "INC-19",
+      "truth": [
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 43,
+      "incident": "INC-23",
+      "truth": [
+        [
+          4,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 44,
+      "incident": "INC-14",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 44,
+      "incident": "INC-17",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 45,
+      "incident": "INC-05",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 45,
+      "incident": "INC-08",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 45,
+      "incident": "INC-15",
+      "truth": [
+        [
+          3,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "general"
+        ],
+        [
+          2,
+          "trauma"
+        ],
+        [
+          1,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 45,
+      "incident": "INC-16",
+      "truth": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          3,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          3,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 45,
+      "incident": "INC-22",
+      "truth": [
+        [
+          4,
+          "burn"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "burn"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 45,
+      "incident": "INC-25",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 46,
+      "incident": "INC-21",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 47,
+      "incident": "INC-08",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          1,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 47,
+      "incident": "INC-13",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 47,
+      "incident": "INC-14",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 47,
+      "incident": "INC-15",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          3,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          3,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 47,
+      "incident": "INC-18",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 48,
+      "incident": "INC-05",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 48,
+      "incident": "INC-08",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 48,
+      "incident": "INC-09",
+      "truth": [
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 48,
+      "incident": "INC-13",
+      "truth": [
+        [
+          4,
+          "burn"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          4,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          4,
+          "burn"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          4,
+          "burn"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 48,
+      "incident": "INC-16",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          1,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 48,
+      "incident": "INC-21",
+      "truth": [
+        [
+          4,
+          "burn"
+        ],
+        [
+          4,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "burn"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 48,
+      "incident": "INC-24",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 49,
+      "incident": "INC-05",
+      "truth": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 49,
+      "incident": "INC-08",
+      "truth": [
+        [
+          4,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 49,
+      "incident": "INC-11",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          4,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 49,
+      "incident": "INC-16",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          5,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 49,
+      "incident": "INC-22",
+      "truth": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 49,
+      "incident": "INC-23",
+      "truth": [
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": null,
+      "responder_assessed": null
+    },
+    {
+      "scenario": "surge",
+      "seed": 50,
+      "incident": "INC-05",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 51,
+      "incident": "INC-17",
+      "truth": [
+        [
+          1,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          3,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "surge",
+      "seed": 51,
+      "incident": "INC-19",
+      "truth": [
+        [
+          3,
+          "burn"
+        ],
+        [
+          5,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ],
+        [
+          4,
+          "burn"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "burn"
+        ],
+        [
+          5,
+          "general"
+        ],
+        [
+          3,
+          "burn"
+        ],
+        [
+          5,
+          "burn"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 51,
+      "incident": "INC-21",
+      "truth": [
+        [
+          4,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "surge",
+      "seed": 51,
+      "incident": "INC-24",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          2,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "bottleneck",
+      "seed": 42,
+      "incident": "INC-03",
+      "truth": [
+        [
+          3,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "general"
+        ]
+      ],
+      "responder_truth": null,
+      "responder_assessed": null
+    },
+    {
+      "scenario": "bottleneck",
+      "seed": 42,
+      "incident": "INC-08",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "bottleneck",
+      "seed": 43,
+      "incident": "INC-05",
+      "truth": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          3,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "bottleneck",
+      "seed": 45,
+      "incident": "INC-01",
+      "truth": [
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          2,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "bottleneck",
+      "seed": 45,
+      "incident": "INC-07",
+      "truth": [
+        [
+          4,
+          "burn"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "burn"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          5,
+          "burn"
+        ]
+      ],
+      "responder_truth": "fire",
+      "responder_assessed": "fire"
+    },
+    {
+      "scenario": "bottleneck",
+      "seed": 46,
+      "incident": "INC-02",
+      "truth": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          2,
+          "general"
+        ],
+        [
+          1,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    },
+    {
+      "scenario": "bottleneck",
+      "seed": 46,
+      "incident": "INC-09",
+      "truth": [
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "general"
+        ],
+        [
+          4,
+          "trauma"
+        ],
+        [
+          4,
+          "general"
+        ]
+      ],
+      "assessed": [
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "general"
+        ],
+        [
+          5,
+          "trauma"
+        ],
+        [
+          5,
+          "general"
+        ]
+      ],
+      "responder_truth": "rescue",
+      "responder_assessed": "rescue"
+    }
+  ]
+}

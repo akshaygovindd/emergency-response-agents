@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "The person is trapped and has altered mental status, breathing difficulty, heavy bleeding, and severe pain, indicating immediate life threat. Rescue is needed for extrication."
+  },
+  "tokens_in": 573,
+  "tokens_out": 84,
+  "latency_s": 1.9559265419957228
+}

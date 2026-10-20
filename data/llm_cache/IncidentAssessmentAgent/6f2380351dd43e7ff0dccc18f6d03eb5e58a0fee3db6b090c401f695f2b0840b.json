@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 98,
+    "reasoning": "The first person is unresponsive with abnormal breathing, indicating an immediate life threat. No rescue or fire hazard is described."
+  },
+  "tokens_in": 541,
+  "tokens_out": 74,
+  "latency_s": 1.302281459000369
+}

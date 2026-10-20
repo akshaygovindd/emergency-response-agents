@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 62,
+    "reasoning": "Two patients are significantly injured but stable, and one has a minor medical complaint. An active fire/hazard is still burning, so fire response is needed."
+  },
+  "tokens_in": 611,
+  "tokens_out": 125,
+  "latency_s": 1.1040374590011197
+}

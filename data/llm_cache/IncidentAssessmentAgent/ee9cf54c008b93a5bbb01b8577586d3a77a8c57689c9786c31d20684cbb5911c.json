@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 96,
+    "reasoning": "All four are trapped in a structural collapse, making rescue urgent. The first two have the highest acuity, including one with life-threatening breathing/bleeding issues and one with altered mental status and severe pain."
+  },
+  "tokens_in": 682,
+  "tokens_out": 162,
+  "latency_s": 1.314079584000865
+}

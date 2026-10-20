@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Three trapped trauma victims in a vehicle collision. Two are critical with abnormal breathing or massive bleeding, and the third is also high acuity with confusion and severe pain plus breathing/bleeding concerns."
+  },
+  "tokens_in": 594,
+  "tokens_out": 137,
+  "latency_s": 1.4819304580014432
+}

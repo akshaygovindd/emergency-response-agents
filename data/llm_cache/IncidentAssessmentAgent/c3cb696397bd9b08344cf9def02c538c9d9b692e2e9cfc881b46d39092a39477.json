@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "Active fire still burning, so fire response is needed. Two patients are at urgency 4 and one is at urgency 5, including one with abnormal breathing and one barely responsive, making this a very high-priority incident."
+  },
+  "tokens_in": 604,
+  "tokens_out": 161,
+  "latency_s": 1.2492490829972667
+}

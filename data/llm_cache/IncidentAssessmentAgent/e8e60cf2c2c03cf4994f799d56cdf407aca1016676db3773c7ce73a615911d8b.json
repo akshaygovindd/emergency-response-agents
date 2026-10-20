@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 98,
+    "reasoning": "Single victim is unresponsive with abnormal breathing and burns, indicating immediate life threat. Active hazard still present, so fire response is needed."
+  },
+  "tokens_in": 549,
+  "tokens_out": 77,
+  "latency_s": 1.2086941250017844
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 25,
+    "reasoning": "One alert, ambulatory person with moderate pain and a medical problem. No trapped victims or active fire/hazard are mentioned."
+  },
+  "tokens_in": 544,
+  "tokens_out": 75,
+  "latency_s": 1.1331964999990305
+}

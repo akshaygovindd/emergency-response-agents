@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 96,
+    "reasoning": "Four trapped victims need extrication. Two are critical with altered consciousness/abnormal breathing and heavy bleeding, making this a high-priority multi-casualty incident."
+  },
+  "tokens_in": 620,
+  "tokens_out": 154,
+  "latency_s": 1.2566862079984276
+}

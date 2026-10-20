@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "One person has minor medical complaints, while the second has life-threatening burn/smoke inhalation with abnormal breathing and reduced responsiveness. An active fire is still present, so fire response is needed."
+  },
+  "tokens_in": 568,
+  "tokens_out": 111,
+  "latency_s": 1.1673122080028406
+}

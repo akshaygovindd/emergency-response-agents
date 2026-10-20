@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Three trapped victims after a vehicle collision. The first has life-threatening breathing/bleeding problems, the second has confusion with breathing difficulty and severe pain, and the third is walking with moderate symptoms."
+  },
+  "tokens_in": 586,
+  "tokens_out": 136,
+  "latency_s": 1.2475231670032372
+}

@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 88,
+    "reasoning": "All three are trapped and need extrication, so rescue is required. Two patients are urgent with confusion, severe pain, and breathing trouble; the first is stable but symptomatic."
+  },
+  "tokens_in": 580,
+  "tokens_out": 131,
+  "latency_s": 1.4057899589970475
+}

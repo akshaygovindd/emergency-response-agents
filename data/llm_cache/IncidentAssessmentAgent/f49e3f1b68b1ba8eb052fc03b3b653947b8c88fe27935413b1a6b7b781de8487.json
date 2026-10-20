@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 90,
+    "reasoning": "One trapped victim is confused and drowsy with breathing difficulty and severe pain, making this a high-urgency incident. Rescue is needed to free the person before care can continue."
+  },
+  "tokens_in": 556,
+  "tokens_out": 88,
+  "latency_s": 1.0008749580010772
+}

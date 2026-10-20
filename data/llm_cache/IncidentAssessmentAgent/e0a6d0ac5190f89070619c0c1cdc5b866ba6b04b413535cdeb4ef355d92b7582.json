@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 82,
+    "reasoning": "The person is confused and drowsy with breathing difficulty and severe pain, indicating a high-acuity medical emergency. No trapped victims or active fire/hazard are mentioned."
+  },
+  "tokens_in": 551,
+  "tokens_out": 84,
+  "latency_s": 1.2391565829966567
+}

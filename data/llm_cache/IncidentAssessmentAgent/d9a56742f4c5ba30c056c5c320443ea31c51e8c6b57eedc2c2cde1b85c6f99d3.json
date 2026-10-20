@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 96,
+    "reasoning": "An active building fire is still burning, so fire response is needed. Two victims are at life-threatening urgency and the third has serious burn/smoke injuries, making this a very high-priority incident."
+  },
+  "tokens_in": 594,
+  "tokens_out": 135,
+  "latency_s": 1.2339193750012782
+}

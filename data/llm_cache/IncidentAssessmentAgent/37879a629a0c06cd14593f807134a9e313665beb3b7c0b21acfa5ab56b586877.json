@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 86,
+    "reasoning": "Four trapped victims in a vehicle collision, with one critical patient showing reduced consciousness and severe breathing/bleeding concerns. The others are lower acuity, but the entrapment makes rescue response necessary."
+  },
+  "tokens_in": 635,
+  "tokens_out": 157,
+  "latency_s": 1.3359262079975451
+}

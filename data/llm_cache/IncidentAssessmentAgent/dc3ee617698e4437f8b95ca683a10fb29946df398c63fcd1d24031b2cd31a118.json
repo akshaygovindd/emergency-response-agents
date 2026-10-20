@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 88,
+    "reasoning": "One victim has burns and smoke inhalation with confusion, drowsiness, breathing difficulty, and severe pain, indicating high acuity and ALS need. An active fire hazard is still present, so fire response is required."
+  },
+  "tokens_in": 557,
+  "tokens_out": 94,
+  "latency_s": 2.471060791001946
+}

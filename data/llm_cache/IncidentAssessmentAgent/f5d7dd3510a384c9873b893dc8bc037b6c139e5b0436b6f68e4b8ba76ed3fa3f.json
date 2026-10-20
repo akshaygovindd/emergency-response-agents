@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 35,
+    "reasoning": "Both described people are alert, in significant pain, and unable to walk, with bleeding controlled for the second; this fits urgency 3. No trapped victims or active fire/hazard is reported."
+  },
+  "tokens_in": 559,
+  "tokens_out": 111,
+  "latency_s": 2.110876582999481
+}

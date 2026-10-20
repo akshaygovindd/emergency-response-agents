@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 70,
+    "reasoning": "Multiple injured patients are trapped, so rescue is needed. Three are stable but significantly injured and unable to walk; one has only minor symptoms, and no one meets the report criteria for advanced life support."
+  },
+  "tokens_in": 635,
+  "tokens_out": 159,
+  "latency_s": 1.4688062499990338
+}

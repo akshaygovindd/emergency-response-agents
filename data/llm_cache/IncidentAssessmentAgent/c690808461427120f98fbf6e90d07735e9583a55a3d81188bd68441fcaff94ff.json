@@ -1,0 +1,42 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 5,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "A fire is still active, so fire support is needed. Two victims are unresponsive/breathing abnormally and one is confused with breathing difficulty, making this a very high-priority incident."
+  },
+  "tokens_in": 641,
+  "tokens_out": 177,
+  "latency_s": 1.8510148339992156
+}

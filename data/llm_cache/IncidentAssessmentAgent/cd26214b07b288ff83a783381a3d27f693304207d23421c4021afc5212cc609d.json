@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Four people are trapped in a structural collapse, so rescue is required. The first has abnormal breathing and the fourth is confused with breathing difficulty, making this a high-acuity incident with two patients needing advanced life support."
+  },
+  "tokens_in": 593,
+  "tokens_out": 163,
+  "latency_s": 1.3822335000004387
+}

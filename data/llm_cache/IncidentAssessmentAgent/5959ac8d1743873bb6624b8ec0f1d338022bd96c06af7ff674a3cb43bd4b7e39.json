@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 88,
+    "reasoning": "Three victims are trapped in a vehicle collision, so rescue is needed. The first person has confusion, breathing difficulty or heavy bleeding, and severe trauma, making this the highest priority with ALS required; the other two are stable, walking, and moderately injured."
+  },
+  "tokens_in": 631,
+  "tokens_out": 147,
+  "latency_s": 1.2564863750012591
+}

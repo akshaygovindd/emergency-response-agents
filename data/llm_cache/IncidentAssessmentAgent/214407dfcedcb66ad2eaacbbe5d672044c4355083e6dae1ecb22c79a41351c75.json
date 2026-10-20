@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 92,
+    "reasoning": "One patient has minor trauma only, while the second is confused, drowsy, short of breath, in severe pain, and heavily bleeding, making this a critical incident. Both are trapped, so rescue is needed."
+  },
+  "tokens_in": 582,
+  "tokens_out": 119,
+  "latency_s": 1.32457254199835
+}

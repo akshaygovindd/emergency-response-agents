@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 82,
+    "reasoning": "The only patient is confused and drowsy with trouble breathing and severe pain, indicating a high-acuity medical emergency. No trapped victims or active hazard are mentioned."
+  },
+  "tokens_in": 547,
+  "tokens_out": 83,
+  "latency_s": 1.4442435419987305
+}

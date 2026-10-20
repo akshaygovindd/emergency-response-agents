@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 96,
+    "reasoning": "Two trapped victims in a vehicle collision require rescue. The first is critically ill/injured with life-threatening trauma; the second is walking with moderate pain and a non-traumatic medical problem."
+  },
+  "tokens_in": 588,
+  "tokens_out": 112,
+  "latency_s": 1.3291177919963957
+}

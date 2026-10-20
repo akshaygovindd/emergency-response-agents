@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 92,
+    "reasoning": "The only described victim is trapped in a vehicle collision with confusion/drowsiness, breathing difficulty or heavy bleeding, and severe pain, indicating a high-acuity trauma patient. Rescue is needed for extrication."
+  },
+  "tokens_in": 563,
+  "tokens_out": 93,
+  "latency_s": 1.0556645420001587
+}

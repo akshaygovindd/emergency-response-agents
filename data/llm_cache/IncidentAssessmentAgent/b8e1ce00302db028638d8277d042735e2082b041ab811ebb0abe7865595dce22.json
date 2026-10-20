@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 96,
+    "reasoning": "A collapse has trapped both victims, so rescue is needed. The first victim is critical with abnormal breathing/major bleeding and requires ALS; the second is stable but in pain."
+  },
+  "tokens_in": 596,
+  "tokens_out": 109,
+  "latency_s": 1.1138434170061373
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "One trapped victim after a vehicle collision is unresponsive with abnormal breathing or massive bleeding, indicating immediate life threat and need for extrication."
+  },
+  "tokens_in": 554,
+  "tokens_out": 79,
+  "latency_s": 1.0388134169988916
+}

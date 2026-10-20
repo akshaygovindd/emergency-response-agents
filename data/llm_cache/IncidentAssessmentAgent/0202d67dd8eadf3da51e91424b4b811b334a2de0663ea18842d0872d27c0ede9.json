@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 72,
+    "reasoning": "One alert, walking person with moderate pain and a medical problem is urgency 2. The active burning hazard makes fire response necessary, driving the incident priority higher."
+  },
+  "tokens_in": 549,
+  "tokens_out": 82,
+  "latency_s": 1.3928123339937883
+}

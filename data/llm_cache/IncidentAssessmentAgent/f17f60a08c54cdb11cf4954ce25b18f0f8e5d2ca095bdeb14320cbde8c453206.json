@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 78,
+    "reasoning": "Two trapped victims in a vehicle collision. The first is alert and walking with moderate pain, while the second has confusion, drowsiness, breathing difficulty, and severe trauma, making this a high-priority rescue response."
+  },
+  "tokens_in": 572,
+  "tokens_out": 118,
+  "latency_s": 1.162773374999233
+}

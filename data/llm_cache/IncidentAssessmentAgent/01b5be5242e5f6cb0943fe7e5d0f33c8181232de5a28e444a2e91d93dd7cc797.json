@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "One victim has life-threatening trauma with abnormal breathing or massive bleeding and needs ALS. The second is walking with moderate pain, but both are trapped, so rescue is needed."
+  },
+  "tokens_in": 576,
+  "tokens_out": 108,
+  "latency_s": 1.0362367089983309
+}

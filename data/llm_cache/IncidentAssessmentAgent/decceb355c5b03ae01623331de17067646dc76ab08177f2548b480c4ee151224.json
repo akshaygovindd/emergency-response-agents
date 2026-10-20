@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "All three victims are trapped in a vehicle collision and need extrication. Two have life-threatening conditions (one unresponsive with abnormal breathing/massive bleeding), and the other two are critically ill with reduced consciousness and breathing/bleeding concerns."
+  },
+  "tokens_in": 613,
+  "tokens_out": 146,
+  "latency_s": 1.2219004999933532
+}

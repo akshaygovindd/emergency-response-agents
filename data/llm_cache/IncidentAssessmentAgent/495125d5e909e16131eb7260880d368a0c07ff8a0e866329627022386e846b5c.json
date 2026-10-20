@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "One victim has reduced consciousness, breathing difficulty, severe pain, and burn/smoke or chemical inhalation injury, making this an immediate life threat. An active burning hazard is still present, so fire response is needed."
+  },
+  "tokens_in": 557,
+  "tokens_out": 94,
+  "latency_s": 1.054004375000659
+}

@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 88,
+    "reasoning": "Three trapped victims after a vehicle collision. The first has reduced consciousness with breathing difficulty and possible heavy bleeding, making this the highest priority and ALS needed; the others are injured but more stable."
+  },
+  "tokens_in": 595,
+  "tokens_out": 135,
+  "latency_s": 1.253216707998945
+}

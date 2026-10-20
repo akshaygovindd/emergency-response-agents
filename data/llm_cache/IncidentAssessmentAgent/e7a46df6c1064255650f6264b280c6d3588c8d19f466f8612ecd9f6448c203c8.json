@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 35,
+    "reasoning": "Two trapped patients are reported, but both are alert, walking, and only have minor discomfort from medical problems. Rescue is needed to free them, with no indication of fire or advanced life support needs."
+  },
+  "tokens_in": 567,
+  "tokens_out": 113,
+  "latency_s": 1.3278661250005825
+}

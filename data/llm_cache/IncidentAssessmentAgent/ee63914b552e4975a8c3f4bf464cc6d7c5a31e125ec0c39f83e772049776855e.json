@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 92,
+    "reasoning": "One victim is barely responsive with abnormal breathing, making this a critical life threat. All four are trapped in a vehicle collision, so rescue is needed, and the remaining three have significant but less immediate injuries."
+  },
+  "tokens_in": 622,
+  "tokens_out": 161,
+  "latency_s": 1.3177257920033298
+}

@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 48,
+    "reasoning": "Three trapped patients in a vehicle collision require extrication. The third is the most serious with significant pain and inability to walk; the first two are stable and ambulatory."
+  },
+  "tokens_in": 594,
+  "tokens_out": 130,
+  "latency_s": 1.947779249996529
+}

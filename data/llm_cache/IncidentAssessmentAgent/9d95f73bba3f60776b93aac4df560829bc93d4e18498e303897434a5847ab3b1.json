@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 68,
+    "reasoning": "Two patients have burn/smoke inhalation injuries with significant pain and inability to walk, but are alert and breathing controlled. An active building fire is still present, so fire response is needed."
+  },
+  "tokens_in": 586,
+  "tokens_out": 111,
+  "latency_s": 1.2678239159940858
+}

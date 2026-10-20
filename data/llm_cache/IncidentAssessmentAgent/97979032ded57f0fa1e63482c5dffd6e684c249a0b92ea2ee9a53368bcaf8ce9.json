@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 90,
+    "reasoning": "The patient is trapped and has altered mental status, breathing difficulty, and severe traumatic injury, making this a high-priority incident needing rescue and ALS."
+  },
+  "tokens_in": 556,
+  "tokens_out": 82,
+  "latency_s": 1.0829188329953467
+}

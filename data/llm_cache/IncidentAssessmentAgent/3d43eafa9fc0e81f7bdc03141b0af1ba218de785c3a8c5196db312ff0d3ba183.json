@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "All four victims need urgent care and extrication. The fourth is critical with abnormal breathing, and the others are confused with severe pain and breathing difficulty, so advanced support is needed for all."
+  },
+  "tokens_in": 604,
+  "tokens_out": 156,
+  "latency_s": 2.1967507079971256
+}

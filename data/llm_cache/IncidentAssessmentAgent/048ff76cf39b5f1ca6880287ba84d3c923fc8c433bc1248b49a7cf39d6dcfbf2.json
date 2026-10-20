@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 85,
+    "reasoning": "The person is confused with trouble breathing and severe pain, indicating a serious medical emergency with reduced consciousness and respiratory distress. No rescue or fire hazard is reported."
+  },
+  "tokens_in": 543,
+  "tokens_out": 81,
+  "latency_s": 1.1133884999944712
+}

@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 2,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 45,
+    "reasoning": "Four injured people are trapped, so rescue is needed. All are described as alert and walking with moderate pain, so urgency is 2; chest pain, breathing trouble, and fainting are noted but not described as reduced consciousness or severe distress in the report."
+  },
+  "tokens_in": 608,
+  "tokens_out": 170,
+  "latency_s": 1.2950934590044199
+}

@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "Two victims have life-threatening smoke/burn-related breathing problems, and two others are seriously injured but stable. A fire is still active, so fire response is needed immediately."
+  },
+  "tokens_in": 627,
+  "tokens_out": 150,
+  "latency_s": 1.0495432499956223
+}

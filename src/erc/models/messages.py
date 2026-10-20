@@ -129,13 +129,23 @@ class ValidationResult(StrictModel):
         return self
 
 
-class AssessmentReport(StrictModel):
-    """What the Assessment Agent extracts from a text report."""
-    incident_id: str
-    victim_count: int = Field(ge=1)
-    max_severity: Severity
+class VictimAssessment(StrictModel):
+    """One person's assessed condition, mapped to a victim ID."""
+    victim_id: str
+    severity: Severity
     required_capability: Capability
     needs_als: bool
+
+
+class AssessmentReport(StrictModel):
+    """What the Assessment Agent concludes about one incident from its text report."""
+    incident_id: str
+    victims: list[VictimAssessment] = Field(min_length=1)
+    reported_victim_count: int = Field(ge=0, description="How many people the agent found in the report")
     required_responder: ResponderType | None = None
     priority_score: int = Field(ge=0, le=100)
-    reasoning: str = Field(min_length=1, max_length=500)
+    reasoning: str = Field(min_length=1, max_length=1000)
+
+    @property
+    def max_severity(self) -> Severity:
+        return max(v.severity for v in self.victims)

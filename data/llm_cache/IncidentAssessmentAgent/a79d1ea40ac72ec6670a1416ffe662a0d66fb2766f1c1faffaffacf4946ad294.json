@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "A fire is still active, so fire response is needed. The second person is critical with abnormal breathing; the third has significant burn/smoke injury but is conscious and bleeding is controlled."
+  },
+  "tokens_in": 593,
+  "tokens_out": 132,
+  "latency_s": 1.4019818749948172
+}

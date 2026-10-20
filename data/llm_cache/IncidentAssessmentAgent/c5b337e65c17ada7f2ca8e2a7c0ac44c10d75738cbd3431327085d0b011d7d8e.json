@@ -1,0 +1,42 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 5,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 88,
+    "reasoning": "Active fire hazard is still burning, so fire response is needed. Two victims have confusion and breathing difficulty from smoke/chemical inhalation, making this a high-priority incident with ALS needed for those patients."
+  },
+  "tokens_in": 613,
+  "tokens_out": 179,
+  "latency_s": 1.5185040830037906
+}

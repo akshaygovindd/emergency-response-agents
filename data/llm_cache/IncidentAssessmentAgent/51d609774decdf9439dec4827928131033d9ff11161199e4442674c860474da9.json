@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 88,
+    "reasoning": "Four people are trapped in a structural collapse, so rescue is needed. The second person is critical with altered responsiveness and breathing trouble; the others are less urgent but still need extrication and trauma care."
+  },
+  "tokens_in": 606,
+  "tokens_out": 160,
+  "latency_s": 1.6191057079995517
+}

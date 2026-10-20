@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 92,
+    "reasoning": "Three victims are trapped in a structural collapse. One has minor medical issues, one has significant trauma with controlled bleeding and cannot walk, and one has life-threatening breathing/response problems requiring immediate advanced care."
+  },
+  "tokens_in": 589,
+  "tokens_out": 137,
+  "latency_s": 1.7365580839978065
+}

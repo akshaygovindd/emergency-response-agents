@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 88,
+    "reasoning": "One person is confused with trouble breathing and severe pain, suggesting a high-acuity burn/smoke inhalation case. An active hazard is still present at a building fire, so fire response is needed."
+  },
+  "tokens_in": 554,
+  "tokens_out": 91,
+  "latency_s": 1.15711987499526
+}

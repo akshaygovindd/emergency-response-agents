@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 72,
+    "reasoning": "One injured person is alert but in significant pain and unable to walk, with controlled bleeding and burn/smoke exposure, so this is urgent but not immediately life-threatening. An active fire hazard is still present, so fire response is needed."
+  },
+  "tokens_in": 557,
+  "tokens_out": 98,
+  "latency_s": 1.0982515840005362
+}

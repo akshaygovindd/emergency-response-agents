@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 20,
+    "reasoning": "One alert, walking patient with moderate pain from a medical problem. No signs of immediate life threat, trapping, or active fire/hazard."
+  },
+  "tokens_in": 544,
+  "tokens_out": 78,
+  "latency_s": 0.9857111660021474
+}

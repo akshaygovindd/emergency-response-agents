@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 98,
+    "reasoning": "Both people are barely responsive with abnormal breathing, making them immediate life threats. The incident is a building fire still actively burning, so fire support is needed."
+  },
+  "tokens_in": 570,
+  "tokens_out": 103,
+  "latency_s": 1.0010454579969519
+}

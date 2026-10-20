@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 20,
+    "reasoning": "One alert, walking patient with moderate pain and a medical issue rather than trauma. No rescue or fire hazard is described, and no advanced life support is indicated."
+  },
+  "tokens_in": 551,
+  "tokens_out": 82,
+  "latency_s": 1.044360375002725
+}

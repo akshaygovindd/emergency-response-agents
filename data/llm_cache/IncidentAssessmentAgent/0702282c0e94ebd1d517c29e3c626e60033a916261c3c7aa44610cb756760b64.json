@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 93,
+    "reasoning": "There is a structural collapse with all four victims trapped, so rescue is needed. Two victims are high-acuity: one confused with severe pain and breathing/bleeding concerns, and one unresponsive with abnormal breathing or massive bleeding."
+  },
+  "tokens_in": 618,
+  "tokens_out": 165,
+  "latency_s": 1.16073475000303
+}

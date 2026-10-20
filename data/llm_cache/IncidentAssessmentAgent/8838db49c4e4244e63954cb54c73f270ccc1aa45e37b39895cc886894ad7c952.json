@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 20,
+    "reasoning": "The person is alert, walking, and has moderate pain from a medical problem, so this is urgency 2 and general care. No trapped victims or active hazard are mentioned."
+  },
+  "tokens_in": 544,
+  "tokens_out": 85,
+  "latency_s": 1.064952666994941
+}

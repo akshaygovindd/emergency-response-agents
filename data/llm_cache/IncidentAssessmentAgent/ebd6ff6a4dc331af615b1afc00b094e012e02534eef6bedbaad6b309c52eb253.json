@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 100,
+    "reasoning": "Both victims are unresponsive with abnormal breathing and burn/smoke exposure, indicating immediate life threat. An active building fire is still present, so fire team response is needed."
+  },
+  "tokens_in": 573,
+  "tokens_out": 107,
+  "latency_s": 1.2253997920051916
+}

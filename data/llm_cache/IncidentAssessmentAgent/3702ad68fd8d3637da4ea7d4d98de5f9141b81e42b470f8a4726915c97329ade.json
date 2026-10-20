@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Both victims are trapped in a vehicle collision. The first has reduced consciousness plus breathing/bleeding concerns and severe trauma; the second is unresponsive with abnormal breathing or massive bleeding, making this an immediate high-priority incident."
+  },
+  "tokens_in": 587,
+  "tokens_out": 120,
+  "latency_s": 1.2683852090049186
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 65,
+    "reasoning": "Single trapped trauma patient with significant pain and inability to walk, but bleeding is controlled and they are alert. Rescue is needed to extricate the person; no fire or active hazard is mentioned."
+  },
+  "tokens_in": 563,
+  "tokens_out": 90,
+  "latency_s": 1.92868670799362
+}

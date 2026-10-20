@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 45,
+    "reasoning": "One alert patient with significant pain, unable to walk, and controlled bleeding fits urgency 3. No trapped victims or active hazard are reported."
+  },
+  "tokens_in": 551,
+  "tokens_out": 78,
+  "latency_s": 1.3212843750006869
+}

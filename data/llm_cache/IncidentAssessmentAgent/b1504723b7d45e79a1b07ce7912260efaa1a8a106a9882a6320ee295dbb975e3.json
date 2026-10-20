@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 20,
+    "reasoning": "The only described person is alert, walking, and in moderate pain, so this is a lower-urgency medical issue. No trapped victims or active hazard are mentioned."
+  },
+  "tokens_in": 547,
+  "tokens_out": 84,
+  "latency_s": 1.3917108750029001
+}

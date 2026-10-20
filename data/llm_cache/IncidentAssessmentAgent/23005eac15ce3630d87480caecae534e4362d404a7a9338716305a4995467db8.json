@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 92,
+    "reasoning": "Active fire is still burning, so fire response is needed. The third person has life-threatening breathing compromise, while the first has significant pain and inability to walk and the second is more stable."
+  },
+  "tokens_in": 595,
+  "tokens_out": 132,
+  "latency_s": 1.152790375002951
+}

@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 68,
+    "reasoning": "One trapped patient has significant traumatic injury and inability to walk, making this the main priority. The others are lower acuity walking patients with minor to moderate complaints; rescue is needed because all are trapped."
+  },
+  "tokens_in": 611,
+  "tokens_out": 158,
+  "latency_s": 1.3930738330018357
+}

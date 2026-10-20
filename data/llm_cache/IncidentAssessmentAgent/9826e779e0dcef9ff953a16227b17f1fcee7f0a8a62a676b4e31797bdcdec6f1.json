@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 40,
+    "reasoning": "The person is alert with significant pain and cannot walk, but bleeding is controlled and there is no trapped person or active hazard. This is urgent but not immediately life-threatening."
+  },
+  "tokens_in": 551,
+  "tokens_out": 84,
+  "latency_s": 1.139087165996898
+}

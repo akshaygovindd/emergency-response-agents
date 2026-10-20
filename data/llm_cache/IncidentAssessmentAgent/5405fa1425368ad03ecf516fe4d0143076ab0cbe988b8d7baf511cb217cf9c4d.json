@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 72,
+    "reasoning": "Two patients have significant pain and are unable to walk, but are alert with bleeding controlled, so both are urgency 3. An active hazard is still present, so fire support is needed."
+  },
+  "tokens_in": 591,
+  "tokens_out": 110,
+  "latency_s": 1.4373665829989477
+}

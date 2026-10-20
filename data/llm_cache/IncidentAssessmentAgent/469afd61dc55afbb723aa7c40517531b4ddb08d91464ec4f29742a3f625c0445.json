@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 72,
+    "reasoning": "One victim is trapped after a vehicle collision and has significant traumatic pain but is alert, unable to walk, and bleeding is controlled. Rescue is needed for extrication; no fire hazard is mentioned."
+  },
+  "tokens_in": 557,
+  "tokens_out": 91,
+  "latency_s": 1.0579105829965556
+}

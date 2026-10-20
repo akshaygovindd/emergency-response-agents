@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "One trapped crash victim is unresponsive and not breathing normally, indicating immediate life threat and need for extrication. This is a high-priority trauma incident requiring advanced life support."
+  },
+  "tokens_in": 549,
+  "tokens_out": 87,
+  "latency_s": 1.096686958000646
+}

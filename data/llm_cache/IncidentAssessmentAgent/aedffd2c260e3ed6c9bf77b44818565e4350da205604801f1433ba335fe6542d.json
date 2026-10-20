@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 92,
+    "reasoning": "Active fire/hazard is still burning, so fire response is needed. The third person has life-threatening breathing failure, and the second has significant burn-related injury and cannot walk, making this a high-priority incident."
+  },
+  "tokens_in": 610,
+  "tokens_out": 137,
+  "latency_s": 1.2955455830015126
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "One person is confused and drowsy with breathing difficulty and severe pain, indicating a life-threatening burn/inhalation injury. An active fire or hazard is still burning, so fire response is needed."
+  },
+  "tokens_in": 558,
+  "tokens_out": 90,
+  "latency_s": 1.0966000839980552
+}

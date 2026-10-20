@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 86,
+    "reasoning": "Active hazard/fire is still present, so fire team is needed. The first person is stable but significantly injured; the second has altered mental status and breathing difficulty, making this a high-priority incident."
+  },
+  "tokens_in": 588,
+  "tokens_out": 112,
+  "latency_s": 1.3045799999963492
+}

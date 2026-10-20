@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 65,
+    "reasoning": "The reported person is alert but unable to walk with significant pain and controlled bleeding, so this is urgent but not immediately life-threatening. Rescue is needed because the scene includes a trapped person needing extrication."
+  },
+  "tokens_in": 564,
+  "tokens_out": 91,
+  "latency_s": 1.173089332995005
+}

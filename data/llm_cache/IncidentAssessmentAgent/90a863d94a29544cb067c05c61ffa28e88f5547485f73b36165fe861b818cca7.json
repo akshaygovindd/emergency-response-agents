@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 72,
+    "reasoning": "Two victims have significant trauma pain and cannot walk, but bleeding is controlled. All three are trapped in a vehicle, so rescue is needed; no fire or active hazard is mentioned."
+  },
+  "tokens_in": 641,
+  "tokens_out": 133,
+  "latency_s": 1.8229227079937118
+}

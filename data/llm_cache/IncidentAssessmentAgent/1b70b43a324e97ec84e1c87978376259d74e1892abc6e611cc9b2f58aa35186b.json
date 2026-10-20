@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 62,
+    "reasoning": "There is an active burning hazard, so fire response is needed. The first person has significant pain, cannot walk, and has burns with possible inhalation injury; the second is ambulatory with a minor medical complaint."
+  },
+  "tokens_in": 579,
+  "tokens_out": 115,
+  "latency_s": 1.009603208003682
+}

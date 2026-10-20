@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "All three victims are trapped in a vehicle collision and have severe trauma. Two are critically ill (severity 4) and one is life-threatening (severity 5), so rescue and ALS are urgently needed."
+  },
+  "tokens_in": 618,
+  "tokens_out": 139,
+  "latency_s": 1.1782667090010364
+}

@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 92,
+    "reasoning": "One patient has minor symptoms and is walking. The second is critical with abnormal breathing and burn/inhalation exposure, making this a high-priority incident; an active hazard is still present."
+  },
+  "tokens_in": 570,
+  "tokens_out": 110,
+  "latency_s": 1.2501396250008838
+}

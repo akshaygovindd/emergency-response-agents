@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Both victims are trapped in a vehicle collision and are barely responsive with breathing difficulty, indicating immediate life threat. Rescue is needed to free them."
+  },
+  "tokens_in": 595,
+  "tokens_out": 103,
+  "latency_s": 1.0796335000050021
+}

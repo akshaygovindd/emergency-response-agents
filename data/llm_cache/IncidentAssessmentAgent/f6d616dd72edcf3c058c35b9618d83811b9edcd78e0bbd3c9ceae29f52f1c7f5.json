@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 55,
+    "reasoning": "Two trapped patients in a vehicle collision need extrication. Both are alert and walking with moderate pain and medical symptoms (chest pain, breathing trouble), so urgency is moderate but the scene requires rescue support."
+  },
+  "tokens_in": 575,
+  "tokens_out": 114,
+  "latency_s": 1.42293304100167
+}

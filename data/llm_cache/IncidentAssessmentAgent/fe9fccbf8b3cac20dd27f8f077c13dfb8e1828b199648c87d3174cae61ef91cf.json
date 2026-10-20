@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 98,
+    "reasoning": "Four victims in a still-burning building fire, including three with life-threatening breathing compromise and burns. Immediate fire response is needed, with advanced life support for the three most critical patients."
+  },
+  "tokens_in": 607,
+  "tokens_out": 152,
+  "latency_s": 1.2119616669951938
+}

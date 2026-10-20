@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 82,
+    "reasoning": "Multiple victims are trapped, so rescue is needed. The second person has altered mental status and breathing difficulty, making this the most urgent; the fourth has significant trauma with controlled bleeding, while the others are lower acuity."
+  },
+  "tokens_in": 613,
+  "tokens_out": 163,
+  "latency_s": 1.287816208001459
+}

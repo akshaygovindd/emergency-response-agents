@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 55,
+    "reasoning": "Three trapped victims in a vehicle collision require rescue. The third has a more significant trauma injury and inability to walk, while the first two are lower acuity general medical complaints with walking and no immediate life threat described."
+  },
+  "tokens_in": 622,
+  "tokens_out": 139,
+  "latency_s": 1.335080917000596
+}

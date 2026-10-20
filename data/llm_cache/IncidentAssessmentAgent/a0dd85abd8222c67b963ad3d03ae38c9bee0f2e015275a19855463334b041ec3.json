@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 92,
+    "reasoning": "Active fire/hazard is still burning, so fire response is needed. Two victims have confusion and breathing trouble after burn/smoke/chemical exposure, making this a high-priority incident with advanced support needed."
+  },
+  "tokens_in": 604,
+  "tokens_out": 136,
+  "latency_s": 1.1822618750011316
+}

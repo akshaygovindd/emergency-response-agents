@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 45,
+    "reasoning": "Both people are alert, walking, and have only minor discomfort from a medical problem, so each is low urgency. They are trapped in a vehicle collision, so rescue is needed to free them."
+  },
+  "tokens_in": 580,
+  "tokens_out": 112,
+  "latency_s": 1.1979380420016241
+}

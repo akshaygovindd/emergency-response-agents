@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 97,
+    "reasoning": "Two victims are critical, including one with abnormal breathing and one barely responsive, and all are trapped in a vehicle collision. The incident needs rescue response for extrication; no active fire is mentioned."
+  },
+  "tokens_in": 590,
+  "tokens_out": 135,
+  "latency_s": 1.6760797919996548
+}

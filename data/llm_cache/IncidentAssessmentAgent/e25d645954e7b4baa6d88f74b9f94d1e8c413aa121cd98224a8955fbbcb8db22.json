@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Two trapped victims in a vehicle collision. The first has altered mental status with breathing trouble or heavy bleeding and severe traumatic pain, making this immediately life-threatening; the second is walking and stable with moderate pain."
+  },
+  "tokens_in": 592,
+  "tokens_out": 115,
+  "latency_s": 1.9850020000012591
+}

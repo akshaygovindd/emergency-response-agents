@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 55,
+    "reasoning": "Two people are trapped in a structural collapse, so rescue is needed. Both are alert and walking; the first has moderate pain and the second only minor discomfort, so this is lower acuity overall despite entrapment."
+  },
+  "tokens_in": 579,
+  "tokens_out": 117,
+  "latency_s": 1.17767883399938
+}

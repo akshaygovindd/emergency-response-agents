@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 88,
+    "reasoning": "Three trapped collision victims need extrication. The third has confusion, drowsiness, and breathing difficulty, making this the highest priority; one additional patient has significant pain and inability to walk."
+  },
+  "tokens_in": 605,
+  "tokens_out": 135,
+  "latency_s": 1.2640662919948227
+}

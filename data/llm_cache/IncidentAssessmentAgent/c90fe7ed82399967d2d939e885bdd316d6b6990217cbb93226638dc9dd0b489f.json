@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Two trapped trauma patients need extrication. The first is stable but significant injury limits walking; the second has altered mental status plus breathing/bleeding concerns, making this a high-priority incident."
+  },
+  "tokens_in": 624,
+  "tokens_out": 114,
+  "latency_s": 1.9079301669989945
+}

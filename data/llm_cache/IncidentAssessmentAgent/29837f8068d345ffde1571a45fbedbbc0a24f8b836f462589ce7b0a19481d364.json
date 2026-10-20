@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 88,
+    "reasoning": "Two patients have confusion, severe pain, and breathing difficulty with smoke/chemical burns, indicating high urgency and ALS needs. A third is walking with minor symptoms; an active fire/hazard is still present."
+  },
+  "tokens_in": 595,
+  "tokens_out": 135,
+  "latency_s": 1.3100880830024835
+}

@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 70,
+    "reasoning": "Both victims are alert but unable to walk with significant pain, so urgency is 3. An active building fire/hazard is still burning, so fire response is needed."
+  },
+  "tokens_in": 591,
+  "tokens_out": 106,
+  "latency_s": 1.2515974580019247
+}

@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 88,
+    "reasoning": "Active fire remains, so fire response is needed. The first person has reduced consciousness and breathing difficulty with burn/smoke exposure, making this the highest priority; the second is walking with minor symptoms."
+  },
+  "tokens_in": 575,
+  "tokens_out": 112,
+  "latency_s": 1.211934167004074
+}

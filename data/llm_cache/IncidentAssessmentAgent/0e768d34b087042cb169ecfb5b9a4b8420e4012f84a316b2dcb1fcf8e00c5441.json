@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 62,
+    "reasoning": "Active fire/hazard is still burning, so fire team is needed. The third person is the most serious: alert but unable to walk with burns/inhalation and controlled bleeding; the first two are stable with moderate pain."
+  },
+  "tokens_in": 593,
+  "tokens_out": 139,
+  "latency_s": 1.443199209003069
+}

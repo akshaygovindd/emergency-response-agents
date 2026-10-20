@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 95,
+    "reasoning": "The first person is barely responsive with abnormal breathing, which is immediately life-threatening. No fire, hazard, or entrapment is mentioned."
+  },
+  "tokens_in": 539,
+  "tokens_out": 78,
+  "latency_s": 0.8703013339982135
+}

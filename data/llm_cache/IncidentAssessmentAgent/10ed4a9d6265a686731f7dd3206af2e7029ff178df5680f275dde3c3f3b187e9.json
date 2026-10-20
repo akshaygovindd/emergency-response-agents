@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 65,
+    "reasoning": "One injured person is trapped in a vehicle collision and needs extrication. They are alert but in significant pain and unable to walk, with controlled bleeding, so this is urgent but not immediately life-threatening."
+  },
+  "tokens_in": 557,
+  "tokens_out": 92,
+  "latency_s": 1.1714666659972863
+}

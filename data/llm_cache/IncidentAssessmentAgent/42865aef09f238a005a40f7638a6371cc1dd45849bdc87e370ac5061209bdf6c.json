@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 45,
+    "reasoning": "One alert walking person has moderate pain and a medical problem, so this is moderate urgency. An active fire is still burning, so fire response is needed."
+  },
+  "tokens_in": 548,
+  "tokens_out": 81,
+  "latency_s": 2.1707899999964866
+}

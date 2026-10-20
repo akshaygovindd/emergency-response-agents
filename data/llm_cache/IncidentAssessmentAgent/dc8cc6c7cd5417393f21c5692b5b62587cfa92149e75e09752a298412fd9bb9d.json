@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "Two high-acuity patients are reported, including one with abnormal breathing and one confused with severe pain and inhalation/burn exposure. An active burning hazard is still present, so fire support is needed immediately."
+  },
+  "tokens_in": 574,
+  "tokens_out": 113,
+  "latency_s": 1.3893841249955585
+}

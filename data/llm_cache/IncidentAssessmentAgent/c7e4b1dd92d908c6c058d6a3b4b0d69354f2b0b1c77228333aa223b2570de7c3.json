@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 90,
+    "reasoning": "Active fire/hazard is still burning, so fire team needed. The first victim has altered mental status and breathing trouble, making this the highest urgency; the other two are significant burn/smoke injury patients with severe pain and inability to walk."
+  },
+  "tokens_in": 596,
+  "tokens_out": 143,
+  "latency_s": 1.2653070830056095
+}

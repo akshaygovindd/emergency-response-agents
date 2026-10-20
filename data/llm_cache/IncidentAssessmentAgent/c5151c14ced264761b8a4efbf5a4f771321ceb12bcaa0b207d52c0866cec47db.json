@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 45,
+    "reasoning": "One alert, walking person with minor symptoms needs medical evaluation. The scene still has an active fire/hazard, so fire response is needed."
+  },
+  "tokens_in": 548,
+  "tokens_out": 78,
+  "latency_s": 1.156532375003735
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "One trapped patient after a vehicle collision is confused/drowsy with breathing difficulty or heavy bleeding and severe trauma pain, indicating a life-threatening injury. Rescue is needed to free the patient; ALS is required."
+  },
+  "tokens_in": 567,
+  "tokens_out": 93,
+  "latency_s": 1.1081309169967426
+}

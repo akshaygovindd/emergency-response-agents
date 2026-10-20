@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "The patient is barely responsive with abnormal breathing, making this a life-threatening burn/inhalation case. An active hazard is still present, so fire response is needed."
+  },
+  "tokens_in": 550,
+  "tokens_out": 83,
+  "latency_s": 0.9984484169981442
+}

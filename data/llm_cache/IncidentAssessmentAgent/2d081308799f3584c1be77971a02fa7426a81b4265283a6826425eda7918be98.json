@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Both victims are trapped and have high-acuity trauma. One has reduced consciousness with breathing difficulty/heavy bleeding, and the other is unresponsive with abnormal breathing or massive bleeding, making this an immediate high-priority rescue response."
+  },
+  "tokens_in": 606,
+  "tokens_out": 120,
+  "latency_s": 1.1808575000031851
+}

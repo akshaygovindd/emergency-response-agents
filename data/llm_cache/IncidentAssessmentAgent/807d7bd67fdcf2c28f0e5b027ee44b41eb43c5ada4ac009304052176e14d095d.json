@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 20,
+    "reasoning": "The only person is alert, walking, and in moderate pain from a medical condition, which fits a lower-acuity general medical incident. No trapped persons or active fire/hazard are described."
+  },
+  "tokens_in": 544,
+  "tokens_out": 88,
+  "latency_s": 2.5996213339967653
+}

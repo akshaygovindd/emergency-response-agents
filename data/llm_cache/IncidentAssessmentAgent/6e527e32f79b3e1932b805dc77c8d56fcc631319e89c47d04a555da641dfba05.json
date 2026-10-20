@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 72,
+    "reasoning": "One injured person is alert but unable to walk with controlled bleeding and burn/smoke exposure, so urgency is moderate-high. An active building fire is still present, so fire response is needed."
+  },
+  "tokens_in": 553,
+  "tokens_out": 89,
+  "latency_s": 1.0558462499975576
+}

@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 62,
+    "reasoning": "Three trapped victims require extrication. The most serious is the second person with significant pain and a controlled bleeding trauma injury; no one is described as unresponsive or having uncontrolled bleeding."
+  },
+  "tokens_in": 590,
+  "tokens_out": 132,
+  "latency_s": 1.771845791998203
+}

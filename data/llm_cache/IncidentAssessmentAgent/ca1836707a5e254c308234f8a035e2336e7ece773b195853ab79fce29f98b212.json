@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 65,
+    "reasoning": "A structural collapse with both victims trapped requires rescue. The first has controlled bleeding and significant pain but is alert, while the second is walking with moderate pain from a medical issue."
+  },
+  "tokens_in": 579,
+  "tokens_out": 109,
+  "latency_s": 1.4295001670034253
+}

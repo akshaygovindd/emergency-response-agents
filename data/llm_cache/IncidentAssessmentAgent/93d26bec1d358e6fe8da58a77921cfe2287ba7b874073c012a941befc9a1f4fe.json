@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 70,
+    "reasoning": "One trapped trauma patient is described. They are alert with significant pain and unable to walk, so urgency is 3; rescue is needed to free them."
+  },
+  "tokens_in": 561,
+  "tokens_out": 83,
+  "latency_s": 1.0146224160052952
+}

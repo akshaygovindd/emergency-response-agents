@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 20,
+    "reasoning": "One alert, ambulatory patient with chest pain and minor discomfort. No signs of immediate life threat, trapped persons, or active hazard are reported."
+  },
+  "tokens_in": 547,
+  "tokens_out": 79,
+  "latency_s": 1.3873078340038774
+}

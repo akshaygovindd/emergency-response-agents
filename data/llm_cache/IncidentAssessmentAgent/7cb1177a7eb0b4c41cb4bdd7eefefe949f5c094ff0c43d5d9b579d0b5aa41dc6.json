@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 65,
+    "reasoning": "Both patients are trapped in a vehicle collision, so rescue is needed. The first has significant traumatic injury with controlled bleeding and inability to walk; the second is walking with moderate pain and a medical complaint."
+  },
+  "tokens_in": 598,
+  "tokens_out": 114,
+  "latency_s": 1.1164367500023218
+}

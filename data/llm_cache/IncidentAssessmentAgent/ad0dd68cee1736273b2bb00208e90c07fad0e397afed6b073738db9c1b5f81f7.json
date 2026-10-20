@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 98,
+    "reasoning": "Active building fire with two victims who are confused and struggling to breathe with severe burn/smoke inhalation symptoms. Both are immediate high-priority patients needing advanced life support, and the fire hazard is still active."
+  },
+  "tokens_in": 569,
+  "tokens_out": 115,
+  "latency_s": 1.6064023329963675
+}

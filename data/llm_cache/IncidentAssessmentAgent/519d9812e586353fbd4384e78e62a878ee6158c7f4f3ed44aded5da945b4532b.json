@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 92,
+    "reasoning": "Two patients are stable and walking with minor complaints, but the third is critically ill with abnormal breathing and serious trauma. People are trapped, so rescue is needed immediately."
+  },
+  "tokens_in": 587,
+  "tokens_out": 129,
+  "latency_s": 1.0443219169974327
+}

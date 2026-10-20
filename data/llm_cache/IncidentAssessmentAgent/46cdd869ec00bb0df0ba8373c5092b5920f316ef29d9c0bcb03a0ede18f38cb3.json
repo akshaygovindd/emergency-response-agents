@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 88,
+    "reasoning": "Single victim has altered mental status, breathing difficulty, and severe pain with burn/smoke exposure, making this a high-urgency case needing ALS. An active fire or hazard is still present, so fire response is needed."
+  },
+  "tokens_in": 558,
+  "tokens_out": 96,
+  "latency_s": 1.7510025829978986
+}

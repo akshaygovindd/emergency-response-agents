@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 90,
+    "reasoning": "The first person is confused and drowsy with breathing difficulty and severe pain, which places them at high urgency. This is a medical problem rather than an injury, and there is no report of rescue or fire needs."
+  },
+  "tokens_in": 549,
+  "tokens_out": 94,
+  "latency_s": 1.1870838749964605
+}

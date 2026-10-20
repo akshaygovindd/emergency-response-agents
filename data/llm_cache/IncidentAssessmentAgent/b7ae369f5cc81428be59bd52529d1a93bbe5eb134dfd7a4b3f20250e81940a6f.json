@@ -1,0 +1,42 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 4,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 5,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "Active fire is still burning, and four victims are at urgency 4-5 with breathing problems or reduced responsiveness from burns/smoke inhalation. The fifth is stable but the incident is highly critical due to multiple life-threatening patients and the ongoing fire hazard."
+  },
+  "tokens_in": 631,
+  "tokens_out": 190,
+  "latency_s": 1.435184041998582
+}

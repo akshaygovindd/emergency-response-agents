@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "The person is trapped in a vehicle collision and has reduced consciousness, breathing difficulty or heavy bleeding, and severe trauma, which is immediately life-threatening. Rescue is needed to free them."
+  },
+  "tokens_in": 574,
+  "tokens_out": 88,
+  "latency_s": 1.109138667001389
+}

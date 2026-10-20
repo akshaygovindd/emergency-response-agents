@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "There is an active fire/hazard and two high-acuity burn/smoke victims, including one barely responsive with abnormal breathing. The third patient is minor, but the scene is high priority due to life threats and the ongoing hazard."
+  },
+  "tokens_in": 592,
+  "tokens_out": 141,
+  "latency_s": 1.2520815419993596
+}

@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Two trapped victims in a structural collapse. The first has life-threatening trauma with abnormal breathing/possible massive bleeding; the second is stable but in significant pain and unable to walk."
+  },
+  "tokens_in": 580,
+  "tokens_out": 110,
+  "latency_s": 1.4693655830051284
+}

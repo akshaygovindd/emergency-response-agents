@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Two victims are trapped in a vehicle collision, so rescue is needed. The first has confusion, breathing difficulty, heavy bleeding, and severe pain from impact trauma, making this immediately life-threatening; the second is alert, walking, and in moderate pain."
+  },
+  "tokens_in": 573,
+  "tokens_out": 124,
+  "latency_s": 1.1847813749991474
+}

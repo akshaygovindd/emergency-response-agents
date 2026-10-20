@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 45,
+    "reasoning": "The person is alert, has significant pain and cannot walk, with bleeding controlled, so this is urgency 3. No trapped persons or active fire/hazard are mentioned, and the issue is medical rather than traumatic."
+  },
+  "tokens_in": 553,
+  "tokens_out": 93,
+  "latency_s": 0.9680271670004004
+}

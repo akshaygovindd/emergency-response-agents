@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 95,
+    "reasoning": "The person is confused or drowsy, struggling to breathe or bleeding heavily, and in severe pain, indicating a life-threatening medical emergency. No trapped victims or active fire/hazard are mentioned."
+  },
+  "tokens_in": 563,
+  "tokens_out": 89,
+  "latency_s": 1.0776893330039456
+}

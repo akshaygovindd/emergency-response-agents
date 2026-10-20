@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 90,
+    "reasoning": "One person is confused and having trouble breathing with severe pain, which makes this an urgent medical case needing ALS. The fire is still active, so fire response is needed."
+  },
+  "tokens_in": 552,
+  "tokens_out": 84,
+  "latency_s": 2.1759798749990296
+}

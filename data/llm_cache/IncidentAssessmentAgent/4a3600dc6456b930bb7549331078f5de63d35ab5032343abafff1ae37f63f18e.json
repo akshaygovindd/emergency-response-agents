@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Two trapped victims in a structural collapse need extrication. Both have high-acuity trauma; one is confused with breathing difficulty and heavy bleeding, and the other is barely responsive with abnormal breathing and massive bleeding."
+  },
+  "tokens_in": 571,
+  "tokens_out": 116,
+  "latency_s": 2.3620089159958297
+}

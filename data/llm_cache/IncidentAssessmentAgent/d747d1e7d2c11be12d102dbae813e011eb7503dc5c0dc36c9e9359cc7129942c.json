@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 35,
+    "reasoning": "One person is described as alert, walking, and only mildly uncomfortable, so this is low urgency. Rescue is needed because the person is trapped and must be freed."
+  },
+  "tokens_in": 556,
+  "tokens_out": 84,
+  "latency_s": 1.542012915997475
+}

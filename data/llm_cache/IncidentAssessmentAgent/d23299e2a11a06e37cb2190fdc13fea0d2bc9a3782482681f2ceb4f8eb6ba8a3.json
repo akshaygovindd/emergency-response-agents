@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 95,
+    "reasoning": "The person is barely responsive with abnormal breathing, indicating an immediate life threat. This is a medical emergency with no trapped victims or active fire/hazard described."
+  },
+  "tokens_in": 544,
+  "tokens_out": 81,
+  "latency_s": 1.1280842080013826
+}

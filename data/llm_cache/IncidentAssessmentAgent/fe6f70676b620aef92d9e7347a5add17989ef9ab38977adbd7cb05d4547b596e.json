@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 95,
+    "reasoning": "One victim is confused, in severe pain, struggling to breathe, with possible heavy bleeding and burns/inhalation exposure, which is immediately life-threatening. An active hazard is still present, so fire response is needed."
+  },
+  "tokens_in": 556,
+  "tokens_out": 93,
+  "latency_s": 1.100325999999768
+}

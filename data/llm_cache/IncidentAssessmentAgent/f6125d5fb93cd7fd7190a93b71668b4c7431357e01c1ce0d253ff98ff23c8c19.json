@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 98,
+    "reasoning": "Two trapped victims are critical with breathing difficulty/heavy bleeding and severe trauma, requiring ALS. The third is minor, but the collapse and multiple life-threatening injuries make this a highest-priority rescue response."
+  },
+  "tokens_in": 645,
+  "tokens_out": 137,
+  "latency_s": 1.6788023749977583
+}

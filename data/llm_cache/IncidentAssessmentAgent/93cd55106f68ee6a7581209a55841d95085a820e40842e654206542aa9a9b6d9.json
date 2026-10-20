@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 65,
+    "reasoning": "Both patients have trauma injuries, are alert, and have controlled bleeding but cannot walk, so urgency is moderate-high. They are trapped, so rescue is needed; no active fire is mentioned."
+  },
+  "tokens_in": 589,
+  "tokens_out": 113,
+  "latency_s": 1.0588490000009187
+}

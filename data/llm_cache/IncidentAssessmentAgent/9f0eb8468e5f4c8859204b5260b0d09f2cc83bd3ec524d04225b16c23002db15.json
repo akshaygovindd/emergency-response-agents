@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 65,
+    "reasoning": "Two people are trapped in a structural collapse, so rescue is needed. The first has a minor medical complaint; the second has a traumatic injury with controlled bleeding and significant pain, making this a moderate-priority incident."
+  },
+  "tokens_in": 573,
+  "tokens_out": 117,
+  "latency_s": 1.1481154170032823
+}

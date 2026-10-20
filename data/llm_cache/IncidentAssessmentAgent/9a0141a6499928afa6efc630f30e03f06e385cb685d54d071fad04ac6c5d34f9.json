@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 45,
+    "reasoning": "One person is reported trapped and needs extrication, but the described patient is alert, walking, and only has minor discomfort. Rescue is needed due to entrapment, with overall urgency moderate."
+  },
+  "tokens_in": 545,
+  "tokens_out": 90,
+  "latency_s": 1.5195653749979101
+}

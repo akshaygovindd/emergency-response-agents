@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 5,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 98,
+    "reasoning": "Active fire still poses an ongoing hazard. Two victims are at immediate life threat, including one unresponsive with abnormal breathing, so this is a high-priority incident."
+  },
+  "tokens_in": 606,
+  "tokens_out": 127,
+  "latency_s": 1.1959617079992313
+}

@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 5,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 96,
+    "reasoning": "There is an active fire hazard. The first person is confused, in severe pain, and struggling to breathe, suggesting a serious burn/inhalation injury. The second is barely responsive with abnormal breathing, indicating an immediate life threat."
+  },
+  "tokens_in": 585,
+  "tokens_out": 118,
+  "latency_s": 1.18217949999962
+}

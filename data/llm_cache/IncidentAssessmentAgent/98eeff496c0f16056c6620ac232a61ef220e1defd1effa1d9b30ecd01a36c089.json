@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 92,
+    "reasoning": "One patient has altered mental status, breathing difficulty, severe pain, and burn/smoke exposure, making this high urgency. An active fire hazard is still present, so fire response is needed."
+  },
+  "tokens_in": 552,
+  "tokens_out": 89,
+  "latency_s": 1.00142387500091
+}

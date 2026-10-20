@@ -1,0 +1,30 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 3,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 78,
+    "reasoning": "Three injured people are reported in a vehicle collision with entrapment. The third person has reduced consciousness and breathing/bleeding concerns, making this the most urgent; the first two are stable but need evaluation."
+  },
+  "tokens_in": 600,
+  "tokens_out": 138,
+  "latency_s": 1.3775507499958621
+}

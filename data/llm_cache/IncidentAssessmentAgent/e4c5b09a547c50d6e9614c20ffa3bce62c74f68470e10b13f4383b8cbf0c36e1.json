@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 35,
+    "reasoning": "Both people are alert, walking, and only mildly symptomatic, so they are low acuity. An active building fire is still burning, so fire response is needed."
+  },
+  "tokens_in": 568,
+  "tokens_out": 105,
+  "latency_s": 1.4000908750022063
+}

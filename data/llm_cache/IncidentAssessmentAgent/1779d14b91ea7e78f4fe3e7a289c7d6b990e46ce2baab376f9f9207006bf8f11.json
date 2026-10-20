@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 35,
+    "reasoning": "One alert, walking person with a minor medical complaint. An active fire/hazard is still burning, so fire response is needed."
+  },
+  "tokens_in": 550,
+  "tokens_out": 76,
+  "latency_s": 0.9454762080058572
+}

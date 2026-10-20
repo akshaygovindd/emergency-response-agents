@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "burn",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 88,
+    "reasoning": "One victim has confusion, drowsiness, breathing difficulty, severe pain, and burn/inhalation exposure, indicating urgent life-threatening injury. An active hazard is still present, so fire support is needed."
+  },
+  "tokens_in": 556,
+  "tokens_out": 91,
+  "latency_s": 1.1124293749962817
+}

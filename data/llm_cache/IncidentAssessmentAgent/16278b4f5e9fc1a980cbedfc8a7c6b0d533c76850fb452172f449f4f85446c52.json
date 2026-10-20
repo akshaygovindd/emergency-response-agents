@@ -1,0 +1,36 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 3,
+        "severity": 3,
+        "care_type": "burn",
+        "needs_advanced_life_support": false
+      },
+      {
+        "position": 4,
+        "severity": 2,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 85,
+    "reasoning": "There is an active building fire hazard, so fire response is needed. One person is at urgency 4 with breathing trouble/confusion, while two others have significant pain and one has moderate symptoms, making this a high-priority multi-victim incident."
+  },
+  "tokens_in": 634,
+  "tokens_out": 166,
+  "latency_s": 1.3709912919948692
+}

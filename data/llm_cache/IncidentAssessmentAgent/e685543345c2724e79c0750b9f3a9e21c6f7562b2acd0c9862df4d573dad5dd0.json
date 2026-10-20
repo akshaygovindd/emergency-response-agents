@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "none",
+    "priority_score": 45,
+    "reasoning": "The person is alert, has controlled bleeding, and is unable to walk with significant pain, which fits urgency 3. This is a general medical problem, and there is no indication of trapped victims or an active fire hazard."
+  },
+  "tokens_in": 555,
+  "tokens_out": 95,
+  "latency_s": 1.0865249589987798
+}

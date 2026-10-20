@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 5,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 3,
+        "care_type": "trauma",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "One victim is critically injured with impaired responsiveness/breathing or massive bleeding, and both are trapped in a collision, requiring extrication. The second is stable enough to wait but still has significant traumatic injury and needs prompt care."
+  },
+  "tokens_in": 613,
+  "tokens_out": 120,
+  "latency_s": 1.1570871670046472
+}

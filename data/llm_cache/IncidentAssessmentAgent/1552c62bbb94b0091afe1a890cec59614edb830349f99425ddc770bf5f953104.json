@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "general",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 85,
+    "reasoning": "One person is confused and struggling to breathe with severe pain, which is urgent and requires advanced life support. An active hazard is present, so fire response is needed."
+  },
+  "tokens_in": 546,
+  "tokens_out": 83,
+  "latency_s": 1.1148005409995676
+}

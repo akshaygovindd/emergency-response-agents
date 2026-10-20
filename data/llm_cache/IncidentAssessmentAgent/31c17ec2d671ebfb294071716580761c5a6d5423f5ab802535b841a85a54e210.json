@@ -1,0 +1,24 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      },
+      {
+        "position": 2,
+        "severity": 4,
+        "care_type": "trauma",
+        "needs_advanced_life_support": true
+      }
+    ],
+    "team_needed": "rescue",
+    "priority_score": 95,
+    "reasoning": "Two trapped victims in a structural collapse both have reduced consciousness, breathing difficulty, and severe trauma, making this a high-urgency rescue with ALS needs for both."
+  },
+  "tokens_in": 581,
+  "tokens_out": 108,
+  "latency_s": 1.743519625000772
+}

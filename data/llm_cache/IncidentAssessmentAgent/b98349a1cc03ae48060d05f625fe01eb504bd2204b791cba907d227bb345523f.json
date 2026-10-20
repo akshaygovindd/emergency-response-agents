@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 1,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 45,
+    "reasoning": "One alert, walking patient with minor discomfort has a medical issue only. The fire is still active, so fire response is needed, but no rescue or ALS is indicated from the report."
+  },
+  "tokens_in": 549,
+  "tokens_out": 87,
+  "latency_s": 1.1700888330015005
+}

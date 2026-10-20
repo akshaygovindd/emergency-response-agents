@@ -1,0 +1,18 @@
+{
+  "output": {
+    "victims": [
+      {
+        "position": 1,
+        "severity": 3,
+        "care_type": "general",
+        "needs_advanced_life_support": false
+      }
+    ],
+    "team_needed": "fire",
+    "priority_score": 72,
+    "reasoning": "One alert victim has significant pain, cannot walk, and bleeding is controlled, which fits urgency 3. An active fire hazard is still burning, so fire response is needed."
+  },
+  "tokens_in": 555,
+  "tokens_out": 85,
+  "latency_s": 1.270539416000247
+}
