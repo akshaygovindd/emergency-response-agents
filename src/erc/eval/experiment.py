@@ -24,9 +24,12 @@ POLICIES: dict[Mode, Callable[[], Policy]] = {
     Mode.NEGOTIATION: lambda: NegotiatingSystem(),
     Mode.ORACLE: lambda: NegotiatingSystem(oracle=True),
 }
+AGENT_MODES = [Mode.AGENTS, Mode.NEGOTIATION, Mode.ORACLE]
 RUNS_FILE = RESULTS_DIR / "runs.jsonl"
 KEY_METRICS = ["critical_service_rate", "critical_response_mean", "response_p95",
                "contacted_rate", "hospitalized_rate", "ambulance_utilization", "actions_rejected"]
+COORDINATION_METRICS = ["conflicts", "resolved_by_negotiation", "resolved_by_fallback", "counters_accepted",
+                        "invalid_proposals", "llm_calls", "tokens_in", "tokens_out", "est_cost_usd"]
 
 
 def _clean(x):
@@ -73,7 +76,8 @@ def run_experiment(modes: list[Mode], scenarios: list[ScenarioName], seeds: list
                 runs.append(m)
                 if progress:
                     csr = "n/a" if m.critical_service_rate is None else f"{m.critical_service_rate:.0%}"
-                    print(f"  {name.value:10} seed {seed}  {mode.value:12} critical service {csr}")
+                    extra = f" | fresh tokens {m.fresh_tokens:,}" if m.llm_calls else ""
+                    print(f"  {name.value:10} seed {seed}  {mode.value:12} critical service {csr}{extra}")
     return runs
 
 
@@ -90,6 +94,21 @@ def summary_table(runs: list[dict]) -> pd.DataFrame:
                 row[k] = s.mean
                 if k == "critical_service_rate":
                     row["csr_95ci"] = "n/a" if s.ci_low is None else f"[{s.ci_low:.2f}, {s.ci_high:.2f}]"
+            rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def coordination_table(runs: list[dict]) -> pd.DataFrame:
+    """Conflicts, negotiation outcomes, reliability, and cost for the agent systems (means per run)."""
+    df, rows = pd.DataFrame(runs), []
+    for name in ScenarioName:
+        for mode in AGENT_MODES:
+            g = df[(df["scenario"] == name.value) & (df["mode"] == mode.value)]
+            if g.empty:
+                continue
+            row = {"scenario": name.value, "mode": mode.value, "seeds": len(g)}
+            for k in COORDINATION_METRICS:
+                row[k] = summarize([_clean(x) for x in g[k]]).mean if k in g.columns else None
             rows.append(row)
     return pd.DataFrame(rows)
 

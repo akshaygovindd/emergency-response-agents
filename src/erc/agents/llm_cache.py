@@ -23,7 +23,7 @@ class LLMResult:
     output: Any            # dict for structured agents, str otherwise
     tokens_in: int
     tokens_out: int
-    latency_s: float
+    latency_s: float       # original latency, also reported on cache hits
     cache_hit: bool
     requests: int = 1      # model calls made inside this agent run (tool rounds)
 
@@ -40,7 +40,8 @@ async def run_cached(agent: Agent, prompt: str, context: AgentContext | None = N
         d = json.loads(path.read_text())
         if context is not None and d.get("context"):
             context.restore(d["context"])
-        return LLMResult(d["output"], d["tokens_in"], d["tokens_out"], 0.0, True, d.get("requests", 1))
+        return LLMResult(d["output"], d["tokens_in"], d["tokens_out"], d.get("latency_s", 0.0),
+                         True, d.get("requests", 1))
 
     n_prop, n_inv = (len(context.proposals), len(context.invalid)) if context else (0, 0)
     start = time.perf_counter()

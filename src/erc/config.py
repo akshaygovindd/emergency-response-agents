@@ -114,6 +114,8 @@ def seeds_for(scenario: ScenarioName, oracle: bool = False) -> list[int]:
 class LLMConfig(BaseModel):
     model: str = Field(default_factory=lambda: os.getenv("ERC_MODEL", "gpt-5.4-mini"))
     temperature: float = 0.0
+    usd_per_m_input: float = 0.75      # gpt-5.4-mini list price per million input tokens
+    usd_per_m_output: float = 4.50     # gpt-5.4-mini list price per million output tokens
 
 
 # ───────────────────────── All settings ─────────────────────────

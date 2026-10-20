@@ -11,6 +11,7 @@ from collections import Counter
 import numpy as np
 from pydantic import BaseModel
 
+from erc.config import SETTINGS
 from erc.logging.event_log import EventLog
 from erc.models.entities import Victim, VictimStatus
 from erc.models.state import SimulationState
@@ -45,20 +46,32 @@ class RunMetrics(BaseModel):
     ambulance_utilization: float
     responder_utilization: float
     er_full_events: int
-    # Coordination and reliability
+    # Actions and reliability
     policy_calls: int
     actions_accepted: int
     actions_rejected: int
     rejection_reasons: dict[str, int]
+    invalid_proposals: int = 0
+    # Coordination and negotiation (agent systems)
     agent_messages: int = 0
+    conflicts: int = 0
+    conflicts_by_type: dict[str, int] = {}
+    resolved_by_negotiation: int = 0
+    resolved_by_rule: int = 0
+    resolved_by_fallback: int = 0
+    counters_accepted: int = 0                   # counter-proposals that were committed
     negotiations: int = 0
     counter_proposals: int = 0
     mean_negotiation_rounds: float | None = None
-    # Cost (zero for baselines)
-    llm_calls: int = 0
+    # Cost (zero for baselines). Tokens are logical: what the run costs without caching.
+    llm_calls: int = 0                           # agent runs
+    model_requests: int = 0                      # model calls inside agent runs
     tokens_in: int = 0
     tokens_out: int = 0
+    fresh_tokens: int = 0                        # tokens actually sent to the API this time (cache misses)
+    cache_hits: int = 0
     llm_latency_s: float = 0.0
+    est_cost_usd: float = 0.0                    # list price, as if nothing were cached or free
 
 
 def _maybe(values: list[float], fn) -> float | None:
@@ -110,7 +123,16 @@ def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetr
     for m in messages:
         if m.get("negotiation_id"):
             rounds[m["negotiation_id"]] = max(rounds.get(m["negotiation_id"], 0), m.get("round", 0))
+
+    detected = log.of_kind("conflict_detected")
+    original = {e["conflict_id"]: set(e["proposal_ids"]) for e in detected}
+    resolved = log.of_kind("conflict_resolved")
+    methods = Counter(e["method"] for e in resolved)
+    counters_accepted = sum(len(set(e["winners"]) - original.get(e["conflict_id"], set())) for e in resolved)
+
     llm = log.of_kind("llm_call")
+    tokens_in = sum(e.get("tokens_in", 0) for e in llm)
+    tokens_out = sum(e.get("tokens_out", 0) for e in llm)
     finished = log.of_kind("run_finished")
 
     return RunMetrics(
@@ -136,12 +158,23 @@ def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetr
         actions_accepted=len(log.of_kind("action_accepted")),
         actions_rejected=len(rejected),
         rejection_reasons=dict(Counter(e["reason"] for e in rejected)),
+        invalid_proposals=len(log.of_kind("proposal_invalid")),
         agent_messages=len(messages),
+        conflicts=len(detected),
+        conflicts_by_type=dict(Counter(e["conflict_type"] for e in detected)),
+        resolved_by_negotiation=methods.get("negotiation", 0),
+        resolved_by_rule=methods.get("priority_rule", 0),
+        resolved_by_fallback=methods.get("fallback", 0),
+        counters_accepted=counters_accepted,
         negotiations=len(rounds),
         counter_proposals=sum(m.get("message_type") == "counter_proposal" for m in messages),
         mean_negotiation_rounds=_maybe(list(rounds.values()), np.mean),
         llm_calls=len(llm),
-        tokens_in=sum(e.get("tokens_in", 0) for e in llm),
-        tokens_out=sum(e.get("tokens_out", 0) for e in llm),
+        model_requests=sum(e.get("requests", 1) for e in llm),
+        tokens_in=tokens_in,
+        tokens_out=tokens_out,
+        fresh_tokens=sum(e.get("tokens_in", 0) + e.get("tokens_out", 0) for e in llm if not e.get("cache_hit")),
+        cache_hits=sum(bool(e.get("cache_hit")) for e in llm),
         llm_latency_s=float(sum(e.get("latency_s", 0.0) for e in llm)),
+        est_cost_usd=(tokens_in * SETTINGS.llm.usd_per_m_input + tokens_out * SETTINGS.llm.usd_per_m_output) / 1e6,
     )

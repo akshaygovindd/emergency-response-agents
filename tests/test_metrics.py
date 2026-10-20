@@ -74,3 +74,22 @@ def test_t_critical_is_conservative():
     assert t_critical(9) == 2.262
     assert t_critical(11) == 2.228     # uses df=10, slightly wider interval
     assert t_critical(100) == 1.96
+
+
+
+
+def test_coordination_and_cost_metrics(tiny_scenario):
+    e = Engine(tiny_scenario, NaivePolicy())
+    e.run()
+    log = e.log
+    log.record(5, "conflict_detected", conflict_id="C1", conflict_type="resource", proposal_ids=["P1", "P2"])
+    log.record(5, "conflict_resolved", conflict_id="C1", method="negotiation", winners=["P1", "P3"], losers=["P2"])
+    log.record(5, "proposal_invalid", agent="dispatch", tool="x", args={}, reason="unknown_resource", detail="")
+    log.record(5, "llm_call", agent="dispatch", tokens_in=1_000_000, tokens_out=0, latency_s=1.0,
+               cache_hit=False, requests=2)
+    log.record(6, "llm_call", agent="dispatch", tokens_in=0, tokens_out=1_000_000, latency_s=1.0,
+               cache_hit=True, requests=1)
+    m = compute_metrics(e.state, log, "test")
+    assert (m.conflicts, m.resolved_by_negotiation, m.counters_accepted, m.invalid_proposals) == (1, 1, 1, 1)
+    assert m.cache_hits == 1 and m.fresh_tokens == 1_000_000 and m.model_requests == 3
+    assert m.est_cost_usd == pytest.approx(0.75 + 4.50)

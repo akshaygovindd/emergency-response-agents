@@ -13,7 +13,7 @@ import pandas as pd
 from dotenv import load_dotenv
 
 from erc.config import RESULTS_DIR, Mode, ScenarioName
-from erc.eval.experiment import load_runs, paired_table, run_experiment, summary_table
+from erc.eval.experiment import coordination_table, load_runs, paired_table, run_experiment, summary_table
 
 
 def main() -> None:
@@ -26,8 +26,10 @@ def main() -> None:
     parser.add_argument("--seed", type=int, nargs="+", help="Specific seeds (default: all for each scenario)")
     args = parser.parse_args()
 
+    fresh = None
     if args.mode:
-        run_experiment([Mode(m) for m in args.mode], [ScenarioName(s) for s in args.scenario], args.seed)
+        new_runs = run_experiment([Mode(m) for m in args.mode], [ScenarioName(s) for s in args.scenario], args.seed)
+        fresh = sum(m.fresh_tokens for m in new_runs)
 
     runs = load_runs()
     if not runs:
@@ -37,16 +39,22 @@ def main() -> None:
     pd.set_option("display.width", 220)
     pd.set_option("display.max_columns", 30)
     pd.set_option("display.float_format", "{:.2f}".format)
-    summary, paired = summary_table(runs), paired_table(runs)
+    summary, coordination, paired = summary_table(runs), coordination_table(runs), paired_table(runs)
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     summary.to_csv(RESULTS_DIR / "summary.csv", index=False)
+    coordination.to_csv(RESULTS_DIR / "coordination.csv", index=False)
     paired.to_csv(RESULTS_DIR / "paired_vs_greedy.csv", index=False)
 
     print("\n=== Summary: mean across seeds ===")
     print(summary.to_string(index=False))
+    if not coordination.empty:
+        print("\n=== Agent coordination and cost: mean per run ===")
+        print(coordination.to_string(index=False))
     if not paired.empty:
         print("\n=== Paired comparison vs greedy: critical service rate ===")
         print(paired.to_string(index=False))
+    if fresh is not None:
+        print(f"\nFresh (uncached) tokens used by this command: {fresh:,}")
 
 
 if __name__ == "__main__":
