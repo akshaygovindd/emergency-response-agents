@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-01 to H-T for both victims.",
+  "tokens_in": 1708,
+  "tokens_out": 71,
+  "requests": 2,
+  "latency_s": 2.009316374998889,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t078-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-4",
+            "V-02-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest trauma-capable hospital for the trauma victim and ALS care needs.",
+        "time_min": 78
+      }
+    ],
+    "invalid": []
+  }
+}

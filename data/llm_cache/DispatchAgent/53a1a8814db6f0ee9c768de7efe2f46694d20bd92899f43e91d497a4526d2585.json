@@ -1,0 +1,119 @@
+{
+  "output": "Proposed RESCUE-1 to INC-08.",
+  "tokens_in": 3268,
+  "tokens_out": 506,
+  "requests": 2,
+  "latency_s": 4.397450625001511,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t101-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue is needed and this incident has a long-waiting trauma victim.",
+        "time_min": 101
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 101,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-01",
+          "incident_id": "INC-08",
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "reason": "ambulance_unavailable",
+        "detail": "AMB-01 is transporting"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-02",
+          "incident_id": "INC-04",
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "reason": "ambulance_unavailable",
+        "detail": "AMB-02 is transporting"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-03",
+          "incident_id": "INC-10",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "reason": "unknown_resource",
+        "detail": "No ambulance AMB-03"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-04",
+          "incident_id": "INC-07",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "reason": "unknown_resource",
+        "detail": "No ambulance AMB-04"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-05",
+          "incident_id": "INC-09",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "reason": "unknown_resource",
+        "detail": "No ambulance AMB-05"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-06",
+          "incident_id": "INC-05",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "reason": "unknown_resource",
+        "detail": "No ambulance AMB-06"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-07",
+          "incident_id": "INC-06",
+          "victim_ids": [
+            "V-06-1"
+          ]
+        },
+        "reason": "unknown_resource",
+        "detail": "No ambulance AMB-07"
+      }
+    ]
+  }
+}

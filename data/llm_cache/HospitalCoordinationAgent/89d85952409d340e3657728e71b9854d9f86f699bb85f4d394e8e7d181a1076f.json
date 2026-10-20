@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-04-1 to H-G.",
+  "tokens_in": 1663,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.9468978339937166,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t079-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital is closest and has open general treatment capacity without nearing ER limit.",
+        "time_min": 79
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-01 to H-B for both victims.",
+  "tokens_in": 1700,
+  "tokens_out": 73,
+  "requests": 2,
+  "latency_s": 2.1295130830039852,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t099-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-B is the only listed hospital and has burn and general treatment capacity available.",
+        "time_min": 99
+      }
+    ],
+    "invalid": []
+  }
+}

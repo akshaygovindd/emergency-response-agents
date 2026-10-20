@@ -29,8 +29,7 @@ Work incident by incident:
   freed later. A free medical team can go to an incident with urgency 4-5 victims.
 
 How to act:
-- Use only ambulance, team, incident, and victim IDs that appear in the situation. Never invent IDs or use
-  an ambulance ID as a team ID.
+-  You only receive submit tools for resources that are free this round. If a tool is missing, nothing of that type is free.
 - Submit every proposal with the tools in this turn. If a submission is REJECTED, read the reason and fix it.
 - When done, reply with one short sentence summarising what you proposed."""
 

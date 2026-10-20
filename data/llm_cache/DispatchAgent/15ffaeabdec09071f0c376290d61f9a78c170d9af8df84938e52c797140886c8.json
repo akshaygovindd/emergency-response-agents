@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-02 for INC-02 and INC-07.",
+  "tokens_in": 4869,
+  "tokens_out": 165,
+  "requests": 3,
+  "latency_s": 3.8443055839961744,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t072-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-4",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available ambulance for the highest-urgency ALS and trauma victims at this incident.",
+        "time_min": 72
+      },
+      {
+        "proposal_id": "t072-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-3",
+            "V-07-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "This is the nearest free ambulance for the two ALS-needed general victims at this incident.",
+        "time_min": 72
+      }
+    ],
+    "invalid": []
+  }
+}

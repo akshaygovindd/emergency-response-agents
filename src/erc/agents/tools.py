@@ -86,6 +86,9 @@ def dispatch_situation(ctx: AgentContext) -> dict:
                                  for i in incidents if relevant(r.responder_type.value, i)}}
              for r in s.available_responders()]
     return {"time_min": s.time_min, "ambulance_capacity": SETTINGS.env.ambulance_capacity,
+            "free_ambulances": [{"ambulance_id": a.ambulance_id,
+                                 "type": "ALS" if a.ambulance_type == AmbulanceType.ALS else "BLS"}
+                                for a in free_amb],
             "incidents": incidents, "free_teams": teams}
 
 

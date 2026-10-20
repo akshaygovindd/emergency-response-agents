@@ -1,0 +1,41 @@
+{
+  "output": "Proposed FIRE-1 to INC-07.",
+  "tokens_in": 2801,
+  "tokens_out": 134,
+  "requests": 2,
+  "latency_s": 2.817270457999257,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t007-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is needed here and this is the higher-priority fire incident.",
+        "time_min": 7
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 7,
+        "tool": "submit_ambulance_assignment",
+        "args": {
+          "ambulance_id": "AMB-?",
+          "incident_id": "INC-04",
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "reason": "unknown_resource",
+        "detail": "No ambulance AMB-?"
+      }
+    ]
+  }
+}

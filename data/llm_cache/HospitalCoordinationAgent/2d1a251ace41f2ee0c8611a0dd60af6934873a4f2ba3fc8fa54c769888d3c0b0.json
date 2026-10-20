@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-02 to H-G for both victims.",
+  "tokens_in": 1724,
+  "tokens_out": 73,
+  "requests": 2,
+  "latency_s": 3.1929227910004556,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-3",
+            "V-07-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat both general ALS victims and has the most free general capacity.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

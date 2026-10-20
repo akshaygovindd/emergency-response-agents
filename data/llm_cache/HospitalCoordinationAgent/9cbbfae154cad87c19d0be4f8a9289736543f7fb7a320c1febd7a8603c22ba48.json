@@ -1,0 +1,29 @@
+{
+  "output": "Chose H-G for V-10-1: fastest suitable hospital with available general capacity.",
+  "tokens_in": 1664,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 2.5986716660045204,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat the victim and is the fastest option with available general capacity.",
+        "time_min": 66
+      }
+    ],
+    "invalid": []
+  }
+}

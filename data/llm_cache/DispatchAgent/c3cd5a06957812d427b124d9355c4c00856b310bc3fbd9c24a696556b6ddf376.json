@@ -1,0 +1,60 @@
+{
+  "output": "Proposed AMB-01 to INC-03 for V-03-1.",
+  "tokens_in": 5319,
+  "tokens_out": 251,
+  "requests": 3,
+  "latency_s": 3.9882044170008157,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t064-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for an urgent waiting victim at this incident.",
+        "time_min": 64
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 64,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "RESCUE-1",
+          "incident_id": "INC-02"
+        },
+        "reason": "responder_unavailable",
+        "detail": "RESCUE-1 is on_scene"
+      },
+      {
+        "time_min": 64,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "FIRE-1",
+          "incident_id": "INC-06"
+        },
+        "reason": "responder_unavailable",
+        "detail": "FIRE-1 is on_scene"
+      },
+      {
+        "time_min": 64,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "MED-1",
+          "incident_id": "INC-04"
+        },
+        "reason": "responder_unavailable",
+        "detail": "MED-1 is on_scene"
+      }
+    ]
+  }
+}

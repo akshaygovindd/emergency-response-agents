@@ -1,0 +1,47 @@
+{
+  "output": "Proposed one ALS ambulance for INC-07 and one for INC-08.",
+  "tokens_in": 3489,
+  "tokens_out": 169,
+  "requests": 2,
+  "latency_s": 3.1778003340004943,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t029-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-2",
+            "V-07-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS ambulance for the most urgent burn victims at INC-07.",
+        "time_min": 29
+      },
+      {
+        "proposal_id": "t029-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS ambulance for the only high-urgency trauma victim at INC-08.",
+        "time_min": 29
+      }
+    ],
+    "invalid": []
+  }
+}

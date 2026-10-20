@@ -30,3 +30,15 @@ def test_agents_only_called_when_needed(tiny_scenario):
     assert needs_dispatch(ctx) and not needs_hospital(ctx)
     ctx.state.reservations["V-01"] = "AMB-01"
     assert needs_hospital(ctx)
+
+
+
+
+def test_dispatch_gets_no_ambulance_tool_when_none_is_free(tiny_scenario):
+    from erc.agents.agents import dispatch_agent_for
+    from erc.models.entities import UnitStatus
+    ctx = make_ctx(tiny_scenario)
+    assert "submit_ambulance_assignment" in {t.name for t in dispatch_agent_for(ctx).tools}
+    for amb in ctx.state.ambulances.values():
+        amb.status = UnitStatus.EN_ROUTE
+    assert "submit_ambulance_assignment" not in {t.name for t in dispatch_agent_for(ctx).tools}

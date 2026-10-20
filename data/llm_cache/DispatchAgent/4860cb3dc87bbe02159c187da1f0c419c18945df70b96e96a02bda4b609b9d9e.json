@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 for INC-02 with V-02-4 and V-02-2.",
+  "tokens_in": 2911,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 2.444506707994151,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-4",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS unit is suited to the urgent trauma/general victims at the closest high-need incident.",
+        "time_min": 66
+      }
+    ],
+    "invalid": []
+  }
+}
