@@ -1,0 +1,48 @@
+{
+  "output": "H-T for AMB-01 and H-B for AMB-02.",
+  "tokens_in": 1931,
+  "tokens_out": 137,
+  "requests": 2,
+  "latency_s": 2.9648144169987063,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "PROBE-7-P05",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is closest and can treat both victims.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "PROBE-7-P06",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the only hospital listed for these burn victims.",
+        "time_min": 7
+      }
+    ],
+    "invalid": []
+  }
+}

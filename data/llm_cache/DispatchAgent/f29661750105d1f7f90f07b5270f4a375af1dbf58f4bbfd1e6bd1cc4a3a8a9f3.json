@@ -1,0 +1,78 @@
+{
+  "output": "Proposed rescue and fire teams, plus ALS to INC-02 and BLS to INC-07.",
+  "tokens_in": 3598,
+  "tokens_out": 277,
+  "requests": 2,
+  "latency_s": 4.274945167002443,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "PROBE-7-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-02 needs rescue support and it is the nearest free rescue team.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "PROBE-7-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-07 needs fire support and it is the nearest free fire team.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "PROBE-7-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1",
+            "V-02-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "INC-02 has the highest-urgency ALS-needing victims and ALS is reasonably close.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "PROBE-7-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-2",
+            "V-07-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "INC-07 has the most urgent waiting victims and a BLS ambulance can carry the burn pair.",
+        "time_min": 7
+      }
+    ],
+    "invalid": []
+  }
+}
