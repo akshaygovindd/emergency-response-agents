@@ -39,7 +39,7 @@ class Mode(str, Enum):
 # ───────────────────────── Environment ─────────────────────────
 class EnvironmentConfig(BaseModel):
     grid_size_km: float = 20.0
-    duration_min: int = 90
+    duration_min: int = 120            # arrivals stop at 75; the rest is a drain period
     time_step_min: int = 1
     n_hospitals: int = 3
     n_ambulances: int = 5
