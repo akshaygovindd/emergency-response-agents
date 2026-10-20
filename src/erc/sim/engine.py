@@ -4,7 +4,7 @@ Every minute:
   1. reveal incidents whose arrival time has come
   2. advance responders, ambulances, and treatments whose timers are due
   3. ask the policy for decisions, only if the decision situation changed
-  4. validate each decision, then apply it or log the rejection
+  4. validate each decision (in the validator), then apply it or log the rejection
   5. deteriorate every victim not yet in treatment
   6. start treatments where a slot, a bed, and qualified staff are free
   7. record a snapshot
@@ -21,7 +21,7 @@ from erc.models.entities import (
     AmbulanceType, Capability, ResponderType, SkillLevel, StaffMember, StaffRole,
     UnitStatus, Victim, VictimStatus,
 )
-from erc.models.messages import ActionType, ProposedAction, RejectionReason, ValidationResult
+from erc.models.messages import ActionType, ProposedAction
 from erc.models.state import Scenario, SimulationState
 from erc.sim.deterioration import deteriorate, is_deteriorated
 from erc.sim.travel import travel_time_min
@@ -128,8 +128,6 @@ class Engine:
 
     def _handle(self, d: Decision) -> None:
         result = validate(d.action, d.incident_id, self.state)
-        if result.accepted:
-            result = self._routing_check(d)
         payload = dict(incident_id=d.incident_id, source=d.source, message_id=d.message_id,
                        action=d.action.model_dump(mode="json"))
         if not result.accepted:
@@ -138,26 +136,6 @@ class Engine:
             return
         self._apply(d)
         self.log.record(self.state.time_min, "action_accepted", **payload)
-
-    def _routing_check(self, d: Decision) -> ValidationResult:
-        """One ambulance goes to one hospital: admissions must cover co-passengers consistently."""
-        a = d.action
-        if a.action_type not in (ActionType.ADMIT_PATIENT, ActionType.DIVERT_PATIENT):
-            return ValidationResult(accepted=True)
-        ambulances = {self.state.reservations[v] for v in a.victim_ids}
-        if len(ambulances) > 1:
-            return ValidationResult(accepted=False, reason=RejectionReason.MALFORMED,
-                                    detail="Victims in one admission must share an ambulance")
-        job = self.amb_jobs[ambulances.pop()]
-        if job.phase in ("to_hospital", "handover"):
-            return ValidationResult(accepted=False, reason=RejectionReason.MALFORMED,
-                                    detail="Ambulance is already on its way to a hospital")
-        for v in job.victim_ids:
-            current = self.state.admissions.get(v)
-            if v not in a.victim_ids and current is not None and current != a.hospital_id:
-                return ValidationResult(accepted=False, reason=RejectionReason.MALFORMED,
-                                        detail=f"Co-passenger {v} is going to {current}")
-        return ValidationResult(accepted=True)
 
     def _apply(self, d: Decision) -> None:
         a, t, s = d.action, self.state.time_min, self.state

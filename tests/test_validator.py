@@ -79,3 +79,36 @@ def test_validator_never_changes_state(tiny_scenario):
     validate(amb(), "INC-01", state)
     validate(admit("H-T"), "INC-01", state)
     assert state.model_dump() == before
+
+
+
+
+# ───────── Feasibility and routing (moved from the engine) ─────────
+from erc.models.entities import Capability, Severity, UnitStatus, Victim
+
+
+def add_victim(state, vid, cap):
+    inc = state.incidents["INC-01"]
+    inc.victims = inc.victims + [Victim(victim_id=vid, incident_id="INC-01", severity=Severity.SERIOUS,
+                                        required_capability=cap, needs_als=False, deadline_min=30)]
+
+
+def test_no_feasible_destination(tiny_scenario):
+    state = SimulationState.from_scenario(tiny_scenario)
+    add_victim(state, "V-03", Capability.BURN)          # no burn unit in the tiny scenario
+    assert validate(amb(victims=("V-03",)), "INC-01", state).reason == R.NO_FEASIBLE_DESTINATION
+
+
+def test_co_passengers_must_share_destination(tiny_scenario):
+    state = SimulationState.from_scenario(tiny_scenario)
+    add_victim(state, "V-04", Capability.GENERAL)
+    state.reservations.update({"V-01": "AMB-01", "V-04": "AMB-01"})
+    state.admissions["V-01"] = "H-T"
+    assert validate(admit("H-G", victims=("V-04",)), "INC-01", state).reason == R.ROUTING_CONFLICT
+
+
+def test_cannot_admit_once_transporting(tiny_scenario):
+    state = SimulationState.from_scenario(tiny_scenario)
+    state.reservations["V-01"] = "AMB-01"
+    state.ambulances["AMB-01"].status = UnitStatus.TRANSPORTING
+    assert validate(admit("H-T"), "INC-01", state).reason == R.ROUTING_CONFLICT
