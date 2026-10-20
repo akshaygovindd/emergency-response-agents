@@ -1,0 +1,30 @@
+{
+  "output": "Sent the trauma victims to H-T.",
+  "tokens_in": 1718,
+  "tokens_out": 73,
+  "requests": 2,
+  "latency_s": 2.3723213330013095,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t094-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is the specialty match for both critical trauma victims and has capacity for the incoming load.",
+        "time_min": 94
+      }
+    ],
+    "invalid": []
+  }
+}

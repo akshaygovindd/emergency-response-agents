@@ -1,0 +1,30 @@
+{
+  "output": "AMB-04 assigned to H-G for both victims.",
+  "tokens_in": 1717,
+  "tokens_out": 75,
+  "requests": 2,
+  "latency_s": 1.971879666998575,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat both victims and has capacity with the shortest viable travel time among suitable hospitals.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

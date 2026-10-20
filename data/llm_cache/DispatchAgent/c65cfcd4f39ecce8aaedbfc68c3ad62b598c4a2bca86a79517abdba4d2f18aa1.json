@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-03 to INC-06 for V-06-3.",
+  "tokens_in": 2681,
+  "tokens_out": 87,
+  "requests": 2,
+  "latency_s": 2.007163375004893,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t044-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Only free ALS unit and this ALS trauma victim is the most urgent waiting patient.",
+        "time_min": 44
+      }
+    ],
+    "invalid": []
+  }
+}

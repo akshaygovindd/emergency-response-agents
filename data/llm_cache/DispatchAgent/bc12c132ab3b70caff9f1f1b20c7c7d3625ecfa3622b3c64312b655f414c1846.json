@@ -1,0 +1,59 @@
+{
+  "output": "Proposed RESCUE-1, MED-1, and AMB-01 for INC-05.",
+  "tokens_in": 2087,
+  "tokens_out": 202,
+  "requests": 2,
+  "latency_s": 2.5342392080056015,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t030-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire support is needed at INC-05 and a free rescue team is available.",
+        "time_min": 30
+      },
+      {
+        "proposal_id": "t030-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "A free medical team can provide early care for the urgent burn victim at INC-05.",
+        "time_min": 30
+      },
+      {
+        "proposal_id": "t030-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance is the closest suitable unit for the burn victim needing ALS at INC-05.",
+        "time_min": 30
+      }
+    ],
+    "invalid": []
+  }
+}

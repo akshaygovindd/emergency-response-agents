@@ -1,0 +1,30 @@
+{
+  "output": "AMB-01 to H-T for both trauma victims.",
+  "tokens_in": 1706,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 1.8205776670001796,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t051-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center is the closest matching facility and has trauma capacity available.",
+        "time_min": 51
+      }
+    ],
+    "invalid": []
+  }
+}

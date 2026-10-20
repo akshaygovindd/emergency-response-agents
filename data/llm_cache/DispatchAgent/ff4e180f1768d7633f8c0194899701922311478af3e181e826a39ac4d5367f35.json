@@ -1,0 +1,65 @@
+{
+  "output": "Proposed AMB-04 for INC-11, INC-12, and INC-07.",
+  "tokens_in": 2559,
+  "tokens_out": 234,
+  "requests": 2,
+  "latency_s": 3.280392833003134,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-3",
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free unit to the most urgent mixed-care victims at this incident.",
+        "time_min": 82
+      },
+      {
+        "proposal_id": "t082-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-2",
+            "V-12-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free unit to the most urgent general-care victims at this incident.",
+        "time_min": 82
+      },
+      {
+        "proposal_id": "t082-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "This is the nearest free ambulance to the remaining burn victim.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "output": "Could not place these victims because H-B is full and H-G cannot treat burns.",
+  "tokens_in": 4478,
+  "tokens_out": 311,
+  "requests": 4,
+  "latency_s": 5.400814084001468,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 76,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 76,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 76,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 76,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-04-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 76,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

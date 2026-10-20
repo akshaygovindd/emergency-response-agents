@@ -1,0 +1,11 @@
+{
+  "output": "Proposed no ambulance or team, since the only free ambulance is 10 minutes away and no needed free team is available.",
+  "tokens_in": 828,
+  "tokens_out": 29,
+  "requests": 1,
+  "latency_s": 1.2407736250024755,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

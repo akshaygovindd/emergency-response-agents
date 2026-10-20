@@ -1,0 +1,29 @@
+{
+  "output": "AMB-01 -> H-G.",
+  "tokens_in": 1667,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.6332053330042982,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t086-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is close, has general treatment slots, and is not at ER capacity.",
+        "time_min": 86
+      }
+    ],
+    "invalid": []
+  }
+}

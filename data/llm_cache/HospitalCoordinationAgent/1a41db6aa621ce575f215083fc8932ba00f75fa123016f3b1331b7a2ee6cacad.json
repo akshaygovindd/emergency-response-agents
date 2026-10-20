@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-11-1 to H-G.",
+  "tokens_in": 1661,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.8670045839971863,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t075-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest general-capable hospital with available ER capacity and treatment slots.",
+        "time_min": 75
+      }
+    ],
+    "invalid": []
+  }
+}

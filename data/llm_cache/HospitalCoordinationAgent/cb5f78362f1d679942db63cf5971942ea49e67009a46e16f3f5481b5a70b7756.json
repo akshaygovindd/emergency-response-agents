@@ -1,0 +1,47 @@
+{
+  "output": "Assigned both ambulances to H-G.",
+  "tokens_in": 1927,
+  "tokens_out": 119,
+  "requests": 2,
+  "latency_s": 2.428047665998747,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t010-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest capable hospital with ample general capacity.",
+        "time_min": 10
+      },
+      {
+        "proposal_id": "t010-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Nearest hospital that can treat trauma without nearing ER capacity.",
+        "time_min": 10
+      }
+    ],
+    "invalid": []
+  }
+}

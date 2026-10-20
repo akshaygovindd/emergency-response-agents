@@ -1,0 +1,69 @@
+{
+  "output": "AMB-04 to H-B; AMB-03 unresolved because H-B is full and H-G can\u2019t treat burn.",
+  "tokens_in": 4296,
+  "tokens_out": 269,
+  "requests": 4,
+  "latency_s": 4.321094708000601,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t079-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "Burn unit with open burn treatment slots and the only listed destination.",
+        "time_min": 79
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 79,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 79,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 79,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

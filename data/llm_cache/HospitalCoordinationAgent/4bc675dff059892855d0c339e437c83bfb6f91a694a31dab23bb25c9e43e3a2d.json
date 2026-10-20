@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-12-1 to H-G.",
+  "tokens_in": 1663,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 2.023322499997448,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t119-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has free general treatment capacity and spare ER room, with acceptable travel time.",
+        "time_min": 119
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "AMB-05 will go to H-G for both general victims.",
+  "tokens_in": 1724,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 2.149733500002185,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t047-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has available general treatment capacity without overloading the ER.",
+        "time_min": 47
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "output": "Proposed no ambulance/team dispatch this round.",
+  "tokens_in": 912,
+  "tokens_out": 20,
+  "requests": 1,
+  "latency_s": 1.0479975409980398,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

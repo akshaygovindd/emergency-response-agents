@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-03 with both victims at INC-01 and RESCUE-1 to support the incident.",
+  "tokens_in": 2292,
+  "tokens_out": 160,
+  "requests": 2,
+  "latency_s": 2.5286791660037125,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t005-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-2",
+            "V-01-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ALS unit for the urgent trauma victims at INC-01.",
+        "time_min": 5
+      },
+      {
+        "proposal_id": "t005-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-01 needs a rescue team and RESCUE-1 is free.",
+        "time_min": 5
+      }
+    ],
+    "invalid": []
+  }
+}

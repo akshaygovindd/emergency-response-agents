@@ -1,0 +1,29 @@
+{
+  "output": "AMB-03 -> H-G.",
+  "tokens_in": 1661,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 1.902838249996421,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t045-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital has free general treatment capacity and the shortest travel time.",
+        "time_min": 45
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "output": "No valid destination remains for these burn victims because H-B is full and the other hospitals can\u2019t treat burns.",
+  "tokens_in": 4635,
+  "tokens_out": 337,
+  "requests": 4,
+  "latency_s": 5.567829041996447,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 100,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 100,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 100,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 100,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 100,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

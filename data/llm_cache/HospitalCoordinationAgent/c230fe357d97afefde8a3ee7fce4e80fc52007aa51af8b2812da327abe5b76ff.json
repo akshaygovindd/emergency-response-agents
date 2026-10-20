@@ -1,0 +1,29 @@
+{
+  "output": "Chosen H-B for V-12-1.",
+  "tokens_in": 1658,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 2.02639770800306,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t113-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general care capacity and available beds.",
+        "time_min": 113
+      }
+    ],
+    "invalid": []
+  }
+}

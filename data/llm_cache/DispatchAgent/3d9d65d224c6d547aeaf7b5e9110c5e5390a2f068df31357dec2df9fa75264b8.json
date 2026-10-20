@@ -1,0 +1,42 @@
+{
+  "output": "Proposed RESCUE-1 and MED-1 to INC-10.",
+  "tokens_in": 2431,
+  "tokens_out": 133,
+  "requests": 2,
+  "latency_s": 2.3891725830035284,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t060-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-10 needs rescue and this is the free rescue team closest to the incident.",
+        "time_min": 60
+      },
+      {
+        "proposal_id": "t060-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-10 has urgent victims and this is the free medical team closest to the incident.",
+        "time_min": 60
+      }
+    ],
+    "invalid": []
+  }
+}

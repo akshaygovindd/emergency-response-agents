@@ -1,0 +1,29 @@
+{
+  "output": "Chose H-G for V-05-1 due to shortest travel and available general capacity.",
+  "tokens_in": 1666,
+  "tokens_out": 76,
+  "requests": 2,
+  "latency_s": 1.9323022079988732,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t038-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General care is available and H-G is the closest hospital with ample ER and bed capacity.",
+        "time_min": 38
+      }
+    ],
+    "invalid": []
+  }
+}

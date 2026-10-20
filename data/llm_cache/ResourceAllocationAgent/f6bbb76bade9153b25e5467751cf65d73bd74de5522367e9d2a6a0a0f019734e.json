@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t029-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "INC-05 has the only urgency-5 victim, and despite the BLS/ALS mismatch it is the highest-priority rescue. The other incidents are lower urgency, so AMB-04 should go to t029-P02 to maximize timely impact across the system."
+  },
+  "tokens_in": 773,
+  "tokens_out": 83,
+  "requests": 1,
+  "latency_s": 1.5541477500009933,
+  "context": null
+}

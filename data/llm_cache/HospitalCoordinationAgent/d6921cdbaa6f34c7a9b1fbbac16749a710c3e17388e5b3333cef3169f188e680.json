@@ -1,0 +1,83 @@
+{
+  "output": "AMB-05 to H-G; AMB-03 could not be placed because H-B was full and the other hospitals lacked burn capability.",
+  "tokens_in": 5808,
+  "tokens_out": 335,
+  "requests": 5,
+  "latency_s": 6.889491375004582,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital is closest and can treat the general victim while handling trauma within capacity.",
+        "time_min": 116
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 116,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 116,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 116,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 116,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

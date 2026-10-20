@@ -1,0 +1,27 @@
+{
+  "output": "Proposed FIRE-1 to INC-11.",
+  "tokens_in": 2104,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.9441972499989788,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-11 has multiple urgent burn victims and needs fire support sooner than INC-07.",
+        "time_min": 66
+      }
+    ],
+    "invalid": []
+  }
+}

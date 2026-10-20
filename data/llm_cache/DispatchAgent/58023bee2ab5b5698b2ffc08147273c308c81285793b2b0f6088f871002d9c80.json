@@ -1,0 +1,42 @@
+{
+  "output": "Proposed FIRE-1 to INC-06 and MED-1 to INC-12.",
+  "tokens_in": 2604,
+  "tokens_out": 128,
+  "requests": 2,
+  "latency_s": 2.4656740829959745,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t094-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is needed there and it is the closest fire incident.",
+        "time_min": 94
+      },
+      {
+        "proposal_id": "t094-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can support the highest-need mixed victims at the closest eligible incident.",
+        "time_min": 94
+      }
+    ],
+    "invalid": []
+  }
+}

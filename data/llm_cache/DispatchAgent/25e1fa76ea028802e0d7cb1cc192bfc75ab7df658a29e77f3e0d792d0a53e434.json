@@ -1,0 +1,42 @@
+{
+  "output": "Proposed RESCUE-1 to INC-11 and MED-1 to INC-07.",
+  "tokens_in": 2170,
+  "tokens_out": 136,
+  "requests": 2,
+  "latency_s": 2.452412708000338,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue support is needed and this is the only free rescue team, with a nearby response.",
+        "time_min": 106
+      },
+      {
+        "proposal_id": "t106-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical support can reach the burn ALS victim fastest at the most urgent incident.",
+        "time_min": 106
+      }
+    ],
+    "invalid": []
+  }
+}

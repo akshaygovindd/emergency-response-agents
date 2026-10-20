@@ -1,0 +1,47 @@
+{
+  "output": "Assigned AMB-01 and AMB-02 to H-B.",
+  "tokens_in": 1923,
+  "tokens_out": 133,
+  "requests": 2,
+  "latency_s": 2.568607749999501,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t008-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the only listed destination for this burn ambulance and has capacity.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital and it has general treatment capacity without ER overload.",
+        "time_min": 8
+      }
+    ],
+    "invalid": []
+  }
+}

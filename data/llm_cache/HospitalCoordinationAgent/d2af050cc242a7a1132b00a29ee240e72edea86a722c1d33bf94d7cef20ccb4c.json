@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-12-3 to H-G.",
+  "tokens_in": 1669,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 2.5849190410008305,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has free general treatment capacity and beds and is the best fit for this general patient.",
+        "time_min": 117
+      }
+    ],
+    "invalid": []
+  }
+}

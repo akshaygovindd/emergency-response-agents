@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 to INC-09 with V-09-2 and V-09-1.",
+  "tokens_in": 2947,
+  "tokens_out": 119,
+  "requests": 2,
+  "latency_s": 2.0199857919942588,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-2",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the highest-urgency trauma victim and compatible general victim at INC-09.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

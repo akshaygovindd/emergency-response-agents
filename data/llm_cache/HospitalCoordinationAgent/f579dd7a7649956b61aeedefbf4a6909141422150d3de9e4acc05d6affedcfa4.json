@@ -1,0 +1,48 @@
+{
+  "output": "Both ambulances were assigned to H-G for fastest transport and sufficient general/trauma capacity.",
+  "tokens_in": 1990,
+  "tokens_out": 143,
+  "requests": 2,
+  "latency_s": 2.4468938749996596,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t023-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with capacity and trauma capability for the higher-urgency victim.",
+        "time_min": 23
+      },
+      {
+        "proposal_id": "t023-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-2",
+            "V-03-4"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest hospital with ample general care capacity and free beds.",
+        "time_min": 23
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-11-3 to H-G.",
+  "tokens_in": 1660,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.7187786659997073,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest capable hospital with an available general treatment slot and spare ER capacity.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

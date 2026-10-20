@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-11-4 to H-B.",
+  "tokens_in": 1641,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 2.215979291999247,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the matching specialty and has capacity and a free burn slot.",
+        "time_min": 112
+      }
+    ],
+    "invalid": []
+  }
+}

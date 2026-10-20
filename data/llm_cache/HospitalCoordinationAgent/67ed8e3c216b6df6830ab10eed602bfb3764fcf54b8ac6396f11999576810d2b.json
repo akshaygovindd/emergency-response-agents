@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-T for AMB-04 because it has available trauma capacity and can treat both victims.",
+  "tokens_in": 1712,
+  "tokens_out": 80,
+  "requests": 2,
+  "latency_s": 2.666459166997811,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t046-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-3"
+          ]
+        },
+        "priority": 5,
+        "reason": "Trauma Center has trauma capacity available and can treat both victims safely.",
+        "time_min": 46
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "output": "AMB-03 to H-T; AMB-04 to H-G.",
+  "tokens_in": 1989,
+  "tokens_out": 144,
+  "requests": 2,
+  "latency_s": 2.372280374998809,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest trauma-capable option with available trauma slots for the high-urgency trauma victim.",
+        "time_min": 85
+      },
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Faster overall and has enough general capacity while still treating trauma.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

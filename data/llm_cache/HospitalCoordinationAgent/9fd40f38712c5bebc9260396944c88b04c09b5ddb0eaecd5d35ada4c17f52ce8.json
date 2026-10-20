@@ -1,0 +1,30 @@
+{
+  "output": "Sent both victims to H-T.",
+  "tokens_in": 1715,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 3.429367208002077,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-4",
+            "V-11-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with available trauma slots for the critical trauma patient.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

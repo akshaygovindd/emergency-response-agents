@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-11 with the two most urgent general victims.",
+  "tokens_in": 2184,
+  "tokens_out": 93,
+  "requests": 2,
+  "latency_s": 2.057274166996649,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-3",
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free unit to the most urgent mixed general victims at INC-11.",
+        "time_min": 91
+      }
+    ],
+    "invalid": []
+  }
+}

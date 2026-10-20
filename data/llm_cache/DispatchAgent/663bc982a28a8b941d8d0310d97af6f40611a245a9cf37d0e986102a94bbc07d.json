@@ -1,0 +1,60 @@
+{
+  "output": "Proposed RESCUE-1, MED-1, and AMB-02 for INC-07.",
+  "tokens_in": 2310,
+  "tokens_out": 213,
+  "requests": 2,
+  "latency_s": 2.6585861669955193,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t049-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue is required and this is the only free rescue team, arriving fastest to support the incident.",
+        "time_min": 49
+      },
+      {
+        "proposal_id": "t049-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "A free medical team can help with urgent ALS victims while awaiting transport.",
+        "time_min": 49
+      },
+      {
+        "proposal_id": "t049-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-4",
+            "V-07-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "AMB-02 is the only free ambulance; these are the most urgent victims and both need ALS-capable transport.",
+        "time_min": 49
+      }
+    ],
+    "invalid": []
+  }
+}

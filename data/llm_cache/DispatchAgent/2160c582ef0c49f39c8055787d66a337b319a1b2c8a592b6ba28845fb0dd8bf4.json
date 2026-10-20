@@ -1,0 +1,45 @@
+{
+  "output": "Proposed ALS ambulance AMB-03 for INC-02 and fire team FIRE-1.",
+  "tokens_in": 3282,
+  "tokens_out": 143,
+  "requests": 3,
+  "latency_s": 3.0277887920019566,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t018-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance can take the ALS trauma victim and the urgent general victim together.",
+        "time_min": 18
+      },
+      {
+        "proposal_id": "t018-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "A free fire team matches the incident's rescue need and should be dispatched now.",
+        "time_min": 18
+      }
+    ],
+    "invalid": []
+  }
+}

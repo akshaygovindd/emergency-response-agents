@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t046-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "MED-1 should go to INC-09 because it has the urgency-5 ALS victim and more total urgent need, while INC-08 only has one urgency-2 victim. No valid alternative team/ambulance is available to counter-propose."
+  },
+  "tokens_in": 684,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 1.56307541699789,
+  "context": null
+}

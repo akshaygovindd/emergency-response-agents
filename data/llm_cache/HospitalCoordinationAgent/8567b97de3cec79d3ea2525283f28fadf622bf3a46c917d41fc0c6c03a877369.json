@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-05 to H-G for both victims.",
+  "tokens_in": 1716,
+  "tokens_out": 75,
+  "requests": 2,
+  "latency_s": 2.5082892079954036,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G can treat both victims and has available ER capacity, avoiding overloading H-T.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

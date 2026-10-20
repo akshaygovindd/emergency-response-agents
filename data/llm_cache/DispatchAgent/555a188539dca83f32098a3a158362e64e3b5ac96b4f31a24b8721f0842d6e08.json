@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-01 for INC-02 and FIRE-1 to INC-02.",
+  "tokens_in": 2299,
+  "tokens_out": 148,
+  "requests": 2,
+  "latency_s": 3.1344072920037434,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t038-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-2",
+            "V-02-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the ALS-requiring and most urgent general victim.",
+        "time_min": 38
+      },
+      {
+        "proposal_id": "t038-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is free and needed at this incident.",
+        "time_min": 38
+      }
+    ],
+    "invalid": []
+  }
+}

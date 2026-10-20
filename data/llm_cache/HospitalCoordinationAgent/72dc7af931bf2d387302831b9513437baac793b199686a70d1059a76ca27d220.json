@@ -1,0 +1,64 @@
+{
+  "output": "No valid destination was available for AMB-03: the only reachable hospital is full.",
+  "tokens_in": 5008,
+  "tokens_out": 262,
+  "requests": 5,
+  "latency_s": 6.203486457998224,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 81,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      }
+    ]
+  }
+}

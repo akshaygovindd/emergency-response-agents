@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-02 to H-G for V-10-3.",
+  "tokens_in": 1661,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 2.302832583001873,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with free general treatment capacity and available beds.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

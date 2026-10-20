@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-03 to INC-09 for V-09-4 and V-09-3.",
+  "tokens_in": 2049,
+  "tokens_out": 97,
+  "requests": 2,
+  "latency_s": 2.447598333004862,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t047-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-4",
+            "V-09-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance is closest to the urgent burn victims at INC-09.",
+        "time_min": 47
+      }
+    ],
+    "invalid": []
+  }
+}

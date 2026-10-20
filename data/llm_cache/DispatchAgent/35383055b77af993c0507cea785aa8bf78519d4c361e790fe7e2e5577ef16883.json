@@ -1,0 +1,47 @@
+{
+  "output": "Proposed AMB-04 for INC-07 and INC-08.",
+  "tokens_in": 2142,
+  "tokens_out": 171,
+  "requests": 2,
+  "latency_s": 3.0055790420010453,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t044-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-5",
+            "V-07-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the most urgent eligible victims at INC-07.",
+        "time_min": 44
+      },
+      {
+        "proposal_id": "t044-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Same free ambulance is also the closest unit for the highest-urgency victim at INC-08.",
+        "time_min": 44
+      }
+    ],
+    "invalid": []
+  }
+}

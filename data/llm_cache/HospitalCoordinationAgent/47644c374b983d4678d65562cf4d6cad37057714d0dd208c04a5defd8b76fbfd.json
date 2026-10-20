@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-06-2 to H-G.",
+  "tokens_in": 1656,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.0618634589991416,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t088-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with a free trauma slot and capacity for this high-urgency trauma victim.",
+        "time_min": 88
+      }
+    ],
+    "invalid": []
+  }
+}

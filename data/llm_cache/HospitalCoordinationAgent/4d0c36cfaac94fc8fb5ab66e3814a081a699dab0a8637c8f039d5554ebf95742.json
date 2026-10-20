@@ -1,0 +1,29 @@
+{
+  "output": "Sent to H-B for the fastest available general care.",
+  "tokens_in": 1652,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 2.0613549999980023,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t022-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with available general care capacity.",
+        "time_min": 22
+      }
+    ],
+    "invalid": []
+  }
+}

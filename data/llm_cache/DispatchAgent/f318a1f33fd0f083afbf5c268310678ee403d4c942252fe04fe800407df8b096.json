@@ -1,0 +1,27 @@
+{
+  "output": "Proposed MED-1 to INC-07.",
+  "tokens_in": 2263,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 1.9202395000029355,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free medical team to an active incident with ALS-needing victims.",
+        "time_min": 107
+      }
+    ],
+    "invalid": []
+  }
+}

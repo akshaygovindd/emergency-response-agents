@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t102-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "INC-11 has the only urgency-5 victim and has already waited longer, so AMB-02 should go there despite the ALS mismatch. INC-12\u2019s victims are lower urgency, so it loses this contested unit."
+  },
+  "tokens_in": 650,
+  "tokens_out": 74,
+  "requests": 1,
+  "latency_s": 1.3016057909990195,
+  "context": null
+}

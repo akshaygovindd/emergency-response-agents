@@ -1,0 +1,47 @@
+{
+  "output": "Sent AMB-02 and AMB-03 to H-B.",
+  "tokens_in": 1923,
+  "tokens_out": 139,
+  "requests": 2,
+  "latency_s": 2.448195750002924,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t093-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general capacity and available beds for these lower-urgency victims.",
+        "time_min": 93
+      },
+      {
+        "proposal_id": "t093-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-05-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the required specialty for this urgent burn victim and has free burn slots.",
+        "time_min": 93
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "output": "Sent V-03-2 to H-G and V-04-1/V-04-2 to H-B.",
+  "tokens_in": 1927,
+  "tokens_out": 141,
+  "requests": 2,
+  "latency_s": 2.5428549999996903,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t038-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with trauma capacity for this lower-urgency trauma patient.",
+        "time_min": 38
+      },
+      {
+        "proposal_id": "t038-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Nearest hospital with available general treatment slots for both victims.",
+        "time_min": 38
+      }
+    ],
+    "invalid": []
+  }
+}

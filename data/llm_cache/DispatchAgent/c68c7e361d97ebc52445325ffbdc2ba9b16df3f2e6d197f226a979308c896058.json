@@ -1,0 +1,77 @@
+{
+  "output": "Proposed 2 ambulances and 2 teams for INC-03 and INC-04.",
+  "tokens_in": 2871,
+  "tokens_out": 246,
+  "requests": 2,
+  "latency_s": 2.965194958000211,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t039-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ambulance to the ALS trauma victim at INC-03.",
+        "time_min": 39
+      },
+      {
+        "proposal_id": "t039-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-04-1",
+            "V-04-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ambulance to pick up both ALS trauma victims at INC-04.",
+        "time_min": 39
+      },
+      {
+        "proposal_id": "t039-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue team needed and available for INC-03.",
+        "time_min": 39
+      },
+      {
+        "proposal_id": "t039-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can support this urgent trauma incident.",
+        "time_min": 39
+      }
+    ],
+    "invalid": []
+  }
+}

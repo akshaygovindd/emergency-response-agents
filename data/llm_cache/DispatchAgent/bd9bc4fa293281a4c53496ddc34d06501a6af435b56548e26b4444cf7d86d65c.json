@@ -1,0 +1,65 @@
+{
+  "output": "Proposed AMB-04 for INC-06, INC-05, and INC-04.",
+  "tokens_in": 2327,
+  "tokens_out": 238,
+  "requests": 2,
+  "latency_s": 2.572904832995846,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t029-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free BLS unit to the highest-urgency general victims.",
+        "time_min": 29
+      },
+      {
+        "proposal_id": "t029-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Same available BLS unit is the nearest option for this mixed trauma/general pair.",
+        "time_min": 29
+      },
+      {
+        "proposal_id": "t029-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-04-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "BLS can transport the burn victim and is the only free ambulance.",
+        "time_min": 29
+      }
+    ],
+    "invalid": []
+  }
+}

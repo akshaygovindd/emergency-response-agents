@@ -1,0 +1,30 @@
+{
+  "output": "AMB-04 sent to H-T for both victims.",
+  "tokens_in": 1711,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 1.8748565830028383,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest suitable hospital with available trauma and general treatment slots.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

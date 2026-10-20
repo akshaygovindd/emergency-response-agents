@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t111-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-05 should go to INC-12 because it is significantly closer (5 vs 10 minutes) and the victim is already waiting 38 minutes. No unclaimed alternative ambulances are available, so t111-P01 cannot be countered."
+  },
+  "tokens_in": 619,
+  "tokens_out": 79,
+  "requests": 1,
+  "latency_s": 1.100923584002885,
+  "context": null
+}

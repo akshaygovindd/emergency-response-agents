@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-01-1 to H-G.",
+  "tokens_in": 1657,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 2.7775567500066245,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t009-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital that can treat trauma and has a free trauma slot.",
+        "time_min": 9
+      }
+    ],
+    "invalid": []
+  }
+}

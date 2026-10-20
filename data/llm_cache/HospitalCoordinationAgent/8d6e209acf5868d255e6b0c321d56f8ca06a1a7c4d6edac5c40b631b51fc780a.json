@@ -1,0 +1,30 @@
+{
+  "output": "Sent both victims to H-G.",
+  "tokens_in": 1718,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 2.366605208000692,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest general-capable hospital with ample ER capacity and free general slots.",
+        "time_min": 57
+      }
+    ],
+    "invalid": []
+  }
+}

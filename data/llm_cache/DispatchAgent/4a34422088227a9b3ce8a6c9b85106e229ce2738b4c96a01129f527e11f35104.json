@@ -1,0 +1,63 @@
+{
+  "output": "Proposed RESCUE-1 plus two ambulances for INC-01: AMB-01 for the urgent ALS victims and AMB-05 for the two general victims.",
+  "tokens_in": 2543,
+  "tokens_out": 236,
+  "requests": 2,
+  "latency_s": 2.5647212090043467,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t005-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue is needed and this free rescue team is closest to the incident.",
+        "time_min": 5
+      },
+      {
+        "proposal_id": "t005-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-2",
+            "V-01-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS unit should take the two urgent ALS trauma victims first.",
+        "time_min": 5
+      },
+      {
+        "proposal_id": "t005-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-3",
+            "V-01-5"
+          ]
+        },
+        "priority": 3,
+        "reason": "BLS unit can take the two lower-urgency general victims together.",
+        "time_min": 5
+      }
+    ],
+    "invalid": []
+  }
+}

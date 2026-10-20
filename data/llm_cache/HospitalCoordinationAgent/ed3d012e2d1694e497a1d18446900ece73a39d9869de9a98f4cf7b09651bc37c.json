@@ -1,0 +1,48 @@
+{
+  "output": "Both ambulances were sent to H-T for the fastest trauma-capable receiving option.",
+  "tokens_in": 1990,
+  "tokens_out": 139,
+  "requests": 2,
+  "latency_s": 2.144440374999249,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t018-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-1",
+            "V-01-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general treatment and available capacity.",
+        "time_min": 18
+      },
+      {
+        "proposal_id": "t018-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-3",
+            "V-01-4"
+          ]
+        },
+        "priority": 4,
+        "reason": "Trauma-capable and closest for this mixed general/trauma ambulance.",
+        "time_min": 18
+      }
+    ],
+    "invalid": []
+  }
+}

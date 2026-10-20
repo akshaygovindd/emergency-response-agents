@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-11 with V-11-4 and V-11-5.",
+  "tokens_in": 3104,
+  "tokens_out": 104,
+  "requests": 2,
+  "latency_s": 2.528471999998146,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t074-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-4",
+            "V-11-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest incident with the most urgent waiting trauma victims, and BLS can transport the non-ALS pair.",
+        "time_min": 74
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Chosen H-G for V-10-1.",
+  "tokens_in": 1667,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.9377226249998785,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has the most general care capacity and is within reach.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

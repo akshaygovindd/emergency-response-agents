@@ -1,0 +1,65 @@
+{
+  "output": "Proposed AMB-05 to INC-07, INC-08, and INC-12 for their most transportable victims.",
+  "tokens_in": 2636,
+  "tokens_out": 249,
+  "requests": 2,
+  "latency_s": 2.684339166000427,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t088-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1",
+            "V-07-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free unit for the highest-urgency transportable victims at this incident.",
+        "time_min": 88
+      },
+      {
+        "proposal_id": "t088-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-3",
+            "V-08-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "BLS can move the general and non-ALS trauma victims; ALS-only victims must wait.",
+        "time_min": 88
+      },
+      {
+        "proposal_id": "t088-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Simple general-care pickup, but lower priority than the more urgent incidents.",
+        "time_min": 88
+      }
+    ],
+    "invalid": []
+  }
+}

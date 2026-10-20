@@ -1,0 +1,29 @@
+{
+  "output": "AMB-02 to H-G for V-11-1.",
+  "tokens_in": 1652,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.8807678750017658,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t088-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital can treat trauma, has a free trauma slot, and is closest.",
+        "time_min": 88
+      }
+    ],
+    "invalid": []
+  }
+}

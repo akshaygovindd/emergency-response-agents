@@ -1,0 +1,27 @@
+{
+  "output": "Proposed FIRE-1 to INC-08.",
+  "tokens_in": 1500,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 1.9507604589962284,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t060-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team needed for the burn incident and it is free.",
+        "time_min": 60
+      }
+    ],
+    "invalid": []
+  }
+}

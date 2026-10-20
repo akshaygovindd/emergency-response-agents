@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-03 to H-T for both victims.",
+  "tokens_in": 1713,
+  "tokens_out": 76,
+  "requests": 2,
+  "latency_s": 2.1088253749985597,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma specialty and available trauma slot make H-T the best fit for the urgent trauma patient.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

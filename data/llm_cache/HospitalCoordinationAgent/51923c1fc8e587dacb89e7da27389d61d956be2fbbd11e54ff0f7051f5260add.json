@@ -1,0 +1,48 @@
+{
+  "output": "Queued AMB-01 to H-T and AMB-05 to H-G.",
+  "tokens_in": 1987,
+  "tokens_out": 138,
+  "requests": 2,
+  "latency_s": 2.1642603750005946,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t006-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-2",
+            "V-01-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center matches urgent trauma care and has free trauma slots.",
+        "time_min": 6
+      },
+      {
+        "proposal_id": "t006-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-3",
+            "V-01-5"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital is closest and has available general capacity.",
+        "time_min": 6
+      }
+    ],
+    "invalid": []
+  }
+}

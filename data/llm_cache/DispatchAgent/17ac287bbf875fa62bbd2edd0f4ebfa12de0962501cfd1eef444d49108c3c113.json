@@ -1,0 +1,11 @@
+{
+  "output": "Proposed AMB-04 for INC-07 with V-07-2.",
+  "tokens_in": 801,
+  "tokens_out": 21,
+  "requests": 1,
+  "latency_s": 1.0168528340000194,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

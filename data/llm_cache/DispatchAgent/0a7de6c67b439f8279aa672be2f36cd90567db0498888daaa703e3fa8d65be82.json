@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-03 to INC-01 for V-01-1.",
+  "tokens_in": 1937,
+  "tokens_out": 83,
+  "requests": 2,
+  "latency_s": 2.6031690829986474,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t031-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ambulance for the only waiting victim at this incident.",
+        "time_min": 31
+      }
+    ],
+    "invalid": []
+  }
+}

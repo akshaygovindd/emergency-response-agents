@@ -1,0 +1,65 @@
+{
+  "output": "Assigned AMB-01 and AMB-03 to H-B, and AMB-04 to H-G.",
+  "tokens_in": 2172,
+  "tokens_out": 202,
+  "requests": 2,
+  "latency_s": 2.823481666004227,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t101-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is closest and has free burn slots for both critical burn victims.",
+        "time_min": 101
+      },
+      {
+        "proposal_id": "t101-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn Unit is the only nearby facility that can treat the burn victim, and it can also accept the accompanying general patient.",
+        "time_min": 101
+      },
+      {
+        "proposal_id": "t101-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has available general treatment capacity.",
+        "time_min": 101
+      }
+    ],
+    "invalid": []
+  }
+}

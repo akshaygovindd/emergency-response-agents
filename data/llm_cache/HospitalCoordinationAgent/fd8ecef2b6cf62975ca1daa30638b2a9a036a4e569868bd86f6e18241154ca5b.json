@@ -1,0 +1,29 @@
+{
+  "output": "Chosen: H-G for V-11-1.",
+  "tokens_in": 1653,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.7045559589969344,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t097-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital can treat trauma and has an available trauma slot with ample capacity.",
+        "time_min": 97
+      }
+    ],
+    "invalid": []
+  }
+}

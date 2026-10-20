@@ -1,0 +1,46 @@
+{
+  "output": "Proposed AMB-03 first, with AMB-02 as backup, for INC-02.",
+  "tokens_in": 2961,
+  "tokens_out": 148,
+  "requests": 3,
+  "latency_s": 3.08195658299519,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t009-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest unit and ALS is suitable for this victim.",
+        "time_min": 9
+      },
+      {
+        "proposal_id": "t009-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Backup BLS option if the closest ALS unit is allocated elsewhere.",
+        "time_min": 9
+      }
+    ],
+    "invalid": []
+  }
+}

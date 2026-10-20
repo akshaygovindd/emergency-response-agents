@@ -1,0 +1,45 @@
+{
+  "output": "Proposed FIRE-1 to INC-03 and AMB-02 for both victims.",
+  "tokens_in": 2066,
+  "tokens_out": 154,
+  "requests": 2,
+  "latency_s": 2.197822542002541,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t010-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is needed and free, and it is the closest responder to the incident.",
+        "time_min": 10
+      },
+      {
+        "proposal_id": "t010-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1",
+            "V-03-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest available BLS ambulance can take both general victims from this incident.",
+        "time_min": 10
+      }
+    ],
+    "invalid": []
+  }
+}

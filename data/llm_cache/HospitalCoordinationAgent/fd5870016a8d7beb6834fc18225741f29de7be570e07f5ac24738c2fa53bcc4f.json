@@ -1,0 +1,29 @@
+{
+  "output": "Directed V-05-1 to H-B.",
+  "tokens_in": 1643,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 2.854304750006122,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t037-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the closest hospital and has burn treatment capacity for this critical burn victim.",
+        "time_min": 37
+      }
+    ],
+    "invalid": []
+  }
+}

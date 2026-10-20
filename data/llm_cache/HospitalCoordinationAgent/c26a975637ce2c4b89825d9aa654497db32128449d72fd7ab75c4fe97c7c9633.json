@@ -1,0 +1,48 @@
+{
+  "output": "Sent AMB-03 to H-G and AMB-04 to H-B.",
+  "tokens_in": 1974,
+  "tokens_out": 141,
+  "requests": 2,
+  "latency_s": 2.2741042079942417,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t103-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-2",
+            "V-10-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital has available general slots and capacity for this ambulance.",
+        "time_min": 103
+      },
+      {
+        "proposal_id": "t103-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Burn Unit is the only listed destination and has capacity for these victims.",
+        "time_min": 103
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-03 to H-T for trauma care.",
+  "tokens_in": 1656,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.240153124999779,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t045-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma specialty for a high-urgency trauma victim with available trauma capacity.",
+        "time_min": 45
+      }
+    ],
+    "invalid": []
+  }
+}

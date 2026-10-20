@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-02 to INC-10 and MED-1 to INC-08.",
+  "tokens_in": 2882,
+  "tokens_out": 159,
+  "requests": 2,
+  "latency_s": 2.322929583999212,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t070-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-2",
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest unit to the most urgent nearby victims; both are BLS-suitable and fit the ambulance.",
+        "time_min": 70
+      },
+      {
+        "proposal_id": "t070-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fastest available medical team to provide first medical contact for multiple urgent waiting victims.",
+        "time_min": 70
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,5 +1,5 @@
 scenario,mode,seeds,conflicts,resolved_by_negotiation,resolved_by_fallback,counters_accepted,invalid_proposals,llm_calls,tokens_in,tokens_out,est_cost_usd
-normal,agents,1,3.0,0.0,0.0,0.0,1.0,47.0,83617.0,5022.0,0.08531175
-normal,negotiation,1,3.0,3.0,0.0,2.0,1.0,47.0,74817.0,5179.0,0.07941825
+normal,agents,10,1.8,0.0,0.0,0.0,8.0,45.3,81519.2,5174.2,0.0844233
+normal,negotiation,10,1.7,1.7,0.0,0.2,8.0,47.3,82385.9,5318.1,0.085720875
 bottleneck,agents,1,1.0,0.0,0.0,0.0,0.0,30.0,51605.0,2839.0,0.05147925
 bottleneck,negotiation,1,1.0,1.0,0.0,0.0,0.0,31.0,52320.0,2929.0,0.0524205

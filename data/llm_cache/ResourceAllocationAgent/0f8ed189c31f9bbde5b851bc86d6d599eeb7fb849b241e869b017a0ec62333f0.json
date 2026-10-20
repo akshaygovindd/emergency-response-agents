@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t107-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-04 should go to INC-05: it has the shortest travel time and the longest waiting victim among the contenders, so it reaches a patient sooner. The other two incidents have lower urgency and no unclaimed ambulance alternative is available."
+  },
+  "tokens_in": 715,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.185303207996185,
+  "context": null
+}

@@ -1,0 +1,47 @@
+{
+  "output": "Assigned AMB-01 to H-T and AMB-03 to H-B.",
+  "tokens_in": 1935,
+  "tokens_out": 138,
+  "requests": 2,
+  "latency_s": 2.4436229589991854,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t019-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center best matches the urgent trauma case and has capacity for both victims.",
+        "time_min": 19
+      },
+      {
+        "proposal_id": "t019-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn unit is the nearest suitable hospital with available general care capacity.",
+        "time_min": 19
+      }
+    ],
+    "invalid": []
+  }
+}

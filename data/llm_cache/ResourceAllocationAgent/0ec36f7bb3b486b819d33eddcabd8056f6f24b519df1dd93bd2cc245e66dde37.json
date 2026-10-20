@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t098-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-05 should go to INC-11 because it reaches victims much faster (4 min vs 18) and serves a higher-priority pair of victims waiting the same time. INC-12 can be omitted here since no unclaimed ambulance alternative is available."
+  },
+  "tokens_in": 653,
+  "tokens_out": 81,
+  "requests": 1,
+  "latency_s": 1.1802619590016548,
+  "context": null
+}

@@ -1,0 +1,57 @@
+{
+  "output": "Sent both victims to H-G.",
+  "tokens_in": 2820,
+  "tokens_out": 199,
+  "requests": 3,
+  "latency_s": 3.7886364590012818,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-2",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G can treat both victims and is the closest hospital with available ER capacity.",
+        "time_min": 91
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 91,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-2",
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      },
+      {
+        "time_min": 91,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-2",
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-B cannot treat trauma"
+      }
+    ]
+  }
+}

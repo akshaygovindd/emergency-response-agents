@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-09-2 to H-G.",
+  "tokens_in": 1666,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 2.062117916000716,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t070-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has the best general capacity and is well within ER limits.",
+        "time_min": 70
+      }
+    ],
+    "invalid": []
+  }
+}

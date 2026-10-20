@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-02 to H-G; it\u2019s the closest hospital with available general capacity.",
+  "tokens_in": 1657,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.3407086669976707,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t075-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has available general treatment capacity.",
+        "time_min": 75
+      }
+    ],
+    "invalid": []
+  }
+}

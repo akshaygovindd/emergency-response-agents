@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t101-P01"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t101-P02",
+        "alternative_id": "H-G",
+        "reason": "General Hospital can take the general victim and still leaves the burn victim to the closer Burn Unit, maximizing urgent care without overfilling H-B."
+      }
+    ],
+    "reasoning": "P01 sends both urgency-5 burn victims to the closest facility that can treat them, which best protects the highest-urgency patients. P02 should be rerouted because its burn victim needs H-B; moving the general patient to H-G preserves capacity and still helps the incident."
+  },
+  "tokens_in": 963,
+  "tokens_out": 135,
+  "requests": 1,
+  "latency_s": 1.631438791002438,
+  "context": null
+}

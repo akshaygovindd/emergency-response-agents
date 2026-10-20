@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-12 with V-12-3 and V-12-4.",
+  "tokens_in": 2633,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 2.2427217500007828,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t093-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-3",
+            "V-12-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free ambulance can take the two most urgent BLS-suitable victims at this incident.",
+        "time_min": 93
+      }
+    ],
+    "invalid": []
+  }
+}

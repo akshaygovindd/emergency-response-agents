@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-03 to H-B for both burn victims.",
+  "tokens_in": 1691,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.9264455830052611,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-5",
+            "V-11-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit matches both urgent burn victims and has capacity.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

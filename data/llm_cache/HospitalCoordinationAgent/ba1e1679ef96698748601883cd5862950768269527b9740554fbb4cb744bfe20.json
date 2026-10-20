@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-05 to H-G.",
+  "tokens_in": 1719,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.9461150409988477,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t098-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-3",
+            "V-11-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has available general treatment slots without risking ER capacity.",
+        "time_min": 98
+      }
+    ],
+    "invalid": []
+  }
+}

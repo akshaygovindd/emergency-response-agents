@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-04 for INC-09.",
+  "tokens_in": 1990,
+  "tokens_out": 78,
+  "requests": 2,
+  "latency_s": 2.046268375001091,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest suitable free ambulance for this lower-urgency burn victim.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

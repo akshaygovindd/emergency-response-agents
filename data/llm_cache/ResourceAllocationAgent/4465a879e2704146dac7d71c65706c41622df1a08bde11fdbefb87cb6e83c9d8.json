@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t044-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-04 should go to INC-07 because it reaches that incident faster (12 min vs 17) and serves two victims, while INC-08 has only one urgency-1 victim. No valid alternative ambulance is available."
+  },
+  "tokens_in": 648,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.3484986249968642,
+  "context": null
+}

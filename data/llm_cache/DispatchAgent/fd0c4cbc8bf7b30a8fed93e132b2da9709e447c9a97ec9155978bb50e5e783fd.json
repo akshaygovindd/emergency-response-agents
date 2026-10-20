@@ -1,0 +1,11 @@
+{
+  "output": "Proposed AMB-02 for INC-04 with V-04-2 and V-04-1.",
+  "tokens_in": 828,
+  "tokens_out": 27,
+  "requests": 1,
+  "latency_s": 1.0188843330033706,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

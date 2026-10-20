@@ -1,0 +1,47 @@
+{
+  "output": "Assigned both trauma ambulances to H-T for specialty match and available trauma capacity.",
+  "tokens_in": 1926,
+  "tokens_out": 134,
+  "requests": 2,
+  "latency_s": 2.231307417001517,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t042-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-1",
+            "V-04-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center has matching specialty and enough trauma capacity for both victims.",
+        "time_min": 42
+      },
+      {
+        "proposal_id": "t042-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center matches the injury and has remaining trauma capacity.",
+        "time_min": 42
+      }
+    ],
+    "invalid": []
+  }
+}

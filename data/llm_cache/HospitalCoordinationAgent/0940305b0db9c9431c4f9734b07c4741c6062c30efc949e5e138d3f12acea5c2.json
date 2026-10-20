@@ -1,0 +1,47 @@
+{
+  "output": "Assigned V-02-1 to H-T and V-04-2/V-04-1 to H-B.",
+  "tokens_in": 1947,
+  "tokens_out": 143,
+  "requests": 2,
+  "latency_s": 2.362936332996469,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t025-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general capacity for this low-urgency patient.",
+        "time_min": 25
+      },
+      {
+        "proposal_id": "t025-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Fastest option with available general capacity for the ALS and companion patient.",
+        "time_min": 25
+      }
+    ],
+    "invalid": []
+  }
+}

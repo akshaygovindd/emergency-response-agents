@@ -1,0 +1,56 @@
+{
+  "output": "Sent V-09-2 to H-G; V-08-2 and V-08-3 need a different burn-capable option, but none is currently valid.",
+  "tokens_in": 3075,
+  "tokens_out": 207,
+  "requests": 3,
+  "latency_s": 3.6705454170005396,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital has general capacity and nearby availability.",
+        "time_min": 82
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 82,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 82,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

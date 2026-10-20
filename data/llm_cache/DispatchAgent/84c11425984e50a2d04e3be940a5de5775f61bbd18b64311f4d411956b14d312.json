@@ -1,0 +1,45 @@
+{
+  "output": "Proposed FIRE-1 to INC-05 and AMB-04 for both victims at INC-04.",
+  "tokens_in": 2229,
+  "tokens_out": 155,
+  "requests": 2,
+  "latency_s": 2.280154375002894,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t023-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is free and needed immediately for the highest-urgency incident.",
+        "time_min": 23
+      },
+      {
+        "proposal_id": "t023-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-04-1",
+            "V-04-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free ambulance can take both general victims from the same incident.",
+        "time_min": 23
+      }
+    ],
+    "invalid": []
+  }
+}

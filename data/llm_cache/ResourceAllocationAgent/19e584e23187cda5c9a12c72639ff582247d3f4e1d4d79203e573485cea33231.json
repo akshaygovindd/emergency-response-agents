@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t030-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-02 should go to INC-06 because it has two urgency-4 trauma victims and the longest total delay is still relatively modest. INC-05 has the highest urgency but only one victim and much longer travel on this unit, while INC-04 is lower urgency, so it loses this ambulance."
+  },
+  "tokens_in": 748,
+  "tokens_out": 90,
+  "requests": 1,
+  "latency_s": 1.2363850420006202,
+  "context": null
+}

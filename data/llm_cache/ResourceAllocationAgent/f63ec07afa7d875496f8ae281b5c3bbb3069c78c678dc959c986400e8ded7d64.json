@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t040-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Both proposals target the same victim, so only one can win. AMB-03 reaches INC-06 faster and is the better fit, so keep t040-P01; no useful counter is available because the only alternatives are the contested ambulances already in play."
+  },
+  "tokens_in": 670,
+  "tokens_out": 82,
+  "requests": 1,
+  "latency_s": 1.2355545419995906,
+  "context": null
+}

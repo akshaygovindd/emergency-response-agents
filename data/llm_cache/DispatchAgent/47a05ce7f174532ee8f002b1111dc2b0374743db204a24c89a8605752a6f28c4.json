@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-11 with V-11-1 and V-11-2.",
+  "tokens_in": 3173,
+  "tokens_out": 115,
+  "requests": 2,
+  "latency_s": 2.0333439169990015,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit for the highest-need mixed trauma/general victims at this incident.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

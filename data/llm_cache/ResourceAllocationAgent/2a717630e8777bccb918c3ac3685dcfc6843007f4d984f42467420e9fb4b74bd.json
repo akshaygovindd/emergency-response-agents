@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t045-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Pick the ALS unit: it reaches the incident faster and is the better fit for the higher-urgency trauma victim, while both proposals cover the same two victims so only one can proceed. No valid alternative ambulance remains to offer the losing proposal."
+  },
+  "tokens_in": 728,
+  "tokens_out": 84,
+  "requests": 1,
+  "latency_s": 1.3235086249987944,
+  "context": null
+}

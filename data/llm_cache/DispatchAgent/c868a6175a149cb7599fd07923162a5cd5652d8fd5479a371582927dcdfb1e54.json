@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-10.",
+  "tokens_in": 2006,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 2.096683584000857,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Longest-waiting incident needing rescue, with two waiting victims.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

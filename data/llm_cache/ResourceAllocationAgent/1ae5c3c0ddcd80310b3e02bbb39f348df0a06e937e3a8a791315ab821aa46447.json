@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t009-P01"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t009-P02",
+        "alternative_id": "AMB-02",
+        "reason": "BLS can still serve the same low-urgency victim, though slower than ALS."
+      }
+    ],
+    "reasoning": "Pick the fastest available unit for the shared victim: AMB-03 reaches V-02-1 in 3 minutes, which is the best use of the contested resource. AMB-02 is a valid fallback for the other proposal."
+  },
+  "tokens_in": 711,
+  "tokens_out": 116,
+  "requests": 1,
+  "latency_s": 1.7645043339944095,
+  "context": null
+}
