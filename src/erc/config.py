@@ -56,6 +56,7 @@ class TravelConfig(BaseModel):
     traffic_factor_max: float = 1.5
     on_scene_time_min: int = 5         # loading patients at the scene
     handover_time_min: int = 5         # handing patients over at the hospital
+    extrication_delay_min: int = 15    # extra time freeing trapped victims without a rescue/fire team
 
 
 class DeteriorationConfig(BaseModel):

@@ -34,8 +34,12 @@ def tiny_scenario() -> Scenario:
     ]
     responders = [ResponderTeam(team_id="FIRE-1", responder_type=ResponderType.FIRE,
                                 location=loc(10, 10), base_location=loc(10, 10))]
-    staff = [StaffMember(staff_id="D-01", role=StaffRole.DOCTOR, hospital_id="H-T",
-                         skills={Capability.TRAUMA: SkillLevel.EXPERT}, max_patients=2)]
+    staff = [
+        StaffMember(staff_id="D-01", role=StaffRole.DOCTOR, hospital_id="H-T",
+                    skills={Capability.TRAUMA: SkillLevel.EXPERT}, max_patients=2),
+        StaffMember(staff_id="N-01", role=StaffRole.NURSE, hospital_id="H-T",
+                    skills={Capability.TRAUMA: SkillLevel.INTERMEDIATE}, max_patients=2),
+    ]
     incidents = [
         Incident(incident_id="INC-01", incident_type=IncidentType.VEHICLE_COLLISION,
                  location=loc(6, 6), arrival_time_min=0,
