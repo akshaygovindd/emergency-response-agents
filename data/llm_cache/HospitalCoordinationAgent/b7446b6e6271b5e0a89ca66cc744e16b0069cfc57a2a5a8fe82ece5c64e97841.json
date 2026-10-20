@@ -1,0 +1,30 @@
+{
+  "output": "Sent both burn victims to H-B.",
+  "tokens_in": 1704,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.1978182919992832,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t039-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the only listed hospital that treats burns and has available burn slots.",
+        "time_min": 39
+      }
+    ],
+    "invalid": []
+  }
+}

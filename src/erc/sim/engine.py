@@ -80,6 +80,8 @@ class Engine:
         self.treatments: dict[str, TreatmentJob] = {}
         self.policy_calls = 0
         self._last_signature: tuple | None = None
+        if hasattr(policy, "bind_log"):          # lets agent systems write messages to this run's log
+            policy.bind_log(self.log)
 
     # ───────── Main loop ─────────
     def run(self) -> SimulationState:

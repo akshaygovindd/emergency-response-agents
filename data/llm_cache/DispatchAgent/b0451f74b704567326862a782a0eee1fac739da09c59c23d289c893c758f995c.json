@@ -1,0 +1,50 @@
+{
+  "output": "Proposed AMB-01 to INC-09 for V-09-1; rescue-team assignment still needs a valid free rescue unit.",
+  "tokens_in": 4984,
+  "tokens_out": 207,
+  "requests": 3,
+  "latency_s": 4.242384917000891,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "This is the most urgent waiting victim and the ALS ambulance is the closest listed unit.",
+        "time_min": 66
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 66,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "RESCUE-1",
+          "incident_id": "INC-08"
+        },
+        "reason": "responder_unavailable",
+        "detail": "RESCUE-1 is on_scene"
+      },
+      {
+        "time_min": 66,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "RESCUE-2",
+          "incident_id": "INC-08"
+        },
+        "reason": "unknown_resource",
+        "detail": "No responder team RESCUE-2"
+      }
+    ]
+  }
+}

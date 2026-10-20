@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-09-1 to H-G.",
+  "tokens_in": 1674,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.398141833000409,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t072-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital has free general capacity and is the best fit for this low-urgency general victim.",
+        "time_min": 72
+      }
+    ],
+    "invalid": []
+  }
+}

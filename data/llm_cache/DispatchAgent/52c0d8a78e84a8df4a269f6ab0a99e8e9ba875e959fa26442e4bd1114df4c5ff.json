@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-08.",
+  "tokens_in": 2490,
+  "tokens_out": 79,
+  "requests": 2,
+  "latency_s": 2.8069698749968666,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue is required there and it has no rescue team yet.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

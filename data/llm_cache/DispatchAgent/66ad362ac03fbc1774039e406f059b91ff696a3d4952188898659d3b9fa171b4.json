@@ -1,0 +1,32 @@
+{
+  "output": "I couldn\u2019t submit any valid proposals because no free teams are available and the ambulance tool list wasn\u2019t usable here.",
+  "tokens_in": 4882,
+  "tokens_out": 131,
+  "requests": 3,
+  "latency_s": 3.478792957997939,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 29,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "AMB-01",
+          "incident_id": "INC-08"
+        },
+        "reason": "unknown_resource",
+        "detail": "No responder team AMB-01"
+      },
+      {
+        "time_min": 29,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "AMB-01",
+          "incident_id": "INC-07"
+        },
+        "reason": "unknown_resource",
+        "detail": "No responder team AMB-01"
+      }
+    ]
+  }
+}

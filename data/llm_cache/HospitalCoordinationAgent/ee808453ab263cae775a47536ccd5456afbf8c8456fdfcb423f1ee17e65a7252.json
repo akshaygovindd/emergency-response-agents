@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-02 to H-G.",
+  "tokens_in": 1722,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 2.0596732499980135,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t105-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-3",
+            "V-07-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat both general trauma cases and has the best balance of capacity and free general slots.",
+        "time_min": 105
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -6,6 +6,7 @@ from collections.abc import Callable
 
 import pandas as pd
 
+from erc.agents.system import AgentSystem
 from erc.config import LOG_DIR, RESULTS_DIR, SCENARIO_DIR, Mode, ScenarioName, seeds_for
 from erc.eval.metrics import RunMetrics, compute_metrics
 from erc.eval.stats import paired_comparison, summarize
@@ -15,10 +16,10 @@ from erc.policies.naive import NaivePolicy
 from erc.scenarios.generator import generate_scenario
 from erc.sim.engine import Engine, Policy
 
-# Agent modes get registered here once they exist
 POLICIES: dict[Mode, Callable[[], Policy]] = {
     Mode.NAIVE: NaivePolicy,
     Mode.GREEDY: GreedyPolicy,
+    Mode.AGENTS: lambda: AgentSystem(negotiate=False),
 }
 RUNS_FILE = RESULTS_DIR / "runs.jsonl"
 KEY_METRICS = ["critical_service_rate", "critical_response_mean", "response_p95",

@@ -1,0 +1,58 @@
+{
+  "output": "Proposed ambulance pickups for INC-09 and INC-04.",
+  "tokens_in": 5350,
+  "tokens_out": 224,
+  "requests": 3,
+  "latency_s": 4.60509708400059,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t027-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-3",
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "INC-09 has the highest urgency mix and needs ALS-capable transport for the most urgent trauma victims.",
+        "time_min": 27
+      },
+      {
+        "proposal_id": "t027-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "INC-04 has an ALS-needed general victim and is a good single-patient BLS pickup.",
+        "time_min": 27
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 27,
+        "tool": "submit_team_assignment",
+        "args": {
+          "team_id": "RESCUE-1",
+          "incident_id": "INC-08"
+        },
+        "reason": "responder_unavailable",
+        "detail": "RESCUE-1 is on_scene"
+      }
+    ]
+  }
+}

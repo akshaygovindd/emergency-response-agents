@@ -10,12 +10,14 @@ from __future__ import annotations
 import argparse
 
 import pandas as pd
+from dotenv import load_dotenv
 
 from erc.config import RESULTS_DIR, Mode, ScenarioName
 from erc.eval.experiment import load_runs, paired_table, run_experiment, summary_table
 
 
 def main() -> None:
+    load_dotenv()   # reads OPENAI_API_KEY from .env (needed for agent modes)
     parser = argparse.ArgumentParser(description="Run emergency-coordination experiments.")
     parser.add_argument("--mode", nargs="+", choices=[m.value for m in Mode],
                         help="Systems to run. Omit to only print saved results.")
