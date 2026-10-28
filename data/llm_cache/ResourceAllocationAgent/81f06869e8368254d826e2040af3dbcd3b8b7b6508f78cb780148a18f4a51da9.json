@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t112-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-04 should go to INC-17 because it has the higher-urgency victims (two urgency 4 ALS needs) and also reaches them faster. INC-06 has lower-urgency patients, so no alternate ambulance is available to counter with."
+  },
+  "tokens_in": 672,
+  "tokens_out": 81,
+  "requests": 1,
+  "latency_s": 1.4312983329873532,
+  "context": null
+}

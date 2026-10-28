@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-22 with V-22-1 and V-22-2.",
+  "tokens_in": 4487,
+  "tokens_out": 97,
+  "requests": 2,
+  "latency_s": 2.0552137499907985,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-22-1",
+            "V-22-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the most urgent ALS trauma victims at this incident.",
+        "time_min": 117
+      }
+    ],
+    "invalid": []
+  }
+}

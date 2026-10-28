@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-03 to INC-21 and AMB-05 to INC-14.",
+  "tokens_in": 6216,
+  "tokens_out": 188,
+  "requests": 2,
+  "latency_s": 2.3169977919897065,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-21-1",
+            "V-21-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS unit is closest to the most urgent ALS burn/general victims at this incident.",
+        "time_min": 71
+      },
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-14-1",
+            "V-14-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "BLS unit is the closest available transport for this trauma pair, with ALS needs still prioritized on the first available unit.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

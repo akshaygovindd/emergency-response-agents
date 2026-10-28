@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-03 for V-02-1/V-02-3 and AMB-05 for V-02-2/V-02-4 at INC-02.",
+  "tokens_in": 3112,
+  "tokens_out": 188,
+  "requests": 3,
+  "latency_s": 3.3918580840108916,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t008-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1",
+            "V-02-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance is closest and should take the two most urgent general victims first.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "BLS ambulance is the next closest unit and can carry the remaining general and burn victims together.",
+        "time_min": 8
+      }
+    ],
+    "invalid": []
+  }
+}

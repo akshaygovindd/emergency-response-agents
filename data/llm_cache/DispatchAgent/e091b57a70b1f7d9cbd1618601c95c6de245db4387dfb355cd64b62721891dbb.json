@@ -1,0 +1,48 @@
+{
+  "output": "Proposed ALS to INC-20 and BLS to INC-17.",
+  "tokens_in": 5584,
+  "tokens_out": 185,
+  "requests": 2,
+  "latency_s": 2.994063999998616,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t067-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-20-1",
+            "V-20-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is closest suitable unit for the most urgent trauma victim and a compatible general victim at INC-20.",
+        "time_min": 67
+      },
+      {
+        "proposal_id": "t067-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "BLS is the closest free unit for INC-17 and can take the general and trauma victims together.",
+        "time_min": 67
+      }
+    ],
+    "invalid": []
+  }
+}

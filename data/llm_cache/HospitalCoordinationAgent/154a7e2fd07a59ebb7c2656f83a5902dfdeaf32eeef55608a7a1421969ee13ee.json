@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-03 to H-G.",
+  "tokens_in": 1672,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 1.7929102909984067,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t018-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has available general treatment slots and capacity while keeping the trauma center from being overloaded.",
+        "time_min": 18
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "output": "Unable to assign yet: V-20-1 must match co-passenger V-20-2\u2019s destination, and H-T is over ER capacity for AMB-03.",
+  "tokens_in": 3103,
+  "tokens_out": 197,
+  "requests": 3,
+  "latency_s": 4.0201252910192125,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 101,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-20-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-20-2 is going to H-T"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      },
+      {
+        "time_min": 101,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-20-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-20-2 is going to H-T"
+      }
+    ]
+  }
+}

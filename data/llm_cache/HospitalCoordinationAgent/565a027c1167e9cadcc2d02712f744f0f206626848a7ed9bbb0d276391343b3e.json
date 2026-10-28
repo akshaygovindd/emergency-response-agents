@@ -1,0 +1,30 @@
+{
+  "output": "AMB-01 to H-G for both general victims.",
+  "tokens_in": 1720,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.5811078750120942,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-20-1",
+            "V-20-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest non-overloaded hospital with general treatment slots and beds.",
+        "time_min": 106
+      }
+    ],
+    "invalid": []
+  }
+}

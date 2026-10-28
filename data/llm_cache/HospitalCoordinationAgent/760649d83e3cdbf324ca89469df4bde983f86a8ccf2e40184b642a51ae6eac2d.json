@@ -1,0 +1,29 @@
+{
+  "output": "Chose H-G for V-24-1 due to shortest travel time and available general capacity.",
+  "tokens_in": 1656,
+  "tokens_out": 71,
+  "requests": 2,
+  "latency_s": 2.455706917011412,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t093-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-24-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital has general care capacity and the shortest travel time.",
+        "time_min": 93
+      }
+    ],
+    "invalid": []
+  }
+}

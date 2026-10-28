@@ -1,0 +1,27 @@
+{
+  "output": "Proposed MED-1 to INC-05.",
+  "tokens_in": 1900,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.042251208011294,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t013-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical support can assist the most urgent waiting victim at the fire incident.",
+        "time_min": 13
+      }
+    ],
+    "invalid": []
+  }
+}

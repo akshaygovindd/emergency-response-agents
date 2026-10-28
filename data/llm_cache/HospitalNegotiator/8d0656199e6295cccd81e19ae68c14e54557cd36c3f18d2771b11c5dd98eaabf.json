@@ -1,0 +1,12 @@
+{
+  "output": {
+    "decision": "accept",
+    "suggested_alternative_id": "none",
+    "reason": "H-B can treat general ALS patients and is within capacity, so it\u2019s acceptable."
+  },
+  "tokens_in": 653,
+  "tokens_out": 47,
+  "requests": 1,
+  "latency_s": 0.9191279590013437,
+  "context": null
+}

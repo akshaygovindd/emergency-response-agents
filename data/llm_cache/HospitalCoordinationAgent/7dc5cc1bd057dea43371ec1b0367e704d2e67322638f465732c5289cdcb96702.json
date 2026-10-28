@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-05 to H-G.",
+  "tokens_in": 1672,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 1.56259700001101,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t065-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat general urgent ALS patients and has available general capacity with the shortest suitable travel time among options.",
+        "time_min": 65
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-03 to INC-07 for V-07-1 and V-07-2.",
+  "tokens_in": 3537,
+  "tokens_out": 97,
+  "requests": 2,
+  "latency_s": 1.9916028330044355,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t044-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit to the highest-risk incident with an ALS trauma victim.",
+        "time_min": 44
+      }
+    ],
+    "invalid": []
+  }
+}

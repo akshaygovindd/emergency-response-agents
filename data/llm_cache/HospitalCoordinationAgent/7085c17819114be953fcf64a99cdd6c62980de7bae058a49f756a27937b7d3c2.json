@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-18-1 to H-B.",
+  "tokens_in": 1640,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 2.1530081249948125,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t081-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-18-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn Unit has available burn capacity and is the only listed suitable hospital.",
+        "time_min": 81
+      }
+    ],
+    "invalid": []
+  }
+}

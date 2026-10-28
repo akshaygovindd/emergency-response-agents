@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-11 with V-11-3 and V-11-1.",
+  "tokens_in": 4725,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 2.1938272500119638,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-3",
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ambulance for the highest-need ALS-capable mixed general/trauma patients.",
+        "time_min": 116
+      }
+    ],
+    "invalid": []
+  }
+}

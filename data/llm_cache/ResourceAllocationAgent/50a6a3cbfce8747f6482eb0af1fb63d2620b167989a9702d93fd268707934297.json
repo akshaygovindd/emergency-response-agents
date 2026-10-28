@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t006-P02"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t006-P03",
+        "alternative_id": "H-G",
+        "reason": "General Hospital still treats general victims and has enough ER capacity for this pair."
+      }
+    ],
+    "reasoning": "Keep the higher-urgency pair (including the urgency 5 victim) at the fastest suitable hospital. The other proposal can be redirected to H-G, which can still accept both general victims without exceeding capacity."
+  },
+  "tokens_in": 959,
+  "tokens_out": 112,
+  "requests": 1,
+  "latency_s": 1.7612435409973841,
+  "context": null
+}

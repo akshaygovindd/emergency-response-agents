@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 to INC-11 for V-11-1 and V-11-2.",
+  "tokens_in": 5886,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 1.9380362920055632,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t095-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit to the highest-priority mix at the longest-waiting incident.",
+        "time_min": 95
+      }
+    ],
+    "invalid": []
+  }
+}

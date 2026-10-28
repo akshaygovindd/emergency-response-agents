@@ -1,0 +1,44 @@
+{
+  "output": "Proposed ALS ambulance AMB-03 and medical team MED-1 for INC-02.",
+  "tokens_in": 3190,
+  "tokens_out": 136,
+  "requests": 3,
+  "latency_s": 2.709346000017831,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t010-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is required and AMB-03 is the available ALS unit for this victim.",
+        "time_min": 10
+      },
+      {
+        "proposal_id": "t010-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical support can help a low-urgency victim at this incident.",
+        "time_min": 10
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-05 to H-T for both trauma victims.",
+  "tokens_in": 1720,
+  "tokens_out": 76,
+  "requests": 2,
+  "latency_s": 1.9113857079937588,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t067-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-3",
+            "V-14-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is the specialty match for the urgent trauma patient and can receive both victims.",
+        "time_min": 67
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-G for AMB-05\u2019s two general victims.",
+  "tokens_in": 1718,
+  "tokens_out": 77,
+  "requests": 2,
+  "latency_s": 1.7389679170155432,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t068-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest general-capable hospital with available ER capacity and a trauma slot, avoiding overload elsewhere.",
+        "time_min": 68
+      }
+    ],
+    "invalid": []
+  }
+}

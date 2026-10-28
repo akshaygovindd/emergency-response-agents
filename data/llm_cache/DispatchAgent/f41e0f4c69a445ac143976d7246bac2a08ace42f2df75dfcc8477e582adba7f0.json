@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-04 for INC-17 and INC-06.",
+  "tokens_in": 4677,
+  "tokens_out": 174,
+  "requests": 2,
+  "latency_s": 2.656824667006731,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available ambulance for the highest-need ALS patients at this incident.",
+        "time_min": 112
+      },
+      {
+        "proposal_id": "t112-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "This BLS unit is the closest fit for a mixed trauma/general pair needing transport.",
+        "time_min": 112
+      }
+    ],
+    "invalid": []
+  }
+}

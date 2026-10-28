@@ -1,0 +1,48 @@
+{
+  "output": "Assigned AMB-01 to H-T and AMB-04 to H-G.",
+  "tokens_in": 1983,
+  "tokens_out": 136,
+  "requests": 2,
+  "latency_s": 2.2474895420018584,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t045-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest trauma-capable hospital for the trauma victim.",
+        "time_min": 45
+      },
+      {
+        "proposal_id": "t045-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-2",
+            "V-14-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Has capacity and quickest access for the ALS general patients.",
+        "time_min": 45
+      }
+    ],
+    "invalid": []
+  }
+}

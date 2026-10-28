@@ -1,0 +1,47 @@
+{
+  "output": "Assigned both burns to H-B and the general ALS victim to H-G.",
+  "tokens_in": 1924,
+  "tokens_out": 139,
+  "requests": 2,
+  "latency_s": 1.8362181249831337,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t033-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the closest appropriate hospital and has burn capacity for both urgent burn victims.",
+        "time_min": 33
+      },
+      {
+        "proposal_id": "t033-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat general ALS patients and is closer than the trauma center.",
+        "time_min": 33
+      }
+    ],
+    "invalid": []
+  }
+}

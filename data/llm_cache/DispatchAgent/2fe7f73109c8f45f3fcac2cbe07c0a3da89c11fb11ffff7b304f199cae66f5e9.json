@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-22 with the two highest-priority trauma victims.",
+  "tokens_in": 5816,
+  "tokens_out": 92,
+  "requests": 2,
+  "latency_s": 3.564695874985773,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t088-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-22-1",
+            "V-22-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-urgency ALS trauma victims at a waiting incident.",
+        "time_min": 88
+      }
+    ],
+    "invalid": []
+  }
+}

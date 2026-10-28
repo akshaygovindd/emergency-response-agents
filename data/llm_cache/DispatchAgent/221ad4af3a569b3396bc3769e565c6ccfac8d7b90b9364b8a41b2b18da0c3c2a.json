@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-19 with V-19-1 and V-19-2.",
+  "tokens_in": 5554,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 2.04857120802626,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-19",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-19-1",
+            "V-19-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent ALS trauma pair and both fit one BLS run for first medical contact.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

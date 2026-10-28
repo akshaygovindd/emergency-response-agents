@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-04 for INC-12.",
+  "tokens_in": 4460,
+  "tokens_out": 76,
+  "requests": 2,
+  "latency_s": 2.2443187909957487,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t048-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit for the highest-need ALS victim.",
+        "time_min": 48
+      }
+    ],
+    "invalid": []
+  }
+}

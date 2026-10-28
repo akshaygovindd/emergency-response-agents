@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-03 to INC-08 for V-08-2 and V-08-3.",
+  "tokens_in": 3314,
+  "tokens_out": 94,
+  "requests": 2,
+  "latency_s": 2.7729401249962393,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t038-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit and most urgent mix needing rapid pickup.",
+        "time_min": 38
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-01 to H-T for both trauma victims.",
+  "tokens_in": 1711,
+  "tokens_out": 75,
+  "requests": 2,
+  "latency_s": 1.8014285829849541,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t069-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-2",
+            "V-17-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma specialty matches both urgent trauma victims and H-T has a free trauma slot.",
+        "time_min": 69
+      }
+    ],
+    "invalid": []
+  }
+}

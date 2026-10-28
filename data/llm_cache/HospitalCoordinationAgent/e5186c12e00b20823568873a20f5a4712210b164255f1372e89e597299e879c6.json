@@ -1,0 +1,48 @@
+{
+  "output": "Sent AMB-03 to H-B and AMB-05 to H-T.",
+  "tokens_in": 1971,
+  "tokens_out": 144,
+  "requests": 2,
+  "latency_s": 2.330250208004145,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-21-1",
+            "V-21-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the only reachable hospital and can treat the burn victim and general case.",
+        "time_min": 96
+      },
+      {
+        "proposal_id": "t096-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is the specialty match for both trauma victims.",
+        "time_min": 96
+      }
+    ],
+    "invalid": []
+  }
+}

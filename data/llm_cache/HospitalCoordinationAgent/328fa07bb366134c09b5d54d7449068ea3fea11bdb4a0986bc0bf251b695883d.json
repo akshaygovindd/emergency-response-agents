@@ -1,0 +1,65 @@
+{
+  "output": "AMB-01 and AMB-04 to H-T; AMB-02 to H-G.",
+  "tokens_in": 2201,
+  "tokens_out": 196,
+  "requests": 2,
+  "latency_s": 2.311082542000804,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t008-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-3",
+            "V-04-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is the closest trauma-capable option for these urgent ALS trauma victims.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital is closest and has general capacity for this low-urgency patient.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is the appropriate specialty for two urgent ALS trauma victims.",
+        "time_min": 8
+      }
+    ],
+    "invalid": []
+  }
+}

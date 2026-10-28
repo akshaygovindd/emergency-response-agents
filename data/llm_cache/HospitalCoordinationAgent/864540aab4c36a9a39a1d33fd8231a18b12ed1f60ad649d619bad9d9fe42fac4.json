@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-25-1 to H-G.",
+  "tokens_in": 1669,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.934497750014998,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-25",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-25-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is the closest with available general treatment capacity and beds.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

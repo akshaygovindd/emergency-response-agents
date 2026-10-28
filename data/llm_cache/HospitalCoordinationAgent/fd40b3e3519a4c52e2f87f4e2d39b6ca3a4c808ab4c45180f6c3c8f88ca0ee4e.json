@@ -1,0 +1,30 @@
+{
+  "output": "AMB-02 routed to H-B for both victims.",
+  "tokens_in": 1704,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 2.0768525000021327,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t024-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Burn Unit matches the burn victim and still has capacity and slots for both patients.",
+        "time_min": 24
+      }
+    ],
+    "invalid": []
+  }
+}

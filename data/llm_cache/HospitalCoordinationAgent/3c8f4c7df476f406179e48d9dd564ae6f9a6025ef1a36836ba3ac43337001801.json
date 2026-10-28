@@ -1,0 +1,30 @@
+{
+  "output": "Sent both burn victims to H-B.",
+  "tokens_in": 1695,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.9456605419982225,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t090-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-16-3",
+            "V-16-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Nearest burn-capable hospital for both ALS burn victims.",
+        "time_min": 90
+      }
+    ],
+    "invalid": []
+  }
+}

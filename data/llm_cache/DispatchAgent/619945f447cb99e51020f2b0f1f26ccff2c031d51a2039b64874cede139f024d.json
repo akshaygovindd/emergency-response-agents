@@ -1,0 +1,44 @@
+{
+  "output": "Proposed FIRE-1 and AMB-02 for INC-03.",
+  "tokens_in": 3015,
+  "tokens_out": 146,
+  "requests": 3,
+  "latency_s": 3.06964670799789,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t020-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is needed at INC-03 and is free, enabling access and stabilization for the burn victim.",
+        "time_min": 20
+      },
+      {
+        "proposal_id": "t020-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "AMB-02 is the closest free ambulance to INC-03 and the burn victim can be transported by BLS.",
+        "time_min": 20
+      }
+    ],
+    "invalid": []
+  }
+}

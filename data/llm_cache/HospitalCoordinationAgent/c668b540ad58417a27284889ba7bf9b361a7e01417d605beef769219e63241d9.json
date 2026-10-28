@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-02 to H-G.",
+  "tokens_in": 1714,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 1.9735293330159038,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-19",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-19-1",
+            "V-19-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-G can treat trauma, has free trauma capacity, and is closer than H-T.",
+        "time_min": 91
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-01 to INC-15 and MED-1 to INC-14.",
+  "tokens_in": 4376,
+  "tokens_out": 167,
+  "requests": 2,
+  "latency_s": 2.348486500006402,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t058-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-15-2",
+            "V-15-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance should reach the most urgent trauma victim and can also carry the lower-urgency general victim from the same incident.",
+        "time_min": 58
+      },
+      {
+        "proposal_id": "t058-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can provide immediate support for the urgent burn victims while fire support is not yet assigned.",
+        "time_min": 58
+      }
+    ],
+    "invalid": []
+  }
+}

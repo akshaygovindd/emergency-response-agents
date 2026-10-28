@@ -1,0 +1,30 @@
+{
+  "output": "Chosen H-G for AMB-03.",
+  "tokens_in": 1711,
+  "tokens_out": 71,
+  "requests": 2,
+  "latency_s": 1.9127553750004154,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t047-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G can treat trauma and general patients, has free slots, and is closest.",
+        "time_min": 47
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Chosen H-B for AMB-01.",
+  "tokens_in": 1702,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 3.2761678750102874,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t050-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit is the only listed destination and has free burn/general capacity.",
+        "time_min": 50
+      }
+    ],
+    "invalid": []
+  }
+}

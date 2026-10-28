@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-04 to INC-25 for V-25-1.",
+  "tokens_in": 5287,
+  "tokens_out": 103,
+  "requests": 2,
+  "latency_s": 1.6318205409916118,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t098-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-25",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-25-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent victim and BLS is suitable for a general non-ALS case.",
+        "time_min": 98
+      }
+    ],
+    "invalid": []
+  }
+}

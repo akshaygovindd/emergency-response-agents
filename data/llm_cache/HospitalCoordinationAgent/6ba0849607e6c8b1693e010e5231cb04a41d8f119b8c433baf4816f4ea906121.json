@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-01-1 to H-G.",
+  "tokens_in": 1660,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.7399345409939997,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t011-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital that can treat the general ALS patient and has ample capacity.",
+        "time_min": 11
+      }
+    ],
+    "invalid": []
+  }
+}

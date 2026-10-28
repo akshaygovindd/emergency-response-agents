@@ -1,0 +1,47 @@
+{
+  "output": "Assigned AMB-02 to H-G and AMB-03 to H-T.",
+  "tokens_in": 1927,
+  "tokens_out": 138,
+  "requests": 2,
+  "latency_s": 2.392577999999048,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t007-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-4",
+            "V-01-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital is closest and has capacity for both general and trauma care.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "t007-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center best matches the urgent trauma case and has available trauma capacity.",
+        "time_min": 7
+      }
+    ],
+    "invalid": []
+  }
+}

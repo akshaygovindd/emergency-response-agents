@@ -1,0 +1,29 @@
+{
+  "output": "AMB-03 to H-G for V-06-1.",
+  "tokens_in": 1665,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.7140821250213776,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t035-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital has the needed general care slot and ample capacity, with reasonable travel time.",
+        "time_min": 35
+      }
+    ],
+    "invalid": []
+  }
+}

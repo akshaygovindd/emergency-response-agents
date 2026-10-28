@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-03-1 to H-B.",
+  "tokens_in": 1636,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 2.1472029169963207,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t011-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the matching specialty and has capacity.",
+        "time_min": 11
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "output": "Assigned AMB-02 to H-B and AMB-05 to H-G due to capacity at H-T.",
+  "tokens_in": 3098,
+  "tokens_out": 204,
+  "requests": 3,
+  "latency_s": 3.4801781669957563,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t013-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-5"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with open capacity and a general treatment slot.",
+        "time_min": 13
+      },
+      {
+        "proposal_id": "t013-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-3",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-T is full, and H-G can treat trauma with available ER capacity and trauma slot.",
+        "time_min": 13
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 13,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-3",
+            "V-02-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

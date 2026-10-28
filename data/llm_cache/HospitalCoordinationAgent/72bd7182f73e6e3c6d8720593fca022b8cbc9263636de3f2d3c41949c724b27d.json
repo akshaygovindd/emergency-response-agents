@@ -1,0 +1,62 @@
+{
+  "output": "Assigned AMB-04 and AMB-05 to H-G for capacity-safe treatment.",
+  "tokens_in": 3185,
+  "tokens_out": 208,
+  "requests": 3,
+  "latency_s": 3.7824996249983087,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t068-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-3",
+            "V-14-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat trauma and general victims and has ample capacity and slots.",
+        "time_min": 68
+      },
+      {
+        "proposal_id": "t068-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat the ALS general victims and has available ER capacity and slots.",
+        "time_min": 68
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 68,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 for INC-08 with V-08-2 and V-08-1.",
+  "tokens_in": 2241,
+  "tokens_out": 105,
+  "requests": 2,
+  "latency_s": 2.4541739159903955,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t038-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-2",
+            "V-08-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ALS ambulance should reach the most urgent incident with burn/general victims and the highest-acuity patient first.",
+        "time_min": 38
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "output": "Proposed ALS and BLS ambulances for INC-01 plus the rescue team.",
+  "tokens_in": 2364,
+  "tokens_out": 198,
+  "requests": 2,
+  "latency_s": 2.434089665999636,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t004-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the ALS-requiring trauma victim.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Nearest BLS unit for the lower-urgency general victim.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue team is needed and available for this incident.",
+        "time_min": 4
+      }
+    ],
+    "invalid": []
+  }
+}

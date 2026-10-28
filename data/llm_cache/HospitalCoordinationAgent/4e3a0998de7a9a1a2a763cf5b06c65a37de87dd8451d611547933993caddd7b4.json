@@ -1,0 +1,29 @@
+{
+  "output": "Directed AMB-05 to H-G.",
+  "tokens_in": 1674,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 2.4439884159946814,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t100-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat general ALS trauma-adjacent cases and has available general slots with ample capacity.",
+        "time_min": 100
+      }
+    ],
+    "invalid": []
+  }
+}

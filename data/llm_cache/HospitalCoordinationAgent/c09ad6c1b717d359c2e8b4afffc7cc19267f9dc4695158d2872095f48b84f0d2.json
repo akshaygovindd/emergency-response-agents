@@ -1,0 +1,29 @@
+{
+  "output": "Queued V-10-1 to General Hospital.",
+  "tokens_in": 1662,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 1.6775865420058835,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t036-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital can treat general cases and has the best balance of capacity and available general slots.",
+        "time_min": 36
+      }
+    ],
+    "invalid": []
+  }
+}

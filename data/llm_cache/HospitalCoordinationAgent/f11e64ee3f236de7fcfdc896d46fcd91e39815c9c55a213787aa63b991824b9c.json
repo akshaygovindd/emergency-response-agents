@@ -1,0 +1,29 @@
+{
+  "output": "AMB-05 to H-G.",
+  "tokens_in": 1660,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 1.87030495799263,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t020-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital is the fastest option and has available general capacity.",
+        "time_min": 20
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "output": "Routed V-20-2 to H-T and V-20-1 to H-B.",
+  "tokens_in": 6235,
+  "tokens_out": 296,
+  "requests": 6,
+  "latency_s": 5.747188125009416,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-20-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Urgent trauma victim needs the trauma center despite full ER, while the general victim can be routed separately.",
+        "time_min": 85
+      },
+      {
+        "proposal_id": "t085-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-20-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "General victim can be treated at the burn unit's general capacity, preserving trauma care for the urgent victim.",
+        "time_min": 85
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 85,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-20-1",
+            "V-20-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-G ER would hold 9 of 8"
+      },
+      {
+        "time_min": 85,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-20-1",
+            "V-20-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      },
+      {
+        "time_min": 85,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-20-1",
+            "V-20-2"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-B cannot treat trauma"
+      }
+    ]
+  }
+}

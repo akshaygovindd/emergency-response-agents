@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-23-3 to H-T.",
+  "tokens_in": 1652,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 2.0153848749760073,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t114-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Urgent trauma case with the shortest travel time to the Trauma Center.",
+        "time_min": 114
+      }
+    ],
+    "invalid": []
+  }
+}

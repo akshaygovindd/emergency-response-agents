@@ -1,0 +1,30 @@
+{
+  "output": "Routed AMB-02 to H-G for both victims.",
+  "tokens_in": 1713,
+  "tokens_out": 77,
+  "requests": 2,
+  "latency_s": 2.4531199999910314,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-22-1",
+            "V-22-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat both victims and has the best travel time with available general slots and beds.",
+        "time_min": 112
+      }
+    ],
+    "invalid": []
+  }
+}

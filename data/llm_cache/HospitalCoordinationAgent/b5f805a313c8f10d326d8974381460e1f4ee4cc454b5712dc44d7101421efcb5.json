@@ -1,0 +1,44 @@
+{
+  "output": "Sent AMB-02 to H-B for both victims.",
+  "tokens_in": 2715,
+  "tokens_out": 142,
+  "requests": 3,
+  "latency_s": 2.959677417005878,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-21-1",
+            "V-21-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the only listed hospital reachable for this ambulance and can treat the burn victim while also accepting general care.",
+        "time_min": 71
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 71,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-21-1",
+            "V-21-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

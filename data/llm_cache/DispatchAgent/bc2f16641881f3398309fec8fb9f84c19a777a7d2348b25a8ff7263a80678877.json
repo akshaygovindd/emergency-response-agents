@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-09 with V-09-1 and V-09-2.",
+  "tokens_in": 3929,
+  "tokens_out": 99,
+  "requests": 2,
+  "latency_s": 3.3608404170081485,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t053-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest suitable pickup for two BLS-compatible victims at a mixed burn/general incident.",
+        "time_min": 53
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "output": "Both ambulances sent to H-T for fastest trauma-capable care.",
+  "tokens_in": 1984,
+  "tokens_out": 142,
+  "requests": 2,
+  "latency_s": 2.308991124999011,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t003-P05",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-3",
+            "V-01-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Trauma Center is closest and best matches the trauma victim while having capacity.",
+        "time_min": 3
+      },
+      {
+        "proposal_id": "t003-P06",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-2",
+            "V-01-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Trauma Center is closest and matches the trauma victim with available ER capacity.",
+        "time_min": 3
+      }
+    ],
+    "invalid": []
+  }
+}

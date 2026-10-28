@@ -1,0 +1,48 @@
+{
+  "output": "Both ambulances were \u092d\u0947\u091ced to H-T for fastest valid trauma/general care.",
+  "tokens_in": 1997,
+  "tokens_out": 149,
+  "requests": 2,
+  "latency_s": 1.8415653750125784,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t002-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-4",
+            "V-02-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital that can treat both general victims, including the urgent ALS patient.",
+        "time_min": 2
+      },
+      {
+        "proposal_id": "t002-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-3",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is the nearest hospital that can treat both trauma victims, including the urgent ALS patient.",
+        "time_min": 2
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 to INC-20 for V-20-1 and V-20-2.",
+  "tokens_in": 5258,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 2.045318167016376,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t101-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-20-1",
+            "V-20-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit and the victims are low-acuity general cases at a fire incident.",
+        "time_min": 101
+      }
+    ],
+    "invalid": []
+  }
+}

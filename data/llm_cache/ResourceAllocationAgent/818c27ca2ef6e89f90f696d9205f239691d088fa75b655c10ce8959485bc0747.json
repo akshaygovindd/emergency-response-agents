@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t030-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "P01 serves the more urgent incident and includes a higher-urgency victim, with much faster arrival (2 min vs 19). No unclaimed ambulance alternatives are available for P02, so it must \u0443\u0441\u0442\u0443\u043f\u0438\u0442\u044c."
+  },
+  "tokens_in": 678,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.192452042014338,
+  "context": null
+}

@@ -1,0 +1,78 @@
+{
+  "output": "Sent AMB-03 and AMB-04 to H-T, and AMB-01 to H-T to match the current routing conflict.",
+  "tokens_in": 3514,
+  "tokens_out": 246,
+  "requests": 3,
+  "latency_s": 3.3794669580238406,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma patient needs the Trauma Center and it is the appropriate specialty match.",
+        "time_min": 116
+      },
+      {
+        "proposal_id": "t116-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-22-1",
+            "V-22-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Severe trauma victim should go to the Trauma Center with the matching specialty.",
+        "time_min": 116
+      },
+      {
+        "proposal_id": "t116-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-20-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "Re-route to match the ambulance's existing destination and avoid conflict.",
+        "time_min": 116
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 116,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-20-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-20-2 is going to H-T"
+      }
+    ]
+  }
+}

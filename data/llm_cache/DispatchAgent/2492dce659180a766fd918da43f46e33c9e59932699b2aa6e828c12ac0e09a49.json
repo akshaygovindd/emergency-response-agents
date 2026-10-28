@@ -1,0 +1,95 @@
+{
+  "output": "Proposed 3 ambulance pickups and 2 team dispatches.",
+  "tokens_in": 3167,
+  "tokens_out": 317,
+  "requests": 2,
+  "latency_s": 2.810008750006091,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t004-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-04-3",
+            "V-04-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the two ALS trauma victims at the most urgent mixed-care incident.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Nearest available ambulance for the ALS trauma pair at INC-02.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest available unit for the highest-urgency general victim at INC-03.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Nearest free rescue team for the incident needing rescue support.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P05",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical team can provide early support at a high-urgency incident.",
+        "time_min": 4
+      }
+    ],
+    "invalid": []
+  }
+}

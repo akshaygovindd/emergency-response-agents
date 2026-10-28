@@ -1,0 +1,29 @@
+{
+  "output": "AMB-04 assigned to H-G for the general-care victim.",
+  "tokens_in": 1658,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 2.2526737499865703,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t089-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-21-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general care capacity and no ER overload risk.",
+        "time_min": 89
+      }
+    ],
+    "invalid": []
+  }
+}

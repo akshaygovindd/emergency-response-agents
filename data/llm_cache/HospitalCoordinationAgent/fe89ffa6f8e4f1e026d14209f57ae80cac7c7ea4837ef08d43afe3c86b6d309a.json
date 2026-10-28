@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-13-1 to H-G.",
+  "tokens_in": 1668,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.9459390830015764,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-13-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat the victim and has free general capacity with the best balance of proximity and availability.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

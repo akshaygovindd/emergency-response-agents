@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-10-1 from AMB-04 to H-G.",
+  "tokens_in": 1659,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.9168840000056662,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital treats general cases and has the best capacity and shortest travel time.",
+        "time_min": 106
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-05 to H-G.",
+  "tokens_in": 1720,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.7412399589957204,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t060-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital is closest among capable hospitals and has ample general treatment capacity.",
+        "time_min": 60
+      }
+    ],
+    "invalid": []
+  }
+}

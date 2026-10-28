@@ -1,0 +1,12 @@
+{
+  "output": {
+    "decision": "accept",
+    "suggested_alternative_id": "none",
+    "reason": "H-G can treat both patients and has enough capacity and slots, so it is a safe fallback."
+  },
+  "tokens_in": 660,
+  "tokens_out": 44,
+  "requests": 1,
+  "latency_s": 1.260760625009425,
+  "context": null
+}

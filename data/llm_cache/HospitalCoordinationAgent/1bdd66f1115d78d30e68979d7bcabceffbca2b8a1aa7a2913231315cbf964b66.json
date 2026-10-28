@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-03 to H-T for both trauma victims.",
+  "tokens_in": 1721,
+  "tokens_out": 75,
+  "requests": 2,
+  "latency_s": 2.002304582973011,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-21-3",
+            "V-21-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is closest and has free trauma treatment slots for both urgent trauma victims.",
+        "time_min": 66
+      }
+    ],
+    "invalid": []
+  }
+}

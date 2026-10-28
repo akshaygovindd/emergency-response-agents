@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-13 to pick up V-13-1 and V-13-3.",
+  "tokens_in": 5462,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 2.049120124982437,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t118-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-13-1",
+            "V-13-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free BLS unit to the most urgent non-ALS general victims.",
+        "time_min": 118
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-19 with V-19-2 and V-19-4.",
+  "tokens_in": 4547,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 1.8425892499799374,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t111-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-19",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-19-2",
+            "V-19-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-urgency ALS burn/general patients at this incident need the only free ambulance.",
+        "time_min": 111
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-05 to INC-08 for V-08-1.",
+  "tokens_in": 5588,
+  "tokens_out": 86,
+  "requests": 2,
+  "latency_s": 1.8193151250015944,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest high-need victim compatible with BLS and no team is required.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

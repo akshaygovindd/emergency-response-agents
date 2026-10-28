@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-01 to H-B.",
+  "tokens_in": 1699,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 1.7021525409945752,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t039-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "H-B is the only reachable hospital and has burn/general capacity.",
+        "time_min": 39
+      }
+    ],
+    "invalid": []
+  }
+}

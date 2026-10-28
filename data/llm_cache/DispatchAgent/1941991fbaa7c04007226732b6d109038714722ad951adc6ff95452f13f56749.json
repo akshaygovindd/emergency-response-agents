@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 for INC-20 with V-20-5 and V-20-2.",
+  "tokens_in": 5094,
+  "tokens_out": 114,
+  "requests": 2,
+  "latency_s": 2.4874568750092294,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-20-5",
+            "V-20-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit to the highest-urgency mixed general/burn incident.",
+        "time_min": 106
+      }
+    ],
+    "invalid": []
+  }
+}

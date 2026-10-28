@@ -1,0 +1,47 @@
+{
+  "output": "Assigned both ambulances to H-T for fastest appropriate trauma-capable care.",
+  "tokens_in": 1928,
+  "tokens_out": 135,
+  "requests": 2,
+  "latency_s": 2.7607525830098893,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t043-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital that can treat the trauma patient and has available trauma capacity.",
+        "time_min": 43
+      },
+      {
+        "proposal_id": "t043-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with trauma capability and the best option for urgent ALS care.",
+        "time_min": 43
+      }
+    ],
+    "invalid": []
+  }
+}

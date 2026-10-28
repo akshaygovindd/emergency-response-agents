@@ -1,0 +1,30 @@
+{
+  "output": "AMB-02 to H-T for both victims.",
+  "tokens_in": 1716,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.6540994580136612,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t049-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital for the high-urgency trauma victim.",
+        "time_min": 49
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "output": "Both burn ambulances were assigned to H-B, the matching specialty with available burn capacity.",
+  "tokens_in": 1959,
+  "tokens_out": 147,
+  "requests": 2,
+  "latency_s": 2.176080915989587,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t017-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-1",
+            "V-03-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit is the matching specialty and has capacity for these ALS burn victims.",
+        "time_min": 17
+      },
+      {
+        "proposal_id": "t017-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn unit is the matching specialty and has enough burn slots for these urgent victims.",
+        "time_min": 17
+      }
+    ],
+    "invalid": []
+  }
+}

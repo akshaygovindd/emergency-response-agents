@@ -1,0 +1,44 @@
+{
+  "output": "Assigned AMB-04 to H-G for both victims.",
+  "tokens_in": 2710,
+  "tokens_out": 127,
+  "requests": 3,
+  "latency_s": 3.6962555829959456,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t058-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-15-1",
+            "V-15-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma-capable hospital with available trauma capacity and lower ER load.",
+        "time_min": 58
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 58,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-15-1",
+            "V-15-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

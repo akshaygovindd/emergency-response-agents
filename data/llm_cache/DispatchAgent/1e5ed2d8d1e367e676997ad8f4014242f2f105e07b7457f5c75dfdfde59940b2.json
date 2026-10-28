@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-13 with V-13-1 and V-13-2.",
+  "tokens_in": 5024,
+  "tokens_out": 96,
+  "requests": 2,
+  "latency_s": 2.350215540995123,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t104-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-13-1",
+            "V-13-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest suitable unit for mixed general and burn victims at this incident.",
+        "time_min": 104
+      }
+    ],
+    "invalid": []
+  }
+}

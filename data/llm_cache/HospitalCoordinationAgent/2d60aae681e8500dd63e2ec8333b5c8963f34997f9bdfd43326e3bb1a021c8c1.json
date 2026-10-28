@@ -1,0 +1,29 @@
+{
+  "output": "Sent V-14-3 to H-T for trauma care.",
+  "tokens_in": 1657,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.1509502090048045,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t083-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Urgent trauma case fits the trauma center and it has free trauma capacity.",
+        "time_min": 83
+      }
+    ],
+    "invalid": []
+  }
+}

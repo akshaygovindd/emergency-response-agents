@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-03 to H-G.",
+  "tokens_in": 1710,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 2.1546540000126697,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-23-1",
+            "V-23-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G can treat both victims and has free general slots with lower load than H-T.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

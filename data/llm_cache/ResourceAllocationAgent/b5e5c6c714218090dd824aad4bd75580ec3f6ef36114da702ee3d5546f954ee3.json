@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t110-P02"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t110-P01",
+        "alternative_id": "none",
+        "reason": "No unclaimed ambulance is available; defer this single-victim incident because the contested unit should go to the two urgency-4 trauma victims who have waited longer and will benefit more overall."
+      }
+    ],
+    "reasoning": "AMB-04 should prioritize INC-03 because it reaches two urgency-4 ALS trauma victims after 100 minutes waiting, maximizing urgent victims served. INC-18 has one urgency-5 victim, but no alternative ambulance exists, so it cannot be countered with a valid substitute."
+  },
+  "tokens_in": 650,
+  "tokens_out": 141,
+  "requests": 1,
+  "latency_s": 1.7776192500023171,
+  "context": null
+}

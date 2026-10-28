@@ -1,0 +1,29 @@
+{
+  "output": "Chose H-G for V-12-1.",
+  "tokens_in": 1661,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 1.7389521670120303,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t064-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital has general care capacity and the best overall balance of proximity and available slots.",
+        "time_min": 64
+      }
+    ],
+    "invalid": []
+  }
+}

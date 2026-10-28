@@ -1,0 +1,47 @@
+{
+  "output": "Assigned AMB-01 to H-B and AMB-05 to H-G.",
+  "tokens_in": 1912,
+  "tokens_out": 131,
+  "requests": 2,
+  "latency_s": 1.9525111250113696,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t046-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital that can treat the burn victim and has burn capacity.",
+        "time_min": 46
+      },
+      {
+        "proposal_id": "t046-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "Fastest reachable hospital with ample general capacity.",
+        "time_min": 46
+      }
+    ],
+    "invalid": []
+  }
+}

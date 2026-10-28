@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-T for AMB-03 because it matches the critical trauma case and can take both victims.",
+  "tokens_in": 1711,
+  "tokens_out": 82,
+  "requests": 2,
+  "latency_s": 3.3721988330071326,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t047-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center best matches the critical trauma victim and has capacity for both.",
+        "time_min": 47
+      }
+    ],
+    "invalid": []
+  }
+}

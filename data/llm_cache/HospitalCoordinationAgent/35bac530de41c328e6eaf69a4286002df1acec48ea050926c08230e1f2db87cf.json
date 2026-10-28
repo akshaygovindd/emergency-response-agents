@@ -1,0 +1,48 @@
+{
+  "output": "Sent AMB-03 to H-T and AMB-05 to H-G.",
+  "tokens_in": 1981,
+  "tokens_out": 148,
+  "requests": 2,
+  "latency_s": 2.5113645419769455,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t120-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-3",
+            "V-23-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center is the closest match for the urgent trauma patient and can treat both victims.",
+        "time_min": 120
+      },
+      {
+        "proposal_id": "t120-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-2",
+            "V-10-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital is the fastest option and has available general and trauma treatment capacity.",
+        "time_min": 120
+      }
+    ],
+    "invalid": []
+  }
+}

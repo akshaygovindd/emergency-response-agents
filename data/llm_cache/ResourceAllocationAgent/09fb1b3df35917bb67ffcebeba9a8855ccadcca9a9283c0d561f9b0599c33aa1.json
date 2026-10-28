@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t017-P02"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t017-P03",
+        "alternative_id": "H-G",
+        "reason": "General Hospital has capacity and is also the fastest alternative, so it can still take the urgent burn victims if specialty care is unavailable."
+      }
+    ],
+    "reasoning": "Both proposals target the same burn unit, but only one can fit the remaining ER capacity. Keep P02 for the burn victims already queued, and redirect P03 to the fastest available alternative that still accepts incoming patients."
+  },
+  "tokens_in": 955,
+  "tokens_out": 118,
+  "requests": 1,
+  "latency_s": 1.4999436250072904,
+  "context": null
+}

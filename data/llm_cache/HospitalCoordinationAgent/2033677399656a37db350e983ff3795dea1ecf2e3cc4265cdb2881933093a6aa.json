@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-04 to H-T.",
+  "tokens_in": 1713,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.9586302500101738,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-25",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-25-3",
+            "V-25-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center is the closest capable hospital and has free trauma treatment slots.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

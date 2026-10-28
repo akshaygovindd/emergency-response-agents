@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-G for the trauma victims from AMB-02.",
+  "tokens_in": 1715,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 2.034553417004645,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-G can treat trauma and has available trauma capacity without reaching ER limit.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

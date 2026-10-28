@@ -1,0 +1,27 @@
+{
+  "output": "Proposed MED-1 to INC-21.",
+  "tokens_in": 4185,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 1.8643857089919038,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free medical team to the most urgent ALS trauma incident.",
+        "time_min": 106
+      }
+    ],
+    "invalid": []
+  }
+}

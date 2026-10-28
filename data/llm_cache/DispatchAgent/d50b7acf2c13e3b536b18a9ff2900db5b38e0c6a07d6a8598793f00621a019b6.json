@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-03 with both victims.",
+  "tokens_in": 1723,
+  "tokens_out": 94,
+  "requests": 2,
+  "latency_s": 2.472991499991622,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t006-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-2",
+            "V-03-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "AMB-04 is the closest free ambulance and can take both non-ALS victims from this incident.",
+        "time_min": 6
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "output": "Proposed AMB-03 for INC-22, INC-23, and INC-06.",
+  "tokens_in": 5504,
+  "tokens_out": 239,
+  "requests": 2,
+  "latency_s": 2.057447624974884,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t092-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-22-1",
+            "V-22-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the most urgent ALS trauma victims.",
+        "time_min": 92
+      },
+      {
+        "proposal_id": "t092-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-23-1",
+            "V-23-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "ALS unit fits the urgent ALS trauma and general victims at the closest incident.",
+        "time_min": 92
+      },
+      {
+        "proposal_id": "t092-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "ALS unit can take the urgent burn and general ALS victims together.",
+        "time_min": 92
+      }
+    ],
+    "invalid": []
+  }
+}

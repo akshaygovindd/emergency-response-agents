@@ -1,0 +1,30 @@
+{
+  "output": "Chosen H-T for AMB-02; it\u2019s the nearest capable hospital with available trauma/general slots.",
+  "tokens_in": 1712,
+  "tokens_out": 80,
+  "requests": 2,
+  "latency_s": 2.045515624980908,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t037-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest capable trauma-capable hospital with available trauma and general treatment slots.",
+        "time_min": 37
+      }
+    ],
+    "invalid": []
+  }
+}

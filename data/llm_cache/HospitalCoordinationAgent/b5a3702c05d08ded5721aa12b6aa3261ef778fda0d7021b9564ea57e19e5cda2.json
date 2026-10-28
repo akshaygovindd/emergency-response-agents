@@ -1,0 +1,30 @@
+{
+  "output": "Sent both burn victims to H-B.",
+  "tokens_in": 1702,
+  "tokens_out": 71,
+  "requests": 2,
+  "latency_s": 1.7664987920143176,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t111-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the closest hospital and has free burn treatment slots for both critical burn victims.",
+        "time_min": 111
+      }
+    ],
+    "invalid": []
+  }
+}

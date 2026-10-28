@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-04 to H-B.",
+  "tokens_in": 1703,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.079769625008339,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t015-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-2",
+            "V-03-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "H-B can treat burn and general victims and has open capacity and slots.",
+        "time_min": 15
+      }
+    ],
+    "invalid": []
+  }
+}

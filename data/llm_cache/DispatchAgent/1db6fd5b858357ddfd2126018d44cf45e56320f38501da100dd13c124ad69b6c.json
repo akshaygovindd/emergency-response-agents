@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-01 for the two most urgent burn victims and AMB-04 for the next two.",
+  "tokens_in": 3062,
+  "tokens_out": 181,
+  "requests": 3,
+  "latency_s": 3.7826881670043804,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t007-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1",
+            "V-03-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is needed for the burn victims and this unit is the closest suitable ambulance among free ALS resources.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "t007-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-3",
+            "V-03-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "BLS can support the lower-urgency burn victims while the ALS unit targets the more urgent pair first.",
+        "time_min": 7
+      }
+    ],
+    "invalid": []
+  }
+}

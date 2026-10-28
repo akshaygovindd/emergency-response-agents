@@ -1,0 +1,30 @@
+{
+  "output": "AMB-04 to H-B for both victims.",
+  "tokens_in": 1696,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.5607299169932958,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t053-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital and it can treat the burn victim with available burn slots.",
+        "time_min": 53
+      }
+    ],
+    "invalid": []
+  }
+}

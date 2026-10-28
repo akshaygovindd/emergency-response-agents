@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t116-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-03 should go to t116-P01 because it reaches the urgency 5+4 trauma victims much faster (6 min vs 18), and both incidents are similarly high priority. No unclaimed ambulance alternatives are available for the other incident."
+  },
+  "tokens_in": 666,
+  "tokens_out": 79,
+  "requests": 1,
+  "latency_s": 1.2236447079922073,
+  "context": null
+}

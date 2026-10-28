@@ -1,0 +1,29 @@
+{
+  "output": "AMB-02 to H-G for V-11-1.",
+  "tokens_in": 1656,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.6040132499765605,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t036-P05",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General hospital has free general treatment slots and enough ER capacity.",
+        "time_min": 36
+      }
+    ],
+    "invalid": []
+  }
+}

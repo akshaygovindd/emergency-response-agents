@@ -1,0 +1,62 @@
+{
+  "output": "Assigned AMB-03 to H-G and AMB-04 to H-B.",
+  "tokens_in": 3177,
+  "tokens_out": 212,
+  "requests": 3,
+  "latency_s": 3.6150296250125393,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t015-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-2",
+            "V-03-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Only listed destination for this ambulance and it matches the burn victim while handling the general patient too.",
+        "time_min": 15
+      },
+      {
+        "proposal_id": "t015-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma-capable hospital with available ER capacity and shortest valid transport for the ALS general patients.",
+        "time_min": 15
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 15,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

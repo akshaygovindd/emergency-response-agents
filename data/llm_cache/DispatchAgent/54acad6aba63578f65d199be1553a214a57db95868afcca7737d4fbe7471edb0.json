@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-05 with V-05-1 and V-05-2.",
+  "tokens_in": 1719,
+  "tokens_out": 99,
+  "requests": 2,
+  "latency_s": 2.706647749990225,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t021-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free unit can take both non-ALS victims from the same incident immediately.",
+        "time_min": 21
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "output": "Assigned V-12-1 to H-T, and V-08-1 + V-08-4 to H-G.",
+  "tokens_in": 1935,
+  "tokens_out": 153,
+  "requests": 2,
+  "latency_s": 2.8668158750224393,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t053-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is closest for the critical trauma ALS patient and has a free trauma slot.",
+        "time_min": 53
+      },
+      {
+        "proposal_id": "t053-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital can treat both victims and has ample capacity with free general and trauma slots.",
+        "time_min": 53
+      }
+    ],
+    "invalid": []
+  }
+}

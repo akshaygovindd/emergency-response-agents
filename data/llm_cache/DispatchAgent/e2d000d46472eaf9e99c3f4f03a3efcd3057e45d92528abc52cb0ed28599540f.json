@@ -1,0 +1,47 @@
+{
+  "output": "Proposed AMB-04 for INC-18 and INC-03.",
+  "tokens_in": 5901,
+  "tokens_out": 170,
+  "requests": 2,
+  "latency_s": 2.4435114579973742,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-18-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest available ambulance to the only waiting victim at a medically assigned incident.",
+        "time_min": 110
+      },
+      {
+        "proposal_id": "t110-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-2",
+            "V-03-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "High-urgency ALS trauma victims at a long-waiting incident need the nearest transport.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

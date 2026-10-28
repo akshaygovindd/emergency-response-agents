@@ -1,0 +1,44 @@
+{
+  "output": "Sent both victims to H-G.",
+  "tokens_in": 2713,
+  "tokens_out": 126,
+  "requests": 3,
+  "latency_s": 2.7645439170009922,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-23-2",
+            "V-23-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-G is the nearest hospital that can treat both victims and has capacity left.",
+        "time_min": 96
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 96,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-2",
+            "V-23-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

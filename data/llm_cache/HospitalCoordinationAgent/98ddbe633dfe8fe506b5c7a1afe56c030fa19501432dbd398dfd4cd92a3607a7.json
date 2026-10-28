@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-03 to H-G.",
+  "tokens_in": 1715,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.110976500000106,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t065-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable hospital with ample general capacity and one trauma slot available.",
+        "time_min": 65
+      }
+    ],
+    "invalid": []
+  }
+}

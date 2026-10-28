@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-04 to INC-10 and MED-1 to INC-16.",
+  "tokens_in": 4269,
+  "tokens_out": 148,
+  "requests": 2,
+  "latency_s": 1.9452552080038004,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t050-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance for the most urgent reachable victim and burn/general can share transport.",
+        "time_min": 50
+      },
+      {
+        "proposal_id": "t050-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team should support the incident with an ALS-needed victim and recent report.",
+        "time_min": 50
+      }
+    ],
+    "invalid": []
+  }
+}

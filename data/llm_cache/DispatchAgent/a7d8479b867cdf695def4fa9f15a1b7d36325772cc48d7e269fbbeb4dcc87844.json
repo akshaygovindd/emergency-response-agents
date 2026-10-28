@@ -1,0 +1,11 @@
+{
+  "output": "Proposed AMB-03 to INC-22 for V-22-1 and V-22-4.",
+  "tokens_in": 2592,
+  "tokens_out": 34,
+  "requests": 1,
+  "latency_s": 1.1183069170219824,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

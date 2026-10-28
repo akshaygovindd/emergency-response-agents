@@ -1,0 +1,57 @@
+{
+  "output": "Sent AMB-02 to H-G and need a burn-capable alternative for AMB-03 since H-B is full.",
+  "tokens_in": 3149,
+  "tokens_out": 205,
+  "requests": 3,
+  "latency_s": 3.3588022079784423,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t050-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has available general capacity.",
+        "time_min": 50
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 50,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 50,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

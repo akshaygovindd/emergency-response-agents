@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-04 to H-T for both victims.",
+  "tokens_in": 1724,
+  "tokens_out": 79,
+  "requests": 2,
+  "latency_s": 2.1314802920096554,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-05-2",
+            "V-05-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-T is the only trauma-capable option and has a free trauma slot for the urgent ALS trauma victim.",
+        "time_min": 91
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-14 with V-14-3 and V-14-1.",
+  "tokens_in": 4676,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 1.4684337079816032,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-14-3",
+            "V-14-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the highest-urgency ALS-eligible victims at this incident.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

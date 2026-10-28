@@ -1,0 +1,47 @@
+{
+  "output": "Proposed AMB-01 for INC-09 and AMB-05 for INC-03.",
+  "tokens_in": 4317,
+  "tokens_out": 173,
+  "requests": 2,
+  "latency_s": 2.3498727080004755,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t055-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the two ALS-needed victims, including the most urgent one first.",
+        "time_min": 55
+      },
+      {
+        "proposal_id": "t055-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-5"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest free BLS ambulance for a low-urgency general victim.",
+        "time_min": 55
+      }
+    ],
+    "invalid": []
+  }
+}

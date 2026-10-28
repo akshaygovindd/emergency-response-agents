@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 to INC-20 for V-20-5 and V-20-2.",
+  "tokens_in": 5411,
+  "tokens_out": 99,
+  "requests": 2,
+  "latency_s": 2.1382530000119004,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-20-5",
+            "V-20-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-priority general victims at the most urgent incident with a free ambulance.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

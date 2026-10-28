@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t042-P02"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t042-P03",
+        "alternative_id": "H-B",
+        "reason": "H-B can treat the urgent general ALS patient and is a viable alternative since H-T would exceed ER capacity."
+      }
+    ],
+    "reasoning": "Only one proposal can use H-T because it would otherwise exceed capacity. I favor INC-05\u2019s higher-waiting trauma case, which includes a urgency-5 patient and has waited much longer; INC-12 can be redirected to H-B, which still treats general patients and gets there quickly."
+  },
+  "tokens_in": 962,
+  "tokens_out": 131,
+  "requests": 1,
+  "latency_s": 1.291868375003105,
+  "context": null
+}

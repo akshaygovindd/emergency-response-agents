@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t002-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-02 should go to INC-03 because it carries two victims and one is higher urgency; it also arrives faster than to INC-02. INC-02 has only one urgency-3 victim, so it loses this resource with no unclaimed ambulance available for a counter."
+  },
+  "tokens_in": 645,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 1.3164153329853434,
+  "context": null
+}

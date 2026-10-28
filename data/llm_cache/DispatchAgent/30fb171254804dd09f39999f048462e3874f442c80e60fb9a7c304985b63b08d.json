@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-03 and FIRE-1 for INC-01.",
+  "tokens_in": 3303,
+  "tokens_out": 126,
+  "requests": 3,
+  "latency_s": 3.054579999996349,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t003-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest suitable ambulance for the only waiting victim at INC-01.",
+        "time_min": 3
+      },
+      {
+        "proposal_id": "t003-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is needed and free for INC-01.",
+        "time_min": 3
+      }
+    ],
+    "invalid": []
+  }
+}

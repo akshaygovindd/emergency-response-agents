@@ -1,0 +1,77 @@
+{
+  "output": "Proposed 2 ambulances and 2 teams for INC-02/INC-01.",
+  "tokens_in": 2615,
+  "tokens_out": 248,
+  "requests": 2,
+  "latency_s": 2.7877362500003073,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t004-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the urgent ALS trauma victim.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-01-4",
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest BLS unit can carry both lower-acuity victims from the same incident.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free fire team should support the incident needing rescue/fire support.",
+        "time_min": 4
+      },
+      {
+        "proposal_id": "t004-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical team can assist the incident with urgent waiting victim.",
+        "time_min": 4
+      }
+    ],
+    "invalid": []
+  }
+}

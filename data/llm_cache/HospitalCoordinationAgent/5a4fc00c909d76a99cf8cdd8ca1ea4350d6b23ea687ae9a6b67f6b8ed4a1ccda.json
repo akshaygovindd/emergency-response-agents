@@ -1,0 +1,30 @@
+{
+  "output": "Sent both victims to H-G (General Hospital).",
+  "tokens_in": 1719,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 1.8417735830007587,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t101-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital is closest and has available general treatment slots without exceeding ER capacity.",
+        "time_min": 101
+      }
+    ],
+    "invalid": []
+  }
+}

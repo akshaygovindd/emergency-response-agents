@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-03 to H-G.",
+  "tokens_in": 1667,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.0473559999954887,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t065-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital has general care capacity and the lowest travel time among available options without approaching ER capacity.",
+        "time_min": 65
+      }
+    ],
+    "invalid": []
+  }
+}

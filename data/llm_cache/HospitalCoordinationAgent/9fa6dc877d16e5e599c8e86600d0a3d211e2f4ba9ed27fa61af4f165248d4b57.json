@@ -1,0 +1,30 @@
+{
+  "output": "Selected H-B for AMB-05; it\u2019s the only feasible nearby option with burn capacity.",
+  "tokens_in": 1695,
+  "tokens_out": 78,
+  "requests": 2,
+  "latency_s": 2.4830307080119383,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital that can treat both victims and has free burn capacity.",
+        "time_min": 57
+      }
+    ],
+    "invalid": []
+  }
+}

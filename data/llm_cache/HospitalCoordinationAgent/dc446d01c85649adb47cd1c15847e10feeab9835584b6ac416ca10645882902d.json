@@ -1,0 +1,30 @@
+{
+  "output": "Sent both trauma victims to H-T.",
+  "tokens_in": 1711,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.735372750001261,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t065-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center matches both trauma victims and has capacity and free trauma slots.",
+        "time_min": 65
+      }
+    ],
+    "invalid": []
+  }
+}

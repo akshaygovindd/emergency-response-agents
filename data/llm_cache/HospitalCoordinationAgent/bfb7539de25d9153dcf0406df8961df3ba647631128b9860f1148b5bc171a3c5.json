@@ -1,0 +1,30 @@
+{
+  "output": "Sent both burn victims to H-B.",
+  "tokens_in": 1700,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 1.8402689170034137,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit matches both burn victims and has ample capacity and burn slots.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-03 for INC-14 and INC-11.",
+  "tokens_in": 5755,
+  "tokens_out": 168,
+  "requests": 2,
+  "latency_s": 1.904799500014633,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-14-2",
+            "V-14-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS unit is closest suitable ambulance for the urgent trauma victims.",
+        "time_min": 116
+      },
+      {
+        "proposal_id": "t116-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-4",
+            "V-11-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "ALS ambulance can serve the two urgent burn victims at this incident.",
+        "time_min": 116
+      }
+    ],
+    "invalid": []
+  }
+}

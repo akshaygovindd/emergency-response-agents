@@ -1,0 +1,47 @@
+{
+  "output": "Sent AMB-02 to H-T and AMB-03 to H-T.",
+  "tokens_in": 1942,
+  "tokens_out": 147,
+  "requests": 2,
+  "latency_s": 1.9497160839964636,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t042-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-05-2",
+            "V-05-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is the specialty match for the urgent trauma patient and can treat both victims.",
+        "time_min": 42
+      },
+      {
+        "proposal_id": "t042-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is closest and has capacity plus a general treatment slot for this urgent general ALS patient.",
+        "time_min": 42
+      }
+    ],
+    "invalid": []
+  }
+}

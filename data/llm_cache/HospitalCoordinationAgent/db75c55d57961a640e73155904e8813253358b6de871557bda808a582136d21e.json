@@ -1,0 +1,30 @@
+{
+  "output": "Sent both trauma victims to H-T.",
+  "tokens_in": 1716,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.0207023340044543,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t083-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest capable trauma center and it still has a free trauma slot without exceeding capacity.",
+        "time_min": 83
+      }
+    ],
+    "invalid": []
+  }
+}

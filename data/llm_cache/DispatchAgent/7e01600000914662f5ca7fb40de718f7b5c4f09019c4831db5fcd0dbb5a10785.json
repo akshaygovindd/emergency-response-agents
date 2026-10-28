@@ -1,0 +1,42 @@
+{
+  "output": "Proposed MED-1 to INC-04 and RESCUE-1 to INC-05.",
+  "tokens_in": 2000,
+  "tokens_out": 130,
+  "requests": 2,
+  "latency_s": 1.9983536250074394,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t021-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical support is needed now for the ALS victim.",
+        "time_min": 21
+      },
+      {
+        "proposal_id": "t021-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue support is needed and this is the free rescue team closest to the incident.",
+        "time_min": 21
+      }
+    ],
+    "invalid": []
+  }
+}

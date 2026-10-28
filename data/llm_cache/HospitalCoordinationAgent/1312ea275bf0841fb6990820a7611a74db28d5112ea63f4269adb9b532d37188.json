@@ -1,0 +1,30 @@
+{
+  "output": "Chosen H-G for AMB-03.",
+  "tokens_in": 1718,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 2.012280708004255,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-24-2",
+            "V-24-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital can treat both general victims and has available ER capacity and a free general slot.",
+        "time_min": 116
+      }
+    ],
+    "invalid": []
+  }
+}

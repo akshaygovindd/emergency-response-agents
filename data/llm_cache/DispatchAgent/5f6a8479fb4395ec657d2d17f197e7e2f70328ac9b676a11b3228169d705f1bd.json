@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-05 with both trauma victims.",
+  "tokens_in": 5196,
+  "tokens_out": 104,
+  "requests": 2,
+  "latency_s": 1.9423334169841837,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit to the oldest urgent trauma victims at this incident.",
+        "time_min": 106
+      }
+    ],
+    "invalid": []
+  }
+}

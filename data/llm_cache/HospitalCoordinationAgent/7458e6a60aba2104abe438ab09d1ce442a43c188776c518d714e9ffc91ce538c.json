@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-02 to H-G.",
+  "tokens_in": 1669,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 2.1490426670061424,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t083-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-21-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat the victim and has more general capacity with no ER limit risk.",
+        "time_min": 83
+      }
+    ],
+    "invalid": []
+  }
+}

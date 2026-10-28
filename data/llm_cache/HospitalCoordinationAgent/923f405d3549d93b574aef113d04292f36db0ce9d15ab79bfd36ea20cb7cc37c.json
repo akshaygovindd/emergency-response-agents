@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-02 to H-G.",
+  "tokens_in": 1704,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 2.0225242500018794,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-21-2",
+            "V-21-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "H-G is closest and can treat both victims without nearing ER capacity.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

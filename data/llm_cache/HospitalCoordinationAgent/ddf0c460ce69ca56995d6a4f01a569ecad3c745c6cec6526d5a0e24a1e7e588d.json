@@ -1,0 +1,48 @@
+{
+  "output": "Sent AMB-04 to H-T and AMB-05 to H-B.",
+  "tokens_in": 1970,
+  "tokens_out": 139,
+  "requests": 2,
+  "latency_s": 2.030155457992805,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t020-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-03-4",
+            "V-03-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest suitable hospital with available general treatment capacity.",
+        "time_min": 20
+      },
+      {
+        "proposal_id": "t020-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-1",
+            "V-03-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Only available destination and best match for the burn victim while still treating general.",
+        "time_min": 20
+      }
+    ],
+    "invalid": []
+  }
+}

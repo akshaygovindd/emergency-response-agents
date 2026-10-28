@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-13 with V-13-2 and V-13-4.",
+  "tokens_in": 5267,
+  "tokens_out": 109,
+  "requests": 2,
+  "latency_s": 2.9654582089860924,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t060-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ambulance to urgent trauma victims at this incident.",
+        "time_min": 60
+      }
+    ],
+    "invalid": []
+  }
+}

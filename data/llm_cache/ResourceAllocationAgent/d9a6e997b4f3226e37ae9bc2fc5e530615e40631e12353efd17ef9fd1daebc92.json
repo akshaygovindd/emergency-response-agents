@@ -1,0 +1,20 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t002-P03"
+    ],
+    "counter_proposals": [
+      {
+        "for_proposal_id": "t002-P04",
+        "alternative_id": "H-G",
+        "reason": "Can still take the trauma victims, and it has enough remaining ER capacity."
+      }
+    ],
+    "reasoning": "H-T can only take 6 total and P03 covers the urgent ALS general victim plus the other general victim, while P04\u2019s trauma pair can be rerouted. H-G is the best available alternative from the unclaimed hospitals for P04."
+  },
+  "tokens_in": 967,
+  "tokens_out": 114,
+  "requests": 1,
+  "latency_s": 1.3169912500015926,
+  "context": null
+}

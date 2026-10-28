@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-03 to INC-25 for V-25-1 and V-25-3.",
+  "tokens_in": 5389,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 2.2450181250169408,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t070-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-25",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-25-1",
+            "V-25-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the two urgent ALS trauma victims at the newest high-priority incident.",
+        "time_min": 70
+      }
+    ],
+    "invalid": []
+  }
+}

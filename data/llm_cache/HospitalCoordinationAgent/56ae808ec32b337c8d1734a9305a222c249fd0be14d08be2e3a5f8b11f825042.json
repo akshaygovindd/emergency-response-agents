@@ -1,0 +1,30 @@
+{
+  "output": "AMB-04 to H-G for both victims.",
+  "tokens_in": 1721,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.9439062500023283,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t055-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-2",
+            "V-14-4"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with available general treatment slots and ample ER/beds.",
+        "time_min": 55
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-01 for INC-02 and FIRE-1 to the same incident.",
+  "tokens_in": 2151,
+  "tokens_out": 142,
+  "requests": 2,
+  "latency_s": 2.251938791014254,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t007-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the only waiting burn victim who needs ALS.",
+        "time_min": 7
+      },
+      {
+        "proposal_id": "t007-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is free and the incident needs fire support.",
+        "time_min": 7
+      }
+    ],
+    "invalid": []
+  }
+}

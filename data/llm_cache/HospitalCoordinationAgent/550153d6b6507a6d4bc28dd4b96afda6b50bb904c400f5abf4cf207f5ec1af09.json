@@ -1,0 +1,29 @@
+{
+  "output": "AMB-05 routed to H-B for fastest safe admission with available capacity.",
+  "tokens_in": 1658,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.6331043750105891,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t111-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-18-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Shortest travel time and Burn Unit has capacity, with no ER overload.",
+        "time_min": 111
+      }
+    ],
+    "invalid": []
+  }
+}

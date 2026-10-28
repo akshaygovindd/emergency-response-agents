@@ -1,0 +1,44 @@
+{
+  "output": "Assigned AMB-04 to H-G.",
+  "tokens_in": 2710,
+  "tokens_out": 125,
+  "requests": 3,
+  "latency_s": 2.8673680420033634,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t113-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital can treat trauma and has the only available trauma slot among feasible options.",
+        "time_min": 113
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 113,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

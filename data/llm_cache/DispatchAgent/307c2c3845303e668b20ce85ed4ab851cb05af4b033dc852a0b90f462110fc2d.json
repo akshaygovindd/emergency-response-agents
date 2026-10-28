@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 to INC-10 for V-10-1 and V-10-2.",
+  "tokens_in": 3618,
+  "tokens_out": 116,
+  "requests": 2,
+  "latency_s": 1.8638032919843681,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t045-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free BLS unit to the most urgent low-acuity victims at this incident.",
+        "time_min": 45
+      }
+    ],
+    "invalid": []
+  }
+}

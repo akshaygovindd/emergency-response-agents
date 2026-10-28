@@ -1,0 +1,65 @@
+{
+  "output": "Assigned AMB-01 to H-G, AMB-02 to H-B, and AMB-04 to H-B.",
+  "tokens_in": 2163,
+  "tokens_out": 194,
+  "requests": 2,
+  "latency_s": 2.3327464160101954,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t008-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-4",
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest general-capable hospital with open general capacity.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-01-5"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit is the only appropriate hospital and has burn capacity.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P05",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-01-2",
+            "V-01-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Severe burn victims should go to the burn unit, which has available burn slots.",
+        "time_min": 8
+      }
+    ],
+    "invalid": []
+  }
+}

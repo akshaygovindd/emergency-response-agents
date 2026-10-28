@@ -1,0 +1,29 @@
+{
+  "output": "AMB-05 to H-T.",
+  "tokens_in": 1659,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.8419793329958338,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center is the closest trauma-capable hospital and has a free trauma slot.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

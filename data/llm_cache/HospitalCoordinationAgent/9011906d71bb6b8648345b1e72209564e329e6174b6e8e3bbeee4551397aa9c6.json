@@ -1,0 +1,48 @@
+{
+  "output": "Assigned AMB-03 to H-G and AMB-05 to H-B.",
+  "tokens_in": 1983,
+  "tokens_out": 146,
+  "requests": 2,
+  "latency_s": 2.668238833983196,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t010-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-1",
+            "V-02-3"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest general-capable hospital with ample ER capacity and free general slots.",
+        "time_min": 10
+      },
+      {
+        "proposal_id": "t010-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Burn-capable hospital with available burn slots and the only listed destination for this ambulance.",
+        "time_min": 10
+      }
+    ],
+    "invalid": []
+  }
+}

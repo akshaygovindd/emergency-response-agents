@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-07-1 to H-G.",
+  "tokens_in": 1662,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 2.133039749984164,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat the victim and has available general slots without exceeding ER capacity.",
+        "time_min": 117
+      }
+    ],
+    "invalid": []
+  }
+}

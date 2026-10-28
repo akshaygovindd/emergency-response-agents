@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-G for AMB-01 because it has general-care capacity and low ER load.",
+  "tokens_in": 1722,
+  "tokens_out": 83,
+  "requests": 2,
+  "latency_s": 2.45431670799735,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t118-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-20-5",
+            "V-20-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has the needed general care capacity and sufficient free treatment slots with low ER load.",
+        "time_min": 118
+      }
+    ],
+    "invalid": []
+  }
+}

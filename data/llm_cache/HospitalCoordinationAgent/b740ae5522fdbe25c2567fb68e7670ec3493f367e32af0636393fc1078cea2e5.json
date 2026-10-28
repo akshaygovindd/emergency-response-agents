@@ -1,0 +1,48 @@
+{
+  "output": "AMB-03 to H-B and AMB-04 to H-G.",
+  "tokens_in": 1984,
+  "tokens_out": 147,
+  "requests": 2,
+  "latency_s": 7.524017500021728,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t067-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with burn capacity for the urgent burn victim and a free general slot for the companion.",
+        "time_min": 67
+      },
+      {
+        "proposal_id": "t067-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Fastest option with free general treatment slots and ample beds for both patients.",
+        "time_min": 67
+      }
+    ],
+    "invalid": []
+  }
+}

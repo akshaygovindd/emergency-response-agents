@@ -1,0 +1,30 @@
+{
+  "output": "Sent both victims to H-T.",
+  "tokens_in": 1709,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.8422318330267444,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t054-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest capable hospital with trauma coverage and available ER and treatment capacity.",
+        "time_min": 54
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t056-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-05 should go to the urgency 5 victim at INC-11; it has waited longer and needs ALS-level care, so it has much higher priority despite the slightly longer travel time. INC-14\u2019s victim is urgency 1, so no useful counter-proposal is available here."
+  },
+  "tokens_in": 629,
+  "tokens_out": 94,
+  "requests": 1,
+  "latency_s": 1.4245428750000428,
+  "context": null
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-05 to H-G.",
+  "tokens_in": 1714,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 1.5813025840034243,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t054-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-16-3",
+            "V-16-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G can treat trauma, has free trauma capacity, and avoids the full ER at H-T.",
+        "time_min": 54
+      }
+    ],
+    "invalid": []
+  }
+}

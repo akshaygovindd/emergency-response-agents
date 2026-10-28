@@ -1,0 +1,45 @@
+{
+  "output": "Proposed MED-1 to INC-15 and AMB-04 to INC-08 for V-08-3/V-08-1.",
+  "tokens_in": 4636,
+  "tokens_out": 168,
+  "requests": 2,
+  "latency_s": 2.349389000009978,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "ALS-needed trauma victim with no team assigned; medical support can help the most urgent case.",
+        "time_min": 116
+      },
+      {
+        "proposal_id": "t116-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-3",
+            "V-08-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance and it can take the most urgent compatible victims at this incident.",
+        "time_min": 116
+      }
+    ],
+    "invalid": []
+  }
+}

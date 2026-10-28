@@ -1,0 +1,47 @@
+{
+  "output": "Assigned AMB-03 to H-T and AMB-04 to H-G.",
+  "tokens_in": 1936,
+  "tokens_out": 143,
+  "requests": 2,
+  "latency_s": 1.8193881250044797,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t111-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-25",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-25-1",
+            "V-25-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center has matching specialty and free trauma slots for both high-urgency trauma victims.",
+        "time_min": 111
+      },
+      {
+        "proposal_id": "t111-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital is the closest available option and can treat trauma without exceeding capacity.",
+        "time_min": 111
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-01 to H-G for both victims.",
+  "tokens_in": 1711,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 2.2517996659735218,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t043-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "H-G can treat trauma and general with spare ER capacity and treatment slots.",
+        "time_min": 43
+      }
+    ],
+    "invalid": []
+  }
+}

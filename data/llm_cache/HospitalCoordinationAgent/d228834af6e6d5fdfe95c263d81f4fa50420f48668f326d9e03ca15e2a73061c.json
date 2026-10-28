@@ -1,0 +1,47 @@
+{
+  "output": "Sent AMB-01 to H-T and AMB-05 to H-G.",
+  "tokens_in": 1953,
+  "tokens_out": 146,
+  "requests": 2,
+  "latency_s": 2.346285917010391,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t063-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center has the needed general capacity and is appropriate for the higher-urgency ALS victims.",
+        "time_min": 63
+      },
+      {
+        "proposal_id": "t063-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-5"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has ample general capacity for this low-urgency patient.",
+        "time_min": 63
+      }
+    ],
+    "invalid": []
+  }
+}

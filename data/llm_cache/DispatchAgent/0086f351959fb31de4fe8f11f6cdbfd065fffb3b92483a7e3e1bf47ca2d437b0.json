@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 to INC-10 for V-10-3 and V-10-4.",
+  "tokens_in": 4594,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 2.7131666249770205,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t111-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-3",
+            "V-10-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit to the highest-priority incident with ALS and BLS-compatible victims.",
+        "time_min": 111
+      }
+    ],
+    "invalid": []
+  }
+}

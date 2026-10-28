@@ -1,0 +1,46 @@
+{
+  "output": "Assigned V-01-2 to H-T and V-01-1 to H-G.",
+  "tokens_in": 1874,
+  "tokens_out": 125,
+  "requests": 2,
+  "latency_s": 2.4173848750069737,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t010-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma victim with ALS needs should go to the Trauma Center.",
+        "time_min": 10
+      },
+      {
+        "proposal_id": "t010-P04",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with ample general capacity.",
+        "time_min": 10
+      }
+    ],
+    "invalid": []
+  }
+}
