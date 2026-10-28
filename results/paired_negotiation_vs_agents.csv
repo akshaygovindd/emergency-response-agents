@@ -1,3 +1,4 @@
 scenario,mode,vs,seeds,mean_diff,diff_95ci,wins/losses/ties,significant
 normal,negotiation,agents,10,0.027272727272727275,"[-0.02, +0.07]",2/0/8,False
+surge,negotiation,agents,10,0.009867724867724872,"[-0.02, +0.04]",2/1/7,False
 bottleneck,negotiation,agents,1,0.0,n/a,0/0/1,False
