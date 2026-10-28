@@ -81,15 +81,20 @@ def test_new_event_type_can_be_registered():
 
 
 def test_available_runs_only_lists_existing_logs(tmp_path):
-    (tmp_path / "greedy").mkdir()
-    (tmp_path / "greedy" / "normal_seed43_greedy.jsonl").write_text("")
-    (tmp_path / "greedy" / "junk.txt").write_text("")
+    for version in ("v1", "v2"):
+        (tmp_path / version / "greedy").mkdir(parents=True)
+    (tmp_path / "v1" / "greedy" / "normal_seed43_greedy.jsonl").write_text("")
+    (tmp_path / "v2" / "greedy" / "surge_seed42_greedy.jsonl").write_text("")
+    (tmp_path / "v1" / "greedy" / "junk.txt").write_text("")
+    (tmp_path / "v1" / "greedy" / "normal_seed44_agents.jsonl").write_text("")   # wrong folder for its mode
     runs = available_runs(tmp_path)
-    assert [(r.scenario, r.seed, r.mode, r.run_number) for r in runs] == [("normal", 43, "greedy", 2)]
+    assert [(r.version, r.scenario, r.seed, r.mode, r.run_number) for r in runs] == [
+        ("v1", "normal", 43, "greedy", 2), ("v2", "surge", 42, "greedy", 1)]
 
 
 def test_real_log_replays_end_to_end():
-    run = next(r for r in available_runs() if (r.scenario, r.seed, r.mode) == ("normal", 42, "negotiation"))
+    run = next(r for r in available_runs()
+               if (r.version, r.scenario, r.seed, r.mode) == ("v1", "normal", 42, "negotiation"))
     replay = Replay.load(run)
     for minute in range(0, replay.last_minute + 1, 10):
         f = replay.frame(minute)

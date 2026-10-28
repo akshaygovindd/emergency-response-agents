@@ -15,8 +15,30 @@ from pydantic import BaseModel, Field
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SCENARIO_DIR = PROJECT_ROOT / "data" / "scenarios"
 LLM_CACHE_DIR = PROJECT_ROOT / "data" / "llm_cache"
-LOG_DIR = PROJECT_ROOT / "logs"
-RESULTS_DIR = PROJECT_ROOT / "results"
+LOG_DIR = PROJECT_ROOT / "logs"            # root; runs live in logs/<version>/<mode>/
+RESULTS_DIR = PROJECT_ROOT / "results"     # root; tables live in results/<version>/
+
+# Experiment versions keep results from different system designs apart. v1 is the frozen pilot.
+KNOWN_VERSIONS = ("v1", "v2")
+PROTECTED_VERSIONS = ("v1",)               # never written without an explicit --allow-v1-write
+PRINT_VERSION = "v1"                       # default when only printing saved results
+
+
+def results_dir(version: str) -> Path:
+    return RESULTS_DIR / version
+
+
+def log_dir(version: str) -> Path:
+    return LOG_DIR / version
+
+
+def require_writable(version: str, allow_v1_write: bool = False) -> None:
+    """Refuse to write results or logs for an unknown or protected version."""
+    if version not in KNOWN_VERSIONS:
+        raise ValueError(f"Unknown version {version!r}; expected one of {KNOWN_VERSIONS}")
+    if version in PROTECTED_VERSIONS and not allow_v1_write:
+        raise PermissionError(f"Version {version} is frozen: refusing to write results or logs. "
+                              "Pass --allow-v1-write only if you really mean to change it.")
 
 BASE_SEED = 42
 

@@ -1,8 +1,8 @@
 """Measure the Assessment Agent's extraction accuracy against ground truth.
 
 Usage:
-    python scripts/eval_assessment.py --scenario bottleneck --seed 42    # 10 incidents
-    python scripts/eval_assessment.py                                    # all 420 incidents
+    python scripts/eval_assessment.py --scenario bottleneck --seed 42 --version v2   # 10 incidents
+    python scripts/eval_assessment.py --version v2                         # all 420 incidents
 """
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 
 from erc.agents.assessment import ASSESSMENT_AGENT, score, to_report
 from erc.agents.llm_cache import run_cached
-from erc.config import RESULTS_DIR, SCENARIO_DIR, ScenarioName, seeds_for
+from erc.config import KNOWN_VERSIONS, SCENARIO_DIR, ScenarioName, require_writable, results_dir, seeds_for
 from erc.models.state import Scenario
 from erc.scenarios.descriptions import load_descriptions
 
@@ -25,7 +25,7 @@ async def _assess(name, seed, incident, text, sem):
         return name, seed, incident, await run_cached(ASSESSMENT_AGENT, f"Dispatch report:\n{text}")
 
 
-async def main(names: list[ScenarioName], seeds: list[int] | None) -> None:
+async def main(names: list[ScenarioName], seeds: list[int] | None, version: str) -> None:
     sem, jobs = asyncio.Semaphore(8), []
     for name in names:
         for seed in (seeds or seeds_for(name)):
@@ -67,8 +67,8 @@ async def main(names: list[ScenarioName], seeds: list[int] | None) -> None:
     print(f"\nLLM calls: {cost['calls']} (cache hits {cost['hits']}) | "
           f"tokens in {cost['tokens_in']} | tokens out {cost['tokens_out']}")
     print(f"Incidents with at least one error: {len(errors)}")
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    (RESULTS_DIR / "assessment_accuracy.json").write_text(
+    results_dir(version).mkdir(parents=True, exist_ok=True)
+    (results_dir(version) / "assessment_accuracy.json").write_text(
         json.dumps({"rates": rates, "cost": dict(cost), "errors": errors}, indent=2))
 
 
@@ -78,5 +78,11 @@ if __name__ == "__main__":
     parser.add_argument("--scenario", nargs="+", choices=[s.value for s in ScenarioName],
                         default=[s.value for s in ScenarioName])
     parser.add_argument("--seed", type=int, nargs="+")
+    parser.add_argument("--version", choices=KNOWN_VERSIONS, required=True)
+    parser.add_argument("--allow-v1-write", action="store_true")
     args = parser.parse_args()
-    asyncio.run(main([ScenarioName(s) for s in args.scenario], args.seed))
+    try:
+        require_writable(args.version, args.allow_v1_write)
+    except PermissionError as e:
+        parser.error(str(e))
+    asyncio.run(main([ScenarioName(s) for s in args.scenario], args.seed, args.version))

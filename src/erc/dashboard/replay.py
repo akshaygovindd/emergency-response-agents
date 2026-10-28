@@ -15,11 +15,13 @@ LOGS_DIR = ROOT / "logs"
 SCENARIOS_DIR = ROOT / "data" / "scenarios"
 MODE_ORDER = ["naive", "greedy", "agents", "negotiation", "oracle"]
 MOVING = ("en_route", "transporting")
+VERSIONS = ("v1", "v2")
 _LOG_NAME = re.compile(r"^(?P<scenario>[a-z]+)_seed(?P<seed>\d+)_(?P<mode>[a-z]+)\.jsonl$")
 
 
 @dataclass(frozen=True)
 class RunRef:
+    version: str
     scenario: str
     seed: int
     mode: str
@@ -42,11 +44,12 @@ class Frame:
 
 
 def available_runs(logs_dir: Path = LOGS_DIR) -> list[RunRef]:
+    """Runs found as logs/<version>/<mode>/<scenario>_seed<N>_<mode>.jsonl."""
     runs = []
-    for path in sorted(logs_dir.glob("*/*.jsonl")):
+    for path in sorted(logs_dir.glob("*/*/*.jsonl")):
         m = _LOG_NAME.match(path.name)
         if m and m["mode"] == path.parent.name:
-            runs.append(RunRef(m["scenario"], int(m["seed"]), m["mode"], path))
+            runs.append(RunRef(path.parent.parent.name, m["scenario"], int(m["seed"]), m["mode"], path))
     return runs
 
 

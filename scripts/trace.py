@@ -1,7 +1,7 @@
 """Print a readable story of one run from its event log.
 
 Usage:
-    python scripts/trace.py logs/agents/bottleneck_seed42_agents.jsonl --until 20
+    python scripts/trace.py logs/v1/agents/bottleneck_seed42_agents.jsonl --until 20
 """
 from __future__ import annotations
 

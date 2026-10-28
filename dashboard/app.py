@@ -17,6 +17,7 @@ from erc.dashboard.replay import MODE_ORDER, Frame, Replay, available_runs
 SEVERITY_COLORS = {"immediate": "#d62728", "delayed": "#e6b800", "minor": "#2ca02c", "done": "#b0b0b0"}
 UNRESOLVED = ("waiting", "in_transport")
 STEP_SECONDS = 0.35
+SCENARIO_ORDER = ["normal", "surge", "bottleneck"]
 
 
 @st.cache_data
@@ -25,7 +26,7 @@ def runs_index():
 
 
 @st.cache_resource
-def load_replay(path: str, scenario: str, seed: int, mode: str):
+def load_replay(path: str, version: str, scenario: str, seed: int, mode: str):
     run = next(r for r in runs_index() if r.path == Path(path))
     return Replay.load(run)
 
@@ -73,20 +74,30 @@ def build_map(frame: Frame) -> go.Figure:
     return fig
 
 
+def pick(label: str, options: list, preferred=None):
+    """Selectbox that starts on the preferred option when it exists."""
+    index = options.index(preferred) if preferred in options else 0
+    return st.sidebar.selectbox(label, options, index=index)
+
+
 def sidebar_selection():
+    """Selection order: Version -> Scenario -> Run -> System, using only logs that exist."""
     runs = runs_index()
     st.sidebar.header("Run")
-    scenario = st.sidebar.selectbox("Scenario", sorted({r.scenario for r in runs}))
-    in_scenario = [r for r in runs if r.scenario == scenario]
-    numbers = sorted({r.run_number for r in in_scenario})
-    number = st.sidebar.selectbox("Run (1-10 = seed 42-51)", numbers)
+    versions = sorted({r.version for r in runs})
+    version = pick("Version", versions, "v1")
+    in_version = [r for r in runs if r.version == version]
+    scenarios = [s for s in SCENARIO_ORDER if any(r.scenario == s for r in in_version)]
+    scenario = pick("Scenario", scenarios, "normal")
+    in_scenario = [r for r in in_version if r.scenario == scenario]
+    number = pick("Run (1-10 = seed 42-51)", sorted({r.run_number for r in in_scenario}), 1)
     modes = [m for m in MODE_ORDER if any(r.mode == m and r.run_number == number for r in in_scenario)]
-    mode = st.sidebar.selectbox("System", modes, index=modes.index("negotiation") if "negotiation" in modes else 0)
+    mode = pick("System", modes, "negotiation")
     return next(r for r in in_scenario if r.run_number == number and r.mode == mode)
 
 
 def init_state(run):
-    key = (run.scenario, run.seed, run.mode)
+    key = (run.version, run.scenario, run.seed, run.mode)
     if st.session_state.get("run_key") != key:
         st.session_state.update(run_key=key, minute=0, playing=False, advance=False)
     if st.session_state.pop("advance", False):
@@ -96,7 +107,7 @@ def init_state(run):
 def main():
     st.set_page_config(page_title="Emergency response replay", layout="wide")
     run = sidebar_selection()
-    replay = load_replay(str(run.path), run.scenario, run.seed, run.mode)
+    replay = load_replay(str(run.path), run.version, run.scenario, run.seed, run.mode)
     init_state(run)
     last = replay.last_minute
     if st.session_state.minute >= last:

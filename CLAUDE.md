@@ -41,14 +41,15 @@ oracle (negotiation with ground-truth assessments; ablation only).
 - `src/erc/eval/` metrics, stats, experiment
 - `scripts/run.py` experiments CLI, `scripts/trace.py` readable run log
 - `data/scenarios/`, `data/descriptions/`, `data/llm_cache/` (committed)
-- `logs/<mode>/<scenario>_seed<N>_<mode>.jsonl` event logs, `results/runs.jsonl` metrics
+- `logs/<version>/<mode>/<scenario>_seed<N>_<mode>.jsonl` event logs, `results/<version>/runs.jsonl` metrics
+  (v1 = frozen pilot, write-protected; v2 runs need `--version v2`)
 
 ## Commands
 - Activate: `source .venv/bin/activate`
 - Tests: `pytest -q` (111 passing at agents-frozen)
-- Print saved results (free): `python scripts/run.py`
-- Experiments (USE OPENAI TOKENS): `python scripts/run.py --mode ... --scenario ... --seed ...`
-- Trace a run: `python scripts/trace.py logs/negotiation/normal_seed42_negotiation.jsonl`
+- Print saved results (free): `python scripts/run.py` (v1) or `python scripts/run.py --version v2`
+- Experiments (USE OPENAI TOKENS): `python scripts/run.py --mode ... --scenario ... --seed ... --version v2`
+- Trace a run: `python scripts/trace.py logs/v1/negotiation/normal_seed42_negotiation.jsonl`
 
 ## Hard rules
 1. **Never run agent experiments (modes agents, negotiation, oracle) or anything that calls
