@@ -10,6 +10,11 @@ communicate and negotiate outperform strong rule-based allocation?
 
 Core rule: **Agents propose. Python owns reality, detects conflicts, validates, executes.**
 
+## Execution plan
+**PLAN.md is the authoritative execution plan** (scope, schedule, checkpoints, rules). Read it at the
+start of every session. If this file and PLAN.md disagree, PLAN.md wins; the "Plan (remaining)"
+list below is the older, v1-era summary.
+
 ## Environment (frozen)
 - 20 x 20 km grid, 120-min runs (arrivals in first 75 min, then drain), 1-min steps
 - 3 hospitals: H-T Trauma Center, H-B Burn Unit, H-G General
@@ -57,6 +62,12 @@ oracle (negotiation with ground-truth assessments; ablation only).
 5. Small, focused commits with clear messages. Push only when asked.
 6. Explain each change briefly in plain language (the student must be able to present it).
 7. Prefer extending over rewriting; keep the existing style (typed, small functions, OOP).
+
+8. **No existing v1 result or log may be overwritten, transformed in place, or regenerated under a v2
+   path.** The one-time `"version": "v1"` migration of `results/v1/runs.jsonl` is the only exception.
+9. **Every v2 run must explicitly declare version v2** (`--version v2`). Never mix v1 and v2 rows in one
+   table without the `version` column.
+10. **Every claim in slides or the README must trace to a number in `results/<version>/`.**
 
 ## Plan (remaining)
 1. Finish remaining experiment runs (only with permission, split by daily token budget).
