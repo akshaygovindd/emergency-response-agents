@@ -58,3 +58,18 @@ def test_policy_only_called_when_something_changes(tiny_scenario):
 def test_scenario_untouched_after_run(tiny_scenario):
     run(tiny_scenario, NaivePolicy())
     assert all(v.status == VictimStatus.WAITING for i in tiny_scenario.incidents for v in i.victims)
+
+def test_snapshot_has_replay_fields(tiny_scenario):
+    snaps = run(tiny_scenario, NaivePolicy()).log.of_kind("snapshot")
+    first, busy = snaps[0], next(s for s in snaps if s["incidents"] and s["ambulances"][0]["status"] != "available")
+    assert {a["id"] for a in first["ambulances"]} == {"AMB-01", "AMB-02"}
+    assert set(first["ambulances"][0]) == {"id", "x", "y", "status", "target", "onboard"}
+    assert set(first["responders"][0]) == {"id", "x", "y", "status", "target"}
+    assert set(first["hospitals"][0]) == {"id", "er_occupied", "er_capacity",
+                                          "treatment_in_use", "treatment_slots"}
+    assert first["incidents"] == [] or "victims" in first["incidents"][0]
+    incident = busy["incidents"][0]
+    assert set(incident) == {"id", "x", "y", "victims"}
+    assert set(incident["victims"][0]) == {"id", "severity", "status"}
+    assert busy["ambulances"][0]["target"] is not None
+    assert all(round(a["x"], 2) == a["x"] for s in snaps for a in s["ambulances"])

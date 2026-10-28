@@ -101,7 +101,7 @@ class Engine:
                 self._last_signature = self._decision_signature()
             self._deteriorate_all(step)
             self._start_treatments(t)
-            self.log.record(t, "snapshot", **self.state.summary())
+            self.log.record(t, "snapshot", **self.state.summary(), **self.state.replay_view())
         self._close_out()
         return self.state
 

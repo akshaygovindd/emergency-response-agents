@@ -8,7 +8,7 @@ from pydantic import Field, model_validator
 from erc.config import ScenarioName
 from erc.models.entities import (
     Ambulance, Hospital, Incident, ResponderTeam, StaffMember, StrictModel,
-    Victim, VictimStatus,
+    Victim, VictimStatus, UnitStatus,
 )
 
 
@@ -129,4 +129,35 @@ class SimulationState(StrictModel):
             "staff_available": sum(m.is_available for m in self.staff.values()),
             "er_occupancy": {h.hospital_id: round(h.er_occupied / h.er_capacity, 2)
                              for h in self.hospitals.values()},
+        }
+
+    def replay_view(self) -> dict:
+        """Per-minute positions and statuses for the replay dashboard (read-only, logging only)."""
+        def xy(loc) -> dict:
+            return {"x": round(loc.x, 2), "y": round(loc.y, 2)}
+
+        def ambulance_target(a) -> str | None:
+            if a.status == UnitStatus.TRANSPORTING:
+                return next((self.admissions[v] for v in a.victims_onboard if v in self.admissions), None)
+            return a.assigned_incident
+
+        return {
+            "ambulances": [
+                {"id": a.ambulance_id, **xy(a.location), "status": a.status.value,
+                 "target": ambulance_target(a), "onboard": list(a.victims_onboard)}
+                for a in self.ambulances.values()],
+            "responders": [
+                {"id": r.team_id, **xy(r.location), "status": r.status.value,
+                 "target": r.assigned_incident}
+                for r in self.responders.values()],
+            "incidents": [
+                {"id": i.incident_id, **xy(i.location),
+                 "victims": [{"id": v.victim_id, "severity": int(v.severity), "status": v.status.value}
+                             for v in i.victims]}
+                for i in self.visible_incidents()],
+            "hospitals": [
+                {"id": h.hospital_id, "er_occupied": h.er_occupied, "er_capacity": h.er_capacity,
+                 "treatment_in_use": sum(h.treatment_occupied.values()),
+                 "treatment_slots": sum(h.treatment_slots.values())}
+                for h in self.hospitals.values()],
         }
