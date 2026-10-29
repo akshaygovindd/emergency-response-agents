@@ -1,0 +1,7 @@
+version,scenario,mode,vs,n,mean_diff,ci_low,ci_high,wins,losses,ties,significant
+v1,normal,negotiation,agents,10,0.027272727272727275,-0.016617778863857895,0.07116323340931244,2,0,8,False
+v1,surge,negotiation,agents,10,0.009867724867724872,-0.015893854921225855,0.0356293046566756,2,1,7,False
+v1,bottleneck,negotiation,agents,5,0.0,0.0,0.0,0,0,5,False
+v2,normal,negotiation,agents,10,0.0,0.0,0.0,0,0,10,False
+v2,surge,negotiation,agents,10,-0.01111111111111111,-0.03624444444444444,0.01402222222222222,0,1,9,False
+v2,bottleneck,negotiation,agents,5,0.0,0.0,0.0,0,0,5,False

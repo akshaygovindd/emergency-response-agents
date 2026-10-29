@@ -1,0 +1,3 @@
+version,scenario,mode,vs,n,mean_diff,ci_low,ci_high,wins,losses,ties,significant
+v1,normal,oracle,negotiation,3,-0.11363636363636365,-0.42800476685267186,0.20073203957994457,0,2,1,False
+v1,surge,oracle,negotiation,3,-0.015202821869488533,-0.2090799576686744,0.17867431392969732,1,2,0,False

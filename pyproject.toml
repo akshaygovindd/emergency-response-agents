@@ -14,6 +14,7 @@ dependencies = [
     "pandas",
     "streamlit",
     "plotly",
+    "matplotlib",
     "python-dotenv",
 ]
 

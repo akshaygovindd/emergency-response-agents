@@ -1,0 +1,95 @@
+version,scenario,seed,mode,victim,incident,severity,arrival_min,deadline_min,greedy_assigned_min,greedy_assigned,greedy_contact_min,greedy_response,system_assigned_min,system_assigned,system_contact_min,system_response,greedy_ambulance_in_system_run_at_that_minute,ambulances_free_in_system_run_when_greedy_dispatched,cause
+v1,bottleneck,46,agents,V-02-1,INC-02,5,5,11,5.0,sent Ambulance 2 to Incident 2,14,9,29.0,sent Ambulance 1 to Incident 2,33.0,28.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,bottleneck,46,agents,V-02-4,INC-02,4,5,25,5.0,sent Ambulance 2 to Incident 2,14,9,29.0,sent Ambulance 1 to Incident 2,33.0,28.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,bottleneck,46,agents,V-09-3,INC-09,4,19,20,30.0,sent Ambulance 1 to Incident 9,38,19,71.0,sent Ambulance 2 to Incident 9,81.0,62.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,bottleneck,46,negotiation,V-02-1,INC-02,5,5,11,5.0,sent Ambulance 2 to Incident 2,14,9,29.0,sent Ambulance 1 to Incident 2,33.0,28.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,bottleneck,46,negotiation,V-02-4,INC-02,4,5,25,5.0,sent Ambulance 2 to Incident 2,14,9,29.0,sent Ambulance 1 to Incident 2,33.0,28.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,bottleneck,46,negotiation,V-09-3,INC-09,4,19,20,30.0,sent Ambulance 1 to Incident 9,38,19,71.0,sent Ambulance 2 to Incident 9,81.0,62.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,normal,42,agents,V-04-1,INC-04,4,15,22,15.0,sent Ambulance 2 to Incident 4,29,14,37.0,sent Ambulance 5 to Incident 4,47.0,32.0,en_route Incident 3,0,ambulance dispatched later than greedy
+v1,normal,42,agents,V-10-1,INC-10,4,58,19,65.0,sent Ambulance 3 to Incident 10,70,12,68.0,sent Ambulance 3 to Incident 10,90.0,32.0,transporting Trauma Center,0,ambulance dispatched later than greedy
+v1,normal,42,agents,V-10-2,INC-10,4,58,19,65.0,sent Ambulance 3 to Incident 10,70,12,68.0,sent Ambulance 3 to Incident 10,90.0,32.0,transporting Trauma Center,0,ambulance dispatched later than greedy
+v1,normal,42,negotiation,V-04-1,INC-04,4,15,22,15.0,sent Ambulance 2 to Incident 4,29,14,36.0,sent Ambulance 1 to Incident 4,46.0,31.0,en_route Incident 3,0,ambulance dispatched later than greedy
+v1,normal,42,oracle,V-09-2,INC-09,4,52,19,65.0,sent Ambulance 4 to Incident 9,69,17,75.0,sent Ambulance 3 to Incident 9,80.0,28.0,transporting General Hospital,0,ambulance dispatched later than greedy
+v1,normal,42,oracle,V-10-2,INC-10,4,58,19,65.0,sent Ambulance 3 to Incident 10,70,12,87.0,sent Ambulance 2 to Incident 10,98.0,40.0,transporting Trauma Center,0,ambulance dispatched later than greedy
+v1,normal,49,agents,V-02-1,INC-02,4,3,18,3.0,sent Ambulance 4 to Incident 2,9,6,3.0,sent Ambulance 1 to Incident 2,24.0,21.0,available,2,different (slower) ambulance than greedy
+v1,normal,49,agents,V-09-1,INC-09,4,46,21,57.0,sent Ambulance 5 to Incident 9,62,16,73.0,sent Ambulance 5 to Incident 9,76.0,30.0,en_route Incident 10,0,ambulance dispatched later than greedy
+v1,normal,49,agents,V-11-2,INC-11,5,63,11,63.0,sent Ambulance 1 to Incident 11,72,9,98.0,sent Ambulance 3 to Incident 11,110.0,47.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v1,normal,49,agents,V-11-4,INC-11,5,63,15,63.0,sent Ambulance 1 to Incident 11,72,9,102.0,sent Ambulance 2 to Incident 11,108.0,45.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v1,normal,49,agents,V-12-4,INC-12,4,67,22,77.0,sent Ambulance 5 to Incident 12,83,16,119.0,sent Ambulance 1 to Incident 12,109.0,42.0,on_scene Incident 9,0,ambulance dispatched later than greedy
+v1,normal,49,negotiation,V-02-1,INC-02,4,3,18,3.0,sent Ambulance 4 to Incident 2,9,6,3.0,sent Ambulance 1 to Incident 2,24.0,21.0,available,2,different (slower) ambulance than greedy
+v1,normal,49,negotiation,V-09-1,INC-09,4,46,21,57.0,sent Ambulance 5 to Incident 9,62,16,73.0,sent Ambulance 5 to Incident 9,76.0,30.0,en_route Incident 10,0,ambulance dispatched later than greedy
+v1,normal,49,negotiation,V-11-2,INC-11,5,63,11,63.0,sent Ambulance 1 to Incident 11,72,9,98.0,sent Ambulance 3 to Incident 11,110.0,47.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v1,normal,49,negotiation,V-11-4,INC-11,5,63,15,63.0,sent Ambulance 1 to Incident 11,72,9,102.0,sent Ambulance 2 to Incident 11,108.0,45.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v1,normal,49,negotiation,V-12-4,INC-12,4,67,22,77.0,sent Ambulance 5 to Incident 12,83,16,119.0,sent Ambulance 1 to Incident 12,109.0,42.0,on_scene Incident 9,0,ambulance dispatched later than greedy
+v1,normal,51,agents,V-07-4,INC-07,4,28,15,,no ambulance assigned,37,9,38.0,sent Ambulance 3 to Incident 7,49.0,21.0,,0,first contact by an ambulance instead of the medical team
+v1,normal,51,agents,V-08-1,INC-08,4,58,18,58.0,sent Ambulance 2 to Incident 8,70,12,113.0,sent Ambulance 1 to Incident 8,,,en_route Incident 6,0,"never reached, ambulance assigned too late"
+v1,normal,51,negotiation,V-07-4,INC-07,4,28,15,,no ambulance assigned,37,9,38.0,sent Ambulance 3 to Incident 7,49.0,21.0,,0,first contact by an ambulance instead of the medical team
+v1,normal,51,negotiation,V-08-1,INC-08,4,58,18,58.0,sent Ambulance 2 to Incident 8,70,12,113.0,sent Ambulance 1 to Incident 8,,,en_route Incident 6,0,"never reached, ambulance assigned too late"
+v1,surge,43,oracle,V-04-2,INC-04,4,21,24,,no ambulance assigned,43,22,,no ambulance assigned,,,,0,"never reached, no ambulance ever assigned"
+v1,surge,43,oracle,V-13-2,INC-13,4,40,22,41.0,sent Ambulance 1 to Incident 13,55,15,,no ambulance assigned,,,en_route Incident 6,0,"never reached, no ambulance ever assigned"
+v1,surge,44,agents,V-02-1,INC-02,5,1,9,1.0,sent Ambulance 1 to Incident 2,3,2,1.0,sent Ambulance 3 to Incident 2,13.0,12.0,en_route Incident 1,1,different (slower) ambulance than greedy
+v1,surge,44,agents,V-08-1,INC-08,4,30,19,33.0,sent Ambulance 5 to Incident 8,46,16,73.0,sent Ambulance 5 to Incident 8,89.0,59.0,transporting General Hospital,0,ambulance dispatched later than greedy
+v1,surge,44,agents,V-12-1,INC-12,4,35,22,43.0,sent Ambulance 3 to Incident 12,52,17,60.0,sent Ambulance 3 to Incident 12,65.0,30.0,transporting Burn Unit,0,ambulance dispatched later than greedy
+v1,surge,44,agents,V-19-1,INC-19,4,56,21,64.0,sent Ambulance 5 to Incident 19,71,15,,no ambulance assigned,,,transporting General Hospital,0,"never reached, no ambulance ever assigned"
+v1,surge,44,negotiation,V-02-1,INC-02,5,1,9,1.0,sent Ambulance 1 to Incident 2,3,2,1.0,sent Ambulance 3 to Incident 2,13.0,12.0,en_route Incident 1,1,different (slower) ambulance than greedy
+v1,surge,44,negotiation,V-08-1,INC-08,4,30,19,33.0,sent Ambulance 5 to Incident 8,46,16,85.0,sent Ambulance 5 to Incident 8,92.0,62.0,transporting General Hospital,0,ambulance dispatched later than greedy
+v1,surge,44,negotiation,V-13-4,INC-13,4,36,21,43.0,sent Ambulance 2 to Incident 13,48,12,,no ambulance assigned,,,transporting General Hospital,0,"never reached, no ambulance ever assigned"
+v1,surge,44,negotiation,V-19-1,INC-19,4,56,21,64.0,sent Ambulance 5 to Incident 19,71,15,,no ambulance assigned,,,en_route Incident 16,0,"never reached, no ambulance ever assigned"
+v1,surge,44,oracle,V-02-1,INC-02,5,1,9,1.0,sent Ambulance 1 to Incident 2,3,2,1.0,sent Ambulance 3 to Incident 2,13.0,12.0,en_route Incident 1,1,different (slower) ambulance than greedy
+v1,surge,44,oracle,V-08-1,INC-08,4,30,19,33.0,sent Ambulance 5 to Incident 8,46,16,,no ambulance assigned,,,transporting General Hospital,0,"never reached, no ambulance ever assigned"
+v1,surge,44,oracle,V-12-1,INC-12,4,35,22,43.0,sent Ambulance 3 to Incident 12,52,17,,no ambulance assigned,,,on_scene Incident 6,0,"never reached, no ambulance ever assigned"
+v1,surge,44,oracle,V-13-4,INC-13,4,36,21,43.0,sent Ambulance 2 to Incident 13,48,12,,no ambulance assigned,,,transporting General Hospital,0,"never reached, no ambulance ever assigned"
+v1,surge,45,agents,V-01-2,INC-01,4,4,21,4.0,sent Ambulance 2 to Incident 1,8,4,4.0,sent Ambulance 1 to Incident 1,28.0,24.0,en_route Incident 1,3,different (slower) ambulance than greedy
+v1,surge,45,agents,V-05-1,INC-05,4,25,21,25.0,sent Ambulance 3 to Incident 5,35,10,83.0,sent Ambulance 4 to Incident 5,88.0,63.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,surge,45,agents,V-08-1,INC-08,4,33,25,41.0,sent Ambulance 5 to Incident 8,56,23,114.0,sent Ambulance 3 to Incident 8,,,on_scene Incident 3,0,"never reached, ambulance assigned too late"
+v1,surge,45,agents,V-12-1,INC-12,4,40,21,43.0,sent Ambulance 1 to Incident 12,60,20,,no ambulance assigned,,,transporting Trauma Center,0,"never reached, no ambulance ever assigned"
+v1,surge,45,agents,V-23-2,INC-23,4,69,17,71.0,sent Ambulance 4 to Incident 23,83,14,91.0,sent Ambulance 1 to Incident 23,100.0,31.0,on_scene Incident 10,0,ambulance dispatched later than greedy
+v1,surge,45,negotiation,V-01-2,INC-01,4,4,21,4.0,sent Ambulance 2 to Incident 1,8,4,4.0,sent Ambulance 1 to Incident 1,28.0,24.0,en_route Incident 1,3,different (slower) ambulance than greedy
+v1,surge,45,negotiation,V-05-1,INC-05,4,25,21,25.0,sent Ambulance 3 to Incident 5,35,10,83.0,sent Ambulance 4 to Incident 5,88.0,63.0,en_route Incident 2,0,ambulance dispatched later than greedy
+v1,surge,45,negotiation,V-08-1,INC-08,4,33,25,41.0,sent Ambulance 5 to Incident 8,56,23,114.0,sent Ambulance 3 to Incident 8,,,on_scene Incident 3,0,"never reached, ambulance assigned too late"
+v1,surge,45,negotiation,V-12-1,INC-12,4,40,21,43.0,sent Ambulance 1 to Incident 12,60,20,,no ambulance assigned,,,transporting Trauma Center,0,"never reached, no ambulance ever assigned"
+v1,surge,45,negotiation,V-23-2,INC-23,4,69,17,71.0,sent Ambulance 4 to Incident 23,83,14,91.0,sent Ambulance 1 to Incident 23,100.0,31.0,on_scene Incident 10,0,ambulance dispatched later than greedy
+v1,surge,50,agents,V-07-3,INC-07,4,24,22,33.0,sent Ambulance 5 to Incident 7,45,21,36.0,sent Ambulance 2 to Incident 7,48.0,24.0,on_scene Incident 4,0,ambulance dispatched later than greedy
+v1,surge,50,agents,V-09-3,INC-09,5,41,9,44.0,sent Ambulance 4 to Incident 9,48,7,55.0,sent Ambulance 1 to Incident 9,59.0,18.0,transporting Burn Unit,0,ambulance dispatched later than greedy
+v2,bottleneck,46,agents,V-02-1,INC-02,5,5,11,5.0,sent Ambulance 2 to Incident 2,14,9,,no ambulance assigned,,,en_route Incident 2,0,"never reached, no ambulance ever assigned"
+v2,bottleneck,46,agents,V-02-4,INC-02,4,5,25,5.0,sent Ambulance 2 to Incident 2,14,9,,no ambulance assigned,,,en_route Incident 2,0,"never reached, no ambulance ever assigned"
+v2,bottleneck,46,agents,V-09-3,INC-09,4,19,20,30.0,sent Ambulance 1 to Incident 9,38,19,70.0,sent Ambulance 1 to Incident 9,80.0,61.0,en_route Incident 9,0,ambulance dispatched later than greedy
+v2,bottleneck,46,negotiation,V-02-1,INC-02,5,5,11,5.0,sent Ambulance 2 to Incident 2,14,9,,no ambulance assigned,,,en_route Incident 2,0,"never reached, no ambulance ever assigned"
+v2,bottleneck,46,negotiation,V-02-4,INC-02,4,5,25,5.0,sent Ambulance 2 to Incident 2,14,9,,no ambulance assigned,,,en_route Incident 2,0,"never reached, no ambulance ever assigned"
+v2,bottleneck,46,negotiation,V-09-3,INC-09,4,19,20,30.0,sent Ambulance 1 to Incident 9,38,19,70.0,sent Ambulance 1 to Incident 9,80.0,61.0,en_route Incident 9,0,ambulance dispatched later than greedy
+v2,normal,42,agents,V-04-1,INC-04,4,15,22,15.0,sent Ambulance 2 to Incident 4,29,14,37.0,sent Ambulance 5 to Incident 4,47.0,32.0,en_route Incident 3,0,ambulance dispatched later than greedy
+v2,normal,42,negotiation,V-04-1,INC-04,4,15,22,15.0,sent Ambulance 2 to Incident 4,29,14,36.0,sent Ambulance 1 to Incident 4,46.0,31.0,en_route Incident 3,0,ambulance dispatched later than greedy
+v2,normal,49,agents,V-02-1,INC-02,4,3,18,3.0,sent Ambulance 4 to Incident 2,9,6,3.0,sent Ambulance 1 to Incident 2,24.0,21.0,available,2,different (slower) ambulance than greedy
+v2,normal,49,agents,V-09-1,INC-09,4,46,21,57.0,sent Ambulance 5 to Incident 9,62,16,73.0,sent Ambulance 5 to Incident 9,76.0,30.0,en_route Incident 10,0,ambulance dispatched later than greedy
+v2,normal,49,agents,V-11-2,INC-11,5,63,11,63.0,sent Ambulance 1 to Incident 11,72,9,98.0,sent Ambulance 3 to Incident 11,110.0,47.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v2,normal,49,agents,V-11-4,INC-11,5,63,15,63.0,sent Ambulance 1 to Incident 11,72,9,102.0,sent Ambulance 2 to Incident 11,108.0,45.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v2,normal,49,agents,V-12-4,INC-12,4,67,22,77.0,sent Ambulance 5 to Incident 12,83,16,119.0,sent Ambulance 1 to Incident 12,109.0,42.0,on_scene Incident 9,0,ambulance dispatched later than greedy
+v2,normal,49,negotiation,V-02-1,INC-02,4,3,18,3.0,sent Ambulance 4 to Incident 2,9,6,3.0,sent Ambulance 1 to Incident 2,24.0,21.0,available,2,different (slower) ambulance than greedy
+v2,normal,49,negotiation,V-09-1,INC-09,4,46,21,57.0,sent Ambulance 5 to Incident 9,62,16,73.0,sent Ambulance 5 to Incident 9,76.0,30.0,en_route Incident 10,0,ambulance dispatched later than greedy
+v2,normal,49,negotiation,V-11-2,INC-11,5,63,11,63.0,sent Ambulance 1 to Incident 11,72,9,98.0,sent Ambulance 3 to Incident 11,110.0,47.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v2,normal,49,negotiation,V-11-4,INC-11,5,63,15,63.0,sent Ambulance 1 to Incident 11,72,9,102.0,sent Ambulance 2 to Incident 11,108.0,45.0,en_route Incident 8,0,ambulance dispatched later than greedy
+v2,normal,49,negotiation,V-12-4,INC-12,4,67,22,77.0,sent Ambulance 5 to Incident 12,83,16,119.0,sent Ambulance 1 to Incident 12,109.0,42.0,on_scene Incident 9,0,ambulance dispatched later than greedy
+v2,normal,51,agents,V-07-4,INC-07,4,28,15,,no ambulance assigned,37,9,47.0,sent Ambulance 1 to Incident 7,62.0,34.0,,0,first contact by an ambulance instead of the medical team
+v2,normal,51,agents,V-08-1,INC-08,4,58,18,58.0,sent Ambulance 2 to Incident 8,70,12,,no ambulance assigned,,,transporting Trauma Center,0,"never reached, no ambulance ever assigned"
+v2,normal,51,negotiation,V-07-4,INC-07,4,28,15,,no ambulance assigned,37,9,47.0,sent Ambulance 1 to Incident 7,62.0,34.0,,0,first contact by an ambulance instead of the medical team
+v2,normal,51,negotiation,V-08-1,INC-08,4,58,18,58.0,sent Ambulance 2 to Incident 8,70,12,,no ambulance assigned,,,transporting Trauma Center,0,"never reached, no ambulance ever assigned"
+v2,surge,44,negotiation,V-02-1,INC-02,5,1,9,1.0,sent Ambulance 1 to Incident 2,3,2,1.0,sent Ambulance 3 to Incident 2,13.0,12.0,en_route Incident 1,1,different (slower) ambulance than greedy
+v2,surge,44,negotiation,V-08-1,INC-08,4,30,19,33.0,sent Ambulance 5 to Incident 8,46,16,85.0,sent Ambulance 5 to Incident 8,92.0,62.0,transporting General Hospital,0,ambulance dispatched later than greedy
+v2,surge,44,negotiation,V-13-4,INC-13,4,36,21,43.0,sent Ambulance 2 to Incident 13,48,12,,no ambulance assigned,,,transporting General Hospital,0,"never reached, no ambulance ever assigned"
+v2,surge,44,negotiation,V-19-1,INC-19,4,56,21,64.0,sent Ambulance 5 to Incident 19,71,15,,no ambulance assigned,,,en_route Incident 16,0,"never reached, no ambulance ever assigned"
+v2,surge,48,agents,V-08-3,INC-08,4,25,25,38.0,sent Ambulance 3 to Incident 8,46,21,,no ambulance assigned,,,en_route Incident 8,0,"never reached, no ambulance ever assigned"
+v2,surge,48,agents,V-11-1,INC-11,4,34,19,39.0,sent Ambulance 4 to Incident 11,43,9,,no ambulance assigned,,,on_scene Incident 4,0,"never reached, no ambulance ever assigned"
+v2,surge,48,agents,V-11-3,INC-11,4,34,17,39.0,sent Ambulance 4 to Incident 11,43,9,,no ambulance assigned,,,on_scene Incident 4,0,"never reached, no ambulance ever assigned"
+v2,surge,48,agents,V-13-3,INC-13,4,42,24,55.0,sent Ambulance 1 to Incident 13,66,24,,no ambulance assigned,,,en_route Incident 16,0,"never reached, no ambulance ever assigned"
+v2,surge,48,negotiation,V-08-3,INC-08,4,25,25,38.0,sent Ambulance 3 to Incident 8,46,21,,no ambulance assigned,,,en_route Incident 8,0,"never reached, no ambulance ever assigned"
+v2,surge,48,negotiation,V-11-1,INC-11,4,34,19,39.0,sent Ambulance 4 to Incident 11,43,9,,no ambulance assigned,,,on_scene Incident 4,0,"never reached, no ambulance ever assigned"
+v2,surge,48,negotiation,V-11-3,INC-11,4,34,17,39.0,sent Ambulance 4 to Incident 11,43,9,,no ambulance assigned,,,on_scene Incident 4,0,"never reached, no ambulance ever assigned"
+v2,surge,48,negotiation,V-13-3,INC-13,4,42,24,55.0,sent Ambulance 1 to Incident 13,66,24,,no ambulance assigned,,,en_route Incident 16,0,"never reached, no ambulance ever assigned"
+v2,surge,50,agents,V-06-2,INC-06,4,22,20,30.0,sent Ambulance 2 to Incident 6,41,19,98.0,sent Ambulance 1 to Incident 6,109.0,87.0,transporting General Hospital,0,ambulance dispatched later than greedy
+v2,surge,50,agents,V-07-3,INC-07,4,24,22,33.0,sent Ambulance 5 to Incident 7,45,21,68.0,sent Ambulance 2 to Incident 7,49.0,25.0,on_scene Incident 4,0,ambulance dispatched later than greedy
+v2,surge,50,agents,V-09-3,INC-09,5,41,9,44.0,sent Ambulance 4 to Incident 9,48,7,55.0,sent Ambulance 4 to Incident 9,59.0,18.0,transporting Burn Unit,0,ambulance dispatched later than greedy
+v2,surge,50,negotiation,V-06-2,INC-06,4,22,20,30.0,sent Ambulance 2 to Incident 6,41,19,98.0,sent Ambulance 1 to Incident 6,109.0,87.0,transporting General Hospital,0,ambulance dispatched later than greedy
+v2,surge,50,negotiation,V-07-3,INC-07,4,24,22,33.0,sent Ambulance 5 to Incident 7,45,21,68.0,sent Ambulance 2 to Incident 7,49.0,25.0,on_scene Incident 4,0,ambulance dispatched later than greedy
+v2,surge,50,negotiation,V-09-3,INC-09,5,41,9,44.0,sent Ambulance 4 to Incident 9,48,7,55.0,sent Ambulance 4 to Incident 9,59.0,18.0,transporting Burn Unit,0,ambulance dispatched later than greedy
+v2,surge,51,agents,V-21-1,INC-21,4,70,24,85.0,sent Ambulance 1 to Incident 21,93,23,86.0,sent Ambulance 2 to Incident 21,100.0,30.0,on_scene Incident 15,0,ambulance dispatched later than greedy
+v2,surge,51,negotiation,V-21-1,INC-21,4,70,24,85.0,sent Ambulance 1 to Incident 21,93,23,86.0,sent Ambulance 2 to Incident 21,100.0,30.0,on_scene Incident 15,0,ambulance dispatched later than greedy

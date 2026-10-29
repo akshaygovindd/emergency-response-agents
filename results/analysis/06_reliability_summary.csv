@@ -1,0 +1,6 @@
+version,mode,runs,policy_calls,proposals_invalid,actions_accepted,actions_rejected_at_execution,admission_fallbacks,conflict_fallbacks
+v1,agents,25,470,106,926,0,0,0
+v1,negotiation,25,463,101,919,0,0,0
+v1,oracle,6,117,2,246,0,0,0
+v2,agents,25,473,163,935,0,0,0
+v2,negotiation,25,473,171,931,0,0,1

@@ -1,0 +1,9 @@
+version,scenario,paired_runs,diverged,never_diverged,helped,hurt,tied,mean_csr_diff_diverged,critical_victims_gained,critical_victims_lost
+v1,normal,10,3,7,2,0,1,0.09090909090909093,3,0
+v1,surge,10,5,5,2,1,2,0.019735449735449745,9,6
+v1,bottleneck,5,0,5,0,0,0,,0,0
+v2,normal,10,5,5,0,0,5,0.0,1,1
+v2,surge,10,2,8,0,1,1,-0.05555555555555555,1,4
+v2,bottleneck,5,0,5,0,0,0,,0,0
+v1,all,25,8,17,4,1,3,0.04642556517556519,12,6
+v2,all,25,7,18,0,1,6,-0.015873015873015872,2,5

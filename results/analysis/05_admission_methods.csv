@@ -1,0 +1,8 @@
+version,mode,admission_method,count
+v2,agents,accepted,361
+v2,agents,pending,6
+v2,agents,redirect,4
+v2,negotiation,accepted,358
+v2,negotiation,arbitrated,1
+v2,negotiation,pending,7
+v2,negotiation,revised,6

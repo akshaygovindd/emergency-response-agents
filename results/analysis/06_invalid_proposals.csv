@@ -1,0 +1,13 @@
+version,mode,agent,reason,kind,count
+v1,agents,hospital_coordination,hospital_full,proposal blocked by the validator before execution,61
+v1,agents,hospital_coordination,hospital_lacks_capability,proposal blocked by the validator before execution,42
+v1,agents,hospital_coordination,routing_conflict,proposal blocked by the validator before execution,3
+v1,negotiation,hospital_coordination,hospital_full,proposal blocked by the validator before execution,59
+v1,negotiation,hospital_coordination,hospital_lacks_capability,proposal blocked by the validator before execution,42
+v1,oracle,hospital_coordination,hospital_full,proposal blocked by the validator before execution,2
+v2,agents,dispatch,hospital_full,proposal blocked by the validator before execution,71
+v2,agents,dispatch,hospital_lacks_capability,proposal blocked by the validator before execution,61
+v2,agents,dispatch,routing_conflict,proposal blocked by the validator before execution,31
+v2,negotiation,dispatch,hospital_full,proposal blocked by the validator before execution,76
+v2,negotiation,dispatch,hospital_lacks_capability,proposal blocked by the validator before execution,58
+v2,negotiation,dispatch,routing_conflict,proposal blocked by the validator before execution,37

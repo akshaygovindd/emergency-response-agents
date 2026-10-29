@@ -1,0 +1,32 @@
+version,scenario,seed,mode,n_critical,csr_system,csr_greedy,csr_diff,critical_lost_vs_greedy,critical_gained_vs_greedy,first_diff_minute,greedy_did,system_did
+v1,bottleneck,46,agents,21,0.09523809523809523,0.19047619047619047,-0.09523809523809523,3,1,4,sent Medical team to Incident 1,
+v1,bottleneck,46,negotiation,21,0.09523809523809523,0.19047619047619047,-0.09523809523809523,3,1,4,sent Medical team to Incident 1,
+v1,normal,42,agents,11,0.6363636363636364,0.9090909090909091,-0.2727272727272727,3,0,6,sent Ambulance 1 to Incident 2 | sent Ambulance 3 to Incident 1 | sent Ambulance 5 to Incident 2 | sent Medical team to Incident 2,sent Ambulance 1 to Incident 1 | sent Ambulance 5 to Incident 2
+v1,normal,42,negotiation,11,0.8181818181818182,0.9090909090909091,-0.09090909090909083,1,0,6,sent Ambulance 1 to Incident 2 | sent Ambulance 5 to Incident 2 | sent Medical team to Incident 2,sent Ambulance 1 to Incident 2 | sent Ambulance 5 to Incident 2
+v1,normal,42,oracle,11,0.7272727272727273,0.9090909090909091,-0.18181818181818177,2,0,6,sent Ambulance 1 to Incident 2 | sent Ambulance 5 to Incident 2 | sent Medical team to Incident 2,sent Ambulance 1 to Incident 2 | sent Ambulance 5 to Incident 2
+v1,normal,49,agents,10,0.3,0.8,-0.5,5,0,3,sent Ambulance 4 to Incident 2,sent Ambulance 1 to Incident 2 | admitted 1 patient to Burn Unit
+v1,normal,49,negotiation,10,0.3,0.8,-0.5,5,0,3,sent Ambulance 4 to Incident 2,sent Ambulance 1 to Incident 2 | admitted 1 patient to Burn Unit
+v1,normal,51,agents,6,0.6666666666666666,0.8333333333333334,-0.16666666666666674,2,1,16,sent Medical team to Incident 2,
+v1,normal,51,negotiation,6,0.6666666666666666,0.8333333333333334,-0.16666666666666674,2,1,16,sent Medical team to Incident 2,
+v1,surge,43,oracle,25,0.12,0.2,-0.08000000000000002,2,0,2,sent Medical team to Incident 1,
+v1,surge,44,agents,27,0.2222222222222222,0.2962962962962963,-0.07407407407407407,4,2,0,sent Ambulance 4 to Incident 1 | sent Ambulance 5 to Incident 1 | sent Medical team to Incident 1,sent Ambulance 1 to Incident 1 | sent Ambulance 4 to Incident 1
+v1,surge,44,negotiation,27,0.18518518518518517,0.2962962962962963,-0.1111111111111111,4,1,0,sent Ambulance 4 to Incident 1 | sent Ambulance 5 to Incident 1 | sent Medical team to Incident 1,sent Ambulance 1 to Incident 1 | sent Ambulance 4 to Incident 1
+v1,surge,44,oracle,27,0.14814814814814814,0.2962962962962963,-0.14814814814814814,4,0,0,sent Ambulance 4 to Incident 1 | sent Ambulance 5 to Incident 1 | sent Medical team to Incident 1,sent Ambulance 1 to Incident 1 | sent Ambulance 4 to Incident 1
+v1,surge,45,agents,21,0.19047619047619047,0.2857142857142857,-0.09523809523809523,5,3,4,sent Ambulance 2 to Incident 1 | sent Medical team to Incident 1,sent Ambulance 1 to Incident 1 | sent Ambulance 2 to Incident 1
+v1,surge,45,negotiation,21,0.19047619047619047,0.2857142857142857,-0.09523809523809523,5,3,4,sent Ambulance 2 to Incident 1 | sent Medical team to Incident 1,sent Ambulance 1 to Incident 1 | sent Ambulance 2 to Incident 1
+v1,surge,50,agents,30,0.3333333333333333,0.36666666666666664,-0.033333333333333326,2,1,0,sent Ambulance 5 to Incident 1 | sent Ambulance 2 to Incident 1,sent Ambulance 5 to Incident 1
+v2,bottleneck,46,agents,21,0.09523809523809523,0.19047619047619047,-0.09523809523809523,3,1,4,sent Medical team to Incident 1,
+v2,bottleneck,46,negotiation,21,0.09523809523809523,0.19047619047619047,-0.09523809523809523,3,1,4,sent Medical team to Incident 1,
+v2,normal,42,agents,11,0.8181818181818182,0.9090909090909091,-0.09090909090909083,1,0,6,sent Ambulance 1 to Incident 2 | sent Ambulance 3 to Incident 1 | sent Ambulance 5 to Incident 2 | sent Medical team to Incident 2,sent Ambulance 1 to Incident 1 | sent Ambulance 5 to Incident 2
+v2,normal,42,negotiation,11,0.8181818181818182,0.9090909090909091,-0.09090909090909083,1,0,6,sent Ambulance 1 to Incident 2 | sent Ambulance 5 to Incident 2 | sent Medical team to Incident 2,sent Ambulance 1 to Incident 2 | sent Ambulance 5 to Incident 2
+v2,normal,49,agents,10,0.3,0.8,-0.5,5,0,3,sent Ambulance 4 to Incident 2,sent Ambulance 1 to Incident 2 | admitted 1 patient to Burn Unit
+v2,normal,49,negotiation,10,0.3,0.8,-0.5,5,0,3,sent Ambulance 4 to Incident 2,sent Ambulance 1 to Incident 2 | admitted 1 patient to Burn Unit
+v2,normal,51,agents,6,0.5,0.8333333333333334,-0.33333333333333337,2,0,16,sent Medical team to Incident 2,
+v2,normal,51,negotiation,6,0.5,0.8333333333333334,-0.33333333333333337,2,0,16,sent Medical team to Incident 2,
+v2,surge,44,negotiation,27,0.18518518518518517,0.2962962962962963,-0.1111111111111111,4,1,0,sent Ambulance 4 to Incident 1 | sent Ambulance 5 to Incident 1 | sent Medical team to Incident 1,sent Ambulance 1 to Incident 1 | sent Ambulance 4 to Incident 1
+v2,surge,48,agents,19,0.15789473684210525,0.2631578947368421,-0.10526315789473684,4,2,1,,admitted 1 patient to General Hospital
+v2,surge,48,negotiation,19,0.15789473684210525,0.2631578947368421,-0.10526315789473684,4,2,1,,admitted 1 patient to General Hospital
+v2,surge,50,agents,30,0.3333333333333333,0.36666666666666664,-0.033333333333333326,3,2,0,sent Ambulance 5 to Incident 1 | sent Ambulance 2 to Incident 1,sent Ambulance 5 to Incident 1
+v2,surge,50,negotiation,30,0.3333333333333333,0.36666666666666664,-0.033333333333333326,3,2,0,sent Ambulance 5 to Incident 1 | sent Ambulance 2 to Incident 1,sent Ambulance 5 to Incident 1
+v2,surge,51,agents,14,0.14285714285714285,0.21428571428571427,-0.07142857142857142,1,0,9,sent Ambulance 2 to Incident 1,sent Ambulance 3 to Incident 1
+v2,surge,51,negotiation,14,0.14285714285714285,0.21428571428571427,-0.07142857142857142,1,0,9,sent Ambulance 2 to Incident 1,sent Ambulance 3 to Incident 1

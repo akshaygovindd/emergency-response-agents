@@ -1,0 +1,8 @@
+version,type,resolution,conflicts,involved_critical,involved_critical_in_time,counter_critical,counter_critical_in_time,same_counter_critical_in_time_in_agents_run
+v1,capacity,counter-offer accepted,4,9,6,5,5,5
+v1,capacity,negotiated (no counter accepted),2,7,5,0,0,0
+v1,resource,counter-offer accepted,1,2,2,1,1,1
+v1,resource,negotiated (no counter accepted),22,21,5,0,0,0
+v2,resource,counter-offer accepted,1,2,2,1,1,1
+v2,resource,negotiated (no counter accepted),23,21,2,0,0,0
+v2,routing,fallback,1,0,0,0,0,0
