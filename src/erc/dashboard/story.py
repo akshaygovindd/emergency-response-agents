@@ -9,7 +9,7 @@ Conflict rows: {id, t, kind, text, incidents, resources, method, stages: [{key, 
 from __future__ import annotations
 
 AGENT_LABELS = {"incident_assessment": "Assessment", "dispatch": "Dispatch", "resource_allocation": "Resource Alloc.",
-                "hospital_coordination": "Hospital", "python": "Python"}
+                "hospital_coordination": "Hospital", "python": "System"}
 BADGES = {"info": "INFO", "proposal": "PROPOSAL", "counter_proposal": "COUNTER", "accept": "ACCEPT",
           "reject": "REJECT", "commit": "COMMIT", "escalate": "ESCALATE"}
 TYPE_KEYS = {"counter_proposal": "counter"}            # message type -> class key used by the player
@@ -37,6 +37,21 @@ def describe_action(action: dict | None, incident: str | None = None) -> str:
         return f"{action['responder_id']} to {incident}"
     if kind in ("admit_patient", "divert_patient"):
         verb = "admit" if kind == "admit_patient" else "divert"
+        return f"{verb} {victims} to {action['hospital_id']}"
+    return kind.replace("_", " ")
+
+
+def feed_text(action: dict | None, incident: str | None = None, past: bool = False) -> str:
+    """Plain-verb phrase for the feed: 'send AMB-01 to INC-01' (past tense: 'sent AMB-01 to INC-01')."""
+    if not action:
+        return f"assess {incident}" if incident else ""
+    kind = action["action_type"]
+    victims = ", ".join(action.get("victim_ids") or [])
+    if kind in ("assign_ambulance", "assign_responder"):
+        unit = action.get("ambulance_id") or action.get("responder_id")
+        return f"{'sent' if past else 'send'} {unit} to {incident}" + (f" ({victims})" if victims else "")
+    if kind in ("admit_patient", "divert_patient"):
+        verb = ("admitted" if past else "admit") if kind == "admit_patient" else ("diverted" if past else "divert")
         return f"{verb} {victims} to {action['hospital_id']}"
     return kind.replace("_", " ")
 
@@ -69,16 +84,16 @@ def _message_row(e: dict) -> dict | None:
         negotiation = e.get("negotiation_id") or ""
         return {"t": t, "id": e["message_id"], "from": agent_label(e["sender"]), "to": agent_label(e["recipient"]),
                 "type": TYPE_KEYS.get(mtype, mtype), "badge": BADGES.get(mtype, mtype.upper()),
-                "text": describe_action(e.get("proposed_action"), e.get("incident_id")),
+                "text": feed_text(e.get("proposed_action"), e.get("incident_id")),
                 "why": e.get("reason") or "", "inc": e.get("incident_id"), "adm": negotiation.startswith("ADM-")}
     if kind == "conflict_detected":
-        return {"t": t, "id": e["conflict_id"], "from": "Python", "to": "all agents", "type": "conflict",
+        return {"t": t, "id": e["conflict_id"], "from": "System", "to": "all agents", "type": "conflict",
                 "badge": "CONFLICT", "text": conflict_text(e), "why": e["reason"],
                 "inc": (e["incident_ids"] or [None])[0], "adm": False}
     if kind == "action_accepted":
-        return {"t": t, "id": e["message_id"], "from": "Python", "to": "world", "type": "executed",
-                "badge": "EXECUTED", "text": describe_action(e["action"], e["incident_id"]),
-                "why": f"validated and executed ({e['source']})", "inc": e["incident_id"], "adm": False}
+        return {"t": t, "id": e["message_id"], "from": "System", "to": "", "type": "executed",
+                "badge": "EXECUTED", "text": feed_text(e["action"], e["incident_id"], past=True),
+                "why": f"checked and carried out ({e['source']})", "inc": e["incident_id"], "adm": False}
     return None
 
 

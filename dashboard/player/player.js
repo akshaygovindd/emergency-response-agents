@@ -56,8 +56,8 @@
       text(svg, String(k), M - 14, M + (KM - k) * S + 5, 14, "#6f8196");
     }
   }
-  text(svg, "km east", M + (KM * S) / 2, W - 6, 13, "#58697d");
-  text(svg, "km north", 12, M + (KM * S) / 2, 13, "#58697d", { transform: `rotate(-90 12 ${M + (KM * S) / 2})` });
+  text(svg, "km east", M + KM * S * 0.625, W - 6, 13, "#58697d");     // between two tick numbers, so it never sits on one
+  text(svg, "km north", 12, M + KM * S * 0.125, 13, "#58697d", { transform: `rotate(-90 12 ${M + KM * S * 0.125})` });
 
   const routeLayer = el("g", {}, svg), incidentLayer = el("g", {}, svg), hospitalLayer = el("g", {}, svg);
   const conflictLayer = el("g", {}, svg), unitLayer = el("g", {}, svg), labelLayer = el("g", {}, svg);
@@ -101,7 +101,7 @@
       const c = el("circle", { cx: Math.cos(ang) * r, cy: Math.sin(ang) * r, r: 6, "stroke-width": 1.6 }, g);
       return { v, i, c };
     });
-    return { inc, g, dots, box: rectAt(X(inc.x), Y(inc.y) + 36, 54, 16) };
+    return { inc, g, dots, label, resolved: false, box: rectAt(X(inc.x), Y(inc.y) + 36, 54, 16) };
   });
 
   // ───────── Units ─────────
@@ -175,12 +175,14 @@
         c.setAttribute("stroke", code === 4 ? "#e8edf3" : "#0b1118");
         c.setAttribute("opacity", 1);
       });
-      is.g.setAttribute("opacity", arrived ? (anyOpen ? 1 : 0.35) : 0);
+      is.resolved = arrived && !anyOpen;                // fully resolved: no label, strongly faded
+      is.label.setAttribute("opacity", is.resolved ? 0 : 1);
+      is.g.setAttribute("opacity", arrived ? (anyOpen ? 1 : 0.16) : 0);
     });
 
     const taken = [];                                  // label boxes tags must stay clear of
     hospitals.forEach((hs) => hs.box.forEach((b) => taken.push(b)));
-    incidents.forEach((is) => { if (m >= is.inc.arrival_min) taken.push(is.box); });
+    incidents.forEach((is) => { if (m >= is.inc.arrival_min && !is.resolved) taken.push(is.box); });
     const place = (unit, xy) => {
       const px = X(xy.x), py = Y(xy.y);
       unit.g.setAttribute("transform", `translate(${px},${py})`);
@@ -195,6 +197,8 @@
       u.body.setAttribute("transform", `rotate(${(u.angle > 90 || u.angle < -90) ? u.angle + 180 : u.angle})`);
       u.shape.setAttribute("fill", PALETTE[fa[2]] || PALETTE.available);
       u.mark.setAttribute("opacity", fa[4] ? 0 : 0.8);
+      u.g.setAttribute("opacity", fa[2] === "available" ? 0.7 : 1);
+      u.tag.setAttribute("opacity", fa[2] === "available" ? 0.6 : 1);
       u.count.textContent = fa[4] ? String(fa[4]) : "";
       const target = fa[3] && where[fa[3]];
       const moving = fa[2] === "en_route" || fa[2] === "transporting";
@@ -208,6 +212,7 @@
       const fr = frame.r[u.idx], pos = position(u.r.id, tau, fr);
       const [px, py] = place(u, pos);
       u.g.setAttribute("opacity", fr[2] === "available" ? 0.6 : 1);
+      u.tag.setAttribute("opacity", fr[2] === "available" ? 0.55 : 1);
       const target = fr[3] && where[fr[3]];
       if (fr[2] === "en_route" && target) {
         u.route.setAttribute("x1", px); u.route.setAttribute("y1", py);
@@ -264,28 +269,33 @@
   const AMB_LABEL = { available: "available", en_route: "en route", on_scene: "on scene", transporting: "transporting" };
   const fmt = (v, unit) => (v === null || v === undefined ? "n/a" : v + (unit || ""));
 
-  function kpiCard(cls, cap, val, of, note) {
-    return `<div class="kpi ${cls}"><div class="cap">${cap}</div><div class="val">${val}${of ? `<span class="of"> / ${of}</span>` : ""}</div><div class="note">${note}</div></div>`;
+  function kpiCard(cls, cap, val, of, note, tip) {
+    return `<div class="kpi ${cls}" title="${esc(tip || "")}"><div class="cap">${cap}</div><div class="val">${val}${of ? `<span class="of"> / ${of}</span>` : ""}</div><div class="note">${note}</div></div>`;
   }
   function panels(m, frame) {
     const k = frame.k;
-    const rate = k.crit_n ? Math.round((100 * k.crit_ok) / k.crit_n) + "%" : "no critical victims yet";
+    const pct = k.crit_n ? Math.round((100 * k.crit_ok) / k.crit_n) + "%" : null;
     $("kpis").innerHTML =
-      kpiCard("wide", "Critical in time", k.crit_ok, k.crit_n, `${rate} so far &middot; ${B.meta.critical_total} critical in this run`) +
-      kpiCard("wide", "Victims reached", k.reached, k.arrived, `${B.victims.length} victims in this run`) +
-      kpiCard(k.expectant ? "bad" : "", "Expectant", k.expectant, null, "critical, missed deadline") +
-      kpiCard("", "Conflicts", k.conflicts, null, `${k.negotiated} negotiated`) +
-      kpiCard("", "Avg response", fmt(k.resp_avg, " min"), null, "to first medical contact");
+      kpiCard("wide", "Critical in time", k.crit_ok, k.crit_n, pct ? `${pct} &middot; ${k.crit_n} critical` : "none critical yet",
+        `${k.crit_ok} of the ${k.crit_n} critical victims who have arrived were reached within their deadline (${B.meta.critical_total} critical in the whole run).`) +
+      kpiCard("wide", "Reached", k.reached, k.arrived, `of ${B.victims.length} in run`,
+        `${k.reached} of the ${k.arrived} victims who have arrived have had first medical contact (${B.victims.length} victims in the whole run).`) +
+      kpiCard(k.expectant ? "bad" : "", "Expectant", k.expectant, null, "missed deadline",
+        "Critical victims whose deadline passed without first medical contact in time (cumulative).") +
+      kpiCard("", "Conflicts", k.conflicts, null, `${k.negotiated} negotiated`,
+        `${k.conflicts} resource conflicts detected so far, ${k.negotiated} settled by negotiation.`) +
+      kpiCard("", "Avg response", fmt(k.resp_avg, " min"), null, "to first contact",
+        "Average minutes from arrival to first medical contact, over victims reached so far.");
 
     $("hospitals").innerHTML = B.hospitals.map((h, i) => {
       const [er, , promised, status] = frame.h[i], cap = h.er_capacity, prom = Math.min(promised, Math.max(0, cap - er));
       const occ = Math.min(er, cap);
       const beds = Array.from({ length: cap }, (_, b) =>
         `<i class="bed ${b < occ ? "occ" : b < occ + prom ? "prom" : ""}" ${b < occ ? `style="background:${STATUS_COLOR[status]}"` : ""}></i>`).join("");
-      return `<div class="hcard"><div class="name">${esc(h.id)}<span>${esc(h.label)}</span></div>` +
+      return `<div class="hcard" title="${esc(h.id + " " + h.label)}"><div class="name">${esc(h.id)}<span>${esc(h.label)}</span></div>` +
         `<div class="state" style="color:${STATUS_COLOR[status]}"><i style="background:${STATUS_COLOR[status]}"></i>${status}</div>` +
         `<div class="beds" title="occupied / promised / free ER beds">${beds}</div>` +
-        `<div class="meta">ER ${er}/${cap}${promised ? ` &middot; +${promised} on the way` : ""}</div></div>`;
+        `<div class="meta" title="${esc(`ER ${er} of ${cap} beds occupied` + (promised ? `, ${promised} more patients on the way` : ""))}">ER ${er}/${cap}${promised ? ` &middot; +${promised} coming` : ""}</div></div>`;
     }).join("");
 
     const r = frame.res, ambChips = Object.entries(r.amb).map(([state, n]) =>
@@ -316,12 +326,12 @@
     $("feedcount").textContent = n ? `${n} so far` : "";
     if (!n) { $("feed").innerHTML = `<div class="empty">No messages yet. They appear as the agents start working.</div>`; return; }
     const rows = [];
-    for (let i = n - 1; i >= 0 && rows.length < 80; i--) {
+    for (let i = n - 1; i >= 0 && rows.length < 60; i--) {
       const x = B.messages[i];
       if (feedFilter === "story" && !STORY.has(x.type)) continue;
       rows.push(`<div class="msg ${x.type}${i >= old && old > 0 ? " new" : ""}" title="${esc(x.id + " · " + x.why)}">` +
         `<span class="t">${x.t}</span><span class="badge">${x.badge}</span>${x.adm ? '<span class="adm">ADM</span>' : ""}` +
-        `<span class="who">${esc(x.from)} &rarr; ${esc(x.to)}</span><span class="what">${esc(x.text)}</span></div>`);
+        `<span class="who">${esc(x.from)}${x.to ? " &rarr; " + esc(x.to) : ""}</span><span class="what">${esc(x.text)}</span></div>`);
     }
     $("feed").innerHTML = rows.join("");
   }
@@ -336,7 +346,7 @@
     const steps = c.stages.map((st) => {
       const off = st.ref === null || st.t > m;
       const cls = "s-" + st.label.toLowerCase().replace(/[^a-z]/g, "");
-      return `<div class="step ${cls}${off ? " off" : ""}"><div class="lab">${esc(st.label)}</div>` +
+      return `<div class="step ${cls}${off ? " off" : ""}" title="${esc(st.label + (st.ref ? " " + st.ref : "") + ": " + st.text)}"><div class="lab">${esc(st.label)}</div>` +
         `<div class="ref">${st.ref ? esc(st.ref) : "&mdash;"}</div><div class="txt">${esc(st.text)}</div></div>`;
     });
     $("strip").innerHTML = `<div class="head">Latest conflict<b>minute ${c.t}</b><span>${B.conflicts.indexOf(c) + 1} of ${B.conflicts.length} in this run</span></div>` +
@@ -402,6 +412,10 @@
     $("cmarks").appendChild(i);
   });
 
+  $("bedlegend").innerHTML =
+    `<span><i class="bed occ" style="background:#8a9bb0"></i>occupied</span>` +
+    `<span><i class="bed prom"></i>promised (on the way)</span><span><i class="bed"></i>free</span>`;
+
   // ───────── Legend (same palette as the map) ─────────
   const sw = (inner) => `<svg viewBox="0 0 22 14">${inner}</svg>`;
   const dot = (fill, stroke) => sw(`<circle cx="11" cy="7" r="5" fill="${fill}" stroke="${stroke || "none"}" stroke-width="1.5"/>`);
@@ -416,10 +430,17 @@
 
   // ───────── Layout: the map is a square sized by the free height ─────────
   function fit() {
-    const main = $("main"), col = $("mapcol");
-    if (window.innerWidth <= 700) { col.style.width = ""; return; }
-    const size = Math.max(280, Math.min(main.clientHeight - $("legend").offsetHeight - 6, main.clientWidth - 412));
-    col.style.width = size + "px";
+    const main = $("main"), col = $("mapcol"), wide = window.innerWidth >= 1200;
+    col.classList.toggle("wide", wide);
+    if (window.innerWidth <= 700) { col.style.width = ""; $("mapwrap").style.width = ""; return; }
+    if (wide) {                                         // map on the left (about 55%), legend beside it, map sized by the free height
+      const size = Math.max(280, Math.min(main.clientHeight, col.clientWidth - $("legend").offsetWidth - 16));
+      $("mapwrap").style.width = size + "px";
+      col.style.width = "";
+    } else {
+      $("mapwrap").style.width = "";
+      col.style.width = Math.max(280, Math.min(main.clientHeight - $("legend").offsetHeight - 6, main.clientWidth - 412)) + "px";
+    }
   }
   window.addEventListener("resize", fit);
 

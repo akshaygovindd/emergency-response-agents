@@ -224,3 +224,22 @@ def test_every_saved_run_has_story_and_live_data():
         assert len(b["messages"]) == b["frames"][-1]["n"], run.path.name
         assert all(len(c["stages"]) == 4 for c in b["conflicts"]), run.path.name
         assert all(len(f["s"]) == len(b["hospitals"]) and f["h"][0][3] for f in b["frames"]), run.path.name
+
+
+def test_feed_uses_plain_wording_and_system_label():
+    """The feed says 'System' (not Python/world) and plain verbs ('send AMB-01 to INC-01')."""
+    from erc.dashboard.story import feed_text
+    act = {"action_type": "assign_ambulance", "ambulance_id": "AMB-01", "victim_ids": ["V-1"]}
+    assert feed_text(act, "INC-01") == "send AMB-01 to INC-01 (V-1)"
+    assert feed_text(act, "INC-01", past=True) == "sent AMB-01 to INC-01 (V-1)"
+    assert feed_text({"action_type": "admit_patient", "hospital_id": "H-T", "victim_ids": ["V-1"]}, None, past=True) == "admitted V-1 to H-T"
+    assert feed_text(None, "INC-01") == "assess INC-01"
+    log = LOGS_DIR / "v1" / "negotiation" / "normal_seed42_negotiation.jsonl"
+    if not log.exists():
+        pytest.skip("saved v1 run not available")
+    from erc.dashboard.story import feed_messages
+    rows = feed_messages([json.loads(line) for line in log.read_text().splitlines()])
+    senders = {r["from"] for r in rows}
+    assert "System" in senders and "Python" not in senders
+    assert all(r["to"] != "world" for r in rows)
+    assert all(r["to"] == "" for r in rows if r["type"] == "executed")
