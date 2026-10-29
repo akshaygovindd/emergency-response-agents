@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t038-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-01 should go to INC-06 because it has the urgency-5 burn victim and has already waited 16 minutes, making the faster ALS response more critical. INC-08 has only urgency 3 and 1 victims, so it should \u0443\u0441\u0442\u0443\u043f\u0438\u0442\u044c the contested unit."
+  },
+  "tokens_in": 680,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 0.9122005410026759,
+  "context": null
+}

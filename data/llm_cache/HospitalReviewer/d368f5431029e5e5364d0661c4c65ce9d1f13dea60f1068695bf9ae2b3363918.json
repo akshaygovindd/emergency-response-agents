@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t024-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capability and sufficient ER/treatment capacity, and we should preserve critical capacity at other hospitals for the waiting urgency-4 patient closer to H-T."
+      }
+    ]
+  },
+  "tokens_in": 553,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.101726624998264,
+  "context": null
+}

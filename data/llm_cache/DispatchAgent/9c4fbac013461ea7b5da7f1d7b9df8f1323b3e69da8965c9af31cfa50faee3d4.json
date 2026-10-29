@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-04 and MED-1 to INC-06.",
+  "tokens_in": 4525,
+  "tokens_out": 154,
+  "requests": 2,
+  "latency_s": 2.2828043330227956,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t044-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-2",
+            "V-06-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent general victims; BLS can take the lower-acuity pair now.",
+        "time_min": 44
+      },
+      {
+        "proposal_id": "t044-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fastest available medical team should reach the ALS-needing victims at the most urgent open incident.",
+        "time_min": 44
+      }
+    ],
+    "invalid": []
+  }
+}

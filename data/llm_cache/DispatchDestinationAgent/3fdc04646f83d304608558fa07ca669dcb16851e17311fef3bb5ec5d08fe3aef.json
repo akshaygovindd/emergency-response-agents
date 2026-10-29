@@ -1,0 +1,30 @@
+{
+  "output": "Submitted AMB-04 to H-G.",
+  "tokens_in": 1325,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.83052720798878,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t120-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-16-1",
+            "V-16-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest hospital with general treatment capacity and beds for both stable patients.",
+        "time_min": 120
+      }
+    ],
+    "invalid": []
+  }
+}

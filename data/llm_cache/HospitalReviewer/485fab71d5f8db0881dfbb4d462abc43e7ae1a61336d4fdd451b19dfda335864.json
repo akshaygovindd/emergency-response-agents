@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t063-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and still has sufficient ER capacity and beds, so the closest capable hospital should take the whole load."
+      }
+    ]
+  },
+  "tokens_in": 668,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 0.9064270830131136,
+  "context": null
+}

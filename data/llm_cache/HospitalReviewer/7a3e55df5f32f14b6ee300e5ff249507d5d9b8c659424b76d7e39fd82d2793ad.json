@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t069-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity available, and keeping it open is not necessary to preserve beds for closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 841,
+  "tokens_out": 56,
+  "requests": 1,
+  "latency_s": 1.1337304170010611,
+  "context": null
+}

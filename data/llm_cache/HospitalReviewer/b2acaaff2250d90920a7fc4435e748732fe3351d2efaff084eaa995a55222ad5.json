@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t109-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds available, and accepting does not strand any nearer critical patient who would need H-G's last bed."
+      }
+    ]
+  },
+  "tokens_in": 677,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.0239826670149341,
+  "context": null
+}

@@ -1,0 +1,16 @@
+{
+  "output": {
+    "choices": [
+      {
+        "request_id": "t036-P03",
+        "hospital_id": "none",
+        "reason": "No hospital options are available, so no safe allocation can be made."
+      }
+    ]
+  },
+  "tokens_in": 278,
+  "tokens_out": 43,
+  "requests": 1,
+  "latency_s": 0.8411488340352662,
+  "context": null
+}

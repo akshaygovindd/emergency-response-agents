@@ -1,0 +1,16 @@
+{
+  "output": {
+    "choices": [
+      {
+        "request_id": "t017-P03",
+        "hospital_id": "none",
+        "reason": "No hospital options are available, so these two ALS burn patients cannot be assigned without risking unsafe overflow."
+      }
+    ]
+  },
+  "tokens_in": 275,
+  "tokens_out": 49,
+  "requests": 1,
+  "latency_s": 1.0957718749996275,
+  "context": null
+}

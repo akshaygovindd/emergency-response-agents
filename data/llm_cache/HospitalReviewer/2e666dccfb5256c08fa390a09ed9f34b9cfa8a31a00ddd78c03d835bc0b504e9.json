@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t001-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both patients and has ample trauma capacity and beds, so admitting them does not risk the nearby critical waiting victims."
+      },
+      {
+        "request_id": "t001-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has capacity for the trauma patient and enough beds for the whole ambulance load, with no need to reserve its last beds for closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 760,
+  "tokens_out": 110,
+  "requests": 1,
+  "latency_s": 1.2208884170395322,
+  "context": null
+}

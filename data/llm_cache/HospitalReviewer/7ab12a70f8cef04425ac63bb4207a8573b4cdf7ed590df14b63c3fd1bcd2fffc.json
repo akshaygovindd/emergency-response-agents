@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t004-P06",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has available general treatment capacity and beds, and no critical waiting patient is closer to H-T than to another capable hospital in a way that requires reserving the last bed."
+      }
+    ]
+  },
+  "tokens_in": 689,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 0.858659416961018,
+  "context": null
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 to INC-13 for V-13-1 and V-13-2.",
+  "tokens_in": 5011,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 1.8364548329846002,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t089-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-13-1",
+            "V-13-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit for a burn incident with mixed ALS needs; prioritize the most urgent pair.",
+        "time_min": 89
+      }
+    ],
+    "invalid": []
+  }
+}

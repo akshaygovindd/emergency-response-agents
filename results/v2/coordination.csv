@@ -1,7 +1,7 @@
 version,scenario,mode,seeds,conflicts,resolved_by_negotiation,resolved_by_fallback,counters_accepted,invalid_proposals,llm_calls,tokens_in,tokens_out,est_cost_usd
 v2,normal,agents,10,1.7,0.0,0.0,0.0,6.3,45.2,73675.0,5073.5,0.07808699999999999
 v2,normal,negotiation,10,1.8,1.8,0.0,0.1,7.5,61.5,83949.9,6268.2,0.09116932500000001
-v2,surge,agents,1,0.0,0.0,0.0,0.0,6.0,63.0,119091.0,6938.0,0.12053925
-v2,surge,negotiation,1,0.0,0.0,0.0,0.0,6.0,82.0,133717.0,8262.0,0.13746675
+v2,surge,agents,10,0.7,0.0,0.0,0.0,10.0,59.4,114642.0,6774.6,0.11646719999999999
+v2,surge,negotiation,10,0.6,0.5,0.1,0.0,9.6,77.4,127622.1,8033.7,0.131868225
 v2,bottleneck,agents,5,0.2,0.0,0.0,0.0,0.0,25.0,41007.8,2600.6,0.04245855
 v2,bottleneck,negotiation,5,0.2,0.2,0.0,0.0,0.0,31.6,46289.4,3045.2,0.04842044999999999

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t083-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and free beds, and this burn patient is already routed to the appropriate specialty without risking the only burn slot needed for the closer critical burn waitlist patient."
+      }
+    ]
+  },
+  "tokens_in": 761,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.1152733330382034,
+  "context": null
+}

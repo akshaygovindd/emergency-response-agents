@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-G for AMB-04.",
+  "tokens_in": 1325,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.864672083989717,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t114-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has available general treatment slots and beds.",
+        "time_min": 114
+      }
+    ],
+    "invalid": []
+  }
+}

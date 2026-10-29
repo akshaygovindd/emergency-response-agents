@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t019-P05",
+        "action": "request_other",
+        "hospital_id": "H-B",
+        "reason": "H-B can take this general load sooner, so the patients still get timely care without using the rejected option."
+      }
+    ]
+  },
+  "tokens_in": 352,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 0.948049416008871,
+  "context": null
+}

@@ -1,0 +1,70 @@
+{
+  "output": "Done, with AMB-01 proposed to H-T; AMB-05 needs a burn-capable hospital once available.",
+  "tokens_in": 3642,
+  "tokens_out": 267,
+  "requests": 4,
+  "latency_s": 4.402454625000246,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t032-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Shortest ETA and best match for the urgent trauma victim.",
+        "time_min": 32
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 32,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 32,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 32,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

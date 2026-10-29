@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t088-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has the needed general capacity and no closer critical general patient is waiting for this last slot."
+      }
+    ]
+  },
+  "tokens_in": 835,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 0.8880815840093419,
+  "context": null
+}

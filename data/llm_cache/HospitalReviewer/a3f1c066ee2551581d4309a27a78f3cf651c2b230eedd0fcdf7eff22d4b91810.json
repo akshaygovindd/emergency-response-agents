@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t098-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity for the critical burn patient and enough general capacity for the companion, so this load should be \u0568\u0576\u0564\u0578\u0582\u0576ed there."
+      }
+    ]
+  },
+  "tokens_in": 874,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.1616851249709725,
+  "context": null
+}

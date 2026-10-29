@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-01.",
+  "tokens_in": 2121,
+  "tokens_out": 126,
+  "requests": 3,
+  "latency_s": 2.6901899999938905,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital has capacity and can accept both victims, with trauma coverage for the injured patient.",
+        "time_min": 116
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 116,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t019-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has open general capacity and this load is not critical, so it can be admitted there."
+      },
+      {
+        "request_id": "t019-P05",
+        "decision": "reject",
+        "counter_hospital_id": "",
+        "reason": "H-G should preserve capacity for a closer critical trauma patient already waiting, and H-B can take this general load instead."
+      }
+    ]
+  },
+  "tokens_in": 685,
+  "tokens_out": 103,
+  "requests": 1,
+  "latency_s": 1.1319522919948213,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t054-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and this low-urgency general load does not need to be held back for closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 759,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.1088936669984832,
+  "context": null
+}

@@ -1,0 +1,63 @@
+{
+  "output": "No valid destination available for this ambulance.",
+  "tokens_in": 4067,
+  "tokens_out": 265,
+  "requests": 5,
+  "latency_s": 5.053100124991033,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

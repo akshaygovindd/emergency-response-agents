@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t091-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general beds and trauma capacity for this low-acuity pair, and preserving beds for critical nearby patients is not necessary here."
+      },
+      {
+        "request_id": "t091-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G still has sufficient general capacity to take both victims without jeopardizing the last beds needed for closer critical cases."
+      }
+    ]
+  },
+  "tokens_in": 966,
+  "tokens_out": 110,
+  "requests": 1,
+  "latency_s": 1.4425538330106065,
+  "context": null
+}

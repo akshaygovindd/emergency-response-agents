@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t112-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both patients and still has capacity, while the critical waiting patients needing H-T are not blocked by this single incoming pair."
+      }
+    ]
+  },
+  "tokens_in": 862,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0545110829989426,
+  "context": null
+}

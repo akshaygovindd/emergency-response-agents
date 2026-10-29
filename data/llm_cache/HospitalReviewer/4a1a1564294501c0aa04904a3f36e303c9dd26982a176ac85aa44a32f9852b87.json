@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t081-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity for both ALS trauma victims and we should preserve beds only for closer critical patients already waiting, which this admission does not block."
+      }
+    ]
+  },
+  "tokens_in": 861,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.0039854170172475,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t008-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and has sufficient general capacity, while preserving burn capacity for critical burn patients."
+      },
+      {
+        "request_id": "t008-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capability and available capacity, and this does not threaten the closer waiting critical burn victim."
+      },
+      {
+        "request_id": "t008-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has enough burn slots for both critical victims and should receive them directly."
+      }
+    ]
+  },
+  "tokens_in": 757,
+  "tokens_out": 137,
+  "requests": 1,
+  "latency_s": 1.608764374977909,
+  "context": null
+}

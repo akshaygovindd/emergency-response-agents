@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t037-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds available, and accepting does not threaten the remaining critical patients who need this hospital more urgently."
+      },
+      {
+        "request_id": "t037-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity available and there is no need to preserve its last bed(s) for closer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 819,
+  "tokens_out": 107,
+  "requests": 1,
+  "latency_s": 1.5099187919986434,
+  "context": null
+}

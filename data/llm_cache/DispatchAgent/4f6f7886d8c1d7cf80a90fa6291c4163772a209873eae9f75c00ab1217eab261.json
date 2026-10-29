@@ -1,0 +1,62 @@
+{
+  "output": "Proposed ALS to INC-06, BLS to INC-10, and MED-1 to INC-24.",
+  "tokens_in": 5980,
+  "tokens_out": 221,
+  "requests": 2,
+  "latency_s": 2.2445786250173114,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-3",
+            "V-06-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS unit is closest suitable for the highest-urgency ALS victim at this incident.",
+        "time_min": 106
+      },
+      {
+        "proposal_id": "t106-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest BLS ambulance can quickly move this ALS-needed general victim to first care.",
+        "time_min": 106
+      },
+      {
+        "proposal_id": "t106-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can support the urgent burn incident while fire is unassigned.",
+        "time_min": 106
+      }
+    ],
+    "invalid": []
+  }
+}

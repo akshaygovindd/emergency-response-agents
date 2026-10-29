@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-B.",
+  "tokens_in": 1296,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 1.7729551669908687,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t104-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-24-2",
+            "V-24-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn specialty hospital for both ALS burn victims.",
+        "time_min": 104
+      }
+    ],
+    "invalid": []
+  }
+}

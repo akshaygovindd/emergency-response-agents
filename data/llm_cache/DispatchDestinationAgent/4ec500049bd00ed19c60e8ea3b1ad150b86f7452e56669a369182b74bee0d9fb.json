@@ -1,0 +1,44 @@
+{
+  "output": "Submitted to H-G.",
+  "tokens_in": 2119,
+  "tokens_out": 118,
+  "requests": 3,
+  "latency_s": 2.6287824590108357,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t115-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Nearby hospital with room and trauma/general coverage for both victims.",
+        "time_min": 115
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 115,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

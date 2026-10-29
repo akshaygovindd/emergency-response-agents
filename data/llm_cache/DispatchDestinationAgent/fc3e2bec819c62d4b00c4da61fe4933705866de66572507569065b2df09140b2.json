@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-G.",
+  "tokens_in": 1313,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 1.6923794589820318,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t034-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest option with trauma and general capacity available.",
+        "time_min": 34
+      }
+    ],
+    "invalid": []
+  }
+}

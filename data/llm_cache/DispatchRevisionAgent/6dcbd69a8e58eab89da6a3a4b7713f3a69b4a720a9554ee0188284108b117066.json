@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t085-P02",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B has no room left and no alternative hospital options were provided, so this cannot be reassigned directly."
+      }
+    ]
+  },
+  "tokens_in": 303,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.0249507080297917,
+  "context": null
+}

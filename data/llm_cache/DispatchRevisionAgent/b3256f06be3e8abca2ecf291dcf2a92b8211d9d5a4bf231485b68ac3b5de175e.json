@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t036-P03",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B has no capacity and no alternate hospital options were provided."
+      }
+    ]
+  },
+  "tokens_in": 305,
+  "tokens_out": 50,
+  "requests": 1,
+  "latency_s": 0.7593432919820771,
+  "context": null
+}

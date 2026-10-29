@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t077-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has open general capacity and no need to preserve its last beds for closer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 889,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 0.913787333003711,
+  "context": null
+}

@@ -1,0 +1,62 @@
+{
+  "output": "Submitted H-B and H-G options for AMB-05.",
+  "tokens_in": 2206,
+  "tokens_out": 176,
+  "requests": 3,
+  "latency_s": 2.7313797919778153,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t019-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Shortest viable route with open general capacity.",
+        "time_min": 19
+      },
+      {
+        "proposal_id": "t019-P05",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Open general capacity and nearby.",
+        "time_min": 19
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 19,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

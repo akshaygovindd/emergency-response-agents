@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t085-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has available trauma capacity and this mixed load includes an urgency-4 trauma patient, so admitting both avoids stranding critical care capacity."
+      }
+    ]
+  },
+  "tokens_in": 864,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0200314579997212,
+  "context": null
+}

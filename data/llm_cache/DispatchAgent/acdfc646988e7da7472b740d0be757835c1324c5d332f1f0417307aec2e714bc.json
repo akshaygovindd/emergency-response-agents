@@ -1,0 +1,62 @@
+{
+  "output": "Proposed AMB-02 and AMB-05 plus FIRE-1 for INC-06.",
+  "tokens_in": 2551,
+  "tokens_out": 214,
+  "requests": 2,
+  "latency_s": 2.046601041976828,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t022-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free ambulance for the burn/general victims at INC-06.",
+        "time_min": 22
+      },
+      {
+        "proposal_id": "t022-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Use the remaining BLS unit for the urgent general victim at INC-05.",
+        "time_min": 22
+      },
+      {
+        "proposal_id": "t022-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-06 needs fire support and a free fire team is available.",
+        "time_min": 22
+      }
+    ],
+    "invalid": []
+  }
+}

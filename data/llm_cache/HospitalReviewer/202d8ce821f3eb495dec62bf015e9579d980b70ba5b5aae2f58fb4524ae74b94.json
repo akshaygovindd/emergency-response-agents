@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t010-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has trauma capacity available, so this ALS trauma patient should be admitted there."
+      },
+      {
+        "request_id": "t010-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity available and is the closest appropriate hospital for this stable general patient."
+      }
+    ]
+  },
+  "tokens_in": 660,
+  "tokens_out": 98,
+  "requests": 1,
+  "latency_s": 1.1356702499906532,
+  "context": null
+}

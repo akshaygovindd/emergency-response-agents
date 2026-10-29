@@ -1,0 +1,57 @@
+{
+  "output": "Burn victims need a different burn-capable hospital, but none with room is shown.",
+  "tokens_in": 2588,
+  "tokens_out": 223,
+  "requests": 3,
+  "latency_s": 3.118400459003169,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t081-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-03-2",
+            "V-03-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "Nearest trauma center with available trauma slots for both ALS trauma victims.",
+        "time_min": 81
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

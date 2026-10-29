@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t077-P02",
+        "action": "request_other",
+        "hospital_id": "H-T",
+        "reason": "H-T can take both low-urgency general patients in 11 minutes, preserving timely care."
+      }
+    ]
+  },
+  "tokens_in": 334,
+  "tokens_out": 56,
+  "requests": 1,
+  "latency_s": 1.127636999997776,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t117-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B still has a burn slot and the nearby critical burn victims are farther from H-B than this incoming ambulance, so admitting them does not risk stranding the closer waiting criticals."
+      }
+    ]
+  },
+  "tokens_in": 864,
+  "tokens_out": 76,
+  "requests": 1,
+  "latency_s": 1.4337002080283128,
+  "context": null
+}

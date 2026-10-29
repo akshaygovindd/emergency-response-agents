@@ -3,8 +3,8 @@ v2,normal,naive,greedy,10,-0.2274025974025974,"[-0.36, -0.09]",0/8/2,True
 v2,normal,agents,greedy,10,0.005555555555555558,"[-0.19, +0.21]",4/3/3,False
 v2,normal,negotiation,greedy,10,0.005555555555555558,"[-0.19, +0.21]",4/3/3,False
 v2,surge,naive,greedy,10,-0.1124667223614592,"[-0.16, -0.06]",0/10/0,True
-v2,surge,agents,greedy,1,0.10714285714285718,n/a,1/0/0,False
-v2,surge,negotiation,greedy,1,0.10714285714285718,n/a,1/0/0,False
+v2,surge,agents,greedy,10,0.007674742411584517,"[-0.04, +0.05]",4/3/3,False
+v2,surge,negotiation,greedy,10,-0.003436368699526593,"[-0.06, +0.05]",4/4/2,False
 v2,bottleneck,naive,greedy,5,-0.08677192088956795,"[-0.13, -0.05]",0/5/0,True
 v2,bottleneck,agents,greedy,5,0.028926237161531275,"[-0.07, +0.13]",3/1/1,False
 v2,bottleneck,negotiation,greedy,5,0.028926237161531275,"[-0.07, +0.13]",3/1/1,False

@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-T for V-23-1.",
+  "tokens_in": 1265,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.0556039579678327,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t097-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "Shortest travel time and ample capacity for a general patient.",
+        "time_min": 97
+      }
+    ],
+    "invalid": []
+  }
+}

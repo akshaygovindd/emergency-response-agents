@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t071-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has an open burn slot and this patient is a closer burn case than the other waiting burn criticals, so taking them does not endanger capacity."
+      }
+    ]
+  },
+  "tokens_in": 812,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.1332543340395205,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t056-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity for both victims and should take the closest critical ALS trauma patient without risking any nearer waiting critical at this moment."
+      }
+    ]
+  },
+  "tokens_in": 852,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.0765607909997925,
+  "context": null
+}

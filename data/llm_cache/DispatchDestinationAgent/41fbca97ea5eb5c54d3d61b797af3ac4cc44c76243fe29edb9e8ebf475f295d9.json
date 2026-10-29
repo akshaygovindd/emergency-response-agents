@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both burn victims ambulances to H-B.",
+  "tokens_in": 1558,
+  "tokens_out": 134,
+  "requests": 2,
+  "latency_s": 2.2234857919975184,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t017-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-1",
+            "V-03-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn specialty, ALS-capable, and closest available unit.",
+        "time_min": 17
+      },
+      {
+        "proposal_id": "t017-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn specialty, ALS-capable, and closest available unit.",
+        "time_min": 17
+      }
+    ],
+    "invalid": []
+  }
+}

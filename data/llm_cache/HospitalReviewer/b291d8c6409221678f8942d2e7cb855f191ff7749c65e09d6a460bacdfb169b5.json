@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t032-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has trauma capacity available, while preserving critical capacity for waiting patients closer to H-T."
+      }
+    ]
+  },
+  "tokens_in": 869,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.5201038750237785,
+  "context": null
+}

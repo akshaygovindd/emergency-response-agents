@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t002-P04",
+        "action": "request_other",
+        "hospital_id": "H-G",
+        "reason": "H-T is full, and H-G can take the patients in about 12 minutes with available room."
+      }
+    ]
+  },
+  "tokens_in": 321,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 0.9523141669924371,
+  "context": null
+}

@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t007-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has capacity and the trauma/general victims fit its available treatment slots, so it should take the load."
+      },
+      {
+        "request_id": "t007-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the ALS trauma victim and still has bed and trauma-slot capacity, so admission is appropriate."
+      }
+    ]
+  },
+  "tokens_in": 771,
+  "tokens_out": 103,
+  "requests": 1,
+  "latency_s": 1.4317811250220984,
+  "context": null
+}

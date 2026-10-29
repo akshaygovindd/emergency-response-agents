@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t011-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat the burn patient and has available ER capacity, treatment slots, and beds."
+      }
+    ]
+  },
+  "tokens_in": 512,
+  "tokens_out": 52,
+  "requests": 1,
+  "latency_s": 0.9155319159617648,
+  "context": null
+}

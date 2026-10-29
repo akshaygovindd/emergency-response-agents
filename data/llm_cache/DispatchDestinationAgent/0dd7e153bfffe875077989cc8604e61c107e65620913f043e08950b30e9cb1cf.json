@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-T.",
+  "tokens_in": 1314,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.756356916972436,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t108-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Trauma-capable hospital with open trauma slot and enough beds, while still reasonably close.",
+        "time_min": 108
+      }
+    ],
+    "invalid": []
+  }
+}

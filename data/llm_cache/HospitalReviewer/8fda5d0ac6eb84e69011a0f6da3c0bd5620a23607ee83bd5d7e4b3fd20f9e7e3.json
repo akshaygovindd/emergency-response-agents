@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t074-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center can treat both victims and still has room/specific trauma capacity, so there is no need to divert this load."
+      }
+    ]
+  },
+  "tokens_in": 876,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.186338750005234,
+  "context": null
+}

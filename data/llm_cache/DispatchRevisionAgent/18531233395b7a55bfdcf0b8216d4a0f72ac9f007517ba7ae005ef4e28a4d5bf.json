@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t044-P04",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B cannot accept due to no burn slots, and no alternate hospital options were provided."
+      }
+    ]
+  },
+  "tokens_in": 317,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 1.0443386670085602,
+  "context": null
+}

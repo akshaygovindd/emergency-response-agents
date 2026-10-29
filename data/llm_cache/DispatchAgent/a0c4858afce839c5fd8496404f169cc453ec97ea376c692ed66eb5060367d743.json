@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-23 with V-23-1 and V-23-2.",
+  "tokens_in": 5121,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 1.7470844580093399,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-23-1",
+            "V-23-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest BLS unit for this incident and it can carry the two most urgent trauma victims.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

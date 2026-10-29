@@ -1,0 +1,47 @@
+{
+  "output": "Submitted both destination requests.",
+  "tokens_in": 1533,
+  "tokens_out": 120,
+  "requests": 2,
+  "latency_s": 2.2502688330132514,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-25",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-25-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with open general treatment slot and beds.",
+        "time_min": 91
+      },
+      {
+        "proposal_id": "t091-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-3",
+            "V-08-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General hospital has room and can take both victims together.",
+        "time_min": 91
+      }
+    ],
+    "invalid": []
+  }
+}

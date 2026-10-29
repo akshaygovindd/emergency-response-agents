@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t065-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and preserving H-B is not necessary for the listed critical burn patients, who have no alternative burn-capable destination."
+      }
+    ]
+  },
+  "tokens_in": 846,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.08749283303041,
+  "context": null
+}

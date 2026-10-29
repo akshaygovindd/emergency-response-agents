@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-G for AMB-05.",
+  "tokens_in": 1323,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 1.738969250000082,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-3",
+            "V-05-4"
+          ]
+        },
+        "priority": 4,
+        "reason": "General hospital is closest and has free general treatment slots.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "output": "No suitable hospital can accept both victims together right now.",
+  "tokens_in": 4039,
+  "tokens_out": 261,
+  "requests": 5,
+  "latency_s": 4.403440041001886,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-4",
+            "V-13-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

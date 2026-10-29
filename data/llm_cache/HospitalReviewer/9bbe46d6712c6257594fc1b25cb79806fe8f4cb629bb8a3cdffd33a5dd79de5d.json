@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t120-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and beds, and accepting these stable patients does not threaten beds needed for closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 709,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 0.9169054999947548,
+  "context": null
+}

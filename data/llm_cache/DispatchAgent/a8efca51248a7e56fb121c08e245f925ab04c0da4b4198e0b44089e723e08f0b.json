@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-05 for INC-07.",
+  "tokens_in": 3720,
+  "tokens_out": 96,
+  "requests": 2,
+  "latency_s": 2.330517583002802,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t045-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-priority patient with no ALS need and BLS is suitable.",
+        "time_min": 45
+      }
+    ],
+    "invalid": []
+  }
+}

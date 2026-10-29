@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 to INC-16 for V-16-1 and V-16-2.",
+  "tokens_in": 4340,
+  "tokens_out": 102,
+  "requests": 2,
+  "latency_s": 1.8325375000131316,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t050-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-16-1",
+            "V-16-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit to the most urgent trauma victim and can carry both victims from the same incident.",
+        "time_min": 50
+      }
+    ],
+    "invalid": []
+  }
+}

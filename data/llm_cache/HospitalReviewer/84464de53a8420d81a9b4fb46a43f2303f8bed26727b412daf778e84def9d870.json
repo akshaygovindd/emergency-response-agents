@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t001-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients and has ample capacity, so the requested destination is appropriate."
+      }
+    ]
+  },
+  "tokens_in": 521,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 0.9586602079798467,
+  "context": null
+}

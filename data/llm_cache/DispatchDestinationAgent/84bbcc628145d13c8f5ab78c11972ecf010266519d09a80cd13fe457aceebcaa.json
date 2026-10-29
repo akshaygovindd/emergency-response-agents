@@ -1,0 +1,51 @@
+{
+  "output": "No valid destination available yet.",
+  "tokens_in": 4624,
+  "tokens_out": 281,
+  "requests": 5,
+  "latency_s": 5.645604584016837,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 113,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-1",
+            "V-13-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 113,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-13-1",
+            "V-13-2"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 113,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-1",
+            "V-13-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

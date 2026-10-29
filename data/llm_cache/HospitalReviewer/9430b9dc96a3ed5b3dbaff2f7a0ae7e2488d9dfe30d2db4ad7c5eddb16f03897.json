@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t045-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has open general treatment slots and beds, and this low-urgency patient does not need to be held back for critical waiting victims."
+      }
+    ]
+  },
+  "tokens_in": 732,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.0752089169691317,
+  "context": null
+}

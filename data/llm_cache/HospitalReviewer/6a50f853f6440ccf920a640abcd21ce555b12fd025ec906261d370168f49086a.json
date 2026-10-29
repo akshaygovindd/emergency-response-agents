@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t085-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B is the requested burn-capable hospital, and accepting uses its last bed for the incoming burn patients."
+      },
+      {
+        "request_id": "t085-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can take the burn case and we should not strand critical burn patients when no better alternative is given."
+      }
+    ]
+  },
+  "tokens_in": 976,
+  "tokens_out": 103,
+  "requests": 1,
+  "latency_s": 1.5368781249853782,
+  "context": null
+}

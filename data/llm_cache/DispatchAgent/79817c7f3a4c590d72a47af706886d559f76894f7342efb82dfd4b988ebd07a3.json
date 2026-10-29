@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-02 to INC-13 for V-13-1.",
+  "tokens_in": 4844,
+  "tokens_out": 84,
+  "requests": 2,
+  "latency_s": 1.8865906249848194,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t103-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-13-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent victim with no ALS need and BLS is suitable.",
+        "time_min": 103
+      }
+    ],
+    "invalid": []
+  }
+}

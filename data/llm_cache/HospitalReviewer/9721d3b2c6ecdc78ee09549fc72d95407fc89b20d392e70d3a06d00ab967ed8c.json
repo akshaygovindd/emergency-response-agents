@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t107-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims, has trauma capacity, and accepting does not jeopardize the closer waiting critical patients given H-G still has no available treatment slots anyway."
+      }
+    ]
+  },
+  "tokens_in": 887,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.1203925000154413,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Submitted to H-G.",
+  "tokens_in": 1267,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 1.533068417047616,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-13-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital has a general slot available and can receive the victim.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

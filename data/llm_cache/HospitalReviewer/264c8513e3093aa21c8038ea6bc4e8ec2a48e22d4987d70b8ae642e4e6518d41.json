@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t085-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and trauma capability, and accepting this mixed load does not threaten the closest critical waiting patient\u2019s access."
+      }
+    ]
+  },
+  "tokens_in": 886,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 1.197041250008624,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-T for V-01-1.",
+  "tokens_in": 1266,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 1.7600066249724478,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t004-P06",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Shortest travel time ties and ample trauma/general capacity.",
+        "time_min": 4
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t018-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the patient and has ample ER capacity and general slots, so admission is appropriate."
+      }
+    ]
+  },
+  "tokens_in": 526,
+  "tokens_out": 53,
+  "requests": 1,
+  "latency_s": 1.326224624994211,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t041-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has open trauma capacity and beds, and taking this load does not require preserving the last bed for a closer critical patient."
+      }
+    ]
+  },
+  "tokens_in": 802,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 0.9735637920093723,
+  "context": null
+}

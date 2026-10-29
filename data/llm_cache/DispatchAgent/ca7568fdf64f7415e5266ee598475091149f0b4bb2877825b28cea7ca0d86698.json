@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-24 to pick up V-24-2 and V-24-1.",
+  "tokens_in": 4654,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 2.085084500024095,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t108-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-24-2",
+            "V-24-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent general victims at this incident and BLS is sufficient for both.",
+        "time_min": 108
+      }
+    ],
+    "invalid": []
+  }
+}

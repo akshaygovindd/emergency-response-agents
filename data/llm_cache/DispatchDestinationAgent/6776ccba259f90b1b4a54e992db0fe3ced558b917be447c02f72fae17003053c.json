@@ -1,0 +1,47 @@
+{
+  "output": "Requests submitted.",
+  "tokens_in": 1531,
+  "tokens_out": 120,
+  "requests": 2,
+  "latency_s": 2.2768496250500903,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t053-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma specialty needed for a critical ALS trauma patient.",
+        "time_min": 53
+      },
+      {
+        "proposal_id": "t053-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with trauma capability and available capacity for both victims.",
+        "time_min": 53
+      }
+    ],
+    "invalid": []
+  }
+}

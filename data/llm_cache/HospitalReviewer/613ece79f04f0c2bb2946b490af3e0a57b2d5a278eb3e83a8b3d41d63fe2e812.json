@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t089-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat both patients, has an open burn slot and enough beds, and preserving capacity is not necessary because the remaining critical burn queue still has reachable room at H-B."
+      }
+    ]
+  },
+  "tokens_in": 852,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.1185542079620063,
+  "context": null
+}

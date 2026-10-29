@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-04 for INC-09 and AMB-05 for INC-14.",
+  "tokens_in": 4430,
+  "tokens_out": 176,
+  "requests": 2,
+  "latency_s": 1.9929471670184284,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t055-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest unit for the most urgent ALS general victims at INC-09.",
+        "time_min": 55
+      },
+      {
+        "proposal_id": "t055-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-14-1",
+            "V-14-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Best available unit for the urgent ALS trauma pair at INC-14.",
+        "time_min": 55
+      }
+    ],
+    "invalid": []
+  }
+}

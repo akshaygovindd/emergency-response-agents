@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t054-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-03 should go to INC-08: it has the highest urgency victim (5) with the longest wait (33 min) and the fastest arrival (5 min), making it the strongest time-critical match. The other incidents are lower priority for this ambulance, and no unclaimed alternative ambulance is available."
+  },
+  "tokens_in": 761,
+  "tokens_out": 91,
+  "requests": 1,
+  "latency_s": 0.962490624981001,
+  "context": null
+}

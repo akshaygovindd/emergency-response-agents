@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t097-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds, and this non-critical ALS general patient should not be diverted while keeping beds available for closer critical cases elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 849,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.2222069999552332,
+  "context": null
+}

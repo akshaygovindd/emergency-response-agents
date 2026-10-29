@@ -1,0 +1,45 @@
+{
+  "output": "Proposed MED-1 to INC-13 and AMB-03 to INC-17 for the two most urgent ALS trauma victims.",
+  "tokens_in": 4849,
+  "tokens_out": 160,
+  "requests": 2,
+  "latency_s": 2.2358546249452047,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t060-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can support urgent burn victims while fire team is unavailable.",
+        "time_min": 60
+      },
+      {
+        "proposal_id": "t060-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-17-2",
+            "V-17-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit to the highest-urgency ALS trauma victims at this incident.",
+        "time_min": 60
+      }
+    ],
+    "invalid": []
+  }
+}

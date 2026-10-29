@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t071-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat this urgent ALS trauma-capable general case and still has a trauma slot plus ample beds, so no need to preserve capacity by rejecting."
+      }
+    ]
+  },
+  "tokens_in": 848,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.0898291250341572,
+  "context": null
+}

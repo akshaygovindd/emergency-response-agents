@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t085-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general bed and treatment capacity, and this patient is not needed to preserve last beds for any closer critical victim."
+      }
+    ]
+  },
+  "tokens_in": 826,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.1187909170403145,
+  "context": null
+}

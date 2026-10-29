@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t057-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and this low-urgency load does not justify preserving its last slot over the listed critical burn patients, who can still be managed with remaining system capacity."
+      }
+    ]
+  },
+  "tokens_in": 854,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.0983424169826321,
+  "context": null
+}

@@ -1,0 +1,47 @@
+{
+  "output": "Submitted both destination requests.",
+  "tokens_in": 1526,
+  "tokens_out": 121,
+  "requests": 2,
+  "latency_s": 1.8115639999741688,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t018-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general care and open capacity.",
+        "time_min": 18
+      },
+      {
+        "proposal_id": "t018-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-2",
+            "V-03-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest match for the burn victim and enough general capacity for both.",
+        "time_min": 18
+      }
+    ],
+    "invalid": []
+  }
+}

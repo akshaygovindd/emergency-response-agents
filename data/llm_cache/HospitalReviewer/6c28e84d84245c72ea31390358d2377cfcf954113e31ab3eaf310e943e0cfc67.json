@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t034-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has sufficient trauma/general capacity, and accepting this load does not require preserving the last trauma bed for the nearby critical waiting patient who is closer to H-T."
+      }
+    ]
+  },
+  "tokens_in": 627,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.2239246250246651,
+  "context": null
+}

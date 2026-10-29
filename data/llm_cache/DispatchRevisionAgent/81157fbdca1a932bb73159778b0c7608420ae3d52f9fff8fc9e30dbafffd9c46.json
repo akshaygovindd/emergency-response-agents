@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t033-P02",
+        "action": "request_other",
+        "hospital_id": "H-G",
+        "reason": "H-G can provide general care sooner and has available capacity, so the patient can still receive timely treatment."
+      }
+    ]
+  },
+  "tokens_in": 330,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 1.035202292026952,
+  "context": null
+}

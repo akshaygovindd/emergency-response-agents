@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t108-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general beds and treatment slots, and no closer critical general patient is at risk of being stranded by using one bed."
+      }
+    ]
+  },
+  "tokens_in": 833,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.1556847500032745,
+  "context": null
+}

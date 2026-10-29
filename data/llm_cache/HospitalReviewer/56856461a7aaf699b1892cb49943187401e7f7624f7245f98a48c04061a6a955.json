@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t039-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat the burn victim and has sufficient general capacity for the companion, with no critical waiting patients to protect beds for."
+      }
+    ]
+  },
+  "tokens_in": 550,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 0.9180559579981491,
+  "context": null
+}

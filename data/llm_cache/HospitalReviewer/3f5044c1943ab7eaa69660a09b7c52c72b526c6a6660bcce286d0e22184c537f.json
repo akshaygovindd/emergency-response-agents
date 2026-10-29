@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t059-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and this mixed general/burn load fits, while keeping critical beds protected for waiting patients. "
+      }
+    ]
+  },
+  "tokens_in": 837,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.0691051249741577,
+  "context": null
+}

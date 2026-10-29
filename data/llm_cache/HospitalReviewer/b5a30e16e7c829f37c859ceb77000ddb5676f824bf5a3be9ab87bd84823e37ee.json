@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t114-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center has trauma capacity and beds available, and no closer critical trauma patient needs to be held back from this last bed."
+      }
+    ]
+  },
+  "tokens_in": 834,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.1240891250199638,
+  "context": null
+}

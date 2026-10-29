@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t115-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room and can treat both victims; keeping H-G open for critical general/trauma cases is not necessary here because this load fits and H-G is the closest capable option."
+      }
+    ]
+  },
+  "tokens_in": 859,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.4375476249842905,
+  "context": null
+}

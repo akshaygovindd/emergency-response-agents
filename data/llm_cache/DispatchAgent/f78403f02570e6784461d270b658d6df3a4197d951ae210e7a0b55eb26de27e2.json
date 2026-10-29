@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 to INC-24 for both urgent burn victims.",
+  "tokens_in": 4548,
+  "tokens_out": 93,
+  "requests": 2,
+  "latency_s": 1.8348437499953434,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t119-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-24-3",
+            "V-24-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable unit for two urgent burn victims at an incident already staffed for fire support.",
+        "time_min": 119
+      }
+    ],
+    "invalid": []
+  }
+}

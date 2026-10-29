@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t018-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both general victims and has sufficient ER and bed capacity, so accepting does not threaten local critical capacity."
+      }
+    ]
+  },
+  "tokens_in": 580,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 1.1590882919845171,
+  "context": null
+}

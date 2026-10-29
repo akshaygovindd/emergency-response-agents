@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t102-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients, has 1 free general slot and ample beds, and rejecting would not better preserve capacity for any closer critical patient who can only be served here."
+      }
+    ]
+  },
+  "tokens_in": 884,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.4177198330289684,
+  "context": null
+}

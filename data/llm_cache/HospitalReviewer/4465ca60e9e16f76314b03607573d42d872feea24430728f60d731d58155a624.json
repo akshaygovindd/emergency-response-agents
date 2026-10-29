@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t015-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients, has free ER capacity and treatment slots, and there are no waiting critical patients to preserve beds for."
+      }
+    ]
+  },
+  "tokens_in": 523,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.1661660419777036,
+  "context": null
+}

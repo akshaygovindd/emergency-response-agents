@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t080-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and this general patient should not be held back since nearby critical trauma/burn patients are better matched to other hospitals."
+      }
+    ]
+  },
+  "tokens_in": 843,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.0467739999876358,
+  "context": null
+}

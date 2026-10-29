@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t055-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and beds, and there is no need to preserve its last beds for closer critical victims since the nearest critical trauma cases are better served by H-T or are already closer to H-G than any alternative."
+      }
+    ]
+  },
+  "tokens_in": 880,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 1.434310499986168,
+  "context": null
+}

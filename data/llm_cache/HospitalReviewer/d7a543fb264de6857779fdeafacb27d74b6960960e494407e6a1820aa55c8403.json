@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t059-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and keeping beds available is not needed for closer critical trauma cases than this patient."
+      },
+      {
+        "request_id": "t059-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has a trauma slot and beds available, and it is the closest capable hospital for the trauma patient pair."
+      }
+    ]
+  },
+  "tokens_in": 937,
+  "tokens_out": 103,
+  "requests": 1,
+  "latency_s": 1.220869208977092,
+  "context": null
+}

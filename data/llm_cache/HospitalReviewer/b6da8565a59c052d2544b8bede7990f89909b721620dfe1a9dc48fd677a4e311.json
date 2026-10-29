@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t103-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has an open trauma slot and beds, and this load includes a critical trauma patient that can be treated there without compromising closer critical trauma waits."
+      }
+    ]
+  },
+  "tokens_in": 878,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 0.9308040000032634,
+  "context": null
+}

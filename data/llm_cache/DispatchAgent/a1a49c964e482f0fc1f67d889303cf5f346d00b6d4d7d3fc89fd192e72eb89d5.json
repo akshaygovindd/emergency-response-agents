@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 to INC-12 for V-12-3 and V-12-4.",
+  "tokens_in": 4581,
+  "tokens_out": 97,
+  "requests": 2,
+  "latency_s": 1.9659749999991618,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-3",
+            "V-12-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable BLS unit for this trauma incident with assigned rescue team.",
+        "time_min": 66
+      }
+    ],
+    "invalid": []
+  }
+}

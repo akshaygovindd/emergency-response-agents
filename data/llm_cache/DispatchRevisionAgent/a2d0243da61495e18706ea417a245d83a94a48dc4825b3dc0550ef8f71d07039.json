@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t010-P03",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B is full and there are no alternate hospital options provided."
+      }
+    ]
+  },
+  "tokens_in": 305,
+  "tokens_out": 50,
+  "requests": 1,
+  "latency_s": 1.023538249952253,
+  "context": null
+}

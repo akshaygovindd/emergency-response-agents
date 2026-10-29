@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t036-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity and this low-urgency patient does not need to be diverted to preserve critical beds."
+      },
+      {
+        "request_id": "t036-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat both the general and burn victims and has room for both, while preserving capacity for higher-priority critical cases."
+      }
+    ]
+  },
+  "tokens_in": 947,
+  "tokens_out": 108,
+  "requests": 1,
+  "latency_s": 1.3264508749707602,
+  "context": null
+}

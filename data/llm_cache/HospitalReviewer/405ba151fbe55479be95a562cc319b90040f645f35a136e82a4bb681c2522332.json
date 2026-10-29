@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t101-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a general slot and enough beds, and accepting does not block the closest critical general victim who is already nearer to H-G/H-T."
+      }
+    ]
+  },
+  "tokens_in": 885,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.116077166981995,
+  "context": null
+}

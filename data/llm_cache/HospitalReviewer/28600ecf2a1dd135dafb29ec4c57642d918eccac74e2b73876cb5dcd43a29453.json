@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t048-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity, and accepting this low-acuity patient preserves critical-trauma capacity at H-T for nearby waiting critical victims."
+      }
+    ]
+  },
+  "tokens_in": 858,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0814666250371374,
+  "context": null
+}

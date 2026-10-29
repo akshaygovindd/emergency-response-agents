@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t050-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn and general capacity available, and the incoming burn patient is a closer fit here while no last-bed preservation is needed for nearby criticals."
+      }
+    ]
+  },
+  "tokens_in": 875,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.3237034589983523,
+  "context": null
+}

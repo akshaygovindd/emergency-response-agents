@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t077-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat burn patients and has capacity for the critical burn victim plus the accompanying general patient."
+      },
+      {
+        "request_id": "t077-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can handle both general patients and still has beds available, so this load should be accepted."
+      }
+    ]
+  },
+  "tokens_in": 973,
+  "tokens_out": 99,
+  "requests": 1,
+  "latency_s": 0.989444375038147,
+  "context": null
+}

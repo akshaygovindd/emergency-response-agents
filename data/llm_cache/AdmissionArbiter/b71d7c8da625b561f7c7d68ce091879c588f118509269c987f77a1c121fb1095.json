@@ -1,0 +1,16 @@
+{
+  "output": {
+    "choices": [
+      {
+        "request_id": "t046-P02",
+        "hospital_id": "H-B",
+        "reason": "Only available option and the patient is a moderate-urgency burn case that can be treated within 11 minutes without ALS, so H-B is the fastest viable choice."
+      }
+    ]
+  },
+  "tokens_in": 286,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.0236818330013193,
+  "context": null
+}

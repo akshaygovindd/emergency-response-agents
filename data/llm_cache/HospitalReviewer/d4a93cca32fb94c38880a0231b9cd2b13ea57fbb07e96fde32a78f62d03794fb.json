@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t114-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and this low-urgency patient does not need to be held back for critical victims."
+      }
+    ]
+  },
+  "tokens_in": 850,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.0077317090472206,
+  "context": null
+}

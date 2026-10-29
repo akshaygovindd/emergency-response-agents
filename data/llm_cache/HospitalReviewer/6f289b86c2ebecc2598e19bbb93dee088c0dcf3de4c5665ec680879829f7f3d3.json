@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t077-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T still has 4 free beds and no treatment-slot conflict for these general patients, while keeping beds available remains sufficient for the critical cases already en route to closer capable hospitals."
+      }
+    ]
+  },
+  "tokens_in": 866,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.0521847499767318,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t017-P03",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B has no room left and no alternate options were provided, so this needs escalation for urgent ALS burn placement."
+      }
+    ]
+  },
+  "tokens_in": 302,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.0420442079775967,
+  "context": null
+}

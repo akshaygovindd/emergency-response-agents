@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t036-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and no critical patient is closer to H-G than another capable hospital, so admitting this low-acuity general patient is safe."
+      }
+    ]
+  },
+  "tokens_in": 787,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.8403377500362694,
+  "context": null
+}

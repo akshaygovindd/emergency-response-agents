@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t097-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has open trauma capacity and beds, and this load includes two critical trauma patients without creating a capacity conflict at a closer better-suited hospital."
+      }
+    ]
+  },
+  "tokens_in": 857,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.5487728340085596,
+  "context": null
+}

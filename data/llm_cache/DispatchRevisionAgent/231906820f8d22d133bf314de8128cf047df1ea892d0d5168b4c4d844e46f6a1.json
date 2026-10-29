@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t046-P02",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B has no available burn slot, and no alternative hospital option is provided to re-route timely care."
+      }
+    ]
+  },
+  "tokens_in": 312,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 1.0237491669831797,
+  "context": null
+}

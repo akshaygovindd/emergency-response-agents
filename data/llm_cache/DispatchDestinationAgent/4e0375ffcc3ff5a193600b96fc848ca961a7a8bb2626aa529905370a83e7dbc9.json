@@ -1,0 +1,48 @@
+{
+  "output": "Unable to place this ambulance due to routing conflict and capacity limits.",
+  "tokens_in": 2883,
+  "tokens_out": 159,
+  "requests": 4,
+  "latency_s": 4.505458166997414,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 58,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-02-4 is going to H-B"
+      },
+      {
+        "time_min": 58,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 58,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-02-4 is going to H-B"
+      }
+    ]
+  }
+}

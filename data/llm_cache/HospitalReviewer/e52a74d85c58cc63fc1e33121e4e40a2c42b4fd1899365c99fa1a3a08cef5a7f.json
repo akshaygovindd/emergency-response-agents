@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t056-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has ample ER and trauma capacity, while rejecting would risk stranding a critical trauma patient without a clearly better alternative."
+      }
+    ]
+  },
+  "tokens_in": 868,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.3258864159579389,
+  "context": null
+}

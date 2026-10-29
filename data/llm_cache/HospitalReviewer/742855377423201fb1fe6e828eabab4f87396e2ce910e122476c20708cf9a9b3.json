@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t016-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and can treat both victims, so this load can be accepted."
+      },
+      {
+        "request_id": "t016-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has a free trauma slot and can treat the trauma victim, so accept the request."
+      }
+    ]
+  },
+  "tokens_in": 631,
+  "tokens_out": 92,
+  "requests": 1,
+  "latency_s": 1.1237800000235438,
+  "context": null
+}

@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both ambulance requests to H-T.",
+  "tokens_in": 1606,
+  "tokens_out": 148,
+  "requests": 2,
+  "latency_s": 2.033486250031274,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t001-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-1",
+            "V-01-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma specialist with available trauma capacity and beds; closer urgent care fit for the ALS trauma patient.",
+        "time_min": 1
+      },
+      {
+        "proposal_id": "t001-P05",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-2",
+            "V-01-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma specialist with available trauma capacity and beds; closer urgent care fit for the ALS trauma patient.",
+        "time_min": 1
+      }
+    ],
+    "invalid": []
+  }
+}

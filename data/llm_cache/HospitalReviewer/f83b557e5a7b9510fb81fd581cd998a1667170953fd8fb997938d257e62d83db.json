@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t024-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has room and treatment slots, and accepting this non-critical burn/general load preserves capacity better than diverting it."
+      }
+    ]
+  },
+  "tokens_in": 646,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.0166841659811325,
+  "context": null
+}

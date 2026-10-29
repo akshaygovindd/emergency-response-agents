@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t067-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity and sufficient beds, and preserving beds is not necessary here because the remaining critical trauma/general patients are better matched to other hospitals or do not create a need to hold this bed."
+      }
+    ]
+  },
+  "tokens_in": 793,
+  "tokens_out": 79,
+  "requests": 1,
+  "latency_s": 1.222113709023688,
+  "context": null
+}

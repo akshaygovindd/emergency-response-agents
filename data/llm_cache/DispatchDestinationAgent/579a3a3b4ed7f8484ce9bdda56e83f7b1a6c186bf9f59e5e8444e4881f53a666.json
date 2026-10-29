@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-T for AMB-04.",
+  "tokens_in": 1315,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.875881833024323,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t087-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-1",
+            "V-23-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest trauma center for two ALS trauma victims.",
+        "time_min": 87
+      }
+    ],
+    "invalid": []
+  }
+}

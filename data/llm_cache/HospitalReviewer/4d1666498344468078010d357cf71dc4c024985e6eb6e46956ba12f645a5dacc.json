@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t038-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has enough overall beds and no competing trauma bed pressure for this general-only load, so it can safely take both victims."
+      }
+    ]
+  },
+  "tokens_in": 856,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.1486017919960432,
+  "context": null
+}

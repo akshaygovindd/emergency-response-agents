@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both admission requests.",
+  "tokens_in": 1588,
+  "tokens_out": 129,
+  "requests": 2,
+  "latency_s": 1.8414419170003384,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t044-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-2",
+            "V-12-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general capacity for both victims.",
+        "time_min": 44
+      },
+      {
+        "proposal_id": "t044-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Burn-capable hospital closest to the ambulance and can take general care too.",
+        "time_min": 44
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t090-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has both trauma capability and enough trauma/general slots and beds, so accepting this two-patient load does not threaten closer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 862,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.1306832500267774,
+  "context": null
+}

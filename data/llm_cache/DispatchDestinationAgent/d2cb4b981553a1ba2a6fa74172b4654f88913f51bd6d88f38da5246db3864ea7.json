@@ -1,0 +1,70 @@
+{
+  "output": "Submitted H-T; H-B was full and no other hospital could treat burn.",
+  "tokens_in": 3656,
+  "tokens_out": 258,
+  "requests": 4,
+  "latency_s": 4.209178999997675,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-21-1",
+            "V-21-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest trauma-capable hospital for the mixed general/trauma pair.",
+        "time_min": 112
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 112,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 112,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 112,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

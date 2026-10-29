@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t020-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity available and is the closest appropriate hospital."
+      }
+    ]
+  },
+  "tokens_in": 521,
+  "tokens_out": 46,
+  "requests": 1,
+  "latency_s": 1.0186605830094777,
+  "context": null
+}

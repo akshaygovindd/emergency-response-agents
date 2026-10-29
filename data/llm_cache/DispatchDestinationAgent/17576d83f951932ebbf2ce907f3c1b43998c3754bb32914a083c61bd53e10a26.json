@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both burn cases to H-B.",
+  "tokens_in": 1562,
+  "tokens_out": 134,
+  "requests": 2,
+  "latency_s": 2.111610333027784,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t119-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-24-1",
+            "V-24-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit, closest, and has burn capacity for both victims.",
+        "time_min": 119
+      },
+      {
+        "proposal_id": "t119-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-1",
+            "V-13-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn unit, closest, and has burn capacity for both victims.",
+        "time_min": 119
+      }
+    ],
+    "invalid": []
+  }
+}

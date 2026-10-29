@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t097-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has available general treatment capacity and beds, and accepting this low-urgency general patient does not threaten space reserved for closer critical victims."
+      }
+    ]
+  },
+  "tokens_in": 845,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.0862410829868168,
+  "context": null
+}

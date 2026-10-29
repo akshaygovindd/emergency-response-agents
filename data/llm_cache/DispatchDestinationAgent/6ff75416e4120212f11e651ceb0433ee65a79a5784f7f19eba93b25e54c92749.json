@@ -1,0 +1,65 @@
+{
+  "output": "Requests submitted for all three ambulances.",
+  "tokens_in": 1760,
+  "tokens_out": 166,
+  "requests": 2,
+  "latency_s": 1.817326416959986,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t008-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-01-4",
+            "V-01-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with general capacity for both victims.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-01-5"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn specialty with available slots and close enough.",
+        "time_min": 8
+      },
+      {
+        "proposal_id": "t008-P05",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-01-2",
+            "V-01-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn specialty for both critical burn victims.",
+        "time_min": 8
+      }
+    ],
+    "invalid": []
+  }
+}

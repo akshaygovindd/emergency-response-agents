@@ -1,0 +1,62 @@
+{
+  "output": "Done.",
+  "tokens_in": 2571,
+  "tokens_out": 173,
+  "requests": 3,
+  "latency_s": 3.2759072920307517,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-3",
+            "V-08-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with open general capacity and trauma coverage.",
+        "time_min": 91
+      },
+      {
+        "proposal_id": "t091-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-24-2",
+            "V-24-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Open general capacity and enough beds for both general victims.",
+        "time_min": 91
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 91,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-24-2",
+            "V-24-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

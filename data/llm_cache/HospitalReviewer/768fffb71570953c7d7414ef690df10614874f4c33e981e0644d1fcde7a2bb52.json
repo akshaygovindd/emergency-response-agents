@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t053-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has free general treatment slots and beds, and this low-urgency patient does not need to be held back for nearby critical cases."
+      }
+    ]
+  },
+  "tokens_in": 734,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.036570166994352,
+  "context": null
+}

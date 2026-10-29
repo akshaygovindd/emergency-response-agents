@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-02 and MED-1 for INC-07.",
+  "tokens_in": 4482,
+  "tokens_out": 141,
+  "requests": 3,
+  "latency_s": 2.2950682920054533,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t036-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "INC-07 has urgent ALS trauma victims and this is the closest free ambulance to that incident.",
+        "time_min": 36
+      },
+      {
+        "proposal_id": "t036-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical support can assist this incident with urgent victims while rescue is pending.",
+        "time_min": 36
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t080-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and should not be preserved because the only nearby critical trauma patient in waiting is closer to H-T, so admitting this patient is appropriate."
+      }
+    ]
+  },
+  "tokens_in": 837,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.1354220829671249,
+  "context": null
+}

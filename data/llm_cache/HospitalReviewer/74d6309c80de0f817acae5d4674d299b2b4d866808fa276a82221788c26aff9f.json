@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t043-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and this load fits without displacing any closer critical patient who depends on its last beds."
+      }
+    ]
+  },
+  "tokens_in": 758,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.1217782910098322,
+  "context": null
+}

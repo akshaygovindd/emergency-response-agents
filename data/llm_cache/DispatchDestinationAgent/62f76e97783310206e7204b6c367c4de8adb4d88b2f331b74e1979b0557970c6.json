@@ -1,0 +1,86 @@
+{
+  "output": "Done.",
+  "tokens_in": 5045,
+  "tokens_out": 274,
+  "requests": 6,
+  "latency_s": 6.3420886670355685,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t046-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital has capacity and can treat the general victim.",
+        "time_min": 46
+      },
+      {
+        "proposal_id": "t046-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Burn Unit is the appropriate specialty for the burn victim.",
+        "time_min": 46
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 46,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 46,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 46,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      }
+    ]
+  }
+}

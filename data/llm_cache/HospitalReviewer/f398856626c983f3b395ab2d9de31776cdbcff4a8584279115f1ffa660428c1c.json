@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t073-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has enough trauma slots and beds for both critical trauma victims, and keeping capacity here still preserves care for the closer waiting critical trauma patient."
+      }
+    ]
+  },
+  "tokens_in": 868,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.8344700419693254,
+  "context": null
+}

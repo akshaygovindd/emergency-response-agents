@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t019-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and bed capacity, and the only waiting critical patient is closer to H-G, so no bed needs to be reserved here."
+      }
+    ]
+  },
+  "tokens_in": 581,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.0271819159970619,
+  "context": null
+}

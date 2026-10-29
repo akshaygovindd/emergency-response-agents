@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both requests to H-B.",
+  "tokens_in": 1576,
+  "tokens_out": 127,
+  "requests": 2,
+  "latency_s": 1.9409771250211634,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-4",
+            "V-07-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn-capable hospital for the critical burn victim.",
+        "time_min": 77
+      },
+      {
+        "proposal_id": "t077-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-15-1",
+            "V-15-5"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest hospital with available capacity for general patients.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

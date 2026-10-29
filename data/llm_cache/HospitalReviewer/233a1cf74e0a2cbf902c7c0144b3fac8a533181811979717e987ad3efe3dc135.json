@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t004-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and this non-critical general patient fits the requested hospital without affecting critical burn capacity."
+      }
+    ]
+  },
+  "tokens_in": 556,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.1483514169813134,
+  "context": null
+}

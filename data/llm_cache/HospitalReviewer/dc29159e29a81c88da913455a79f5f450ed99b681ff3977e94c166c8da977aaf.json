@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t077-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has an open general slot and this transfer does not need to be diverted to protect the remaining critical-capable capacity."
+      }
+    ]
+  },
+  "tokens_in": 803,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.133215666981414,
+  "context": null
+}

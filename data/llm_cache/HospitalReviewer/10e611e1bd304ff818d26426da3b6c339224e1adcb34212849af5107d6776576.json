@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t002-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma and has one trauma slot and beds available, so it can take the whole ambulance load."
+      }
+    ]
+  },
+  "tokens_in": 541,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.1914510410279036,
+  "context": null
+}

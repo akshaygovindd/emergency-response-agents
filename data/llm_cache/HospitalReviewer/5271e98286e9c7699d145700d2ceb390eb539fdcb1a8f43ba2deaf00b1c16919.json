@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t068-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has no general treatment slots, but H-T and H-G both have capacity and no need to preserve a last bed specifically for this low-urgency general patient."
+      }
+    ]
+  },
+  "tokens_in": 841,
+  "tokens_out": 74,
+  "requests": 1,
+  "latency_s": 0.9941450000042096,
+  "context": null
+}

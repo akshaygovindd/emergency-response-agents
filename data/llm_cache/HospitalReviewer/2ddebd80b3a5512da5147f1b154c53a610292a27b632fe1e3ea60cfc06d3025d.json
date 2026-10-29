@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t077-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims, has capacity, and preserving beds for nearby critical waiting patients is not necessary here because H-T still has room."
+      }
+    ]
+  },
+  "tokens_in": 881,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 0.9271076660370454,
+  "context": null
+}

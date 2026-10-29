@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-12.",
+  "tokens_in": 2646,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.6114026249852031,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t042-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free rescue team for the most urgent rescue incident with ALS trauma victims.",
+        "time_min": 42
+      }
+    ],
+    "invalid": []
+  }
+}

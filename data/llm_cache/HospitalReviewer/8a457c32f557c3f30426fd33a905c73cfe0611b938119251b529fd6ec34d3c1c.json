@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t017-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn ALS capacity available, so this 2-patient critical burn load can be received there."
+      },
+      {
+        "request_id": "t017-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B still has burn capacity, so this urgent burn load should be accepted as requested."
+      }
+    ]
+  },
+  "tokens_in": 642,
+  "tokens_out": 93,
+  "requests": 1,
+  "latency_s": 1.3044273749692366,
+  "context": null
+}

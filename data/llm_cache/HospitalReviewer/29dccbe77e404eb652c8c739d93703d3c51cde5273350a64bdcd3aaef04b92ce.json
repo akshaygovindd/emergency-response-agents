@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t048-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has enough bed capacity and is the closest capable trauma center, while its trauma treatment slot can be used for at least one critical trauma patient without displacing nearer critical burn cases elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 849,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.3891719999955967,
+  "context": null
+}

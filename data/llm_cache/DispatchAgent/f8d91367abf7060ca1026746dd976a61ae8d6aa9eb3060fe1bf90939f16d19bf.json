@@ -1,0 +1,11 @@
+{
+  "output": "Proposed RESCUE-1 to INC-10.",
+  "tokens_in": 1132,
+  "tokens_out": 16,
+  "requests": 1,
+  "latency_s": 0.8084425420383923,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

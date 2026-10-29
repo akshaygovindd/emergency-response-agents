@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-T for V-16-1.",
+  "tokens_in": 1270,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 2.027677959005814,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-16-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with trauma capability and open trauma treatment slot for this urgent ALS victim.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

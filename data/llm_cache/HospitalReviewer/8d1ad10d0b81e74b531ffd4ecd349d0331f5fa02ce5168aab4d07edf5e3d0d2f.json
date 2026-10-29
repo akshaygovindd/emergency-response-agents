@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t007-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has sufficient trauma slots and beds, and the waiting critical burn patient is only relevant to H-B, so there is no need to hold this load."
+      }
+    ]
+  },
+  "tokens_in": 579,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.2429817499942146,
+  "context": null
+}

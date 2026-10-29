@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t053-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and enough beds, and this load does not require preserving the last bed for any closer critical patient."
+      }
+    ]
+  },
+  "tokens_in": 875,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 0.9486340419971384,
+  "context": null
+}

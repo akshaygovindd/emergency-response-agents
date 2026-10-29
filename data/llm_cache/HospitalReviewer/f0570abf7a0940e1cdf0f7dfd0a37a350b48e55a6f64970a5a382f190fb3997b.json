@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t117-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and accepting this low-urgency general patient does not threaten critical-bed protection."
+      }
+    ]
+  },
+  "tokens_in": 855,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.0177929589990526,
+  "context": null
+}

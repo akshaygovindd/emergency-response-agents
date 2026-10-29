@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 to INC-03 for the two general victims.",
+  "tokens_in": 5410,
+  "tokens_out": 93,
+  "requests": 2,
+  "latency_s": 1.8395479579921812,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t083-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1",
+            "V-03-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Free BLS unit can serve the assigned rescue incident with lower-acuity general victims.",
+        "time_min": 83
+      }
+    ],
+    "invalid": []
+  }
+}

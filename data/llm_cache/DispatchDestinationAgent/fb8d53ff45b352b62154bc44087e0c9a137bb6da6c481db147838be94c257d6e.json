@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-G for AMB-02.",
+  "tokens_in": 1310,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.8886659170384519,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-23-2",
+            "V-23-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with available beds and general treatment capacity.",
+        "time_min": 96
+      }
+    ],
+    "invalid": []
+  }
+}

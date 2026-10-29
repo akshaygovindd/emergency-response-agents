@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t002-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has enough general/ALS capacity, with no waiting critical patients to protect for."
+      },
+      {
+        "request_id": "t002-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat the trauma critical victim and still has sufficient trauma capacity, and there are no waiting critical patients requiring bed protection."
+      }
+    ]
+  },
+  "tokens_in": 659,
+  "tokens_out": 102,
+  "requests": 1,
+  "latency_s": 1.3116663750261068,
+  "context": null
+}

@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t119-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds, and the load includes a critical burn victim without a better nearby alternative needing this last bed."
+      },
+      {
+        "request_id": "t119-P03",
+        "decision": "reject",
+        "counter_hospital_id": "",
+        "reason": "H-B must preserve its remaining burn bed for nearby critical burn victims already waiting, including multiple urgency-5 patients closer to H-B than any other hospital."
+      }
+    ]
+  },
+  "tokens_in": 949,
+  "tokens_out": 116,
+  "requests": 1,
+  "latency_s": 1.4236457080114633,
+  "context": null
+}

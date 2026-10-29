@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t119-P03",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B rejected and no alternate hospital options were provided; this includes an urgency-5 ALS burn patient, so escalate for urgent placement."
+      }
+    ]
+  },
+  "tokens_in": 327,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.0801919170189649,
+  "context": null
+}

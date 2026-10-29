@@ -1,0 +1,64 @@
+{
+  "output": "No viable hospital can \u0568\u0576\u0564\u0578\u0582\u0576\u0565\u056c both victims together.",
+  "tokens_in": 3970,
+  "tokens_out": 244,
+  "requests": 5,
+  "latency_s": 5.63085845799651,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 24,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 24,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 24,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-4",
+            "V-02-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 24,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      }
+    ]
+  }
+}

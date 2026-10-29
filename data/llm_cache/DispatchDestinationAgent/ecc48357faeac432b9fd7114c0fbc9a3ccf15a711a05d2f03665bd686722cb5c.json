@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-T for AMB-02.",
+  "tokens_in": 1318,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.316264792054426,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable hospital with trauma capability and available trauma treatment slot.",
+        "time_min": 107
+      }
+    ],
+    "invalid": []
+  }
+}

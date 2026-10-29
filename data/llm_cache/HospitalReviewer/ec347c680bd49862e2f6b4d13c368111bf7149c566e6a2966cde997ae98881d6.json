@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t069-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has ample general/ER capacity, and no closer critical patient is at risk of being stranded by using one bed here."
+      }
+    ]
+  },
+  "tokens_in": 839,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.2166774169891141,
+  "context": null
+}

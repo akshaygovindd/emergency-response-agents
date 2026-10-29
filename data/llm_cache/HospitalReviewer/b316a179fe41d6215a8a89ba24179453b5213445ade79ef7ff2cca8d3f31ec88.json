@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t099-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and beds, so it can take both victims without risking nearby critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 750,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 0.9043527080211788,
+  "context": null
+}

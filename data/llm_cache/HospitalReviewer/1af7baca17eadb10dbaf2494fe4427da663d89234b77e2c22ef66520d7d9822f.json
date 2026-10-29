@@ -1,0 +1,29 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t008-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma/ALS capacity and should keep beds for the nearer critical waiting patient."
+      },
+      {
+        "request_id": "t008-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can handle the general patient easily and this does not affect critical trauma reserves."
+      },
+      {
+        "request_id": "t008-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T still has enough trauma capacity for this critical two-patient load."
+      }
+    ]
+  },
+  "tokens_in": 781,
+  "tokens_out": 129,
+  "requests": 1,
+  "latency_s": 1.3595435420284048,
+  "context": null
+}

@@ -1,0 +1,15 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t046-P01",
+      "t046-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "No routing conflict exists between these two since they use different hospitals and both have capacity for their incoming victims. Keep both: the burn case goes fastest to H-B, while the lower-urgency general case can still be treated at H-G without displacing higher-priority patients."
+  },
+  "tokens_in": 895,
+  "tokens_out": 96,
+  "requests": 1,
+  "latency_s": 1.2248964159516618,
+  "context": null
+}

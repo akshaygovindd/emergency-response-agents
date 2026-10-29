@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t040-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a trauma slot and sufficient beds, and this load includes a critical trauma patient with the requested hospital closest."
+      }
+    ]
+  },
+  "tokens_in": 871,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.2126120000029914,
+  "context": null
+}

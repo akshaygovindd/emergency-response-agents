@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t028-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a general treatment slot and free beds, and this non-critical general patient should be accepted without risking the nearby critical cases."
+      }
+    ]
+  },
+  "tokens_in": 651,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.057901917025447,
+  "context": null
+}

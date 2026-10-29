@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t082-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general and trauma capacity, and this load includes an urgent ALS trauma victim plus a general victim with no need to preserve H-G beds for closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 846,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.3184149580192752,
+  "context": null
+}

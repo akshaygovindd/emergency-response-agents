@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t101-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and the incoming burn patients do not need to be held back for higher-priority critical burn victims elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 859,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.11876162502449,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-03 to INC-18 for V-18-1.",
+  "tokens_in": 4925,
+  "tokens_out": 87,
+  "requests": 2,
+  "latency_s": 1.7647356250090525,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t069-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-18-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is closest to the only waiting victim needing ALS and fire is already assigned.",
+        "time_min": 69
+      }
+    ],
+    "invalid": []
+  }
+}

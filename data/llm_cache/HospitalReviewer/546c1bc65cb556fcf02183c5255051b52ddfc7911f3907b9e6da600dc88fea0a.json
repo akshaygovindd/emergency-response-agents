@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t098-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a free trauma slot and enough beds, and accepting these two critical trauma patients does not require preserving its last capacity for any closer waiting critical victim."
+      }
+    ]
+  },
+  "tokens_in": 868,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.112620958010666,
+  "context": null
+}

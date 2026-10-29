@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-T.",
+  "tokens_in": 1314,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.634993832965847,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t058-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-1",
+            "V-10-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center matches both critical trauma victims and has open trauma slots.",
+        "time_min": 58
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "output": "Submitted both admission requests.",
+  "tokens_in": 1530,
+  "tokens_out": 129,
+  "requests": 2,
+  "latency_s": 2.25093708303757,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t036-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with room and trauma-capable ER for this ALS general victim.",
+        "time_min": 36
+      },
+      {
+        "proposal_id": "t036-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit best matches the urgent burn victim and can accept the general companion.",
+        "time_min": 36
+      }
+    ],
+    "invalid": []
+  }
+}

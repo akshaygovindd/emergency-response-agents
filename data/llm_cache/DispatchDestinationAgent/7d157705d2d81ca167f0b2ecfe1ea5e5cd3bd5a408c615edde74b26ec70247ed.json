@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-B for AMB-05.",
+  "tokens_in": 1299,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 2.0172029999666847,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with burn care and available capacity.",
+        "time_min": 57
+      }
+    ],
+    "invalid": []
+  }
+}

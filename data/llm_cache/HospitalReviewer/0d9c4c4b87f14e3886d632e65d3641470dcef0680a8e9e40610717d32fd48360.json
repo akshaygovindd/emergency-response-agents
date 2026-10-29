@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t010-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity and beds available, and preserving space for critical burn/trauma arrivals does not require blocking this small general load."
+      },
+      {
+        "request_id": "t010-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat both patients now, and this does not consume the last critical-only capacity needed for waiting critical victims."
+      }
+    ]
+  },
+  "tokens_in": 766,
+  "tokens_out": 111,
+  "requests": 1,
+  "latency_s": 1.5296562089934014,
+  "context": null
+}

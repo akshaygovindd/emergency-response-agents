@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-04 and MED-1 to INC-16.",
+  "tokens_in": 4271,
+  "tokens_out": 148,
+  "requests": 2,
+  "latency_s": 2.045076417038217,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t050-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-16-3",
+            "V-16-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent ALS and non-ALS victims at the most accessible active incident.",
+        "time_min": 50
+      },
+      {
+        "proposal_id": "t050-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical support is free and this incident has the highest unmet ALS need.",
+        "time_min": 50
+      }
+    ],
+    "invalid": []
+  }
+}

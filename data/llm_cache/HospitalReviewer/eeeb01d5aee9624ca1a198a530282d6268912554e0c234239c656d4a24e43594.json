@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t092-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds available, and keeping its slots open is not necessary because the closest critical trauma victims are better served by H-T."
+      }
+    ]
+  },
+  "tokens_in": 841,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.143105041992385,
+  "context": null
+}

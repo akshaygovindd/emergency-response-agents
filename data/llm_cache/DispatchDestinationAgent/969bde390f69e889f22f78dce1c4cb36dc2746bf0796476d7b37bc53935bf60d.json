@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both destination requests.",
+  "tokens_in": 1588,
+  "tokens_out": 139,
+  "requests": 2,
+  "latency_s": 2.351304500014521,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t061-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest burn-capable hospital with available burn slot for the urgency 4 burn victim.",
+        "time_min": 61
+      },
+      {
+        "proposal_id": "t061-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-2",
+            "V-17-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital and the trauma patients need the specialty with available treatment capacity.",
+        "time_min": 61
+      }
+    ],
+    "invalid": []
+  }
+}

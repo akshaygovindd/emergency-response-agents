@@ -1,0 +1,38 @@
+{
+  "output": "Need a burn-capable hospital with room, but H-B is full and no other listed hospital can treat burn.",
+  "tokens_in": 3241,
+  "tokens_out": 190,
+  "requests": 4,
+  "latency_s": 3.5840518749901094,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 25,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 25,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t014-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both patients and still has capacity, while preserving room for the nearby critical trauma patients."
+      }
+    ]
+  },
+  "tokens_in": 670,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.0060650840168819,
+  "context": null
+}

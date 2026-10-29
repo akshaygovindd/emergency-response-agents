@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t096-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has one general slot and beds available, and this mixed load can be accommodated without risking nearby critical patients."
+      }
+    ]
+  },
+  "tokens_in": 857,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.194581083022058,
+  "context": null
+}

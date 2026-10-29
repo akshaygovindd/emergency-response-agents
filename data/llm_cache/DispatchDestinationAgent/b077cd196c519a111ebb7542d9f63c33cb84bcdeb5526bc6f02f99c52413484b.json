@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-T for V-14-3.",
+  "tokens_in": 1266,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.685342957964167,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t083-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center matches the victim's high-acuity trauma needs and has open trauma slots.",
+        "time_min": 83
+      }
+    ],
+    "invalid": []
+  }
+}

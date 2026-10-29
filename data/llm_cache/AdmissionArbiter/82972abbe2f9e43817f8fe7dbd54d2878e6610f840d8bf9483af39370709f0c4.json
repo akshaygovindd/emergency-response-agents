@@ -1,0 +1,16 @@
+{
+  "output": {
+    "choices": [
+      {
+        "request_id": "t010-P03",
+        "hospital_id": "none",
+        "reason": "No hospital options are available, so the patients cannot be assigned without risking an invalid overload decision."
+      }
+    ]
+  },
+  "tokens_in": 278,
+  "tokens_out": 48,
+  "requests": 1,
+  "latency_s": 1.12542537500849,
+  "context": null
+}

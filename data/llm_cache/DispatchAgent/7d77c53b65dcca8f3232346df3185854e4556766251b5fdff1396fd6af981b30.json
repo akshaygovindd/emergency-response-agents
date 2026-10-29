@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 to INC-20 for V-20-1 and V-20-3.",
+  "tokens_in": 4873,
+  "tokens_out": 99,
+  "requests": 2,
+  "latency_s": 2.0405280829872936,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-20-1",
+            "V-20-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest urgency victims at the closest high-priority incident fit ALS transport and capacity.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

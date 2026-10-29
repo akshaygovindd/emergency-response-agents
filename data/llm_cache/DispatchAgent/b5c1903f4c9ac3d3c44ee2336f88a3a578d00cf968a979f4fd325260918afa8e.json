@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-03 to INC-11 for V-11-1.",
+  "tokens_in": 4955,
+  "tokens_out": 81,
+  "requests": 2,
+  "latency_s": 1.8373514999984764,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent ALS-needed victim with long incident delay.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

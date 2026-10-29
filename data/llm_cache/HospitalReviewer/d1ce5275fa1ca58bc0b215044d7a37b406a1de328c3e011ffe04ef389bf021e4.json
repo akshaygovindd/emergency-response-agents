@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t067-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capability and room, and preserving its beds is not justified since the nearby critical trauma patients have alternative capable placement options."
+      }
+    ]
+  },
+  "tokens_in": 887,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.1210449579521082,
+  "context": null
+}

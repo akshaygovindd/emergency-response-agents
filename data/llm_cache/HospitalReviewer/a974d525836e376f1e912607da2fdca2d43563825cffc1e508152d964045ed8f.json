@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t058-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and should receive these critical trauma patients rather than preserving beds for others, especially since it is their requested capable hospital."
+      }
+    ]
+  },
+  "tokens_in": 868,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0776788330404088,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t095-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds available, and this low-urgency load should not be diverted while preserving capacity for closer critical patients elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 864,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.1460312500130385,
+  "context": null
+}

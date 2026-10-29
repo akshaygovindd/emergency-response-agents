@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-02 for INC-14\u2019s ALS trauma victim.",
+  "tokens_in": 4890,
+  "tokens_out": 80,
+  "requests": 2,
+  "latency_s": 4.797861459024716,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t114-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-14-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the most urgent ALS trauma victim.",
+        "time_min": 114
+      }
+    ],
+    "invalid": []
+  }
+}

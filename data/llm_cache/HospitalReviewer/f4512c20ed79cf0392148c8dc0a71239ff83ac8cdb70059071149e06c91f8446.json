@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t053-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has a free trauma slot, while its remaining capacity should be preserved for nearby critical trauma cases it is best positioned to handle."
+      },
+      {
+        "request_id": "t053-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can handle both victims, has available beds, and there is no need to divert this load away from the requested trauma center."
+      }
+    ]
+  },
+  "tokens_in": 958,
+  "tokens_out": 117,
+  "requests": 1,
+  "latency_s": 1.4577888330095448,
+  "context": null
+}

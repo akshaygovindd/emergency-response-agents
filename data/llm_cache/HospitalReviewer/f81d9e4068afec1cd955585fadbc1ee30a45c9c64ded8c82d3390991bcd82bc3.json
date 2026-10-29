@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t103-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and has capacity; keeping its last general slot is not needed for the listed critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 843,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.2736230829614215,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t059-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has available general treatment slots and beds, and admitting these two lower-acuity general patients does not threaten capacity for the critical patients waiting closer to other hospitals."
+      }
+    ]
+  },
+  "tokens_in": 874,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.225993332976941,
+  "context": null
+}

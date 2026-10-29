@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t018-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat general care and has capacity, while the critical trauma patient is closer to H-T than H-G so beds should be preserved here only if needed."
+      },
+      {
+        "request_id": "t018-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat the burn victim and has enough general capacity for both patients."
+      }
+    ]
+  },
+  "tokens_in": 669,
+  "tokens_out": 102,
+  "requests": 1,
+  "latency_s": 1.2066587919835001,
+  "context": null
+}

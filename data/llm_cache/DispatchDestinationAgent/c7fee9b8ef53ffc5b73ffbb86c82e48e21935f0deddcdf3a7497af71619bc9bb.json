@@ -1,0 +1,57 @@
+{
+  "output": "AMB-04 to H-T; AMB-05 needs a different burn-capable hospital and I couldn\u2019t place it.",
+  "tokens_in": 2569,
+  "tokens_out": 209,
+  "requests": 3,
+  "latency_s": 3.275438792014029,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t045-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest option with available general treatment capacity.",
+        "time_min": 45
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 45,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 45,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2",
+            "V-02-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

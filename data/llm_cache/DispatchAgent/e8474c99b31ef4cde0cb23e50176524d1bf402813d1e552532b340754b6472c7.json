@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-02 to INC-15 and AMB-03 to INC-07.",
+  "tokens_in": 5269,
+  "tokens_out": 183,
+  "requests": 2,
+  "latency_s": 2.2173600000096485,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t067-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-15-1",
+            "V-15-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest BLS unit for the most urgent low-acuity victims at incident 15.",
+        "time_min": 67
+      },
+      {
+        "proposal_id": "t067-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-4",
+            "V-07-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is needed for the burn victim and this is the best match among free ambulances.",
+        "time_min": 67
+      }
+    ],
+    "invalid": []
+  }
+}

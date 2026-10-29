@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t050-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity available, and this low-acuity load should not be delayed because we are preserving beds for higher-priority critical patients."
+      }
+    ]
+  },
+  "tokens_in": 863,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.2306342909578234,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-B for V-08-1.",
+  "tokens_in": 1239,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 1.8360985000035726,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t075-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn-capable hospital with open burn treatment capacity.",
+        "time_min": 75
+      }
+    ],
+    "invalid": []
+  }
+}

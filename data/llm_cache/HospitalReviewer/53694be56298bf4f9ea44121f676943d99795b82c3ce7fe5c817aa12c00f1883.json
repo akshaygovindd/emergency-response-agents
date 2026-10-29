@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t030-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has general treatment capacity and beds, and rejecting would not meaningfully protect the critical trauma patients who are closer to H-G."
+      }
+    ]
+  },
+  "tokens_in": 602,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.326436790986918,
+  "context": null
+}

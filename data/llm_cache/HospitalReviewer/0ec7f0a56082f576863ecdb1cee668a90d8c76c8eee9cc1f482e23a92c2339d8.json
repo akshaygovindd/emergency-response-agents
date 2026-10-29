@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t035-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds, and there is no need to preserve its last bed for a closer critical victim since the waiting critical general cases are nearer to H-T or H-B."
+      }
+    ]
+  },
+  "tokens_in": 720,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.1339696659706533,
+  "context": null
+}

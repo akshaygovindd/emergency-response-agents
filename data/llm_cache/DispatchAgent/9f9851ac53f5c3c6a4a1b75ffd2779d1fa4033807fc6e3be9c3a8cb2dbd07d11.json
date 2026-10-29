@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-11 with V-11-3 and V-11-1.",
+  "tokens_in": 4825,
+  "tokens_out": 109,
+  "requests": 2,
+  "latency_s": 1.8628462090273388,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t093-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-3",
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free unit to a long-waiting incident, and these victims fit a BLS load with the most urgent included first.",
+        "time_min": 93
+      }
+    ],
+    "invalid": []
+  }
+}

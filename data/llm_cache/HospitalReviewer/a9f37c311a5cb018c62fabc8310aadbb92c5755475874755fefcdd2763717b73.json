@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t020-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has room and can treat both general victims, so this load should be admitted there."
+      },
+      {
+        "request_id": "t020-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat the burn victim and has sufficient capacity for the whole ALS critical load."
+      }
+    ]
+  },
+  "tokens_in": 644,
+  "tokens_out": 96,
+  "requests": 1,
+  "latency_s": 1.5533068749937229,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t027-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has capacity, while the only waiting critical patient needs burn care at H-B, so there is no reason to hold H-T beds."
+      }
+    ]
+  },
+  "tokens_in": 576,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.2250842910143547,
+  "context": null
+}

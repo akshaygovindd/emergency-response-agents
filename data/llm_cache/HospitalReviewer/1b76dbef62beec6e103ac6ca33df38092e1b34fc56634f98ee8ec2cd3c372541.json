@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t075-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity available, and this patient is the closest burn match so admitting them does not jeopardize the nearby critical waiting cases."
+      }
+    ]
+  },
+  "tokens_in": 850,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0042824579868466,
+  "context": null
+}

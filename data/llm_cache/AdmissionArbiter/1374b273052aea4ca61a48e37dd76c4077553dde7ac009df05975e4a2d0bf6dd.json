@@ -1,0 +1,16 @@
+{
+  "output": {
+    "choices": [
+      {
+        "request_id": "t044-P04",
+        "hospital_id": "none",
+        "reason": "No hospital options are available, and the prior hospital rejection confirms the burn patient cannot be accepted there without available burn treatment capacity."
+      }
+    ]
+  },
+  "tokens_in": 291,
+  "tokens_out": 54,
+  "requests": 1,
+  "latency_s": 1.07434083300177,
+  "context": null
+}

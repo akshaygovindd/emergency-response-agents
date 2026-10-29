@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t112-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and beds available, and accepting this critical trauma load protects the closest capable option for the patient."
+      },
+      {
+        "request_id": "t112-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the urgent general patient and still has ample ER and bed capacity, so there is no need to divert."
+      }
+    ]
+  },
+  "tokens_in": 941,
+  "tokens_out": 108,
+  "requests": 1,
+  "latency_s": 1.3132496670004912,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t010-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and this critical burn patient is the closest suitable destination, while reserving beds there is still appropriate for the other waiting critical burn case."
+      }
+    ]
+  },
+  "tokens_in": 594,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 0.8873296250239946,
+  "context": null
+}

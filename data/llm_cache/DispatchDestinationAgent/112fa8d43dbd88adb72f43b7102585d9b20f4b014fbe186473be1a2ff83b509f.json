@@ -1,0 +1,66 @@
+{
+  "output": "One request accepted; AMB-05 still needs a valid destination.",
+  "tokens_in": 3435,
+  "tokens_out": 217,
+  "requests": 4,
+  "latency_s": 4.195236959028989,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-15-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with available general capacity.",
+        "time_min": 57
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 57,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-02-4 is going to H-B"
+      },
+      {
+        "time_min": 57,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 57,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-02-4 is going to H-B"
+      }
+    ]
+  }
+}

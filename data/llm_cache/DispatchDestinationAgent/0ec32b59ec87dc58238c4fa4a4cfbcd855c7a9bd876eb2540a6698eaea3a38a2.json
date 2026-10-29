@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both ambulance requests to H-B.",
+  "tokens_in": 1571,
+  "tokens_out": 143,
+  "requests": 2,
+  "latency_s": 1.8893107079784386,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn victims with urgency 4 need the burn specialty and H-B is closest.",
+        "time_min": 85
+      },
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn specialty is needed for the urgency 5 victim, and H-B is the nearest option.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

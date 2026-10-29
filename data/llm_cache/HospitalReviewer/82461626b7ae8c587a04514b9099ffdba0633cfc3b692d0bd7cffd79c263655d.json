@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t045-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has general capacity and should preserve beds for closer critical patients already waiting there, while this low-acuity load can be safely admitted."
+      }
+    ]
+  },
+  "tokens_in": 859,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.2701187080238014,
+  "context": null
+}

@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t057-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has room for the general ALS pair and rejecting would unnecessarily strand them when no closer critical-triage need is preserved by holding beds."
+      },
+      {
+        "request_id": "t057-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can take the trauma ALS pair now, and protecting beds at H-T is more appropriate for the waiting critical trauma patients closer to H-T."
+      }
+    ]
+  },
+  "tokens_in": 986,
+  "tokens_out": 118,
+  "requests": 1,
+  "latency_s": 1.5597310829907656,
+  "context": null
+}

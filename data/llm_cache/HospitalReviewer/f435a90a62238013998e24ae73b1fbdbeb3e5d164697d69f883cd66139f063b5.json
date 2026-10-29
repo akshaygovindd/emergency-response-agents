@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t083-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and this critical trauma patient is appropriately matched there, while H-G has no trauma slots."
+      }
+    ]
+  },
+  "tokens_in": 847,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 0.9744156250380911,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t120-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a trauma slot and beds available, and accepting the trauma+general pair does not endanger closer critical victims who can still be placed elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 850,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 0.9917869999771938,
+  "context": null
+}

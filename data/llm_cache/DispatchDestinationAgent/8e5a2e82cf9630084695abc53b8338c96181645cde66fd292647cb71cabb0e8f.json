@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-B for V-18-1.",
+  "tokens_in": 1245,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 2.1138024170068093,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-18-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn specialty and nearest with available burn slot.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

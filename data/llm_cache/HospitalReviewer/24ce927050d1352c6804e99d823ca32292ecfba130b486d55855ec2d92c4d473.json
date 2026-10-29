@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t067-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B is the closest burn-capable hospital and still has sufficient burn slots and beds for both critical ALS burn victims."
+      }
+    ]
+  },
+  "tokens_in": 861,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 0.9591910829767585,
+  "context": null
+}

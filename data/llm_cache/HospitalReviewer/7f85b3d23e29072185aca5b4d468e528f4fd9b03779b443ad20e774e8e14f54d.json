@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t033-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity available and this is the best match for both critical burn patients."
+      },
+      {
+        "request_id": "t033-P02",
+        "decision": "reject",
+        "counter_hospital_id": "",
+        "reason": "H-B has no general treatment slots and must preserve capacity for nearby critical waiting trauma patients; H-G is available and can take general care."
+      }
+    ]
+  },
+  "tokens_in": 827,
+  "tokens_out": 105,
+  "requests": 1,
+  "latency_s": 1.1492819999693893,
+  "context": null
+}

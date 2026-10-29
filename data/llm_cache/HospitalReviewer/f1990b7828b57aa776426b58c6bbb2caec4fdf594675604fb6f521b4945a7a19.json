@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t046-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample capacity and can treat the general patient without jeopardizing critical waiting cases."
+      },
+      {
+        "request_id": "t046-P02",
+        "decision": "reject",
+        "counter_hospital_id": "",
+        "reason": "H-B has no burn treatment slots free and must preserve remaining capacity for critical burn patients already waiting closer to it."
+      }
+    ]
+  },
+  "tokens_in": 921,
+  "tokens_out": 100,
+  "requests": 1,
+  "latency_s": 1.7340674999868497,
+  "context": null
+}

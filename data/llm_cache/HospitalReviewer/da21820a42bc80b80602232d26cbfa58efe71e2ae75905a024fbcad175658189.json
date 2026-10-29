@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t004-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a general slot available and there is no closer critical trauma patient to reserve capacity for."
+      }
+    ]
+  },
+  "tokens_in": 590,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.027448708016891,
+  "context": null
+}

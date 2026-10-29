@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t057-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center has a general-capable bed and no critical waiting patient is closer to H-T than to all other capable hospitals, so there is no need to preserve the last bed."
+      }
+    ]
+  },
+  "tokens_in": 836,
+  "tokens_out": 76,
+  "requests": 1,
+  "latency_s": 1.0355530839879066,
+  "context": null
+}

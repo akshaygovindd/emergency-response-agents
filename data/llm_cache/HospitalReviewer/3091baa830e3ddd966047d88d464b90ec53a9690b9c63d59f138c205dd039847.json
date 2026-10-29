@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t116-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital can take both victims, and there is no need to preserve its beds for closer critical patients because the nearby critical trauma cases can also be handled at H-T and H-G has ample capacity."
+      }
+    ]
+  },
+  "tokens_in": 832,
+  "tokens_out": 79,
+  "requests": 1,
+  "latency_s": 1.2566477080108598,
+  "context": null
+}

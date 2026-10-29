@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t042-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity for both patients, and preserving H-T beds is preferable for closer critical waiting victims."
+      },
+      {
+        "request_id": "t042-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a free general slot and can safely take this critical general patient."
+      }
+    ]
+  },
+  "tokens_in": 841,
+  "tokens_out": 97,
+  "requests": 1,
+  "latency_s": 1.267040500009898,
+  "context": null
+}

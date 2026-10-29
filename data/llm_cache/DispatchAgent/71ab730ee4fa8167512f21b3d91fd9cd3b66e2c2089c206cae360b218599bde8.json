@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 for INC-15 with V-15-3 and V-15-4.",
+  "tokens_in": 4203,
+  "tokens_out": 107,
+  "requests": 2,
+  "latency_s": 2.0413469160557725,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t065-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-15-3",
+            "V-15-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest urgency trauma victims at a rescue incident; ALS is suited and this pairs the most urgent with the critical ALS case.",
+        "time_min": 65
+      }
+    ],
+    "invalid": []
+  }
+}

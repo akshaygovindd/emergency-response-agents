@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-07 with V-07-2 and V-07-3.",
+  "tokens_in": 4962,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 2.2046985420165583,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t103-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-2",
+            "V-07-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest suitable BLS unit for the most urgent low-acuity victims at this incident.",
+        "time_min": 103
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-G for AMB-01.",
+  "tokens_in": 1313,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 1.6406110409880057,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-20-1",
+            "V-20-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with general capacity and trauma capability for the mixed-acuity load.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

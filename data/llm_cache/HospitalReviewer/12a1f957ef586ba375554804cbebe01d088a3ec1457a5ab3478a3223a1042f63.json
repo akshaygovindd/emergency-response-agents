@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t015-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can handle both ALS trauma victims and has sufficient trauma slots and ER capacity."
+      },
+      {
+        "request_id": "t015-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has general-care capacity for both victims and no critical waiting load requires preserving the last bed."
+      }
+    ]
+  },
+  "tokens_in": 664,
+  "tokens_out": 90,
+  "requests": 1,
+  "latency_s": 1.1240550840157084,
+  "context": null
+}
