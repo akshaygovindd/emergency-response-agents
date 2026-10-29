@@ -1,0 +1,15 @@
+
+/* compare page */
+#diffnote { flex: none; background: #2b2a1a; border: 1px solid #6e5f26; color: #f1e3a6; border-radius: 12px; padding: 7px 14px; font-size: 15px; }
+#diffnote.none { background: var(--panel); border-color: var(--line); color: var(--muted); }
+#diffnote b { color: #ffd966; letter-spacing: .08em; margin-right: 8px; }
+#pair { flex: 1 1 0; min-height: 0; display: flex; gap: 10px; }
+#pair .col { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+#pair h2 { flex: none; margin: 0; font-size: 18px; font-weight: 700; padding: 0 4px; display: flex; align-items: baseline; gap: 10px; }
+#pair h2 span { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+#pair iframe { flex: 1 1 0; min-height: 0; width: 100%; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+#cmarks i.diff::before { background: #ffd966; }
+#cmarks i.small::before { transform: rotate(45deg) scale(.6); opacity: .85; }
+#jumpdiff { background: #3a3417; border-color: #6e5f26; color: #ffe699; }
+#jumpdiff:hover { background: #4a431e; }
+#jumpdiff[disabled] { display: none; }

@@ -362,6 +362,7 @@
 
     renderFeed(frame.n);
     renderStrip(m);
+    if (document.body.classList.contains("embed")) fit();     // KPI cards changed height: re-size the map above them
   }
 
   const STORY = new Set(["conflict", "counter", "accept", "reject", "escalate", "executed"]);
@@ -505,6 +506,10 @@
   // ───────── Layout: the map is a square sized by the free height ─────────
   function fit() {
     const main = $("main"), col = $("mapcol"), wide = window.innerWidth >= 1200;
+    if (document.body.classList.contains("embed")) {     // Compare page: square map above the KPI cards
+      $("mapwrap").style.width = Math.max(200, Math.min(col.clientWidth, col.clientHeight)) + "px";
+      return;
+    }
     col.classList.toggle("wide", wide);
     if (window.innerWidth <= 700) { col.style.width = ""; $("mapwrap").style.width = ""; return; }
     if (wide) {                                         // map on the left (about 55%), legend beside it, map sized by the free height
