@@ -52,7 +52,7 @@ iframe{height:calc(100vh - 118px) !important;min-height:600px}
 .wi-note{font-size:.82rem;color:#8a9bb0}
 .wi-off{font-size:.82rem;color:#8a9bb0;border:1px dashed #34465d;border-radius:8px;padding:6px 10px;margin-top:4px}
 </style>""", unsafe_allow_html=True)
-slot, _ = common.header(())
+slot, _ = common.header("What-if")
 common.subtitle(slot, "What-if &middot; generated live in memory &middot; nothing is saved, no API calls")
 
 controls, view = st.columns([1, 4.3], gap="medium")

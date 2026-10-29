@@ -62,7 +62,7 @@ st.markdown("""<style>
 .ng-text{font-size:1.02rem;color:#dbe3ee;margin-top:3px}.ng-why{font-size:.88rem;color:#8a9bb0;margin-top:2px}
 .ng-head{font-size:1.2rem;font-weight:700;color:#dbe3ee}.ng-meta{font-size:.95rem;color:#a9b8cb;margin-bottom:4px}
 </style>""", unsafe_allow_html=True)
-slot, (c_version, c_scenario, c_run, c_mode) = common.header((0.8, 1.0, 1.3, 1.4))
+slot, (c_version, c_scenario, c_run, c_mode) = common.header("Negotiations", (0.8, 1.0, 1.3, 1.4))
 runs = runs_index()
 version = pick(c_version, "Version", sorted({r.version for r in runs}), DEFAULTS["version"], "ng_version")
 in_version = [r for r in runs if r.version == version]

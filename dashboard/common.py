@@ -15,7 +15,7 @@ TITLE = "Emergency Response Command Center"
 CSS = """<style>
 header[data-testid="stHeader"],[data-testid="stSidebar"],[data-testid="stSidebarCollapsedControl"]{display:none}
 .block-container{padding:0.6rem 1rem 0 1rem;max-width:100%}
-.cc-title{font-size:1.55rem;font-weight:700;line-height:1.15;color:#dbe3ee}
+.cc-title{font-size:1.35rem;font-weight:700;line-height:1.15;color:#dbe3ee;white-space:nowrap}
 .cc-sub{font-size:0.95rem;color:#8a9bb0;margin-top:2px}
 div[data-testid="stSelectbox"] label p,div[data-testid="stNumberInput"] label p,div[data-testid="stSlider"] label p{font-size:0.75rem;color:#8a9bb0}
 a[data-testid="stPageLink-NavLink"]{background:#121b27;border:1px solid #243246;border-radius:8px;padding:0.35rem 0.2rem;justify-content:center;width:100%}
@@ -37,12 +37,16 @@ def subtitle(slot, text: str) -> None:
     slot.markdown(f"<div class='cc-sub'>{text}</div>", unsafe_allow_html=True)
 
 
-def header(control_weights: tuple = ()) -> tuple:
+def header(current: str, control_weights: tuple = ()) -> tuple:
     """Title, the navigation links, and one column per extra control.
 
     Returns (subtitle slot, list of control columns); fill the slot with subtitle(slot, text) once the
     page knows what it shows (for example the selected run).
     """
+    slug = next(Path(path).stem for label, path in PAGES if label == current)
+    slug = "" if current == PAGES[0][0] else slug.replace("_", "")
+    st.markdown(f'<style>a[data-testid="stPageLink-NavLink"][href="{slug}"]{{background:#27527a;border-color:#34648f}}</style>',
+                unsafe_allow_html=True)
     cols = st.columns([2.5, 3.4, *control_weights], vertical_alignment="bottom")
     cols[0].markdown(f"<div class='cc-title'>{TITLE}</div>", unsafe_allow_html=True)
     slot = cols[0].empty()

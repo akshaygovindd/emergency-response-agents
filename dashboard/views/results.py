@@ -109,7 +109,7 @@ def show(fig, takeaway):
 
 common.setup()
 st.markdown("<style>.stTabs [data-baseweb='tab']{font-size:1rem;padding:0.4rem 1rem}</style>", unsafe_allow_html=True)
-slot, (c_version,) = common.header((1.6,))
+slot, (c_version,) = common.header("Results", (1.6,))
 version = c_version.selectbox("Results version", list(rv.FRAMES), format_func=rv.FRAMES.get, key="res_version")
 common.subtitle(slot, f"Results &middot; <b>{rv.FRAMES[version]}</b> &middot; from results/{version}/runs.jsonl")
 d = tables(version)

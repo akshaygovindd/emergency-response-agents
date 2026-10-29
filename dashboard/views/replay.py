@@ -39,7 +39,7 @@ def pick(col, label: str, options: list, preferred, key: str, format_func=str):
 def select_run():
     """Top bar: title, page links, then Version -> Scenario -> Run -> System (only runs with logs)."""
     runs = runs_index()
-    slot, (c_version, c_scenario, c_run, c_mode) = common.header((0.9, 1.1, 1.3, 1.4))
+    slot, (c_version, c_scenario, c_run, c_mode) = common.header("Replay", (0.9, 1.1, 1.3, 1.4))
     version = pick(c_version, "Version", sorted({r.version for r in runs}), DEFAULTS["version"], "pl_version")
     in_version = [r for r in runs if r.version == version]
     scenario = pick(c_scenario, "Scenario", [s for s in SCENARIO_ORDER if any(r.scenario == s for r in in_version)],

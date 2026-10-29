@@ -46,7 +46,7 @@ def pick(col, label, options, preferred, key, format_func=str):
 
 common.setup()
 st.markdown("<style>iframe{height:calc(100vh - 118px) !important;min-height:600px}</style>", unsafe_allow_html=True)
-slot, (c_version, c_scenario, c_run, c_a, c_b) = common.header((0.8, 1.0, 1.2, 1.2, 1.3))
+slot, (c_version, c_scenario, c_run, c_a, c_b) = common.header("Compare", (0.8, 1.0, 1.2, 1.2, 1.3))
 runs = runs_index()
 version = pick(c_version, "Version", sorted({r.version for r in runs}), DEFAULTS["version"], "cmp_version")
 in_version = [r for r in runs if r.version == version]
