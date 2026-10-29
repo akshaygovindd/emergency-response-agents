@@ -67,6 +67,27 @@
   const overlap = (a, b) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
   const TAG_SPOTS = [[0, -19], [0, 31], [0, -36], [0, 47], [46, 5], [-46, 5]];   // tag offsets tried in order
 
+  // Incident labels try below, above, right, left of their ring; a label never sits on another label or ring.
+  const LABEL_SPOTS = [[0, 41], [0, -31], [52, 5], [-52, 5]];
+  function placeIncidentLabels(m, taken) {
+    const live = incidents.filter((is) => m >= is.inc.arrival_min && !is.resolved);
+    const placed = [];
+    live.forEach((is) => {
+      const cx = X(is.inc.x), cy = Y(is.inc.y);
+      const others = [...hospitals.flatMap((hs) => hs.box), ...placed,
+        ...live.filter((o) => o !== is).map((o) => rectAt(X(o.inc.x), Y(o.inc.y), 54, 54))];
+      const order = LABEL_SPOTS.map((_, k) => (is.spot + k) % LABEL_SPOTS.length);   // last spot first: no flicker
+      const fits = (k) => !others.some((o) => overlap(rectAt(cx + LABEL_SPOTS[k][0], cy + LABEL_SPOTS[k][1] - 5, 54, 16), o));
+      const pick = order.find(fits);
+      is.spot = pick === undefined ? is.spot : pick;
+      const [dx, dy] = LABEL_SPOTS[is.spot];
+      is.label.setAttribute("x", dx); is.label.setAttribute("y", dy);
+      is.box = rectAt(cx + dx, cy + dy - 5, 54, 16);
+      placed.push(is.box);
+    });
+    placed.forEach((b) => taken.push(b));
+  }
+
   // ───────── Places ─────────
   const where = {};
   B.hospitals.forEach((h) => (where[h.id] = [h.x, h.y]));
@@ -86,6 +107,8 @@
     const name = text(g, `${h.id}  ${h.label}`, 0, nameY, 19, "#e3eaf3", { "font-weight": 700 });
     const load = text(g, "", 0, loadY, 15, "#9fb1c6");
     const px = X(h.x), py = Y(h.y);
+    const labels = el("g", { transform: `translate(${px},${py})` }, labelLayer);   // above the units, so parked ones never hide the name
+    labels.appendChild(name); labels.appendChild(load);
     const box = [rectAt(px, py + nameY - 6, 12 + h.id.length * 11 + h.label.length * 10.5, 22),
                  rectAt(px, py + loadY - 5, 150, 18)];
     return { h, C, occ, prom, load, name, box };
@@ -101,7 +124,7 @@
       const c = el("circle", { cx: Math.cos(ang) * r, cy: Math.sin(ang) * r, r: 6, "stroke-width": 1.6 }, g);
       return { v, i, c };
     });
-    return { inc, g, dots, label, resolved: false, box: rectAt(X(inc.x), Y(inc.y) + 36, 54, 16) };
+    return { inc, g, dots, label, resolved: false, spot: 0, box: rectAt(X(inc.x), Y(inc.y) + 36, 54, 16) };
   });
 
   // ───────── Units ─────────
@@ -155,7 +178,7 @@
       hs.occ.setAttribute("stroke-dasharray", `${occArc} ${hs.C - occArc}`);
       hs.prom.setAttribute("stroke-dasharray", `${Math.max(0, promArc)} ${hs.C - Math.max(0, promArc)}`);
       hs.prom.setAttribute("stroke-dashoffset", -occArc);
-      hs.load.textContent = `ER ${er}/${cap}` + (promised ? `  +${promised} on the way` : "");
+      hs.load.textContent = `ER ${er}/${cap}` + (promised ? `  +${promised} coming` : "");
     });
 
     incidents.forEach((is) => {
@@ -182,7 +205,7 @@
 
     const taken = [];                                  // label boxes tags must stay clear of
     hospitals.forEach((hs) => hs.box.forEach((b) => taken.push(b)));
-    incidents.forEach((is) => { if (m >= is.inc.arrival_min && !is.resolved) taken.push(is.box); });
+    placeIncidentLabels(m, taken);
     const place = (unit, xy) => {
       const px = X(xy.x), py = Y(xy.y);
       unit.g.setAttribute("transform", `translate(${px},${py})`);
@@ -243,6 +266,17 @@
   }
 
   // ───────── Conflict callout on the map ─────────
+  // The callout sits on the top or bottom edge, whichever leaves the involved incidents and unit clear.
+  function placeCallout(c) {
+    const k = W / $("mapwrap").clientWidth, w = callout.offsetWidth * k / 2, h = callout.offsetHeight * k;
+    const unit = [...ambulances, ...responders].find((u) => c.resources.includes((u.a || u.r).id));
+    const pts = c.incidents.map((id) => where[id]).filter(Boolean).map((a) => [X(a[0]), Y(a[1])]);
+    if (unit) pts.push([unit.px, unit.py]);
+    const pad = 34, cx = W / 2;
+    const zones = { top: [8 * k, 8 * k + h], bottom: [W - 44 * k - h, W - 44 * k] };
+    const hits = (z) => pts.filter(([x, y]) => x > cx - w - pad && x < cx + w + pad && y > z[0] - pad && y < z[1] + pad).length;
+    callout.classList.toggle("bottom", hits(zones.bottom) < hits(zones.top));
+  }
   const CALLOUT_MIN = 3;                               // a conflict stays on the map for 3 simulated minutes
   const callout = $("callout");
   const lines = [];
@@ -252,6 +286,7 @@
     if (!c) { callout.hidden = true; return; }
     callout.hidden = false;
     callout.innerHTML = `<b>CONFLICT</b>&middot; ${esc(c.text)}`;
+    placeCallout(c);
     const unit = [...ambulances, ...responders].find((u) => c.resources.includes((u.a || u.r).id));
     const hosp = hospitals.find((hs) => c.resources.includes(hs.h.id));
     const from = unit ? [unit.px, unit.py] : hosp ? [X(hosp.h.x), Y(hosp.h.y)] : null;
@@ -359,7 +394,6 @@
   scrub.max = N;
   $("last").textContent = String(N);
   const meta = B.meta;
-  $("runlabel").innerHTML = `${meta.scenario} &middot; run ${meta.run_number} (seed ${meta.seed})<br>${meta.mode} &middot; ${meta.version}`;
 
   function setPlaying(on) {
     playing = on; last = null;

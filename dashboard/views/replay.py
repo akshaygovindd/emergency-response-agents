@@ -55,7 +55,7 @@ def select_run():
 
 
 st.markdown("""<style>
-header[data-testid="stHeader"]{display:none}
+header[data-testid="stHeader"],[data-testid="stSidebar"],[data-testid="stSidebarCollapsedControl"]{display:none}
 .block-container{padding:0.6rem 1rem 0 1rem;max-width:100%}
 .cc-title{font-size:1.7rem;font-weight:700;line-height:1.15;color:#dbe3ee}
 .cc-sub{font-size:0.95rem;color:#8a9bb0;margin-top:2px}
