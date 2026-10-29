@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-11 with V-11-2 and V-11-4.",
+  "tokens_in": 4153,
+  "tokens_out": 119,
+  "requests": 2,
+  "latency_s": 2.306814458046574,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-2",
+            "V-11-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance and the ALS trauma victim should be moved first with the co-located general patient.",
+        "time_min": 57
+      }
+    ],
+    "invalid": []
+  }
+}

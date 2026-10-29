@@ -1,1 +1,3 @@
-scenario,mode,vs,seeds,mean_diff,diff_95ci,wins/losses/ties,significant
+version,scenario,mode,vs,seeds,mean_diff,diff_95ci,wins/losses/ties,significant
+v1,normal,oracle,negotiation,3,-0.11363636363636365,"[-0.43, +0.20]",0/2/1,False
+v1,surge,oracle,negotiation,3,-0.015202821869488533,"[-0.21, +0.18]",1/2/0,False

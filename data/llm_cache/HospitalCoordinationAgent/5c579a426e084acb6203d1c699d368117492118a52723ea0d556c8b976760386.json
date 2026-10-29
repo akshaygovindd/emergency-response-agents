@@ -1,0 +1,48 @@
+{
+  "output": "Assigned AMB-01 to H-G and AMB-04 to H-T.",
+  "tokens_in": 1982,
+  "tokens_out": 133,
+  "requests": 2,
+  "latency_s": 2.6042410410009325,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t053-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest capable hospital with available trauma and general capacity.",
+        "time_min": 53
+      },
+      {
+        "proposal_id": "t053-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-08-3",
+            "V-08-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Fastest destination and enough general capacity.",
+        "time_min": 53
+      }
+    ],
+    "invalid": []
+  }
+}

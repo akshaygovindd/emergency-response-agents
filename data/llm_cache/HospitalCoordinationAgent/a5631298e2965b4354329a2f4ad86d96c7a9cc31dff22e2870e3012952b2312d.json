@@ -1,0 +1,30 @@
+{
+  "output": "Sent both trauma victims to H-T, the nearest trauma center.",
+  "tokens_in": 1707,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.316587708017323,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-03-1",
+            "V-03-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma center for two critical trauma victims.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

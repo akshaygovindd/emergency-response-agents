@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-03 to H-T.",
+  "tokens_in": 1717,
+  "tokens_out": 75,
+  "requests": 2,
+  "latency_s": 1.9310028330073692,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t109-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-15-2",
+            "V-15-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is fastest and has trauma capacity for the critical ALS trauma patient while also treating general cases.",
+        "time_min": 109
+      }
+    ],
+    "invalid": []
+  }
+}

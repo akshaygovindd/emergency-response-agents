@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-03 and RESCUE-1 to INC-10.",
+  "tokens_in": 2375,
+  "tokens_out": 148,
+  "requests": 2,
+  "latency_s": 2.2754491250379942,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free ALS ambulance for the trauma victims at INC-10.",
+        "time_min": 71
+      },
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue team is free and needed to access the incident.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

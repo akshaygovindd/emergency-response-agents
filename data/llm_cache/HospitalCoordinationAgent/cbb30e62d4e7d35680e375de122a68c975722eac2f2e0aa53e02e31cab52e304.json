@@ -1,0 +1,30 @@
+{
+  "output": "AMB-05 to H-G for both victims.",
+  "tokens_in": 1709,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 1.815731999988202,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t058-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with general treatment capacity for both ALS victims.",
+        "time_min": 58
+      }
+    ],
+    "invalid": []
+  }
+}

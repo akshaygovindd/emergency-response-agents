@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-05 with both general victims to H-G.",
+  "tokens_in": 1723,
+  "tokens_out": 77,
+  "requests": 2,
+  "latency_s": 1.5931289169820957,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-2",
+            "V-12-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital has free general slots and accepts both victims with the shortest safe route among available hospitals.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-02 to H-T for both victims.",
+  "tokens_in": 1714,
+  "tokens_out": 77,
+  "requests": 2,
+  "latency_s": 1.8421655829879455,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t093-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-2",
+            "V-23-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-T can treat both victims and is the preferred trauma-capable hospital for the urgent trauma case.",
+        "time_min": 93
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Chosen H-T for AMB-05\u2019s two trauma victims.",
+  "tokens_in": 1715,
+  "tokens_out": 73,
+  "requests": 2,
+  "latency_s": 1.9439537499565631,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t023-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest trauma-capable hospital with available trauma slots for both ALS trauma victims.",
+        "time_min": 23
+      }
+    ],
+    "invalid": []
+  }
+}

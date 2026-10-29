@@ -1,0 +1,48 @@
+{
+  "output": "Assigned AMB-01 to H-T and AMB-02 to H-B.",
+  "tokens_in": 1978,
+  "tokens_out": 149,
+  "requests": 2,
+  "latency_s": 2.5039057919639163,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t042-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center is closest available for the trauma victims and has a trauma slot open.",
+        "time_min": 42
+      },
+      {
+        "proposal_id": "t042-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn Unit is the only option listed and has burn capacity for the urgent burn victim.",
+        "time_min": 42
+      }
+    ],
+    "invalid": []
+  }
+}

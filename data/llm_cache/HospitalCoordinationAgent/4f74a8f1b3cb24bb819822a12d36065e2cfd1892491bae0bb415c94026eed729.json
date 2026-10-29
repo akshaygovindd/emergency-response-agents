@@ -1,0 +1,46 @@
+{
+  "output": "Assigned V-05-2 to H-T and V-04-2 to H-G.",
+  "tokens_in": 1890,
+  "tokens_out": 143,
+  "requests": 2,
+  "latency_s": 2.1608004579902627,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t052-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-05-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma center is fastest for this urgent trauma victim and is suitable despite no free trauma slot.",
+        "time_min": 52
+      },
+      {
+        "proposal_id": "t052-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-04-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "General hospital is appropriate for this low-urgency general victim and has the most general capacity.",
+        "time_min": 52
+      }
+    ],
+    "invalid": []
+  }
+}

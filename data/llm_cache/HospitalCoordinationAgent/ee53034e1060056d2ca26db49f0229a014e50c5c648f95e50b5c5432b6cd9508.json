@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-02 to H-B.",
+  "tokens_in": 1699,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.2887924159877002,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t051-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-B is the only listed destination and has available burn/general treatment capacity.",
+        "time_min": 51
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-01 for V-05-1 and MED-1 to INC-05.",
+  "tokens_in": 2000,
+  "tokens_out": 147,
+  "requests": 2,
+  "latency_s": 2.807268082979135,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t030-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance is the nearest suitable unit for the urgent burn victim.",
+        "time_min": 30
+      },
+      {
+        "proposal_id": "t030-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can provide first medical contact to the urgency 4 victim quickly.",
+        "time_min": 30
+      }
+    ],
+    "invalid": []
+  }
+}

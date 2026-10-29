@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-07-1 to H-G.",
+  "tokens_in": 1659,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 1.6336940409964882,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t070-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest and has available general treatment slots.",
+        "time_min": 70
+      }
+    ],
+    "invalid": []
+  }
+}

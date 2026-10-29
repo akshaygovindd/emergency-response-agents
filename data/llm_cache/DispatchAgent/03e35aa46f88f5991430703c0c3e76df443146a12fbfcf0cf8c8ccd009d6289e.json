@@ -1,0 +1,42 @@
+{
+  "output": "Proposed FIRE-1 to INC-18 and MED-1 to INC-12.",
+  "tokens_in": 4029,
+  "tokens_out": 123,
+  "requests": 2,
+  "latency_s": 2.1025337079772726,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free fire team to the newest urgent burn incident.",
+        "time_min": 57
+      },
+      {
+        "proposal_id": "t057-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free medical team to the highest-priority ALS trauma incident.",
+        "time_min": 57
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Assigned the burn victim to H-B, the burn specialty with available capacity.",
+  "tokens_in": 1641,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.4374287920072675,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t076-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit is the correct specialty and has available burn treatment slots.",
+        "time_min": 76
+      }
+    ],
+    "invalid": []
+  }
+}

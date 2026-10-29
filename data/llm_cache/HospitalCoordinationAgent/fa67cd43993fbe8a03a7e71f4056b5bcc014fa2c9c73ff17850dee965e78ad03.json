@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-10-1 to H-G.",
+  "tokens_in": 1663,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.739484999969136,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital is the nearest capable option with available general treatment capacity.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

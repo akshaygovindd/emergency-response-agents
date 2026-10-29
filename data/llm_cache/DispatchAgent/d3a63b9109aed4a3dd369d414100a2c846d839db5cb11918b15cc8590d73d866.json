@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-05 for INC-09\u2019s two most urgent victims and MED-1 to INC-09.",
+  "tokens_in": 2460,
+  "tokens_out": 158,
+  "requests": 2,
+  "latency_s": 2.20854949997738,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t046-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the most urgent victims at INC-09.",
+        "time_min": 46
+      },
+      {
+        "proposal_id": "t046-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can help with the highest-urgency incident while fire support is pending.",
+        "time_min": 46
+      }
+    ],
+    "invalid": []
+  }
+}

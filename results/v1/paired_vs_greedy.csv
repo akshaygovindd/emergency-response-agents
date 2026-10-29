@@ -1,10 +1,12 @@
-scenario,mode,vs,seeds,mean_diff,diff_95ci,wins/losses/ties,significant
-normal,naive,greedy,10,-0.2274025974025974,"[-0.36, -0.09]",0/8/2,True
-normal,agents,greedy,10,-0.03484848484848486,"[-0.22, +0.15]",2/3/5,False
-normal,negotiation,greedy,10,-0.00757575757575758,"[-0.18, +0.17]",3/3/4,False
-surge,naive,greedy,10,-0.1124667223614592,"[-0.16, -0.06]",0/10/0,True
-surge,agents,greedy,10,0.001402116402116399,"[-0.04, +0.05]",3/3/4,False
-surge,negotiation,greedy,10,0.011269841269841272,"[-0.04, +0.06]",5/2/3,False
-bottleneck,naive,greedy,5,-0.08677192088956795,"[-0.13, -0.05]",0/5/0,True
-bottleneck,agents,greedy,1,0.0,n/a,0/0/1,False
-bottleneck,negotiation,greedy,1,0.0,n/a,0/0/1,False
+version,scenario,mode,vs,seeds,mean_diff,diff_95ci,wins/losses/ties,significant
+v1,normal,naive,greedy,10,-0.2274025974025974,"[-0.36, -0.09]",0/8/2,True
+v1,normal,agents,greedy,10,-0.03484848484848486,"[-0.22, +0.15]",2/3/5,False
+v1,normal,negotiation,greedy,10,-0.00757575757575758,"[-0.18, +0.17]",3/3/4,False
+v1,normal,oracle,greedy,3,0.022727272727272745,"[-0.52, +0.56]",1/1/1,False
+v1,surge,naive,greedy,10,-0.1124667223614592,"[-0.16, -0.06]",0/10/0,True
+v1,surge,agents,greedy,10,0.001402116402116399,"[-0.04, +0.05]",3/3/4,False
+v1,surge,negotiation,greedy,10,0.011269841269841272,"[-0.04, +0.06]",5/2/3,False
+v1,surge,oracle,greedy,3,-0.04033509700176366,"[-0.37, +0.29]",1/2/0,False
+v1,bottleneck,naive,greedy,5,-0.08677192088956795,"[-0.13, -0.05]",0/5/0,True
+v1,bottleneck,agents,greedy,5,0.04003734827264238,"[-0.07, +0.15]",3/1/1,False
+v1,bottleneck,negotiation,greedy,5,0.04003734827264238,"[-0.07, +0.15]",3/1/1,False

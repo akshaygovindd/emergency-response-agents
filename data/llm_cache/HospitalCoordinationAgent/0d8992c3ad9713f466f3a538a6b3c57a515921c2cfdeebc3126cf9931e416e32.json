@@ -1,0 +1,29 @@
+{
+  "output": "AMB-02 -> H-T.",
+  "tokens_in": 1654,
+  "tokens_out": 54,
+  "requests": 2,
+  "latency_s": 2.1709091250086203,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t095-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with available general treatment slots.",
+        "time_min": 95
+      }
+    ],
+    "invalid": []
+  }
+}

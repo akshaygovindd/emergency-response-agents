@@ -1,0 +1,30 @@
+{
+  "output": "Selected H-G for both victims.",
+  "tokens_in": 1715,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 3.291760209016502,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t020-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-4",
+            "V-02-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital is the closest option and has ample general treatment capacity and beds.",
+        "time_min": 20
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-01 for both incidents: INC-12 with V-12-1/V-12-2 and INC-11 with V-11-1/V-11-2.",
+  "tokens_in": 2101,
+  "tokens_out": 203,
+  "requests": 2,
+  "latency_s": 2.351744708023034,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t081-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is best for the trauma victim and can carry the two most urgent victims from this incident.",
+        "time_min": 81
+      },
+      {
+        "proposal_id": "t081-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "ALS is the closest free unit and both victims can ride together from this incident.",
+        "time_min": 81
+      }
+    ],
+    "invalid": []
+  }
+}

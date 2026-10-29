@@ -1,0 +1,59 @@
+{
+  "output": "Proposed FIRE-1 to INC-02, MED-1 to INC-03, and AMB-02 for V-03-1 at INC-03.",
+  "tokens_in": 2552,
+  "tokens_out": 221,
+  "requests": 2,
+  "latency_s": 2.3837857500184327,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t005-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-02 needs rescue/fire support and the free fire team should go there now.",
+        "time_min": 5
+      },
+      {
+        "proposal_id": "t005-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-03 has an ALS-needed victim with urgency 4, so the free medical team should support it.",
+        "time_min": 5
+      },
+      {
+        "proposal_id": "t005-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the only victim at INC-03, and the victim needs ALS-capable transport.",
+        "time_min": 5
+      }
+    ],
+    "invalid": []
+  }
+}

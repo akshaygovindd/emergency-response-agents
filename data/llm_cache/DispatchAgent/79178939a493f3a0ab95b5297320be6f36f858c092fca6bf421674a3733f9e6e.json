@@ -1,0 +1,42 @@
+{
+  "output": "Proposed FIRE-1 to INC-08 and MED-1 to INC-10.",
+  "tokens_in": 4187,
+  "tokens_out": 124,
+  "requests": 3,
+  "latency_s": 3.1689839999889955,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t034-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-08 needs fire support and FIRE-1 is the only free fire team.",
+        "time_min": 34
+      },
+      {
+        "proposal_id": "t034-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-10 has the most urgent ALS victim and MED-1 is the closest free medical team.",
+        "time_min": 34
+      }
+    ],
+    "invalid": []
+  }
+}

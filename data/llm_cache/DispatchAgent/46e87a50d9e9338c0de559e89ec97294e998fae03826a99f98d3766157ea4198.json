@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-03 for INC-15 and INC-06.",
+  "tokens_in": 5531,
+  "tokens_out": 166,
+  "requests": 2,
+  "latency_s": 2.203799416020047,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t103-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-15-2",
+            "V-15-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit to the most urgent mix at this incident.",
+        "time_min": 103
+      },
+      {
+        "proposal_id": "t103-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "ALS unit suits the burn/general victims needing advanced care.",
+        "time_min": 103
+      }
+    ],
+    "invalid": []
+  }
+}

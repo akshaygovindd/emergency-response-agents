@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-04 to H-G for both victims.",
+  "tokens_in": 1713,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 1.9212893339572474,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-23-1",
+            "V-23-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat both trauma victims and has capacity with available trauma slots.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

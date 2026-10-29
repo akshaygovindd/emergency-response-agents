@@ -1,0 +1,44 @@
+{
+  "output": "Assigned AMB-01 to H-G for both victims.",
+  "tokens_in": 2719,
+  "tokens_out": 128,
+  "requests": 3,
+  "latency_s": 3.376299957977608,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t109-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-25",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-25-3",
+            "V-25-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-G can treat both victims and avoids overfilling the Trauma Center ER.",
+        "time_min": 109
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 109,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-25-3",
+            "V-25-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

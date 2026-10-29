@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-02 for V-02-3/V-02-2 and RESCUE-1 to INC-02.",
+  "tokens_in": 3317,
+  "tokens_out": 145,
+  "requests": 3,
+  "latency_s": 2.9959499580436386,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t005-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-3",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available ambulance for the urgent general victims at this incident.",
+        "time_min": 5
+      },
+      {
+        "proposal_id": "t005-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Incident requires rescue and this free rescue team is available.",
+        "time_min": 5
+      }
+    ],
+    "invalid": []
+  }
+}

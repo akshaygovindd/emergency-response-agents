@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-02 to H-G for both trauma victims.",
+  "tokens_in": 1710,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 1.7574099579942413,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t053-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-3",
+            "V-08-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-G can treat trauma and has free trauma capacity, with acceptable travel time.",
+        "time_min": 53
+      }
+    ],
+    "invalid": []
+  }
+}

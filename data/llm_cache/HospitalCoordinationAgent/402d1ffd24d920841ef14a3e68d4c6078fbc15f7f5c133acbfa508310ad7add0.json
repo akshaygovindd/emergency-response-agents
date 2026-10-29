@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-01 to H-B for both victims.",
+  "tokens_in": 1697,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 2.3540067080175504,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t075-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn Unit matches the urgent burn case and has open burn and general capacity.",
+        "time_min": 75
+      }
+    ],
+    "invalid": []
+  }
+}

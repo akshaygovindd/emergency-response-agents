@@ -1,0 +1,11 @@
+{
+  "output": "Proposed AMB-02 to INC-10 for V-10-1 and V-10-2, and MED-1 to INC-10.",
+  "tokens_in": 1155,
+  "tokens_out": 43,
+  "requests": 1,
+  "latency_s": 0.7906383330118842,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

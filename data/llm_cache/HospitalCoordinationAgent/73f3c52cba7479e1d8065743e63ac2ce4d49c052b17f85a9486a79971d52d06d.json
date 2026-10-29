@@ -1,0 +1,29 @@
+{
+  "output": "AMB-02 to H-T for the trauma victim.",
+  "tokens_in": 1660,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 2.290835166000761,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t015-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Urgent trauma victim should go to the Trauma Center, which has capacity and a free trauma slot.",
+        "time_min": 15
+      }
+    ],
+    "invalid": []
+  }
+}

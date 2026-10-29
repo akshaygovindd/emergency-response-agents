@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-02 to H-B for general care.",
+  "tokens_in": 1663,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.9666051249951124,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t072-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General care slot is available and load is lower than Trauma Center.",
+        "time_min": 72
+      }
+    ],
+    "invalid": []
+  }
+}

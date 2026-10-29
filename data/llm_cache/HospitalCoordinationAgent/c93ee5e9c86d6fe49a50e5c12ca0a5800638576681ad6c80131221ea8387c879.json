@@ -1,0 +1,30 @@
+{
+  "output": "AMB-05 to H-T.",
+  "tokens_in": 1711,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.853873832966201,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t071-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-19",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-19-1",
+            "V-19-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-T treats trauma and general and has the needed trauma slot for the urgent victim.",
+        "time_min": 71
+      }
+    ],
+    "invalid": []
+  }
+}

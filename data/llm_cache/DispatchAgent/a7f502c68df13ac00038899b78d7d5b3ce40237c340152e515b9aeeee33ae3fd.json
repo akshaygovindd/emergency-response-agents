@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-19 with V-19-1 and V-19-2.",
+  "tokens_in": 4112,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 1.8871798330219463,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t059-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-19",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-19-1",
+            "V-19-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ambulance to the highest-need incident with mixed general/trauma victims.",
+        "time_min": 59
+      }
+    ],
+    "invalid": []
+  }
+}

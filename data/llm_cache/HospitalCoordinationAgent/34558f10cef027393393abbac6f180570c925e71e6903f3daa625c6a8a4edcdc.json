@@ -1,0 +1,30 @@
+{
+  "output": "Selected H-B for AMB-02.",
+  "tokens_in": 1696,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.738406374992337,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t103-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-B is the only reachable hospital and has burn/general treatment capacity.",
+        "time_min": 103
+      }
+    ],
+    "invalid": []
+  }
+}

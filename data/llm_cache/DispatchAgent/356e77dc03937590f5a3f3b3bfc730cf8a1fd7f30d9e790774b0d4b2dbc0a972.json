@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-03 to INC-21 for V-21-1 and V-21-2.",
+  "tokens_in": 5567,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 2.040379249956459,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-21-1",
+            "V-21-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance should reach the highest-urgency burn victims needing ALS at a fire incident.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

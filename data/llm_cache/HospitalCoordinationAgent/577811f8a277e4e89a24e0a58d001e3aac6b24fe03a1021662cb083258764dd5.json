@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-03 to H-T for the trauma victim.",
+  "tokens_in": 1647,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.676201583002694,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t104-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest trauma-capable hospital with an available trauma slot.",
+        "time_min": 104
+      }
+    ],
+    "invalid": []
+  }
+}

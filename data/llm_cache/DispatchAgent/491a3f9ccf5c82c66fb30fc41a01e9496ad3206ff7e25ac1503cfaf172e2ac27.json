@@ -1,0 +1,60 @@
+{
+  "output": "Proposed AMB-02 for INC-02 plus FIRE-1 and MED-1.",
+  "tokens_in": 3414,
+  "tokens_out": 198,
+  "requests": 3,
+  "latency_s": 9.375672583002597,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t006-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-4",
+            "V-02-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance for the urgent general victims needing ALS-capable transport.",
+        "time_min": 6
+      },
+      {
+        "proposal_id": "t006-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is needed for the burn incident and is the closest free team.",
+        "time_min": 6
+      },
+      {
+        "proposal_id": "t006-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical team can provide first medical contact quickly for the urgent victims.",
+        "time_min": 6
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-02 to INC-19 for V-19-1.",
+  "tokens_in": 4896,
+  "tokens_out": 98,
+  "requests": 2,
+  "latency_s": 2.3444350410136394,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-19",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-19-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest BLS unit for the most urgent waiting victim.",
+        "time_min": 107
+      }
+    ],
+    "invalid": []
+  }
+}

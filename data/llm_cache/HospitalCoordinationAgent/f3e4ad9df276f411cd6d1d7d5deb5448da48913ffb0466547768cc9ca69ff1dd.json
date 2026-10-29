@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-04 to H-G.",
+  "tokens_in": 1666,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 1.7332852920517325,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-16-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General care needed; H-G is reasonably close and has free general treatment capacity and beds.",
+        "time_min": 107
+      }
+    ],
+    "invalid": []
+  }
+}

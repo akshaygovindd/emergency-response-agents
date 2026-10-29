@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-04 to H-T for both victims.",
+  "tokens_in": 1713,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 2.292113958974369,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t024-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-1",
+            "V-04-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-T is closest and has trauma capability with available slots for both victims.",
+        "time_min": 24
+      }
+    ],
+    "invalid": []
+  }
+}

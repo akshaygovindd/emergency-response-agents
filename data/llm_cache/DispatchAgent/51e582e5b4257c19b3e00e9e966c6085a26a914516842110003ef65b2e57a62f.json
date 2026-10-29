@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-03 for INC-09 to pick up V-09-2.",
+  "tokens_in": 2478,
+  "tokens_out": 92,
+  "requests": 2,
+  "latency_s": 2.192136916972231,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t075-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is best suited for the urgent burn victim and is the closest free ambulance to this incident.",
+        "time_min": 75
+      }
+    ],
+    "invalid": []
+  }
+}

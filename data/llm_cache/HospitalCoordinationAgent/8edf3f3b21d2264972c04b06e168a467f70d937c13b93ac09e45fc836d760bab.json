@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-B for AMB-02 because it\u2019s the closest general-capable hospital with open slots.",
+  "tokens_in": 1715,
+  "tokens_out": 78,
+  "requests": 2,
+  "latency_s": 2.336683458997868,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t010-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-3",
+            "V-02-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest general-capable hospital with available general treatment slots.",
+        "time_min": 10
+      }
+    ],
+    "invalid": []
+  }
+}

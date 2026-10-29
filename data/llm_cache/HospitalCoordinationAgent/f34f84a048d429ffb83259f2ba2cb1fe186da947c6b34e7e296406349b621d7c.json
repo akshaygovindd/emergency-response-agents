@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-02 to H-T for fastest trauma-capable care.",
+  "tokens_in": 1710,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 1.986215041950345,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t049-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest option and the trauma victim is best matched to the trauma center.",
+        "time_min": 49
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "output": "Sent V-14-3 to H-G since H-T was full.",
+  "tokens_in": 2607,
+  "tokens_out": 115,
+  "requests": 3,
+  "latency_s": 2.8755194999976084,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-14-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-T is full, and H-G can treat trauma with capacity available.",
+        "time_min": 96
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 96,
+        "tool": "submit_admission",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

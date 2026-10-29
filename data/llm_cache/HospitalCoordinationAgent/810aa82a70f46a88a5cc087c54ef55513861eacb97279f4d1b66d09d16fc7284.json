@@ -1,0 +1,30 @@
+{
+  "output": "Sent AMB-05 to H-G for both victims.",
+  "tokens_in": 1718,
+  "tokens_out": 77,
+  "requests": 2,
+  "latency_s": 2.251806584012229,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t067-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-2",
+            "V-11-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G can treat both victims and has the best capacity and available slots without overloading the ER.",
+        "time_min": 67
+      }
+    ],
+    "invalid": []
+  }
+}

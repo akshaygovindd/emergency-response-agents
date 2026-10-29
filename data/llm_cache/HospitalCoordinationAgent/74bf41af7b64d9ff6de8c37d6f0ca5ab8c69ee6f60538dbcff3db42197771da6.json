@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-01 to H-G for both trauma patients.",
+  "tokens_in": 1719,
+  "tokens_out": 83,
+  "requests": 2,
+  "latency_s": 1.842002291989047,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-21-4",
+            "V-21-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G is the closest hospital that can treat trauma victims and still has ER capacity and beds.",
+        "time_min": 96
+      }
+    ],
+    "invalid": []
+  }
+}

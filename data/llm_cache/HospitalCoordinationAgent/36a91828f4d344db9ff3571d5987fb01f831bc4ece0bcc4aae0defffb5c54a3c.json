@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-G for AMB-02 because it\u2019s closest and has capacity for both victims.",
+  "tokens_in": 1711,
+  "tokens_out": 82,
+  "requests": 2,
+  "latency_s": 2.2698826669948176,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t097-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "H-G is the closest option and has available general treatment capacity without nearing ER limits.",
+        "time_min": 97
+      }
+    ],
+    "invalid": []
+  }
+}

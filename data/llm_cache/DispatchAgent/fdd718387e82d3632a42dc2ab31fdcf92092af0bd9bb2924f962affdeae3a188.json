@@ -1,0 +1,11 @@
+{
+  "output": "Proposed FIRE-1 to INC-08.",
+  "tokens_in": 917,
+  "tokens_out": 21,
+  "requests": 1,
+  "latency_s": 1.053828041011002,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

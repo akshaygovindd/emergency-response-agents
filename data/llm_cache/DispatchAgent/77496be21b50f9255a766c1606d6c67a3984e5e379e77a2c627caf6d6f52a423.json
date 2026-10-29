@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-03 and RESCUE-1 for INC-06.",
+  "tokens_in": 2072,
+  "tokens_out": 147,
+  "requests": 2,
+  "latency_s": 2.3532989170053042,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t040-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "ALS is the closest suitable ambulance for the only waiting victim at INC-06.",
+        "time_min": 40
+      },
+      {
+        "proposal_id": "t040-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-06 needs rescue and RESCUE-1 is free.",
+        "time_min": 40
+      }
+    ],
+    "invalid": []
+  }
+}

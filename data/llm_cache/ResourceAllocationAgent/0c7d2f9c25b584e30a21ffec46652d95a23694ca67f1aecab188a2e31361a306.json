@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t103-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-03 should go to INC-15: it reaches a urgency-5 victim much faster (4 min vs 21) and that incident has already waited 56 minutes. No unclaimed ambulance alternatives are available for a counterproposal."
+  },
+  "tokens_in": 661,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.738649666949641,
+  "context": null
+}

@@ -1,0 +1,11 @@
+{
+  "output": "Proposed AMB-04 for INC-12 to pick up V-12-3.",
+  "tokens_in": 799,
+  "tokens_out": 30,
+  "requests": 1,
+  "latency_s": 0.7150884579750709,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

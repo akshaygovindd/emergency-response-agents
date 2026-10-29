@@ -1,0 +1,29 @@
+{
+  "output": "AMB-05 routed to H-G for the general ALS victim, balancing capability and capacity.",
+  "tokens_in": 1668,
+  "tokens_out": 71,
+  "requests": 2,
+  "latency_s": 2.563694124983158,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat general ALS patients and has the most available capacity.",
+        "time_min": 57
+      }
+    ],
+    "invalid": []
+  }
+}

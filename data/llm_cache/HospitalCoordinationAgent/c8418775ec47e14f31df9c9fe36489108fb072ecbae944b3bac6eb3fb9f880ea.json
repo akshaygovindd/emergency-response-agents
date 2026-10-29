@@ -1,0 +1,29 @@
+{
+  "output": "Assigned V-03-1 to H-G.",
+  "tokens_in": 1667,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 2.7970597919775173,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t019-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital can treat the victim, has ample ER capacity and free general slots, with acceptable travel time.",
+        "time_min": 19
+      }
+    ],
+    "invalid": []
+  }
+}

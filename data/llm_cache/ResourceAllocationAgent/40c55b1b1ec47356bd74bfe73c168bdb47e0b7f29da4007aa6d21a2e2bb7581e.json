@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t095-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Both incidents are lower urgency, but INC-11 has two waiting victims and the ambulance reaches it slightly faster, so it should get the contested ALS unit. No unclaimed ambulance alternatives are available for the losing proposal."
+  },
+  "tokens_in": 643,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.1212962089921348,
+  "context": null
+}

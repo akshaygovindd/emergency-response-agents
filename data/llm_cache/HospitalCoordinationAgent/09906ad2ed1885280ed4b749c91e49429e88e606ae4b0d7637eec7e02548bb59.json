@@ -1,0 +1,30 @@
+{
+  "output": "Chosen H-T for AMB-04: trauma-capable, closest match for the urgent victim, and within capacity.",
+  "tokens_in": 1713,
+  "tokens_out": 84,
+  "requests": 2,
+  "latency_s": 2.1996110839536414,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t084-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center best matches the urgent trauma victim and has available trauma capacity.",
+        "time_min": 84
+      }
+    ],
+    "invalid": []
+  }
+}

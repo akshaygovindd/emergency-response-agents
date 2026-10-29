@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-12.",
+  "tokens_in": 1547,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 1.8385363750276156,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t104-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-12 needs rescue and RESCUE-1 is free and closest.",
+        "time_min": 104
+      }
+    ],
+    "invalid": []
+  }
+}

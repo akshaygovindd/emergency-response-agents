@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-10 with V-10-1 and V-10-2.",
+  "tokens_in": 2308,
+  "tokens_out": 114,
+  "requests": 2,
+  "latency_s": 1.7648835419677198,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t072-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit to the most urgent mixed medical victims at INC-10.",
+        "time_min": 72
+      }
+    ],
+    "invalid": []
+  }
+}

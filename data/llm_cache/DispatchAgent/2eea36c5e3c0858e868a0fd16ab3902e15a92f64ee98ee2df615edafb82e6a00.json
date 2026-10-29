@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-02 for INC-06 and INC-07.",
+  "tokens_in": 3410,
+  "tokens_out": 175,
+  "requests": 2,
+  "latency_s": 3.1624382499721833,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t040-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free unit to a high-risk burn/general incident needing rapid ALS-capable transport.",
+        "time_min": 40
+      },
+      {
+        "proposal_id": "t040-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free unit to the most urgent trauma/general victims at this rescue incident.",
+        "time_min": 40
+      }
+    ],
+    "invalid": []
+  }
+}

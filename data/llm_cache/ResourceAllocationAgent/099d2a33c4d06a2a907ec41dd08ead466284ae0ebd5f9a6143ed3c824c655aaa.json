@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t084-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-05 should go to INC-12 because it reaches victims sooner (11 min vs 20) and INC-12 is already carrying the more urgent load overall. INC-09 has older victims, but no unclaimed alternative is available to offer."
+  },
+  "tokens_in": 676,
+  "tokens_out": 86,
+  "requests": 1,
+  "latency_s": 1.4256918749888428,
+  "context": null
+}

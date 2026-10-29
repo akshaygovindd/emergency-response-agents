@@ -1,0 +1,30 @@
+{
+  "output": "Chose H-T for AMB-01.",
+  "tokens_in": 1709,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 1.8366944159497507,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t072-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-3",
+            "V-10-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma-capable hospital for the urgent trauma victim, with available capacity and beds.",
+        "time_min": 72
+      }
+    ],
+    "invalid": []
+  }
+}

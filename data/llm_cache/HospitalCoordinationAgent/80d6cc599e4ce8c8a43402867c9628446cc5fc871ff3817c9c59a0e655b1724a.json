@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-05 to H-T for both victims.",
+  "tokens_in": 1719,
+  "tokens_out": 80,
+  "requests": 2,
+  "latency_s": 2.044259249989409,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t081-P03",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-3",
+            "V-10-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma Center best fits the urgent trauma victim and still has trauma capacity; it also treats the accompanying general patient.",
+        "time_min": 81
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Assigned AMB-03 to H-T.",
+  "tokens_in": 1666,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.8259417089866474,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t048-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "H-T treats general patients and has an available general slot with no ER overload.",
+        "time_min": 48
+      }
+    ],
+    "invalid": []
+  }
+}

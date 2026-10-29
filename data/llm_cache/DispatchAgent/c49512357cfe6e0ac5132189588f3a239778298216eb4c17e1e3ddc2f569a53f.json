@@ -1,0 +1,60 @@
+{
+  "output": "Proposed FIRE-1, MED-1, and AMB-02 for INC-07.",
+  "tokens_in": 2261,
+  "tokens_out": 208,
+  "requests": 2,
+  "latency_s": 2.3989137089811265,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t049-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-07 needs rescue support and FIRE-1 is the available fire team.",
+        "time_min": 49
+      },
+      {
+        "proposal_id": "t049-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-07 has multiple urgency 4-5 victims and MED-1 is the closest free medical team.",
+        "time_min": 49
+      },
+      {
+        "proposal_id": "t049-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-4",
+            "V-07-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "AMB-02 is the closest free ambulance and should take the most urgent victims first.",
+        "time_min": 49
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "output": "AMB-05 to H-B for both victims.",
+  "tokens_in": 1698,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 1.83619095798349,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t119-P01",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "H-B is the only listed destination and has burn/general capacity available.",
+        "time_min": 119
+      }
+    ],
+    "invalid": []
+  }
+}

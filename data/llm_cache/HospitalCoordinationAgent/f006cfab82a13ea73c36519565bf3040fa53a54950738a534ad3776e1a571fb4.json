@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-03 to H-B for both burn victims.",
+  "tokens_in": 1692,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 2.0923152919858694,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t047-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn Unit is the matching specialty and has available burn capacity.",
+        "time_min": 47
+      }
+    ],
+    "invalid": []
+  }
+}

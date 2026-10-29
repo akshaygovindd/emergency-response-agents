@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t040-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Both are urgent, but INC-06 has the higher-acuity pair (urgency 4 and 5) and only a slight extra travel time. Sending AMB-02 there should prioritize the most critical victims overall; no unclaimed ambulance is available for a counterproposal."
+  },
+  "tokens_in": 673,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 1.4979247499722987,
+  "context": null
+}

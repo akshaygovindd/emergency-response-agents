@@ -1,0 +1,30 @@
+{
+  "output": "Assigned AMB-03 to H-G for both victims.",
+  "tokens_in": 1721,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 2.960030291986186,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t088-P02",
+        "proposer": "hospital_coordination",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "General Hospital is closest among hospitals that can treat general victims and has free general capacity.",
+        "time_min": 88
+      }
+    ],
+    "invalid": []
+  }
+}

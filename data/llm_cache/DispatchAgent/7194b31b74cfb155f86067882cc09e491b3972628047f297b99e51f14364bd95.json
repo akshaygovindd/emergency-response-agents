@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-14 to take V-14-1 and V-14-2.",
+  "tokens_in": 3830,
+  "tokens_out": 99,
+  "requests": 2,
+  "latency_s": 2.4504036669968627,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t053-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-14-1",
+            "V-14-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest unit to the two highest-urgency general victims at this incident.",
+        "time_min": 53
+      }
+    ],
+    "invalid": []
+  }
+}
