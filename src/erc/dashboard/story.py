@@ -8,11 +8,32 @@ Conflict rows: {id, t, kind, text, incidents, resources, method, stages: [{key, 
 """
 from __future__ import annotations
 
+import re
+
 AGENT_LABELS = {"incident_assessment": "Assessment", "dispatch": "Dispatch", "resource_allocation": "Resource Alloc.",
                 "hospital_coordination": "Hospital", "python": "System"}
 BADGES = {"info": "INFO", "proposal": "PROPOSAL", "counter_proposal": "COUNTER", "accept": "ACCEPT",
           "reject": "REJECT", "commit": "COMMIT", "escalate": "ESCALATE"}
 TYPE_KEYS = {"counter_proposal": "counter"}            # message type -> class key used by the player
+
+
+HOSPITAL_NAMES = {"H-T": "Trauma Center", "H-B": "Burn Unit", "H-G": "General Hospital"}
+TEAM_NAMES = {"FIRE-1": "Fire team", "RESCUE-1": "Rescue team", "MED-1": "Medical team"}
+
+
+def plain_text(text: str) -> str:
+    """Plain wording for people: 'send AMB-03 to INC-01 (V-01-1)' -> 'send Ambulance 3 to Incident 1'.
+
+    Victim lists in brackets are dropped; bare victim lists become a count ('admit 2 patients to Trauma Center').
+    """
+    text = re.sub(r"\s*\(V-[^)]*\)", "", text)
+    text = re.sub(r"V-\d+-\d+(?:, V-\d+-\d+)*",
+                  lambda m: f"{m.group(0).count('V-')} patient{'s' if m.group(0).count('V-') != 1 else ''}", text)
+    text = re.sub(r"AMB-0*(\d+)", r"Ambulance \1", text)
+    text = re.sub(r"INC-0*(\d+)", r"Incident \1", text)
+    for raw, name in {**TEAM_NAMES, **HOSPITAL_NAMES}.items():
+        text = re.sub(rf"\b{re.escape(raw)}\b", name, text)
+    return text.replace("Resource Alloc.", "Resource Allocation")
 
 
 def agent_label(name: str | None) -> str:
@@ -113,7 +134,10 @@ def conflict_chains(events: list[dict]) -> list[dict]:
         stages.append(_counter_stage(counter, outcome))
         stages.append(_outcome_stage(counter, mine, outcome, c))
         stages.append(_executed_stage(counter, accepted, c))
+        for stage in stages:
+            stage["plain"] = plain_text(stage["text"])
         chains.append({"id": c["conflict_id"], "t": c["t"], "kind": c["conflict_type"], "text": conflict_text(c),
+                       "plain": plain_text(conflict_text(c)),
                        "incidents": c["incident_ids"], "resources": [r.partition(":")[2] or r for r in c["resources"]],
                        "method": outcome.get("method"), "stages": stages})
     return chains

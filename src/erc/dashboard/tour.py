@@ -7,6 +7,8 @@ Moment rows: {t, title, caption}
 """
 from __future__ import annotations
 
+from erc.dashboard.story import plain_text
+
 
 
 def tour_moments(events: list[dict], conflicts: list[dict], last_minute: int, final_kpis: dict,
@@ -23,7 +25,7 @@ def _first_incident(events: list[dict]) -> dict | None:
         return None
     n = e["victims"]
     return {"t": e["t"], "title": "First incident",
-            "caption": f"{e['incident_id']} is reported with {n} victim{'s' if n != 1 else ''}; the clock has just started for them."}
+            "caption": f"{plain_text(e['incident_id'])} is reported with {n} patient{'s' if n != 1 else ''}; the clock has just started for them."}
 
 
 def _first_assessment(events: list[dict]) -> dict | None:
@@ -33,14 +35,14 @@ def _first_assessment(events: list[dict]) -> dict | None:
     if e is None or msg is None:
         return None
     return {"t": e["t"], "title": "First assessment",
-            "caption": f"The Assessment agent reads the 911 report for {e['incident_id']} and rates its priority {msg['priority']}."}
+            "caption": f"The Assessment agent reads the 911 report for {plain_text(e['incident_id'])} and rates its priority {msg['priority']}."}
 
 
 def _first_conflict(conflicts: list[dict]) -> dict | None:
     if not conflicts:
         return None
     c = conflicts[0]
-    return {"t": c["t"], "title": "First conflict", "caption": f"Python detects it: {c['text']}."}
+    return {"t": c["t"], "title": "First conflict", "caption": f"The system detects it: {c['plain']}."}
 
 
 def _counter_and_accept(conflicts: list[dict]) -> dict | None:
@@ -50,7 +52,7 @@ def _counter_and_accept(conflicts: list[dict]) -> dict | None:
             replier, verb = outcome["text"].split(" accepts " if outcome["label"] == "Accepted" else " rejects ")[0], \
                 "accepts" if outcome["label"] == "Accepted" else "rejects"
             return {"t": outcome["t"], "title": f"Counter-offer {outcome['label'].lower()}",
-                    "caption": f"{counter['text']}; {replier} {verb} it ({c['id']})."}
+                    "caption": f"{plain_text(counter['text'])}; {replier} {verb} it."}
     return None
 
 
@@ -63,10 +65,10 @@ def _admission_decision(events: list[dict]) -> dict | None:
         return None
     where, victims = pick.get("hospital_id"), ", ".join(pick["victim_ids"])
     if pick["method"] == "accepted":
-        text = f"{pick['hospital_id']} accepts the admission of {victims}."
+        text = plain_text(f"{pick['hospital_id']} accepts the admission of {victims}.")
     else:
-        text = (f"{pick['requested']} could not take {victims}; after {pick['rounds']} round"
-                f"{'s' if pick['rounds'] != 1 else ''} the {pick['method']} outcome sends them to {where}.")
+        text = plain_text(f"{pick['requested']} could not take {victims}; after {pick['rounds']} round"
+                          f"{'s' if pick['rounds'] != 1 else ''} the {pick['method']} outcome sends them to {where}.")
     return {"t": pick["t"], "title": "Hospital admission decision", "caption": text}
 
 

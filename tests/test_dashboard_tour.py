@@ -14,7 +14,7 @@ def test_minimal_run_has_first_incident_and_final_only():
     events = [{"t": 4, "kind": "incident_arrived", "incident_id": "INC-01", "victims": 2, "max_severity": 3}]
     moments = tour_moments(events, [], 120, KPIS, 4)
     assert [m["title"] for m in moments] == ["First incident", "Final outcome"]
-    assert moments[0]["t"] == 4 and "INC-01" in moments[0]["caption"] and "2 victims" in moments[0]["caption"]
+    assert moments[0]["t"] == 4 and "Incident 1" in moments[0]["caption"] and "2 patients" in moments[0]["caption"]
     assert moments[-1]["t"] == 120 and "3 of 4 critical" in moments[-1]["caption"]
 
 
@@ -23,7 +23,7 @@ def test_admission_decision_prefers_a_changed_destination():
                                         "victim_ids": ["V-1"], "requested": "H-T", "hospital_id": hosp, "method": method, "rounds": 2}
     events = [resolved(5, "accepted", "H-T"), resolved(9, "revised", "H-G")]
     moment = next(m for m in tour_moments(events, [], 60, KPIS, 4) if m["title"] == "Hospital admission decision")
-    assert moment["t"] == 9 and "H-T could not take V-1" in moment["caption"] and "H-G" in moment["caption"]
+    assert moment["t"] == 9 and "Trauma Center could not take" in moment["caption"] and "General Hospital" in moment["caption"]
 
 
 def test_moments_are_in_time_order_with_final_last():
@@ -52,3 +52,12 @@ def test_every_saved_run_has_a_tour():
     for run in available_runs():
         tour = export_replay(run.version, run.scenario, run.seed, run.mode)["tour"]
         assert len(tour) >= 2
+
+
+def test_real_tour_captions_use_plain_names_not_internal_ids():
+    log = LOGS_DIR / "v2" / "negotiation" / "normal_seed42_negotiation.jsonl"
+    if not log.exists():
+        pytest.skip("saved v2 run not available")
+    for moment in export_replay("v2", "normal", 42, "negotiation")["tour"]:
+        for raw in ("INC-", "AMB-", "t006-", "V-0", "H-T", "H-G", "H-B"):
+            assert raw not in moment["caption"], (raw, moment)

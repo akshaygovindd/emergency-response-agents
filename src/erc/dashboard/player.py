@@ -44,3 +44,48 @@ def render_compare(left: dict, right: dict, difference: dict | None, player_dir:
     css = (player_dir / "player.css").read_text() + (player_dir / "compare.css").read_text()
     js = (player_dir / "compare.js").read_text()
     return html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__DATA__", _json_for_script(data))
+
+
+# ───────── The redesigned Replay app (dashboard/replay_app) ─────────
+APP_DIR = ROOT / "dashboard" / "replay_app"
+ASSETS_DIR = ROOT / "dashboard" / "assets"
+FONT_FILES = {400: "Inter-Regular.woff2", 500: "Inter-Medium.woff2", 600: "Inter-SemiBold.woff2"}
+ICON_NAMES = ["map", "git-compare", "sliders-horizontal", "chart-column", "messages-square", "play", "pause", "rotate-ccw", "siren",
+              "activity", "users", "clock", "triangle-alert", "hospital", "circle-check", "flag", "chevron-down", "chevron-left",
+              "chevron-right", "brain-circuit", "shield-check", "ambulance", "flame", "heart-pulse", "x"]
+
+
+def fonts_css(assets_dir: Path = ASSETS_DIR) -> str:
+    """@font-face rules with the Inter files embedded, so the app works offline and inside an iframe."""
+    import base64
+    rules = []
+    for weight, name in FONT_FILES.items():
+        data = base64.b64encode((assets_dir / "fonts" / name).read_bytes()).decode()
+        rules.append(f'@font-face {{ font-family: "Inter"; font-weight: {weight}; font-display: block; '
+                     f'src: url(data:font/woff2;base64,{data}) format("woff2"); }}')
+    return "\n".join(rules)
+
+
+def icon_sprite(names: list[str] = ICON_NAMES, assets_dir: Path = ASSETS_DIR) -> str:
+    """One <symbol> per Lucide icon, used as <svg><use href="#i-name"/></svg>."""
+    symbols = []
+    for name in names:
+        svg = (assets_dir / "icons" / f"{name}.svg").read_text()
+        inner = svg.split(">", 2)[2] if svg.startswith("<!--") else svg.split(">", 1)[1]
+        symbols.append(f'<symbol id="i-{name}" viewBox="0 0 24 24">{inner.rsplit("</svg>", 1)[0]}</symbol>')
+    return '<svg width="0" height="0" style="position:absolute" aria-hidden="true">' + "".join(symbols) + "</svg>"
+
+
+def render_replay_app(bundle: dict, catalog: dict, app_dir: Path = APP_DIR, assets_dir: Path = ASSETS_DIR) -> str:
+    """The full-window Replay page as one self-contained HTML document (fonts, icons, data all inlined)."""
+    html = (app_dir / "app.html").read_text()
+    css = (app_dir / "app.css").read_text().replace("/*__FONTS__*/", fonts_css(assets_dir))
+    js = (app_dir / "app.js").read_text()
+    # The data goes in last so nothing inside it can be mistaken for a placeholder.
+    return (html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__SPRITE__", icon_sprite(assets_dir=assets_dir))
+            .replace("__BUNDLE__", _json_for_script(bundle)).replace("__CATALOG__", _json_for_script(catalog)))
+
+
+def app_stamp(app_dir: Path = APP_DIR) -> float:
+    """Changes whenever an app file changes (lets Streamlit's cache notice edits)."""
+    return max(f.stat().st_mtime for f in app_dir.glob("app.*"))

@@ -148,7 +148,7 @@ def pill_label(x: float, y: float, text: str, anchor: str = "middle", tone: str 
 def build_map(b: dict) -> str:
     f = b["frames"][MINUTE]
     where = {h["id"]: (h["x"], h["y"]) for h in b["hospitals"]}
-    where.update({i["id"]: (i["x"], i["y"]) for i in b["incidents"]})
+    where.update({i["id"]: (i["map_x"], i["map_y"]) for i in b["incidents"]})
     layers = [base_map()]
 
     # routes of units that are moving, plus the contested lines
@@ -168,7 +168,7 @@ def build_map(b: dict) -> str:
     # obstacles first (icons, glows, unit chips), so labels can be placed around them
     taken = [box(X(h["x"]), Y(h["y"]), 92, 92) for h in b["hospitals"]]
     incidents = [i for i in b["incidents"] if i["arrival_min"] <= MINUTE]
-    taken += [box(X(i["x"]), Y(i["y"]), 84, 84) for i in incidents]
+    taken += [box(X(i["map_x"]), Y(i["map_y"]), 84, 84) for i in incidents]
     taken += [box(X(r[0]), Y(r[1]), 92 if u.get("als") else 66, 66 if u["id"] == contested["id"] else 30)
               for u, r in list(zip(b["ambulances"], f["a"])) + list(zip(b["responders"], f["r"]))]
     labels = []
@@ -190,7 +190,7 @@ def build_map(b: dict) -> str:
     import math
     victims_by = {i["id"]: [(v, f["v"][k]) for k, v in enumerate(b["victims"]) if v["incident"] == i["id"] and f["v"][k] in TRIAGE] for i in incidents}
     for inc in incidents:
-        px, py = X(inc["x"]), Y(inc["y"])
+        px, py = X(inc["map_x"]), Y(inc["map_y"])
         dots = victims_by[inc["id"]]
         worst = min(code for _, code in dots)
         layers.append(f'<g><title>{esc(inc["id"])}: {len(dots)} patient{"s" if len(dots) != 1 else ""} waiting</title>'
@@ -205,7 +205,7 @@ def build_map(b: dict) -> str:
     left_first = sorted(incidents, key=lambda i: -i["y"])         # the upper incident labels to the left, the lower to the right
     for n, inc in enumerate(left_first):
         spots = [(-62, 0), (62, 0), (0, -48), (0, 48)] if n == 0 else [(62, 0), (-62, 0), (0, 48), (0, -48)]
-        labels.append((X(inc["x"]), Y(inc["y"]), "Incident " + str(int(inc["id"].split("-")[1])), spots, "var(--text-2)"))
+        labels.append((X(inc["map_x"]), Y(inc["map_y"]), "Incident " + str(int(inc["id"].split("-")[1])), spots, "var(--text-2)"))
 
     # units
     for u, row in zip(b["ambulances"], f["a"]):
@@ -277,6 +277,17 @@ def hospital_card(b: dict, i: int) -> str:
             f'<span>{h["doctors"] - doctors} doctors, {h["nurses"] - nurses} nurses free</span></div></div>')
 
 
+def resources_row(b: dict) -> str:
+    r = b["frames"][MINUTE]["res"]
+    amb = "".join(f'<span class="chip" style="--tone:{STATUS_COLOR[s]}"><i></i><b>{r["amb"][s]}</b><span>{label}</span></span>'
+                  for s, label in (("available", "free"), ("en_route", "en route"), ("on_scene", "on scene"), ("transporting", "transporting")))
+    names = {"fire": "Fire", "rescue": "Rescue", "medical": "Medical"}
+    teams = "".join(f'<span class="chip {"busy" if busy else "free"}" style="--tone:{"var(--info)" if busy else "var(--text-3)"}"><i></i>'
+                    f'<span style="color:var(--text)">{names[kind]}</span><span>{"busy" if busy else "free"}</span></span>' for kind, busy in r["teams"])
+    return (f'<div class="res-group"><h4>Ambulances</h4><div class="chips">{amb}</div></div>'
+            f'<div class="res-group"><h4>Response teams</h4><div class="chips">{teams}</div></div>')
+
+
 def timeline(b: dict) -> str:
     rows = [m for m in b["messages"] if m["t"] <= MINUTE and m["type"] not in ("info", "commit")]
     items, executed = [], []
@@ -336,13 +347,13 @@ def build_html() -> str:
     ticks = "".join(f'<i class="tick" style="left:{t / last * 100:.2f}%"></i>' for t in arrivals)
     names = ["layout", "map", "git-compare", "sliders-horizontal", "chart-column", "messages-square", "play", "pause", "rotate-ccw", "siren",
              "activity", "users", "clock", "triangle-alert", "hospital", "circle-check", "flag", "chevron-down", "brain-circuit",
-             "shield-check", "ambulance", "flame"]
+             "shield-check", "ambulance", "flame", "heart-pulse"]
     names = [n for n in names if (ICON_DIR / f"{n}.svg").exists()]
     kpis = (kpi("shield-check", "var(--ok)", "Critical in time", str(k["crit_ok"]), str(k["crit_n"]), f"0% · {k['crit_n']} critical so far",
                 series["crit_ok"], f"{k['crit_ok']} of the {k['crit_n']} critical patients who have arrived were reached within their deadline.")
             + kpi("users", "var(--info)", "Patients reached", str(k["reached"]), str(k["arrived"]), f"of {len(b['victims'])} in this run",
                   series["reached"], f"{k['reached']} of {k['arrived']} patients who have arrived have had first medical contact.")
-            + kpi("triangle-alert", "var(--text-2)", "Expectant", str(k["expectant"]), "", "missed deadline",
+            + kpi("heart-pulse", "var(--text-2)", "Expectant", str(k["expectant"]), "", "missed deadline",
                   series["expectant"], "Critical patients whose deadline passed before anyone reached them.")
             + kpi("git-compare", "var(--warn)", "Conflicts", str(k["conflicts"]), "", f"{k['negotiated']} settled by negotiation",
                   series["conflicts"], "Times two agents wanted the same resource.", span=3)
@@ -350,10 +361,10 @@ def build_html() -> str:
                   series["resp_avg"], "Average minutes from arrival to first medical contact.", span=3))
     return TEMPLATE.format(
         sprite=sprite(names), map_svg=build_map(b), kpis=kpis, hospitals="".join(hospital_card(b, i) for i in range(3)),
-        timeline=timeline(b), stepper=stepper(b), marks=marks, ticks=ticks, last=last, minute=MINUTE,
+        timeline=timeline(b), stepper=stepper(b), resources=resources_row(b), marks=marks, ticks=ticks, last=last, minute=MINUTE,
         pct=MINUTE / last * 100, conflict_text=esc(plain(conflict["text"])), n_conflict=n_total,
         callout_note="Resource Allocation is negotiating a counter-offer.", W=W, H=H,
-        icon_play=icon("play", 20), icon_restart=icon("rotate-ccw", 16), icon_chev=icon("chevron-down", 16),
+        icon_play=icon("play", 20), icon_amb=icon("ambulance", 16), icon_users=icon("users", 16), icon_hosp=icon("hospital", 16), icon_restart=icon("rotate-ccw", 16), icon_chev=icon("chevron-down", 16),
         icon_flag=icon("flag", 16), icon_alert=icon("triangle-alert", 20), icon_activity=icon("activity", 16),
         rail="".join(f'<a class="rail-item{" active" if name == "Replay" else ""}">{icon(ic, 20)}<span>{name}</span></a>'
                      for name, ic in (("Replay", "map"), ("Compare", "git-compare"), ("What-if", "sliders-horizontal"),
@@ -408,8 +419,12 @@ html, body {{ margin: 0; height: 100%; background: var(--bg); color: var(--text)
 /* map */
 #map {{ position: relative; border-radius: 14px; border: 1px solid var(--border); overflow: hidden; background: #0B111C; box-shadow: var(--shadow); min-height: 0; }}
 #map > svg.map {{ position: absolute; inset: 0; width: 100%; height: 100%; }}
-.legend {{ position: absolute; bottom: 112px; left: 24px; display: flex; gap: 16px; padding: 8px 16px; border-radius: 999px; background: rgba(16,22,36,.72); backdrop-filter: blur(12px); border: 1px solid var(--border); font-size: 12.5px; color: var(--text-2); font-weight: 500; }}
-.legend span {{ display: flex; align-items: center; gap: 8px; }}
+.legend {{ position: absolute; bottom: 112px; right: 24px; display: flex; flex-direction: column; gap: 8px; padding: 8px 16px; border-radius: 14px; background: rgba(16,22,36,.72); backdrop-filter: blur(12px); border: 1px solid var(--border); font-size: 12.5px; color: var(--text-2); font-weight: 500; }}
+.legend .row {{ display: flex; gap: 16px; align-items: center; }} .legend .row > b {{ width: 52px; font-weight: 500; color: var(--text-3); font-size: 12px; }}
+.legend span {{ display: flex; align-items: center; gap: 8px; white-space: nowrap; }} .legend em {{ font-style: normal; color: var(--text-2); }} .legend u {{ text-decoration: none; font-size: 9.5px; font-weight: 700; letter-spacing: .06em; color: var(--warn); }}
+.resources {{ display: grid; gap: 8px; padding: 10px 16px; }} .res-group {{ display: flex; align-items: center; gap: 12px; }} .res-group h4 {{ margin: 0; width: 100px; font-size: 12px; font-weight: 500; color: var(--text-3); }}
+.chips {{ display: flex; flex-wrap: wrap; gap: 8px; }} .chip {{ display: inline-flex; align-items: center; gap: 8px; height: 26px; padding: 0 12px 0 10px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--border); font-size: 13px; font-weight: 500; white-space: nowrap; }}
+.chip i {{ width: 8px; height: 8px; border-radius: 50%; background: var(--tone); display: block; }} .chip span {{ color: var(--text-2); font-weight: 400; }} .chip.free {{ opacity: .65; }}
 .legend i {{ width: 10px; height: 10px; border-radius: 50%; display: block; }}
 .callout {{ position: absolute; top: 16px; right: 16px; width: 332px; padding: 16px; border-radius: 14px; background: rgba(16,22,36,.82); backdrop-filter: blur(12px); border: 1px solid rgba(251,146,60,.4); box-shadow: var(--shadow); display: flex; gap: 16px; }}
 .callout .tile {{ width: 40px; height: 40px; border-radius: 12px; background: rgba(251,146,60,.14); color: var(--warn); display: grid; place-items: center; flex: none; }}
@@ -503,7 +518,7 @@ html, body {{ margin: 0; height: 100%; background: var(--bg); color: var(--text)
     <div id="grid">
       <section id="map">
         <svg class="map" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid slice">{map_svg}</svg>
-        <div class="legend"><span><i style="background:var(--triage-immediate)"></i>Immediate</span><span><i style="background:var(--triage-delayed)"></i>Delayed</span><span><i style="background:var(--triage-minor)"></i>Minor</span><span><i style="background:var(--triage-expectant);box-shadow:0 0 0 1.5px #CBD5E1"></i>Expectant</span></div>
+        <div class="legend"><div class="row"><b>Patients</b><span><i style="background:var(--triage-immediate)"></i>Immediate</span><span><i style="background:var(--triage-delayed)"></i>Delayed</span><span><i style="background:var(--triage-minor)"></i>Minor</span><span><i style="background:var(--triage-expectant);box-shadow:0 0 0 1.5px #CBD5E1"></i>Expectant</span></div><div class="row"><b>Units</b><span style="color:var(--info)">{icon_amb}<em>Ambulance</em></span><span style="color:var(--info)">{icon_amb}<em>ALS ambulance</em><u>ALS</u></span><span style="color:var(--info)">{icon_users}<em>Response team</em></span><span>{icon_hosp}<em>Hospital</em></span></div></div>
         <div class="callout"><div class="tile">{icon_alert}</div><div><h3>Conflict at minute {minute}</h3><p>{conflict_text}</p><div class="live"><i></i>Negotiating a counter-offer</div></div></div>
         <div class="playbar">
           <button class="play" title="Play (space)">{icon_play}</button>
@@ -516,6 +531,7 @@ html, body {{ margin: 0; height: 100%; background: var(--bg); color: var(--text)
       </section>
       <aside id="side">
         <div class="kpis">{kpis}</div>
+        <div class="card resources">{resources}</div>
         <div><div class="section-head"><h2>Hospitals</h2><div class="legend-mini"><span><i class="bed occ" style="--tone:var(--text-2);width:10px;height:10px"></i>in use</span><span><i class="bed prom" style="width:10px;height:10px"></i>promised</span><span><i class="bed" style="width:10px;height:10px"></i>free</span></div></div>
           <div class="hosps">{hospitals}</div></div>
         <div class="card feed"><div class="section-head"><h2>Agent activity <span class="sub">newest first</span></h2><div class="seg"><b class="on">All</b><b>Negotiation</b></div></div><div class="timeline">{timeline}</div></div>

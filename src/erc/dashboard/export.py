@@ -14,6 +14,8 @@ Bundle layout (all minutes are integers, positions are km on the 20 x 20 grid):
               k: KPIs, res: ambulances/teams in use, s: [[doctors, nurses] in use per hospital], n: messages so far}
   messages   feed rows (see story.py)        conflicts  negotiation chains (see story.py)
   tour       [{t, title, caption}] bookmarked moments (see tour.py)
+  timeline   plain-language agent activity items (see timeline.py)
+  incidents  also carry map_x, map_y: display position, spread apart from close neighbours (see spread.py)
   trips      [{unit, kind, t0, t1, x0, y0, x1, y1, target}]   straight-line moves, for sub-minute gliding
 """
 from __future__ import annotations
@@ -27,6 +29,8 @@ from erc.dashboard.live import (
 )
 from erc.dashboard.replay import LOGS_DIR, SCENARIOS_DIR, MOVING, Replay, interpolate_track
 from erc.dashboard.story import conflict_chains, feed_messages
+from erc.dashboard.spread import spread_positions
+from erc.dashboard.timeline import timeline_items
 from erc.dashboard.tour import tour_moments
 
 GRID_KM = 20
@@ -204,11 +208,20 @@ def build_bundle(events: list[dict], scenario: dict, meta: dict) -> dict:
                        **totals[h["hospital_id"]]}
                       for h in scenario["hospitals"]],
         "ambulances": ambulances, "responders": responders,
-        "incidents": [{"id": i["incident_id"], "x": i["location"]["x"], "y": i["location"]["y"],
-                       "arrival_min": i["arrival_time_min"]} for i in scenario["incidents"]],
+        "incidents": _incidents(scenario),
         "victims": victims, "frames": frames, "trips": trips, "messages": messages, "conflicts": conflicts,
+        "timeline": timeline_items(messages),
         "tour": tour_moments(events, conflicts, last, frames[-1]["k"], sum(v["severity"] >= 4 for v in victims)),
     }
+
+
+def _incidents(scenario: dict) -> list[dict]:
+    """Incidents with their true position (x, y) and a display position (map_x, map_y) spread apart from close neighbours."""
+    rows = [{"id": i["incident_id"], "x": i["location"]["x"], "y": i["location"]["y"], "arrival_min": i["arrival_time_min"]}
+            for i in scenario["incidents"]]
+    for row, (mx, my) in zip(rows, spread_positions([(r["x"], r["y"]) for r in rows])):
+        row["map_x"], row["map_y"] = mx, my
+    return rows
 
 
 def export_replay(version: str, scenario: str, seed: int, mode: str,
