@@ -219,7 +219,8 @@ def _incidents(scenario: dict) -> list[dict]:
     """Incidents with their true position (x, y) and a display position (map_x, map_y) spread apart from close neighbours."""
     rows = [{"id": i["incident_id"], "x": i["location"]["x"], "y": i["location"]["y"], "arrival_min": i["arrival_time_min"]}
             for i in scenario["incidents"]]
-    for row, (mx, my) in zip(rows, spread_positions([(r["x"], r["y"]) for r in rows])):
+    hospitals = [(h["location"]["x"], h["location"]["y"]) for h in scenario["hospitals"]]
+    for row, (mx, my) in zip(rows, spread_positions([(r["x"], r["y"]) for r in rows], fixed=hospitals)):
         row["map_x"], row["map_y"] = mx, my
     return rows
 

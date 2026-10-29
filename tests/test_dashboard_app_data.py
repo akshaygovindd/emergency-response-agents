@@ -155,3 +155,17 @@ def test_orange_is_reserved_for_conflicts_in_the_replay_app():
     assert 'transporting: "var(--violet)"' in js and '"Moderate": "var(--moderate)"' in js
     assert 'u.pulse.style.display = hot ? "" : "none"' in js                       # the ring is shown only for a unit in a conflict
     assert 'fill: "var(--warn)" }, g); als.textContent' not in js
+
+
+def test_spread_keeps_incidents_off_hospital_icons():
+    hospital = (10.0, 10.0)
+    out = spread_positions([(10.3, 10.2), (4.0, 4.0)], fixed=[hospital])
+    assert math.dist(out[0], hospital) >= 1.85 and out[1] == (4.0, 4.0)
+    assert spread_positions([(10.0, 10.0)], fixed=[hospital])[0] != hospital
+
+
+def test_saved_runs_keep_incidents_clear_of_hospitals():
+    run = next(r for r in __import__("erc.dashboard.replay", fromlist=["x"]).available_runs() if r.mode == "negotiation")
+    b = export_replay(run.version, run.scenario, run.seed, run.mode)
+    for i in b["incidents"]:
+        assert all(math.dist((i["map_x"], i["map_y"]), (h["x"], h["y"])) >= 1.7 for h in b["hospitals"])

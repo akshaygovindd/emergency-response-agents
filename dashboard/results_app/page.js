@@ -49,7 +49,7 @@
             v = { ...v, lo: Math.max(0, v.lo), hi: Math.min(yMax, v.hi) };                  // a rate cannot go below 0 or above 100%
             el("line", { x1: mx, x2: mx, y1: y(v.lo), y2: y(v.hi), stroke: "#E6EAF2", "stroke-width": 1.4, "stroke-linecap": "round", opacity: 0.85 }, hit);
             [v.lo, v.hi].forEach((e) => el("line", { x1: mx - 4, x2: mx + 4, y1: y(e), y2: y(e), stroke: "#E6EAF2", "stroke-width": 1.4, "stroke-linecap": "round", opacity: 0.85 }, hit));
-          } else txt(hit, fmt(v.v), { x: bx + bw / 2, y: by - 6, "text-anchor": "middle", class: "val" });
+          } else txt(hit, fmt(v.v), { x: bx + bw / 2, y: by - 6 - (k % 2) * 15, "text-anchor": "middle", class: "val" });
         });
       });
     });

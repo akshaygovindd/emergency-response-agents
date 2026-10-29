@@ -8,14 +8,18 @@ from __future__ import annotations
 import math
 
 MIN_SEPARATION_KM = 1.9          # glow radius is about 0.9 km on the map
-MAX_SHIFT_KM = 1.3               # a marker never moves further than this from its true place
+MAX_SHIFT_KM = 2.0               # a marker never moves further than this from its true place
+HOSPITAL_CLEARANCE_KM = 1.9      # an incident keeps this far from a hospital icon (tile plus glow)
 GRID_KM = 20.0
 EDGE_KM = 0.8                    # markers stay this far inside the grid edge so glows are not cut off
 
 
 def spread_positions(points: list[tuple[float, float]], min_km: float = MIN_SEPARATION_KM,
-                     max_shift_km: float = MAX_SHIFT_KM, iterations: int = 60) -> list[tuple[float, float]]:
-    """Push close pairs apart (equal and opposite) until every pair is min_km apart, or the shift cap is reached."""
+                     max_shift_km: float = MAX_SHIFT_KM, iterations: int = 60,
+                     fixed: list[tuple[float, float]] = (), fixed_km: float = HOSPITAL_CLEARANCE_KM) -> list[tuple[float, float]]:
+    """Push close pairs apart (equal and opposite) until every pair is min_km apart, or the shift cap is reached.
+
+    fixed: positions that never move (hospitals); a point closer than fixed_km to one is pushed away from it."""
     pos = [list(p) for p in points]
     for _ in range(iterations):
         moved = False
@@ -32,6 +36,14 @@ def spread_positions(points: list[tuple[float, float]], min_km: float = MIN_SEPA
                 pos[i][0] -= ux * push; pos[i][1] -= uy * push
                 pos[j][0] += ux * push; pos[j][1] += uy * push
                 moved = True
+        for k in range(len(pos)):
+            for fx, fy in fixed:
+                dx, dy = pos[k][0] - fx, pos[k][1] - fy
+                d = math.hypot(dx, dy)
+                if d < fixed_km - 1e-6:
+                    ux, uy = (dx / d, dy / d) if d > 1e-9 else (1.0, 0.0)
+                    pos[k][0] = fx + ux * fixed_km; pos[k][1] = fy + uy * fixed_km
+                    moved = True
         for k, (x, y) in enumerate(pos):                      # cap the distance from the true place, stay on the grid
             tx, ty = points[k]
             shift = math.hypot(x - tx, y - ty)
