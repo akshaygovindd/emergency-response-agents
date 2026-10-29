@@ -55,7 +55,7 @@ human approval step, more seeds.
 |---|---|---|---|
 | **0** | 0.5 | Check Canvas / email Prof. Das for the **rubric**; map items to this plan | Rubric mapped |
 | **1** | 8 | **v2 build:** design, implement, tests, dev-seed check (bottleneck 42, normal 42), regression on baselines, freeze `v2-frozen`, push | Tag pushed; tests green |
-| **2** | 1 + background | **Start v2 reruns** (normal, bottleneck, surge, oracle; ~5M tokens over 2 days, or pay ~$2-4 to finish faster) | Runs progressing |
+| **2** | 1 + background | **Start v2 reruns** (normal, bottleneck, surge; agents + negotiation only, no oracle: v1 already covers the information ablation; ~5M tokens over 2 days, or pay ~$2-4 to finish faster) | Runs progressing |
 | **3** | 12 | **Animated player:** export bundle + tests, map + movement, incidents + triage, KPIs + hospitals + feed, conflicts + auto-pause + strip, styling, offline assets | Golden run plays smoothly |
 | **4** | 5 | Story mode, what-if panel, compare, results, negotiation explorer pages | All pages work |
 | **5** | 5 | Analysis: divergence, per-conflict, triage breakdown, contention + map, failure analysis, RQ1-RQ4, v1 vs v2 | Tables and charts final |
@@ -65,7 +65,7 @@ human approval step, more seeds.
 | | **40** | | |
 
 ## Checkpoints
-- **End of session 1:** if v2 is not frozen, drop it and finish on v1 (normal + surge v1 complete; run v1 bottleneck + oracle instead).
+- **End of session 1:** if v2 is not frozen, drop it and finish on v1 (normal + surge v1 complete; v1 bottleneck and oracle runs are being completed as v1).
 - **Mid session 3:** if the JS player is not playing a run smoothly, fall back to the Streamlit + Plotly redesign (milestone 2 prompt).
 - **24 hours before deadline:** feature freeze. Only fixes, slides, video.
 

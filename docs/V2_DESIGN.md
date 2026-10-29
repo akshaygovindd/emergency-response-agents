@@ -1,6 +1,6 @@
 # v2 design: hospital admission negotiation
 
-Status: **proposal, awaiting approval.** No code, logs, results, or API calls yet.
+Status: **approved** (with the conditions in section 13). No code, logs, results, or API calls yet.
 
 ## 0. What v1 does today (as read from the code)
 
@@ -64,7 +64,7 @@ Unchanged steps are marked `=`.
    PROPOSAL `dispatch -> hospital_coordination`, `negotiation_id = ADM-<round>-<n>`, `round = 1`.
 4. **NEW: Hospital review** (the "admission negotiation", per request, up to 3 rounds):
    - *agents mode:* fixed rule (section 5), one pass, no counters, no rounds.
-   - *negotiation / oracle:* the **HospitalReviewer** (LLM, one call for all pending requests) returns
+   - *negotiation:* the **HospitalReviewer** (LLM, one call for all pending requests) returns
      one response per request: ACCEPT, REJECT (+reason), or COUNTER (+ another hospital id for the
      whole load).
    - Python applies responses **in order against a running ledger** of promised beds, so two
@@ -78,7 +78,7 @@ Unchanged steps are marked `=`.
    `accept_counter`, `request_other` (hospital id; becomes a new PROPOSAL, `round = n`), or
    `escalate`. Accepting a counter logs ACCEPT `dispatch -> hospital_coordination`. The Hospital
    reviewer then answers the new requests (back to step 4 with `round = n`).
-6. **NEW: RA arbitration** (negotiation/oracle only). A request still unresolved after round 3 is
+6. **NEW: RA arbitration** (negotiation only). A request still unresolved after round 3 is
    escalated (ESCALATE `dispatch -> resource_allocation`). One RA call per round (batched) sees the
    request history and hospital states and picks one feasible hospital or `none`. Result logged as
    ACCEPT/REJECT `resource_allocation -> dispatch`, `round = 3`.
@@ -140,8 +140,7 @@ incapable`). Redirects are not counters (`countered = 0`). The only difference b
   victims are waiting who can reach this hospital sooner than any other. Never reject when no other
   capable hospital has room." Input: request, per hospital ER occupancy, promised (en-route) patients,
   free beds, free treatment slots by care type, assessed critical victims still waiting with
-  estimated minutes to each hospital. **Never** deadlines, true severities (except oracle mode, which
-  already supplies true assessments as v1 does), or future incidents.
+  estimated minutes to each hospital. **Never** deadlines, ground truth, or future incidents.
 - **DispatchRevisionAgent:** "Your request was rejected or countered. Accept the counter if it still
   gets these victims timely care, or request another hospital, or escalate."
 - **AdmissionArbiter (RA):** "Pick one feasible hospital for each stalled request to maximise critical
@@ -186,12 +185,12 @@ about 55k; negotiation adds only about 1k over agents.
 
 - **agents mode:** replaces one tool-using Hospital call per round with one tool-using
   DispatchDestination call of similar size. Expect roughly **+0-10%**.
-- **negotiation / oracle:** adds one HospitalReviewer call per round that has requests (about 1-2k
+- **negotiation:** adds one HospitalReviewer call per round that has requests (about 1-2k
   tokens each, most rounds), plus revision/arbitration calls only on REJECT/COUNTER. Expect roughly
   **+25-45%** per run (normal about 110-125k, surge about 150-170k, bottleneck about 70-80k).
 - Cache reuse: assessment and ambulance-proposal calls match v1 cache entries until a run's state
   diverges from v1's, so some fresh-token savings are possible but not counted on.
-- Full v2 grid (about 3 scenarios x seeds, 2 agent modes, plus oracle): on the order of **6-8M
+- Full v2 grid (about 3 scenarios x seeds, 2 agent modes, no oracle): on the order of **6-8M
   tokens**, more than the ~5M in PLAN.md. Re-estimate after the dev seeds; the checkpoint to drop
   scope stays as in PLAN.md.
 
@@ -224,7 +223,7 @@ New `tests/test_admission.py` using `monkeypatch` on the `ask_*` helpers and `LL
   time, and fallback guarantees a destination whenever one exists. Residual risk is a worse choice,
   not a stranded patient. Measured on the dev seeds before any full run.
 - **Hospital sees only assessments.** If the Assessment Agent under-rates a victim, the reviewer
-  protects the wrong beds. This is a real limitation and also what the oracle ablation measures.
+  protects the wrong beds. This is a real limitation; the v1 oracle ablation measures its size.
 - **Token cost** grows (section 9); the daily allowance (~2.5M) means multi-day runs.
 - **Cache keys:** new agents mean no cache reuse for them; reruns are free only after the first run.
 - **v1 comparability:** v1 has no admission negotiation; v1 vs v2 differences mix "Dispatch proposes
@@ -240,3 +239,13 @@ New `tests/test_admission.py` using `monkeypatch` on the `ask_*` helpers and `LL
 Implement per section 7, tests per section 10, `pytest -q` green, a free offline check that v2
 baselines equal v1 baselines, commit and push, then **ask before** the dev-seed check (v2 negotiation
 on bottleneck 42 and normal 42), which uses OpenAI tokens.
+
+## 13. Approval conditions (recorded)
+
+1. **Four agents only.** Every logged message and `llm_call` uses the existing agent names. The new
+   internal helpers are implementation details: destination proposals and revisions are sent as
+   `dispatch`, hospital reviews as `hospital_coordination`, arbitration as `resource_allocation`.
+2. **No oracle in v2.** The v2 grid is agents and negotiation on normal, surge, and bottleneck. The
+   information ablation is covered by v1. The oracle path stays in the code unchanged for v1.
+3. **Short prompts.** New prompts stay brief. Measured fresh tokens per run on the dev seeds are
+   reported before any full rerun.
