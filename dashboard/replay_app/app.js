@@ -13,8 +13,8 @@
   const ico = (n, s = 16, extra = "") => `<svg class="i ${extra}" width="${s}" height="${s}"><use href="#i-${n}"/></svg>`;
 
   const TRIAGE = { 1: "var(--triage-immediate)", 2: "var(--triage-delayed)", 3: "var(--triage-minor)", 4: "var(--triage-expectant)", 5: "var(--triage-reached)" };
-  const STATUS_COLOR = { available: "var(--text-3)", en_route: "var(--info)", on_scene: "var(--ok)", transporting: "var(--warn)" };
-  const HOSPITAL_COLOR = { "Stable": "var(--ok)", "Moderate": "var(--warn)", "Near capacity": "var(--danger)" };
+  const STATUS_COLOR = { available: "var(--text-3)", en_route: "var(--info)", on_scene: "var(--ok)", transporting: "var(--violet)" };
+  const HOSPITAL_COLOR = { "Stable": "var(--ok)", "Moderate": "var(--moderate)", "Near capacity": "var(--danger)" };
   const TYPE_COLOR = { proposal: "var(--accent)", counter: "var(--warn)", accept: "var(--ok)", reject: "var(--danger)", conflict: "var(--warn)",
     executed: "var(--violet)", info: "var(--text-3)", escalate: "var(--warn)" };
   const STORY = new Set(["conflict", "counter", "accept", "reject", "escalate", "executed"]);
@@ -134,6 +134,8 @@
     const S = Math.min((H - bottom - top) / KM, (W - 80) / KM);
     return { W, H, S, X0: (W - KM * S) / 2, bottom, X: (x) => (W - KM * S) / 2 + x * S, Y: (y) => H - bottom - y * S };
   }
+  const DOCK_CLUSTER = [[-50, -16], [50, 16], [0, 46], [0, -46], [-56, 36], [56, -36]];
+  const DOCK_INC = [[0, 66], [-74, 18], [74, 18], [0, -66], [-60, -52], [60, -52], [-60, 66], [60, 66]];
   const DOCK = [[70, 20], [-70, 20], [0, 70], [0, -70], [84, -34], [-84, -34], [58, 70], [-58, 70]];
   const rectAt = (cx, cy, w, h) => ({ x0: cx - w / 2, y0: cy - h / 2, x1: cx + w / 2, y1: cy + h / 2 });
   const overlap = (a, b) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
@@ -197,7 +199,7 @@
       const ic = el("svg", { class: "i", x: -w / 2 + 7, y: -7, width: 14, height: 14 }, g); el("use", { href: "#i-ambulance" }, ic);
       const t = el("text", { x: -w / 2 + 25, y: 4, "font-size": 12, "font-weight": 600, fill: "#E6EAF2" }, g);
       t.textContent = "A" + parseInt(a.id.split("-")[1], 10);
-      if (a.als) { const als = el("text", { x: w / 2 - 24, y: 3.5, "font-size": 9.5, "font-weight": 700, "letter-spacing": ".06em", fill: "var(--warn)" }, g); als.textContent = "ALS"; }
+      if (a.als) { const als = el("text", { x: w / 2 - 24, y: 3.5, "font-size": 9.5, "font-weight": 700, "letter-spacing": ".06em", fill: "var(--accent-hover)" }, g); als.textContent = "ALS"; }
       const route = el("line", { stroke: "var(--info)", "stroke-opacity": 0.55, "stroke-width": 1.6, "stroke-dasharray": "3 7", "stroke-linecap": "round", class: "route", opacity: 0 }, layers.routes);
       return { a, idx, g, pulse, chip, ic, w, route, px: 0, py: 0, angle: 0 };
     });
@@ -267,10 +269,12 @@
         c.setAttribute("stroke", code === 4 ? "#CBD5E1" : "#0A0E17");
       });
       is.resolved = arrived && open === 0;
+      const lastContact = Math.max(-1, ...is.dots.map(({ v }) => (v.contact_min === null ? -1 : v.contact_min)));
+      const gone = is.resolved ? clamp(1 - (t - lastContact) / FADE_MIN, 0, 1) : 1;            // a resolved incident fades out completely
       const color = TRIAGE[worst === 9 ? 5 : worst];
       [is.g1, is.g2].forEach((c) => c.setAttribute("fill", worst === 4 ? "#CBD5E1" : color));
       is.ring.setAttribute("stroke", color);
-      is.g.setAttribute("opacity", arrived ? (open ? 1 : 0.16) : 0);
+      is.g.setAttribute("opacity", arrived ? (open ? 1 : gone) : 0);
       is.g.setAttribute("data-tip", `${incName(is.inc.id)}|${is.inc.id} - ${open} patient${open === 1 ? "" : "s"} waiting`);
     });
 
@@ -286,6 +290,27 @@
         dock.set(u, DOCK[k % DOCK.length].map((v) => v * wt));
       });
     });
+    incidents.filter((is) => m >= is.inc.arrival_min && !is.resolved).forEach((is) => {   // units at an incident fan out around its marker
+      const dist = (u) => Math.hypot(posOf.get(u).x - is.inc.x, posOf.get(u).y - is.inc.y);
+      const shift = [G.X(is.inc.map_x) - G.X(is.inc.x), G.Y(is.inc.map_y) - G.Y(is.inc.y)];      // from the true spot to the displayed marker
+      everyone.filter((u) => !dock.has(u) && dist(u) < 0.95).sort((p, q) => (p.a ? p.a.id : p.r.id).localeCompare(q.a ? q.a.id : q.r.id)).forEach((u, k) => {
+        const wt = clamp((0.95 - dist(u)) / 0.4, 0, 1);
+        dock.set(u, [shift[0] + DOCK_INC[k % DOCK_INC.length][0], shift[1] + DOCK_INC[k % DOCK_INC.length][1]].map((v) => v * wt));
+      });
+    });
+    const idOf = (u) => (u.a ? u.a.id : u.r.id);                                    // any other units on top of each other spread apart too
+    const loose = everyone.filter((u) => !dock.has(u)).sort((p, q) => idOf(p).localeCompare(idOf(q))), seen = new Set();
+    loose.forEach((u) => {
+      if (seen.has(u)) return;
+      const p = posOf.get(u), grp = loose.filter((v) => !seen.has(v) && Math.hypot(posOf.get(v).x - p.x, posOf.get(v).y - p.y) < 0.9);
+      if (grp.length < 2) return;
+      grp.forEach((v) => seen.add(v));
+      const cx = grp.reduce((a, v) => a + posOf.get(v).x, 0) / grp.length, cy = grp.reduce((a, v) => a + posOf.get(v).y, 0) / grp.length;
+      grp.forEach((v, k) => {
+        const pv = posOf.get(v), wt = clamp((0.9 - Math.hypot(pv.x - cx, pv.y - cy)) / 0.4, 0, 1), slot = DOCK_CLUSTER[k % DOCK_CLUSTER.length];
+        dock.set(v, [(G.X(cx) - G.X(pv.x) + slot[0]) * wt, (G.Y(cy) - G.Y(pv.y) + slot[1]) * wt]);
+      });
+    });
     const placeUnit = (u, pos, w, h) => {
       const off = dock.get(u) || [0, 0];
       u.px = G.X(pos.x) + off[0]; u.py = G.Y(pos.y) + off[1];
@@ -299,13 +324,14 @@
       placeUnit(u, pos, u.w + 24, hot ? 66 : 30);
       const color = STATUS_COLOR[row[2]] || STATUS_COLOR.available;
       u.chip.setAttribute("stroke", color); u.ic.style.color = color;
-      u.pulse.setAttribute("opacity", hot ? 1 : 0);
+      u.pulse.style.display = hot ? "" : "none";                                // orange rings are only for units in an active conflict
+      u.chip.setAttribute("stroke", hot ? "var(--warn)" : color);
       u.g.setAttribute("opacity", row[2] === "available" ? 0.8 : 1);
       u.g.setAttribute("data-tip", `${unitName(u.a.id)}|${u.a.id} - ${u.a.als ? "advanced" : "basic"} life support|${row[2].replace("_", " ")}` + (row[3] ? ` - ${row[3]}` : "") + (row[4] ? `|${row[4]} patient${row[4] > 1 ? "s" : ""} on board` : ""));
       const target = row[3] && mapPos(row[3]);
       if (row[2] === "en_route" && target || row[2] === "transporting" && target) {
         u.route.setAttribute("x1", u.px); u.route.setAttribute("y1", u.py); u.route.setAttribute("x2", G.X(target[0])); u.route.setAttribute("y2", G.Y(target[1]));
-        u.route.setAttribute("stroke", row[2] === "transporting" ? "var(--warn)" : "var(--info)"); u.route.setAttribute("opacity", 1);
+        u.route.setAttribute("stroke", row[2] === "transporting" ? "var(--violet)" : "var(--info)"); u.route.setAttribute("opacity", 1);
       } else u.route.setAttribute("opacity", 0);
       live[u.a.id] = [u.px, u.py];
     });

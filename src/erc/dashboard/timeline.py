@@ -45,6 +45,37 @@ def _item(row: dict, who: str) -> dict:
             "tip": f"{row['id']} - {row['why']}" if row["why"] else row["id"]}
 
 
+def _count(text: str) -> int:
+    return text.count("V-")
+
+
+def _join_and(names: list[str]) -> str:
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def executed_sentence(group: list[dict]) -> str:
+    """'Dispatched Ambulance 3 and Ambulance 5 · admitted 3 patients': dispatches and admissions kept apart."""
+    units, admitted, diverted = [], 0, 0
+    for r in group:
+        text = r["text"]
+        if text.startswith("sent "):
+            units.append(plain_text(text.removeprefix("sent ").split(" to ")[0]))
+        elif text.startswith("admitted "):
+            admitted += _count(text)
+        elif text.startswith("diverted "):
+            diverted += _count(text)
+        else:
+            units.append(plain_text(text))
+    parts = []
+    if units:
+        parts.append("Dispatched " + _join_and(units))
+    for verb, n in (("admitted", admitted), ("diverted", diverted)):
+        if n:
+            parts.append(f"{verb} {n} patient{'s' if n != 1 else ''}")
+    sentence = " · ".join(parts)
+    return sentence[0].upper() + sentence[1:]
+
+
 def timeline_items(rows: list[dict]) -> list[dict]:
     items: list[dict] = []
     group: list[dict] = []
@@ -52,10 +83,8 @@ def timeline_items(rows: list[dict]) -> list[dict]:
     def flush() -> None:
         if not group:
             return
-        units = [plain_text(r["text"].removeprefix("sent ").split(" to ")[0]) for r in group]
         items.append({"id": group[0]["id"], "a": group[0]["i"], "b": group[-1]["i"], "t": group[0]["t"], "who": "System",
-                      "icon": ICON["System"], "type": "executed", "tag": TAGS["executed"],
-                      "text": (f"Sent {len(group)} units: " + ", ".join(units)) if len(group) > 1 else f"Sent {units[0]}",
+                      "icon": ICON["System"], "type": "executed", "tag": TAGS["executed"], "text": executed_sentence(group),
                       "tip": "; ".join(f"{r['id']} - {plain_text(r['text'])}" for r in group)})
         group.clear()
 
@@ -63,6 +92,8 @@ def timeline_items(rows: list[dict]) -> list[dict]:
         if row["type"] in SKIPPED:
             continue
         if row["type"] == "executed":
+            if group and group[0]["t"] != row["t"]:                  # only lines from the same minute belong together
+                flush()
             group.append(row)
             continue
         flush()

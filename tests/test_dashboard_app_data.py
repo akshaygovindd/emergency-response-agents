@@ -35,7 +35,7 @@ def test_timeline_groups_executed_lines_and_skips_commits():
             row(2, "executed", "sent AMB-05 to INC-02 (V-02-3)", "System"), row(3, "executed", "sent RESCUE-1 to INC-02", "System"),
             row(4, "reject", "send AMB-01 to INC-01 (V-01-1)", "Resource Alloc.")]
     items = timeline_items(rows)
-    assert [i["text"] for i in items] == ["Proposed to send Ambulance 5 to Incident 2", "Sent 2 units: Ambulance 5, Rescue team",
+    assert [i["text"] for i in items] == ["Proposed to send Ambulance 5 to Incident 2", "Dispatched Ambulance 5 and Rescue team",
                                           "Declined: Ambulance 1 to Incident 1"]
     group = items[1]
     assert (group["a"], group["b"]) == (2, 3) and group["who"] == "System" and "t006-M0002" in group["tip"]
@@ -132,3 +132,26 @@ def test_app_has_resources_row_and_unit_legend():
     for needle in ("Ambulances", "Response teams", '["transporting", "transporting"]', '"on_scene", "on scene"', "ALS ambulance" if False else "ALS",
                    'ico("ambulance", 16)', 'ico("users", 16)', 'ico("hospital", 16)', "Response team"):
         assert needle in js, needle
+
+
+def test_executed_lines_are_grouped_in_plain_words_without_mixed_lists():
+    rows = [row(0, "executed", "sent AMB-03 to INC-01 (V-01-1)", "System"), row(1, "executed", "sent AMB-05 to INC-02", "System"),
+            row(2, "executed", "admitted V-04-1, V-04-3 to H-T", "System"), row(3, "executed", "admitted V-05-1 to H-G", "System")]
+    (item,) = timeline_items(rows)
+    assert item["text"] == "Dispatched Ambulance 3 and Ambulance 5 · admitted 3 patients"
+    assert (item["a"], item["b"]) == (0, 3) and "t006-M0002" in item["tip"]
+    (only_admit,) = timeline_items([row(0, "executed", "admitted V-04-1 to H-T", "System")])
+    assert only_admit["text"] == "Admitted 1 patient"
+
+
+def test_executed_lines_from_different_minutes_stay_separate():
+    a, b = row(0, "executed", "sent AMB-01 to INC-01", "System"), row(1, "executed", "sent AMB-02 to INC-02", "System")
+    b["t"] = 9
+    assert [i["text"] for i in timeline_items([a, b])] == ["Dispatched Ambulance 1", "Dispatched Ambulance 2"]
+
+
+def test_orange_is_reserved_for_conflicts_in_the_replay_app():
+    js = (Path(__file__).resolve().parents[1] / "dashboard" / "replay_app" / "app.js").read_text()
+    assert 'transporting: "var(--violet)"' in js and '"Moderate": "var(--moderate)"' in js
+    assert 'u.pulse.style.display = hot ? "" : "none"' in js                       # the ring is shown only for a unit in a conflict
+    assert 'fill: "var(--warn)" }, g); als.textContent' not in js
