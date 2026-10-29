@@ -55,7 +55,6 @@ button.primary:hover { background: #2e6190; }
 #mapcol.wide #legend .item { gap: 8px; }
 #mapwrap { position: relative; flex: none; width: 100%; aspect-ratio: 1 / 1; }
 #map { width: 100%; height: 100%; display: block; }
-#callout.bottom { top: auto; bottom: 44px; }
 #callout { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); max-width: 98%; white-space: nowrap; padding: 8px 16px;
   background: rgba(60, 20, 22, .94); border: 1.5px solid var(--conflict); border-radius: 10px; color: #ffe3e0;
   font-size: 16px; font-weight: 600; letter-spacing: .01em; box-shadow: 0 4px 18px rgba(0,0,0,.45); pointer-events: none; text-align: center; }

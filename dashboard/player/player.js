@@ -267,15 +267,31 @@
 
   // ───────── Conflict callout on the map ─────────
   // The callout sits on the top or bottom edge, whichever leaves the involved incidents and unit clear.
-  function placeCallout(c) {
-    const k = W / $("mapwrap").clientWidth, w = callout.offsetWidth * k / 2, h = callout.offsetHeight * k;
+  // The callout goes where it covers the least: bottom or top edge first, then the four corners. Involved incidents and
+  // the contested unit count most; hospital rings and labels, other units and other incidents count too.
+  function placeCallout(c, m) {
+    const k = W / $("mapwrap").clientWidth, w = callout.offsetWidth * k, h = callout.offsetHeight * k, edge = 8 * k, low = 44 * k;
+    const involved = c.incidents.map((id) => where[id]).filter(Boolean).map((a) => rectAt(X(a[0]), Y(a[1]), 70, 70));
     const unit = [...ambulances, ...responders].find((u) => c.resources.includes((u.a || u.r).id));
-    const pts = c.incidents.map((id) => where[id]).filter(Boolean).map((a) => [X(a[0]), Y(a[1])]);
-    if (unit) pts.push([unit.px, unit.py]);
-    const pad = 34, cx = W / 2;
-    const zones = { top: [8 * k, 8 * k + h], bottom: [W - 44 * k - h, W - 44 * k] };
-    const hits = (z) => pts.filter(([x, y]) => x > cx - w - pad && x < cx + w + pad && y > z[0] - pad && y < z[1] + pad).length;
-    callout.classList.toggle("bottom", hits(zones.bottom) < hits(zones.top));
+    if (unit) involved.push(rectAt(unit.px, unit.py, 60, 50));
+    const others = [...hospitals.flatMap((hs) => [...hs.box, rectAt(X(hs.h.x), Y(hs.h.y), 84, 84)]),
+      ...[...ambulances, ...responders].map((u) => rectAt(u.px, u.py, 44, 30)),
+      ...incidents.filter((is) => m >= is.inc.arrival_min && !is.resolved).flatMap((is) => [is.box, rectAt(X(is.inc.x), Y(is.inc.y), 54, 54)])];
+    const cx0 = (W - w) / 2, right = W - edge - w;
+    const spots = [["bottom", cx0, W - low - h], ["top", cx0, edge], ["bl", edge, W - low - h], ["br", right, W - low - h],
+                   ["tl", edge, edge], ["tr", right, edge]];
+    let best = null;
+    spots.forEach(([name, x, y]) => {
+      const box = { x0: x, y0: y, x1: x + w, y1: y + h };
+      const score = 100 * involved.filter((o) => overlap(box, o)).length + others.filter((o) => overlap(box, o)).length;
+      if (!best || score < best.score) best = { name, score };
+    });
+    const at = best.name, v = at[0] === "t" || at === "top" ? "top" : "bottom";
+    callout.style.top = v === "top" ? "8px" : "auto"; callout.style.bottom = v === "top" ? "auto" : "44px";
+    const side = at === "top" || at === "bottom" ? "center" : at[1] === "l" ? "left" : "right";
+    callout.style.left = side === "center" ? "50%" : side === "left" ? "8px" : "auto";
+    callout.style.right = side === "right" ? "8px" : "auto";
+    callout.style.transform = side === "center" ? "translateX(-50%)" : "none";
   }
   const CALLOUT_MIN = 3;                               // a conflict stays on the map for 3 simulated minutes
   const callout = $("callout");
@@ -286,7 +302,7 @@
     if (!c) { callout.hidden = true; return; }
     callout.hidden = false;
     callout.innerHTML = `<b>CONFLICT</b>&middot; ${esc(c.text)}`;
-    placeCallout(c);
+    placeCallout(c, m);
     const unit = [...ambulances, ...responders].find((u) => c.resources.includes((u.a || u.r).id));
     const hosp = hospitals.find((hs) => c.resources.includes(hs.h.id));
     const from = unit ? [unit.px, unit.py] : hosp ? [X(hosp.h.x), Y(hosp.h.y)] : null;
