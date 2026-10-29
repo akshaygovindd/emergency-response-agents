@@ -16,6 +16,9 @@
     available: "#7f93aa", en_route: "#e0a64a", on_scene: "#5fb3a5", transporting: "#e07b54",
     fire: "#d98558", rescue: "#6c9bd1", medical: "#a78bd6", route: "#8fa6c2",
   };
+  const STATUS_COLOR = { "Stable": "#4aa3a0", "Moderate": "#d9a441", "Near capacity": "#d9594c" };
+  const $ = (id) => document.getElementById(id);
+  const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const CODE_COLOR = [null, PALETTE.immediate, PALETTE.delayed, PALETTE.minor, PALETTE.expectant, PALETTE.reached];
   const X = (x) => M + x * S, Y = (y) => M + (KM - y) * S;
 
@@ -28,6 +31,7 @@
   const text = (parent, str, x, y, size, fill, extra) => {
     const t = el("text", Object.assign({ x, y, "font-size": size, fill, "text-anchor": "middle",
       "font-family": "-apple-system, 'Segoe UI', system-ui, sans-serif" }, extra || {}), parent);
+    t.style.paintOrder = "stroke"; t.style.stroke = "#0e1621"; t.style.strokeWidth = "4px"; t.style.strokeLinejoin = "round";   // halo keeps labels readable
     t.textContent = str;
     return t;
   };
@@ -56,7 +60,12 @@
   text(svg, "km north", 12, M + (KM * S) / 2, 13, "#58697d", { transform: `rotate(-90 12 ${M + (KM * S) / 2})` });
 
   const routeLayer = el("g", {}, svg), incidentLayer = el("g", {}, svg), hospitalLayer = el("g", {}, svg);
-  const unitLayer = el("g", {}, svg), labelLayer = el("g", {}, svg);
+  const conflictLayer = el("g", {}, svg), unitLayer = el("g", {}, svg), labelLayer = el("g", {}, svg);
+
+  // ───────── Label placement (keeps unit tags off other labels) ─────────
+  function rectAt(cx, cy, w, h) { return { x0: cx - w / 2, y0: cy - h / 2, x1: cx + w / 2, y1: cy + h / 2 }; }
+  const overlap = (a, b) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
+  const TAG_SPOTS = [[0, -19], [0, 31], [0, -36], [0, 47], [46, 5], [-46, 5]];   // tag offsets tried in order
 
   // ───────── Places ─────────
   const where = {};
@@ -72,22 +81,27 @@
       opacity: 0.55, transform: "rotate(-90)" }, g);
     el("rect", { x: -19, y: -19, width: 38, height: 38, rx: 8, fill: "#173149", stroke: "#365c82", "stroke-width": 1.5 }, g);
     el("path", { d: "M-3.5,-11 h7 v7.5 h7.5 v7 h-7.5 v7.5 h-7 v-7.5 h-7.5 v-7 h7.5 z", fill: "#e7eef7" }, g);
-    const name = text(g, `${h.id}  ${h.label}`, 0, R + 24, 19, "#e3eaf3", { "font-weight": 700 });
-    const load = text(g, "", 0, R + 44, 15, "#9fb1c6");
-    return { h, C, occ, prom, load, name };
+    const above = Y(h.y) + R + 52 > W;                 // keep the labels on the map near the bottom edge
+    const nameY = above ? -R - 30 : R + 24, loadY = above ? -R - 10 : R + 44;
+    const name = text(g, `${h.id}  ${h.label}`, 0, nameY, 19, "#e3eaf3", { "font-weight": 700 });
+    const load = text(g, "", 0, loadY, 15, "#9fb1c6");
+    const px = X(h.x), py = Y(h.y);
+    const box = [rectAt(px, py + nameY - 6, 12 + h.id.length * 11 + h.label.length * 10.5, 22),
+                 rectAt(px, py + loadY - 5, 150, 18)];
+    return { h, C, occ, prom, load, name, box };
   });
 
   const incidents = B.incidents.map((inc) => {
     const g = el("g", { transform: `translate(${X(inc.x)},${Y(inc.y)})`, opacity: 0 }, incidentLayer);
     el("circle", { r: 24, fill: "none", stroke: "#3b4d66", "stroke-width": 1.5, "stroke-dasharray": "3 4" }, g);
-    text(g, inc.id.replace("INC-", "INC "), 0, 41, 14, "#8a9bb0");
+    const label = text(g, inc.id.replace("INC-", "INC "), 0, 41, 14, "#8a9bb0");
     const mine = B.victims.map((v, i) => [v, i]).filter(([v]) => v.incident === inc.id);
     const dots = mine.map(([v, i], k) => {
       const ang = (2 * Math.PI * k) / mine.length - Math.PI / 2, r = mine.length > 1 ? 11.5 : 0;
       const c = el("circle", { cx: Math.cos(ang) * r, cy: Math.sin(ang) * r, r: 6, "stroke-width": 1.6 }, g);
       return { v, i, c };
     });
-    return { inc, g, dots };
+    return { inc, g, dots, box: rectAt(X(inc.x), Y(inc.y) + 36, 54, 16) };
   });
 
   // ───────── Units ─────────
@@ -99,15 +113,12 @@
     const shape = el("rect", { x: -17, y: -9, width: 34, height: 18, rx: 6, stroke: "#0b1118", "stroke-width": 1.5 }, body);
     const mark = el("path", { d: "M-2.5,-6 h5 v3.5 h3.5 v5 h-3.5 v3.5 h-5 v-3.5 h-3.5 v-5 h3.5 z", fill: "#0b1118", opacity: 0.8 }, body);
     const count = text(body, "", 0, 5, 14, "#0b1118", { "font-weight": 800 });
-    const tag = el("g", {}, labelLayer);
-    const name = text(tag, a.id.replace("AMB-", "A").replace(/^A0/, "A"), 0, 0, 13, "#cfd9e6", { "font-weight": 600 });
-    let als = null;
+    const tag = text(labelLayer, a.id.replace("AMB-", "A").replace(/^A0/, "A"), 0, 0, 13, "#cfd9e6", { "font-weight": 600 });
     if (a.als) {
-      als = el("g", {}, tag);
-      el("rect", { x: -13, y: 5, width: 26, height: 13, rx: 6.5, fill: "#2b2412", stroke: "#c9a23c", "stroke-width": 1 }, als);
-      text(als, "ALS", 0, 15, 10, "#e7c15a", { "font-weight": 700 });
+      const als = el("tspan", { fill: "#e7c15a", "font-weight": 700, "font-size": 10.5, dx: 4 }, tag);
+      als.textContent = "ALS";
     }
-    return { a, idx, route, g, body, shape, mark, count, tag, angle: 0 };
+    return { a, idx, route, g, body, shape, mark, count, tag, size: a.als ? [46, 15] : [22, 15], spot: 0, angle: 0 };
   });
   const KIND_LETTER = { fire: "F", rescue: "R", medical: "M" };
   const responders = B.responders.map((r, idx) => {
@@ -116,7 +127,7 @@
     const shape = el("path", { d: "M0,-11 L11,0 L0,11 L-11,0 Z", fill: PALETTE[r.kind] || "#aaa", stroke: "#0b1118", "stroke-width": 1.5 }, g);
     text(g, KIND_LETTER[r.kind] || "?", 0, 4.5, 12, "#0b1118", { "font-weight": 800 });
     const tag = text(labelLayer, r.id.replace("-1", ""), 0, 0, 12, "#9fb1c6");
-    return { r, idx, route, g, shape, tag };
+    return { r, idx, route, g, shape, tag, size: [r.id.length * 7, 14], spot: 1 };
   });
 
   // ───────── Interpolation ─────────
@@ -133,15 +144,14 @@
   }
 
   // ───────── Drawing one moment ─────────
-  function ringColor(frac) { return frac >= 0.85 ? PALETTE.ringFull : frac >= 0.6 ? PALETTE.ringWarn : PALETTE.ring; }
 
   function render(tau) {
     const m = Math.min(N, Math.floor(tau)), frame = B.frames[m];
 
     hospitals.forEach((hs, i) => {
-      const [er, , promised] = frame.h[i], cap = hs.h.er_capacity;
+      const [er, , promised, status] = frame.h[i], cap = hs.h.er_capacity;
       const occArc = Math.min(1, er / cap) * hs.C, promArc = Math.min(promised, cap - er) / cap * hs.C;
-      hs.occ.setAttribute("stroke", ringColor((er + promised) / cap));
+      hs.occ.setAttribute("stroke", STATUS_COLOR[status]);
       hs.occ.setAttribute("stroke-dasharray", `${occArc} ${hs.C - occArc}`);
       hs.prom.setAttribute("stroke-dasharray", `${Math.max(0, promArc)} ${hs.C - Math.max(0, promArc)}`);
       hs.prom.setAttribute("stroke-dashoffset", -occArc);
@@ -168,9 +178,14 @@
       is.g.setAttribute("opacity", arrived ? (anyOpen ? 1 : 0.35) : 0);
     });
 
-    const place = (unit, xy, tagDy) => {
+    const taken = [];                                  // label boxes tags must stay clear of
+    hospitals.forEach((hs) => hs.box.forEach((b) => taken.push(b)));
+    incidents.forEach((is) => { if (m >= is.inc.arrival_min) taken.push(is.box); });
+    const place = (unit, xy) => {
       const px = X(xy.x), py = Y(xy.y);
       unit.g.setAttribute("transform", `translate(${px},${py})`);
+      unit.px = px; unit.py = py;
+      taken.push(rectAt(px, py, unit.a ? 38 : 26, 22));
       return [px, py];
     };
     ambulances.forEach((u) => {
@@ -181,7 +196,6 @@
       u.shape.setAttribute("fill", PALETTE[fa[2]] || PALETTE.available);
       u.mark.setAttribute("opacity", fa[4] ? 0 : 0.8);
       u.count.textContent = fa[4] ? String(fa[4]) : "";
-      u.tag.setAttribute("transform", `translate(${px},${py - 17})`);
       const target = fa[3] && where[fa[3]];
       const moving = fa[2] === "en_route" || fa[2] === "transporting";
       if (moving && target) {
@@ -194,7 +208,6 @@
       const fr = frame.r[u.idx], pos = position(u.r.id, tau, fr);
       const [px, py] = place(u, pos);
       u.g.setAttribute("opacity", fr[2] === "available" ? 0.6 : 1);
-      u.tag.setAttribute("transform", `translate(${px},${py + 25})`);
       const target = fr[3] && where[fr[3]];
       if (fr[2] === "en_route" && target) {
         u.route.setAttribute("x1", px); u.route.setAttribute("y1", py);
@@ -202,19 +215,141 @@
         u.route.setAttribute("opacity", 0.5);
       } else u.route.setAttribute("opacity", 0);
     });
+    // Tags last, so each one can steer clear of hospital and incident labels, unit bodies, and earlier tags.
+    const fixed = taken.slice();
+    [...ambulances, ...responders].forEach((u) => {
+      const [w, h] = u.size;
+      const order = TAG_SPOTS.map((_, k) => (u.spot + k) % TAG_SPOTS.length);     // try last spot first: no flicker
+      let pick = order.find((k) => {
+        const box = rectAt(u.px + TAG_SPOTS[k][0], u.py + TAG_SPOTS[k][1] - 4, w, h);
+        return !fixed.some((o) => overlap(box, o));
+      });
+      if (pick === undefined) pick = u.spot;
+      u.spot = pick;
+      const box = rectAt(u.px + TAG_SPOTS[pick][0], u.py + TAG_SPOTS[pick][1] - 4, w, h);
+      fixed.push(box);
+      u.tag.setAttribute("transform", `translate(${u.px + TAG_SPOTS[pick][0]},${u.py + TAG_SPOTS[pick][1]})`);
+    });
+    drawConflict(m);
+    if (m !== shownMinute) { shownMinute = m; panels(m, frame); }
 
-    document.getElementById("min").textContent = String(m);
+    $("min").textContent = String(m);
     scrub.value = tau;
   }
 
+  // ───────── Conflict callout on the map ─────────
+  const CALLOUT_MIN = 3;                               // a conflict stays on the map for 3 simulated minutes
+  const callout = $("callout");
+  const lines = [];
+  function drawConflict(m) {
+    const c = [...B.conflicts].reverse().find((k) => k.t <= m && m < k.t + CALLOUT_MIN);
+    while (lines.length) conflictLayer.removeChild(lines.pop());
+    if (!c) { callout.hidden = true; return; }
+    callout.hidden = false;
+    callout.innerHTML = `<b>CONFLICT</b>&middot; ${esc(c.text)}`;
+    const unit = [...ambulances, ...responders].find((u) => c.resources.includes((u.a || u.r).id));
+    const hosp = hospitals.find((hs) => c.resources.includes(hs.h.id));
+    const from = unit ? [unit.px, unit.py] : hosp ? [X(hosp.h.x), Y(hosp.h.y)] : null;
+    if (!from) return;
+    c.incidents.forEach((id) => {
+      const at = where[id];
+      if (at) lines.push(el("line", { x1: from[0], y1: from[1], x2: X(at[0]), y2: Y(at[1]), stroke: "#e4574f",
+        "stroke-width": 2.2, "stroke-dasharray": "7 5", class: "pulse" }, conflictLayer));
+    });
+    lines.push(el("circle", { cx: from[0], cy: from[1], r: 26, fill: "none", stroke: "#e4574f", "stroke-width": 2.5, class: "pulse" }, conflictLayer));
+  }
+
+  // ───────── Side panels (rebuilt once per simulated minute) ─────────
+  let shownMinute = -1, shownMessages = 0;
+  const AMB_LABEL = { available: "available", en_route: "en route", on_scene: "on scene", transporting: "transporting" };
+  const fmt = (v, unit) => (v === null || v === undefined ? "n/a" : v + (unit || ""));
+
+  function kpiCard(cls, cap, val, of, note) {
+    return `<div class="kpi ${cls}"><div class="cap">${cap}</div><div class="val">${val}${of ? `<span class="of"> / ${of}</span>` : ""}</div><div class="note">${note}</div></div>`;
+  }
+  function panels(m, frame) {
+    const k = frame.k;
+    const rate = k.crit_n ? Math.round((100 * k.crit_ok) / k.crit_n) + "%" : "no critical victims yet";
+    $("kpis").innerHTML =
+      kpiCard("wide", "Critical in time", k.crit_ok, k.crit_n, `${rate} so far &middot; ${B.meta.critical_total} critical in this run`) +
+      kpiCard("wide", "Victims reached", k.reached, k.arrived, `${B.victims.length} victims in this run`) +
+      kpiCard(k.expectant ? "bad" : "", "Expectant", k.expectant, null, "critical, missed deadline") +
+      kpiCard("", "Conflicts", k.conflicts, null, `${k.negotiated} negotiated`) +
+      kpiCard("", "Avg response", fmt(k.resp_avg, " min"), null, "to first medical contact");
+
+    $("hospitals").innerHTML = B.hospitals.map((h, i) => {
+      const [er, , promised, status] = frame.h[i], cap = h.er_capacity, prom = Math.min(promised, Math.max(0, cap - er));
+      const occ = Math.min(er, cap);
+      const beds = Array.from({ length: cap }, (_, b) =>
+        `<i class="bed ${b < occ ? "occ" : b < occ + prom ? "prom" : ""}" ${b < occ ? `style="background:${STATUS_COLOR[status]}"` : ""}></i>`).join("");
+      return `<div class="hcard"><div class="name">${esc(h.id)}<span>${esc(h.label)}</span></div>` +
+        `<div class="state" style="color:${STATUS_COLOR[status]}"><i style="background:${STATUS_COLOR[status]}"></i>${status}</div>` +
+        `<div class="beds" title="occupied / promised / free ER beds">${beds}</div>` +
+        `<div class="meta">ER ${er}/${cap}${promised ? ` &middot; +${promised} on the way` : ""}</div></div>`;
+    }).join("");
+
+    const r = frame.res, ambChips = Object.entries(r.amb).map(([state, n]) =>
+      `<span class="chip"><i style="background:${PALETTE[state]}"></i>${AMB_LABEL[state]} <b>${n}</b></span>`).join("");
+    const teamChips = r.teams.map(([kind, busy]) =>
+      `<span class="chip team ${busy ? "" : "free"}" style="border:1px solid ${PALETTE[kind]}"><i style="background:${PALETTE[kind]}"></i>${kind}${busy ? " busy" : " free"}</span>`).join("");
+    const staff = B.hospitals.map((h, i) =>
+      `<div><b>${esc(h.id)}</b>Dr ${frame.s[i][0]}/${h.doctors} &middot; RN ${frame.s[i][1]}/${h.nurses}</div>`).join("");
+    $("resources").innerHTML = `<h3>Resources in use</h3>` +
+      `<span class="lab">Ambulances</span><div class="chips">${ambChips}</div>` +
+      `<span class="lab">Teams</span><div class="chips">${teamChips}<span class="lab">${r.teams_busy} busy &middot; ${r.teams_free} free</span></div>` +
+      `<span class="lab">Staff</span><div class="staff">${staff}</div>`;
+
+    renderFeed(frame.n);
+    renderStrip(m);
+  }
+
+  const STORY = new Set(["conflict", "counter", "accept", "reject", "escalate", "executed"]);
+  let feedFilter = "all";
+  document.querySelectorAll("#filter button").forEach((b) => b.addEventListener("click", () => {
+    feedFilter = b.dataset.f;
+    document.querySelectorAll("#filter button").forEach((o) => o.classList.toggle("on", o === b));
+    renderFeed(shownMessages, true); b.blur();
+  }));
+  function renderFeed(n, keepOld) {
+    const old = keepOld ? n : shownMessages;
+    shownMessages = n;
+    $("feedcount").textContent = n ? `${n} so far` : "";
+    if (!n) { $("feed").innerHTML = `<div class="empty">No messages yet. They appear as the agents start working.</div>`; return; }
+    const rows = [];
+    for (let i = n - 1; i >= 0 && rows.length < 80; i--) {
+      const x = B.messages[i];
+      if (feedFilter === "story" && !STORY.has(x.type)) continue;
+      rows.push(`<div class="msg ${x.type}${i >= old && old > 0 ? " new" : ""}" title="${esc(x.id + " · " + x.why)}">` +
+        `<span class="t">${x.t}</span><span class="badge">${x.badge}</span>${x.adm ? '<span class="adm">ADM</span>' : ""}` +
+        `<span class="who">${esc(x.from)} &rarr; ${esc(x.to)}</span><span class="what">${esc(x.text)}</span></div>`);
+    }
+    $("feed").innerHTML = rows.join("");
+  }
+
+  function renderStrip(m) {
+    const c = [...B.conflicts].reverse().find((k) => k.t <= m);
+    if (!c) {
+      $("strip").innerHTML = `<div class="head">Negotiation<b>No conflict yet</b></div>` +
+        `<div class="empty" style="align-self:center">When two agents want the same resource, the steps of the negotiation appear here: conflict, counter-offer, accepted or rejected, executed.</div>`;
+      return;
+    }
+    const steps = c.stages.map((st) => {
+      const off = st.ref === null || st.t > m;
+      const cls = "s-" + st.label.toLowerCase().replace(/[^a-z]/g, "");
+      return `<div class="step ${cls}${off ? " off" : ""}"><div class="lab">${esc(st.label)}</div>` +
+        `<div class="ref">${st.ref ? esc(st.ref) : "&mdash;"}</div><div class="txt">${esc(st.text)}</div></div>`;
+    });
+    $("strip").innerHTML = `<div class="head">Latest conflict<b>minute ${c.t}</b><span>${B.conflicts.indexOf(c) + 1} of ${B.conflicts.length} in this run</span></div>` +
+      steps.join('<div class="arrow">&rarr;</div>');
+  }
+
   // ───────── Controls ─────────
-  const scrub = document.getElementById("scrub"), playBtn = document.getElementById("play");
+  const scrub = $("scrub"), playBtn = $("play"), pauseBox = $("pausebox");
   let tau = 0, playing = false, speed = 1, last = null;
   scrub.max = N;
-  document.getElementById("last").textContent = String(N);
+  $("last").textContent = String(N);
   const meta = B.meta;
-  document.getElementById("runlabel").innerHTML =
-    `${meta.scenario} &middot; run ${meta.run_number} (seed ${meta.seed})<br>${meta.mode} &middot; ${meta.version}`;
+  $("runlabel").innerHTML = `${meta.scenario} &middot; run ${meta.run_number} (seed ${meta.seed})<br>${meta.mode} &middot; ${meta.version}`;
 
   function setPlaying(on) {
     playing = on; last = null;
@@ -224,9 +359,12 @@
 
   function loop(now) {
     if (playing) {
+      const before = tau;
       if (last !== null) tau += (Math.min(now - last, MAX_FRAME_MS) / 1000) * speed / SECONDS_PER_MINUTE;   // no jumps after a stall
       last = now;
-      if (tau >= N) { tau = N; render(tau); setPlaying(false); }
+      const hit = pauseBox.checked && B.conflicts.find((c) => c.t > before && c.t <= tau);
+      if (hit) { tau = hit.t; render(tau); setPlaying(false); }               // stop on the minute the conflict appears
+      else if (tau >= N) { tau = N; render(tau); setPlaying(false); }
       else render(tau);
     }
     requestAnimationFrame(loop);
@@ -234,48 +372,58 @@
 
   playBtn.addEventListener("click", () => {
     if (!playing && tau >= N) tau = 0;
-    setPlaying(!playing);
+    setPlaying(!playing); playBtn.blur();
   });
-  document.getElementById("restart").addEventListener("click", () => { tau = 0; render(tau); setPlaying(true); });
+  $("restart").addEventListener("click", () => { tau = 0; render(tau); setPlaying(true); $("restart").blur(); });
   scrub.addEventListener("input", () => { tau = parseFloat(scrub.value); render(tau); if (!playing) setPlaying(false); });
   document.querySelectorAll("#speeds button").forEach((b) => b.addEventListener("click", () => {
     speed = parseFloat(b.dataset.speed);
     document.querySelectorAll("#speeds button").forEach((o) => o.classList.toggle("on", o === b));
+    b.blur();
   }));
   document.addEventListener("keydown", (e) => {
+    if (e.target && e.target.type === "checkbox") return;
     if (e.code === "Space") { e.preventDefault(); playBtn.click(); }
     else if (e.code === "ArrowRight") jump(Math.floor(tau) + 1);
     else if (e.code === "ArrowLeft") jump(Math.ceil(tau) - 1);
   });
 
-  // Incident arrival ticks under the scrubber
-  const ticks = document.getElementById("ticks");
+  // Ticks under the scrubber: incident arrivals. Markers above it: conflicts (click to jump).
   [...new Set(B.incidents.map((i) => i.arrival_min))].forEach((t) => {
     const i = document.createElement("i");
     i.style.left = `${(t / N) * 100}%`;
-    ticks.appendChild(i);
+    $("ticks").appendChild(i);
+  });
+  B.conflicts.forEach((c) => {
+    const i = document.createElement("i");
+    i.style.left = `${(c.t / N) * 100}%`;
+    i.title = `Minute ${c.t}: ${c.text}`;
+    i.addEventListener("click", () => jump(c.t));
+    $("cmarks").appendChild(i);
   });
 
   // ───────── Legend (same palette as the map) ─────────
-  const legend = document.getElementById("legend");
-  const sw = (inner) => `<svg viewBox="0 0 28 20">${inner}</svg>`;
-  const dot = (fill, stroke) => sw(`<circle cx="14" cy="10" r="6" fill="${fill}" stroke="${stroke || "none"}" stroke-width="1.6"/>`);
-  const row = (icon, label, sub) => `<div class="row">${icon}<span>${label}${sub ? ` <span class="sub">${sub}</span>` : ""}</span></div>`;
-  legend.innerHTML =
-    `<div><h4>Victim triage (START)</h4>` +
-    row(dot(PALETTE.immediate), "Immediate", "severity 4-5") +
-    row(dot(PALETTE.delayed), "Delayed", "severity 3") +
-    row(dot(PALETTE.minor), "Minor", "severity 1-2") +
-    row(dot(PALETTE.expectant, "#e8edf3"), "Expectant", "critical, deadline passed") +
-    row(dot(PALETTE.reached), "Reached", "fades out") + `</div>` +
-    `<div><h4>Units</h4>` +
-    row(sw(`<rect x="-3" y="1" width="34" height="18" rx="6" fill="${PALETTE.en_route}"/><path d="M11.5,4 h5 v3.5 h3.5 v5 h-3.5 v3.5 h-5 v-3.5 h-3.5 v-5 h3.5 z" fill="#0b1118" opacity=".8"/>`), "Ambulance", "ALS tagged") +
-    row(sw(`<path d="M14,0 L24,10 L14,20 L4,10 Z" fill="${PALETTE.fire}"/>`), "Fire / rescue / medical team", "F R M") +
-    row(sw(`<line x1="0" y1="10" x2="28" y2="10" stroke="${PALETTE.route}" stroke-width="2" stroke-dasharray="6 6"/>`), "Route to target") + `</div>` +
-    `<div><h4>Hospital ER load</h4>` +
-    row(sw(`<circle cx="14" cy="10" r="8" fill="none" stroke="${PALETTE.ring}" stroke-width="4" stroke-dasharray="25 26" transform="rotate(-90 14 10)"/>`), "Occupied beds") +
-    row(sw(`<circle cx="14" cy="10" r="8" fill="none" stroke="${PALETTE.promised}" stroke-width="4" opacity=".55" stroke-dasharray="12 39" transform="rotate(-90 14 10)"/>`), "Promised", "patient on the way") + `</div>`;
+  const sw = (inner) => `<svg viewBox="0 0 22 14">${inner}</svg>`;
+  const dot = (fill, stroke) => sw(`<circle cx="11" cy="7" r="5" fill="${fill}" stroke="${stroke || "none"}" stroke-width="1.5"/>`);
+  const item = (icon, label) => `<span class="item">${icon}${label}</span>`;
+  $("legend").innerHTML =
+    item(dot(PALETTE.immediate), "Immediate") + item(dot(PALETTE.delayed), "Delayed") + item(dot(PALETTE.minor), "Minor") +
+    item(dot(PALETTE.expectant, "#e8edf3"), "Expectant") + item(dot(PALETTE.reached), "Reached") +
+    item(sw(`<rect x="1" y="2" width="20" height="10" rx="4" fill="${PALETTE.en_route}"/>`), "Ambulance") +
+    item(sw(`<path d="M11,0 L19,7 L11,14 L3,7 Z" fill="${PALETTE.fire}"/>`), "Team") +
+    item(sw(`<line x1="0" y1="7" x2="22" y2="7" stroke="${PALETTE.route}" stroke-width="2" stroke-dasharray="5 4"/>`), "Route") +
+    item(sw(`<circle cx="11" cy="7" r="5.5" fill="none" stroke="${PALETTE.ring}" stroke-width="3"/>`), "ER beds");
 
+  // ───────── Layout: the map is a square sized by the free height ─────────
+  function fit() {
+    const main = $("main"), col = $("mapcol");
+    if (window.innerWidth <= 700) { col.style.width = ""; return; }
+    const size = Math.max(280, Math.min(main.clientHeight - $("legend").offsetHeight - 6, main.clientWidth - 412));
+    col.style.width = size + "px";
+  }
+  window.addEventListener("resize", fit);
+
+  fit();
   render(0);
   setPlaying(false);
   requestAnimationFrame(loop);

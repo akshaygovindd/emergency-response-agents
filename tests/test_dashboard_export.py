@@ -165,3 +165,62 @@ def test_every_saved_run_exports():
         assert all(len(f["v"]) == len(b["victims"]) for f in b["frames"]), run.path.name
         assert all(0 <= t["t0"] < t["t1"] <= 120 for t in b["trips"]), run.path.name
         json.dumps(b)
+
+
+# ───────── Story (feed, conflicts) and live numbers ─────────
+def test_real_run_minute_6_conflict_counter_accept_executed():
+    """v1 normal run 1 negotiation: AMB-01 contested by INC-01 and INC-02, counter-offer AMB-03, accepted, executed."""
+    log = LOGS_DIR / "v1" / "negotiation" / "normal_seed42_negotiation.jsonl"
+    if not log.exists():
+        pytest.skip("saved v1 run not available")
+    b = export_replay("v1", "normal", 42, "negotiation")
+    c = next(c for c in b["conflicts"] if c["t"] == 6)
+    assert c["text"] == "INC-01 and INC-02 both want AMB-01" and c["method"] == "negotiation"
+    conflict, counter, outcome, executed = c["stages"]
+    assert (conflict["label"], conflict["ref"]) == ("Conflict", "t006-C01")
+    assert counter["label"] == "Counter-offer" and counter["ref"] == "t006-M0007" and "AMB-03 to INC-01" in counter["text"]
+    assert outcome["label"] == "Accepted" and outcome["ref"] == "t006-M0008"
+    assert executed["label"] == "Executed" and executed["ref"] == "t006-M0014"
+    badges = {(m["id"], m["badge"]) for m in b["messages"] if m["t"] == 6}      # an executed action shares its commit's id
+    assert {("t006-C01", "CONFLICT"), ("t006-M0007", "COUNTER"), ("t006-M0008", "ACCEPT"),
+            ("t006-M0014", "COMMIT"), ("t006-M0014", "EXECUTED")} <= badges
+    assert b["frames"][6]["n"] == sum(m["t"] <= 6 for m in b["messages"])
+
+
+def test_real_run_kpis_end_at_saved_numbers():
+    log = LOGS_DIR / "v1" / "negotiation" / "normal_seed42_negotiation.jsonl"
+    if not log.exists():
+        pytest.skip("saved v1 run not available")
+    k = export_replay("v1", "normal", 42, "negotiation")["frames"][-1]["k"]
+    assert (k["crit_ok"], k["crit_n"]) == (9, 11) and k["conflicts"] == 3 and k["negotiated"] == 3
+    assert k["crit_ok"] + k["expectant"] <= k["crit_n"] and k["reached"] <= k["arrived"]
+
+
+def test_hospital_status_and_kpis_on_synthetic_run(bundle):
+    from erc.dashboard.live import hospital_status
+    assert [hospital_status(o, p, 4) for o, p in [(0, 0), (1, 1), (4, 0), (2, 2)]] == \
+        ["Stable", "Moderate", "Near capacity", "Near capacity"]
+    k = [f["k"] for f in bundle["frames"]]
+    assert k[2]["crit_n"] == 1 and k[2]["crit_ok"] == 0 and k[2]["expectant"] == 0
+    assert k[5]["expectant"] == 1                      # deadline 2 passed at minute 5, not reached until 6
+    assert k[6]["crit_ok"] == 0 and k[6]["expectant"] == 1 and k[6]["reached"] == 1   # reached late: still a miss
+    assert k[6]["resp_avg"] == 4.0
+    assert bundle["frames"][6]["res"]["amb"]["on_scene"] == 1
+
+
+def test_staff_in_use_follows_treatment_events():
+    from erc.dashboard.live import staff_in_use_by_minute
+    scen = {"hospitals": [{"hospital_id": "H1"}, {"hospital_id": "H2"}]}
+    log = [{"t": 1, "kind": "treatment_started", "victim_id": "V", "hospital_id": "H2", "doctor_id": "D", "nurse_id": "N"},
+           {"t": 3, "kind": "treatment_finished", "victim_id": "V", "hospital_id": "H2"}]
+    use = staff_in_use_by_minute(log, scen, 4)
+    assert [u[1] for u in use] == [[0, 0], [1, 1], [1, 1], [0, 0], [0, 0]] and use[2][0] == [0, 0]
+
+
+def test_every_saved_run_has_story_and_live_data():
+    from erc.dashboard.replay import available_runs
+    for run in available_runs():
+        b = export_replay(run.version, run.scenario, run.seed, run.mode)
+        assert len(b["messages"]) == b["frames"][-1]["n"], run.path.name
+        assert all(len(c["stages"]) == 4 for c in b["conflicts"]), run.path.name
+        assert all(len(f["s"]) == len(b["hospitals"]) and f["h"][0][3] for f in b["frames"]), run.path.name

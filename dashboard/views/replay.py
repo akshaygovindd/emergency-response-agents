@@ -15,7 +15,7 @@ from erc.dashboard.player import assets_stamp, render_player
 from erc.dashboard.replay import MODE_ORDER, available_runs
 
 SCENARIO_ORDER = ["normal", "surge", "bottleneck"]
-PLAYER_HEIGHT = 800
+PLAYER_HEIGHT = 920
 DEFAULTS = {"version": "v1", "scenario": "normal", "run": 1, "mode": "negotiation"}
 
 
