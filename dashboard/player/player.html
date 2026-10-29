@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emergency response replay</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body tabindex="0">
+<div id="app">
+  <div id="mapwrap"><svg id="map" viewBox="0 0 880 880" preserveAspectRatio="xMidYMid meet" role="img"
+       aria-label="Emergency response map"></svg></div>
+  <aside id="side">
+    <div id="runlabel"></div>
+    <div id="clock">
+      <div class="cap">MINUTE</div>
+      <div class="big"><span id="min">0</span><span class="of"> / <span id="last">120</span></span></div>
+    </div>
+    <div id="controls">
+      <button id="play" class="primary" title="Space">&#9654; Play</button>
+      <button id="restart" title="Restart from minute 0">&#8634; Restart</button>
+      <div id="speeds" role="group" aria-label="Speed">
+        <button data-speed="1" class="on">1x</button>
+        <button data-speed="2">2x</button>
+        <button data-speed="4">4x</button>
+      </div>
+    </div>
+    <div id="scrubber">
+      <input id="scrub" type="range" min="0" max="120" step="0.01" value="0" aria-label="Minute">
+      <div id="ticks"></div>
+      <div class="hint">Drag to jump &middot; Space = play/pause &middot; &larr; &rarr; = 1 min</div>
+    </div>
+    <div id="legend"></div>
+  </aside>
+</div>
+<script type="application/json" id="bundle">__BUNDLE__</script>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>
