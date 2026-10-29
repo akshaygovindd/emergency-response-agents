@@ -49,3 +49,26 @@ def test_run_system_returns_a_playable_bundle():
     bundle = run_system(build_scenario(3, 8, 11), "naive")["bundle"]
     assert len(bundle["frames"]) == bundle["meta"]["last_minute"] + 1 and len(bundle["ambulances"]) == 3
     assert len(bundle["incidents"]) == 8
+
+
+# ───────── page helpers ─────────
+def test_parse_params_clamps_and_falls_back():
+    from erc.dashboard.whatif import parse_params
+    assert parse_params("3", "20", "7", "surge") == (3, 20, 7, ScenarioName.SURGE)
+    assert parse_params("99", "1", "-5", "nonsense") == (5, 3, 0, ScenarioName.NORMAL)          # clamped, unknown profile -> normal
+    assert parse_params(None, "abc", "", None) == (5, 12, 42, ScenarioName.NORMAL)               # unusable values -> defaults
+
+
+def test_summaries_and_difference_for_the_cards():
+    from erc.dashboard.whatif import difference_points, summarize_run
+    result = run_whatif(5, 12, 42)
+    summaries = {m: summarize_run(result[m]["metrics"]) for m in result}
+    assert summaries["greedy"]["csr"] == pytest.approx(10 / 11) and summaries["greedy"]["n_critical"] == 11
+    assert difference_points(summaries) == pytest.approx(45.5, abs=0.1) and "critical of 26 patients" in summaries["greedy"]["served_note"]
+    assert difference_points({"naive": {"csr": None}, "greedy": {"csr": 0.5}}) is None
+
+
+def test_whatif_page_files_use_the_shared_shell_and_disable_agents():
+    from pathlib import Path
+    js = (Path(__file__).resolve().parents[1] / "dashboard" / "whatif_app" / "page.js").read_text()
+    assert 'UI.mountRail("What-if")' in js and "sys off" in js and "Agent runs take minutes and use API calls" in js and "UI.goto(\"whatif\"" in js

@@ -50,10 +50,11 @@ Status (never used for patients)
 | Token | Value | Use |
 |---|---|---|
 | `--ok` | `#2DD4BF` | Stable, accepted, completed steps |
-| `--warn` | `#FB923C` | Conflict, moderate load |
+| `--warn` | `#FB923C` | Conflicts only (orange is reserved for conflicts: callout, conflict lines, the ring on a unit in a conflict) |
+| `--moderate` | `#D6A94E` | Hospital "Moderate" load |
 | `--danger` | `#FB7185` | Near capacity, rejected |
 | `--info` | `#38BDF8` | En-route units, information |
-| `--violet` | `#A78BFA` | Executed / committed by the system |
+| `--violet` | `#A78BFA` | Executed / committed by the system, transporting ambulances |
 
 Map base: background `#0B111C`, district fills `#0F1624` / `#111A2B`, district edges `rgba(148,163,184,.07)`,
 roads `rgba(148,163,184,.05)` (grid) and `.10` (arterials). The base stays darker and quieter than any marker.

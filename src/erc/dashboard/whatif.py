@@ -56,3 +56,35 @@ def run_whatif(ambulances: int, incidents: int, seed: int, profile: ScenarioName
     """{mode: {bundle, metrics}} for naive and greedy on the same modified scenario."""
     scenario = build_scenario(ambulances, incidents, seed, profile)
     return {mode: run_system(scenario, mode) for mode in LIVE_SYSTEMS}
+
+
+# ───────── Page helpers ─────────
+DEFAULTS = {"amb": 5, "inc": 12, "seed": 42, "profile": "normal"}
+PROFILES = {"normal": "Normal", "surge": "Surge mix", "bottleneck": "Bottleneck"}
+
+
+def parse_params(amb, inc, seed, profile) -> tuple[int, int, int, ScenarioName]:
+    """Page-address values to a safe (ambulances, incidents, seed, profile); anything unusable falls back to the default."""
+    def number(value, default, lo, hi):
+        try:
+            return min(hi, max(lo, int(value)))
+        except (TypeError, ValueError):
+            return default
+    name = profile if profile in PROFILES else DEFAULTS["profile"]
+    return (number(amb, DEFAULTS["amb"], *AMBULANCES), number(inc, DEFAULTS["inc"], *INCIDENTS),
+            number(seed, DEFAULTS["seed"], 0, 9999), ScenarioName(name))
+
+
+def summarize_run(metrics: dict) -> dict:
+    """The few numbers the result cards show, from a run's metrics."""
+    n_crit = metrics["n_critical"]
+    served = n_crit - metrics["critical_unserved"] if n_crit else 0
+    return {"csr": metrics["critical_service_rate"], "n_critical": n_crit, "n_victims": metrics["n_victims"],
+            "reached": metrics["contacted_rate"], "response": metrics["response_mean"], "never_reached": metrics["critical_unserved"],
+            "served_note": f"{n_crit} critical of {metrics['n_victims']} patients" if n_crit else f"no critical patients among {metrics['n_victims']}"}
+
+
+def difference_points(summaries: dict) -> float | None:
+    """Greedy minus naive in percentage points (None if either has no critical patients)."""
+    a, b = summaries["greedy"]["csr"], summaries["naive"]["csr"]
+    return None if a is None or b is None else round((a - b) * 100, 1)

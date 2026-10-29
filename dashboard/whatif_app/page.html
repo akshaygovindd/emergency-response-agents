@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What-if · Emergency Response Command Center</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body tabindex="0">
+__SPRITE__
+<div id="shell">
+  <nav id="rail"></nav>
+  <div id="content">
+    <header id="topbar">
+      <h1>Emergency Response Command Center <span class="crumb">What-if</span></h1>
+      <div class="top-right"><span class="vbadge">Live simulation · nothing is saved · no API calls</span></div>
+    </header>
+    <main id="main">
+      <section class="top-grid">
+        <div class="card controls" id="controls"></div>
+        <div id="results"></div>
+      </section>
+      <section class="card replaycard">
+        <div class="rc-head"><h2>Replay</h2><div id="sysseg" class="seg"></div><span class="sub" id="rcsub"></span></div>
+        <iframe id="player" title="Replay of the what-if run"></iframe>
+      </section>
+    </main>
+  </div>
+</div>
+<div id="tip" hidden></div>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>

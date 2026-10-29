@@ -1,0 +1,34 @@
+#topbar h1 .crumb { color: var(--text-3); font-weight: 400; margin-left: 12px; font-size: 13px; }
+.vbadge { font-size: 13px; font-weight: 500; color: var(--text-2); background: var(--panel-2); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; white-space: nowrap; }
+#main { overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 24px; min-height: 0; min-width: 0; }
+#main::-webkit-scrollbar { width: 8px; } #main::-webkit-scrollbar-thumb { background: var(--panel-3); border-radius: 4px; }
+.top-grid { display: grid; grid-template-columns: 600px minmax(0, 1fr); gap: 24px; flex: none; }
+.controls { padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; }
+.controls h2, .replaycard h2 { margin: 0; font-size: 16px; line-height: 24px; font-weight: 600; }
+.field { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: center; gap: 16px; }
+.field label { font-size: 13px; font-weight: 500; color: var(--text-2); } .field small { display: block; font-size: 12px; font-weight: 400; color: var(--text-3); }
+.stepper { display: inline-flex; align-items: center; background: var(--panel-3); border-radius: 10px; padding: 4px; gap: 4px; justify-self: start; }
+.stepper button { width: 36px; height: 36px; border-radius: 8px; border: 0; background: transparent; color: var(--text-2); display: grid; place-items: center; cursor: pointer; }
+.stepper button:hover { background: var(--panel); color: var(--text); } .stepper button[disabled] { opacity: .3; cursor: default; }
+.stepper b { min-width: 64px; text-align: center; font-size: 18px; font-weight: 600; }
+.runrow { display: flex; align-items: center; gap: 16px; padding-top: 4px; }
+.runbtn { height: 44px; padding: 0 24px; border-radius: 12px; border: 0; background: var(--accent); color: #fff; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; cursor: pointer; box-shadow: 0 6px 16px rgba(99,102,241,.35); }
+.runbtn:hover { background: var(--accent-hover); } .runbtn.clean { background: var(--panel-3); color: var(--text-3); box-shadow: none; cursor: default; }
+.runrow .hint { font-size: 12px; color: var(--text-3); }
+.systems { display: flex; gap: 8px; flex-wrap: wrap; }
+.sys { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--panel-2); font-size: 13px; font-weight: 500; }
+.sys.live { color: var(--text); border-color: rgba(99,102,241,.4); } .sys.live i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); display: block; }
+.sys.off { color: var(--text-3); opacity: .6; cursor: not-allowed; }
+.note { font-size: 12.5px; color: var(--text-3); line-height: 18px; }
+#results { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-content: start; }
+.rcard { padding: 20px 24px; display: flex; flex-direction: column; gap: 8px; } .rcard.best { border-color: rgba(99,102,241,.5); }
+.rcard .sysname { display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; color: var(--text-2); }
+.rcard .big { font-size: 48px; line-height: 52px; font-weight: 600; } .rcard .big small { font-size: 16px; color: var(--text-3); font-weight: 500; margin-left: 8px; }
+.rcard .bar { height: 6px; border-radius: 3px; background: rgba(148,163,184,.18); overflow: hidden; } .rcard .bar i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.rcard.naive .bar i { background: #64748B; }
+.mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; } .mini div { font-size: 12px; color: var(--text-3); } .mini b { display: block; font-size: 18px; line-height: 24px; font-weight: 600; color: var(--text); }
+.delta { margin-left: auto; font-size: 12px; font-weight: 600; color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, transparent); border-radius: 999px; padding: 2px 10px; }
+.delta.neg { color: var(--danger); background: color-mix(in srgb, var(--danger) 14%, transparent); }
+.replaycard { padding: 16px 16px 16px; display: flex; flex-direction: column; gap: 12px; flex: none; }
+.rc-head { display: flex; align-items: center; gap: 16px; padding: 0 8px; }
+.replaycard iframe { width: 100%; height: 940px; border: 0; border-radius: 12px; background: var(--bg); flex: none; }
