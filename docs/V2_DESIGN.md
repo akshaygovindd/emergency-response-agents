@@ -262,3 +262,66 @@ on bottleneck 42 and normal 42), which uses OpenAI tokens.
   Conflict metrics (`negotiations`, `counter_proposals`, ...) ignore `ADM-` messages.
 - Fallback-rule choices are sent as `resource_allocation` ACCEPT messages, so hospital accept counts
   only reflect real hospital reviews (or the agents-mode rule).
+
+## 15. Dev-seed findings (normal 42, bottleneck 42, surge 42; agents and negotiation, v2)
+
+All numbers trace to `results/v2/runs.jsonl` and `logs/v2/`. One seed per scenario: these are
+observations, not statistics.
+
+| Scenario | Critical service rate, v1 agents / negotiation | v2 agents / negotiation | Invalid proposals v2 | Fresh tokens v2 |
+|---|---|---|---|---|
+| normal 42 | 0.64 / 0.82 | 0.82 / 0.82 | 0 / 0 | 47.8k / 39.7k |
+| bottleneck 42 | 0.18 / 0.18 | 0.18 / 0.18 | 0 / 0 | 25.4k / 7.5k |
+| surge 42 | 0.21 / 0.25 | 0.32 / 0.32 | 6 / 6 | 101k / 16k |
+
+Fresh tokens depend on cache order (negotiation ran after agents and reused its Dispatch calls).
+Logical tokens (cost without caching) are within about -17% to +2% of v1, so the estimate of +25-45%
+in section 9 was too high: the reviewer adds only about 7-9k tokens per run and the destination agent
+replaces the old Hospital agent at a similar cost.
+
+1. **Routing improvement from Dispatch choosing destinations.** The gains over v1 come from shorter
+   trips, not from hospital review. Dispatch weighs travel time more than the v1 Hospital agent did
+   (for example normal 42, t=37: a 3-minute trip to H-B instead of 13 minutes to H-G), so ambulances
+   are free earlier and reach later critical incidents sooner. On normal 42 this is the whole
+   0.64 to 0.82 change (two critical victims of incident INC-10 reached in 7 minutes instead of 32).
+   On surge 42, ambulances were assigned 7-10 minutes earlier for INC-10 and INC-15.
+   On bottleneck 42 the rate is unchanged but unserved critical victims rose from 2 to 5, a cascade of
+   Dispatch's different incident ordering once trips changed.
+2. **Admission negotiation rarely binds.** ER beds were never scarce: peak occupancy on surge 42 was
+   H-T 5/6, H-B 3/5, H-G unused, and 0 ER-full events in every run. The binding constraint is
+   ambulances (at minute 60 of surge 42: 24 victims waiting, 10 critical, all 5 ambulances busy). The
+   reviewer accepted every request on its own judgement across normal, bottleneck, and surge, which is
+   the correct call when beds are free. Agents and negotiation produce identical outcomes on these seeds
+   and there were 0 conflicts in v2 surge 42.
+3. **The one reject, revise, accept chain** (surge 42, `ADM-t006-02`, same chain in both modes):
+   - t6 Dispatch requests H-T for V-02-1, V-02-2 (round 1).
+   - t6 Hospital Coordination REJECTS: "H-T has no room left". This reject came from the Python
+     bed ledger (an earlier request in the same review took H-T's last bed), not from the LLM.
+   - t6 Dispatch revises and requests H-B (round 2).
+   - t6 Hospital Coordination ACCEPTS H-B. Resolved as `revised`, 2 rounds.
+   In agents mode the fixed rule redirected to H-B directly. No counter, arbitration, or fallback
+   occurred on real model output (they are covered by offline tests with fake answers).
+4. **Invalid proposals (6 on surge 42)** all came from Dispatch's `submit_admission_request`: five
+   `hospital_full` and one `hospital_lacks_capability`, refused at once by the tool and retried within the
+   run. "Full" counts patients promised but still on the road, so early requests (made at ambulance
+   assignment) make hospitals look full long before they are. v1 had the same effect.
+5. **Not stranded.** No patient was left without a destination during any run; the only unadmitted
+   victim (V-23-4) was assigned at minute 119 of 120.
+6. **Future work: treatment-slot reviewer.** The real shortage was H-T trauma treatment slots (all in
+   use 45 of 121 minutes on surge 42; 3 critical victims never started treatment). The reviewer sees
+   free slots but not how many patients are queued or promised for the same care. Recorded, not applied:
+   - *View:* per hospital and care type, `free_slots`, `promised` (en route, needing that care), `queued`
+     (in the ER waiting for it), from assessments and state only.
+   - *Prompt:* compare `free_slots` with `promised` and `queued`; accept if every victim has a slot;
+     otherwise counter with a capable hospital that has a free slot and is at most 8 extra minutes away
+     for urgency 4-5 (15 for lower urgency); if none exists, accept (never strand).
+   - *Caveat:* the primary metric measures first ambulance contact, so treatment queues do not affect it
+     and longer trips could lower it. Evaluate such a change on `treatment_started_rate` and treatment
+     wait, not on the critical service rate.
+7. **v2 `agents` is a different baseline from v1 `agents`.** In v2 Dispatch chooses the destination
+   and hospital review is a fixed rule; in v1 the Hospital agent chose it. Compare v1 and v2 rows only
+   with that in mind (and never in one table without the `version` column). Use v2 `agents` as the
+   no-negotiation comparison for v2 `negotiation`.
+
+Decision: v2 is frozen as is (no prompt or code changes), tag `v2-frozen`. Admission negotiation is
+reported honestly as rarely binding in these scenarios.
