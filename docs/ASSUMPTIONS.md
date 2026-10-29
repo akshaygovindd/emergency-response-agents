@@ -103,9 +103,46 @@ A system is consulted only when the decision situation changes (new waiting vict
 
 ## 14. LLM settings (agent systems)
 
-- OpenAI model via the OpenAI Agents SDK, temperature 0, fixed prompts.
-- All LLM responses are cached, so evaluation reruns are identical. The environment is fully reproducible; LLM decisions are reproducible through the cache.
+- **Model: `gpt-5.4-mini`** (`SETTINGS.llm.model` in `src/erc/config.py`, overridable with `ERC_MODEL`; fixed for every reported run), via the OpenAI Agents SDK, temperature 0, fixed prompts. List prices used for cost estimates: $0.75 per million input tokens, $4.50 per million output tokens.
+- **Cache-based reproducibility.** Every agent call is cached on disk (`data/llm_cache/`, committed) under a key made of the agent name, model, instructions and prompt. A rerun whose inputs are identical hits the cache, makes no API call, and returns the saved answer; the simulation itself is deterministic given the scenario file and seed. Changing a prompt, a tool, the model or the scenario state changes the key and calls the API. Runs are therefore reproducible, but the cache records one sample per input: run-to-run variance of the model is not measured.
+- Logged tokens are *logical* (what the run would cost without caching); `fresh_tokens` is what was actually sent on that run. Costs in the results are list-price estimates.
 
-## 15. Limitations
+## 15. Frozen-tag protocol
 
-Synthetic grid instead of real roads; simplified deterioration and treatment; no real hospital data or dispatch regulations; small fixed infrastructure; results describe this simulation under these assumptions and are not claimed to generalise to real emergencies.
+Nothing that could favour a system was changed after the stage that depends on it was frozen. Git tags mark each freeze:
+
+| Tag | Frozen before | What it fixes |
+|---|---|---|
+| `calibration-frozen` | any agent run | scenario settings (severity weights, deadlines, fleet) |
+| `environment-frozen` | any agent run | final environment; baseline results verified identical |
+| `agents-frozen` | test-seed runs | agent prompts and tools (v1) |
+| `v2-frozen` | the v2 runs | v2 admission negotiation and prompts |
+| `dashboard-v1` / `dashboard-v2` | (dashboard only) | working dashboard before the redesign / the final dashboard |
+
+Results are kept per version in `results/<version>/` and `logs/<version>/`. v1 is write-protected in the runner (it needs `--allow-v1-write`; the only later v1 writes added missing grid cells, see `docs/EXPERIMENT_LOG.md`), every v2 run declares `--version v2`, tables carry a `version` column, and v1 and v2 rows are never pooled.
+
+## 16. Development seeds
+
+Seed 42 was used to develop and check the system: the v2 dev-seed checks ran on **normal 42, bottleneck 42** and surge 42 before v2 was frozen (`docs/V2_DESIGN.md` section 15). Those seeds are included in the reported grids (they are the first seed of each scenario), so the reported samples are not fully held out. No prompt was changed after the v2 dev-seed check.
+
+## 17. Formulaic-report limitation
+
+Incident reports are written by an LLM from a structured template (incident type, number of people, and capability-neutral signs for each victim's condition), generated once and cached (`data/descriptions/`). They are more uniform and easier to parse than real 911 calls, so the Assessment agent's task is easier than in practice, and a real deployment would face noisier, contradictory and incomplete reports. Extraction accuracy against ground truth is reported in `results/v1/assessment_accuracy.json`.
+
+## 18. v2 design and findings
+
+Design (full text in `docs/V2_DESIGN.md`): Dispatch requests a destination hospital for an ambulance's load; Hospital Coordination accepts, rejects or counters (a counter names another hospital for the *whole* load, because one ambulance goes to one hospital); Dispatch may revise; up to 3 rounds; Resource Allocation arbitrates leftovers; a fixed nearest-capable-hospital rule is the fallback. It is enabled only for `--version v2`. v1 code paths, prompts and the baselines are unchanged (a test checks the baselines are identical).
+
+Findings (all numbers in `docs/RESULTS.md`): over 25 negotiation runs, 372 admission requests were made, 364 hospital accepts, 14 rejects, 0 counters, 6 revisions by Dispatch and 1 arbitration; no admission fallbacks. ER beds were never full in greedy or negotiation runs (peak occupancy at most 56% on average), so admission negotiation rarely binds, and the binding constraint is ambulances. No significant difference in critical service rate between v2 and v1 for the same agents. v2 did not reduce infeasible proposals (334 versus 209 in v1); the validator blocked all of them. Subset counters were not implemented (future work), nor was a treatment-slot reviewer.
+
+## 19. Data sharing and cost
+
+The agent runs used OpenAI's complimentary daily token allowance for the model, which is available in exchange for sharing the prompts and responses with the provider. All prompts contain only synthetic scenario text and simulation state, never real or personal data. The experiments used about 9.9 million logical tokens in 106 agent runs ($9.53 at list price, see `docs/RESULTS.md`); the fresh tokens actually sent were 2.66 million (v1) and 1.77 million (v2). No `.env` or API key is committed.
+
+## 20. Display-only marker spreading
+
+On the dashboard map, incident markers that are closer than 1.9 km, or closer than 1.9 km to a hospital icon, are nudged apart (at most 2 km, deterministic) so their glows and labels do not overlap (`src/erc/dashboard/spread.py`). This changes **display positions only**: the true location stays in the data and in every calculation, results and logs are untouched. Units parked or stacked at the same place are likewise drawn with small offsets.
+
+## 21. Limitations
+
+Synthetic grid instead of real roads; simplified deterioration and treatment; no real hospital data or dispatch regulations; small fixed infrastructure; results describe this simulation under these assumptions and are not claimed to generalise to real emergencies. The agents use one model and one run per seed, the report generator is formulaic (section 17), and the seed counts are small (10, 10 and 5 per scenario; 3 for the oracle), so most comparisons are not statistically significant.

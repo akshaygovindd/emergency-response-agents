@@ -1,0 +1,4 @@
+# Runtime pins plus what the tests and the analysis script need. CI installs this file.
+-r requirements.txt
+pytest==9.1.1
+matplotlib==3.11.2
