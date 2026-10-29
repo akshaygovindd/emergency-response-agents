@@ -111,6 +111,34 @@ def hospital_situation(ctx: AgentContext) -> dict:
             "hospitals": [_hospital_view(s, h) for h in s.hospitals.values()]}
 
 
+def waiting_critical_view(ctx: AgentContext, limit: int = 8) -> list[dict]:
+    """Assessed critical victims (urgency 4-5) still waiting for an ambulance, with minutes to each capable hospital."""
+    s, out = ctx.state, []
+    for v in s.waiting_victims():
+        view = _victim_view(ctx, v.victim_id)
+        if v.victim_id in s.reservations or view is None or view["urgency"] < 4:
+            continue
+        loc = s.incidents[v.incident_id].location
+        out.append({**view, "est_minutes_to": {h.hospital_id: estimated_minutes(loc, h.location)
+                                               for h in s.hospitals.values() if h.can_treat(Capability(view["care"]))}})
+    out.sort(key=lambda x: (-x["urgency"], x["victim_id"]))
+    return out[:limit]
+
+
+def hospital_review_view(ctx: AgentContext, requests: list[dict], held: dict[str, int]) -> dict:
+    """What Hospital Coordination sees when reviewing admission requests: ER load including beds already
+    promised (en route, or accepted earlier in this review), and assessed critical victims still waiting.
+    Never deadlines or ground truth."""
+    s = ctx.state
+    hospitals = []
+    for h in s.hospitals.values():
+        view = _hospital_view(s, h)
+        view["er_patients_plus_incoming"] += held.get(h.hospital_id, 0)
+        hospitals.append(view)
+    return {"time_min": s.time_min, "requests": requests, "hospitals": hospitals,
+            "waiting_critical": waiting_critical_view(ctx)}
+
+
 # ───────── Shared submission logic ─────────
 def _reject(ctx: AgentContext, tool: str, args: dict, reason: str, detail: str) -> str:
     ctx.invalid.append({"time_min": ctx.state.time_min, "tool": tool, "args": args,
@@ -176,6 +204,23 @@ def propose_admission(ctx: AgentContext, hospital_id: str, victim_ids: list[str]
     urgencies = [v["urgency"] for vid in victim_ids if (v := _victim_view(ctx, vid))]
     priority = 6 - max(urgencies) if urgencies else 3
     return _to_pool(ctx, AgentName.HOSPITAL, tool, args, victim.incident_id, action, priority, reason)
+
+
+def propose_destination(ctx: AgentContext, hospital_id: str, victim_ids: list[str], reason: str) -> str:
+    """Dispatch's admission request (v2): it goes to Hospital Coordination for review, not to the pool."""
+    tool, args = "submit_admission_request", dict(hospital_id=hospital_id, victim_ids=list(victim_ids))
+    if not victim_ids:
+        return _reject(ctx, tool, args, "malformed", "victim_ids is empty")
+    victim = ctx.state.find_victim(victim_ids[0])
+    if victim is None:
+        return _reject(ctx, tool, args, "unknown_resource", f"No visible victim {victim_ids[0]}")
+    action = _build(ctx, tool, args, action_type=ActionType.ADMIT_PATIENT, hospital_id=hospital_id,
+                    victim_ids=list(victim_ids))
+    if isinstance(action, str):
+        return action
+    urgencies = [v["urgency"] for vid in victim_ids if (v := _victim_view(ctx, vid))]
+    return _to_pool(ctx, AgentName.DISPATCH, tool, args, victim.incident_id, action,
+                    6 - max(urgencies) if urgencies else 3, reason)
 
 
 def _locate(s: SimulationState, place_id: str) -> Location | None:
@@ -275,5 +320,19 @@ def submit_diversion(ctx: RunContextWrapper[AgentContext], hospital_id: str, vic
     return propose_admission(ctx.context, hospital_id, victim_ids, reason, divert=True)
 
 
+@function_tool
+def submit_admission_request(ctx: RunContextWrapper[AgentContext], hospital_id: str, victim_ids: list[str],
+                             reason: str) -> str:
+    """Request a destination hospital for all victims carried by one ambulance. Hospital Coordination reviews it.
+
+    Args:
+        hospital_id: The hospital you want to receive them.
+        victim_ids: Every victim assigned to that ambulance.
+        reason: One short sentence explaining the choice.
+    """
+    return propose_destination(ctx.context, hospital_id, victim_ids, reason)
+
+
 DISPATCH_TOOLS = [estimate_travel_minutes, submit_ambulance_assignment, submit_team_assignment]
 HOSPITAL_TOOLS = [hospital_status, estimate_travel_minutes, submit_admission, submit_diversion]
+DESTINATION_TOOLS = [hospital_status, estimate_travel_minutes, submit_admission_request]

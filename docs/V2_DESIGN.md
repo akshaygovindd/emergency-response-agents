@@ -249,3 +249,16 @@ on bottleneck 42 and normal 42), which uses OpenAI tokens.
    information ablation is covered by v1. The oracle path stays in the code unchanged for v1.
 3. **Short prompts.** New prompts stay brief. Measured fresh tokens per run on the dev seeds are
    reported before any full rerun.
+
+## 14. Implementation notes (deviations from sections 7 and 8)
+
+- The protocol, its schemas and its short prompts live in `agents/admission.py` (not `negotiation.py`),
+  which avoids a circular import; `negotiation.py` is unchanged.
+- A Dispatch request is a normal `Proposal` (ADMIT, proposer `dispatch`) produced by the new
+  `submit_admission_request` tool. `AgentSystem` lifts it out of the pool, runs the protocol, and puts
+  back the reviewed result under the same proposal ID. No new context model and no `llm_cache` change.
+- Request/response events are the existing `agent_message` records (negotiation ids `ADM-<round>-<n>`);
+  extra events are `admission_resolved`, `admission_redirect`, and `admission_fallback`.
+  Conflict metrics (`negotiations`, `counter_proposals`, ...) ignore `ADM-` messages.
+- Fallback-rule choices are sent as `resource_allocation` ACCEPT messages, so hospital accept counts
+  only reflect real hospital reviews (or the agents-mode rule).

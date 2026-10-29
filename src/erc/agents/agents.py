@@ -9,9 +9,12 @@ from agents import Agent
 
 from erc.agents.context import AgentContext
 from erc.agents.llm_cache import LLMResult, run_cached
-from erc.agents.prompts import DISPATCH_INSTRUCTIONS, HOSPITAL_INSTRUCTIONS, dispatch_prompt, hospital_prompt
+from erc.agents.prompts import (
+    DESTINATION_INSTRUCTIONS, DISPATCH_INSTRUCTIONS, HOSPITAL_INSTRUCTIONS, destination_prompt, dispatch_prompt,
+    hospital_prompt,
+)
 from erc.agents.tools import (
-    DISPATCH_TOOLS, HOSPITAL_TOOLS, dispatch_situation, estimate_travel_minutes, hospital_situation,
+    DESTINATION_TOOLS, DISPATCH_TOOLS, HOSPITAL_TOOLS, dispatch_situation, estimate_travel_minutes, hospital_situation,
     submit_ambulance_assignment, submit_team_assignment,
 )
 from erc.config import SETTINGS
@@ -20,6 +23,9 @@ DISPATCH_AGENT = Agent[AgentContext](name="DispatchAgent", model=SETTINGS.llm.mo
                                      instructions=DISPATCH_INSTRUCTIONS, tools=DISPATCH_TOOLS)
 HOSPITAL_AGENT = Agent[AgentContext](name="HospitalCoordinationAgent", model=SETTINGS.llm.model,
                                      instructions=HOSPITAL_INSTRUCTIONS, tools=HOSPITAL_TOOLS)
+# v2: Dispatch also requests the destination hospital (Hospital Coordination reviews it, see admission.py)
+DESTINATION_AGENT = Agent[AgentContext](name="DispatchDestinationAgent", model=SETTINGS.llm.model,
+                                        instructions=DESTINATION_INSTRUCTIONS, tools=DESTINATION_TOOLS)
 
 
 def dispatch_agent_for(ctx: AgentContext) -> Agent:
@@ -52,3 +58,7 @@ async def run_dispatch(ctx: AgentContext) -> LLMResult | None:
 
 async def run_hospital(ctx: AgentContext) -> LLMResult | None:
     return await run_cached(HOSPITAL_AGENT, hospital_prompt(ctx), ctx) if needs_hospital(ctx) else None
+
+
+async def run_destination(ctx: AgentContext) -> LLMResult | None:
+    return await run_cached(DESTINATION_AGENT, destination_prompt(ctx), ctx) if needs_hospital(ctx) else None

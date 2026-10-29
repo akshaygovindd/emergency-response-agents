@@ -92,6 +92,26 @@ def _conflict_resolved(e: dict) -> str:
     return f"Conflict {e['conflict_id']} resolved by {e['method']}"
 
 
+@feed_event("admission_redirect", "hospital")
+def _admission_redirect(e: dict) -> str:
+    return f"Admission {e['negotiation_id']}: rule redirected {', '.join(e['victim_ids'])} from {e['from_hospital']} to {e['hospital_id']}"
+
+
+@feed_event("admission_fallback", "hospital")
+def _admission_fallback(e: dict) -> str:
+    if e.get("stage") == "rule":
+        return f"Admission {e['negotiation_id']}: fallback rule chose {e['hospital_id']}"
+    return f"Admission {e['stage']} answer unusable; fixed rule used"
+
+
+@feed_event("admission_resolved", "hospital")
+def _admission_resolved(e: dict) -> str | None:
+    if not e.get("hospital_id"):
+        return f"Admission {e['negotiation_id']}: no hospital has room yet for {', '.join(e['victim_ids'])}"
+    return (f"Admission {e['negotiation_id']} settled: {', '.join(e['victim_ids'])} → {e['hospital_id']} "
+            f"({e['method']}, {e['rounds']} round{'s' if e['rounds'] != 1 else ''})")
+
+
 @feed_event("action_accepted", "action")
 def _action_accepted(e: dict) -> str:
     return f"Executed ({e['source']}): {_action_text(e['action'])} for {e['incident_id']}"

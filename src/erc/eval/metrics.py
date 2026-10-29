@@ -63,6 +63,16 @@ class RunMetrics(BaseModel):
     negotiations: int = 0
     counter_proposals: int = 0
     mean_negotiation_rounds: float | None = None
+    # Hospital admission negotiation (v2). Conflict negotiation above never counts these.
+    admission_requests: int = 0
+    admissions_accepted: int = 0                 # hospital ACCEPT messages (rule accepts in agents mode)
+    admissions_rejected: int = 0
+    admissions_countered: int = 0
+    admission_counters_accepted: int = 0         # Dispatch accepted the hospital's counter
+    admission_rounds_mean: float | None = None
+    admission_rounds_max: int = 0
+    admission_fallbacks: int = 0                 # unparseable LLM answers + fixed-rule fallbacks
+    admission_rule_redirects: int = 0            # agents mode: rule redirected to another hospital
     # Cost (zero for baselines). Tokens are logical: what the run costs without caching.
     llm_calls: int = 0                           # agent runs
     model_requests: int = 0                      # model calls inside agent runs
@@ -119,10 +129,17 @@ def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetr
 
     rejected = log.of_kind("action_rejected")
     messages = log.of_kind("agent_message")
+    def is_admission(m: dict) -> bool:
+        return str(m.get("negotiation_id") or "").startswith("ADM-")
+
     rounds: dict[str, int] = {}
+    adm_rounds: dict[str, int] = {}
     for m in messages:
         if m.get("negotiation_id"):
-            rounds[m["negotiation_id"]] = max(rounds.get(m["negotiation_id"], 0), m.get("round", 0))
+            target = adm_rounds if is_admission(m) else rounds
+            target[m["negotiation_id"]] = max(target.get(m["negotiation_id"], 0), m.get("round", 0))
+    adm = [m for m in messages if is_admission(m)]
+    from_hospital = [m for m in adm if m["sender"] == "hospital_coordination"]
 
     detected = log.of_kind("conflict_detected")
     original = {e["conflict_id"]: set(e["proposal_ids"]) for e in detected}
@@ -167,7 +184,16 @@ def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetr
         resolved_by_fallback=methods.get("fallback", 0),
         counters_accepted=counters_accepted,
         negotiations=len(rounds),
-        counter_proposals=sum(m.get("message_type") == "counter_proposal" for m in messages),
+        counter_proposals=sum(m.get("message_type") == "counter_proposal" for m in messages if not is_admission(m)),
+        admission_requests=len(adm_rounds),
+        admissions_accepted=sum(m["message_type"] == "accept" for m in from_hospital),
+        admissions_rejected=sum(m["message_type"] == "reject" for m in from_hospital),
+        admissions_countered=sum(m["message_type"] == "counter_proposal" for m in from_hospital),
+        admission_counters_accepted=sum(m["message_type"] == "accept" and m["sender"] == "dispatch" for m in adm),
+        admission_rounds_mean=_maybe(list(adm_rounds.values()), np.mean),
+        admission_rounds_max=max(adm_rounds.values(), default=0),
+        admission_fallbacks=len(log.of_kind("admission_fallback")),
+        admission_rule_redirects=len(log.of_kind("admission_redirect")),
         mean_negotiation_rounds=_maybe(list(rounds.values()), np.mean),
         llm_calls=len(llm),
         model_requests=sum(e.get("requests", 1) for e in llm),

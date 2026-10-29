@@ -10,7 +10,8 @@ from __future__ import annotations
 
 import asyncio
 
-from erc.agents.agents import run_dispatch, run_hospital
+from erc.agents.admission import AdmissionProtocol
+from erc.agents.agents import run_destination, run_dispatch, run_hospital
 from erc.agents.assessment import ASSESSMENT_AGENT, oracle_assessment, to_report
 from erc.agents.conflicts import Conflict, detect_conflicts, resolve_by_priority
 from erc.agents.context import AgentContext
@@ -36,8 +37,9 @@ def shared_loop() -> asyncio.AbstractEventLoop:
 
 
 class AgentSystem:
-    def __init__(self, negotiate: bool = False, oracle: bool = False) -> None:
+    def __init__(self, negotiate: bool = False, oracle: bool = False, admission_protocol: str = "v1") -> None:
         self.negotiate, self.oracle = negotiate, oracle
+        self.admission_protocol = admission_protocol    # "v1": Hospital proposes; "v2": Dispatch requests, Hospital reviews
         self.name = "oracle" if oracle else ("negotiation" if negotiate else "agents")
         self.log: EventLog | None = None
         self.assessments: dict = {}
@@ -57,7 +59,9 @@ class AgentSystem:
         await self._assess_new(state)
         ctx = AgentContext(state=state, assessments=self.assessments, round_id=round_id)
 
-        for role, runner in ((AgentName.DISPATCH, run_dispatch), (AgentName.HOSPITAL, run_hospital)):
+        v2 = self.admission_protocol == "v2"
+        runners = [(AgentName.DISPATCH, run_dispatch)] + ([] if v2 else [(AgentName.HOSPITAL, run_hospital)])
+        for role, runner in runners:
             n_prop, n_inv = len(ctx.proposals), len(ctx.invalid)
             res = await runner(ctx)
             if res is not None:
@@ -67,6 +71,9 @@ class AgentSystem:
                     t, role, RA, MessageType.PROPOSAL, p.incident_id, p.action, p.priority, p.reason)
             for bad in ctx.invalid[n_inv:]:
                 self._record(t, "proposal_invalid", agent=role.value, **bad)
+
+        if v2:
+            await self._negotiate_admissions(ctx)
 
         chosen = {p.proposal_id for p in ctx.proposals}
         for conflict in detect_conflicts(ctx.proposals, state, round_id):
@@ -93,6 +100,19 @@ class AgentSystem:
                                     p.priority, "Committed for final validation")
                 decisions.append(Decision(p.action, p.incident_id, source=p.proposer.value, message_id=mid))
         return decisions
+
+    async def _negotiate_admissions(self, ctx: AgentContext) -> None:
+        """v2: Dispatch's destination requests are reviewed by Hospital Coordination (see admission.py)."""
+        t, n_prop, n_inv = ctx.state.time_min, len(ctx.proposals), len(ctx.invalid)
+        res = await run_destination(ctx)
+        if res is not None:
+            self._log_llm(t, AgentName.DISPATCH, res)
+        requests = ctx.proposals[n_prop:]
+        del ctx.proposals[n_prop:]              # requests are not actions yet: only the reviewed result is
+        for bad in ctx.invalid[n_inv:]:
+            self._record(t, "proposal_invalid", agent=AgentName.DISPATCH.value, **bad)
+        if requests:
+            ctx.proposals.extend(await AdmissionProtocol(self, self.negotiate).run(ctx, requests))
 
     async def _resolve(self, conflict: Conflict, ctx: AgentContext, chosen: set[str]) -> tuple[list[str], str]:
         """Fixed priority rule. The negotiating system overrides this step."""

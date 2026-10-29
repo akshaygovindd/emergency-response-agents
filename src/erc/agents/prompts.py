@@ -50,6 +50,12 @@ How to act:
 - When done, reply with one short sentence summarising your choices."""
 
 
+DESTINATION_INSTRUCTIONS = """You are the Dispatch Agent. For each ambulance that has victims and no destination,
+request one hospital for all its victims with submit_admission_request. Prefer short travel, the matching
+specialty for urgency 4-5 victims, and hospitals with room. Hospital Coordination reviews each request and may
+counter. If a submission is REJECTED, read the reason and fix it. Reply with one short sentence."""
+
+
 def _header(ctx: AgentContext) -> str:
     return f"Decision round {ctx.round_id} | minute {ctx.state.time_min} | state {state_fingerprint(ctx.state)}"
 
@@ -60,3 +66,7 @@ def dispatch_prompt(ctx: AgentContext) -> str:
 
 def hospital_prompt(ctx: AgentContext) -> str:
     return f"{_header(ctx)}\nSituation:\n{json.dumps(hospital_situation(ctx), separators=(',', ':'))}"
+
+
+def destination_prompt(ctx: AgentContext) -> str:
+    return hospital_prompt(ctx)

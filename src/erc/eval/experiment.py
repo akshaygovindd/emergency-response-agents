@@ -52,12 +52,20 @@ def load_scenario(name: ScenarioName, seed: int) -> Scenario:
     return Scenario.load(path) if path.exists() else generate_scenario(name, seed)
 
 
+def make_policy(mode: Mode, version: str) -> Policy:
+    """v2 runs use the admission negotiation protocol; v1 and the baselines are unchanged."""
+    policy = POLICIES[mode]()
+    if version == "v2" and mode in AGENT_MODES:
+        policy.admission_protocol = "v2"
+    return policy
+
+
 def run_one(name: ScenarioName, seed: int, mode: Mode, version: str,
             allow_v1_write: bool = False) -> RunMetrics:
     require_writable(version, allow_v1_write)
     if mode not in POLICIES:
         raise ValueError(f"Mode '{mode.value}' is not implemented yet")
-    engine = Engine(load_scenario(name, seed), POLICIES[mode]())
+    engine = Engine(load_scenario(name, seed), make_policy(mode, version))
     engine.run()
     engine.log.save(log_dir(version) / mode.value)
     return compute_metrics(engine.state, engine.log, mode.value)
