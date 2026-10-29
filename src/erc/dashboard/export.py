@@ -13,6 +13,7 @@ Bundle layout (all minutes are integers, positions are km on the 20 x 20 grid):
               a: [[x, y, status, target, onboard] per ambulance], r: [[x, y, status, target] per responder],
               k: KPIs, res: ambulances/teams in use, s: [[doctors, nurses] in use per hospital], n: messages so far}
   messages   feed rows (see story.py)        conflicts  negotiation chains (see story.py)
+  tour       [{t, title, caption}] bookmarked moments (see tour.py)
   trips      [{unit, kind, t0, t1, x0, y0, x1, y1, target}]   straight-line moves, for sub-minute gliding
 """
 from __future__ import annotations
@@ -26,6 +27,7 @@ from erc.dashboard.live import (
 )
 from erc.dashboard.replay import LOGS_DIR, SCENARIOS_DIR, MOVING, Replay, interpolate_track
 from erc.dashboard.story import conflict_chains, feed_messages
+from erc.dashboard.tour import tour_moments
 
 GRID_KM = 20
 # Triage codes for victims in frames[t]["v"]
@@ -205,6 +207,7 @@ def build_bundle(events: list[dict], scenario: dict, meta: dict) -> dict:
         "incidents": [{"id": i["incident_id"], "x": i["location"]["x"], "y": i["location"]["y"],
                        "arrival_min": i["arrival_time_min"]} for i in scenario["incidents"]],
         "victims": victims, "frames": frames, "trips": trips, "messages": messages, "conflicts": conflicts,
+        "tour": tour_moments(events, conflicts, last, frames[-1]["k"], sum(v["severity"] >= 4 for v in victims)),
     }
 
 

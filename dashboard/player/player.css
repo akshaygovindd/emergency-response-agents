@@ -46,6 +46,17 @@ button.primary:hover { background: #2e6190; }
 #autopause input:checked + .sw::after { transform: translateX(16px); background: #e7eef7; }
 #autopause input:focus-visible + .sw { outline: 2px solid var(--accent); }
 
+/* tour */
+#tour.on { background: #27527a; border-color: #34648f; }
+#tourbar { flex: none; display: flex; align-items: center; gap: 12px; background: #1b2c40; border: 1px solid #34648f;
+  border-radius: 12px; padding: 6px 14px; }
+#tourbar[hidden] { display: none; }
+#tourtext { flex: 1; display: flex; align-items: baseline; gap: 12px; font-size: 16px; min-width: 0; flex-wrap: wrap; }
+#tourstep { color: var(--muted); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+#tourtitle { font-size: 16px; color: #fff; }
+#tourcap { color: var(--text); }
+#tourbar button:disabled { opacity: .35; cursor: default; }
+
 /* main */
 #main { flex: 1 1 0; min-height: 0; display: flex; gap: 12px; }
 #mapcol { flex: none; display: flex; flex-direction: column; gap: 6px; min-height: 0; }

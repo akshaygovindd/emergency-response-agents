@@ -446,6 +446,9 @@
     if (e.code === "Space") { e.preventDefault(); playBtn.click(); }
     else if (e.code === "ArrowRight") jump(Math.floor(tau) + 1);
     else if (e.code === "ArrowLeft") jump(Math.ceil(tau) - 1);
+    else if (e.code === "KeyT") $("tour").click();
+    else if (tourAt >= 0 && e.code === "PageDown") $("tournext").click();
+    else if (tourAt >= 0 && e.code === "PageUp") $("tourback").click();
   });
 
   // Ticks under the scrubber: incident arrivals. Markers above it: conflicts (click to jump).
@@ -465,6 +468,27 @@
   $("bedlegend").innerHTML =
     `<span><i class="bed occ" style="background:#8a9bb0"></i>occupied</span>` +
     `<span><i class="bed prom"></i>promised (on the way)</span><span><i class="bed"></i>free</span>`;
+
+  // ───────── Tour: bookmarked moments computed in Python (bundle.tour) ─────────
+  let tourAt = -1;
+  const tourBar = $("tourbar");
+  function showTour(i) {
+    const moments = B.tour || [];
+    tourAt = clamp(i, 0, moments.length - 1);
+    const m = moments[tourAt];
+    tourBar.hidden = false; $("tour").classList.add("on");
+    $("tourstep").textContent = `Moment ${tourAt + 1} of ${moments.length}`;
+    $("tourtitle").textContent = `${m.title} \u00b7 minute ${m.t}`;
+    $("tourcap").textContent = m.caption;
+    $("tourback").disabled = tourAt === 0; $("tournext").disabled = tourAt === moments.length - 1;
+    setPlaying(false); jump(m.t); fit();
+  }
+  function endTour() { tourAt = -1; tourBar.hidden = true; $("tour").classList.remove("on"); fit(); }
+  $("tour").addEventListener("click", () => { if (tourAt < 0) showTour(0); else endTour(); $("tour").blur(); });
+  $("tournext").addEventListener("click", () => { showTour(tourAt + 1); $("tournext").blur(); });
+  $("tourback").addEventListener("click", () => { showTour(tourAt - 1); $("tourback").blur(); });
+  $("tourexit").addEventListener("click", endTour);
+  if (!(B.tour && B.tour.length)) $("tour").hidden = true;
 
   // ───────── Legend (same palette as the map) ─────────
   const sw = (inner) => `<svg viewBox="0 0 22 14">${inner}</svg>`;

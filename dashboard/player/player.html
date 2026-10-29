@@ -15,6 +15,7 @@
     <div id="controls">
       <button id="play" class="primary" title="Space">&#9654; Play</button>
       <button id="restart" title="Restart from minute 0">&#8634; Restart</button>
+      <button id="tour" title="Jump through the key moments of this run">&#9733; Tour</button>
       <div id="speeds" role="group" aria-label="Speed">
         <button data-speed="1" class="on">1x</button>
         <button data-speed="2">2x</button>
@@ -28,6 +29,12 @@
     </div>
     <label id="autopause" title="Pause playback when a conflict appears"><input type="checkbox" id="pausebox" checked><span class="sw"></span>Auto-pause on conflict</label>
   </header>
+  <div id="tourbar" hidden>
+    <button id="tourback">&#9664; Back</button>
+    <div id="tourtext"><span id="tourstep"></span><b id="tourtitle"></b><span id="tourcap"></span></div>
+    <button id="tournext" class="primary">Next &#9654;</button>
+    <button id="tourexit" title="Leave the tour">&#10005;</button>
+  </div>
   <main id="main">
     <section id="mapcol">
       <div id="mapwrap">
