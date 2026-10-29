@@ -76,13 +76,20 @@ def icon_sprite(names: list[str] = ICON_NAMES, assets_dir: Path = ASSETS_DIR) ->
     return '<svg width="0" height="0" style="position:absolute" aria-hidden="true">' + "".join(symbols) + "</svg>"
 
 
-def render_replay_app(bundle: dict, catalog: dict, app_dir: Path = APP_DIR, assets_dir: Path = ASSETS_DIR) -> str:
-    """The full-window Replay page as one self-contained HTML document (fonts, icons, data all inlined)."""
+def render_replay_app(bundle: dict, catalog: dict, app_dir: Path = APP_DIR, assets_dir: Path = ASSETS_DIR, mode: str = "page") -> str:
+    """The Replay app as one self-contained HTML document (fonts, icons, data all inlined).
+
+    mode "page" is the full-window page; "compare" is the compact map + KPI cards used twice on the Compare page;
+    "inline" hides the rail and top bar so the whole player can sit inside another page (What-if).
+    """
+    from erc.dashboard.pages import base_css, icon_sprite as sprite_all
     html = (app_dir / "app.html").read_text()
-    css = (app_dir / "app.css").read_text().replace("/*__FONTS__*/", fonts_css(assets_dir))
+    if mode != "page":
+        html = html.replace("<body", f'<body class="mode-{mode}"', 1)
+    css = base_css(assets_dir) + "\n" + (app_dir / "app.css").read_text()
     js = (app_dir / "app.js").read_text()
     # The data goes in last so nothing inside it can be mistaken for a placeholder.
-    return (html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__SPRITE__", icon_sprite(assets_dir=assets_dir))
+    return (html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__SPRITE__", sprite_all(assets_dir))
             .replace("__BUNDLE__", _json_for_script(bundle)).replace("__CATALOG__", _json_for_script(catalog)))
 
 

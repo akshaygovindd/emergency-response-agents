@@ -1,7 +1,8 @@
 """Compare page: the same run (scenario + seed) under two systems, side by side on one clock.
 
-Everything shown is replayed from saved logs (no simulation, no API calls). Python builds both bundles
-and the "first difference" note; the browser draws two maps and keeps one minute clock.
+A full-window page with no Streamlit widgets. Python builds both runs and the first-difference card from the saved
+logs (no simulation, no API calls); the run and the two systems are chosen in the page's run selector and applied
+through the page address (?v=v1&s=normal&r=1&m1=greedy&m2=negotiation).
 """
 import json
 import sys
@@ -11,15 +12,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
 import streamlit as st
 
-import common
-
+from erc.dashboard.catalog import resolve_selection, run_catalog
 from erc.dashboard.compare import SYSTEM_NAMES, first_difference
 from erc.dashboard.export import export_replay
-from erc.dashboard.player import assets_stamp, render_compare
-from erc.dashboard.replay import MODE_ORDER, available_runs
+from erc.dashboard.pages import FULL_WINDOW_CSS, page_stamp, render_page
+from erc.dashboard.player import APP_DIR, app_stamp, render_replay_app
+from erc.dashboard.replay import available_runs
 
-SCENARIO_ORDER = ["normal", "surge", "bottleneck"]
-DEFAULTS = {"version": "v1", "scenario": "normal", "run": 1, "a": "greedy", "b": "negotiation"}
+PAGE_DIR = Path(__file__).resolve().parents[1] / "compare_app"
 
 
 @st.cache_data
@@ -28,36 +28,29 @@ def runs_index():
 
 
 @st.cache_data(show_spinner=False)
-def compare_html(version: str, scenario: str, seed: int, mode_a: str, mode_b: str, stamp: float) -> str:
-    sides = []
-    for mode in (mode_a, mode_b):
-        sides.append({"label": SYSTEM_NAMES[mode] + f" ({version})", "bundle": export_replay(version, scenario, seed, mode)})
-    logs = []
-    for mode in (mode_a, mode_b):
-        path = next(r.path for r in runs_index() if (r.version, r.scenario, r.seed, r.mode) == (version, scenario, seed, mode))
+def page_html(version: str, scenario: str, run: str, left: str, right: str, stamp: float) -> str:
+    runs = runs_index()
+    catalog = run_catalog(runs)
+    seed = int(run) + 41
+    sides, logs = [], []
+    for mode in (left, right):
+        bundle = export_replay(version, scenario, seed, mode)
+        path = next(r.path for r in runs if (r.version, r.scenario, r.seed, r.mode) == (version, scenario, seed, mode))
         logs.append([json.loads(line) for line in path.read_text().splitlines() if line])
-    return render_compare(sides[0], sides[1], first_difference(logs[0], logs[1], SYSTEM_NAMES[mode_a], SYSTEM_NAMES[mode_b]))
+        k = bundle["frames"][-1]["k"]
+        sides.append({"label": SYSTEM_NAMES[mode], "html": render_replay_app(bundle, catalog, mode="compare"),
+                      "last": bundle["meta"]["last_minute"], "conflicts": [{"t": c["t"], "plain": c["plain"]} for c in bundle["conflicts"]],
+                      "sub": f"{k['crit_ok']} of {bundle['meta']['critical_total']} critical patients in time at the end",
+                      "ticks": sorted({i["arrival_min"] for i in bundle["incidents"]})})
+    diff = first_difference(logs[0], logs[1], SYSTEM_NAMES[left], SYSTEM_NAMES[right])
+    card = None if diff is None else {"t": diff["t"], "left": diff["a_plain"], "right": diff["b_plain"]}
+    return render_page(PAGE_DIR, {"catalog": catalog, "sel": {"v": version, "s": scenario, "r": run, "m1": left, "m2": right},
+                                  "left": sides[0], "right": sides[1], "diff": card, "ticks": sides[0]["ticks"] + sides[1]["ticks"]})
 
 
-def pick(col, label, options, preferred, key, format_func=str):
-    index = options.index(preferred) if preferred in options else 0
-    return col.selectbox(label, options, index=index, key=key, format_func=format_func)
-
-
-common.setup()
-st.markdown("<style>iframe{height:calc(100vh - 118px) !important;min-height:600px}</style>", unsafe_allow_html=True)
-slot, (c_version, c_scenario, c_run, c_a, c_b) = common.header("Compare", (0.8, 1.0, 1.2, 1.2, 1.3))
-runs = runs_index()
-version = pick(c_version, "Version", sorted({r.version for r in runs}), DEFAULTS["version"], "cmp_version")
-in_version = [r for r in runs if r.version == version]
-scenario = pick(c_scenario, "Scenario", [s for s in SCENARIO_ORDER if any(r.scenario == s for r in in_version)],
-                DEFAULTS["scenario"], "cmp_scenario")
-in_scenario = [r for r in in_version if r.scenario == scenario]
-number = pick(c_run, "Run", sorted({r.run_number for r in in_scenario}), DEFAULTS["run"], "cmp_run",
-              lambda n: f"Run {n} (seed {n + 41})")
-modes = [m for m in MODE_ORDER if any(r.mode == m and r.run_number == number for r in in_scenario)]
-mode_a = pick(c_a, "Left system", modes, DEFAULTS["a"], "cmp_a", SYSTEM_NAMES.get)
-mode_b = pick(c_b, "Right system", modes, DEFAULTS["b"], "cmp_b", SYSTEM_NAMES.get)
-common.subtitle(slot, f"Compare &middot; {scenario.title()} scenario &middot; run {number} (seed {number + 41}) "
-                      f"&middot; {version}")
-st.iframe(compare_html(version, scenario, number + 41, mode_a, mode_b, assets_stamp()), height=900)
+st.markdown(FULL_WINDOW_CSS, unsafe_allow_html=True)
+q = st.query_params
+catalog = run_catalog(runs_index())
+version, scenario, run, left = resolve_selection(catalog, q.get("v"), q.get("s"), q.get("r"), q.get("m1"), default=("v1", "normal", "1", "greedy"))
+right = resolve_selection(catalog, version, scenario, run, q.get("m2"))[3]
+st.iframe(page_html(version, scenario, run, left, right, max(page_stamp(PAGE_DIR), app_stamp())), height=900)

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare · Emergency Response Command Center</title>
+<style>
+/*__CSS__*/
+</style>
+</head>
+<body tabindex="0">
+__SPRITE__
+<div id="shell">
+  <nav id="rail"></nav>
+  <div id="content">
+    <header id="topbar">
+      <h1>Emergency Response Command Center <span class="crumb">Compare</span></h1>
+      <div class="top-right">
+        <div id="runwrap">
+          <button id="runpill" class="pill" aria-haspopup="true"></button>
+          <div id="runpop" class="pop wide" hidden></div>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <div id="diff" class="card diff"></div>
+      <div id="pair">
+        <section class="col"><div class="col-head"><span class="side">Left</span><b id="nameA"></b><span class="sub" id="subA"></span></div><iframe id="frameA" title="Left system"></iframe></section>
+        <section class="col"><div class="col-head"><span class="side">Right</span><b id="nameB"></b><span class="sub" id="subB"></span></div><iframe id="frameB" title="Right system"></iframe></section>
+      </div>
+      <div class="playbar">
+        <button id="play" class="play" data-tip="Play / pause|Space"></button>
+        <button id="restart" class="icon-btn" data-tip="Restart|Back to minute 0"></button>
+        <div id="speeds" class="seg"><b data-speed="1" class="on">1x</b><b data-speed="2">2x</b><b data-speed="4">4x</b></div>
+        <div class="scrub"><div id="cmarks" class="cms"></div><input id="scrub" type="range" min="0" max="120" step="0.01" value="0" aria-label="Minute"><div id="ticks"></div></div>
+        <div class="minute"><small>Minute</small><b id="min">0</b><span>/ <span id="last">120</span></span></div>
+        <label class="switch" data-tip="Pause on conflict|Stop at the minute a conflict appears in either run"><input type="checkbox" id="pausebox" checked><i></i>Pause on conflict</label>
+      </div>
+    </main>
+  </div>
+</div>
+<div id="tip" hidden></div>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+/*__JS__*/
+</script>
+</body>
+</html>

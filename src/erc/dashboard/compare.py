@@ -6,7 +6,7 @@ there are described in plain words. Built from the event logs only.
 """
 from __future__ import annotations
 
-from erc.dashboard.story import feed_text
+from erc.dashboard.story import feed_text, plain_text
 
 SYSTEM_NAMES = {"naive": "Naive", "greedy": "Greedy", "agents": "Agents (no negotiation)",
                 "negotiation": "Negotiation", "oracle": "Oracle"}
@@ -34,5 +34,6 @@ def first_difference(events_a: list[dict], events_b: list[dict], name_a: str, na
         if only_a or only_b:
             say = lambda name, acts: f"{name} {'; '.join(acts)}" if acts else f"{name} made no different decision"
             return {"t": t, "a": only_a, "b": only_b,
+                    "a_plain": [plain_text(x) for x in only_a], "b_plain": [plain_text(x) for x in only_b],
                     "text": f"First difference at minute {t}: {say(name_a, only_a)}. {say(name_b, only_b)}."}
     return None
