@@ -77,3 +77,12 @@ def test_real_runs_list_every_logged_negotiation():
     if v1.exists():
         rule = negotiation_records([json.loads(line) for line in v1.read_text().splitlines() if line])
         assert rule and all(r["method"] == "priority_rule" for r in rule)
+
+
+def test_records_carry_plain_wording_for_the_page():
+    (record,) = negotiation_records(conflict_events())
+    assert record["incidents_plain"] == ["Incident 1", "Incident 2"] and record["units_plain"] == ["Ambulance 1"]
+    assert [s["plain"] for s in record["steps"][:3]] == ["Incident 1 and Incident 2 both want Ambulance 1",
+                                                         "send Ambulance 3 to Incident 1", "send Ambulance 3 to Incident 1"]
+    assert record["steps"][-1]["plain"] == "Kept 1 proposal, dropped 1"
+    assert all(s["raw"] for s in record["steps"])                # the raw log message is always kept for the code panel

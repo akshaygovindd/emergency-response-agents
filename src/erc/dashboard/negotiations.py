@@ -8,7 +8,7 @@ Step:   {key, label, t, id, from, to, text, why, raw}
 """
 from __future__ import annotations
 
-from erc.dashboard.story import agent_label, conflict_text, feed_text, resource_name
+from erc.dashboard.story import agent_label, conflict_text, feed_text, plain_text, resource_name
 
 STEP_LABELS = {"proposal": "Proposal", "counter_proposal": "Counter-offer", "accept": "Accept", "reject": "Reject",
                "escalate": "Arbitration", "info": "Info", "commit": "Commit"}
@@ -38,13 +38,14 @@ def negotiation_records(events: list[dict]) -> list[dict]:
 def _message_step(m: dict) -> dict:
     mtype = m["message_type"]
     return {"key": STEP_KEYS.get(mtype, mtype), "label": STEP_LABELS.get(mtype, mtype.title()), "t": m["t"],
-            "id": m["message_id"], "from": agent_label(m["sender"]), "to": agent_label(m["recipient"]),
-            "text": feed_text(m.get("proposed_action"), m.get("incident_id")), "why": m.get("reason") or "", "raw": m}
+            "id": m["message_id"], "from": plain_text(agent_label(m["sender"])), "to": plain_text(agent_label(m["recipient"])),
+            "text": feed_text(m.get("proposed_action"), m.get("incident_id")), "why": m.get("reason") or "", "raw": m,
+            "plain": plain_text(feed_text(m.get("proposed_action"), m.get("incident_id")))}
 
 
 def _conflict_record(c: dict, messages: list[dict], outcome: dict | None) -> dict:
     steps = [{"key": "conflict", "label": "Conflict detected", "t": c["t"], "id": c["conflict_id"], "from": "System",
-              "to": "all agents", "text": conflict_text(c), "why": c["reason"], "raw": c}]
+              "to": "all agents", "text": conflict_text(c), "why": c["reason"], "raw": c, "plain": plain_text(conflict_text(c))}]
     steps += [_message_step(m) for m in messages]
     method = (outcome or {}).get("method")
     if outcome:
@@ -52,11 +53,13 @@ def _conflict_record(c: dict, messages: list[dict], outcome: dict | None) -> dic
         steps.append({"key": "fallback" if method == "fallback" else "resolved",
                       "label": {"fallback": "Fallback", "priority_rule": "Rule"}.get(method, "Resolved"),
                       "t": outcome.get("t", c["t"]), "id": c["conflict_id"], "from": "System", "to": "",
+                      "plain": f"Kept {len(kept)} proposal{'s' if len(kept) != 1 else ''}, dropped {len(dropped)}",
                       "text": f"kept {', '.join(kept) or 'none'}; dropped {', '.join(dropped) or 'none'}",
                       "why": CONFLICT_OUTCOMES.get(method, str(method)), "raw": outcome})
     rounds = max((m.get("round") or 0 for m in messages), default=0)
     return {"id": c["conflict_id"], "kind": "conflict", "t": c["t"], "type": CONFLICT_TYPES.get(c["conflict_type"], c["conflict_type"]),
             "incidents": c["incident_ids"], "units": [resource_name(r) for r in c["resources"]], "steps": steps,
+            "incidents_plain": [plain_text(i) for i in c["incident_ids"]], "units_plain": [plain_text(resource_name(r)) for r in c["resources"]],
             "outcome": CONFLICT_OUTCOMES.get(method, "Unresolved"), "method": method, "rounds": rounds}
 
 
@@ -66,10 +69,13 @@ def _admission_record(done: dict, messages: list[dict]) -> dict:
     went = done["hospital_id"] or "no hospital yet"
     steps.append({"key": "resolved", "label": "Outcome", "t": done["t"], "id": done["negotiation_id"], "from": "System", "to": "",
                   "text": f"{', '.join(done['victim_ids'])} to {went} (requested {done['requested']})",
+                  "plain": plain_text(f"{len(done['victim_ids'])} patient{'s' if len(done['victim_ids']) != 1 else ''} to {went} (requested {done['requested']})"),
                   "why": ADMISSION_OUTCOMES.get(method, method), "raw": done})
     first = messages[0]["t"] if messages else done["t"]
     return {"id": done["negotiation_id"], "kind": "admission", "t": first, "type": "Hospital admission",
             "incidents": [done["incident_id"]], "units": [done["requested"]] + ([done["hospital_id"]] if done["hospital_id"] not in (None, done["requested"]) else []),
+            "incidents_plain": [plain_text(done["incident_id"])],
+            "units_plain": [plain_text(u) for u in [done["requested"]] + ([done["hospital_id"]] if done["hospital_id"] not in (None, done["requested"]) else [])],
             "steps": steps, "outcome": ADMISSION_OUTCOMES.get(method, method), "method": method, "rounds": done["rounds"]}
 
 
