@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t061-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity available, and there is no need to reserve it for closer critical patients needing trauma care."
+      }
+    ]
+  },
+  "tokens_in": 638,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 0.9998920409707353,
+  "context": null
+}

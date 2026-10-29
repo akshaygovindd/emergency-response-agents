@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-04 for INC-07\u2019s two most urgent trauma victims and RESCUE-1 to the incident.",
+  "tokens_in": 2120,
+  "tokens_out": 160,
+  "requests": 2,
+  "latency_s": 2.0261727910256013,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t037-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-2",
+            "V-07-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance and the two most urgent trauma victims should be picked up first.",
+        "time_min": 37
+      },
+      {
+        "proposal_id": "t037-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue team is needed and currently free for this incident.",
+        "time_min": 37
+      }
+    ],
+    "invalid": []
+  }
+}

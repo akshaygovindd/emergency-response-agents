@@ -1,0 +1,47 @@
+{
+  "output": "Submitted both hospital requests.",
+  "tokens_in": 1536,
+  "tokens_out": 125,
+  "requests": 2,
+  "latency_s": 2.85948287503561,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t037-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable hospital with trauma-capable ER and available room.",
+        "time_min": 37
+      },
+      {
+        "proposal_id": "t037-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-2",
+            "V-05-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Shortest travel and enough general/trauma capacity for both ALS victims.",
+        "time_min": 37
+      }
+    ],
+    "invalid": []
+  }
+}

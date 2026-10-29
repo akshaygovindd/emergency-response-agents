@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t039-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has capacity for both victims now, and the critical trauma patients waiting are closer to H-G, so no bed needs to be held here."
+      }
+    ]
+  },
+  "tokens_in": 678,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.1293816670076922,
+  "context": null
+}

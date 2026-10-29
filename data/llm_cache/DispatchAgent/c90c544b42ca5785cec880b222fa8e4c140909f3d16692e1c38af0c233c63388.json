@@ -1,0 +1,42 @@
+{
+  "output": "Proposed RESCUE-1 and MED-1 to INC-11.",
+  "tokens_in": 2158,
+  "tokens_out": 126,
+  "requests": 2,
+  "latency_s": 2.2279810000327416,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t072-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free rescue team for the newest incident with an ALS trauma victim.",
+        "time_min": 72
+      },
+      {
+        "proposal_id": "t072-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical team can support the urgent trauma victim at the closest incident.",
+        "time_min": 72
+      }
+    ],
+    "invalid": []
+  }
+}

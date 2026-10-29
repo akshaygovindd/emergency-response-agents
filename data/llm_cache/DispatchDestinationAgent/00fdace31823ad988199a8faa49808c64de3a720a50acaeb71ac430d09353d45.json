@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-10-2.",
+  "tokens_in": 1256,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 2.3513483330025338,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t068-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with available capacity for this trauma victim.",
+        "time_min": 68
+      }
+    ],
+    "invalid": []
+  }
+}

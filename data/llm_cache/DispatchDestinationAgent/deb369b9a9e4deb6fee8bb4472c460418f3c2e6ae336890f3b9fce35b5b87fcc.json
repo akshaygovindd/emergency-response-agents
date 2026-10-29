@@ -1,0 +1,29 @@
+{
+  "output": "Submitted AMB-01 to H-G.",
+  "tokens_in": 1263,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.8264897090266459,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t065-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Shortest travel and has general care capacity for this ALS general victim.",
+        "time_min": 65
+      }
+    ],
+    "invalid": []
+  }
+}

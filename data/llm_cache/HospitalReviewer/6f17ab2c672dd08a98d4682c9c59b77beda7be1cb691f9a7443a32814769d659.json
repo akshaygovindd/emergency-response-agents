@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t018-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has general capacity for both patients and should preserve capacity while the nearby critical trauma case can still be handled there."
+      },
+      {
+        "request_id": "t018-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat the trauma and general victim now, and there is no need to divert them away from the closest capable hospital."
+      }
+    ]
+  },
+  "tokens_in": 704,
+  "tokens_out": 109,
+  "requests": 1,
+  "latency_s": 1.2644141250057146,
+  "context": null
+}

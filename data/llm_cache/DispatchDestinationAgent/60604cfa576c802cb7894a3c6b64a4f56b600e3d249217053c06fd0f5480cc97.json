@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-T for V-11-1.",
+  "tokens_in": 1257,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.0627647080109455,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest trauma-capable hospital with available trauma treatment slots.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

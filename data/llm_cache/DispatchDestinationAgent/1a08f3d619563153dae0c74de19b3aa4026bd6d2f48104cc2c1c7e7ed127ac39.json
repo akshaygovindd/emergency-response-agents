@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-T for V-10-1.",
+  "tokens_in": 1267,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.808540083002299,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t042-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with room for a severe ALS patient.",
+        "time_min": 42
+      }
+    ],
+    "invalid": []
+  }
+}

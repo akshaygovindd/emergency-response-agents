@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t058-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room for both ALS victims and is the closest capable hospital, with no waiting critical patients to protect capacity for."
+      }
+    ]
+  },
+  "tokens_in": 550,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 0.9852472500060685,
+  "context": null
+}

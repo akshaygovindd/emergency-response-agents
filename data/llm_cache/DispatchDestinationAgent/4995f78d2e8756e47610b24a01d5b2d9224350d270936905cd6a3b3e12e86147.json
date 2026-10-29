@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-03.",
+  "tokens_in": 2115,
+  "tokens_out": 121,
+  "requests": 3,
+  "latency_s": 3.2490122920135036,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest accepting hospital with beds and capacity for both victims.",
+        "time_min": 117
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 117,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-1",
+            "V-07-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

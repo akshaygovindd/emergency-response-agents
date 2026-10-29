@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t016-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the general patient and has ample ER, treatment, and bed capacity, while the only waiting critical patient is closer to H-B, so no capacity needs to be reserved here."
+      }
+    ]
+  },
+  "tokens_in": 573,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.119614208000712,
+  "context": null
+}

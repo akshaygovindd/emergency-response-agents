@@ -1,0 +1,29 @@
+{
+  "output": "Submitted AMB-01 to H-T.",
+  "tokens_in": 1260,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 2.7685642919968814,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t003-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Shortest travel time with available general care and beds.",
+        "time_min": 3
+      }
+    ],
+    "invalid": []
+  }
+}

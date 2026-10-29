@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t088-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Keep AMB-05 on the older fire incident: it has waited much longer and the victim is higher urgency than the low-urgency alternative. No unclaimed ambulance is available for the other proposal."
+  },
+  "tokens_in": 614,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.4384724579867907,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t104-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has bed capacity and this is a general patient, so admitting them there does not jeopardize critical trauma capacity elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 605,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 1.0834415000281297,
+  "context": null
+}

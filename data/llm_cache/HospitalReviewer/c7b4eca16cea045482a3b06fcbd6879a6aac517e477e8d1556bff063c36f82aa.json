@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t091-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the trauma ALS patient and has sufficient ER/beds; accepting also avoids stranding the paired lower-urgency patient."
+      }
+    ]
+  },
+  "tokens_in": 716,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.1803431250154972,
+  "context": null
+}

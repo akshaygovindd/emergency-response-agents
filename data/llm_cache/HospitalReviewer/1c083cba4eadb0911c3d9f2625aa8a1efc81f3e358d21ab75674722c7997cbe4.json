@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t019-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both patients and has sufficient trauma and general capacity."
+      },
+      {
+        "request_id": "t019-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can handle the critical general patient and has available trauma/general capacity."
+      }
+    ]
+  },
+  "tokens_in": 638,
+  "tokens_out": 82,
+  "requests": 1,
+  "latency_s": 0.9905675839981996,
+  "context": null
+}

@@ -1,0 +1,73 @@
+{
+  "output": "Requested H-B for the other two ambulances; V-08-3 must be rerouted with co-passenger V-08-2.",
+  "tokens_in": 2877,
+  "tokens_out": 252,
+  "requests": 3,
+  "latency_s": 4.6800652500241995,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t114-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn unit with available burn slots for two critical ALS burn victims.",
+        "time_min": 114
+      },
+      {
+        "proposal_id": "t114-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn unit with available burn slots for the critical burn victim and companion.",
+        "time_min": 114
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 114,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      },
+      {
+        "time_min": 114,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      }
+    ]
+  }
+}

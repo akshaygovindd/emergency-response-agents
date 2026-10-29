@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t006-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general treatment capacity and a free ER slot, and there is no waiting critical pressure requiring bed preservation."
+      }
+    ]
+  },
+  "tokens_in": 550,
+  "tokens_out": 56,
+  "requests": 1,
+  "latency_s": 1.2623021250474267,
+  "context": null
+}

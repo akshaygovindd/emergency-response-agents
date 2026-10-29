@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t047-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients and has room, so this low-urgency patient should be admitted there."
+      }
+    ]
+  },
+  "tokens_in": 555,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.0014950829790905,
+  "context": null
+}

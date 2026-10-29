@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t066-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has room and trauma ALS capacity, and accepting these two critical trauma patients does not jeopardize the remaining closest critical trauma victim who still has a bed and treatment slot at H-T."
+      }
+    ]
+  },
+  "tokens_in": 841,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.3612504160264507,
+  "context": null
+}

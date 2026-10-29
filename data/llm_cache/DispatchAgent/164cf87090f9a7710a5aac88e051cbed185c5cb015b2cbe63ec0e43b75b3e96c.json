@@ -1,0 +1,11 @@
+{
+  "output": "Proposed AMB-04 to INC-11 for V-11-1 and V-11-2.",
+  "tokens_in": 1239,
+  "tokens_out": 34,
+  "requests": 1,
+  "latency_s": 1.5889096250175498,
+  "context": {
+    "proposals": [],
+    "invalid": []
+  }
+}

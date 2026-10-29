@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t092-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and this non-critical burn patient fits without risking the closer critical waiting victims."
+      }
+    ]
+  },
+  "tokens_in": 637,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.1688889159704559,
+  "context": null
+}

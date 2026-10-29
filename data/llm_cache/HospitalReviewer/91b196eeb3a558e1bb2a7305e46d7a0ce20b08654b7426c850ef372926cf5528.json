@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t038-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has available trauma capacity, so this single trauma patient can be \u0568\u0576\u0564\u0578\u0582\u0576ed."
+      },
+      {
+        "request_id": "t038-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity for both victims, and there is no need to preserve its last bed for the critical burn patient who is only assessably closer to H-B."
+      }
+    ]
+  },
+  "tokens_in": 666,
+  "tokens_out": 114,
+  "requests": 1,
+  "latency_s": 1.3758459169766866,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t112-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has bed capacity; although trauma slots are currently full, this is a critical trauma patient and rejecting would not better preserve access for nearer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 819,
+  "tokens_out": 74,
+  "requests": 1,
+  "latency_s": 1.1119281249702908,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t116-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and bed capacity, and there is no need to preserve capacity for a closer critical patient at this hospital."
+      }
+    ]
+  },
+  "tokens_in": 604,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 0.85541766701499,
+  "context": null
+}

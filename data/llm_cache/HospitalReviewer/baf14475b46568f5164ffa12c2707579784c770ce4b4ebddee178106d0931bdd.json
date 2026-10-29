@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t025-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has general capacity and this low-acuity patient fits without risking the critical waiting patient."
+      },
+      {
+        "request_id": "t025-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can take both victims, including the urgent ALS patient, and rejecting would not better protect the critical waiting patient than H-B already does."
+      }
+    ]
+  },
+  "tokens_in": 679,
+  "tokens_out": 107,
+  "requests": 1,
+  "latency_s": 1.22404312499566,
+  "context": null
+}

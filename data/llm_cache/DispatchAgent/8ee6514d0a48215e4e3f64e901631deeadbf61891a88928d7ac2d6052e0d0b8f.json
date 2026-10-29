@@ -1,0 +1,45 @@
+{
+  "output": "Proposed FIRE-1 to INC-09 and AMB-02 for V-09-3 and V-09-1 at INC-09.",
+  "tokens_in": 2481,
+  "tokens_out": 176,
+  "requests": 2,
+  "latency_s": 2.2406020830385387,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t056-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is closest to INC-09 and needed to support the burn victim there.",
+        "time_min": 56
+      },
+      {
+        "proposal_id": "t056-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "INC-09 has the most urgent mix and this BLS ambulance is the closest available unit for the general victims.",
+        "time_min": 56
+      }
+    ],
+    "invalid": []
+  }
+}

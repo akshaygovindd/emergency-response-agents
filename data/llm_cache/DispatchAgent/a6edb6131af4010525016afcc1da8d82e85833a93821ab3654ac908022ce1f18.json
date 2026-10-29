@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-01 for INC-03.",
+  "tokens_in": 3218,
+  "tokens_out": 78,
+  "requests": 2,
+  "latency_s": 1.9384348330204375,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t108-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the only waiting trauma victim at this incident.",
+        "time_min": 108
+      }
+    ],
+    "invalid": []
+  }
+}

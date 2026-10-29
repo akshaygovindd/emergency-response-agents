@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t052-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma, has available trauma slots and beds, and is the closest capable hospital."
+      }
+    ]
+  },
+  "tokens_in": 520,
+  "tokens_out": 53,
+  "requests": 1,
+  "latency_s": 0.8609424580354244,
+  "context": null
+}

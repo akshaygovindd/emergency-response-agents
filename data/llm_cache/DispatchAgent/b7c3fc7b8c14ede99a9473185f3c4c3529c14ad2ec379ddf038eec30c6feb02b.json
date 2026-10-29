@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-03 and MED-1 to INC-06.",
+  "tokens_in": 2781,
+  "tokens_out": 144,
+  "requests": 2,
+  "latency_s": 1.7623495420557447,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t054-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-3",
+            "V-06-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the two urgent burn victims needing ALS.",
+        "time_min": 54
+      },
+      {
+        "proposal_id": "t054-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Medical support can help this urgent burn incident and is free now.",
+        "time_min": 54
+      }
+    ],
+    "invalid": []
+  }
+}

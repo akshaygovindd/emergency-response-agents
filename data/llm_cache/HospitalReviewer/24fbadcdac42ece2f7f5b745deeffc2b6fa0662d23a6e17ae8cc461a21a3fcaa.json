@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t056-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both general victims and has capacity, while the only critical waitlisted patient is burn and belongs at H-B."
+      }
+    ]
+  },
+  "tokens_in": 585,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 0.849806250014808,
+  "context": null
+}

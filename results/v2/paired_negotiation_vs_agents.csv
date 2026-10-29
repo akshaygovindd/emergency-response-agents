@@ -1,0 +1,4 @@
+version,scenario,mode,vs,seeds,mean_diff,diff_95ci,wins/losses/ties,significant
+v2,normal,negotiation,agents,10,0.0,"[+0.00, +0.00]",0/0/10,False
+v2,surge,negotiation,agents,1,0.0,n/a,0/0/1,False
+v2,bottleneck,negotiation,agents,5,0.0,"[+0.00, +0.00]",0/0/5,False

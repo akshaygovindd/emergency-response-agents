@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t032-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has enough room and treatment capacity for both ALS trauma/general patients, so accepting does not jeopardize closer critical victims elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 872,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.2170732079539448,
+  "context": null
+}

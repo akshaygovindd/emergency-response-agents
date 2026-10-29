@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t046-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma, has free capacity, and there is no reason to reserve beds for a closer critical patient at this time."
+      }
+    ]
+  },
+  "tokens_in": 583,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.252693000016734,
+  "context": null
+}

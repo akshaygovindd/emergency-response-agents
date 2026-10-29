@@ -1,0 +1,29 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t103-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat burn/general and has enough beds and slots for both victims."
+      },
+      {
+        "request_id": "t103-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T treats trauma/general and has sufficient capacity for the mixed pair, including the critical trauma patient."
+      },
+      {
+        "request_id": "t103-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can handle the general victim and currently has capacity available."
+      }
+    ]
+  },
+  "tokens_in": 737,
+  "tokens_out": 128,
+  "requests": 1,
+  "latency_s": 1.2438353750039823,
+  "context": null
+}

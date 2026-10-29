@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t030-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has capacity and a general treatment slot, and no closer critical burn patient is at risk of being stranded by this admission."
+      }
+    ]
+  },
+  "tokens_in": 559,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.2213594170170836,
+  "context": null
+}

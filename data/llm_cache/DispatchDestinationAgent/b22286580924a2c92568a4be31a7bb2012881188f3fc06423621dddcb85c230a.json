@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-G for AMB-04.",
+  "tokens_in": 1318,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.8400529999635182,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-23-1",
+            "V-23-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest option with available capacity for both trauma victims.",
+        "time_min": 107
+      }
+    ],
+    "invalid": []
+  }
+}

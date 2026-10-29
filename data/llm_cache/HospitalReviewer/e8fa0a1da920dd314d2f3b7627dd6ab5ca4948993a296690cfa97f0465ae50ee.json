@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t068-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma and has capacity, so accept the closest capable hospital."
+      }
+    ]
+  },
+  "tokens_in": 520,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 1.1242937920033,
+  "context": null
+}

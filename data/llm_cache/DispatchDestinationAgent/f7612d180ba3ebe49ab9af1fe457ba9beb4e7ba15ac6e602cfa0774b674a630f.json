@@ -1,0 +1,48 @@
+{
+  "output": "Requests submitted for both ambulances.",
+  "tokens_in": 1591,
+  "tokens_out": 132,
+  "requests": 2,
+  "latency_s": 2.1910791670088656,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest trauma-capable hospital with room for both victims.",
+        "time_min": 85
+      },
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Shorter travel and available general/trauma capacity for both victims.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-04 for INC-10\u2019s trauma victim.",
+  "tokens_in": 2585,
+  "tokens_out": 82,
+  "requests": 2,
+  "latency_s": 1.8315917499712668,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t092-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ambulance for the trauma victim at an already rescue-supported incident.",
+        "time_min": 92
+      }
+    ],
+    "invalid": []
+  }
+}

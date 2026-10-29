@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-T.",
+  "tokens_in": 1317,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.66976199997589,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t005-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-2",
+            "V-01-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with trauma capability and open slots for both ALS victims.",
+        "time_min": 5
+      }
+    ],
+    "invalid": []
+  }
+}

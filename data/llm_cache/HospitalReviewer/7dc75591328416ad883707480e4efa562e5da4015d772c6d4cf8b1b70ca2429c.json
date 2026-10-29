@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t055-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has enough burn capacity and beds, and accepting this load does not jeopardize the closer critical burn victim already waiting for H-B."
+      },
+      {
+        "request_id": "t055-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and still has capacity, so this single trauma patient should be admitted."
+      }
+    ]
+  },
+  "tokens_in": 779,
+  "tokens_out": 106,
+  "requests": 1,
+  "latency_s": 1.1371295839780942,
+  "context": null
+}

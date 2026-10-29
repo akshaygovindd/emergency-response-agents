@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t058-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and capacity, so this low-acuity general pair can be received there."
+      },
+      {
+        "request_id": "t058-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma and has room, and I\u2019m preserving capacity for the nearby critical waiting patients without blocking this load."
+      }
+    ]
+  },
+  "tokens_in": 734,
+  "tokens_out": 106,
+  "requests": 1,
+  "latency_s": 1.2891740420018323,
+  "context": null
+}

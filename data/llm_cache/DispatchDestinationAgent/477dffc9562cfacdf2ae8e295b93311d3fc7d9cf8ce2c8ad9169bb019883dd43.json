@@ -1,0 +1,63 @@
+{
+  "output": "Requests submitted for all three ambulances.",
+  "tokens_in": 1677,
+  "tokens_out": 159,
+  "requests": 2,
+  "latency_s": 2.1605163749773055,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t026-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with general capacity and available bed.",
+        "time_min": 26
+      },
+      {
+        "proposal_id": "t026-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma center with trauma capability and available slots.",
+        "time_min": 26
+      },
+      {
+        "proposal_id": "t026-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest trauma-capable hospital for the en route trauma victim.",
+        "time_min": 26
+      }
+    ],
+    "invalid": []
+  }
+}

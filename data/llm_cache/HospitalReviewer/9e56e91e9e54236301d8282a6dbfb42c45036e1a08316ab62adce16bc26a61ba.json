@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t051-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample beds and general capacity, and this non-critical load does not need to be held back for closer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 720,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.1228618749883026,
+  "context": null
+}

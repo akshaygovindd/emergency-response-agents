@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t015-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity, and the critical waiting patient is closer to H-T, so admitting here does not risk stranding them."
+      }
+    ]
+  },
+  "tokens_in": 569,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0536807919852436,
+  "context": null
+}

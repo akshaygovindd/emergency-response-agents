@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-G for AMB-02.",
+  "tokens_in": 1319,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 1.7801331249647774,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t056-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General hospital has room and free general treatment slots for both victims.",
+        "time_min": 56
+      }
+    ],
+    "invalid": []
+  }
+}

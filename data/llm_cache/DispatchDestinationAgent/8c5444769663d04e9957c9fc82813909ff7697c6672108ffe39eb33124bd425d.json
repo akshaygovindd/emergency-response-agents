@@ -1,0 +1,29 @@
+{
+  "output": "Submitted AMB-02 to H-G.",
+  "tokens_in": 1266,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 2.2304555830196477,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t097-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital has trauma capability, available treatment slots, and enough beds with acceptable travel time.",
+        "time_min": 97
+      }
+    ],
+    "invalid": []
+  }
+}

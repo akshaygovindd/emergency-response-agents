@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t078-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Both requests use AMB-02, so only one can go. P01 should win because it reaches the higher-urgency victim faster; P02 is lower urgency and has no unclaimed ambulance alternative available."
+  },
+  "tokens_in": 620,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 2.349938499974087,
+  "context": null
+}

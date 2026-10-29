@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t006-P03",
+        "action": "request_other",
+        "hospital_id": "H-B",
+        "reason": "H-B can take both patients with available room and the shortest ETA among options."
+      }
+    ]
+  },
+  "tokens_in": 337,
+  "tokens_out": 52,
+  "requests": 1,
+  "latency_s": 1.090008290950209,
+  "context": null
+}

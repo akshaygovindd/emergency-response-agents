@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-G for V-10-3.",
+  "tokens_in": 1265,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 1.7513419580063783,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with general capacity and available beds.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

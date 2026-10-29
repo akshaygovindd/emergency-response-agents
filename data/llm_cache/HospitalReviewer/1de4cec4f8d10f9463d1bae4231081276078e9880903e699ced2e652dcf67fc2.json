@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t065-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has free general slots and beds, and this patient can be accepted without jeopardizing the nearby critical general/trauma victims."
+      }
+    ]
+  },
+  "tokens_in": 831,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 0.9437894159927964,
+  "context": null
+}

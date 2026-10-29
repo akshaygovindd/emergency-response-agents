@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t105-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the general patient and has ample capacity, so the shortest-route request can be accepted."
+      }
+    ]
+  },
+  "tokens_in": 516,
+  "tokens_out": 54,
+  "requests": 1,
+  "latency_s": 1.1243922080029733,
+  "context": null
+}

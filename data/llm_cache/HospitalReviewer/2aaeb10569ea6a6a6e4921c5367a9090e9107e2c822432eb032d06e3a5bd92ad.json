@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t100-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has capacity and a trauma slot for the critical ALS patient, and accepting won\u2019t strand any closer critical waiting victim."
+      }
+    ]
+  },
+  "tokens_in": 630,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.208970416977536,
+  "context": null
+}

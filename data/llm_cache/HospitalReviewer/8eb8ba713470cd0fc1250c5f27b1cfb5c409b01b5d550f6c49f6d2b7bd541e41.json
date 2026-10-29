@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t098-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and this noncritical general load should not be displaced since the critical burn patients are only served at H-B."
+      }
+    ]
+  },
+  "tokens_in": 693,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0179353330167942,
+  "context": null
+}

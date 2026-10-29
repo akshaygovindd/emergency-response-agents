@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t117-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B treats general patients and has 2 free beds, so it can take this non-critical patient safely."
+      }
+    ]
+  },
+  "tokens_in": 525,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 1.2421508340048604,
+  "context": null
+}

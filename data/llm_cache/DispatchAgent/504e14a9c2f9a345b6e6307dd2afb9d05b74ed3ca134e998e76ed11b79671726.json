@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 for INC-09 with V-09-1 and V-09-4.",
+  "tokens_in": 3161,
+  "tokens_out": 111,
+  "requests": 2,
+  "latency_s": 1.716586041962728,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t086-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-1",
+            "V-09-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ALS unit for the urgent burn and general victims.",
+        "time_min": 86
+      }
+    ],
+    "invalid": []
+  }
+}

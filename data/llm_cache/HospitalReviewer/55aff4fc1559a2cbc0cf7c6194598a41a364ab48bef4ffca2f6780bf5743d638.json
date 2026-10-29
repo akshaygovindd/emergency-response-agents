@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t110-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general treatment slots and beds available, and there are no waiting critical patients to preserve capacity for."
+      }
+    ]
+  },
+  "tokens_in": 525,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 1.1021501250215806,
+  "context": null
+}

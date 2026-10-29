@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t015-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat both victims and has available burn/general capacity, with no critical waiting patients requiring bed preservation."
+      }
+    ]
+  },
+  "tokens_in": 541,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.1209387499839067,
+  "context": null
+}

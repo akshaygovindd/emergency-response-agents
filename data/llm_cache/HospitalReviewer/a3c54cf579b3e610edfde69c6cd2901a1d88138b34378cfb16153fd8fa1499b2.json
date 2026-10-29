@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t050-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity for both ALS trauma victims, and the critical waiting patients can still be routed to closer capable hospitals without stranding them."
+      }
+    ]
+  },
+  "tokens_in": 637,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.1766795830335468,
+  "context": null
+}

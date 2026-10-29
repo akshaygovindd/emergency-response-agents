@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t101-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-03 should go to INC-12 because it has the highest-acuity victim (urgency 5) and the fastest response (4 min) for an ALS need. The other incidents are lower urgency or less time-critical, and no unclaimed ambulance alternatives are available."
+  },
+  "tokens_in": 870,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 1.028185167000629,
+  "context": null
+}

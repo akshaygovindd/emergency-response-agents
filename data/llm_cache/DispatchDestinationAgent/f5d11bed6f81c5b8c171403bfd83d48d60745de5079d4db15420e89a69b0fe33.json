@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-G.",
+  "tokens_in": 1313,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.6790698749828152,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t032-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Shortest travel and H-G has room for both victims.",
+        "time_min": 32
+      }
+    ],
+    "invalid": []
+  }
+}

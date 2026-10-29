@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-B for V-05-1.",
+  "tokens_in": 1262,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 1.9038482920150273,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t059-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "Shortest travel and available general treatment slot.",
+        "time_min": 59
+      }
+    ],
+    "invalid": []
+  }
+}

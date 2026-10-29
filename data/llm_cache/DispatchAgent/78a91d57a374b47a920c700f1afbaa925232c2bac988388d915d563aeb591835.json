@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-08.",
+  "tokens_in": 2217,
+  "tokens_out": 82,
+  "requests": 2,
+  "latency_s": 1.6345654160249978,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Oldest high-acuity incident with two ALS trauma victims needing immediate rescue support.",
+        "time_min": 66
+      }
+    ],
+    "invalid": []
+  }
+}

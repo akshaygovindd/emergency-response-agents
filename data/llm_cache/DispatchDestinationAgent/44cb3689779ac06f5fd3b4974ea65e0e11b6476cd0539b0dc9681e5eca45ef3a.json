@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-B for V-09-3.",
+  "tokens_in": 1264,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 2.0745619160006754,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t118-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest option with general care capacity and available beds.",
+        "time_min": 118
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "output": "Still blocked: H-B is full, and the other hospitals can\u2019t accept burn victims.",
+  "tokens_in": 5187,
+  "tokens_out": 439,
+  "requests": 5,
+  "latency_s": 6.504479166993406,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 81,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

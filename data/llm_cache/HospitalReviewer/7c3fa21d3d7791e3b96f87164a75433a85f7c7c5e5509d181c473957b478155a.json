@@ -1,0 +1,29 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t007-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has capacity and is the closest capable trauma hospital for this mixed-load ambulance."
+      },
+      {
+        "request_id": "t007-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat general critical patients and has room, and no closer critical patient needs to be preserved for at this hospital."
+      },
+      {
+        "request_id": "t007-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has available trauma capacity and should take this critical trauma victim."
+      }
+    ]
+  },
+  "tokens_in": 758,
+  "tokens_out": 135,
+  "requests": 1,
+  "latency_s": 1.537387749995105,
+  "context": null
+}

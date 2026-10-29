@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-02.",
+  "tokens_in": 2120,
+  "tokens_out": 125,
+  "requests": 3,
+  "latency_s": 2.6586186670465395,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t029-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "General Hospital is nearby and has room for the trauma and general victims.",
+        "time_min": 29
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 29,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

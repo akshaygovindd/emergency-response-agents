@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-B for V-10-4.",
+  "tokens_in": 1258,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 2.1545430420082994,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t095-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-10-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital with a free general slot.",
+        "time_min": 95
+      }
+    ],
+    "invalid": []
+  }
+}

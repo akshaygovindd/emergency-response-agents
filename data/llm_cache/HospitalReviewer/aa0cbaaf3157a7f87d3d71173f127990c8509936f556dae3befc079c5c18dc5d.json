@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t006-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both trauma and general cases and has sufficient ER capacity and beds for this load."
+      },
+      {
+        "request_id": "t006-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can handle both patients, including the urgency-4 victim, and still has available capacity."
+      }
+    ]
+  },
+  "tokens_in": 669,
+  "tokens_out": 93,
+  "requests": 1,
+  "latency_s": 1.1222314579645172,
+  "context": null
+}

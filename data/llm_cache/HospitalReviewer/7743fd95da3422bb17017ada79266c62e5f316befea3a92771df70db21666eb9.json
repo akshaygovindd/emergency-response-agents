@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t073-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients and has bed capacity, so this stable general load can be accepted."
+      },
+      {
+        "request_id": "t073-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and still has capacity, so this ambulance should be accepted as requested."
+      }
+    ]
+  },
+  "tokens_in": 744,
+  "tokens_out": 99,
+  "requests": 1,
+  "latency_s": 1.2269082500133663,
+  "context": null
+}

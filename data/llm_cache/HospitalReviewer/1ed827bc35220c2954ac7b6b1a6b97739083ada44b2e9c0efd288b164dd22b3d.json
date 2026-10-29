@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t089-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat burn/general, has room and two burn slots, and no closer critical burn patient is being protected by holding beds here."
+      }
+    ]
+  },
+  "tokens_in": 702,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.222905584028922,
+  "context": null
+}

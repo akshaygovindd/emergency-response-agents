@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t007-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both patients and has one trauma and one general slot free, while preserving beds for nearby critical patients."
+      }
+    ]
+  },
+  "tokens_in": 797,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.1377185829915106,
+  "context": null
+}

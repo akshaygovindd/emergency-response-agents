@@ -1,0 +1,45 @@
+{
+  "output": "Proposed AMB-03 to INC-08 for the two ALS trauma victims, plus MED-1 to INC-08.",
+  "tokens_in": 4417,
+  "tokens_out": 153,
+  "requests": 3,
+  "latency_s": 2.9238121249945834,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS ambulance should take the two urgent trauma victims needing ALS from the longest-waiting incident.",
+        "time_min": 73
+      },
+      {
+        "proposal_id": "t073-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical team can support the high-need incident with multiple waiting trauma victims.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

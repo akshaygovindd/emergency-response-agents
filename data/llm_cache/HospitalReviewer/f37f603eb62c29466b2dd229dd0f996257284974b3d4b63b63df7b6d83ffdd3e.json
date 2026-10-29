@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t107-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can take the trauma victim now and the lower-acuity trauma patient as well, and rejecting would risk delaying critical nearby patients without a better-capacity alternative."
+      }
+    ]
+  },
+  "tokens_in": 865,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.3262937079998665,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t066-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and this mixed general/trauma load fits without risking the nearby critical trauma patients."
+      }
+    ]
+  },
+  "tokens_in": 666,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.037121583998669,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-B for V-05-5.",
+  "tokens_in": 1238,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 1.9439146250369959,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t078-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-05-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn specialty and nearest hospital with capacity.",
+        "time_min": 78
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "output": "Proposed rescue to INC-12, medical to INC-11, and AMB-05 for the most urgent INC-12 victims.",
+  "tokens_in": 2959,
+  "tokens_out": 220,
+  "requests": 2,
+  "latency_s": 3.16702512500342,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t083-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Needed rescue support is free and INC-12 has multiple urgent victims needing extraction.",
+        "time_min": 83
+      },
+      {
+        "proposal_id": "t083-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-4",
+            "V-12-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the most urgent INC-12 victims; one needs ALS and the other is next most urgent trauma.",
+        "time_min": 83
+      },
+      {
+        "proposal_id": "t083-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical team can support INC-11 where an ALS-need general victim is waiting.",
+        "time_min": 83
+      }
+    ],
+    "invalid": []
+  }
+}

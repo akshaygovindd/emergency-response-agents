@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-T for AMB-02\u2019s two trauma victims.",
+  "tokens_in": 1313,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 1.7428835420287214,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t092-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-18-1",
+            "V-18-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma center for two critical trauma patients needing ALS.",
+        "time_min": 92
+      }
+    ],
+    "invalid": []
+  }
+}

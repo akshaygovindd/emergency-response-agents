@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t090-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-02 should go to INC-11 because it carries two victims and they\u2019ve already waited 28 minutes, maximizing people reached in time. The other two proposals are lower urgency or fewer victims, and there are no unclaimed alternative ambulances to counter with."
+  },
+  "tokens_in": 752,
+  "tokens_out": 88,
+  "requests": 1,
+  "latency_s": 1.2316046670312062,
+  "context": null
+}

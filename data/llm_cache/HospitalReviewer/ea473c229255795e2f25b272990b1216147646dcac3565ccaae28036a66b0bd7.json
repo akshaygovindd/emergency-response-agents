@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t008-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn and general capacity available, and keeping beds open for the waiting critical patient is not necessary here."
+      },
+      {
+        "request_id": "t008-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has an open general slot and beds, and this closest critical general patient can be safely admitted there."
+      }
+    ]
+  },
+  "tokens_in": 674,
+  "tokens_out": 104,
+  "requests": 1,
+  "latency_s": 1.2270284999976866,
+  "context": null
+}

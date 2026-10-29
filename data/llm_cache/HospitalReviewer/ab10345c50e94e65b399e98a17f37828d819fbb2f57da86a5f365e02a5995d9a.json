@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t023-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has sufficient trauma/general capacity."
+      },
+      {
+        "request_id": "t023-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G is closest and has ample general capacity for both victims."
+      }
+    ]
+  },
+  "tokens_in": 650,
+  "tokens_out": 79,
+  "requests": 1,
+  "latency_s": 0.9978983749751933,
+  "context": null
+}

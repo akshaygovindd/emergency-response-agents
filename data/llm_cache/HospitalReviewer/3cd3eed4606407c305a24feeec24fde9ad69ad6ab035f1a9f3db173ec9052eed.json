@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t029-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a general slot and ample beds, and the only waiting critical patient is closer to H-T so beds should be preserved there, not here."
+      }
+    ]
+  },
+  "tokens_in": 593,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.3144682080019265,
+  "context": null
+}

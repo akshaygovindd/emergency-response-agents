@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t093-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has a trauma slot and ample beds, and accepting this ALS trauma load does not endanger closer critical waiting patients beyond its current capacity."
+      }
+    ]
+  },
+  "tokens_in": 869,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.7757194170262665,
+  "context": null
+}

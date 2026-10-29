@@ -1,0 +1,44 @@
+{
+  "output": "Submitted AMB-02 to H-B.",
+  "tokens_in": 2127,
+  "tokens_out": 120,
+  "requests": 3,
+  "latency_s": 2.5968003329471685,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-3",
+            "V-12-4"
+          ]
+        },
+        "priority": 5,
+        "reason": "Shortest viable route with available general treatment slots and enough beds.",
+        "time_min": 107
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 107,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-3",
+            "V-12-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-G ER would hold 9 of 8"
+      }
+    ]
+  }
+}

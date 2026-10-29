@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t085-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has sufficient trauma/general capacity, including for the urgent ALS trauma patient."
+      },
+      {
+        "request_id": "t085-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G is requested, is closest after H-B, and has enough general and trauma capacity for both victims."
+      }
+    ]
+  },
+  "tokens_in": 666,
+  "tokens_out": 96,
+  "requests": 1,
+  "latency_s": 1.2257732909638435,
+  "context": null
+}

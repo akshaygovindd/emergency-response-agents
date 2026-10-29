@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t051-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and should preserve critical-bed planning while still safely taking this noncritical general patient."
+      }
+    ]
+  },
+  "tokens_in": 835,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.5301759170251898,
+  "context": null
+}

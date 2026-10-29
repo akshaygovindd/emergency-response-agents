@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t035-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity and the two ALS trauma patients can be treated there, while preserving nearby critical capacity elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 715,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.3300226669525728,
+  "context": null
+}

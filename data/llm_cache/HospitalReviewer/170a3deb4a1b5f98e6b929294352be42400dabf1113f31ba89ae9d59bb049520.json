@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t063-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity for both victims, and preserving beds is not necessary for the listed critical burn patient who only has H-B as an option."
+      }
+    ]
+  },
+  "tokens_in": 580,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 0.9884679170208983,
+  "context": null
+}

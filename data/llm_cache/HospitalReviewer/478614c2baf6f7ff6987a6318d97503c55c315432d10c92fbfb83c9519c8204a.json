@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t048-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and the only waiting critical patient needs trauma care, so admitting this burn ALS load does not threaten critical trauma access."
+      }
+    ]
+  },
+  "tokens_in": 585,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.3136042920523323,
+  "context": null
+}

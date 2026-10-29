@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t048-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity available, and this non-critical general load does not need to be held back for the waiting burn criticals."
+      }
+    ]
+  },
+  "tokens_in": 690,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.2142177079804242,
+  "context": null
+}

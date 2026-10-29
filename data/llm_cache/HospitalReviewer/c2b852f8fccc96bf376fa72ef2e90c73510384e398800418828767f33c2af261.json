@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t042-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity and beds, and accepting this pair does not block closer critical trauma demand."
+      },
+      {
+        "request_id": "t042-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds for both patients, so the load can be accepted without risking critical burn arrivals."
+      }
+    ]
+  },
+  "tokens_in": 952,
+  "tokens_out": 102,
+  "requests": 1,
+  "latency_s": 1.2048446669941768,
+  "context": null
+}

@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t013-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat general ALS patients and has available general capacity."
+      },
+      {
+        "request_id": "t013-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and has available general capacity."
+      }
+    ]
+  },
+  "tokens_in": 625,
+  "tokens_out": 78,
+  "requests": 1,
+  "latency_s": 1.124762958032079,
+  "context": null
+}

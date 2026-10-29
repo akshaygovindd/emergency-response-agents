@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t038-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and only one assessed critical patient is waiting, closer to H-T than H-B, so capacity does not need to be preserved here."
+      }
+    ]
+  },
+  "tokens_in": 565,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.1016815000330098,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-02 for INC-12.",
+  "tokens_in": 1990,
+  "tokens_out": 78,
+  "requests": 2,
+  "latency_s": 1.7420863329898566,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance to the most urgent waiting victim among available incidents.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

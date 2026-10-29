@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t049-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat the trauma victim and has beds available, and accepting this load does not strand any closer critical patient who depends on its remaining capacity."
+      }
+    ]
+  },
+  "tokens_in": 870,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.252142541052308,
+  "context": null
+}

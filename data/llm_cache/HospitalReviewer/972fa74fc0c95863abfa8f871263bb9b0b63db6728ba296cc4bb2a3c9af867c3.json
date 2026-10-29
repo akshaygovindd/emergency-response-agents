@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t109-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and this load does not threaten the remaining critical burn patient\u2019s only viable bed."
+      },
+      {
+        "request_id": "t109-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and still has enough trauma/general capacity while preserving room for the waiting critical cases."
+      }
+    ]
+  },
+  "tokens_in": 727,
+  "tokens_out": 97,
+  "requests": 1,
+  "latency_s": 1.327606541046407,
+  "context": null
+}

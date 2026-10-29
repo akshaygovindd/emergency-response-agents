@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-12 to pick up V-12-4 and V-12-2.",
+  "tokens_in": 3080,
+  "tokens_out": 100,
+  "requests": 2,
+  "latency_s": 1.7350742919952609,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t089-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-4",
+            "V-12-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit for the highest-risk mixed trauma/general pickup at this incident.",
+        "time_min": 89
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-T for V-06-2.",
+  "tokens_in": 1257,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 1.6360182499629445,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t063-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with available trauma treatment slot.",
+        "time_min": 63
+      }
+    ],
+    "invalid": []
+  }
+}

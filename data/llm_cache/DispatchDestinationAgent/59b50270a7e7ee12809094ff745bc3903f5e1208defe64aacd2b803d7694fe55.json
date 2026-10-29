@@ -1,0 +1,48 @@
+{
+  "output": "Requests submitted to H-T for both ambulances.",
+  "tokens_in": 1592,
+  "tokens_out": 140,
+  "requests": 2,
+  "latency_s": 2.820680834003724,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t003-P05",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-3",
+            "V-01-4"
+          ]
+        },
+        "priority": 3,
+        "reason": "Shortest travel and has trauma capacity for the mixed general/trauma load.",
+        "time_min": 3
+      },
+      {
+        "proposal_id": "t003-P06",
+        "proposer": "dispatch",
+        "incident_id": "INC-01",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-01-2",
+            "V-01-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Shortest travel and has trauma capacity for the mixed general/trauma load.",
+        "time_min": 3
+      }
+    ],
+    "invalid": []
+  }
+}

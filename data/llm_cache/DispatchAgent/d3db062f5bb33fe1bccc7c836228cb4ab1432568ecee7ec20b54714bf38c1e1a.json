@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-02 with V-02-4 and V-02-2.",
+  "tokens_in": 3091,
+  "tokens_out": 101,
+  "requests": 2,
+  "latency_s": 2.0395465419860557,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t045-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-4",
+            "V-02-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest request with an ALS-requiring victim and two suitable patients for one BLS unit.",
+        "time_min": 45
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "output": "Done.",
+  "tokens_in": 2576,
+  "tokens_out": 181,
+  "requests": 3,
+  "latency_s": 4.057922041974962,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t058-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-06-1",
+            "V-06-4"
+          ]
+        },
+        "priority": 4,
+        "reason": "Shortest route and available general treatment slot.",
+        "time_min": 58
+      },
+      {
+        "proposal_id": "t058-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma-capable hospital with available trauma treatment room and the closest acceptable alternative.",
+        "time_min": 58
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 58,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

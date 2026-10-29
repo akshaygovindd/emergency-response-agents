@@ -1,0 +1,55 @@
+{
+  "output": "AMB-03 needs rerouting due to V-08-2\u2019s destination conflict.",
+  "tokens_in": 2465,
+  "tokens_out": 178,
+  "requests": 3,
+  "latency_s": 3.109356375003699,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t063-P06",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-2",
+            "V-10-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with available trauma and general capacity.",
+        "time_min": 63
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 63,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      },
+      {
+        "time_min": 63,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      }
+    ]
+  }
+}

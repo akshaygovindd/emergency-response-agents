@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t045-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has bed capacity, and accepting does not block the only closer critical trauma victim waiting for H-T."
+      }
+    ]
+  },
+  "tokens_in": 884,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.3241232090513222,
+  "context": null
+}

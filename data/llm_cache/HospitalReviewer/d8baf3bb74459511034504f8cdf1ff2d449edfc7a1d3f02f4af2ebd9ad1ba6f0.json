@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t022-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and has available capacity, so accept the closest requested hospital."
+      }
+    ]
+  },
+  "tokens_in": 521,
+  "tokens_out": 51,
+  "requests": 1,
+  "latency_s": 1.072001916996669,
+  "context": null
+}

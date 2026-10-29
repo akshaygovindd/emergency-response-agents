@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t024-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and still has ER and bed capacity, so this ambulance can be admitted without risking the critical waitlist patient."
+      }
+    ]
+  },
+  "tokens_in": 594,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.2319054169929586,
+  "context": null
+}

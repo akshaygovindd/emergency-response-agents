@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t095-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma and general capacity available, and keeping beds for waiting critical patients does not require rejecting this mixed load."
+      }
+    ]
+  },
+  "tokens_in": 668,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.0339182500028983,
+  "context": null
+}

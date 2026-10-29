@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t042-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients and has capacity, so the ambulance can be received as requested."
+      }
+    ]
+  },
+  "tokens_in": 517,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 1.0432793750078417,
+  "context": null
+}

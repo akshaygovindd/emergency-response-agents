@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t114-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has enough burn capacity and beds for both critical ALS burn victims, and no closer waiting critical patient needs to be protected from the last bed."
+      },
+      {
+        "request_id": "t114-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can take the critical burn victim plus companion, and preserving capacity is not needed because the only waiting critical burn patient is still reachable with available room."
+      }
+    ]
+  },
+  "tokens_in": 683,
+  "tokens_out": 120,
+  "requests": 1,
+  "latency_s": 1.3597858339780942,
+  "context": null
+}

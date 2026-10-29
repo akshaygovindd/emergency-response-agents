@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t093-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has free general treatment slots and beds, and protecting nearby critical patients does not require holding this capacity because H-G still has room after admitting this non-ALS general load."
+      }
+    ]
+  },
+  "tokens_in": 717,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.2907582499901764,
+  "context": null
+}

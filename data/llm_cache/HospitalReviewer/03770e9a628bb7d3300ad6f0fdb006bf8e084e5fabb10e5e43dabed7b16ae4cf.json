@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t053-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a general treatment slot and beds available, and H-T should preserve capacity for the closer critical trauma patient in waiting_critical."
+      }
+    ]
+  },
+  "tokens_in": 559,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.4446475000004284,
+  "context": null
+}

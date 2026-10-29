@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-05 for INC-10.",
+  "tokens_in": 1997,
+  "tokens_out": 79,
+  "requests": 2,
+  "latency_s": 1.9193542499560863,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest free unit and the victim only needs BLS for general care.",
+        "time_min": 112
+      }
+    ],
+    "invalid": []
+  }
+}

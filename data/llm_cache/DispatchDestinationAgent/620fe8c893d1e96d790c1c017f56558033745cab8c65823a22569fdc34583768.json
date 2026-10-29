@@ -1,0 +1,69 @@
+{
+  "output": "Requested H-T for V-23-3.",
+  "tokens_in": 4059,
+  "tokens_out": 256,
+  "requests": 5,
+  "latency_s": 5.405934707960114,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t119-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma Center can treat the trauma-case backup while keeping ER load within limits for the remaining patient.",
+        "time_min": 119
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 119,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-23-3",
+            "V-23-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-G ER would hold 10 of 8"
+      },
+      {
+        "time_min": 119,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-23-3",
+            "V-23-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      },
+      {
+        "time_min": 119,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-23-3",
+            "V-23-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-B cannot treat trauma"
+      }
+    ]
+  }
+}

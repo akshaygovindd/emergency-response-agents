@@ -1,0 +1,81 @@
+{
+  "output": "Submitted V-08-2 to H-G.",
+  "tokens_in": 5067,
+  "tokens_out": 294,
+  "requests": 6,
+  "latency_s": 6.081401832983829,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t060-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "General hospital has room and can treat the low-urgency general victim.",
+        "time_min": 60
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-08-2",
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      }
+    ]
+  }
+}

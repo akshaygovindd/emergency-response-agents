@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-T for AMB-01.",
+  "tokens_in": 1317,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 1.6805054580327123,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t090-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with available room for the urgent ALS trauma patient.",
+        "time_min": 90
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-11-1.",
+  "tokens_in": 1266,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 2.0453005409799516,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t108-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest general hospital with ample capacity and free general treatment slots.",
+        "time_min": 108
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-05-1.",
+  "tokens_in": 1270,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 2.047004916006699,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t030-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital has immediate general capacity and available beds, with no ER crowding.",
+        "time_min": 30
+      }
+    ],
+    "invalid": []
+  }
+}

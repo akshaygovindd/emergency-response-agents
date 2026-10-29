@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t037-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat burn patients and has capacity, so accept the whole load."
+      }
+    ]
+  },
+  "tokens_in": 511,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 0.9297549590119161,
+  "context": null
+}

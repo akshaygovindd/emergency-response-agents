@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-G for V-05-3.",
+  "tokens_in": 1262,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 2.0373022919520736,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t051-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-3"
+          ]
+        },
+        "priority": 5,
+        "reason": "Shortest acceptable travel with available general capacity.",
+        "time_min": 51
+      }
+    ],
+    "invalid": []
+  }
+}

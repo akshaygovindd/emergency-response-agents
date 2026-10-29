@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t106-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and has available ER capacity and beds, so accepting does not risk stranding the nearby critical general patient."
+      }
+    ]
+  },
+  "tokens_in": 623,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.2807426659855992,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t049-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and beds, and no closer critical burn patients are waiting for other hospitals, so admitting this load is safe."
+      }
+    ]
+  },
+  "tokens_in": 617,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 0.9239552079816349,
+  "context": null
+}

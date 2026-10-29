@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t054-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has one general slot and enough beds, and the only waiting critical patient needs burn care at H-B rather than general capacity."
+      },
+      {
+        "request_id": "t054-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and no need to reserve its last beds for a closer critical patient."
+      }
+    ]
+  },
+  "tokens_in": 681,
+  "tokens_out": 106,
+  "requests": 1,
+  "latency_s": 1.0803476669825613,
+  "context": null
+}

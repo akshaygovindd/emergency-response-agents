@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t081-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has available trauma slots and beds, so this critical patient should be admitted there."
+      }
+    ]
+  },
+  "tokens_in": 521,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 1.2811457909992896,
+  "context": null
+}

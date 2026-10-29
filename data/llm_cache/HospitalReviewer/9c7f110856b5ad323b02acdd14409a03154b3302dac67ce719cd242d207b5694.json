@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t019-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients and has capacity available for this low-urgency case."
+      }
+    ]
+  },
+  "tokens_in": 523,
+  "tokens_out": 51,
+  "requests": 1,
+  "latency_s": 0.8801053750212304,
+  "context": null
+}

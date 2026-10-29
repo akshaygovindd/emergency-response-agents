@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-10.",
+  "tokens_in": 2045,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.8853498750249855,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t058-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "INC-10 needs rescue and has two urgent ALS trauma victims waiting.",
+        "time_min": 58
+      }
+    ],
+    "invalid": []
+  }
+}

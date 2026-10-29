@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t058-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity and sufficient beds, and keeping capacity for nearby critical waiting patients does not require preserving this bed."
+      }
+    ]
+  },
+  "tokens_in": 855,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.3226968750241213,
+  "context": null
+}

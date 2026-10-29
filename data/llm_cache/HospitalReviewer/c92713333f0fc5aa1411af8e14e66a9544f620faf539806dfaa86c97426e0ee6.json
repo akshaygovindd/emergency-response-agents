@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t003-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a general slot and bed available, and there is no closer critical general patient that needs this last slot."
+      }
+    ]
+  },
+  "tokens_in": 571,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 0.8989767919993028,
+  "context": null
+}

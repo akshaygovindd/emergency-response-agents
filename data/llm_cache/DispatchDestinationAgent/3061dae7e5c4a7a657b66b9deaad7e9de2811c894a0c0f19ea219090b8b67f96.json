@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-08-1.",
+  "tokens_in": 1259,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 1.531889250036329,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t061-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "General Hospital has general capacity and the shortest travel time.",
+        "time_min": 61
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "output": "Proposed AMB-05 to all five incidents, prioritizing the oldest and most urgent victims first.",
+  "tokens_in": 2889,
+  "tokens_out": 359,
+  "requests": 2,
+  "latency_s": 3.172456250002142,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t063-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-2",
+            "V-07-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit to the oldest unserved incident, and this load includes the most urgent victim first.",
+        "time_min": 63
+      },
+      {
+        "proposal_id": "t063-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "priority": 2,
+        "reason": "Next most urgent incident with two high-urgency victims needing transport.",
+        "time_min": 63
+      },
+      {
+        "proposal_id": "t063-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-04-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "Single waiting burn victim at an incident with team already assigned.",
+        "time_min": 63
+      },
+      {
+        "proposal_id": "t063-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Low-urgency general victim at a waiting fire incident.",
+        "time_min": 63
+      },
+      {
+        "proposal_id": "t063-P05",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "Trauma victim at an incident already staffed for rescue and medical support.",
+        "time_min": 63
+      }
+    ],
+    "invalid": []
+  }
+}

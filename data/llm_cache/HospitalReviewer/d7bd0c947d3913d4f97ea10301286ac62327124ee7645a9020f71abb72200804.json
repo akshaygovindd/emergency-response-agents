@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t103-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and beds available, and keeping capacity here is not necessary for the listed critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 625,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.0547570420312695,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t023-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and has capacity, while the only waiting critical trauma case is closer to H-T, so no bed needs to be preserved here."
+      }
+    ]
+  },
+  "tokens_in": 592,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.2229749170364812,
+  "context": null
+}

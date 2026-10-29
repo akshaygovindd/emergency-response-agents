@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t112-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a burn slot and bed available, and the only waiting critical burn patient is farther from H-B with no competing closer capable hospital."
+      }
+    ]
+  },
+  "tokens_in": 549,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.3220930839888752,
+  "context": null
+}

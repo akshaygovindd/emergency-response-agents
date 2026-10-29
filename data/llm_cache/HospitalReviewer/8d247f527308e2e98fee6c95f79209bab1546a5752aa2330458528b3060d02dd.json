@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t042-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma and still has one trauma slot and ample beds, so it can take both ALS trauma victims."
+      },
+      {
+        "request_id": "t042-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has a remaining trauma slot and beds, and there is no need to reserve capacity for the burn criticals at H-B."
+      }
+    ]
+  },
+  "tokens_in": 702,
+  "tokens_out": 110,
+  "requests": 1,
+  "latency_s": 1.2230569170205854,
+  "context": null
+}

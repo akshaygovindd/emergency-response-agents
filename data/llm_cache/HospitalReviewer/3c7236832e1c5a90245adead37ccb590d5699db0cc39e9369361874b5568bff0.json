@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t029-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma, has available trauma slots and beds, and there is no waiting critical demand to preserve capacity for."
+      }
+    ]
+  },
+  "tokens_in": 522,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 0.9347522919997573,
+  "context": null
+}

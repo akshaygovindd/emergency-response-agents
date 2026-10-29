@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t034-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a trauma slot and beds available, and this load is critical with no need to preserve the last trauma bed for a closer waiting patient."
+      }
+    ]
+  },
+  "tokens_in": 824,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.01304341602372,
+  "context": null
+}

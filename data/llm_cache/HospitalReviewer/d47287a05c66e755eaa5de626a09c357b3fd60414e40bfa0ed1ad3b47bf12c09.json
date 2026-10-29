@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t078-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has open general/ALS capacity, and no closer critical general patient is at risk of being stranded by taking this bed."
+      }
+    ]
+  },
+  "tokens_in": 770,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.3224554589833133,
+  "context": null
+}

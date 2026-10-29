@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t073-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and no closer critical general patient is being stranded."
+      }
+    ]
+  },
+  "tokens_in": 709,
+  "tokens_out": 54,
+  "requests": 1,
+  "latency_s": 1.127271874982398,
+  "context": null
+}

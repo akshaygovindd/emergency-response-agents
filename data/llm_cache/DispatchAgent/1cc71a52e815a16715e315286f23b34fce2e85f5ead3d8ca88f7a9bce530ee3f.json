@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-01 for V-06-1 and FIRE-1 for INC-06.",
+  "tokens_in": 3063,
+  "tokens_out": 136,
+  "requests": 3,
+  "latency_s": 3.4165920840459876,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t034-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest-priority victim at the only active incident and the nearest suitable ALS ambulance is available.",
+        "time_min": 34
+      },
+      {
+        "proposal_id": "t034-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Fire team is needed and free for the incident.",
+        "time_min": 34
+      }
+    ],
+    "invalid": []
+  }
+}

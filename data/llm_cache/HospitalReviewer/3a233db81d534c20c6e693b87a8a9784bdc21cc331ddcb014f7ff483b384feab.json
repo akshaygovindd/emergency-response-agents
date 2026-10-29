@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t006-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has enough ALS trauma capacity for both victims."
+      },
+      {
+        "request_id": "t006-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general bed and treatment capacity for both low-urgency victims."
+      }
+    ]
+  },
+  "tokens_in": 664,
+  "tokens_out": 91,
+  "requests": 1,
+  "latency_s": 1.3055014999699779,
+  "context": null
+}

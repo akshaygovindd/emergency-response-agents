@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-07-1.",
+  "tokens_in": 1259,
+  "tokens_out": 59,
+  "requests": 2,
+  "latency_s": 1.7386847909656353,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t105-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Shortest travel time and available general treatment capacity.",
+        "time_min": 105
+      }
+    ],
+    "invalid": []
+  }
+}

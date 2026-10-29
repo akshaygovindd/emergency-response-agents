@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t020-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and still has ER and bed capacity; the waiting critical patient is closer to H-G, so keeping H-T open is not necessary."
+      }
+    ]
+  },
+  "tokens_in": 589,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.0301702500437386,
+  "context": null
+}

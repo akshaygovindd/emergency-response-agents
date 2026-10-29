@@ -1,0 +1,46 @@
+{
+  "output": "Proposed AMB-03 for INC-10 and INC-07.",
+  "tokens_in": 2306,
+  "tokens_out": 153,
+  "requests": 2,
+  "latency_s": 2.551758042012807,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t068-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest urgency victim and ALS unit is the only free ambulance.",
+        "time_min": 68
+      },
+      {
+        "proposal_id": "t068-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest suitable ambulance for a waiting general-care victim.",
+        "time_min": 68
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-G for V-02-1.",
+  "tokens_in": 1256,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 2.2477101249969564,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t015-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Shortest travel and available trauma slot for an urgent trauma victim.",
+        "time_min": 15
+      }
+    ],
+    "invalid": []
+  }
+}

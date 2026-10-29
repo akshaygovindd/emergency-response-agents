@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t063-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims, has free beds, and no nearby critical general/trauma patient is closer to H-T than to an alternative hospital."
+      }
+    ]
+  },
+  "tokens_in": 838,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.4284051670110784,
+  "context": null
+}

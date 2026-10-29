@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t043-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has free ER capacity and treatment slots, and there is no need to preserve its last bed for a critical patient closer to H-T than to other capable hospitals."
+      }
+    ]
+  },
+  "tokens_in": 851,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.0916417089756578,
+  "context": null
+}

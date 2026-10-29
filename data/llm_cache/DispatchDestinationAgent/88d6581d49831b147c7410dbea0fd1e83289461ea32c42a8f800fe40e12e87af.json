@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both admission requests.",
+  "tokens_in": 1581,
+  "tokens_out": 134,
+  "requests": 2,
+  "latency_s": 1.9356499999994412,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t042-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with available slots for the ALS trauma patient.",
+        "time_min": 42
+      },
+      {
+        "proposal_id": "t042-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Nearest hospital with burn capacity for the burn victim and room for the pair.",
+        "time_min": 42
+      }
+    ],
+    "invalid": []
+  }
+}

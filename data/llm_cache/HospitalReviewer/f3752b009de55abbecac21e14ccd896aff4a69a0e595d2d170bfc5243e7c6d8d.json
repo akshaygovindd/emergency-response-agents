@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t005-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and this critical ALS patient is appropriately routed there without needing to preserve the last bed for closer waiting critical trauma victims."
+      }
+    ]
+  },
+  "tokens_in": 609,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.0594295840128325,
+  "context": null
+}

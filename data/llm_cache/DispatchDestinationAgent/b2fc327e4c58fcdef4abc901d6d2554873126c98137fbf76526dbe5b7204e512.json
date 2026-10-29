@@ -1,0 +1,62 @@
+{
+  "output": "Need a routing correction for V-08-3 because its co-passenger is going to H-G.",
+  "tokens_in": 2887,
+  "tokens_out": 244,
+  "requests": 3,
+  "latency_s": 3.1714842920191586,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      },
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-2",
+            "V-07-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 94,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      }
+    ]
+  }
+}

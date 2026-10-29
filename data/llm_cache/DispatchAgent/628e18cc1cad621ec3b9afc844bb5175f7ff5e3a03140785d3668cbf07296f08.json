@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-05 to INC-08 and MED-1 to INC-09.",
+  "tokens_in": 2454,
+  "tokens_out": 147,
+  "requests": 2,
+  "latency_s": 2.6745388749986887,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t046-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free ambulance for a lower-urgency general victim at INC-08.",
+        "time_min": 46
+      },
+      {
+        "proposal_id": "t046-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Free medical team can support the urgent burn victim at INC-09.",
+        "time_min": 46
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t097-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has the needed trauma slot and beds, and this general trauma patient should not be displaced while critical cases are still coverable elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 775,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.226239749987144,
+  "context": null
+}

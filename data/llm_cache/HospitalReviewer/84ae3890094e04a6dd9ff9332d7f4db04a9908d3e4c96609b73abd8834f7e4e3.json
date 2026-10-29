@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t049-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has no general treatment slots available, but the patient can still be accepted given available beds and there is no need to preserve capacity for nearer critical burn cases that H-B cannot treat."
+      }
+    ]
+  },
+  "tokens_in": 684,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.3057593340054154,
+  "context": null
+}

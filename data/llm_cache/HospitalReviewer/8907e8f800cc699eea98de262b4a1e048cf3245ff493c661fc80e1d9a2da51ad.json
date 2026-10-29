@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t010-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity and this low-urgency load does not need to be held back for the critical patients waiting nearby."
+      }
+    ]
+  },
+  "tokens_in": 878,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.1723552500479855,
+  "context": null
+}

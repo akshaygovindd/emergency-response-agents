@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-07.",
+  "tokens_in": 2492,
+  "tokens_out": 81,
+  "requests": 2,
+  "latency_s": 1.852122749958653,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t059-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Urgent trauma victim needs rescue support and this is the nearest eligible incident.",
+        "time_min": 59
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Submitted AMB-04 to H-T.",
+  "tokens_in": 1261,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 1.8827585420222022,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t066-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Trauma center has trauma capability and open treatment slots.",
+        "time_min": 66
+      }
+    ],
+    "invalid": []
+  }
+}

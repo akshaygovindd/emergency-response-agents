@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t085-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and beds available, and the only critical waiting patient is closer to H-T, so we should preserve rather than deny this trauma case."
+      }
+    ]
+  },
+  "tokens_in": 566,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.2083190829725936,
+  "context": null
+}

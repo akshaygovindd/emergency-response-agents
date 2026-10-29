@@ -1,0 +1,43 @@
+{
+  "output": "One request was corrected by routing conflict; the other is pending acceptance.",
+  "tokens_in": 1518,
+  "tokens_out": 140,
+  "requests": 2,
+  "latency_s": 2.048698750033509,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t114-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-4",
+            "V-08-5"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn unit is the closest specialty match and has open burn treatment slots and beds.",
+        "time_min": 114
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 114,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-3"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-08-2 is going to H-G"
+      }
+    ]
+  }
+}

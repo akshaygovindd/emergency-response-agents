@@ -1,0 +1,27 @@
+{
+  "output": "Proposed RESCUE-1 to INC-10.",
+  "tokens_in": 1978,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.7748437499976717,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue is needed and INC-10 has the oldest critical trauma victim.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t091-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity available and there are critical burn patients already headed there, so this noncritical burn patient can be admitted without needing to preserve the last bed."
+      }
+    ]
+  },
+  "tokens_in": 655,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.2230262500233948,
+  "context": null
+}

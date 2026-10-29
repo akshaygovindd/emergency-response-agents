@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t091-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients and still has free general slots and beds, so there is no capacity reason to divert this case."
+      }
+    ]
+  },
+  "tokens_in": 524,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.0793804170098156,
+  "context": null
+}

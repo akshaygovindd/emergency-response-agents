@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t061-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity, and accepting this low-urgency patient does not jeopardize the closer critical general victims since H-G still has general slots available."
+      }
+    ]
+  },
+  "tokens_in": 647,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.2251276660244912,
+  "context": null
+}

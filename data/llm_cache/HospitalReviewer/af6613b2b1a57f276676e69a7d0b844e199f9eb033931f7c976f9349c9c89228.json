@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t092-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has bed/treatment capacity, and the only waiting critical patient needs burn care at H-B, so no need to preserve H-T for them."
+      }
+    ]
+  },
+  "tokens_in": 557,
+  "tokens_out": 74,
+  "requests": 1,
+  "latency_s": 1.0210489589953795,
+  "context": null
+}

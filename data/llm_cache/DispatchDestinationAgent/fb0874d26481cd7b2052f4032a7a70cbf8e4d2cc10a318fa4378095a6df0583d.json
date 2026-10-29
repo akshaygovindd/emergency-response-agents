@@ -1,0 +1,65 @@
+{
+  "output": "Requests submitted.",
+  "tokens_in": 1780,
+  "tokens_out": 171,
+  "requests": 2,
+  "latency_s": 2.4836681250017136,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t103-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest burn-capable hospital with available room for both victims.",
+        "time_min": 103
+      },
+      {
+        "proposal_id": "t103-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-10-3",
+            "V-10-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Best match for the trauma victim and has capacity for the mixed pair.",
+        "time_min": 103
+      },
+      {
+        "proposal_id": "t103-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "Shortest travel and sufficient capacity for this general victim.",
+        "time_min": 103
+      }
+    ],
+    "invalid": []
+  }
+}

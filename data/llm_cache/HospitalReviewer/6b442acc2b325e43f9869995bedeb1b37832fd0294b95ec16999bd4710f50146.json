@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t106-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room for both trauma patients now, and rejecting would unnecessarily delay a nearby critical load without preserving capacity for a closer critical victim."
+      }
+    ]
+  },
+  "tokens_in": 874,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.1791317079914734,
+  "context": null
+}

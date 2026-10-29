@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-B for AMB-02.",
+  "tokens_in": 1324,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 1.7164774580160156,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t088-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-1",
+            "V-07-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general care capacity and available beds.",
+        "time_min": 88
+      }
+    ],
+    "invalid": []
+  }
+}

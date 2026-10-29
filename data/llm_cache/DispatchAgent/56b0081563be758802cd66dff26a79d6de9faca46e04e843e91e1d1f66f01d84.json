@@ -1,0 +1,64 @@
+{
+  "output": "Proposed ALS for INC-10 and BLS options for INC-11 and INC-12.",
+  "tokens_in": 2382,
+  "tokens_out": 223,
+  "requests": 2,
+  "latency_s": 2.512641875015106,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t095-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS trauma victim needs the closest suitable unit.",
+        "time_min": 95
+      },
+      {
+        "proposal_id": "t095-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-2",
+            "V-11-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "BLS can take the two lower-acuity mixed burn/general victims together.",
+        "time_min": 95
+      },
+      {
+        "proposal_id": "t095-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "BLS is suitable and this victim is low urgency.",
+        "time_min": 95
+      }
+    ],
+    "invalid": []
+  }
+}

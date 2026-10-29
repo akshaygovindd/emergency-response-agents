@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t111-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat both general patients and has ample bed capacity, while preserving critical access for higher-urgency cases elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 680,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.24134041700745,
+  "context": null
+}

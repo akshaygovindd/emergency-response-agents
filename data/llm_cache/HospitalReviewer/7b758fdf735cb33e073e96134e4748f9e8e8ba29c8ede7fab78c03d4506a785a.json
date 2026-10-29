@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t029-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has no general treatment slot free, but H-G can treat the patient and has capacity, so the load should not be diverted."
+      }
+    ]
+  },
+  "tokens_in": 853,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.3364497090224177,
+  "context": null
+}

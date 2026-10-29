@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-23 with V-23-3 and V-23-4.",
+  "tokens_in": 4613,
+  "tokens_out": 97,
+  "requests": 2,
+  "latency_s": 2.1895150410127826,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-23-3",
+            "V-23-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available ambulance to the highest-urgency ALS-needing incident.",
+        "time_min": 117
+      }
+    ],
+    "invalid": []
+  }
+}

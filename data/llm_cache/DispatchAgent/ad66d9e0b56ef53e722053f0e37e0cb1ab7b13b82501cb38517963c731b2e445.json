@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 for INC-08 with V-08-3 and V-08-4.",
+  "tokens_in": 1788,
+  "tokens_out": 96,
+  "requests": 2,
+  "latency_s": 1.8484216250362806,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-3",
+            "V-08-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance can carry both waiting victims from the same incident.",
+        "time_min": 117
+      }
+    ],
+    "invalid": []
+  }
+}

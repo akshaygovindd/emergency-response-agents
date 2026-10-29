@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t015-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has a trauma slot and sufficient beds, and this ambulance is not needed to preserve the last critical trauma capacity at a closer hospital."
+      }
+    ]
+  },
+  "tokens_in": 819,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0163770409999415,
+  "context": null
+}

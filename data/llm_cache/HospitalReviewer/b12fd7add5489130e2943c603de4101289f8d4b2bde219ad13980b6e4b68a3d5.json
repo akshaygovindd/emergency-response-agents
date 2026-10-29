@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t042-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has room and trauma/general capability, and accepting this ALS severe patient does not threaten closer critical waiting patients because H-T still has a trauma slot and beds available."
+      }
+    ]
+  },
+  "tokens_in": 800,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.0885675840545446,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t096-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and this patient is critically urgent, while the waiting critical trauma victims are closer to H-G but H-T still has room, so we should not hold the bed here."
+      }
+    ]
+  },
+  "tokens_in": 604,
+  "tokens_out": 78,
+  "requests": 1,
+  "latency_s": 1.2268404169590212,
+  "context": null
+}

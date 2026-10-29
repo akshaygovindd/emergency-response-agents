@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t119-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center can take this general ALS patient now, and no other closer critical patient is at risk from using this capacity."
+      }
+    ]
+  },
+  "tokens_in": 834,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.5294804580044001,
+  "context": null
+}

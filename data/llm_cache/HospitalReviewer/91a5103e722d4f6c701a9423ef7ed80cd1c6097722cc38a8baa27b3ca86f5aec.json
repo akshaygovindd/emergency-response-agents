@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t010-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat general patients and has ample general capacity, so this load can be accepted."
+      },
+      {
+        "request_id": "t010-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma patients and still has a free trauma slot, so the patient can be accepted."
+      }
+    ]
+  },
+  "tokens_in": 628,
+  "tokens_out": 93,
+  "requests": 1,
+  "latency_s": 1.2211428339942358,
+  "context": null
+}

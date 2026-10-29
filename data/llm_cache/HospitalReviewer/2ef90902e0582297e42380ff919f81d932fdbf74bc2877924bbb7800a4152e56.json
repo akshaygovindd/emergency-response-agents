@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t080-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and still has ample ER/beds, so admitting them does not jeopardize the closer critical trauma patient."
+      }
+    ]
+  },
+  "tokens_in": 589,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.0632265420281328,
+  "context": null
+}

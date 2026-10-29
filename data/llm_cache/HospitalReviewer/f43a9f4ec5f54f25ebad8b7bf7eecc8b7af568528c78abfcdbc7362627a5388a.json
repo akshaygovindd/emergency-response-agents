@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t037-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat the patient and has capacity available."
+      },
+      {
+        "request_id": "t037-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and has sufficient ER and treatment capacity."
+      }
+    ]
+  },
+  "tokens_in": 635,
+  "tokens_out": 78,
+  "requests": 1,
+  "latency_s": 1.1254628750029951,
+  "context": null
+}

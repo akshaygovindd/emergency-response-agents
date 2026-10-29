@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t023-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and enough capacity, and this noncritical general patient should not be diverted away from the shortest appropriate hospital."
+      }
+    ]
+  },
+  "tokens_in": 683,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.1186170420260169,
+  "context": null
+}

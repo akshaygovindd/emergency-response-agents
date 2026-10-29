@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t068-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room and this load includes a lower-acuity trauma patient plus a moderate trauma patient, while nearby critical trauma patients still have closer capacity at H-T."
+      }
+    ]
+  },
+  "tokens_in": 832,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.1509455420309678,
+  "context": null
+}

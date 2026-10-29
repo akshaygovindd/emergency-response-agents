@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t082-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can handle the trauma victim and has ER capacity, while nearby critical patients are not closer to H-G than to their best options in a way that requires preserving this bed now."
+      }
+    ]
+  },
+  "tokens_in": 755,
+  "tokens_out": 76,
+  "requests": 1,
+  "latency_s": 1.5232113340171054,
+  "context": null
+}

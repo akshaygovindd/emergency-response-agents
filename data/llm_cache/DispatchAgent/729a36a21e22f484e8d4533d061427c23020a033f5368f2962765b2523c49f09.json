@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-02 to INC-09 for V-09-2.",
+  "tokens_in": 2804,
+  "tokens_out": 90,
+  "requests": 2,
+  "latency_s": 1.9428792499820702,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t081-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free BLS unit to the most accessible waiting victim at the highest-priority reachable incident.",
+        "time_min": 81
+      }
+    ],
+    "invalid": []
+  }
+}

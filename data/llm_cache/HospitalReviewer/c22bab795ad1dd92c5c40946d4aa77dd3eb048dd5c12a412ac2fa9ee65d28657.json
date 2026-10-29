@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t107-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has beds and can treat general patients, and this noncritical load does not require preserving the last critical-capable slot there."
+      }
+    ]
+  },
+  "tokens_in": 719,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.82912337500602,
+  "context": null
+}

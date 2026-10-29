@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-B for V-12-1.",
+  "tokens_in": 1260,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 2.0461667089839466,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Shortest travel and general care is available.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

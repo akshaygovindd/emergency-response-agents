@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t057-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room and capacity, and we should preserve beds only when needed for closer critical patients; the waiting critical general cases are also closest to H-G, so this load should go there as requested."
+      }
+    ]
+  },
+  "tokens_in": 670,
+  "tokens_out": 80,
+  "requests": 1,
+  "latency_s": 1.4993959999992512,
+  "context": null
+}

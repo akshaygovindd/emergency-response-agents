@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t075-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and no closer burn-capable alternative can take this whole burn load without stranding critical patients."
+      }
+    ]
+  },
+  "tokens_in": 845,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 0.9735237910063006,
+  "context": null
+}

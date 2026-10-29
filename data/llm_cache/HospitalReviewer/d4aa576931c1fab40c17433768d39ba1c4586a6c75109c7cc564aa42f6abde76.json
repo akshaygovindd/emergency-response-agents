@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t106-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has the needed trauma/general capacity and there is no nearby critical patient for whom those last slots must be reserved."
+      }
+    ]
+  },
+  "tokens_in": 814,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.3694297920446843,
+  "context": null
+}

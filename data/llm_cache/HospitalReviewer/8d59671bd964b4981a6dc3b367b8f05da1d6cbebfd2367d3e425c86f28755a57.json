@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t103-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and accepting this mixed trauma/general load does not threaten the nearest critical waiting patients, so there is no need to divert."
+      }
+    ]
+  },
+  "tokens_in": 872,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.0315677910111845,
+  "context": null
+}

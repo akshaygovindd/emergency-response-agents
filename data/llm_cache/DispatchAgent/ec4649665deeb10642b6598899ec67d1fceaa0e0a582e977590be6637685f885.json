@@ -1,0 +1,44 @@
+{
+  "output": "Proposed AMB-01 and RESCUE-1 to INC-11.",
+  "tokens_in": 2138,
+  "tokens_out": 137,
+  "requests": 2,
+  "latency_s": 2.0105291249928996,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS ambulance for the urgent ALS general victim.",
+        "time_min": 116
+      },
+      {
+        "proposal_id": "t116-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Rescue team needed and available for this incident.",
+        "time_min": 116
+      }
+    ],
+    "invalid": []
+  }
+}

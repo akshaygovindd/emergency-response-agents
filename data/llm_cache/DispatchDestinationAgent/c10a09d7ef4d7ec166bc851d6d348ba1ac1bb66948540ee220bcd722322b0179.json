@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-T for V-12-5.",
+  "tokens_in": 1259,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.044079374987632,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-5"
+          ]
+        },
+        "priority": 3,
+        "reason": "Shortest travel and trauma-capable with open trauma slots.",
+        "time_min": 112
+      }
+    ],
+    "invalid": []
+  }
+}

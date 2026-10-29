@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-B for V-11-4.",
+  "tokens_in": 1243,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.0408115420141257,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t112-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn-capable hospital with available burn treatment slot.",
+        "time_min": 112
+      }
+    ],
+    "invalid": []
+  }
+}

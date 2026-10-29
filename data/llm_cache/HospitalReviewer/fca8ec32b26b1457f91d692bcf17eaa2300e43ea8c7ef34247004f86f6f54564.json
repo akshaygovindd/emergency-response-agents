@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t082-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds available, and this burn load should not be diverted away from the closest capable burn unit."
+      }
+    ]
+  },
+  "tokens_in": 872,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.1099494580412284,
+  "context": null
+}

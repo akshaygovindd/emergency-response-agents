@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t059-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and has free beds, so the ambulance load can be admitted there."
+      }
+    ]
+  },
+  "tokens_in": 523,
+  "tokens_out": 53,
+  "requests": 1,
+  "latency_s": 0.9171647500479594,
+  "context": null
+}

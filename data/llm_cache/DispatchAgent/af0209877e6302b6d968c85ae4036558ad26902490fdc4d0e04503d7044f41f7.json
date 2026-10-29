@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 for INC-02 to take V-02-2 and V-02-3.",
+  "tokens_in": 3155,
+  "tokens_out": 98,
+  "requests": 2,
+  "latency_s": 1.7488930000108667,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-02-2",
+            "V-02-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the two most urgent burn victims at this incident.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

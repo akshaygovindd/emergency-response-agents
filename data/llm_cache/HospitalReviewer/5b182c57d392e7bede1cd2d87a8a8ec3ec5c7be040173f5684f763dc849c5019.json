@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t001-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity available, and no closer critical patient would be stranded by taking this single general case."
+      }
+    ]
+  },
+  "tokens_in": 654,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.5892704580328427,
+  "context": null
+}

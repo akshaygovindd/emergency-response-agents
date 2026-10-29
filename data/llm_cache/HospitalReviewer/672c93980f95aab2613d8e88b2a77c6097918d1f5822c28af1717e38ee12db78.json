@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t117-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample beds and can handle the trauma patient, and no critical patient is closer to H-G than to another capable hospital in a way that requires preserving its last bed(s)."
+      }
+    ]
+  },
+  "tokens_in": 857,
+  "tokens_out": 76,
+  "requests": 1,
+  "latency_s": 1.2149894160102122,
+  "context": null
+}

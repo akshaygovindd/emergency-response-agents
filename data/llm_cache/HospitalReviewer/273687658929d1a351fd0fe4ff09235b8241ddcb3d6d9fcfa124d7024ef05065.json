@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t102-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat burn ALS victims and still has one burn slot and four beds available, so admitting both is feasible while preserving critical capacity."
+      }
+    ]
+  },
+  "tokens_in": 610,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.2260662500048056,
+  "context": null
+}

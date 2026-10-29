@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t044-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and this low-urgency burn patient does not need reserved critical capacity elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 721,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.2268401250476018,
+  "context": null
+}

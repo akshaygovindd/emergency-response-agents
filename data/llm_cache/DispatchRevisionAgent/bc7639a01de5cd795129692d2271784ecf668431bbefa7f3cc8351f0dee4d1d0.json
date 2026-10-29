@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t114-P03",
+        "action": "escalate",
+        "hospital_id": "H-B",
+        "reason": "H-B has no room left and no alternate hospital options were provided, so this must be escalated."
+      }
+    ]
+  },
+  "tokens_in": 303,
+  "tokens_out": 58,
+  "requests": 1,
+  "latency_s": 0.8707705840351991,
+  "context": null
+}

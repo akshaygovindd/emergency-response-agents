@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t006-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and bed, and this patient can be treated there without displacing the closer critical waitlist cases."
+      }
+    ]
+  },
+  "tokens_in": 683,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 11.34653541696025,
+  "context": null
+}

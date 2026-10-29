@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t112-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has open trauma capacity and this trauma patient should go to the requested closest capable hospital; protecting critical beds does not require diverting here."
+      }
+    ]
+  },
+  "tokens_in": 602,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.0157230829936452,
+  "context": null
+}

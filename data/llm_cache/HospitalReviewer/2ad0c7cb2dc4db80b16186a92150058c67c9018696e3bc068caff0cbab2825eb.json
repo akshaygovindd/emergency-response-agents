@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t090-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and nearby critical trauma V-12-1 can be treated without displacing the closer waiting critical patient."
+      }
+    ]
+  },
+  "tokens_in": 591,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.2157737499801442,
+  "context": null
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-G for AMB-05.",
+  "tokens_in": 1321,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 1.7340012500062585,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t057-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1",
+            "V-10-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest general-capable hospital with room for both victims.",
+        "time_min": 57
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t058-P02",
+        "decision": "counter",
+        "counter_hospital_id": "H-T",
+        "reason": "H-T is capable and has enough trauma/general slots and beds for both ALS victims, so the requested hospital should take the whole load."
+      }
+    ]
+  },
+  "tokens_in": 550,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 0.9658537500072271,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t005-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has the needed trauma/general capability and enough slots for both ALS patients, and keeping capacity here still preserves care for the waiting critical victims."
+      }
+    ]
+  },
+  "tokens_in": 635,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.1062190830125473,
+  "context": null
+}

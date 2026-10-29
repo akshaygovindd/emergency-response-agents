@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-01 to INC-08 and AMB-05 to INC-12.",
+  "tokens_in": 2899,
+  "tokens_out": 177,
+  "requests": 2,
+  "latency_s": 2.210511458979454,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t108-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the most urgent victims at INC-08.",
+        "time_min": 108
+      },
+      {
+        "proposal_id": "t108-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-1",
+            "V-12-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest available BLS unit for compatible lower-acuity victims at INC-12.",
+        "time_min": 108
+      }
+    ],
+    "invalid": []
+  }
+}

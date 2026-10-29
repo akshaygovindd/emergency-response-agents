@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t076-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and is closest, and we are preserving beds for a critical trauma patient who is also closest to H-T."
+      }
+    ]
+  },
+  "tokens_in": 588,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.0167125840089284,
+  "context": null
+}

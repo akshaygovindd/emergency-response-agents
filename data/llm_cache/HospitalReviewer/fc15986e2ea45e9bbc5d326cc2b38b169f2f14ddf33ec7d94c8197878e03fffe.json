@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t020-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has capacity, so the full load should be admitted there."
+      }
+    ]
+  },
+  "tokens_in": 548,
+  "tokens_out": 52,
+  "requests": 1,
+  "latency_s": 1.0201224170159549,
+  "context": null
+}

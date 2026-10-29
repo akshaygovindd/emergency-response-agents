@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t065-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has available general treatment capacity and beds, and no closer critical victim is relying on this last capacity."
+      }
+    ]
+  },
+  "tokens_in": 821,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 1.3228382089873776,
+  "context": null
+}

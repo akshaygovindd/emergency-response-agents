@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t092-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T is the closest trauma-capable hospital and still has one bed, so the two critical trauma patients should be accepted."
+      }
+    ]
+  },
+  "tokens_in": 874,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.218457708018832,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t083-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity available, and accepting this low-acuity patient does not threaten critical placements."
+      }
+    ]
+  },
+  "tokens_in": 685,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 0.9519870419753715,
+  "context": null
+}

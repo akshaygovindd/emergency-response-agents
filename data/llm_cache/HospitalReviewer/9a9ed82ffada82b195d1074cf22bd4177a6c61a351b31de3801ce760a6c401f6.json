@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t044-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma, has available trauma slots and beds, and there is no closer critical patient requiring the last bed."
+      }
+    ]
+  },
+  "tokens_in": 554,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.0270363750169054,
+  "context": null
+}

@@ -1,0 +1,62 @@
+{
+  "output": "Submitted AMB-01 to H-G and AMB-05 to H-G.",
+  "tokens_in": 2580,
+  "tokens_out": 192,
+  "requests": 3,
+  "latency_s": 2.9331506669986993,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t109-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with ample general capacity.",
+        "time_min": 109
+      },
+      {
+        "proposal_id": "t109-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-3"
+          ]
+        },
+        "priority": 3,
+        "reason": "General Hospital has room and can treat both trauma and general victims.",
+        "time_min": 109
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 109,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

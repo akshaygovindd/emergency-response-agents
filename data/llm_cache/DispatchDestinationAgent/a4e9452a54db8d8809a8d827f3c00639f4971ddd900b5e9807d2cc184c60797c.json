@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-T for AMB-02.",
+  "tokens_in": 1319,
+  "tokens_out": 70,
+  "requests": 2,
+  "latency_s": 1.9710141670075245,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t050-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-4",
+            "V-07-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center has trauma capability and free slots for both ALS trauma victims.",
+        "time_min": 50
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t093-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat both burn victims and has enough treatment slots and beds."
+      }
+    ]
+  },
+  "tokens_in": 542,
+  "tokens_out": 48,
+  "requests": 1,
+  "latency_s": 1.1249250420369208,
+  "context": null
+}

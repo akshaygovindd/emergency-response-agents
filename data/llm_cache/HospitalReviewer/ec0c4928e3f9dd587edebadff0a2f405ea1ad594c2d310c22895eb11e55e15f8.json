@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t003-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat the mixed trauma/general load and has sufficient trauma and general capacity, so accepting preserves care for nearby critical patients without stranding them."
+      },
+      {
+        "request_id": "t003-P06",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T still has enough capacity for this mixed load, and keeping beds available for critical waiting patients does not require rejection here."
+      }
+    ]
+  },
+  "tokens_in": 752,
+  "tokens_out": 114,
+  "requests": 1,
+  "latency_s": 1.407393375004176,
+  "context": null
+}

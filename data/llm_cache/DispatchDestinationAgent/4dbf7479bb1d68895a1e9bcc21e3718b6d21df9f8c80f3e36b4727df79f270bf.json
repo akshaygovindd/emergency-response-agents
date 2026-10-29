@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-05.",
+  "tokens_in": 2128,
+  "tokens_out": 124,
+  "requests": 3,
+  "latency_s": 3.1745807920233347,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t106-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-22-1",
+            "V-22-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with trauma capability and enough ER capacity for both victims.",
+        "time_min": 106
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 106,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-22-1",
+            "V-22-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

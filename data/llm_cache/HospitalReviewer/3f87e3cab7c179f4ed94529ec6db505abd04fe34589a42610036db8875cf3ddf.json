@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t045-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has an available trauma slot and beds, and preserving capacity for waiting critical patients does not require blocking this closest trauma-capable ambulance."
+      }
+    ]
+  },
+  "tokens_in": 717,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0043444999610074,
+  "context": null
+}

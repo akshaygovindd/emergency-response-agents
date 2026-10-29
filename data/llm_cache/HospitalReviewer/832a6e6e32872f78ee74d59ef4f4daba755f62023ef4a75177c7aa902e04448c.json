@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t048-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and beds available, and no closer critical general patient needs to be held back."
+      }
+    ]
+  },
+  "tokens_in": 592,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 0.9039385830401443,
+  "context": null
+}

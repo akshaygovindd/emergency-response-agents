@@ -1,0 +1,51 @@
+{
+  "output": "No acceptable hospital could take the burn victim.",
+  "tokens_in": 2991,
+  "tokens_out": 181,
+  "requests": 4,
+  "latency_s": 3.7866663750028238,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 95,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 95,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 95,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1",
+            "V-11-2"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      }
+    ]
+  }
+}

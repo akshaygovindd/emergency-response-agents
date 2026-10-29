@@ -1,0 +1,16 @@
+{
+  "output": {
+    "choices": [
+      {
+        "request_id": "t114-P03",
+        "hospital_id": "none",
+        "reason": "No hospital options are available, so the patients cannot be assigned without risking delay."
+      }
+    ]
+  },
+  "tokens_in": 276,
+  "tokens_out": 45,
+  "requests": 1,
+  "latency_s": 0.9032597920158878,
+  "context": null
+}

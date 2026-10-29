@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t030-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat the general patient and has capacity, so accepting preserves access without risking critical waitlist patients."
+      }
+    ]
+  },
+  "tokens_in": 523,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 1.020447792019695,
+  "context": null
+}

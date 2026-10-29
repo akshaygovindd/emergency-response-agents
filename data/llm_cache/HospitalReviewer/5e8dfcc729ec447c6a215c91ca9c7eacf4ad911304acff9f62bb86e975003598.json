@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t096-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and has enough beds for both victims, so the closest requested hospital is suitable."
+      }
+    ]
+  },
+  "tokens_in": 550,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.226144917018246,
+  "context": null
+}

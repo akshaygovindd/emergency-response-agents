@@ -1,0 +1,30 @@
+{
+  "output": "Queued AMB-05 for H-G.",
+  "tokens_in": 1321,
+  "tokens_out": 66,
+  "requests": 2,
+  "latency_s": 1.8975440840004012,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t093-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Nearest general hospital with available general treatment slots and beds.",
+        "time_min": 93
+      }
+    ],
+    "invalid": []
+  }
+}

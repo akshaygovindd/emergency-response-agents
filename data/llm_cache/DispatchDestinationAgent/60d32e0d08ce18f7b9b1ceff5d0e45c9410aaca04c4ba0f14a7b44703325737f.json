@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-B for AMB-03.",
+  "tokens_in": 1299,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 2.7602712080115452,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-11-5",
+            "V-11-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn unit with open burn capacity for both ALS burn victims.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

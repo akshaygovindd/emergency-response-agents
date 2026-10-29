@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-B for V-09-2.",
+  "tokens_in": 1244,
+  "tokens_out": 60,
+  "requests": 2,
+  "latency_s": 1.7019900000304915,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t063-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn specialty with available capacity and short travel time.",
+        "time_min": 63
+      }
+    ],
+    "invalid": []
+  }
+}

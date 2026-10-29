@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t090-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat the ALS trauma victim and still has capacity, so the full load should be admitted there."
+      }
+    ]
+  },
+  "tokens_in": 553,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.4749390420038253,
+  "context": null
+}

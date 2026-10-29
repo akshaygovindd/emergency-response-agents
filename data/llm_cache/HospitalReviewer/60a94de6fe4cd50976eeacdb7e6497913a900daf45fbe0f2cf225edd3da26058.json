@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t117-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T is the requested trauma center and still has 3 free beds, so it can take both critical trauma patients."
+      }
+    ]
+  },
+  "tokens_in": 553,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 0.9911866250331514,
+  "context": null
+}

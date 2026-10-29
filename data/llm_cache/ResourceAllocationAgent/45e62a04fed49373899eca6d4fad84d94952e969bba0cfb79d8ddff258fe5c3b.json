@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t059-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-02 should go to the longest-waiting highest-urgency case: INC-06 has a urgency 5 trauma victim and the fastest response. The other requests are lower urgency or have longer wait/travel tradeoffs, so they should not take this ambulance."
+  },
+  "tokens_in": 968,
+  "tokens_out": 84,
+  "requests": 1,
+  "latency_s": 1.1235916659934446,
+  "context": null
+}

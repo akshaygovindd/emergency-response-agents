@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-01 to INC-10 for V-10-4 and V-10-1.",
+  "tokens_in": 3549,
+  "tokens_out": 99,
+  "requests": 2,
+  "latency_s": 2.2947804169962183,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t040-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-4",
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is best for the most urgent trauma victims at the highest-need incident.",
+        "time_min": 40
+      }
+    ],
+    "invalid": []
+  }
+}

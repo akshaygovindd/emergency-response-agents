@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t086-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has sufficient trauma/general capacity, and keeping beds there is important for nearby critical trauma patients already waiting."
+      }
+    ]
+  },
+  "tokens_in": 705,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.2204003329970874,
+  "context": null
+}

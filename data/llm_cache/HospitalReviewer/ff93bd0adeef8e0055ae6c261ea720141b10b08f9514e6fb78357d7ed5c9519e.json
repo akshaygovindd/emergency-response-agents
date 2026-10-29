@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t063-P06",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and has remaining trauma/general capacity, while the only waiting critical patients need burn care that H-G cannot provide."
+      }
+    ]
+  },
+  "tokens_in": 648,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.1218093340285122,
+  "context": null
+}

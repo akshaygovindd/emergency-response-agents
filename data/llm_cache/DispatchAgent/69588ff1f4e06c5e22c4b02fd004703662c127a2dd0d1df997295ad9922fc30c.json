@@ -1,0 +1,99 @@
+{
+  "output": "Proposed AMB-02 for INC-10, INC-06, INC-08, INC-05, and INC-11.",
+  "tokens_in": 3117,
+  "tokens_out": 362,
+  "requests": 2,
+  "latency_s": 3.053612250019796,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t059-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-2",
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest urgency victims and BLS can serve the non-ALS trauma/general pair.",
+        "time_min": 59
+      },
+      {
+        "proposal_id": "t059-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Single urgent trauma victim needs the closest available unit.",
+        "time_min": 59
+      },
+      {
+        "proposal_id": "t059-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Most urgent trauma victims at this incident should be first for transport.",
+        "time_min": 59
+      },
+      {
+        "proposal_id": "t059-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "General victim with ALS need is waiting and this is the only free ambulance.",
+        "time_min": 59
+      },
+      {
+        "proposal_id": "t059-P05",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 5,
+        "reason": "Lower urgency trauma victim can use the free BLS unit if available.",
+        "time_min": 59
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t020-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general-care capacity and no closer critical general-care patient is waiting that would require preserving this bed."
+      }
+    ]
+  },
+  "tokens_in": 842,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 0.822046416986268,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t005-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both trauma victims and has room; no need to preserve its last trauma slot for the waiting critical patient since H-G is also the closest capable option for that patient."
+      }
+    ]
+  },
+  "tokens_in": 587,
+  "tokens_out": 76,
+  "requests": 1,
+  "latency_s": 1.413878332998138,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t100-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has the needed trauma slot and beds, and rejecting would risk stranding no closer critical burn/general victims at this time."
+      }
+    ]
+  },
+  "tokens_in": 809,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.2179841249599122,
+  "context": null
+}

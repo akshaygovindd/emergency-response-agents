@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t009-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capability and a free trauma slot, and capacity should be preserved for the critical patient closer to H-B, not H-G."
+      }
+    ]
+  },
+  "tokens_in": 566,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.0285699579981156,
+  "context": null
+}

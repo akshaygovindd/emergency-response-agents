@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t059-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has open ER and general treatment capacity for both low-urgency patients, and holding beds is unnecessary because the critical waiting patients are either different-care or closer to other capable hospitals."
+      }
+    ]
+  },
+  "tokens_in": 700,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.1034653329988942,
+  "context": null
+}

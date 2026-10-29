@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t068-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity available, and there is no need to preserve beds for the critical burn patient, who is closer to H-B and can be treated there."
+      }
+    ]
+  },
+  "tokens_in": 562,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.0495338329928927,
+  "context": null
+}

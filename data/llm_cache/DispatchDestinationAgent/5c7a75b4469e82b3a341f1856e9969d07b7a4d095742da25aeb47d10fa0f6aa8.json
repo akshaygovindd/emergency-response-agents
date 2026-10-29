@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-G for AMB-05.",
+  "tokens_in": 1324,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.4539354579756036,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t098-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-11-3",
+            "V-11-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Shortest travel time and available general treatment slots for both stable general victims.",
+        "time_min": 98
+      }
+    ],
+    "invalid": []
+  }
+}

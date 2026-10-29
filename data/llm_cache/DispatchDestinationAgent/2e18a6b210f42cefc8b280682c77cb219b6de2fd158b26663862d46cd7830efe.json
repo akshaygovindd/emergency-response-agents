@@ -1,0 +1,47 @@
+{
+  "output": "Requests submitted.",
+  "tokens_in": 1557,
+  "tokens_out": 124,
+  "requests": 2,
+  "latency_s": 2.1442379580112174,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t054-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-06-1",
+            "V-06-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest hospital with general capacity for both low-urgency victims.",
+        "time_min": 54
+      },
+      {
+        "proposal_id": "t054-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with available general slot for this low-urgency victim.",
+        "time_min": 54
+      }
+    ],
+    "invalid": []
+  }
+}

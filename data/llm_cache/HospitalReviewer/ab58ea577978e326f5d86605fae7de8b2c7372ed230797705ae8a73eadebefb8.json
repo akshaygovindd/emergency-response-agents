@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t078-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds available, and accepting this burn ALS patient does not require reserving the last bed for a closer critical waitlisted patient."
+      }
+    ]
+  },
+  "tokens_in": 672,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.0128641249611974,
+  "context": null
+}

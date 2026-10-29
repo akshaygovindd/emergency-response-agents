@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t012-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general patients and has an available general slot and beds, so the closest requested hospital should \u0568\u0576\u0564\u0578\u0582\u0576 this critical ALS patient."
+      }
+    ]
+  },
+  "tokens_in": 521,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 0.8930098750279285,
+  "context": null
+}

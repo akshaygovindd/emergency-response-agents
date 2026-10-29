@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t082-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has capacity for a general patient and no closer critical burn victim is at risk of being stranded by using this bed."
+      }
+    ]
+  },
+  "tokens_in": 627,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.0553864170215093,
+  "context": null
+}

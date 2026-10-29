@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t069-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capability, enough beds, and no reason to preserve its last beds since critical trauma cases can still be routed to H-G/H-B as applicable."
+      }
+    ]
+  },
+  "tokens_in": 865,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.4208568750182167,
+  "context": null
+}

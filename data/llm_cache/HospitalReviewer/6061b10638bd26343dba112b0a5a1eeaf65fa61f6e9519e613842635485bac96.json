@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t030-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and no ER crowding, and accepting does not endanger nearby critical patients."
+      }
+    ]
+  },
+  "tokens_in": 842,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.0159378750249743,
+  "context": null
+}

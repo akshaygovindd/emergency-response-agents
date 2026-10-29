@@ -1,0 +1,44 @@
+{
+  "output": "Requested H-G for AMB-01.",
+  "tokens_in": 2116,
+  "tokens_out": 127,
+  "requests": 3,
+  "latency_s": 3.360099000041373,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-2",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with capacity and trauma capability for the high-urgency ALS victim.",
+        "time_min": 91
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 91,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-2",
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

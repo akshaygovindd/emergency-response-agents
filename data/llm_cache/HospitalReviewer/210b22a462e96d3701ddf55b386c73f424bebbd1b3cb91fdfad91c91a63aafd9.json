@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t019-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat general care and has capacity, and accepting does not endanger any closer critical burn or trauma victim."
+      }
+    ]
+  },
+  "tokens_in": 835,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.023793125001248,
+  "context": null
+}

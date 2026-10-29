@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-T for V-04-1.",
+  "tokens_in": 1258,
+  "tokens_out": 62,
+  "requests": 2,
+  "latency_s": 1.7327230829978362,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t029-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with available trauma slots and beds.",
+        "time_min": 29
+      }
+    ],
+    "invalid": []
+  }
+}

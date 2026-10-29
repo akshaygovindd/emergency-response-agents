@@ -1,0 +1,47 @@
+{
+  "output": "Submitted both destination requests.",
+  "tokens_in": 1544,
+  "tokens_out": 115,
+  "requests": 2,
+  "latency_s": 2.1538801250280812,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t025-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with general capacity.",
+        "time_min": 25
+      },
+      {
+        "proposal_id": "t025-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-2",
+            "V-04-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Shortest travel and enough general capacity for both victims.",
+        "time_min": 25
+      }
+    ],
+    "invalid": []
+  }
+}

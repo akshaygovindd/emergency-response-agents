@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-G.",
+  "tokens_in": 1326,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 1.8280244159977883,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t051-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-07-1",
+            "V-07-3"
+          ]
+        },
+        "priority": 4,
+        "reason": "General hospital has room and matches both general victims.",
+        "time_min": 51
+      }
+    ],
+    "invalid": []
+  }
+}

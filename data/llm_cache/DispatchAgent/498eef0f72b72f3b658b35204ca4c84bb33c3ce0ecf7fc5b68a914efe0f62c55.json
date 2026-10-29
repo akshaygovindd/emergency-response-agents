@@ -1,0 +1,82 @@
+{
+  "output": "Proposed AMB-03 to INC-12, INC-08, INC-11, and INC-10.",
+  "tokens_in": 2684,
+  "tokens_out": 306,
+  "requests": 2,
+  "latency_s": 2.5213919579982758,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t101-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-1",
+            "V-12-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the most urgent ALS-trauma victims at INC-12.",
+        "time_min": 101
+      },
+      {
+        "proposal_id": "t101-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-08-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "ALS ambulance is suitable for the burn victim needing ALS at INC-08.",
+        "time_min": 101
+      },
+      {
+        "proposal_id": "t101-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-3",
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "ALS unit can handle the urgent general victims at INC-11 and one needs ALS.",
+        "time_min": 101
+      },
+      {
+        "proposal_id": "t101-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest available unit can clear the remaining general victim at INC-10.",
+        "time_min": 101
+      }
+    ],
+    "invalid": []
+  }
+}

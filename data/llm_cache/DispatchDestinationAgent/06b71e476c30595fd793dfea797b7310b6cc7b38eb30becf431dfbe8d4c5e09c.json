@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-10-1.",
+  "tokens_in": 1269,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 2.230864749988541,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t110-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "General Hospital has the shortest travel time and available general treatment slots.",
+        "time_min": 110
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t007-P05",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and beds, and keeping capacity for the listed critical patients does not require blocking this load."
+      }
+    ]
+  },
+  "tokens_in": 630,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.42404816695489,
+  "context": null
+}

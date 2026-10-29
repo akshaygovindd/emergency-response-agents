@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t081-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the general ALS patient and has capacity, while the critical burn patients need H-B rather than this hospital."
+      }
+    ]
+  },
+  "tokens_in": 663,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.1099470420158468,
+  "context": null
+}

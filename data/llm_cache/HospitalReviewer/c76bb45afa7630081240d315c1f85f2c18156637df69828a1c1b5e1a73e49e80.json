@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t063-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and this patient is not competing with the critical trauma waiting list at H-T/H-G."
+      }
+    ]
+  },
+  "tokens_in": 596,
+  "tokens_out": 56,
+  "requests": 1,
+  "latency_s": 1.0200367919751443,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t009-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims, has trauma capacity, and there are no waiting critical patients requiring bed preservation."
+      }
+    ]
+  },
+  "tokens_in": 546,
+  "tokens_out": 55,
+  "requests": 1,
+  "latency_s": 0.9012076669605449,
+  "context": null
+}

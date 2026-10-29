@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t060-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room and can treat the low-urgency general patient, and no capacity needs to be reserved here."
+      }
+    ]
+  },
+  "tokens_in": 668,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.0322231670143083,
+  "context": null
+}

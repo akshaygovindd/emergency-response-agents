@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t110-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has a general slot and beds available, and no critical general patient is being protected there over this load."
+      }
+    ]
+  },
+  "tokens_in": 729,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.1216877920087427,
+  "context": null
+}

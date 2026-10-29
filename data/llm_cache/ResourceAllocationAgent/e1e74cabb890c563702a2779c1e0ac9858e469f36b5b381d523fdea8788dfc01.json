@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t092-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-01 should go to INC-05 because it reaches a single urgency-5 ALS victim faster (8 min vs 12) and that victim has already waited longer. No unclaimed ambulance is available for a counter-proposal."
+  },
+  "tokens_in": 638,
+  "tokens_out": 76,
+  "requests": 1,
+  "latency_s": 1.046845042030327,
+  "context": null
+}

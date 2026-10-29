@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t063-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-05 should go to the oldest incident with the most urgent victim and the shortest travel time: INC-07 has a urgency-5 victim and arrives in 6 minutes, beating the other options on urgency/time. No unclaimed ambulance is available for a counter-proposal."
+  },
+  "tokens_in": 967,
+  "tokens_out": 85,
+  "requests": 1,
+  "latency_s": 1.2752585000125691,
+  "context": null
+}

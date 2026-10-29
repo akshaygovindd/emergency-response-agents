@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t107-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a free trauma slot and accepting this lower-urgency trauma patient does not jeopardize capacity for the closer critical trauma victims waiting for H-G."
+      }
+    ]
+  },
+  "tokens_in": 606,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.1151022919802926,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t070-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity and this low-urgency patient does not justify preserving beds for the critical trauma victim."
+      }
+    ]
+  },
+  "tokens_in": 566,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.0111937920446508,
+  "context": null
+}

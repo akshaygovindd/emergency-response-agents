@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t084-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both ALS trauma/general victims and has sufficient beds and slots, while H-G lacks trauma treatment capacity."
+      }
+    ]
+  },
+  "tokens_in": 875,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.1172831250005402,
+  "context": null
+}

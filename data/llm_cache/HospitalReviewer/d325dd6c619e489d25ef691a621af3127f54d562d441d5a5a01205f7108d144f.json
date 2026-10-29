@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t064-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has free beds and no trauma treatment slots, but the incoming critical trauma patient should still be accepted here rather than diverted since H-G is also full on trauma slots and H-T is the requested trauma-capable destination."
+      }
+    ]
+  },
+  "tokens_in": 585,
+  "tokens_out": 84,
+  "requests": 1,
+  "latency_s": 1.431385749951005,
+  "context": null
+}

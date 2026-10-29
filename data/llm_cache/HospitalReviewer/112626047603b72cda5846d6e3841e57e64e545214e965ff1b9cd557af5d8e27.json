@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t087-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity available and this load fits its capabilities, so accepting avoids stranding the urgent burn patient."
+      }
+    ]
+  },
+  "tokens_in": 843,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.038977749994956,
+  "context": null
+}

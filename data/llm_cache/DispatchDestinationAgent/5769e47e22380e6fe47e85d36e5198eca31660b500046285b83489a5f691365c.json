@@ -1,0 +1,65 @@
+{
+  "output": "Submitted all three hospital requests.",
+  "tokens_in": 1782,
+  "tokens_out": 172,
+  "requests": 2,
+  "latency_s": 2.444044375035446,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-2",
+            "V-12-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital for the urgent ALS general victim and the companion patient.",
+        "time_min": 96
+      },
+      {
+        "proposal_id": "t096-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 3,
+        "reason": "Burn specialty hospital with available burn slots and nearby access.",
+        "time_min": 96
+      },
+      {
+        "proposal_id": "t096-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Closest hospital that can handle trauma.",
+        "time_min": 96
+      }
+    ],
+    "invalid": []
+  }
+}

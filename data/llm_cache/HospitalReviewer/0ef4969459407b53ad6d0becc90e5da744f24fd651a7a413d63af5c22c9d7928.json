@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t033-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both general victims and has one general slot and ample beds, so admitting them does not risk the nearby critical trauma patient."
+      }
+    ]
+  },
+  "tokens_in": 587,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 0.9632181249908172,
+  "context": null
+}
