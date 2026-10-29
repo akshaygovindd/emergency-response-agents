@@ -31,3 +31,13 @@ pre.code[hidden] { display: none; } .k { color: #8FB8DE; } .s { color: #7DD3C0; 
 .allraw { margin-top: 8px; }
 .empty-state { margin: auto; text-align: center; color: var(--text-3); padding: 48px; max-width: 420px; } .empty-state .tile { width: 48px; height: 48px; border-radius: 14px; margin: 0 auto 16px; }
 .empty-state h3 { margin: 0 0 4px; color: var(--text); font-size: 16px; }
+
+/* ───── responsive ───── */
+body[data-d="md"] #main, body[data-d="sm"] #main { padding: 16px; gap: 16px; }
+body[data-d="md"] #main { grid-template-columns: 460px minmax(0, 1fr); }
+body[data-d="sm"] #main { grid-template-columns: 380px minmax(0, 1fr); }
+body[data-d="sm"] .nc { grid-template-columns: 48px minmax(0, 1fr); padding: 10px 12px; gap: 10px; }
+body[data-d="sm"] .nc .what { font-size: 13px; }
+body[data-d="md"] #dhead, body[data-d="sm"] #dhead { padding: 14px 16px 12px; } body[data-d="md"] #body, body[data-d="sm"] #body { padding: 14px 16px 16px; }
+body[data-d="sm"] #dhead .facts { gap: 8px 16px; } body[data-d="sm"] .step { gap: 12px; } body[data-d="sm"] .step .say { font-size: 14px; }
+.list-head { min-width: 0; flex-wrap: wrap; } #filter { max-width: 100%; flex-wrap: wrap; } .seg { max-width: 100%; }

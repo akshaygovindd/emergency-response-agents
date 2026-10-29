@@ -33,7 +33,7 @@
       const x0 = left + pi * (pw + gap), g = el("g", {}, svg), grid = el("g", { class: "grid" }, g), axis = el("g", { class: "axis" }, g);
       ticks(0, yMax, 5).forEach((t) => { el("line", { x1: x0, x2: x0 + pw, y1: y(t), y2: y(t), class: t === 0 ? "zero" : "" }, grid); if (pi === 0) txt(axis, fmt(t, true), { x: x0 - 10, y: y(t) + 4, "text-anchor": "end" }); });
       if (panels.length > 1) { el("circle", { cx: x0 + 6, cy: top - 14, r: 5, fill: p.color || "none" }, g); txt(g, p.title, { x: x0 + 18, y: top - 9, class: "panel-title" }); }
-      const cw = pw / p.cats.length, n = p.series.length, bw = Math.min(30, (cw * 0.78) / n), used = bw * n + 4 * (n - 1);
+      const placed = [], cw = pw / p.cats.length, n = p.series.length, bw = Math.min(30, (cw * 0.78) / n), used = bw * n + 4 * (n - 1);
       p.cats.forEach((c, ci2) => {
         const cx = x0 + cw * ci2 + cw / 2;
         txt(axis, c.label, { x: cx, y: top + ph + 24, "text-anchor": "middle", class: "cat" });
@@ -49,7 +49,11 @@
             v = { ...v, lo: Math.max(0, v.lo), hi: Math.min(yMax, v.hi) };                  // a rate cannot go below 0 or above 100%
             el("line", { x1: mx, x2: mx, y1: y(v.lo), y2: y(v.hi), stroke: "#E6EAF2", "stroke-width": 1.4, "stroke-linecap": "round", opacity: 0.85 }, hit);
             [v.lo, v.hi].forEach((e) => el("line", { x1: mx - 4, x2: mx + 4, y1: y(e), y2: y(e), stroke: "#E6EAF2", "stroke-width": 1.4, "stroke-linecap": "round", opacity: 0.85 }, hit));
-          } else txt(hit, fmt(v.v), { x: bx + bw / 2, y: by - 6 - (k % 2) * 15, "text-anchor": "middle", class: "val" });
+          } else {                                                                                  // value label: lifted until it clears every label already placed in this group
+            const label = fmt(v.v), lw = label.length * 6.8; let ly = by - 6; const lx = bx + bw / 2;
+            while (placed.some((q) => Math.abs(q.x - lx) < (q.w + lw) / 2 + 2 && Math.abs(q.y - ly) < 13)) ly -= 13;
+            placed.push({ x: lx, y: ly, w: lw }); txt(hit, label, { x: lx, y: ly, "text-anchor": "middle", class: "val" });
+          }
         });
       });
     });

@@ -32,3 +32,15 @@
 .replaycard { padding: 16px 16px 16px; display: flex; flex-direction: column; gap: 12px; flex: none; }
 .rc-head { display: flex; align-items: center; gap: 16px; padding: 0 8px; }
 .replaycard iframe { width: 100%; height: 940px; border: 0; border-radius: 12px; background: var(--bg); flex: none; }
+
+/* ───── responsive ───── */
+body[data-d="md"] #main, body[data-d="sm"] #main { padding: 16px; gap: 16px; }
+body[data-d="md"] .top-grid { grid-template-columns: 540px minmax(0, 1fr); gap: 16px; } body[data-d="sm"] .top-grid { grid-template-columns: minmax(0, 470px) minmax(0, 1fr); gap: 16px; }
+body[data-d="md"] .controls, body[data-d="sm"] .controls { padding: 16px 20px; gap: 12px; }
+body[data-d="sm"] .field { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; }
+body[data-d="md"] #results, body[data-d="sm"] #results { gap: 16px; }
+body[data-d="md"] .rcard, body[data-d="sm"] .rcard { padding: 16px; } body[data-d="md"] .rcard .big, body[data-d="sm"] .rcard .big { font-size: 40px; line-height: 44px; }
+body[data-d="sm"] .mini { gap: 8px; } body[data-d="sm"] .rcard .sysname { gap: 8px; flex-wrap: wrap; }
+body[data-d="md"] .replaycard iframe { height: 860px; } body[data-d="sm"] .replaycard iframe { height: 780px; }
+body[data-d="md"] .replaycard, body[data-d="sm"] .replaycard { padding: 12px; } .rc-head { flex-wrap: wrap; min-width: 0; }
+.systems, .runrow { flex-wrap: wrap; } .rcard, .controls { min-width: 0; }

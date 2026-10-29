@@ -15,3 +15,11 @@
 .axis text { fill: var(--text-3); font-size: 12px; } .axis .cat { fill: var(--text-2); font-size: 14px; font-weight: 500; } .grid line { stroke: rgba(148,163,184,.1); } .grid .zero { stroke: rgba(148,163,184,.4); }
 .bar { transition: opacity .12s; } .hit:hover { fill: rgba(148,163,184,.06); } .val { fill: var(--text-2); font-size: 12px; font-weight: 500; }
 .panel-title { fill: var(--text); font-size: 14px; font-weight: 600; }
+
+/* ───── responsive ───── */
+body[data-d="md"] #main, body[data-d="sm"] #main { padding: 16px; gap: 12px; }
+body[data-d="md"] .chartcard, body[data-d="sm"] .chartcard { padding: 14px 16px 10px; }
+body[data-d="md"] .callout, body[data-d="sm"] .callout { padding: 12px 16px; font-size: 14.5px; line-height: 21px; }
+body[data-d="sm"] .chart-head h2 { font-size: 16px; } body[data-d="sm"] .chart-head { gap: 16px; }
+.tabs-row { min-width: 0; flex-wrap: wrap; } #tabs { max-width: 100%; flex-wrap: wrap; } .seg b { white-space: nowrap; }
+body[data-d="sm"] .seg b { padding: 0 10px; font-size: 12.5px; }

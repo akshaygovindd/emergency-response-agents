@@ -11,6 +11,14 @@ window.UI = (() => {
   const SYSTEM_LABEL = { naive: "Naive", greedy: "Greedy", agents: "Agents", negotiation: "Negotiation", oracle: "Oracle" };
   const SCENARIO_LABEL = { normal: "Normal", surge: "Surge", bottleneck: "Bottleneck" };
 
+  // Density tier for the responsive CSS: lg = the 1920 x 1080 design, md and sm = smaller windows. Embedded players use their own thresholds.
+  const setDensity = () => {
+    const w = innerWidth, h = innerHeight, c = document.body.className, mode = /mode-/.test(c);
+    const [wl, wm] = /mode-compare/.test(c) ? [840, 700] : /mode-inline/.test(c) ? [1700, 1400] : [1780, 1480];
+    document.body.dataset.d = (w >= wl && (h >= 960 || mode)) ? "lg" : (w >= wm && (h >= 760 || mode)) ? "md" : "sm";
+  };
+  setDensity(); addEventListener("resize", setDensity);
+
   const pageRoot = () => { try { return window.top.location.pathname.replace(/\/[^/]*$/, "/"); } catch (e) { return "/"; } };
   // The page sits in a sandboxed iframe that may not navigate its parent directly, so the address change is handed to
   // a tiny script that runs in the parent page itself.

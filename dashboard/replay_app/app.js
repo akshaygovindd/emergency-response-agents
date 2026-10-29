@@ -10,6 +10,14 @@
   const $ = (id) => document.getElementById(id);
   const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  // Density tier for the responsive CSS (same rule as dashboard/ui/base.js): lg = the 1920 x 1080 design, md and sm = smaller windows.
+  // The two embedded Compare players and the What-if player use their own, narrower thresholds.
+  const setDensity = () => {
+    const w = innerWidth, h = innerHeight, c = document.body.className, mode = /mode-/.test(c);
+    const [wl, wm] = /mode-compare/.test(c) ? [840, 700] : /mode-inline/.test(c) ? [1700, 1400] : [1780, 1480];
+    document.body.dataset.d = (w >= wl && (h >= 960 || mode)) ? "lg" : (w >= wm && (h >= 760 || mode)) ? "md" : "sm";
+  };
+  setDensity(); addEventListener("resize", setDensity);
   const ico = (n, s = 16, extra = "") => `<svg class="i ${extra}" width="${s}" height="${s}"><use href="#i-${n}"/></svg>`;
 
   const TRIAGE = { 1: "var(--triage-immediate)", 2: "var(--triage-delayed)", 3: "var(--triage-minor)", 4: "var(--triage-expectant)", 5: "var(--triage-reached)" };
@@ -360,18 +368,19 @@
     layers.labels.innerHTML = "";
     // spots(w) lists offsets in order of preference, measured so a label never touches its own object
     const place = (cx, cy, text, spots, tone, bold) => {
-      const w = 8 + text.length * 6.6, list = spots(w);
-      const inside = (x, y) => x - w / 2 >= 8 && x + w / 2 <= G.W - 8 && y - 11 >= 8 && y + 11 <= G.H - 100;
+      const LS = G.W < 700 ? 0.85 : 1;                                           // labels shrink a little on small maps (Compare on a laptop)
+      const w = (8 + text.length * 6.6) * LS, list = spots(w), hh = 11 * LS;
+      const inside = (x, y) => x - w / 2 >= 8 && x + w / 2 <= G.W - 8 && y - hh >= 8 && y + hh <= G.H - 100;
       const ring = [];                                                           // farther candidates, all around, for crowded spots
-      for (const r of [48, 72, 96]) for (let a = 0; a < 8; a++) ring.push([Math.cos((a * Math.PI) / 4) * (r + w / 3), Math.sin((a * Math.PI) / 4) * r]);
-      const cost = ([dx, dy]) => taken.filter((o) => overlap(rectAt(cx + dx, cy + dy, w + 4, 26), o)).length;
+      for (const r of [48 * LS, 72 * LS, 96 * LS]) for (let a = 0; a < 8; a++) ring.push([Math.cos((a * Math.PI) / 4) * (r + w / 3), Math.sin((a * Math.PI) / 4) * r]);
+      const cost = ([dx, dy]) => taken.filter((o) => overlap(rectAt(cx + dx, cy + dy, w + 4, 26 * LS), o)).length;
       const all = [...list, ...ring].filter(([dx, dy]) => inside(cx + dx, cy + dy));
       const pick = all.find((p) => cost(p) === 0) || all.sort((p, q) => cost(p) - cost(q))[0] || list[0];
       const x = cx + pick[0], y = cy + pick[1];
-      taken.push(rectAt(x, y, w, 22));
+      taken.push(rectAt(x, y, w, 22 * LS));
       const g = el("g", {}, layers.labels);
-      el("rect", { x: x - w / 2, y: y - 11, width: w, height: 22, rx: 11, fill: "rgba(10,14,23,.78)", stroke: "rgba(148,163,184,.16)" }, g);
-      const t = el("text", { x, y: y + 4, "text-anchor": "middle", "font-size": 12, "font-weight": bold ? 600 : 500, fill: tone }, g);
+      el("rect", { x: x - w / 2, y: y - hh, width: w, height: 2 * hh, rx: hh, fill: "rgba(10,14,23,.78)", stroke: "rgba(148,163,184,.16)" }, g);
+      const t = el("text", { x, y: y + 4 * LS, "text-anchor": "middle", "font-size": 12 * LS, "font-weight": bold ? 600 : 500, fill: tone }, g);
       t.textContent = text;
     };
     hospitals.forEach((hs) => place(G.X(hs.h.x), G.Y(hs.h.y), hs.h.name, (w) => [[0, 63], [0, -63], [w / 2 + 52, 0], [-(w / 2 + 52), 0]], "var(--text)", true));
@@ -511,6 +520,12 @@
     `<span class="unit">${ico("ambulance", 16)}<em style="font-style:normal">ALS</em><span class="als-tag">ALS</span></span>` +
     `<span class="unit">${ico("users", 16)}<em style="font-style:normal">Response team</em></span>` +
     `<span class="unit" style="color:var(--text-2)">${ico("hospital", 16)}<em style="font-style:normal">Hospital</em></span></div>`;
+
+  // On laptop widths the legend leaves the top bar and opens from a "Legend" button instead.
+  $("legendbtn").innerHTML = `${ico("map", 16)} Legend`;
+  const setLegend = (open) => { $("legend").classList.toggle("open", open); $("legendbtn").classList.toggle("on", open); $("legendbtn").setAttribute("aria-expanded", String(open)); };
+  $("legendbtn").addEventListener("click", () => setLegend(!$("legend").classList.contains("open")));
+  document.addEventListener("click", (e) => { if (!e.composedPath().some((n) => n === $("legend") || n === $("legendbtn"))) setLegend(false); });
 
   // ───────── Controls ─────────
   const scrub = $("scrub"), playBtn = $("play"), pauseBox = $("pausebox");

@@ -28,10 +28,17 @@
   $("nameA").textContent = D.left.label; $("nameB").textContent = D.right.label;
   $("subA").textContent = D.left.sub; $("subB").textContent = D.right.sub;
 
+  // The floating playback bar sits just above the KPI cards under the two maps; their height changes with the window.
+  function placeBar() {
+    const h = Math.max(...frames.map((f) => { try { return f.contentDocument.getElementById("kpis").offsetHeight; } catch (e) { return 0; } }));
+    if (h) $("main").style.setProperty("--pb", (parseFloat(getComputedStyle($("main")).paddingBottom) + h + 12 + 16) + "px");
+  }
+  frames.forEach((f) => new ResizeObserver(placeBar).observe(f)); addEventListener("resize", () => setTimeout(placeBar, 60));
+
   const scrub = $("scrub"), playBtn = $("play"), pauseBox = $("pausebox");
   scrub.max = N; $("last").textContent = String(N);
   frames.forEach((f, i) => {
-    f.addEventListener("load", () => { loaded += 1; if (loaded === 2) render(tau); });
+    f.addEventListener("load", () => { loaded += 1; placeBar(); if (loaded === 2) render(tau); });
     f.srcdoc = sides[i].html;
   });
   function render(t) {
