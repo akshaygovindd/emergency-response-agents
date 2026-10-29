@@ -1,0 +1,17 @@
+#topbar h1 .crumb { color: var(--text-3); font-weight: 400; margin-left: 12px; font-size: 13px; }
+.vbadge { font-size: 13px; font-weight: 500; color: var(--accent-hover); background: var(--accent-soft); border: 1px solid rgba(99,102,241,.4); border-radius: 999px; padding: 4px 12px; white-space: nowrap; }
+#main { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: 16px; padding: 24px; min-height: 0; min-width: 0; }
+.tabs-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.chartcard { padding: 20px 24px 16px; display: flex; flex-direction: column; min-height: 0; }
+.chart-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 8px; }
+.chart-head h2 { margin: 0; font-size: 18px; line-height: 24px; font-weight: 600; } .chart-head p { margin: 2px 0 0; font-size: 13px; color: var(--text-3); }
+#legend { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-end; font-size: 13px; color: var(--text-2); }
+#legend span { display: flex; align-items: center; gap: 8px; white-space: nowrap; } #legend i { width: 10px; height: 10px; border-radius: 3px; display: block; }
+#chart { flex: 1; min-height: 0; position: relative; } #chart svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.callout { display: flex; align-items: flex-start; gap: 16px; padding: 16px 20px; border-radius: 14px; background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent); font-size: 16px; line-height: 24px; }
+.callout .tile { width: 32px; height: 32px; border-radius: 10px; flex: none; }
+.callout b { font-weight: 600; margin-right: 8px; }
+.empty-chart { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; color: var(--text-3); font-size: 15px; }
+.axis text { fill: var(--text-3); font-size: 12px; } .axis .cat { fill: var(--text-2); font-size: 14px; font-weight: 500; } .grid line { stroke: rgba(148,163,184,.1); } .grid .zero { stroke: rgba(148,163,184,.4); }
+.bar { transition: opacity .12s; } .hit:hover { fill: rgba(148,163,184,.06); } .val { fill: var(--text-2); font-size: 12px; font-weight: 500; }
+.panel-title { fill: var(--text); font-size: 14px; font-weight: 600; }

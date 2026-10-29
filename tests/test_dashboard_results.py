@@ -64,3 +64,22 @@ def test_takeaway_paired_counts_significant_scenarios():
                       {"scenario": "surge", "mean_diff": -0.02, "significant": False, "n": 5}])
     text = rv.takeaway_paired(t, "v9", "X")
     assert "normal +10.0" in text and "surge -2.0" in text and "1 of 2 scenarios" in text
+
+
+def test_results_payload_is_json_serialisable_and_labelled(version):
+    import json
+    payload = rv.results_payload(version)
+    json.dumps(payload)                                                  # must be plain data for the page
+    assert payload["version"] == version and version in payload["label"] and payload["source"] == f"results/{version}/runs.jsonl"
+    assert set(payload["takeaways"]) == {"csr", "rq1", "rq2", "oracle", "triage", "cost"}
+    assert all(t.startswith(f"({version})") for t in payload["takeaways"].values())
+    assert set(payload["vs_greedy"]) == {"naive", "agents", "negotiation"} and len(payload["csr"]) >= 12
+
+
+def test_results_payload_values_match_the_tables(version):
+    payload = rv.results_payload(version)
+    runs = rv.runs_for(version)
+    row = next(r for r in payload["csr"] if r["scenario"] == "normal" and r["mode"] == "greedy")
+    mine = rv.csr_table(runs).query("scenario == 'normal' and mode == 'greedy'").iloc[0]
+    assert row["mean"] == pytest.approx(mine["mean"]) and row["ci_low"] <= row["mean"] <= row["ci_high"]
+    assert bool(payload["oracle"]) == (version == "v1")

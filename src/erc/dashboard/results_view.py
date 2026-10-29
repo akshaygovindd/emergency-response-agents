@@ -179,3 +179,27 @@ def takeaway_cost(t: pd.DataFrame, version: str, vs_greedy: pd.DataFrame) -> str
     gain = vs_greedy["mean_diff"].mean() if not vs_greedy.empty else float("nan")
     return (f"({version}) A negotiation run costs about ${cost:.3f} at list price and {lat:.0f} s of model time (naive and greedy make no model calls), "
             f"for a critical-service change of {_pts(gain)} points versus greedy (average of the scenario differences).")
+
+
+# ───────── Everything the Results page draws, as plain JSON-able data ─────────
+def _records(df: pd.DataFrame) -> list[dict]:
+    return json.loads(df.to_json(orient="records"))
+
+
+def results_payload(version: str) -> dict:
+    """Tables, takeaway sentences and labels for one version (the page never mixes versions)."""
+    runs = runs_for(version)
+    csr = csr_table(runs)
+    vs_greedy = {m: paired_table(runs, m, "greedy") for m in ("naive", "agents", "negotiation")}
+    rq2, oracle = paired_table(runs, "negotiation", "agents"), paired_table(runs, "oracle", "negotiation")
+    triage, cost = triage_table(runs), cost_table(runs)
+    return {
+        "version": version, "label": FRAMES[version], "source": f"results/{version}/runs.jsonl", "runs": len(runs),
+        "csr": _records(csr), "vs_greedy": {m: _records(t) for m, t in vs_greedy.items()}, "rq2": _records(rq2),
+        "oracle": _records(oracle), "triage": _records(triage), "cost": _records(cost),
+        "takeaways": {
+            "csr": takeaway_csr(csr, version), "rq1": takeaway_rq1(vs_greedy, version),
+            "rq2": takeaway_paired(rq2, version, "Negotiation vs agents"), "oracle": takeaway_oracle(oracle, version),
+            "triage": takeaway_triage(triage, version), "cost": takeaway_cost(cost, version, vs_greedy["negotiation"]),
+        },
+    }
