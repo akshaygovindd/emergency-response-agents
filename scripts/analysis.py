@@ -678,6 +678,38 @@ def fig_contention(plt, t: pd.DataFrame) -> None:
           "Normal → surge → bottleneck. Demand from data/scenarios; conflicts (agent systems) and ER peaks (negotiation runs) from results/ and logs/ of each version")
 
 
+def fig_rq3(plt, csr: pd.DataFrame, rq1: pd.DataFrame, cont: pd.DataFrame) -> None:
+    """RQ3: performance as demand rises. Left two panels: CSR per system by scenario (v1, v2). Right: agent systems minus greedy."""
+    fig, axes = _canvas(plt, 3)
+    fig.subplots_adjust(wspace=0.28)
+    x = range(len(SCENARIOS))
+    xt = [f"{SC_LABEL[s]}\n{cont[cont.version == 'v1'].set_index('scenario').loc[s, 'critical_per_als_ambulance']:.1f} crit/ALS" for s in SCENARIOS]
+    for ax, v in zip(axes[:2], VERSIONS):
+        for m in ("naive", "greedy", "agents", "negotiation", "oracle"):
+            g = csr[(csr.version == v) & (csr["mode"] == m)].set_index("scenario")
+            if g.empty:
+                continue
+            idx = [i for i, sc in enumerate(SCENARIOS) if sc in g.index]
+            ys = [g.loc[SCENARIOS[i], "mean"] for i in idx]
+            ax.plot(idx, ys, "o-" if m != "oracle" else "o--", color=SYS_COLOR[m], lw=2.6, ms=9, label=SYS_LABEL[m])
+        ax.set_title(f"{v}: critical service rate", loc="left", fontsize=14)
+        ax.set_xticks(list(x), xt, fontsize=11); ax.set_ylim(0, 0.8); ax.set_xlim(-0.3, 2.3)
+        ax.set_yticks(np.arange(0, 0.81, 0.2), [f"{y:.0%}" for y in np.arange(0, 0.81, 0.2)])
+    axes[0].legend(loc="upper right", fontsize=11)
+    ax = axes[2]
+    for v, ls, mk in (("v1", "--", "s"), ("v2", "-", "o")):
+        for m in AGENT_MODES:
+            g = rq1[(rq1.version == v) & (rq1["mode"] == m)].set_index("scenario")
+            ax.errorbar([i + (0.04 if v == "v2" else -0.04) for i in x], [100 * g.loc[s, "mean_diff"] for s in SCENARIOS],
+                        yerr=[[100 * (g.loc[s, "mean_diff"] - g.loc[s, "ci_low"]) for s in SCENARIOS], [100 * (g.loc[s, "ci_high"] - g.loc[s, "mean_diff"]) for s in SCENARIOS]],
+                        fmt=mk + ls, color=SYS_COLOR[m], ecolor=TEXT3, elinewidth=1.2, lw=2, ms=8, capsize=3, label=f"{v} {SYS_LABEL[m].split(' (')[0]}")
+    ax.axhline(0, color=TEXT3, lw=1.4)
+    ax.set_title("Minus greedy, points (95% CI)", loc="left", fontsize=14)
+    ax.set_xticks(list(x), [SC_LABEL[s] for s in SCENARIOS], fontsize=11); ax.set_xlim(-0.3, 2.3); ax.legend(loc="upper left", fontsize=10)
+    _save(plt, fig, "fig12_rq3_demand", "RQ3: performance as demand rises (normal → surge → bottleneck)",
+          "Axis labels show critical victims per ALS ambulance. Sources: results/v1, results/v2, data/scenarios")
+
+
 def fig_v1_v2(plt, t: pd.DataFrame) -> None:
     fig, axes = _canvas(plt, 2)
     for ax, mode in zip(axes, ("agents", "negotiation")):
@@ -781,6 +813,7 @@ def build_figures(t: dict[str, pd.DataFrame]) -> None:
     fig_divergence(plt, t["02_divergence_summary"])
     fig_conflicts(plt, t["03_conflict_summary"])
     fig_contention(plt, t["04_contention"])
+    fig_rq3(plt, t["01_csr"], t["01_rq1_paired_vs_greedy"], t["04_contention"])
     fig_v1_v2(plt, t["05_v1_vs_v2_critical_service"][t["05_v1_vs_v2_critical_service"]["mode"].isin(AGENT_MODES)])
     fig_failures(plt, t["06_failure_runs"], t["06_failure_victims"])
     fig_cost(plt, t["07_cost_benefit"], t["07_cost_overall"])

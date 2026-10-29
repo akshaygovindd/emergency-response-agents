@@ -25,8 +25,9 @@ with ground-truth assessments; v1 only, 3 seeds). **Primary metric:** critical s
 critical victims (severity 4-5) first contacted within their deadline. Seeds: normal 10, surge 10, bottleneck 5.
 Intervals are 95% t-intervals across seeds; "paired" means seed by seed on the same scenario.
 
-**Note on research questions.** The repo files I read (CLAUDE.md, PLAN.md, docs) name RQ1, RQ2 and RQ4 but do not define
-RQ3, so sections below are RQ1, RQ2 and RQ4, followed by the supporting analyses (oracle, contention, v2 vs v1, failures).
+**Research questions.** RQ1: do agent systems beat strong rule-based allocation? RQ2: does negotiation help? RQ3: how does
+performance change as demand rises (normal to surge to bottleneck)? RQ4: what does it cost? Supporting analyses (oracle,
+contention, v2 vs v1, failures) follow RQ4.
 
 ## Headline
 
@@ -34,7 +35,7 @@ RQ3, so sections below are RQ1, RQ2 and RQ4, followed by the supporting analyses
   interval contains zero. Both beat naive by a wide, significant margin.
 * Negotiation versus agents without negotiation: no significant difference. Most paired runs are identical (35 of 50
   never diverged); where they did, the effect is mixed.
-* Ambulance conflicts per run fall as pressure rises, and ER beds were never full in greedy or negotiation runs.
+* Every system's critical service rate falls steeply as demand rises; the agent-minus-greedy gap moves from about 0 (normal) to +3 to +4 points (bottleneck), not significant. Ambulance conflicts per run fall as pressure rises, and ER beds were never full in greedy or negotiation runs.
 
 ## RQ1. Do agent systems beat strong rule-based allocation?
 
@@ -131,6 +132,51 @@ It helped in four pairs in v1 and in none in v2, and hurt in two.
 **Limitations.** Each pair is one run, so attribution is a single case, not a distribution. 4 helped versus 2 hurt is far too few for a conclusion.
 The "same victims in the agents run" check shows association, not a controlled counterfactual for downstream victims.
 
+## RQ3. How does performance change as demand rises?
+
+Scenarios are ordered by pressure on ambulances: normal, surge, bottleneck (`01_csr.csv`, `01_rq1_paired_vs_greedy.csv`, `04_contention.csv`; figure `fig12_rq3_demand.png`).
+
+CSR by system (mean over seeds), v1 / v2:
+
+| system | normal | surge | bottleneck |
+|:--|--:|--:|--:|
+| naive | 35.8% / 35.8% | 13.8% / 13.8% | 8.5% / 8.5% |
+| greedy | 58.5% / 58.5% | 25.0% / 25.0% | 17.2% / 17.2% |
+| agents | 55.0% / 59.1% | 25.2% / 25.8% | 21.2% / 20.1% |
+| negotiation | 57.8% / 59.1% | 26.2% / 24.7% | 21.2% / 20.1% |
+| oracle (v1, 3 seeds) | 74.2% | 19.7% | - |
+
+Gap to greedy, points [95% CI], v1 / v2 (all intervals contain zero):
+
+| system | normal | surge | bottleneck |
+|:--|:--|:--|:--|
+| agents | -3.5 [-21.9, +15.0] / +0.6 [-19.5, +20.6] | +0.1 [-4.2, +4.5] / +0.8 [-4.0, +5.5] | +4.0 [-7.0, +15.1] / +2.9 [-7.2, +13.0] |
+| negotiation | -0.8 [-18.5, +17.0] / +0.6 [-19.5, +20.6] | +1.1 [-3.9, +6.1] / -0.3 [-5.8, +5.1] | +4.0 [-7.0, +15.1] / +2.9 [-7.2, +13.0] |
+| naive | -22.7 / -22.7 | -11.2 / -11.2 | -8.7 / -8.7 |
+
+Link to the contention numbers (`04_contention.csv`):
+
+| | normal | surge | bottleneck |
+|:--|--:|--:|--:|
+| critical victims per ALS ambulance | 4.2 | 11.45 | 16.4 |
+| share of first 75 min with no free ambulance (greedy) | 64% | 85% | 96% |
+| ambulance conflicts per run, v1 / v2 | 1.6 / 1.75 | 0.7 / 0.5 | 0.4 / 0.2 |
+
+* **Everyone degrades.** Greedy falls from 58.5% to 25.0% to 17.2%, and every system follows the same shape in both versions. Demand per ALS ambulance rises almost four-fold (4.2 to 16.4)
+  while the share of minutes with no free ambulance climbs from 64% to 96%, so most critical victims cannot be reached by their deadline whatever the policy.
+* **The agent-minus-greedy gap grows with pressure.** Agents and negotiation are at or slightly below greedy in normal (-3.5 to +0.6), near zero in surge (-0.3 to +1.1) and ahead in bottleneck (+2.9 to +4.0;
+  21.2% / 20.1% versus 17.2%). The ordering is the same in both versions, but every interval contains zero and bottleneck has only 5 seeds, so this is a direction, not a finding. The naive gap shrinks (-22.7, -11.2, -8.7) mostly because the baseline floor is lower.
+* **Why negotiation cannot be the reason.** As pressure rises the ambulances are busy almost all the time, so two proposals rarely claim the same free ambulance in the same minute: conflicts fall 1.6 to 0.7 to 0.4 (v1) and 1.75 to 0.5 to 0.2 (v2).
+  In bottleneck, negotiation and agents without negotiation never diverged (5 of 5 identical in both versions), so the bottleneck gain over greedy, if real, comes from the agents' dispatch decisions rather than from negotiation.
+  What causes it was not tested here.
+* **Where negotiation had a chance to matter** is normal and surge, where conflicts still occur: 15 of 50 pairs diverged in total, all in those two scenarios (RQ2).
+
+**Takeaway.** Performance of every system drops sharply as demand rises, and the more the ambulances are the bottleneck the less there is to negotiate about, so the contested-resource
+conflicts that negotiation is designed for become rarer exactly when pressure is highest. Agents look relatively better than greedy under the heaviest load, but the evidence is weak.
+
+**Limitations.** Three scenarios, not a continuous demand sweep, and they differ in more than load: bottleneck has 2 ambulances, a compressed arrival window (19 minutes) and 5 seeds, and surge and bottleneck are not on one scale
+(incidents per ambulance-hour in the arrival window: 2.0, 4.1, 16.0). The widening gap rests on non-significant differences from 5 to 10 seeds, and the oracle point at normal (3 seeds, interval 12% to 100%) is not comparable to the 10-seed means.
+
 ## RQ4. What does it cost?
 
 Per run at list price from logged tokens, as if nothing were cached (`07_cost_overall.csv`, `07_cost_benefit.csv`, `fig11_cost_vs_benefit.png`):
@@ -215,6 +261,8 @@ Largest gap: normal seed 49 in both versions (0.30 versus 0.80, five critical vi
 | v1 (agents + negotiation + oracle) | hospital_coordination | 122 | 84 | 3 | 209 |
 | v2 (agents + negotiation) | dispatch | 147 | 119 | 68 | 334 |
 
+(The "160" in PLAN.md is the v1 normal scenario only: 80 invalid proposals in each of the agents and negotiation runs; the totals above cover all scenarios.)
+
 v2 did not reduce infeasible proposals; they moved from the hospital agent to Dispatch (163 and 171 in agents and negotiation, versus 106 and 101 in v1). The validator caught every one. **Limitation:**
 a blocked proposal still costs a model call and may delay a decision; the table shows safety, not efficiency.
 
@@ -231,4 +279,4 @@ a blocked proposal still costs a model call and may delay a decision; the table 
 
 `results/analysis/`: `01_csr`, `01_rq1_paired_vs_greedy`, `01_rq2_negotiation_vs_agents`, `01_oracle_ablation`, `01_triage_by_color`, `02_divergence`, `02_divergence_summary`, `03_conflicts`,
 `03_conflict_summary`, `04_contention`, `05_admission_stats`, `05_admission_methods`, `05_v1_vs_v2_critical_service`, `06_failure_runs`, `06_failure_victims`, `06_invalid_proposals`, `06_reliability_summary`,
-`07_cost_benefit`, `07_cost_overall`, `00_reconstruction_check` (all `.csv`), and `fig01` to `fig11` (`.png`).
+`07_cost_benefit`, `07_cost_overall`, `00_reconstruction_check` (all `.csv`), and `fig01` to `fig12` (`.png`).
