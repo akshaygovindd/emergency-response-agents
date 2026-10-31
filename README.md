@@ -17,11 +17,11 @@ rules, executes it in a seeded 120-minute simulation of a 20 x 20 km city, and l
 statistically comparable to a strong greedy allocator, and negotiation changes decisions in only 15 of 50 paired runs with a small, mixed effect.
 The write-up is in [docs/RESULTS.md](docs/RESULTS.md).
 
-![Replay at minute 6: a conflict over one ambulance, resolved by negotiation](docs/design/phase_b/replay_app_min6.png)
+![Replay at minute 6: a conflict over one ambulance, resolved by negotiation](docs/screenshots/replay_min6.png)
 
 | Compare: two systems on one clock | Results: RQ1-RQ4 with confidence intervals |
 |:--|:--|
-| ![Compare](docs/design/phase_b/compare.png) | ![Results](docs/design/phase_b/results_csr.png) |
+| ![Compare](docs/screenshots/compare.png) | ![Results](docs/screenshots/results.png) |
 
 The dashboard replays saved runs from their event logs (no simulation, no API calls): pick version, scenario, run and system, press play,
 and watch incidents appear, ambulances move, agent messages stream (proposal, conflict, counter-offer, accept, commit), hospitals fill and KPIs update.
@@ -97,7 +97,7 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt && pip install -e . --no-deps
 ```
 
-**Run the tests** (no API key needed; 242 tests, all offline):
+**Run the tests** (no API key needed; 243 tests, all offline):
 
 ```bash
 pytest -q
@@ -150,7 +150,7 @@ scripts/             run.py (experiments), trace.py (run log), analysis.py (fina
 data/                scenarios/, descriptions/, llm_cache/ (committed)
 logs/<version>/      event log per run;  results/<version>/ metrics and tables;  results/analysis/ final tables and figures
 docs/                RESULTS.md, ASSUMPTIONS.md, V2_DESIGN.md, DEPLOY.md, EXPERIMENT_LOG.md, design/
-tests/               242 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
+tests/               243 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
 ```
 
 Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), [docs/ASSUMPTIONS.md](docs/ASSUMPTIONS.md) (every simulation assumption),
@@ -158,7 +158,7 @@ Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), 
 
 ## Testing
 
-`pytest -q` runs 242 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
+`pytest -q` runs 243 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
 metrics and statistics, dashboard data (replay export, compare, what-if, results), and the analysis script (which checks that per-victim outcomes rebuilt from the logs
 match the saved metrics for all 206 runs). GitHub Actions runs the suite on every push.
 
