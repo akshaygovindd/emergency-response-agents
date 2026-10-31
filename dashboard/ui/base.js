@@ -33,7 +33,7 @@ window.UI = (() => {
 
   function mountRail(active) {
     $("rail").innerHTML = `<div class="logo">${ico("siren", 18)}</div>` + NAV.map(([label, icon, path]) =>
-      `<button class="rail-item${label === active ? " active" : ""}" data-path="${path}">${ico(icon, 20)}<span>${label}</span></button>`).join("");
+      `<button class="rail-item${label === active ? " active" : ""}" data-path="${path}">${ico(icon, 20)}<span>${label}</span></button>`).join("") + `<div class="rail-note">Simulated environment only · synthetic data</div>`;
     $("rail").addEventListener("click", (e) => {
       const b = e.target.closest(".rail-item");
       if (b && !b.classList.contains("active")) goto(b.dataset.path);

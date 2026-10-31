@@ -32,7 +32,7 @@ contention, v2 vs v1, failures) follow RQ4.
 ## Headline
 
 * No agent system is significantly better or worse than greedy in any scenario in either version; every paired
-  interval contains zero. Both beat naive by a wide, significant margin.
+  interval contains zero. Both beat naive by a wide, significant margin (+10.9 to +23.3 points, all 12 intervals exclude zero; `01_rq1_vs_naive.csv`).
 * Negotiation versus agents without negotiation: no significant difference. Most paired runs are identical (35 of 50
   never diverged); where they did, the effect is mixed.
 * Every system's critical service rate falls steeply as demand rises; the agent-minus-greedy gap moves from about 0 (normal) to +3 to +4 points (bottleneck), not significant. Ambulance conflicts per run fall as pressure rises, and ER beds were never full in greedy or negotiation runs.
@@ -70,6 +70,21 @@ Paired difference versus greedy, points [95% CI], wins/losses/ties by seed (`01_
 | normal | negotiation | -0.8 [-18.5, +17.0] 3/3/4 | +0.6 [-19.5, +20.6] 4/3/3 |
 | surge | negotiation | +1.1 [-3.9, +6.1] 5/2/3 | -0.3 [-5.8, +5.1] 4/4/2 |
 | bottleneck | negotiation | +4.0 [-7.0, +15.1] 3/1/1 | +2.9 [-7.2, +13.0] 3/1/1 |
+
+Paired difference versus naive, points [95% CI], wins/losses/ties by seed (`01_rq1_vs_naive.csv`); positive means the system beats naive. All 12 agent and negotiation intervals exclude zero
+(+10.9 to +23.3 points); greedy beats naive by +8.7 to +22.7:
+
+| scenario | system | v1 | v2 |
+|:--|:--|:--|:--|
+| normal | greedy | +22.7 [+9.4, +36.0] 8/0/2 | same |
+| surge | greedy | +11.2 [+6.5, +16.0] 10/0/0 | same |
+| bottleneck | greedy | +8.7 [+4.7, +12.6] 5/0/0 | same |
+| normal | agents | +19.3 [+5.1, +33.4] 9/1/0 | +23.3 [+7.7, +38.9] 9/1/0 |
+| surge | agents | +11.4 [+6.7, +16.0] 9/0/1 | +12.0 [+6.9, +17.1] 9/0/1 |
+| bottleneck | agents | +12.7 [+2.5, +22.8] 4/0/1 | +11.6 [+1.8, +21.3] 4/0/1 |
+| normal | negotiation | +22.0 [+7.6, +36.4] 9/1/0 | +23.3 [+7.7, +38.9] 9/1/0 |
+| surge | negotiation | +12.4 [+5.8, +18.9] 9/0/1 | +10.9 [+5.5, +16.3] 9/0/1 |
+| bottleneck | negotiation | +12.7 [+2.5, +22.8] 4/0/1 | +11.6 [+1.8, +21.3] 4/0/1 |
 
 By triage color (share served in time, `01_triage_by_color.csv`, `fig05_triage_v1.png`, `fig05_triage_v2.png`), normal scenario, v1:
 Immediate greedy 58.5% / agents 55.0% / negotiation 57.8%; Delayed 73.5% / 52.3% / 56.4%; Minor 80.5% / 88.1% / 91.9%.
@@ -277,6 +292,6 @@ a blocked proposal still costs a model call and may delay a decision; the table 
 
 ## File index
 
-`results/analysis/`: `01_csr`, `01_rq1_paired_vs_greedy`, `01_rq2_negotiation_vs_agents`, `01_oracle_ablation`, `01_triage_by_color`, `02_divergence`, `02_divergence_summary`, `03_conflicts`,
+`results/analysis/`: `01_csr`, `01_rq1_paired_vs_greedy`, `01_rq1_vs_naive`, `01_rq2_negotiation_vs_agents`, `01_oracle_ablation`, `01_triage_by_color`, `02_divergence`, `02_divergence_summary`, `03_conflicts`,
 `03_conflict_summary`, `04_contention`, `05_admission_stats`, `05_admission_methods`, `05_v1_vs_v2_critical_service`, `06_failure_runs`, `06_failure_victims`, `06_invalid_proposals`, `06_reliability_summary`,
 `07_cost_benefit`, `07_cost_overall`, `00_reconstruction_check` (all `.csv`), and `fig01` to `fig12` (`.png`).

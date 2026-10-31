@@ -6,6 +6,8 @@
 hospital beds are contested, do autonomous LLM agents that communicate and negotiate outperform strong rule-based allocation?
 Built for CSYE7380 (midterm, Prof. Das) with the OpenAI Agents SDK, a deterministic Python simulation, and a Streamlit replay dashboard.
 
+**Live dashboard: [emergency-response-agents.streamlit.app](https://emergency-response-agents.streamlit.app/)** (replays saved runs; no API key needed).
+
 > **Simulated environment only. Not for real emergency dispatch or medical decisions.** All data is synthetic.
 
 The agents only *propose* actions. Python owns reality: it detects conflicts, validates every action against the
@@ -39,7 +41,7 @@ Primary metric: **critical service rate (CSR)**, the share of critical victims (
 | | surge (10) | 13.8% | 25.0% | 25.8% | 24.7% |
 | | bottleneck (5) | 8.5% | 17.2% | 20.1% | 20.1% |
 
-* **RQ1, do agents beat strong rule-based allocation?** Not detectably. Every agent-minus-greedy interval contains zero (point estimates -3.5 to +4.0 points); all beat naive significantly (by 8.7 to 22.7 points).
+* **RQ1, do agents beat strong rule-based allocation?** Not detectably. Every agent-minus-greedy interval contains zero (point estimates -3.5 to +4.0 points); agents and negotiation beat naive by +10.9 to +23.3 points, and all 12 of those intervals exclude zero (greedy beats naive by 8.7 to 22.7).
 * **RQ2, does negotiation help?** Not detectably. Negotiation minus agents is +2.7 / +1.0 points (v1 normal / surge) and 0.0 / -1.1 (v2), none significant. 35 of 50 paired runs never diverged; of 15 that did, negotiation helped in 4, hurt in 2, tied in 9.
 * **RQ3, how does performance change as demand rises?** Every system falls steeply (greedy 58.5% to 25.0% to 17.2%). Ambulance conflicts per run fall (1.6 to 0.7 to 0.4 in v1) because ambulances are busy 64%, then 85%, then 96% of the time, so there is less to negotiate exactly when pressure is highest. ER beds were never full.
 * **RQ4, what does it cost?** About $0.09 and 1.5-2 minutes of model time per agent run at list price (all 106 agent runs: $9.53, 9.86 M tokens), with no measurable gain over a free rule.

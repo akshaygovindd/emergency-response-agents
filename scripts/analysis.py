@@ -131,13 +131,17 @@ def with_version(df: pd.DataFrame, version: str) -> pd.DataFrame:
 
 
 def headline_tables(all_runs: dict[str, list[dict]]) -> dict[str, pd.DataFrame]:
-    csr, rq1, rq2, oracle, triage = [], [], [], [], []
+    csr, rq1, rq1n, rq2, oracle, triage = [], [], [], [], [], []
     for v, runs in all_runs.items():
         csr.append(with_version(csr_table(runs), v))
         for mode in ("naive", "agents", "negotiation", "oracle"):
             t = paired_table(runs, mode, "greedy")
             if not t.empty:
                 rq1.append(with_version(t, v))
+        for mode in ("greedy", "agents", "negotiation"):                           # the floor: every other system against naive
+            t = paired_table(runs, mode, "naive")
+            if not t.empty:
+                rq1n.append(with_version(t, v))
         t = paired_table(runs, "negotiation", "agents")
         rq2.append(with_version(t, v))
         t = paired_table(runs, "oracle", "negotiation")
@@ -145,7 +149,7 @@ def headline_tables(all_runs: dict[str, list[dict]]) -> dict[str, pd.DataFrame]:
             oracle.append(with_version(t, v))
         triage.append(with_version(triage_table(runs), v))
     concat = lambda parts: pd.concat(parts, ignore_index=True) if parts else pd.DataFrame()
-    return {"01_csr": concat(csr), "01_rq1_paired_vs_greedy": concat(rq1), "01_rq2_negotiation_vs_agents": concat(rq2),
+    return {"01_csr": concat(csr), "01_rq1_paired_vs_greedy": concat(rq1), "01_rq1_vs_naive": concat(rq1n), "01_rq2_negotiation_vs_agents": concat(rq2),
             "01_oracle_ablation": concat(oracle), "01_triage_by_color": concat(triage)}
 
 

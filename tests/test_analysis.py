@@ -54,6 +54,15 @@ def test_headline_tables_agree_with_saved_paired_csvs(tables):
         assert f"{m['wins']}/{m['losses']}/{m['ties']}" == row["wins/losses/ties"]
 
 
+def test_agents_beat_naive_in_every_scenario_and_version(tables):
+    t = tables["01_rq1_vs_naive"]
+    a = t[t["mode"].isin(["agents", "negotiation"])]
+    assert len(a) == 12 and a["significant"].all() and a["ci_low"].gt(0).all()             # README: +10.9 to +23.3 points, none touches zero
+    assert round(a["mean_diff"].min() * 100, 1) == 10.9 and round(a["mean_diff"].max() * 100, 1) == 23.3
+    g = t[t["mode"] == "greedy"]
+    assert sorted(round(x * 100, 1) for x in g[g.version == "v1"]["mean_diff"]) == [8.7, 11.2, 22.7]
+
+
 def test_divergence_summary_counts_add_up(tables):
     s = tables["02_divergence_summary"]
     for r in s.itertuples():
