@@ -78,7 +78,7 @@ def parse_params(amb, inc, seed, profile) -> tuple[int, int, int, ScenarioName]:
 def summarize_run(metrics: dict) -> dict:
     """The few numbers the result cards show, from a run's metrics."""
     n_crit = metrics["n_critical"]
-    served = n_crit - metrics["critical_unserved"] if n_crit else 0
+    served = round(metrics["critical_service_rate"] * n_crit) if n_crit else 0   # in time, not merely reached
     return {"csr": metrics["critical_service_rate"], "n_critical": n_crit, "n_victims": metrics["n_victims"],
             "reached": metrics["contacted_rate"], "response": metrics["response_mean"], "never_reached": metrics["critical_unserved"],
             "served_note": f"{served} of {n_crit} critical patients in time · {metrics['n_victims']} patients total" if n_crit else f"no critical patients · {metrics['n_victims']} patients total"}

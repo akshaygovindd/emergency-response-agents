@@ -65,6 +65,9 @@ def test_summaries_and_difference_for_the_cards():
     summaries = {m: summarize_run(result[m]["metrics"]) for m in result}
     assert summaries["greedy"]["csr"] == pytest.approx(10 / 11) and summaries["greedy"]["n_critical"] == 11
     assert difference_points(summaries) == pytest.approx(45.5, abs=0.1) and "critical patients in time · 26 patients total" in summaries["greedy"]["served_note"]
+    for mode, expected in (("naive", "5 of 11"), ("greedy", "10 of 11")):          # each note uses its own system's count
+        s = summaries[mode]
+        assert s["served_note"].startswith(expected) and round(s["csr"] * s["n_critical"]) == int(expected.split()[0])
     assert difference_points({"naive": {"csr": None}, "greedy": {"csr": 0.5}}) is None
 
 

@@ -138,8 +138,9 @@
 
   function geom() {
     const r = $("map").getBoundingClientRect(), W = r.width, H = r.height;
-    const bottom = 90, top = 44;
-    const S = Math.min((H - bottom - top) / KM, (W - 80) / KM);
+    const tight = document.body.classList.contains("mode-compare") && document.body.dataset.d !== "lg";   // laptop Compare: the playbar sits below the maps, so the city can use the whole box (the 1920 playbar floats over the bottom)
+    const bottom = tight ? 30 : 90, top = tight ? 30 : 44, side = tight ? 36 : 80;
+    const S = Math.min((H - bottom - top) / KM, (W - side) / KM);
     return { W, H, S, X0: (W - KM * S) / 2, bottom, X: (x) => (W - KM * S) / 2 + x * S, Y: (y) => H - bottom - y * S };
   }
   const DOCK_CLUSTER = [[-50, -16], [50, 16], [0, 46], [0, -46], [-56, 36], [56, -36]];
@@ -321,7 +322,7 @@
     });
     const placeUnit = (u, pos, w, h) => {
       const off = dock.get(u) || [0, 0];
-      u.px = G.X(pos.x) + off[0]; u.py = G.Y(pos.y) + off[1];
+      u.px = clamp(G.X(pos.x) + off[0], 36, G.W - 36); u.py = clamp(G.Y(pos.y) + off[1], 22, G.H - Math.max(22, G.bottom - 14));        // never half off the map
       u.g.setAttribute("transform", `translate(${u.px},${u.py})`);
       taken.push(rectAt(u.px, u.py, w, h));
     };
@@ -370,12 +371,13 @@
     const place = (cx, cy, text, spots, tone, bold) => {
       const LS = G.W < 700 ? 0.85 : 1;                                           // labels shrink a little on small maps (Compare on a laptop)
       const w = (8 + text.length * 6.6) * LS, list = spots(w), hh = 11 * LS;
-      const inside = (x, y) => x - w / 2 >= 8 && x + w / 2 <= G.W - 8 && y - hh >= 8 && y + hh <= G.H - 100;
+      const inside = (x, y) => x - w / 2 >= 8 && x + w / 2 <= G.W - 8 && y - hh >= 8 && y + hh <= G.H - G.bottom - 10;
       const ring = [];                                                           // farther candidates, all around, for crowded spots
-      for (const r of [48 * LS, 72 * LS, 96 * LS]) for (let a = 0; a < 8; a++) ring.push([Math.cos((a * Math.PI) / 4) * (r + w / 3), Math.sin((a * Math.PI) / 4) * r]);
-      const cost = ([dx, dy]) => taken.filter((o) => overlap(rectAt(cx + dx, cy + dy, w + 4, 26 * LS), o)).length;
+      for (const r of [48 * LS, 72 * LS, 96 * LS, 124 * LS]) for (let a = 0; a < 16; a++) ring.push([Math.cos((a * Math.PI) / 8) * (r + w / 3), Math.sin((a * Math.PI) / 8) * r]);
+      const area = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
+      const cost = ([dx, dy]) => taken.reduce((sum, o) => sum + area(rectAt(cx + dx, cy + dy, w + 4, 26 * LS), o), 0);   // overlapped area, so the least-bad spot wins when none is free
       const all = [...list, ...ring].filter(([dx, dy]) => inside(cx + dx, cy + dy));
-      const pick = all.find((p) => cost(p) === 0) || all.sort((p, q) => cost(p) - cost(q))[0] || list[0];
+      const pick = all.find((p) => cost(p) === 0) || all.sort((p, q) => cost(p) - cost(q) || Math.hypot(p[0], p[1]) - Math.hypot(q[0], q[1]))[0] || list[0];
       const x = cx + pick[0], y = cy + pick[1];
       taken.push(rectAt(x, y, w, 22 * LS));
       const g = el("g", {}, layers.labels);
