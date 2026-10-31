@@ -14,7 +14,7 @@ The agents only *propose* actions. Python owns reality: it detects conflicts, va
 rules, executes it in a seeded 120-minute simulation of a 20 x 20 km city, and logs everything. We compare five systems
 (naive, greedy, agents without negotiation, agents with negotiation, and an oracle ablation) on 3 scenarios
 (normal, surge, bottleneck) with 5-10 seeds each. **Headline result:** the agent systems are far better than naive and
-statistically comparable to a strong greedy allocator, and negotiation changes decisions in only 15 of 50 paired runs with a small, mixed effect.
+not statistically distinguishable from a strong greedy allocator (paired intervals up to ±20 points wide, so equivalence is not shown), and negotiation changes decisions in only 15 of 50 paired runs with a small, mixed effect.
 The write-up is in [docs/RESULTS.md](docs/RESULTS.md).
 
 ![Replay at minute 6: a conflict over one ambulance, resolved by negotiation](docs/screenshots/replay_min6.png)
@@ -41,9 +41,9 @@ Primary metric: **critical service rate (CSR)**, the share of critical victims (
 | | surge (10) | 13.8% | 25.0% | 25.8% | 24.7% |
 | | bottleneck (5) | 8.5% | 17.2% | 20.1% | 20.1% |
 
-* **RQ1, do agents beat strong rule-based allocation?** Not detectably. Every agent-minus-greedy interval contains zero (point estimates -3.5 to +4.0 points); agents and negotiation beat naive by +10.9 to +23.3 points, and all 12 of those intervals exclude zero (greedy beats naive by 8.7 to 22.7).
+* **RQ1, do agents beat strong rule-based allocation?** Not detectably. Every agent-minus-greedy interval contains zero (point estimates -3.5 to +4.0 points); agents and negotiation beat naive by +10.9 to +23.3 points, and all 12 of those intervals exclude zero (greedy beats naive by 8.7 to 22.7); the 4 bottleneck intervals rest on 5 seeds and are illustrative only.
 * **RQ2, does negotiation help?** Not detectably. Negotiation minus agents is +2.7 / +1.0 points (v1 normal / surge) and 0.0 / -1.1 (v2), none significant. 35 of 50 paired runs never diverged; of 15 that did, negotiation helped in 4, hurt in 2, tied in 9.
-* **RQ3, how does performance change as demand rises?** Every system falls steeply (greedy 58.5% to 25.0% to 17.2%). Ambulance conflicts per run fall (1.6 to 0.7 to 0.4 in v1) because ambulances are busy 64%, then 85%, then 96% of the time, so there is less to negotiate exactly when pressure is highest. ER beds were never full.
+* **RQ3, how does performance change as demand rises?** Every system falls steeply (greedy 58.5% to 25.0% to 17.2%). Ambulance conflicts per run fall (1.6 to 0.7 to 0.4 in v1) because no ambulance is free in 64%, then 85%, then 96% of the first 75 minutes (greedy), so there is less to negotiate exactly when pressure is highest. The ER was never full under greedy or the agent systems (naive filled one twice per version, in surge).
 * **RQ4, what does it cost?** About $0.09 and 1.5-2 minutes of model time per agent run at list price (all 106 agent runs: $9.53, 9.86 M tokens), with no measurable gain over a free rule.
 
 Limitations, stated plainly: small seed counts, no significant differences among agent systems and greedy, LLM-written reports from a formulaic generator, a synthetic grid, one model, one run per seed.
