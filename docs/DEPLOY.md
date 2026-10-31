@@ -12,7 +12,7 @@ It never calls the OpenAI API, so **no secrets are needed** and no `.env` is dep
 | Theme and server settings | `.streamlit/config.toml` (dark theme in the design-system colors, headless, no usage stats) |
 | Data the app reads | `logs/`, `results/`, `data/scenarios/`, `data/descriptions/` are all committed (about 110 MB including the LLM cache); nothing is downloaded or generated at start-up |
 | Starts without an API key | `streamlit run dashboard/app.py` serves (`/_stcore/health` returns `ok`), and `AppTest` renders Replay, Compare, What-if, Results and Negotiations with no exception |
-| Test suite on a clean clone | `pytest -q`: 242 passed (CI runs the same on every push) |
+| Test suite on a clean clone | `pytest -q`: 243 passed (CI runs the same on every push) |
 
 Not verified: behaviour on the Community Cloud host itself (memory limits, and the page reload used when you change the run selector, which relies on query parameters on the app URL). Check these after the first deploy (step 6).
 
