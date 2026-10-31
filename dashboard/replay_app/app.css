@@ -161,3 +161,6 @@ body.mode-compare[data-d="sm"] #callout p, body.mode-compare[data-d="md"] #callo
 body.mode-compare[data-d="md"] #callout .tile, body.mode-compare[data-d="sm"] #callout .tile, body.mode-inline[data-d="sm"] #callout .tile { display: none; }
 body.mode-compare[data-d="md"] #callout h3, body.mode-compare[data-d="sm"] #callout h3 { font-size: 14px; } body.mode-compare[data-d="md"] #callout p, body.mode-compare[data-d="sm"] #callout p { font-size: 12.5px; line-height: 17px; margin: 2px 0 4px; }
 body[data-d="sm"] .feed { min-height: 88px; }
+
+/* Streamlit Community Cloud draws its badge over the bottom-right corner; keep the last step of the stepper clear of it */
+body:not(.mode-inline):not(.mode-compare) #neg.negotiation { padding-right: 92px; }

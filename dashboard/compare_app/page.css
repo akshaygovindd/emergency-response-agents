@@ -47,3 +47,6 @@ body[data-d="md"] .diff, body[data-d="sm"] .diff { padding: 10px 12px; gap: 12px
 body[data-d="sm"] .diff .body { grid-template-columns: 1fr 1fr; } body[data-d="sm"] .diff h3 { grid-column: 1 / -1; }
 body[data-d="sm"] .col-head b { font-size: 15px; } body[data-d="sm"] .col-head .sub { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .col-head { min-width: 0; }
+
+/* the same badge sits over the right end of the play bar (Pause on conflict), so the bar keeps clear of it */
+body .playbar, body[data-d] .playbar { padding-right: 96px; }

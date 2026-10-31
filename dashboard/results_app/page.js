@@ -38,6 +38,7 @@
         const cx = x0 + cw * ci2 + cw / 2;
         txt(axis, c.label, { x: cx, y: top + ph + 24, "text-anchor": "middle", class: "cat" });
         if (c.sub) txt(axis, c.sub, { x: cx, y: top + ph + 42, "text-anchor": "middle" });
+        const bars = p.series.map((s2, k2) => (s2.vals[ci2] ? { x0: cx - used / 2 + k2 * (bw + 4), x1: cx - used / 2 + k2 * (bw + 4) + bw, top: y(s2.vals[ci2].v) } : null)).filter(Boolean);
         p.series.forEach((s, k) => {
           let v = s.vals[ci2]; if (!v) return;
           const bx = cx - used / 2 + k * (bw + 4), by = y(v.v);
@@ -50,9 +51,12 @@
             el("line", { x1: mx, x2: mx, y1: y(v.lo), y2: y(v.hi), stroke: "#E6EAF2", "stroke-width": 1.4, "stroke-linecap": "round", opacity: 0.85 }, hit);
             [v.lo, v.hi].forEach((e) => el("line", { x1: mx - 4, x2: mx + 4, y1: y(e), y2: y(e), stroke: "#E6EAF2", "stroke-width": 1.4, "stroke-linecap": "round", opacity: 0.85 }, hit));
           } else {                                                                                  // value label: lifted until it clears every label already placed in this group
-            const label = fmt(v.v), lw = label.length * 6.8; let ly = by - 6; const lx = bx + bw / 2;
-            while (placed.some((q) => Math.abs(q.x - lx) < (q.w + lw) / 2 + 2 && Math.abs(q.y - ly) < 13)) ly -= 13;
-            placed.push({ x: lx, y: ly, w: lw }); txt(hit, label, { x: lx, y: ly, "text-anchor": "middle", class: "val" });
+            const label = fmt(v.v), lw = label.length * 6.8; let ly = by - 6, lx = bx + bw / 2, anchor = "middle";
+            const taller = (q) => q.top < by - 2, left = bars.some((q) => q.x1 <= bx + 1 && taller(q)), right = bars.some((q) => q.x0 >= bx + bw - 1 && taller(q));
+            if (left && !right) { anchor = "start"; lx = bx; } else if (right && !left) { anchor = "end"; lx = bx + bw; }   // a taller neighbour would cover half the label, so it leans away from it
+            const cxl = anchor === "middle" ? lx : anchor === "start" ? lx + lw / 2 : lx - lw / 2;
+            while (placed.some((q) => Math.abs(q.x - cxl) < (q.w + lw) / 2 + 2 && Math.abs(q.y - ly) < 13)) ly -= 13;
+            placed.push({ x: cxl, y: ly, w: lw }); txt(hit, label, { x: lx, y: ly, "text-anchor": anchor, class: "val" });
           }
         });
       });
