@@ -1,7 +1,8 @@
 """Baseline 1 (naive): first come, first served; nearest everything.
 
 Ignores severity, deadlines, ambulance type, and hospital load. Represents a
-dispatcher with no prioritisation at all.
+dispatcher with no prioritisation at all. Like greedy it works from the true
+simulation state, not from text reports.
 """
 from __future__ import annotations
 

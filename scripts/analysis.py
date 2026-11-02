@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections import Counter, defaultdict
+from itertools import product
 from pathlib import Path
 
 import numpy as np
@@ -151,6 +152,55 @@ def headline_tables(all_runs: dict[str, list[dict]]) -> dict[str, pd.DataFrame]:
     concat = lambda parts: pd.concat(parts, ignore_index=True) if parts else pd.DataFrame()
     return {"01_csr": concat(csr), "01_rq1_paired_vs_greedy": concat(rq1), "01_rq1_vs_naive": concat(rq1n), "01_rq2_negotiation_vs_agents": concat(rq2),
             "01_oracle_ablation": concat(oracle), "01_triage_by_color": concat(triage)}
+
+
+# ───────────────────────── 1b. Distribution-free check and exploratory secondary metrics ─────────────────────────
+def sign_flip_p(diffs: list[float]) -> float:
+    """Exact two-sided paired permutation (sign-flip) p-value for the mean of per-seed differences."""
+    d = np.array(diffs, dtype=float)
+    flips = np.abs((np.array(list(product([1, -1], repeat=len(d)))) * d).mean(axis=1))
+    return float((flips >= abs(d.mean()) - 1e-12).mean())
+
+
+def permutation_table(all_runs: dict[str, list[dict]]) -> pd.DataFrame:
+    """Same paired differences as the RQ1 tables, tested without the t distribution (small seed counts)."""
+    rows = []
+    for v, runs in all_runs.items():
+        df = pd.DataFrame(runs)
+        for sc in SCENARIOS:
+            def per_seed(mode: str) -> pd.Series:
+                g = df[(df["scenario"] == sc) & (df["mode"] == mode)]
+                return g.set_index("seed")["critical_service_rate"]
+            for mode, base in (("agents", "greedy"), ("negotiation", "greedy"), ("agents", "naive"), ("negotiation", "naive"), ("greedy", "naive")):
+                a, b = per_seed(mode), per_seed(base)
+                seeds = sorted(set(a.index) & set(b.index))
+                if not seeds:
+                    continue
+                d = [float(a[s]) - float(b[s]) for s in seeds]
+                p = sign_flip_p(d)
+                rows.append({"version": v, "scenario": sc, "mode": mode, "vs": base, "seeds": len(d), "mean_diff": float(np.mean(d)),
+                             "perm_p": p, "perm_significant": p < 0.05})
+    return pd.DataFrame(rows)
+
+
+SECONDARY = ("treatment_started_rate", "hospitalized_rate", "critical_response_mean")
+
+
+def secondary_table(all_runs: dict[str, list[dict]]) -> pd.DataFrame:
+    """Exploratory: agent systems minus greedy on metrics other than the primary one. 95% t intervals, no multiplicity correction."""
+    rows = []
+    for v, runs in all_runs.items():
+        df = pd.DataFrame(runs)
+        for sc in SCENARIOS:
+            for metric in SECONDARY:
+                for mode in ("agents", "negotiation"):
+                    a = df[(df["scenario"] == sc) & (df["mode"] == mode)].set_index("seed")[metric]
+                    b = df[(df["scenario"] == sc) & (df["mode"] == "greedy")].set_index("seed")[metric]
+                    seeds = sorted(set(a.index) & set(b.index))
+                    c = paired_comparison([None if pd.isna(a[s]) else float(a[s]) for s in seeds], [None if pd.isna(b[s]) else float(b[s]) for s in seeds])
+                    rows.append({"version": v, "scenario": sc, "metric": metric, "mode": mode, "vs": "greedy", "seeds": c.n, "mean_diff": c.mean_diff,
+                                 "ci_low": c.ci_low, "ci_high": c.ci_high, "significant": c.significant})
+    return pd.DataFrame(rows)
 
 
 # ───────────────────────── 2. First divergence ─────────────────────────
@@ -783,6 +833,8 @@ def fig_cost(plt, t: pd.DataFrame, overall: pd.DataFrame) -> None:
 def build_all() -> dict[str, pd.DataFrame]:
     all_runs = {v: load_runs(v) for v in VERSIONS}
     tables = headline_tables(all_runs)
+    tables["01_rq1_permutation"] = permutation_table(all_runs)
+    tables["08_secondary_metrics_exploratory"] = secondary_table(all_runs)
     div = divergence_table(all_runs)
     tables["02_divergence"] = div
     tables["02_divergence_summary"] = divergence_summary(div)

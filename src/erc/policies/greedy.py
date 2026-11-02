@@ -3,8 +3,10 @@
 Prioritises victims who can still be saved, ordered by remaining slack before
 their deadline; matches ALS ambulances to critical victims; sends rescue, fire,
 and medical teams to the most urgent incidents first; and routes patients to
-the capable hospital with the best mix of distance and ER load. It sees what
-the agents see (estimated travel from distance, no future incidents) but it
+the capable hospital with the best mix of distance and ER load. Like the agents
+it estimates travel from distance only and sees no future incidents, but it reads
+ground-truth victim attributes (severity, deadline, ALS need), which the agents
+never see (they infer urgency from text reports and never get deadlines). It
 cannot negotiate or interpret text reports.
 """
 from __future__ import annotations

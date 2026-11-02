@@ -32,7 +32,7 @@ contention, v2 vs v1, failures) follow RQ4.
 ## Headline
 
 * No agent system is significantly better or worse than greedy in any scenario in either version; every paired
-  interval contains zero. Both beat naive by a wide, significant margin (+10.9 to +23.3 points, all 12 intervals exclude zero; `01_rq1_vs_naive.csv`).
+  interval contains zero. Both beat naive by a wide, significant margin (+10.9 to +23.3 points, all 12 t intervals exclude zero; `01_rq1_vs_naive.csv`; under an exact paired permutation test 8 of the 12 are significant and the 4 bottleneck ones are not, since 5 seeds cannot give p below 0.0625, `01_rq1_permutation.csv`).
 * Negotiation versus agents without negotiation: no significant difference. Most paired runs are identical (35 of 50
   never diverged); where they did, the effect is mixed.
 * Every system's critical service rate falls steeply as demand rises; the agent-minus-greedy gap moves from about 0 (normal) to +3 to +4 points (bottleneck), not significant. Ambulance conflicts per run fall as pressure rises, and ER beds were never full in greedy or negotiation runs.
@@ -179,7 +179,7 @@ Link to the contention numbers (`04_contention.csv`):
 
 * **Everyone degrades.** Greedy falls from 58.5% to 25.0% to 17.2%, and every system follows the same shape in both versions. Demand per ALS ambulance rises almost four-fold (4.2 to 16.4)
   while the share of minutes with no free ambulance climbs from 64% to 96%, so most critical victims cannot be reached by their deadline whatever the policy.
-* **The agent-minus-greedy gap grows with pressure.** Agents and negotiation are at or slightly below greedy in normal (-3.5 to +0.6), near zero in surge (-0.3 to +1.1) and ahead in bottleneck (+2.9 to +4.0;
+* **The agent-minus-greedy gap grows with pressure.** Agents and negotiation are at or slightly below greedy in normal (-3.5 to +0.6, per-seed mean), near zero in surge (-0.3 to +1.1) and ahead in bottleneck (+2.9 to +4.0;
   21.2% / 20.1% versus 17.2%). The ordering is the same in both versions, but every interval contains zero and bottleneck has only 5 seeds, so this is a direction, not a finding. The naive gap shrinks (-22.7, -11.2, -8.7) mostly because the baseline floor is lower.
 * **Why negotiation cannot be the reason.** As pressure rises the ambulances are busy almost all the time, so two proposals rarely claim the same free ambulance in the same minute: conflicts fall 1.6 to 0.7 to 0.4 (v1) and 1.75 to 0.5 to 0.2 (v2).
   In bottleneck, negotiation and agents without negotiation never diverged (5 of 5 identical in both versions), so the bottleneck gain over greedy, if real, comes from the agents' dispatch decisions rather than from negotiation.
@@ -209,7 +209,20 @@ Scenario means are in the CSV: from $0.042-0.049 per run in bottleneck to $0.113
 Critical-service difference versus greedy has an interval containing zero in every row, so there is no measured benefit to divide the cost by (`usd_per_extra_point` is only
 filled where the point estimate is positive and should not be read as a result). In v2, negotiation costs 15% more per run than agents without negotiation ($0.099 vs $0.086) for no measurable gain.
 
-**Takeaway.** An agent run costs about nine cents and 1.5-2 minutes of model time, and buys no measurable improvement over a rule that is free and instant.
+**Takeaway.** An agent run costs about nine cents and 1.5-2 minutes of model time, and buys no measurable improvement in the primary metric (critical service rate) over a rule that is free and instant.
+
+**Secondary metrics (exploratory; `08_secondary_metrics_exploratory.csv`).** Agent systems minus greedy, 95% paired t intervals, 36 tests (3 metrics x 2 versions x 3 scenarios x 2 systems), no multiplicity correction; chosen after seeing the primary result, so read them as hypotheses. 16 of 36 intervals exclude zero:
+
+| metric | scenario | agents / negotiation minus greedy | significant (of 4 tests: 2 versions x 2 systems) |
+|:--|:--|:--|--:|
+| patients whose treatment started | surge | +5.4 to +8.4 points | 4 of 4 |
+| patients whose treatment started | normal | +8.0 (v2 negotiation only) | 1 of 4 |
+| patients hospitalized | surge | +3.7 to +4.1 points | 4 of 4 |
+| patients hospitalized | bottleneck | +6.7 points (v1) | 2 of 4 |
+| mean critical response time | surge | +5.5 to +7.1 minutes slower | 3 of 4 |
+| mean critical response time | bottleneck | 7.5 minutes faster (v2) | 2 of 4 |
+
+So the agents get more patients through to hospital and treatment in surge, while greedy reaches critical victims faster there; neither shows up in the primary metric. No other secondary comparison is significant. These tests are exploratory and could be noise; they do not change the RQ1 conclusion, but they mean "no measurable benefit" is a statement about critical service rate only.
 **Limitations.** Cost is list price from logged tokens, not what was paid: of the 9.86 million tokens, 2.66 million (v1, of 5.13 million) and 1.77 million (v2, of 4.73 million) were fresh API tokens, the rest came from the cache (`fresh_tokens` in `runs.jsonl`). Model time is a sum over calls, not wall-clock.
 
 ## Supporting analyses
@@ -283,7 +296,8 @@ a blocked proposal still costs a model call and may delay a decision; the table 
 
 ## Limitations (all sections)
 
-* Small samples: 10, 10 and 5 seeds per scenario, 3 for the oracle. Nothing involving agents is statistically significant, so the findings are "no detectable difference", not "no difference".
+* Small samples: 10, 10 and 5 seeds per scenario, 3 for the oracle. No agent system differs significantly from greedy on critical service rate (the primary metric), so those findings are "no detectable difference", not "no difference"; agent systems do beat naive significantly (RQ1), and a few exploratory secondary-metric differences versus greedy exist (RQ4). Intervals are wide (about +/-20 points in normal, where a run has only 4-11 critical victims).
+* The headline numbers are means of per-seed rates; pooled over victims they shift by up to about 2.6 points (e.g. the v2 normal agents-minus-greedy point estimate changes from +0.6 to -2.4).
 * One run per seed and system; LLM calls are cached, so reruns are identical and run-to-run variance is unknown.
 * Divergence verdicts rest on single paired runs; attributions of downstream effects are case studies.
 * Scenario reports are LLM-written from a formulaic generator, so assessments are easier and more uniform than real 911 calls.
@@ -292,6 +306,6 @@ a blocked proposal still costs a model call and may delay a decision; the table 
 
 ## File index
 
-`results/analysis/`: `01_csr`, `01_rq1_paired_vs_greedy`, `01_rq1_vs_naive`, `01_rq2_negotiation_vs_agents`, `01_oracle_ablation`, `01_triage_by_color`, `02_divergence`, `02_divergence_summary`, `03_conflicts`,
+`results/analysis/`: `01_csr`, `01_rq1_paired_vs_greedy`, `01_rq1_vs_naive`, `01_rq1_permutation`, `01_rq2_negotiation_vs_agents`, `01_oracle_ablation`, `01_triage_by_color`, `02_divergence`, `02_divergence_summary`, `03_conflicts`,
 `03_conflict_summary`, `04_contention`, `05_admission_stats`, `05_admission_methods`, `05_v1_vs_v2_critical_service`, `06_failure_runs`, `06_failure_victims`, `06_invalid_proposals`, `06_reliability_summary`,
-`07_cost_benefit`, `07_cost_overall`, `00_reconstruction_check` (all `.csv`), and `fig01` to `fig12` (`.png`).
+`07_cost_benefit`, `07_cost_overall`, `08_secondary_metrics_exploratory`, `00_reconstruction_check` (all `.csv`), and `fig01` to `fig12` (`.png`).

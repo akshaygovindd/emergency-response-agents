@@ -20,7 +20,7 @@ list below is the older, v1-era summary.
 - 3 hospitals: H-T Trauma Center, H-B Burn Unit, H-G General
 - 5 ambulances (2 ALS), 3 responder teams (fire, rescue, medical), 6 doctors, 12 nurses
 - Scenarios: normal (12 incidents, seeds 42-51), surge (25 incidents, seeds 42-51),
-  bottleneck (10 incidents in 20 min, 2 ambulances, trauma half full, seeds 42-46).
+  bottleneck (10 incidents in 20 min, 2 ambulances, 2 of 3 trauma slots busy, seeds 42-46).
   Oracle ablation: normal + surge, seeds 42-44.
 - Severity 1-5 per victim (4-5 = critical). Deadline = minutes to first medical contact.
 - Primary metric: critical victim service rate (critical victims contacted within deadline).

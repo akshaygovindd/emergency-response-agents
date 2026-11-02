@@ -41,10 +41,10 @@ Primary metric: **critical service rate (CSR)**, the share of critical victims (
 | | surge (10) | 13.8% | 25.0% | 25.8% | 24.7% |
 | | bottleneck (5) | 8.5% | 17.2% | 20.1% | 20.1% |
 
-* **RQ1, do agents beat strong rule-based allocation?** Not detectably. Every agent-minus-greedy interval contains zero (point estimates -3.5 to +4.0 points); agents and negotiation beat naive by +10.9 to +23.3 points, and all 12 of those intervals exclude zero (greedy beats naive by 8.7 to 22.7); the 4 bottleneck intervals rest on 5 seeds and are illustrative only.
+* **RQ1, do agents beat strong rule-based allocation?** Not detectably. Every agent-minus-greedy interval contains zero (point estimates -3.5 to +4.0 points, per-seed mean); agents and negotiation beat naive by +10.9 to +23.3 points, and all 12 of those intervals exclude zero (8 of the 12 are also significant under an exact permutation test; the 4 bottleneck ones are not) (greedy beats naive by 8.7 to 22.7); the 4 bottleneck intervals rest on 5 seeds and are illustrative only.
 * **RQ2, does negotiation help?** Not detectably. Negotiation minus agents is +2.7 / +1.0 points (v1 normal / surge) and 0.0 / -1.1 (v2), none significant. 35 of 50 paired runs never diverged; of 15 that did, negotiation helped in 4, hurt in 2, tied in 9.
 * **RQ3, how does performance change as demand rises?** Every system falls steeply (greedy 58.5% to 25.0% to 17.2%). Ambulance conflicts per run fall (1.6 to 0.7 to 0.4 in v1) because no ambulance is free in 64%, then 85%, then 96% of the first 75 minutes (greedy), so there is less to negotiate exactly when pressure is highest. The ER was never full under greedy or the agent systems (naive filled one twice per version, in surge).
-* **RQ4, what does it cost?** About $0.09 and 1.5-2 minutes of model time per agent run at list price (all 106 agent runs: $9.53, 9.86 M tokens), with no measurable gain over a free rule.
+* **RQ4, what does it cost?** About $0.09 and 1.5-2 minutes of model time per agent run at list price (all 106 agent runs: $9.53, 9.86 M tokens), with no measurable gain in critical service rate over a free rule (secondary metrics differ in both directions; exploratory, see RQ4 in [docs/RESULTS.md](docs/RESULTS.md)).
 
 Limitations, stated plainly: small seed counts, no significant differences among agent systems and greedy, LLM-written reports from a formulaic generator, a synthetic grid, one model, one run per seed.
 
@@ -97,7 +97,7 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt && pip install -e . --no-deps
 ```
 
-**Run the tests** (no API key needed; 243 tests, all offline):
+**Run the tests** (no API key needed; 244 tests, all offline):
 
 ```bash
 pytest -q
@@ -150,7 +150,7 @@ scripts/             run.py (experiments), trace.py (run log), analysis.py (fina
 data/                scenarios/, descriptions/, llm_cache/ (committed)
 logs/<version>/      event log per run;  results/<version>/ metrics and tables;  results/analysis/ final tables and figures
 docs/                RESULTS.md, ASSUMPTIONS.md, V2_DESIGN.md, DEPLOY.md, EXPERIMENT_LOG.md, design/
-tests/               243 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
+tests/               244 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
 ```
 
 Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), [docs/ASSUMPTIONS.md](docs/ASSUMPTIONS.md) (every simulation assumption),
@@ -158,7 +158,7 @@ Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), 
 
 ## Testing
 
-`pytest -q` runs 243 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
+`pytest -q` runs 244 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
 metrics and statistics, dashboard data (replay export, compare, what-if, results), and the analysis script (which checks that per-victim outcomes rebuilt from the logs
 match the saved metrics for all 206 runs). GitHub Actions runs the suite on every push.
 

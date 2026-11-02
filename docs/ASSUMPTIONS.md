@@ -92,18 +92,18 @@ A system is consulted only when the decision situation changes (new waiting vict
 
 ## 12. Information and fairness
 
-- Baselines read ground-truth incident attributes. The agents must infer them from LLM-written text reports. This deliberately disadvantages the agents; extraction accuracy is reported, and the oracle ablation (agents given ground truth) measures its effect.
+- Baselines read ground-truth incident attributes. Greedy ranks victims by true severity, true deadline slack and true ALS need; naive reads the true state but ignores all three. The agents must infer urgency from LLM-written text reports and never see deadlines. This deliberately disadvantages the agents (the oracle ablation gives them true assessments, not deadlines, so it does not fully equalise information); extraction accuracy is reported, and the oracle ablation (agents given ground truth) measures its effect.
 - The greedy baseline and the agents estimate travel from distance only; neither sees traffic in advance.
 
 ## 13. Scope decisions
 
 - Hospital-to-hospital staff transfer is outside the simulation scope. Hospital coordination means admission, diversion, destination selection, and treatment-capacity negotiation.
 - Out-of-service ambulances are removed from the bottleneck scenario rather than modelled as a status.
-- Pre-occupied trauma slots in the bottleneck scenario stay occupied for the whole run.
+- Pre-occupied trauma slots in the bottleneck scenario stay occupied for the whole run: the config value 0.5 rounds to 2 of the 3 trauma slots at H-T (67%, not half).
 
 ## 14. LLM settings (agent systems)
 
-- **Model: `gpt-5.4-mini`** (`SETTINGS.llm.model` in `src/erc/config.py`, overridable with `ERC_MODEL`; fixed for every reported run), via the OpenAI Agents SDK, temperature 0, fixed prompts. List prices used for cost estimates: $0.75 per million input tokens, $4.50 per million output tokens.
+- **Model: `gpt-5.4-mini`** (`SETTINGS.llm.model` in `src/erc/config.py`, overridable with `ERC_MODEL`; fixed for every reported run), via the OpenAI Agents SDK with fixed prompts. `LLMConfig.temperature` (0.0) is defined but is not passed to any agent, so calls use the API's default sampling settings; reproducibility comes from the cache (below), not from temperature. List prices used for cost estimates: $0.75 per million input tokens, $4.50 per million output tokens.
 - **Cache-based reproducibility.** Every agent call is cached on disk (`data/llm_cache/`, committed) under a key made of the agent name, model, instructions and prompt. A rerun whose inputs are identical hits the cache, makes no API call, and returns the saved answer; the simulation itself is deterministic given the scenario file and seed. Changing a prompt, a tool, the model or the scenario state changes the key and calls the API. Runs are therefore reproducible, but the cache records one sample per input: run-to-run variance of the model is not measured.
 - Logged tokens are *logical* (what the run would cost without caching); `fresh_tokens` is what was actually sent on that run. Costs in the results are list-price estimates.
 

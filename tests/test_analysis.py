@@ -101,3 +101,14 @@ def test_all_invalid_proposals_were_blocked_before_execution(tables):
     assert (rel["actions_rejected_at_execution"] == 0).all() and rel["proposals_invalid"].sum() > 0
     inv = tables["06_invalid_proposals"]
     assert (inv[inv.kind.str.startswith("proposal")]["count"].sum() == rel["proposals_invalid"].sum())
+
+
+def test_permutation_check_and_secondary_table_back_the_written_claims(tables):
+    p = tables["01_rq1_permutation"]
+    n = p[(p["vs"] == "naive") & p["mode"].isin(["agents", "negotiation"])]
+    assert len(n) == 12 and int(n["perm_significant"].sum()) == 8                      # README: 8 of 12; the 4 bottleneck ones are not
+    assert set(n[~n["perm_significant"]]["scenario"]) == {"bottleneck"}
+    g = p[p["vs"] == "greedy"]
+    assert len(g) == 12 and not g["perm_significant"].any()
+    s = tables["08_secondary_metrics_exploratory"]
+    assert len(s) == 36 and int(s["significant"].sum()) == 16                          # RESULTS.md RQ4 secondary-metrics table
