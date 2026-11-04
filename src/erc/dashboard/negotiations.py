@@ -90,20 +90,23 @@ def _loan_record(done: dict, messages: list[dict], refused: list[dict]) -> dict:
     """A staff-loan negotiation (v3): request, the lender's answer, any counter or arbitration, and what the validator did."""
     steps = [_message_step(m) for m in messages]
     method = done["method"]
+    blocked = next((e for e in refused if e["t"] == done["t"] and e["action"]["loan"]["borrower_id"] == done["borrower_id"]
+                    and e["action"]["loan"]["lender_id"] == done["lender_id"]), None)
     if done["lender_id"]:
         said = (f"{done['lender_id']} lends {done['teams']} {done['capability']} team{'s' if done['teams'] != 1 else ''} to "
                 f"{done['borrower_id']} for {done['duration_min']} min")
     else:
         said = f"{done['borrower_id']} gets no {done['capability']} loan"
-    steps.append({"key": "resolved", "label": "Outcome", "t": done["t"], "id": done["negotiation_id"], "from": "System", "to": "",
-                  "text": said, "plain": plain_text(said), "why": LOAN_OUTCOMES.get(method, method), "raw": done})
-    blocked = next((e for e in refused if e["t"] == done["t"] and e["action"]["loan"]["borrower_id"] == done["borrower_id"]
-                    and e["action"]["loan"]["lender_id"] == done["lender_id"]), None)
     outcome = LOAN_OUTCOMES.get(method, method)
+    if blocked:
+        # The agents agreed, but the validator refused to carry it out: the outcome is the refusal, never "Lent as requested".
+        outcome = "Refused when carried out: " + blocked["reason"].replace("_", " ")
+        said = f"Agreed: {said}"
+    steps.append({"key": "resolved", "label": "Outcome", "t": done["t"], "id": done["negotiation_id"], "from": "System", "to": "",
+                  "text": said, "plain": plain_text(said), "why": outcome, "raw": done})
     if blocked:
         steps.append({"key": "fallback", "label": "Validator refused", "t": blocked["t"], "id": blocked["message_id"] or "", "from": "System", "to": "",
                       "text": blocked["detail"], "plain": plain_text(blocked["detail"]), "why": blocked["reason"], "raw": blocked})
-        outcome = "Refused when carried out: " + blocked["reason"].replace("_", " ")
     first = messages[0]["t"] if messages else done["t"]
     incident = messages[0]["incident_id"] if messages else ""
     places = [done["requested"], done["borrower_id"]] + ([done["lender_id"]] if done["lender_id"] not in (None, done["requested"]) else [])

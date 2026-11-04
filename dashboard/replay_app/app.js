@@ -469,7 +469,7 @@
         "Critical patients whose deadline passed without anyone reaching them in time (cumulative).") +
       kpi("w3", "git-compare", "var(--warn)", "Conflicts", k.conflicts, null, (CMP ? `${k.negotiated} negotiated` : `${k.negotiated} settled by negotiation`), SERIES.conflicts, m,
         `${k.conflicts} times two agents wanted the same resource, ${k.negotiated} settled by negotiation.`) +
-      kpi("w3", "clock", "var(--accent)", (CMP ? "Avg response" : "Average response"), k.resp_avg === null ? "–" : k.resp_avg, null, k.resp_avg === null ? (CMP ? "none reached yet" : "no patient reached yet") : (CMP ? "minutes" : "minutes to first contact"), SERIES.resp_avg, m,
+      kpi("w3", "clock", "var(--accent)", (CMP ? "Avg response" : "Average response"), k.resp_avg === null ? "–" : k.resp_avg.toFixed(1), null, k.resp_avg === null ? (CMP ? "none reached yet" : "no patient reached yet") : (CMP ? "minutes" : "minutes to first contact"), SERIES.resp_avg, m,
         "Average minutes from arrival to first medical contact, over patients reached so far.") +
       (CMP
         ? kpi("", "ambulance", "var(--violet)", "Ambulances busy", Math.round(100 * frame.u.amb.now) + "%", null, `avg ${Math.round(100 * frame.u.amb.avg)}% so far`, SERIES.crit_ok, m,

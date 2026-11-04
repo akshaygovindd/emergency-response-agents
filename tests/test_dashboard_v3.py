@@ -67,6 +67,8 @@ def test_refused_loans_are_shown_with_the_validator_reason():
     records = negotiation_records([json.loads(line) for line in path.read_text().splitlines() if line])
     refused = [r for r in records if r["kind"] == "loan" and r["outcome"].startswith("Refused")]
     assert refused and refused[0]["steps"][-1]["label"] == "Validator refused" and is_notable(refused[0])
+    outcome_step = next(st for st in refused[0]["steps"] if st["key"] == "resolved")
+    assert outcome_step["why"] == refused[0]["outcome"] and "Lent" not in outcome_step["why"]      # the stepper outcome is the refusal
 
 
 def test_replay_bundle_has_loans_and_slot_counts(events):

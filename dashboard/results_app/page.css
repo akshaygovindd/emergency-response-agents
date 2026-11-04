@@ -13,7 +13,7 @@
 .callout b { font-weight: 600; margin-right: 8px; }
 .empty-chart { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; color: var(--text-3); font-size: 15px; }
 .axis text { fill: var(--text-3); font-size: 12px; } .axis .cat { fill: var(--text-2); font-size: 14px; font-weight: 500; } .grid line { stroke: rgba(148,163,184,.1); } .grid .zero { stroke: rgba(148,163,184,.4); }
-.bar { transition: opacity .12s; } .hit:hover { fill: rgba(148,163,184,.06); } .val { fill: var(--text-2); font-size: 12px; font-weight: 500; }
+.bar { transition: opacity .12s; } .hit:hover { fill: rgba(148,163,184,.06); } .val { fill: var(--text-2); font-size: 11.5px; font-weight: 500; }
 .panel-title { fill: var(--text); font-size: 14px; font-weight: 600; }
 
 /* ───── responsive ───── */

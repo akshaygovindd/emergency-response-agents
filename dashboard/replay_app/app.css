@@ -163,7 +163,7 @@ body[data-d="md"] .beds, body[data-d="sm"] .beds { margin: 5px 0 3px; }
 body[data-d="md"] .bed { width: 14px; height: 14px; }
 body[data-d="md"] .negotiation, body[data-d="sm"] .negotiation { padding: 8px 12px; }
 body[data-d="md"] .step, body[data-d="sm"] .step { padding: 0 4px; } body[data-d="md"] .step-detail, body[data-d="sm"] .step-detail { font-size: 11.5px; }
-body[data-d="md"] .feed, body[data-d="sm"] .feed { min-height: 96px; padding: 10px 12px 4px; }
+body[data-d="md"] .feed, body[data-d="sm"] .feed { min-height: 184px; padding: 10px 12px 4px; }
 body[data-d="md"] .playbar, body[data-d="sm"] .playbar { left: 16px; right: 16px; bottom: 16px; height: 64px; gap: 12px; padding: 0 16px 0 10px; border-radius: 18px; }
 body[data-d="sm"] .kpi-top .tile, body[data-d="md"]:not(.mode-compare) .kpi-top .tile { display: none; }
 body[data-d="sm"] .minute small { display: none; } body[data-d="sm"] .minute { min-width: 84px; }
@@ -185,10 +185,10 @@ body.mode-compare[data-d="sm"] #callout, body.mode-compare[data-d="md"] #callout
 body.mode-compare[data-d="sm"] #callout p, body.mode-compare[data-d="md"] #callout p { display: none; } body.mode-compare[data-d="sm"] #callout h3, body.mode-compare[data-d="md"] #callout h3 { margin-bottom: 4px; }
 body.mode-compare[data-d="md"] #callout .tile, body.mode-compare[data-d="sm"] #callout .tile, body.mode-inline[data-d="sm"] #callout .tile { display: none; }
 body.mode-compare[data-d="md"] #callout h3, body.mode-compare[data-d="sm"] #callout h3 { font-size: 14px; } body.mode-compare[data-d="md"] #callout p, body.mode-compare[data-d="sm"] #callout p { font-size: 12.5px; line-height: 17px; margin: 2px 0 4px; }
-body[data-d="sm"] .feed { min-height: 88px; }
+body[data-d="sm"] .feed { min-height: 184px; }   /* laptop sizes: always at least two feed rows; the side panel scrolls instead of squeezing the feed */
 
 /* Streamlit Community Cloud draws its badge over the bottom-right corner; keep the last step of the stepper clear of it */
-body:not(.mode-inline):not(.mode-compare) #neg.negotiation { padding-right: 92px; }
+body:not(.mode-inline):not(.mode-compare) #neg.negotiation { padding-right: 136px; }
 /* v3 staff loans on the hospital cards */
 .loanrow { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
 .loanchip { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: rgba(139,92,246,.14); color: var(--violet); max-width: 100%; white-space: normal; line-height: 1.35; }

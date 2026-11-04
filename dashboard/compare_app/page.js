@@ -18,8 +18,8 @@
   const diff = D.diff;
   if (diff) {
     $("diff").innerHTML = `<span class="tile" style="--tone:var(--accent)">${ico("flag", 18)}</span><div class="body"><h3>First difference · minute ${diff.t}</h3>` +
-      `<div class="what"><b>${esc(D.left.label)}</b>${esc(diff.left.join("; ") || "made no different decision")}</div>` +
-      `<div class="what"><b>${esc(D.right.label)}</b>${esc(diff.right.join("; ") || "made no different decision")}</div></div>` +
+      `<div class="what"><b>${esc(D.left.label)}:</b> ${esc(diff.left.join("; ") || "made no different decision")}</div>` +
+      `<div class="what"><b>${esc(D.right.label)}:</b> ${esc(diff.right.join("; ") || "made no different decision")}</div></div>` +
       `<button class="ghost small" id="jumpdiff">${ico("flag", 16)} Jump to minute ${diff.t}</button>`;
   } else {
     $("diff").className = "card diff none";
