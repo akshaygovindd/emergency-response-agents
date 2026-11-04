@@ -28,6 +28,15 @@ def refresh() -> None:
         return
     names = sorted(name for name in sys.modules if name.startswith("erc.dashboard."))
     for _ in range(2):                         # twice: the second pass rebinds `from x import y` to the reloaded objects
-        for name in names:
-            importlib.reload(sys.modules[name])
+        pending = names
+        while pending:                         # a module that needs a not-yet-reloaded one is retried after the others
+            failed = []
+            for name in pending:
+                try:
+                    importlib.reload(sys.modules[name])
+                except ImportError:
+                    failed.append(name)
+            if len(failed) == len(pending):
+                raise ImportError(f"could not reload: {failed}")
+            pending = failed
     state["stamp"] = stamp
