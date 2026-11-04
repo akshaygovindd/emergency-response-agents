@@ -42,11 +42,11 @@ oracle (negotiation with ground-truth assessments; ablation only).
 - `scripts/run.py` experiments CLI, `scripts/trace.py` readable run log
 - `data/scenarios/`, `data/descriptions/`, `data/llm_cache/` (committed)
 - `logs/<version>/<mode>/<scenario>_seed<N>_<mode>.jsonl` event logs, `results/<version>/runs.jsonl` metrics
-  (v1 = frozen pilot, write-protected; v2 runs need `--version v2`)
+  (v1 = frozen pilot, v2 = frozen with admission negotiation, both write-protected; v3 = staff sharing, surge and bottleneck only; new runs need an explicit `--version`)
 
 ## Commands
 - Activate: `source .venv/bin/activate`
-- Tests: `pytest -q` (111 passing at agents-frozen)
+- Tests: `pytest -q` (306 passing at final-submission; 111 at agents-frozen)
 - Print saved results (free): `python scripts/run.py` (v1) or `python scripts/run.py --version v2`
 - Experiments (USE OPENAI TOKENS): `python scripts/run.py --mode ... --scenario ... --seed ... --version v2`
 - Trace a run: `python scripts/trace.py logs/v1/negotiation/normal_seed42_negotiation.jsonl`
@@ -83,4 +83,4 @@ oracle (negotiation with ground-truth assessments; ablation only).
    Expectant (black) = critical victim not reached by deadline (display/analysis only).
 4. Contention numbers + scenario map per scenario (analysis only, no simulation change).
 5. Optional: Excel export of one scenario (one sheet per entity).
-6. Future work only (not now): hospital accept/reject/counter, staff sharing between hospitals.
+6. Done since this list was written: hospital accept/reject/counter (v2) and staff sharing between hospitals (v3); results in `docs/RESULTS.md`. Nothing from this list remains.

@@ -97,7 +97,7 @@ A system is consulted only when the decision situation changes (new waiting vict
 
 ## 13. Scope decisions
 
-- Hospital-to-hospital staff transfer is outside the simulation scope. Hospital coordination means admission, diversion, destination selection, and treatment-capacity negotiation.
+- In v1 and v2, hospital-to-hospital staff transfer is outside the simulation scope: hospital coordination means admission, diversion, destination selection, and treatment-capacity negotiation. v3 adds staff sharing (a loan moves one treatment slot and a doctor + nurse team between hospitals); its assumptions (one slot per team, loan duration range, travel time each way, validator rules) are documented in `docs/V3_DESIGN.md`.
 - Out-of-service ambulances are removed from the bottleneck scenario rather than modelled as a status.
 - Pre-occupied trauma slots in the bottleneck scenario stay occupied for the whole run: the config value 0.5 rounds to 2 of the 3 trauma slots at H-T (67%, not half).
 
@@ -117,6 +117,7 @@ Nothing that could favour a system was changed after the stage that depends on i
 | `environment-frozen` | any agent run | final environment; baseline results verified identical |
 | `agents-frozen` | test-seed runs | agent prompts and tools (v1) |
 | `v2-frozen` | the v2 runs | v2 admission negotiation and prompts |
+| `v3-frozen` | the v3 runs | v3 staff-sharing negotiation, loan rules and prompts (`docs/V3_DESIGN.md`) |
 | `dashboard-v1` / `dashboard-v2` | (dashboard only) | working dashboard before the redesign / the final dashboard |
 
 Results are kept per version in `results/<version>/` and `logs/<version>/`. v1 is write-protected in the runner (it needs `--allow-v1-write`; the only later v1 writes added missing grid cells, see `docs/EXPERIMENT_LOG.md`), every v2 run declares `--version v2`, tables carry a `version` column, and v1 and v2 rows are never pooled.

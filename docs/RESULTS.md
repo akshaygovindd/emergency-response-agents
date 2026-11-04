@@ -16,7 +16,7 @@ their rows repeat.
 
 **How the per-victim numbers were obtained.** First-contact times per victim are not stored in the logs, so
 `scripts/analysis.py` rebuilds them from the same events the engine uses (ambulance arrival on scene, medical team
-arrival). The rebuilt critical service rate and mean response time match `results/` for **all 206 runs**
+arrival). The rebuilt critical service rate and mean response time match `results/` for **all 206 v1 and v2 runs**
 (`00_reconstruction_check.csv`, enforced by `tests/test_analysis.py`).
 
 **Systems:** naive, greedy (rule-based baselines), agents (LLM agents with a fixed priority rule, no negotiation),
@@ -204,7 +204,7 @@ Per run at list price from logged tokens, as if nothing were cached (`07_cost_ov
 | v2 | agents | 25 | $0.086 | 88,788 | 46.8 | 93 s |
 | v2 | negotiation | 25 | $0.099 | 100,216 | 61.9 | 111 s |
 
-All 106 agent runs together: $9.53 and 9.86 million tokens at list price. Naive and greedy make no model calls. Model time is the summed latency of the logged calls.
+All 106 agent runs of v1 and v2 together: $9.53 and 9.86 million tokens at list price (including the 30 v3 agent runs: 136 agent runs, $12.62 and 13.03 million tokens; v3 per-run costs are in `09_v3_cost.csv`). Naive and greedy make no model calls. Model time is the summed latency of the logged calls.
 Scenario means are in the CSV: from $0.042-0.049 per run in bottleneck to $0.113-0.132 in surge.
 Critical-service difference versus greedy has an interval containing zero in every row, so there is no measured benefit to divide the cost by (`usd_per_extra_point` is only
 filled where the point estimate is positive and should not be read as a result). In v2, negotiation costs 15% more per run than agents without negotiation ($0.099 vs $0.086) for no measurable gain.
@@ -223,7 +223,7 @@ filled where the point estimate is positive and should not be read as a result).
 | mean critical response time | bottleneck | 7.5 minutes faster (v2) | 2 of 4 |
 
 So the agents get more patients through to hospital and treatment in surge, while greedy reaches critical victims faster there; neither shows up in the primary metric. No other secondary comparison is significant. These tests are exploratory and could be noise; they do not change the RQ1 conclusion, but they mean "no measurable benefit" is a statement about critical service rate only.
-**Limitations.** Cost is list price from logged tokens, not what was paid: of the 9.86 million tokens, 2.66 million (v1, of 5.13 million) and 1.77 million (v2, of 4.73 million) were fresh API tokens, the rest came from the cache (`fresh_tokens` in `runs.jsonl`). Model time is a sum over calls, not wall-clock.
+**Limitations.** Cost is list price from logged tokens, not what was paid: of the 9.86 million tokens of v1 and v2, 2.66 million (v1, of 5.13 million) and 1.77 million (v2, of 4.73 million) were fresh API tokens (v3: 0.90 million of 3.18 million), the rest came from the cache (`fresh_tokens` in `runs.jsonl`). Model time is a sum over calls, not wall-clock.
 
 ## Supporting analyses
 
@@ -294,6 +294,8 @@ Largest gap: normal seed 49 in both versions (0.30 versus 0.80, five critical vi
 v2 did not reduce infeasible proposals; they moved from the hospital agent to Dispatch (163 and 171 in agents and negotiation, versus 106 and 101 in v1). The validator caught every one. **Limitation:**
 a blocked proposal still costs a model call and may delay a decision; the table shows safety, not efficiency.
 
+**v3.** The 30 v3 agent runs add 251 invalid proposals (155 in agents, 96 in negotiation; 794 in total over v1-v3), all blocked before execution; in addition the engine refused 6 committed loans at execution (`lender_understaffed`, see the v3 section), so the statement "zero actions rejected at execution" above holds for v1 and v2 only.
+
 ## v3. Hospitals lend doctors, nurses and treatment slots to each other (`scripts/analysis_v3.py`, `09_v3_*.csv`)
 
 Design and the pre-registered metrics are in `docs/V3_DESIGN.md` (tag `v3-frozen`). In v3 a hospital with critical or other patients queued and no free slot can ask another hospital for a doctor + nurse team;
@@ -339,7 +341,7 @@ earlier or without any loan, which is consistent with a loan trigger waking the 
 one run per seed. This is why critical service rate, which loans cannot touch directly, moves by a point or two (not significantly). Mean logical tokens per run rose 1-15% over v2 (surge agents 121k to 127k, bottleneck negotiation 49k to 57k; `09_v3_cost.csv`); the loan calls themselves are 1-3k tokens per run.
 
 **Takeaway.** In these scenarios, hospitals lending staff and slots to each other made **no measurable difference** to how quickly critical patients start treatment: every interval contains zero, no confirmatory test is close to significant, and the point estimates are small and mixed in sign.
-The reason is visible in the data: of about 23 critical victims per surge run, 15 never start treatment, almost all because no ambulance reaches them in time, and those who do reach a hospital already start treatment after 2.6 minutes on average. Treatment slots are a bottleneck for only a few patients,
+The reason is visible in the data: of about 23 critical victims per surge run, 15 never start treatment, almost all because no ambulance reaches them in time, and those who do reach a hospital already start treatment after about 2.6 to 3.1 minutes on average (2.8 with `agents`, 3.1 with `negotiation` in v3; 2.6 in v2). Treatment slots are a bottleneck for only a few patients,
 so moving a slot or two between hospitals cannot change much, and negotiation had almost nothing to negotiate (no counters, 2 rejections). The loan machinery works as designed and is safe (the validator caught every infeasible loan), but the evidence does not show a benefit.
 
 **Limitations.** One run per seed and system; 10 surge and 5 bottleneck seeds, so the intervals are wide (P2 in bottleneck spans -5.6 to +8.6 minutes). Normal was not run. The benefit rests on one modelling assumption (a loan transfers one slot per team) and on a fixed loan duration range; other staffing assumptions or a scenario with scarce staff could behave differently.

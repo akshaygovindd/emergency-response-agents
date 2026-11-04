@@ -1,7 +1,6 @@
 # v3 design: hospital staff-sharing negotiation
 
-Status: **approved with changes (section 1).** Implementation in progress; no results or API calls until the dev-seed check. Branch `v3-staff-sharing`
-(worktree `/Users/akshay/erc-v3`). `results/v1`, `results/v2`, `logs/v1`, `logs/v2` and the
+Status: **implemented and run (tag `v3-frozen`); results are in the v3 section of `docs/RESULTS.md`** (no measurable effect of staff sharing). Built on branch `v3-staff-sharing`, merged into `master`. `results/v1`, `results/v2`, `logs/v1`, `logs/v2` and the
 `final-submission` tag are not touched.
 
 ## 0. What the code does today, and three findings that shape the design

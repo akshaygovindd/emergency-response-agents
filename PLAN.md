@@ -44,8 +44,8 @@ without degrading performance, and we show exactly where and how through causal 
 | 19 | Backup demo video (2 to 3 min) + rehearsed script |
 
 ### Explicitly out of scope (future work in report)
-Staff sharing between hospitals, one agent per hospital, city zones / shifts / disruptions,
-human approval step, more seeds.
+City zones / shifts / disruptions, human approval step, more seeds.
+(Staff sharing between hospitals and one Hospital Coordination agent per hospital were originally listed here; both were built later as v3, see `docs/V3_DESIGN.md` and the v3 section of `docs/RESULTS.md`.)
 
 ---
 

@@ -45,7 +45,7 @@ Primary metric: **critical service rate (CSR)**, the share of critical victims (
 * **RQ1, do agents beat strong rule-based allocation?** Not detectably. Every agent-minus-greedy interval contains zero (point estimates -3.5 to +4.0 points, per-seed mean); agents and negotiation beat naive by +10.9 to +23.3 points, and all 12 of those intervals exclude zero (8 of the 12 are also significant under an exact permutation test; the 4 bottleneck ones are not) (greedy beats naive by 8.7 to 22.7); the 4 bottleneck intervals rest on 5 seeds and are illustrative only.
 * **RQ2, does negotiation help?** Not detectably. Negotiation minus agents is +2.7 / +1.0 points (v1 normal / surge) and 0.0 / -1.1 (v2), none significant. 35 of 50 paired runs never diverged; of 15 that did, negotiation helped in 4, hurt in 2, tied in 9.
 * **RQ3, how does performance change as demand rises?** Every system falls steeply (greedy 58.5% to 25.0% to 17.2%). Ambulance conflicts per run fall (1.6 to 0.7 to 0.4 in v1) because no ambulance is free in 64%, then 85%, then 96% of the first 75 minutes (greedy), so there is less to negotiate exactly when pressure is highest. The ER was never full under greedy or the agent systems (naive filled one twice per version, in surge).
-* **RQ4, what does it cost?** About $0.09 and 1.5-2 minutes of model time per agent run at list price (all 106 agent runs: $9.53, 9.86 M tokens), with no measurable gain in critical service rate over a free rule (secondary metrics differ in both directions; exploratory, see RQ4 in [docs/RESULTS.md](docs/RESULTS.md)).
+* **RQ4, what does it cost?** About $0.09 and 1.5-2 minutes of model time per agent run at list price (v1 and v2: 106 agent runs, $9.53, 9.86 M tokens; including v3: 136 agent runs, $12.62, 13.03 M tokens), with no measurable gain in critical service rate over a free rule (secondary metrics differ in both directions; exploratory, see RQ4 in [docs/RESULTS.md](docs/RESULTS.md)).
 
 Limitations, stated plainly: small seed counts, no significant differences among agent systems and greedy, LLM-written reports from a formulaic generator, a synthetic grid, one model, one run per seed.
 
@@ -70,14 +70,13 @@ flowchart LR
 ```
 
 **The rule: agents propose, Python validates and executes.** No agent can change the world. Every proposal, counter-offer and revision is checked by one validator
-(`sim/validator.py`) before it can be sent, and the engine checks again at execution. In all saved agent runs the validator blocked every invalid proposal
-(209 in v1 and 334 in v2) and the engine had to reject nothing.
+(`sim/validator.py`) before it can be sent, and the engine checks again at execution. In all saved agent runs the validator blocked every invalid proposal (209 in v1, 334 in v2 and 251 in v3 = 794 infeasible proposals, none executed). In v1 and v2 the engine had to reject nothing; in v3 it refused 6 loan commits at execution (`lender_understaffed`: earlier decisions in the same minute left the lender short), which is the second check doing its job.
 
 | Agent | Role |
 |:--|:--|
 | Incident Assessment | Reads the LLM-written 911 report and estimates each victim's severity and needed capability (baselines read ground truth; the oracle ablation gives agents ground truth too) |
 | Dispatch | Proposes which ambulances and responder teams go where; in v2 also requests a destination hospital |
-| Hospital Coordination | v1: proposes admissions. v2: reviews Dispatch's admission requests and accepts, rejects or counters (whole load, up to 3 rounds) |
+| Hospital Coordination | v1: proposes admissions. v2: reviews Dispatch's admission requests and accepts, rejects or counters (whole load, up to 3 rounds). v3: one instance per hospital, which can also ask another hospital for a doctor + nurse team and a treatment slot, or answer such a request by lending or declining (`agents/loans.py`, arbitrated by Resource Allocation) |
 | Resource Allocation | Arbitrates conflicts over the same ambulance or ER capacity: accepts one proposal, counter-offers another resource to the loser, up to 3 rounds, then a fixed fallback rule |
 
 ## Versions and how results are isolated
@@ -99,7 +98,7 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt && pip install -e . --no-deps
 ```
 
-**Run the tests** (no API key needed; 251 tests, all offline):
+**Run the tests** (no API key needed; 306 tests, all offline):
 
 ```bash
 pytest -q
@@ -144,15 +143,15 @@ src/erc/
   scenarios/         seeded generator; cached LLM 911 reports
   sim/               engine, validator, travel, deterioration
   policies/          naive and greedy baselines
-  agents/            assessment, dispatch, hospital, negotiation, admission, conflicts, tools, prompts, LLM cache
+  agents/            assessment, dispatch, hospital, negotiation, admission (v2), loans (v3 staff sharing), conflicts, tools, prompts, LLM cache
   eval/              metrics, statistics, experiment runner
   dashboard/         data layer for the dashboard (export, story, compare, what-if, results)
 dashboard/           Streamlit entry (app.py), thin pages (views/), HTML/JS apps and shared design system (ui/)
 scripts/             run.py (experiments), trace.py (run log), analysis.py (final analysis)
 data/                scenarios/, descriptions/, llm_cache/ (committed)
 logs/<version>/      event log per run;  results/<version>/ metrics and tables;  results/analysis/ final tables and figures
-docs/                RESULTS.md, ASSUMPTIONS.md, V2_DESIGN.md, DEPLOY.md, EXPERIMENT_LOG.md, design/
-tests/               251 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
+docs/                RESULTS.md, ASSUMPTIONS.md, V2_DESIGN.md, V3_DESIGN.md, DEPLOY.md, EXPERIMENT_LOG.md, design/
+tests/               306 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
 ```
 
 Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), [docs/ASSUMPTIONS.md](docs/ASSUMPTIONS.md) (every simulation assumption),
@@ -160,9 +159,9 @@ Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), 
 
 ## Testing
 
-`pytest -q` runs 251 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
+`pytest -q` runs 306 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
 metrics and statistics, dashboard data (replay export, compare, what-if, results), and the analysis script (which checks that per-victim outcomes rebuilt from the logs
-match the saved metrics for all 206 runs). GitHub Actions runs the suite on every push.
+match the saved metrics for all 206 v1 and v2 runs; the v3 tables come from `scripts/analysis_v3.py` and carry no such rebuild check). GitHub Actions runs the suite on every push.
 
 ## AI acknowledgment
 
