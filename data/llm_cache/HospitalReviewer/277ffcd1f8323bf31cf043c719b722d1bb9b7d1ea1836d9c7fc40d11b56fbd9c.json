@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t051-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both patients and has sufficient beds and ER capacity, and no closer critical victim must be protected by holding the last bed."
+      }
+    ]
+  },
+  "tokens_in": 870,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.3288729999912903,
+  "context": null
+}

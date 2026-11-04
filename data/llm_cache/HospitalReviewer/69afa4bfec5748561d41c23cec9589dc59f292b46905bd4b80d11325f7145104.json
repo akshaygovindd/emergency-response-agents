@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t108-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both patients and still has the needed trauma/general slots, while preserving capacity is not justified by the current waiting-critical distribution."
+      }
+    ]
+  },
+  "tokens_in": 866,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 0.9993580419686623,
+  "context": null
+}

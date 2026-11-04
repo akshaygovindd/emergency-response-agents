@@ -53,10 +53,12 @@ def load_scenario(name: ScenarioName, seed: int) -> Scenario:
 
 
 def make_policy(mode: Mode, version: str) -> Policy:
-    """v2 runs use the admission negotiation protocol; v1 and the baselines are unchanged."""
+    """v2 and v3 runs use the admission negotiation protocol; v3 adds staff loans. v1 and the baselines are unchanged."""
     policy = POLICIES[mode]()
-    if version == "v2" and mode in AGENT_MODES:
+    if version in ("v2", "v3") and mode in AGENT_MODES:
         policy.admission_protocol = "v2"
+    if version == "v3" and mode in AGENT_MODES:
+        policy.loan_protocol = "v3"
     return policy
 
 
@@ -65,7 +67,7 @@ def run_one(name: ScenarioName, seed: int, mode: Mode, version: str,
     require_writable(version, allow_v1_write)
     if mode not in POLICIES:
         raise ValueError(f"Mode '{mode.value}' is not implemented yet")
-    engine = Engine(load_scenario(name, seed), make_policy(mode, version))
+    engine = Engine(load_scenario(name, seed), make_policy(mode, version), staff_loans=version == "v3" and mode in AGENT_MODES)
     engine.run()
     engine.log.save(log_dir(version) / mode.value)
     return compute_metrics(engine.state, engine.log, mode.value)

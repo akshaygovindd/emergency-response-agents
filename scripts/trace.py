@@ -20,6 +20,10 @@ def act(a: dict | None) -> str:
         return f"{a['ambulance_id']} pick up {a['victim_ids']}"
     if kind == "assign_responder":
         return f"{a['responder_id']}"
+    if kind == "loan_staff":
+        ln = a["loan"]
+        return (f"loan {ln['lender_id']} -> {ln['borrower_id']} {ln['teams']} team(s) {ln['capability']} "
+                f"{ln['duration_min']} min")
     return f"{'divert' if kind == 'divert_patient' else 'admit'} {a['victim_ids']} -> {a['hospital_id']}"
 
 
@@ -31,7 +35,7 @@ def line(e: dict) -> str | None:
         return f"{t}  ASSESS    {e['incident_id']} -> {e['victims']}"
     if k == "agent_message" and e["message_type"] != "info":
         tail = f" (re {e['in_reply_to']})" if e.get("in_reply_to") else ""
-        return (f"{t}  MSG {e['message_id']} {e['sender']} -> {e['recipient']} {e['message_type'].upper()} "
+        return (f"{t}  MSG {e['message_id']} {e.get('sender_id', e['sender'])} -> {e.get('recipient_id', e['recipient'])} {e['message_type'].upper()} "
                 f"{e['incident_id']} {act(e.get('proposed_action'))}{tail} | {e['reason'][:90]}")
     if k == "proposal_invalid":
         return f"{t}  INVALID   {e['agent']} {e['tool']} -> {e['reason']}: {e['detail'][:80]}"
@@ -43,6 +47,16 @@ def line(e: dict) -> str | None:
         return f"{t}  EXECUTED  {act(e['action'])} (commit {e['message_id']})"
     if k == "action_rejected":
         return f"{t}  VALIDATOR REJECTED {act(e['action'])}: {e['reason']}"
+    if k == "loan_trigger":
+        return (f"{t}  LOAN?     {e['borrower_id']} needs {e['capability']} ({e['uncovered']} uncovered); "
+                f"feasible lenders {e['lenders']}")
+    if k == "loan_resolved":
+        who = f"{e['lender_id']} lends {e['teams']} team(s) for {e['duration_min']} min" if e["lender_id"] else "no loan"
+        return f"{t}  LOAN      {e['negotiation_id']} {e['borrower_id']} {e['capability']}: {who} by {e['method']} in {e['rounds']} round(s)"
+    if k in ("loan_started", "loan_arrived", "loan_recalled", "loan_returning", "loan_returned", "loan_fallback",
+             "loan_redirect", "loan_contention"):
+        rest = {x: y for x, y in e.items() if x not in ("t", "kind")}
+        return f"{t}  {k.upper():9} {rest}"
     if k in ("ambulance_on_scene", "handover_complete", "victim_deteriorated", "treatment_started"):
         rest = {x: y for x, y in e.items() if x not in ("t", "kind")}
         return f"{t}  {k.upper():9} {rest}"

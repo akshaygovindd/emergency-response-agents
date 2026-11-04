@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t049-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has general capacity and beds, and this low-urgency patient does not need to be preserved for critical cases."
+      }
+    ]
+  },
+  "tokens_in": 840,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.1946679999819025,
+  "context": null
+}

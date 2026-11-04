@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t057-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room and capability for both victims, and no closer critical patient would be stranded by taking this load."
+      }
+    ]
+  },
+  "tokens_in": 859,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.2158799169701524,
+  "context": null
+}

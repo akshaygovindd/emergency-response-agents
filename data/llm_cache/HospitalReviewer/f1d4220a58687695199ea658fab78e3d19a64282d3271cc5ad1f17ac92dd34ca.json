@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t102-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capability and this ALS trauma pair is prioritized there; although only 1 bed is free, the request should be accepted because there is no closer critical trauma victim who would be stranded by using this last bed, and transfer capacity remains available."
+      }
+    ]
+  },
+  "tokens_in": 870,
+  "tokens_out": 90,
+  "requests": 1,
+  "latency_s": 1.756697750010062,
+  "context": null
+}

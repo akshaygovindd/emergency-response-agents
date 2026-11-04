@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t058-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds, and accepting this low-acuity load does not threaten nearby critical patients."
+      }
+    ]
+  },
+  "tokens_in": 863,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.2647562919883057,
+  "context": null
+}

@@ -18,11 +18,12 @@ from typing import Protocol
 from erc.config import SETTINGS
 from erc.logging.event_log import EventLog
 from erc.models.entities import (
-    AmbulanceType, Capability, ResponderType, SkillLevel, StaffMember, StaffRole,
+    AmbulanceType, Capability, LoanPhase, LoanRecord, ResponderType, SkillLevel, StaffMember, StaffRole,
     UnitStatus, Victim, VictimStatus,
 )
 from erc.models.messages import ActionType, ProposedAction
 from erc.models.state import Scenario, SimulationState
+from erc.sim import loans
 from erc.sim.deterioration import deteriorate, is_deteriorated
 from erc.sim.travel import travel_time_min
 from erc.sim.validator import validate
@@ -71,13 +72,15 @@ class TreatmentJob:
 
 
 class Engine:
-    def __init__(self, scenario: Scenario, policy: Policy, log: EventLog | None = None) -> None:
+    def __init__(self, scenario: Scenario, policy: Policy, log: EventLog | None = None,
+                 staff_loans: bool = False) -> None:
         self.state = SimulationState.from_scenario(scenario)
         self.policy = policy
         self.log = log or EventLog(f"{scenario.name.value}_seed{scenario.seed}_{policy.name}")
         self.amb_jobs: dict[str, AmbulanceJob] = {}
         self.resp_jobs: dict[str, ResponderJob] = {}
         self.treatments: dict[str, TreatmentJob] = {}
+        self.staff_loans = staff_loans            # v3 only: hospitals may lend slots and staff to each other
         self.policy_calls = 0
         self._last_signature: tuple | None = None
         if hasattr(policy, "bind_log"):          # lets agent systems write messages to this run's log
@@ -92,6 +95,8 @@ class Engine:
             self._advance_responders(t)
             self._advance_ambulances(t)
             self._finish_treatments(t)
+            if self.staff_loans:
+                self._advance_loans(t)
             signature = self._decision_signature()
             if signature is not None and signature != self._last_signature:
                 self.policy_calls += 1
@@ -117,6 +122,10 @@ class Engine:
             if job.phase == "on_scene" and s.ambulances[aid].victims_onboard and self._destination(job) is None))
         er = tuple((h.hospital_id, h.er_occupied, s.incoming_count(h.hospital_id)) for h in s.hospitals.values())
         has_work = (waiting and free_amb) or awaiting_dest or self._responder_needed()
+        if self.staff_loans:                                   # a new loan opportunity also wakes the policy
+            needs = tuple((n.borrower_id, n.capability.value, n.uncovered, tuple(n.lenders))
+                          for n in loans.open_needs(s))
+            return (waiting, free_amb, free_resp, awaiting_dest, er, needs) if (has_work or needs) else None
         return (waiting, free_amb, free_resp, awaiting_dest, er) if has_work else None
 
     def _responder_needed(self) -> bool:
@@ -156,9 +165,64 @@ class Engine:
             team.status = UnitStatus.EN_ROUTE
             team.assigned_incident = d.incident_id
             self.resp_jobs[team.team_id] = ResponderJob(d.incident_id, eta)
+        elif a.action_type == ActionType.LOAN_STAFF:
+            self._start_loan(a.loan)
         else:  # ADMIT or DIVERT
             for vid in a.victim_ids:
                 s.admissions[vid] = a.hospital_id
+
+    # ───────── Staff loans (v3) ─────────
+    def _start_loan(self, spec) -> None:
+        """Lender gives up an idle slot per team; the team (doctor + nurse) leaves for the borrower."""
+        s, t = self.state, self.state.time_min
+        doctors, nurses = loans.pick_staff(s, spec)             # the validator just confirmed enough exist
+        lender, borrower = s.hospitals[spec.lender_id], s.hospitals[spec.borrower_id]
+        cap = spec.capability
+        lender.treatment_slots = {**lender.treatment_slots, cap: lender.treatment_slots[cap] - spec.teams}
+        for sid in (*doctors, *nurses):
+            s.staff[sid].on_shift = False                       # travelling: unavailable to everyone
+        arrive = t + travel_time_min(s.seed, lender.location, borrower.location, t)
+        loan_id = f"L-{len(s.staff_loans) + 1:02d}"
+        s.staff_loans[loan_id] = LoanRecord(
+            loan_id=loan_id, lender_id=lender.hospital_id, borrower_id=borrower.hospital_id, capability=cap,
+            teams=spec.teams, duration_min=spec.duration_min, doctor_ids=doctors, nurse_ids=nurses,
+            depart_min=t, arrive_min=arrive, ends_min=arrive + spec.duration_min)
+        self.log.record(t, "loan_started", loan_id=loan_id, lender_id=lender.hospital_id,
+                        borrower_id=borrower.hospital_id, capability=cap.value, teams=spec.teams,
+                        staff_ids=[*doctors, *nurses], arrive_min=arrive, ends_min=arrive + spec.duration_min)
+
+    def _advance_loans(self, t: int) -> None:
+        s = self.state
+        for ln in s.loans_in_flight():
+            lender, borrower, cap = s.hospitals[ln.lender_id], s.hospitals[ln.borrower_id], ln.capability
+            if ln.phase == LoanPhase.TRANSFER_OUT and t >= ln.arrive_min:
+                for sid in ln.staff_ids:
+                    s.staff[sid].hospital_id, s.staff[sid].on_shift = ln.borrower_id, True
+                borrower.treatment_slots = {**borrower.treatment_slots, cap: borrower.treatment_slots[cap] + ln.teams}
+                ln.slots_open, ln.phase = ln.teams, LoanPhase.ACTIVE
+                self.log.record(t, "loan_arrived", loan_id=ln.loan_id, borrower_id=ln.borrower_id)
+            if ln.phase == LoanPhase.ACTIVE and t >= ln.ends_min:
+                for sid in ln.staff_ids:
+                    s.staff[sid].on_shift = False               # no new patients; current ones finish
+                ln.phase = LoanPhase.RECALLED
+                self.log.record(t, "loan_recalled", loan_id=ln.loan_id, borrower_id=ln.borrower_id)
+            if ln.phase == LoanPhase.RECALLED:
+                while ln.slots_open > 0 and borrower.free_slots(cap) > 0:      # never remove an occupied slot
+                    borrower.treatment_slots = {**borrower.treatment_slots, cap: borrower.treatment_slots[cap] - 1}
+                    ln.slots_open -= 1
+                if ln.slots_open == 0 and all(s.staff[sid].current_patients == 0 for sid in ln.staff_ids):
+                    for sid in ln.staff_ids:
+                        s.staff[sid].hospital_id = ln.lender_id
+                    ln.back_min = t + travel_time_min(s.seed, borrower.location, lender.location, t)
+                    ln.phase = LoanPhase.TRANSFER_BACK
+                    self.log.record(t, "loan_returning", loan_id=ln.loan_id, lender_id=ln.lender_id,
+                                    back_min=ln.back_min)
+            if ln.phase == LoanPhase.TRANSFER_BACK and t >= ln.back_min:
+                for sid in ln.staff_ids:
+                    s.staff[sid].on_shift = True
+                lender.treatment_slots = {**lender.treatment_slots, cap: lender.treatment_slots.get(cap, 0) + ln.teams}
+                ln.phase = LoanPhase.RETURNED
+                self.log.record(t, "loan_returned", loan_id=ln.loan_id, lender_id=ln.lender_id)
 
     # ───────── Movement ─────────
     def _reveal_incidents(self, t: int) -> None:

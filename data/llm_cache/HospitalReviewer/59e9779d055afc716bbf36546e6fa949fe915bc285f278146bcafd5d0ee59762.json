@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t083-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has room and the high-urgency trauma patient is closest there; accepting does not jeopardize closer critical waits because H-T still has beds and trauma slot available."
+      }
+    ]
+  },
+  "tokens_in": 876,
+  "tokens_out": 74,
+  "requests": 1,
+  "latency_s": 1.281739124970045,
+  "context": null
+}

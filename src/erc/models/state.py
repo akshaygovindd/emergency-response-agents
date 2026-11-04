@@ -7,7 +7,7 @@ from pydantic import Field, model_validator
 
 from erc.config import ScenarioName
 from erc.models.entities import (
-    Ambulance, Hospital, Incident, ResponderTeam, StaffMember, StrictModel,
+    Ambulance, Hospital, Incident, LoanRecord, ResponderTeam, StaffMember, StrictModel,
     Victim, VictimStatus, UnitStatus,
 )
 
@@ -68,6 +68,8 @@ class SimulationState(StrictModel):
     admissions: dict[str, str] = Field(default_factory=dict, description="victim_id -> hospital_id")
     first_contact_min: dict[str, int] = Field(default_factory=dict, description="victim_id -> minute")
     treatment_start_min: dict[str, int] = Field(default_factory=dict, description="victim_id -> minute")
+    # v3 staff loans. Excluded from dumps so v1/v2 state fingerprints (and LLM cache keys) never change.
+    staff_loans: dict[str, LoanRecord] = Field(default_factory=dict, exclude=True)
 
     @classmethod
     def from_scenario(cls, scenario: Scenario) -> SimulationState:
@@ -112,6 +114,9 @@ class SimulationState(StrictModel):
             if hid == hospital_id and (v := self.find_victim(vid)) is not None and v.status in en_route
         )
 
+    def loans_in_flight(self) -> list[LoanRecord]:
+        return [ln for ln in self.staff_loans.values() if ln.in_flight]
+
     def summary(self) -> dict:
         """Compact snapshot for logs and the dashboard."""
         waiting = self.waiting_victims()
@@ -141,7 +146,7 @@ class SimulationState(StrictModel):
                 return next((self.admissions[v] for v in a.victims_onboard if v in self.admissions), None)
             return a.assigned_incident
 
-        return {
+        view = {
             "ambulances": [
                 {"id": a.ambulance_id, **xy(a.location), "status": a.status.value,
                  "target": ambulance_target(a), "onboard": list(a.victims_onboard)}
@@ -161,3 +166,8 @@ class SimulationState(StrictModel):
                  "treatment_slots": sum(h.treatment_slots.values())}
                 for h in self.hospitals.values()],
         }
+        if self.staff_loans:                      # only v3 runs with at least one loan add this key
+            view["loans"] = [{"id": ln.loan_id, "lender": ln.lender_id, "borrower": ln.borrower_id,
+                              "care": ln.capability.value, "teams": ln.teams, "phase": ln.phase.value,
+                              "staff": ln.staff_ids} for ln in self.loans_in_flight()]
+        return view

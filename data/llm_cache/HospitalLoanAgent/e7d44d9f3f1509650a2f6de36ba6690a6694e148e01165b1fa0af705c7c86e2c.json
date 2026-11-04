@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one general slot to cover queued and en-route general patients; H-G is the only candidate and 20 minutes is the minimum useful loan."
+      }
+    ]
+  },
+  "tokens_in": 611,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 2.5685482090339065,
+  "context": null
+}

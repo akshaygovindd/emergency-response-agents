@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-B for AMB-04.",
+  "tokens_in": 1302,
+  "tokens_out": 67,
+  "requests": 2,
+  "latency_s": 1.9332791669876315,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-21-3",
+            "V-21-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest burn-capable hospital with available burn slots and beds.",
+        "time_min": 91
+      }
+    ],
+    "invalid": []
+  }
+}

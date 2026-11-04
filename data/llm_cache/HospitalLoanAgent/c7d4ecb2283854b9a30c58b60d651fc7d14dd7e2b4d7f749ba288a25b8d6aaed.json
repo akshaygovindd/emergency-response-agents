@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t023-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Capacity is available and there are no queued or en-route patients needing the slot or team."
+      }
+    ]
+  },
+  "tokens_in": 554,
+  "tokens_out": 56,
+  "requests": 1,
+  "latency_s": 1.087714999972377,
+  "context": null
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-T.",
+  "tokens_in": 1316,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 1.72493166703498,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-18-1",
+            "V-18-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma center with specialty match for two critical trauma victims.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t093-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has open trauma/general capacity and this mixed-load arrival should be accepted while preserving beds for nearby critical trauma patients at H-T."
+      }
+    ]
+  },
+  "tokens_in": 867,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.2262552080210298,
+  "context": null
+}

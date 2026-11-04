@@ -15,11 +15,13 @@ from erc.agents.agents import run_destination, run_dispatch, run_hospital
 from erc.agents.assessment import ASSESSMENT_AGENT, oracle_assessment, to_report
 from erc.agents.conflicts import Conflict, detect_conflicts, resolve_by_priority
 from erc.agents.context import AgentContext
+from erc.agents.loans import LoanProtocol
 from erc.agents.llm_cache import LLMResult, run_cached
 from erc.logging.event_log import EventLog
-from erc.models.messages import AgentMessage, AgentName, MessageType, ProposedAction
+from erc.models.messages import ActionType, AgentMessage, AgentName, MessageType, ProposedAction
 from erc.models.state import SimulationState
 from erc.scenarios.descriptions import load_descriptions
+from erc.sim import loans as sim_loans
 from erc.sim.engine import Decision
 
 RA = AgentName.RESOURCE_ALLOCATION
@@ -37,8 +39,10 @@ def shared_loop() -> asyncio.AbstractEventLoop:
 
 
 class AgentSystem:
-    def __init__(self, negotiate: bool = False, oracle: bool = False, admission_protocol: str = "v1") -> None:
+    def __init__(self, negotiate: bool = False, oracle: bool = False, admission_protocol: str = "v1",
+                 loan_protocol: str = "none") -> None:
         self.negotiate, self.oracle = negotiate, oracle
+        self.loan_protocol = loan_protocol              # "v3": hospitals negotiate staff loans (see loans.py)
         self.admission_protocol = admission_protocol    # "v1": Hospital proposes; "v2": Dispatch requests, Hospital reviews
         self.name = "oracle" if oracle else ("negotiation" if negotiate else "agents")
         self.log: EventLog | None = None
@@ -99,6 +103,22 @@ class AgentSystem:
                 mid = self._message(t, RA, p.proposer, MessageType.COMMIT, p.incident_id, p.action,
                                     p.priority, "Committed for final validation")
                 decisions.append(Decision(p.action, p.incident_id, source=p.proposer.value, message_id=mid))
+        if self.loan_protocol == "v3":
+            decisions.extend(await self._negotiate_loans(ctx))
+        return decisions
+
+    async def _negotiate_loans(self, ctx: AgentContext) -> list[Decision]:
+        """v3: borrower and lender Hospital Coordination instances negotiate staff loans (see loans.py)."""
+        needs = sim_loans.open_needs(ctx.state)
+        if not needs:
+            return []
+        t, decisions = ctx.state.time_min, []
+        for done in await LoanProtocol(self, self.negotiate).run(ctx, needs):
+            action = ProposedAction(action_type=ActionType.LOAN_STAFF, loan=done.spec)
+            borrower = done.spec.borrower_id
+            mid = self._message(t, RA, AgentName.HOSPITAL, MessageType.COMMIT, done.incident_id, action, done.priority,
+                                "Committed for final validation", recipient_instance=borrower)
+            decisions.append(Decision(action, done.incident_id, source=f"hospital_coordination:{borrower}", message_id=mid))
         return decisions
 
     async def _negotiate_admissions(self, ctx: AgentContext) -> None:
@@ -150,18 +170,21 @@ class AgentSystem:
         if self.log is not None:
             self.log.record(t, kind, **data)
 
-    def _log_llm(self, t: int, agent: AgentName, res: LLMResult) -> None:
+    def _log_llm(self, t: int, agent: AgentName, res: LLMResult, instance: str | None = None) -> None:
+        extra = {"instance": instance} if instance else {}
         self._record(t, "llm_call", agent=agent.value, tokens_in=res.tokens_in, tokens_out=res.tokens_out,
-                     latency_s=res.latency_s, cache_hit=res.cache_hit, requests=res.requests)
+                     latency_s=res.latency_s, cache_hit=res.cache_hit, requests=res.requests, **extra)
 
     def _message(self, t: int, sender: AgentName, recipient: AgentName, mtype: MessageType, incident_id: str,
                  action: ProposedAction | None, priority: int, reason: str, in_reply_to: str | None = None,
-                 negotiation_id: str | None = None, round_: int = 0) -> str:
+                 negotiation_id: str | None = None, round_: int = 0, sender_instance: str | None = None,
+                 recipient_instance: str | None = None) -> str:
         self._n_messages += 1
         mid = f"t{t:03d}-M{self._n_messages:04d}"
         msg = AgentMessage(sender=sender, recipient=recipient, message_type=mtype, incident_id=incident_id,
                            proposed_action=action, message_id=mid, timestamp_min=t,
                            priority=min(5, max(1, int(priority))), reason=(reason or "-")[:500],
-                           in_reply_to=in_reply_to, negotiation_id=negotiation_id, round=round_)
+                           in_reply_to=in_reply_to, negotiation_id=negotiation_id, round=round_,
+                           sender_instance=sender_instance, recipient_instance=recipient_instance)
         self._record(t, "agent_message", **msg.model_dump(mode="json"))
         return mid

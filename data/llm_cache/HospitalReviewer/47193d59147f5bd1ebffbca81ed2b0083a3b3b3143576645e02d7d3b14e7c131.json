@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t040-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general treatment capacity and beds available, and accepting this ALS general critical patient does not threaten closer waiting critical burn cases."
+      }
+    ]
+  },
+  "tokens_in": 798,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.430021417036187,
+  "context": null
+}

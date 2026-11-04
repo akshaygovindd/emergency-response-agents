@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t034-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and is the closest capable trauma center, so this load should be accepted."
+      }
+    ]
+  },
+  "tokens_in": 826,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.3128395829699002,
+  "context": null
+}

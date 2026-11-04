@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t091-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-02 should go to INC-22 because it contains an urgency-4 trauma victim and can reach the incident quickly; INC-08 has only lower-urgency general victims, so it loses the contested unit."
+  },
+  "tokens_in": 667,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.1746564999921247,
+  "context": null
+}

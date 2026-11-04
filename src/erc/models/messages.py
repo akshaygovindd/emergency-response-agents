@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from enum import Enum
 
-from pydantic import Field, model_validator
+from pydantic import Field, SerializerFunctionWrapHandler, model_serializer, model_validator
 
 from erc.models.entities import Capability, ResponderType, Severity, StrictModel
 
@@ -43,6 +43,17 @@ class ActionType(str, Enum):
     ASSIGN_RESPONDER = "assign_responder"
     ADMIT_PATIENT = "admit_patient"
     DIVERT_PATIENT = "divert_patient"
+    LOAN_STAFF = "loan_staff"                 # v3: lend doctor + nurse team(s) and a treatment slot to another hospital
+
+
+class LoanSpec(StrictModel):
+    """Terms of a staff loan. Counts and durations are checked by the validator, not here."""
+    lender_id: str
+    borrower_id: str
+    capability: Capability
+    teams: int
+    duration_min: int
+    serves: list[str] = Field(default_factory=list, description="Queued victims this loan is meant to help")
 
 
 class ProposedAction(StrictModel):
@@ -51,10 +62,12 @@ class ProposedAction(StrictModel):
     responder_id: str | None = None
     hospital_id: str | None = None
     victim_ids: list[str] = Field(default_factory=list)
+    loan: LoanSpec | None = Field(default=None, exclude_if=lambda v: v is None)   # omitted unless a loan
 
     @model_validator(mode="after")
     def _has_required_ids(self) -> ProposedAction:
         need = {
+            ActionType.LOAN_STAFF: ("loan", self.loan),
             ActionType.ASSIGN_AMBULANCE: ("ambulance_id", self.ambulance_id),
             ActionType.ASSIGN_RESPONDER: ("responder_id", self.responder_id),
             ActionType.ADMIT_PATIENT: ("hospital_id", self.hospital_id),
@@ -84,10 +97,30 @@ class AgentMessage(StrictModel):
     negotiation_id: str | None = None
     round: int = Field(default=0, ge=0, le=MAX_NEGOTIATION_ROUNDS)
     in_reply_to: str | None = None
+    # v3: one Hospital Coordination instance per hospital (ids like hospital_coordination:H-T)
+    sender_instance: str | None = Field(default=None, exclude_if=lambda v: v is None)
+    recipient_instance: str | None = Field(default=None, exclude_if=lambda v: v is None)
+
+    @property
+    def sender_id(self) -> str:
+        return f"{self.sender.value}:{self.sender_instance}" if self.sender_instance else self.sender.value
+
+    @property
+    def recipient_id(self) -> str:
+        return f"{self.recipient.value}:{self.recipient_instance}" if self.recipient_instance else self.recipient.value
+
+    @model_serializer(mode="wrap")
+    def _with_ids(self, handler: SerializerFunctionWrapHandler) -> dict:
+        data = handler(self)
+        if self.sender_instance:
+            data["sender_id"] = self.sender_id
+        if self.recipient_instance:
+            data["recipient_id"] = self.recipient_id
+        return data
 
     @model_validator(mode="after")
     def _protocol_rules(self) -> AgentMessage:
-        if self.sender == self.recipient:
+        if self.sender == self.recipient and self.sender_id == self.recipient_id:
             raise ValueError("An agent cannot message itself")
         if self.message_type in ACTION_REQUIRED and self.proposed_action is None:
             raise ValueError(f"{self.message_type.value} requires a proposed_action")
@@ -110,6 +143,10 @@ class RejectionReason(str, Enum):
     HOSPITAL_LACKS_CAPABILITY = "hospital_lacks_capability"
     ROUTING_CONFLICT = "routing_conflict"
     STAFF_UNAVAILABLE = "staff_unavailable"
+    LOAN_NOT_NEEDED = "loan_not_needed"
+    LENDER_NO_IDLE_SLOT = "lender_no_idle_slot"
+    LENDER_UNDERSTAFFED = "lender_understaffed"
+    BORROWER_BEDS_FULL = "borrower_beds_full"
     INCIDENT_NOT_ACTIVE = "incident_not_active"
     MALFORMED = "malformed"
 

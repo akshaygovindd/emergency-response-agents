@@ -73,6 +73,24 @@ class RunMetrics(BaseModel):
     admission_rounds_max: int = 0
     admission_fallbacks: int = 0                 # unparseable LLM answers + fixed-rule fallbacks
     admission_rule_redirects: int = 0            # agents mode: rule redirected to another hospital
+    # Treatment wait of critical victims after reaching a hospital (pre-registered for v3; defined for every version)
+    critical_handed_over: int = 0
+    critical_treated_within_n_rate: float | None = None      # P1: of ALL critical victims, started within N min of hospital arrival
+    critical_treatment_wait_mean: float | None = None        # P2: treated victims only
+    critical_never_started: int = 0                          # critical victims who never started (incl. never reached a hospital)
+    # Staff loans (v3). Conflict and admission metrics above never count LN- messages.
+    loan_requests: int = 0
+    loans_accepted: int = 0                      # lender ACCEPT messages (rule accepts in agents mode)
+    loans_rejected: int = 0
+    loans_countered: int = 0
+    loan_counters_accepted: int = 0              # borrower accepted the lender's counter
+    loan_rounds_mean: float | None = None
+    loan_rounds_max: int = 0
+    loans_arbitrated: int = 0
+    loan_fallbacks: int = 0                      # unparseable answers + fixed-rule fallbacks
+    loan_redirects: int = 0                      # agents mode: rule moved the request to another lender
+    loans_executed: int = 0                      # loans the engine actually started
+    loan_team_minutes: int = 0                   # teams x planned minutes at the borrower
     # Cost (zero for baselines). Tokens are logical: what the run costs without caching.
     llm_calls: int = 0                           # agent runs
     model_requests: int = 0                      # model calls inside agent runs
@@ -86,6 +104,36 @@ class RunMetrics(BaseModel):
 
 def _maybe(values: list[float], fn) -> float | None:
     return float(fn(values)) if values else None
+
+
+def treatment_wait_metrics(state: SimulationState, log: EventLog, n_min: int | None = None) -> dict:
+    """P1 and P2 of docs/V3_DESIGN.md. Works on any version's log, so v3 rows and saved v2 logs are measured alike.
+
+    Hospital arrival = the handover_complete event; treatment start = treatment_started.
+    P1 (denominator: ALL critical victims in the run): a critical victim counts only if treatment started within N
+    minutes of hospital arrival; one who never reached a hospital, or never started, counts as not treated in time.
+    P2: mean wait (start minus arrival) over critical victims whose treatment started; victims who never started are
+    reported separately in critical_never_started, so selection effects stay visible.
+    """
+    n = SETTINGS.loans.treatment_wait_n_min if n_min is None else n_min
+    arrived = {v: e["t"] for e in log.of_kind("handover_complete") for v in e["victim_ids"]}
+    started = {e["victim_id"]: e["t"] for e in log.of_kind("treatment_started")}
+    critical = [v.victim_id for v in state.victims() if v.is_critical]
+    treated = [v for v in critical if v in started and v in arrived]
+    waits = [started[v] - arrived[v] for v in treated]
+    return {
+        "critical_handed_over": sum(v in arrived for v in critical),
+        "critical_treated_within_n_rate": (sum(w <= n for w in waits) / len(critical)) if critical else None,
+        "critical_treatment_wait_mean": _maybe(waits, np.mean),
+        "critical_never_started": len(critical) - len(treated),
+    }
+
+
+def _loan_lender(reply: dict, loan_msgs: list[dict]) -> str | None:
+    """The lender of a negotiation is whoever the request in the same thread was addressed to (changes on re-request)."""
+    asked = [m for m in loan_msgs if m["negotiation_id"] == reply["negotiation_id"] and m["message_type"] == "request"
+             and m["message_id"] <= reply["message_id"]]
+    return asked[-1]["recipient_instance"] if asked else None
 
 
 def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetrics:
@@ -132,13 +180,21 @@ def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetr
     def is_admission(m: dict) -> bool:
         return str(m.get("negotiation_id") or "").startswith("ADM-")
 
+    def is_loan(m: dict) -> bool:
+        return str(m.get("negotiation_id") or "").startswith("LN-")
+
     rounds: dict[str, int] = {}
     adm_rounds: dict[str, int] = {}
+    loan_rounds: dict[str, int] = {}
     for m in messages:
         if m.get("negotiation_id"):
-            target = adm_rounds if is_admission(m) else rounds
+            target = adm_rounds if is_admission(m) else loan_rounds if is_loan(m) else rounds
             target[m["negotiation_id"]] = max(target.get(m["negotiation_id"], 0), m.get("round", 0))
     adm = [m for m in messages if is_admission(m)]
+    loan_msgs = [m for m in messages if is_loan(m)]
+    answers = [m for m in loan_msgs if m["sender"] == "hospital_coordination"
+               and m["message_type"] in ("accept", "reject", "counter_proposal")]
+    lender_replies = [m for m in answers if m["sender_instance"] == _loan_lender(m, loan_msgs)]
     from_hospital = [m for m in adm if m["sender"] == "hospital_coordination"]
 
     detected = log.of_kind("conflict_detected")
@@ -184,7 +240,8 @@ def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetr
         resolved_by_fallback=methods.get("fallback", 0),
         counters_accepted=counters_accepted,
         negotiations=len(rounds),
-        counter_proposals=sum(m.get("message_type") == "counter_proposal" for m in messages if not is_admission(m)),
+        counter_proposals=sum(m.get("message_type") == "counter_proposal" for m in messages
+                              if not is_admission(m) and not is_loan(m)),
         admission_requests=len(adm_rounds),
         admissions_accepted=sum(m["message_type"] == "accept" for m in from_hospital),
         admissions_rejected=sum(m["message_type"] == "reject" for m in from_hospital),
@@ -195,6 +252,19 @@ def compute_metrics(state: SimulationState, log: EventLog, mode: str) -> RunMetr
         admission_fallbacks=len(log.of_kind("admission_fallback")),
         admission_rule_redirects=len(log.of_kind("admission_redirect")),
         mean_negotiation_rounds=_maybe(list(rounds.values()), np.mean),
+        loan_requests=len(loan_rounds),
+        loans_accepted=sum(m["message_type"] == "accept" for m in lender_replies),
+        loans_rejected=sum(m["message_type"] == "reject" for m in lender_replies),
+        loans_countered=sum(m["message_type"] == "counter_proposal" for m in lender_replies),
+        loan_counters_accepted=sum(m["message_type"] == "accept" for m in answers if m not in lender_replies),
+        loan_rounds_mean=_maybe(list(loan_rounds.values()), np.mean),
+        loan_rounds_max=max(loan_rounds.values(), default=0),
+        loans_arbitrated=sum(e.get("method") == "arbitrated" for e in log.of_kind("loan_resolved")),
+        loan_fallbacks=len(log.of_kind("loan_fallback")),
+        loan_redirects=len(log.of_kind("loan_redirect")),
+        loans_executed=len(log.of_kind("loan_started")),
+        loan_team_minutes=sum(e["teams"] * (e["ends_min"] - e["arrive_min"]) for e in log.of_kind("loan_started")),
+        **treatment_wait_metrics(state, log),
         llm_calls=len(llm),
         model_requests=sum(e.get("requests", 1) for e in llm),
         tokens_in=tokens_in,

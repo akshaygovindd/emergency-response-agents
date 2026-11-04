@@ -9,6 +9,7 @@ from __future__ import annotations
 from erc.models.entities import Capability, Incident, UnitStatus, VictimStatus
 from erc.models.messages import ActionType, ProposedAction, RejectionReason, ValidationResult
 from erc.models.state import SimulationState
+from erc.sim.loans import check_loan
 
 R = RejectionReason
 
@@ -37,6 +38,7 @@ def validate(action: ProposedAction, incident_id: str, state: SimulationState) -
         ActionType.ASSIGN_RESPONDER: _check_responder,
         ActionType.ADMIT_PATIENT: _check_admission,
         ActionType.DIVERT_PATIENT: _check_admission,
+        ActionType.LOAN_STAFF: _check_loan,
     }
     return checks[action.action_type](action, incident, state)
 
@@ -119,3 +121,7 @@ def _check_admission(action: ProposedAction, incident: Incident, state: Simulati
         return _reject(R.HOSPITAL_FULL,
                        f"{hospital.hospital_id} ER would hold {load} of {hospital.er_capacity}")
     return _ok()
+
+
+def _check_loan(action: ProposedAction, incident: Incident, state: SimulationState) -> ValidationResult:
+    return check_loan(state, action.loan)

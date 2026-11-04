@@ -230,3 +230,38 @@ class ResponderTeam(StrictModel):
     @property
     def is_available(self) -> bool:
         return self.status == UnitStatus.AVAILABLE
+
+
+# ───────────────────── Staff loans (v3) ─────────────────────
+class LoanPhase(str, Enum):
+    TRANSFER_OUT = "transfer_out"
+    ACTIVE = "active"
+    RECALLED = "recalled"
+    TRANSFER_BACK = "transfer_back"
+    RETURNED = "returned"
+
+
+class LoanRecord(StrictModel):
+    """One staff loan between hospitals. Owned and updated only by the engine."""
+    loan_id: str
+    lender_id: str
+    borrower_id: str
+    capability: Capability
+    teams: int = Field(ge=1)
+    duration_min: int = Field(gt=0)
+    doctor_ids: list[str]
+    nurse_ids: list[str]
+    phase: LoanPhase = LoanPhase.TRANSFER_OUT
+    depart_min: int
+    arrive_min: int
+    ends_min: int
+    back_min: int | None = None
+    slots_open: int = Field(default=0, ge=0, description="Extra slots currently open at the borrower")
+
+    @property
+    def staff_ids(self) -> list[str]:
+        return [*self.doctor_ids, *self.nurse_ids]
+
+    @property
+    def in_flight(self) -> bool:
+        return self.phase != LoanPhase.RETURNED

@@ -5,7 +5,7 @@ import erc.config as config
 import erc.eval.experiment as exp
 from erc.config import Mode, ScenarioName
 
-V = "v2"
+V = "v3"
 
 
 @pytest.fixture(autouse=True)
@@ -69,7 +69,7 @@ def test_v1_write_needs_the_explicit_flag(tmp_path):
 
 def test_unknown_version_is_refused():
     with pytest.raises(ValueError):
-        exp.run_experiment([Mode.NAIVE], [ScenarioName.NORMAL], seeds=[42], version="v3", progress=False)
+        exp.run_experiment([Mode.NAIVE], [ScenarioName.NORMAL], seeds=[42], version="v9", progress=False)
 
 
 def test_tables_refuse_to_mix_versions():

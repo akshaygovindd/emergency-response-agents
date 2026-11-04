@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t040-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "We have sufficient general capacity and idle team availability; this short loan should not disrupt our own queued or en-route patients."
+      }
+    ]
+  },
+  "tokens_in": 574,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.0655493749654852,
+  "context": null
+}

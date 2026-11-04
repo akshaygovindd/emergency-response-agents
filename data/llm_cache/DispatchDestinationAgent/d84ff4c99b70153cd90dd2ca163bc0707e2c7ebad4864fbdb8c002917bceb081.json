@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-G for V-12-1 and V-12-2.",
+  "tokens_in": 1322,
+  "tokens_out": 74,
+  "requests": 2,
+  "latency_s": 2.131556583044585,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t058-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1",
+            "V-12-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "General hospital has nearby capacity and can treat both general victims.",
+        "time_min": 58
+      }
+    ],
+    "invalid": []
+  }
+}

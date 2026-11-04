@@ -19,8 +19,8 @@ LOG_DIR = PROJECT_ROOT / "logs"            # root; runs live in logs/<version>/<
 RESULTS_DIR = PROJECT_ROOT / "results"     # root; tables live in results/<version>/
 
 # Experiment versions keep results from different system designs apart. v1 is the frozen pilot.
-KNOWN_VERSIONS = ("v1", "v2")
-PROTECTED_VERSIONS = ("v1",)               # never written without an explicit --allow-v1-write
+KNOWN_VERSIONS = ("v1", "v2", "v3")
+PROTECTED_VERSIONS = ("v1", "v2")         # frozen: never written without an explicit --allow-v1-write
 PRINT_VERSION = "v1"                       # default when only printing saved results
 
 
@@ -99,6 +99,15 @@ class TreatmentConfig(BaseModel):
     duration_min: dict[int, int] = {1: 15, 2: 20, 3: 30, 4: 45, 5: 60}
 
 
+class LoanConfig(BaseModel):
+    """v3 staff sharing: a loan moves one treatment slot and one doctor + nurse team between hospitals."""
+    min_duration_min: int = 20
+    max_duration_min: int = 60
+    default_duration_min: int = 30     # duration of rule-made requests
+    max_teams: int = 2
+    treatment_wait_n_min: int = 10     # pre-registered N: critical treatment must start within N min of hospital arrival
+
+
 # ───────────────────────── Scenarios ─────────────────────────
 class ScenarioConfig(BaseModel):
     name: ScenarioName
@@ -147,6 +156,7 @@ class Settings(BaseModel):
     deterioration: DeteriorationConfig = DeteriorationConfig()
     treatment: TreatmentConfig = TreatmentConfig()
     llm: LLMConfig = LLMConfig()
+    loans: LoanConfig = LoanConfig()
 
 
 SETTINGS = Settings()

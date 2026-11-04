@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-B for V-10-1.",
+  "tokens_in": 1265,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.316845166031271,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t040-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-10",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-10-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with available capacity for a general ALS victim.",
+        "time_min": 40
+      }
+    ],
+    "invalid": []
+  }
+}
