@@ -7,7 +7,9 @@ dashboard/ui/base.js, the page's own files, the Lucide icon sprite, the Inter fo
 from __future__ import annotations
 
 import base64
+import functools
 import json
+import subprocess
 from pathlib import Path
 
 from erc.dashboard.replay import ROOT
@@ -16,6 +18,29 @@ DASHBOARD = ROOT / "dashboard"
 UI_DIR = DASHBOARD / "ui"
 ASSETS_DIR = DASHBOARD / "assets"
 FONT_FILES = {400: "Inter-Regular.woff2", 500: "Inter-Medium.woff2", 600: "Inter-SemiBold.woff2"}
+
+
+@functools.lru_cache(maxsize=1)
+def build_id() -> str:
+    """Short commit hash of the code on disk, shown muted in the rail footer so a deployed app can be told apart from a stale one."""
+    root = DASHBOARD.parent
+    try:
+        out = subprocess.run(["git", "rev-parse", "--short=7", "HEAD"], cwd=root, capture_output=True, text=True, timeout=5)
+        if out.returncode == 0 and out.stdout.strip():
+            return out.stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        pass
+    try:                                                   # no git binary: read the ref by hand
+        head = (root / ".git" / "HEAD").read_text().strip()
+        ref = head.removeprefix("ref: ")
+        return (root / ".git" / ref).read_text().strip()[:7] if head.startswith("ref: ") else head[:7]
+    except OSError:
+        return ""
+
+
+def with_build(html: str) -> str:
+    """Expose the build id to the page's script (window.__BUILD) without touching its data."""
+    return html.replace("<head>", f'<head><script>window.__BUILD={json.dumps(build_id())};</script>', 1)
 
 
 def json_for_script(data) -> str:
@@ -54,8 +79,8 @@ def render_page(page_dir: Path, data: dict, *, body_class: str = "", assets_dir:
     if body_class:
         html = html.replace("<body", f'<body class="{body_class}"', 1)
     # The data goes in last so nothing inside it can be mistaken for a placeholder.
-    return (html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__SPRITE__", icon_sprite(assets_dir))
-            .replace("__DATA__", json_for_script(data)))
+    return with_build(html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__SPRITE__", icon_sprite(assets_dir))
+                      .replace("__DATA__", json_for_script(data)))
 
 
 def page_stamp(page_dir: Path, ui_dir: Path = UI_DIR) -> float:

@@ -82,15 +82,15 @@ def render_replay_app(bundle: dict, catalog: dict, app_dir: Path = APP_DIR, asse
     mode "page" is the full-window page; "compare" is the compact map + KPI cards used twice on the Compare page;
     "inline" hides the rail and top bar so the whole player can sit inside another page (What-if).
     """
-    from erc.dashboard.pages import base_css, icon_sprite as sprite_all
+    from erc.dashboard.pages import base_css, icon_sprite as sprite_all, with_build
     html = (app_dir / "app.html").read_text()
     if mode != "page":
         html = html.replace("<body", f'<body class="mode-{mode}"', 1)
     css = base_css(assets_dir) + "\n" + (app_dir / "app.css").read_text()
     js = (app_dir / "app.js").read_text()
     # The data goes in last so nothing inside it can be mistaken for a placeholder.
-    return (html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__SPRITE__", sprite_all(assets_dir))
-            .replace("__BUNDLE__", _json_for_script(bundle)).replace("__CATALOG__", _json_for_script(catalog)))
+    return with_build(html.replace("/*__CSS__*/", css).replace("/*__JS__*/", js).replace("__SPRITE__", sprite_all(assets_dir))
+                      .replace("__BUNDLE__", _json_for_script(bundle)).replace("__CATALOG__", _json_for_script(catalog)))
 
 
 def app_stamp(app_dir: Path = APP_DIR) -> float:

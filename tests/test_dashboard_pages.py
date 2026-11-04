@@ -58,3 +58,11 @@ def test_compare_page_files_exist_and_use_the_shared_shell():
     assert "UI.mountRail(\"Compare\")" in page and "UI.runPicker" in page and "contentWindow.__app" in page
     html = (ROOT / "dashboard" / "compare_app" / "page.html").read_text()
     assert 'id="frameA"' in html and 'id="frameB"' in html and 'id="diff"' in html and 'class="playbar"' in html
+
+
+def test_build_id_is_a_short_hash_and_is_injected_into_pages():
+    from erc.dashboard.pages import build_id, with_build
+    bid = build_id()
+    assert bid == "" or (len(bid) == 7 and all(c in "0123456789abcdef" for c in bid))
+    html = with_build("<html><head><title>x</title></head></html>")
+    assert f'<head><script>window.__BUILD="{bid}";</script>' in html
