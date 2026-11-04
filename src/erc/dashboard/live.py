@@ -78,3 +78,32 @@ def resources_for_frame(amb_rows: list[list], team_rows: list[list], team_kinds:
     teams = [[kind, row[2] != "available"] for kind, row in zip(team_kinds, team_rows)]
     return {"amb": amb, "teams": teams,
             "teams_busy": sum(busy for _, busy in teams), "teams_free": sum(not busy for _, busy in teams)}
+
+
+def utilization_by_minute(events: list[dict], scenario: dict, staff: list[list[list[int]]], last_minute: int) -> list[dict]:
+    """Per minute, for the five resources the brief names: {now, avg, busy, total} (now and avg are fractions 0-1).
+
+    ambulances / teams: busy share from the run's snapshots (the same numbers the results table averages, so
+    the last minute's `avg` equals the results' utilization); doctors / nurses: share with a patient in
+    treatment; ER: occupied waiting beds over total ER capacity. `avg` is the mean of `now` from minute 0 up to
+    that minute.
+    """
+    snaps = {e["time_min"]: e for e in events if e["kind"] == "snapshot"}
+    n_amb, n_team = len(scenario["ambulances"]), len(scenario["responders"])
+    caps = {h["hospital_id"]: h["er_capacity"] for h in scenario["hospitals"]}
+    totals = staff_totals(scenario)
+    n_doc, n_nurse = (sum(v[k] for v in totals.values()) for k in ("doctors", "nurses"))
+    sums = {k: 0.0 for k in ("amb", "teams", "doctors", "nurses", "er")}
+    out = []
+    for t in range(last_minute + 1):
+        s = snaps[t]
+        rows = {"amb": (s["ambulances_busy"], n_amb), "teams": (n_team - s["responders_available"], n_team),
+                "doctors": (sum(h[0] for h in staff[t]), n_doc), "nurses": (sum(h[1] for h in staff[t]), n_nurse),
+                "er": (sum(round(s["er_occupancy"][h] * c) for h, c in caps.items()), sum(caps.values()))}
+        frame = {}
+        for key, (busy, total) in rows.items():
+            now = busy / total if total else 0.0
+            sums[key] += now
+            frame[key] = {"busy": busy, "total": total, "now": round(now, 4), "avg": round(sums[key] / (t + 1), 4)}
+        out.append(frame)
+    return out

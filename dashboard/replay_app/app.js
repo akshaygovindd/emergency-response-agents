@@ -15,7 +15,7 @@
   const setDensity = () => {
     const w = innerWidth, h = innerHeight, c = document.body.className, mode = /mode-/.test(c);
     const [wl, wm] = /mode-compare/.test(c) ? [840, 700] : /mode-inline/.test(c) ? [1700, 1400] : [1780, 1480];
-    document.body.dataset.d = (w >= wl && (h >= 960 || mode)) ? "lg" : (w >= wm && (h >= 760 || mode)) ? "md" : "sm";
+    document.body.dataset.d = (w >= wl && (h >= 1060 || mode)) ? "lg" : (w >= wm && (h >= 760 || mode)) ? "md" : "sm";
   };
   setDensity(); addEventListener("resize", setDensity);
   const ico = (n, s = 16, extra = "") => `<svg class="i ${extra}" width="${s}" height="${s}"><use href="#i-${n}"/></svg>`;
@@ -27,6 +27,8 @@
     executed: "var(--violet)", info: "var(--text-3)", escalate: "var(--warn)" };
   const STORY = new Set(["conflict", "counter", "accept", "reject", "escalate", "executed"]);
   const TEAM_ICON = { fire: "flame", rescue: "shield-check", medical: "activity" };
+  const AGENT_NAMES = ["Assessment", "Dispatch", "Hospital Coordination", "Resource Allocation"];
+  const AGENT_COLOR = { idle: "var(--text-3)", working: "var(--ok)", negotiating: "var(--warn)" };
   const TEAM_LABEL = { fire: "Fire", rescue: "Rescue", medical: "Medical" };
   const SYSTEM_LABEL = { naive: "Naive", greedy: "Greedy", agents: "Agents", negotiation: "Negotiation", oracle: "Oracle" };
   const SCENARIO_LABEL = { normal: "Normal", surge: "Surge", bottleneck: "Bottleneck" };
@@ -440,6 +442,7 @@
     `<div class="kpi-mid"><div class="kpi-value">${val}${of !== null ? `<span class="kpi-of"> / ${of}</span>` : ""}</div>${spark(series, now, tone)}</div><div class="kpi-note">${esc(note)}</div></div>`;
 
   function panels(m, frame) {
+    const CMP = document.body.classList.contains("mode-compare");
     const k = frame.k, pct = k.crit_n ? Math.round((100 * k.crit_ok) / k.crit_n) + "%" : null;
     $("kpis").innerHTML =
       kpi("", "shield-check", "var(--ok)", "Critical in time", k.crit_ok, k.crit_n, pct ? `${pct} · ${k.crit_n} critical so far` : "none critical yet", SERIES.crit_ok, m,
@@ -448,17 +451,36 @@
         `${k.reached} of the ${k.arrived} patients who have arrived have had first medical contact.`) +
       kpi("", "heart-pulse", k.expectant ? "var(--text)" : "var(--text-2)", "Expectant", k.expectant, null, "missed deadline", SERIES.expectant, m,
         "Critical patients whose deadline passed without anyone reaching them in time (cumulative).") +
-      kpi("w3", "git-compare", "var(--warn)", "Conflicts", k.conflicts, null, `${k.negotiated} settled by negotiation`, SERIES.conflicts, m,
+      kpi("w3", "git-compare", "var(--warn)", "Conflicts", k.conflicts, null, (CMP ? `${k.negotiated} negotiated` : `${k.negotiated} settled by negotiation`), SERIES.conflicts, m,
         `${k.conflicts} times two agents wanted the same resource, ${k.negotiated} settled by negotiation.`) +
-      kpi("w3", "clock", "var(--accent)", "Average response", k.resp_avg === null ? "–" : k.resp_avg, null, k.resp_avg === null ? "no patient reached yet" : "minutes to first contact", SERIES.resp_avg, m,
-        "Average minutes from arrival to first medical contact, over patients reached so far.");
+      kpi("w3", "clock", "var(--accent)", (CMP ? "Avg response" : "Average response"), k.resp_avg === null ? "–" : k.resp_avg, null, k.resp_avg === null ? (CMP ? "none reached yet" : "no patient reached yet") : (CMP ? "minutes" : "minutes to first contact"), SERIES.resp_avg, m,
+        "Average minutes from arrival to first medical contact, over patients reached so far.") +
+      (CMP
+        ? kpi("", "ambulance", "var(--violet)", "Ambulances busy", Math.round(100 * frame.u.amb.now) + "%", null, `avg ${Math.round(100 * frame.u.amb.avg)}% so far`, SERIES.crit_ok, m,
+          `${frame.u.amb.busy} of ${frame.u.amb.total} ambulances busy now; average ${Math.round(100 * frame.u.amb.avg)}% over minutes 0 to ${m}.`) : "");
 
-    const r = frame.res, amb = [["available", "free"], ["en_route", "en route"], ["on_scene", "on scene"], ["transporting", "transporting"]];
-    $("resources").innerHTML =
-      `<div class="res-group"><h4>Ambulances</h4><div class="chips">` + amb.map(([s, l]) =>
-        `<span class="chip" style="--tone:${STATUS_COLOR[s]}" data-tip="Ambulances ${l}|${r.amb[s]} of ${B.ambulances.length}"><i></i><b>${r.amb[s]}</b><span>${l}</span></span>`).join("") + `</div></div>` +
-      `<div class="res-group"><h4>Response teams</h4><div class="chips">` + r.teams.map(([kind, busy]) =>
-        `<span class="chip ${busy ? "busy" : "free"}" style="--tone:${busy ? "var(--info)" : "var(--text-3)"}" data-tip="${TEAM_LABEL[kind]} team|${busy ? "busy" : "free"}"><i></i><span style="color:var(--text)">${TEAM_LABEL[kind]}</span><span>${busy ? "busy" : "free"}</span></span>`).join("") + `</div></div>`;
+    const r = frame.res, u = frame.u, ambNote = [["available", "free"], ["en_route", "en route"], ["on_scene", "on scene"], ["transporting", "transporting"]]
+      .map(([k, l]) => `${r.amb[k]} ${l}`).join(", ");
+    const UTIL = [["amb", "Ambulances", `${u.amb.busy} of ${u.amb.total} busy now (${ambNote}).`],
+      ["teams", "First responders", `${u.teams.busy} of ${u.teams.total} response teams (fire, rescue, medical) busy now.`],
+      ["doctors", "Doctors", `${u.doctors.busy} of ${u.doctors.total} doctors treating a patient now.`],
+      ["nurses", "Nurses", `${u.nurses.busy} of ${u.nurses.total} nurses treating a patient now.`],
+      ["er", "ER capacity", `${u.er.busy} of ${u.er.total} ER waiting beds occupied now.`]];
+    const share = (x) => Math.round(100 * x) + "%";
+    $("resources").innerHTML = `<div class="section-head"><h2>Utilization</h2><span class="sub">now, and average so far</span></div>` + UTIL.map(([k, label, tip]) =>
+      `<div class="util-row" data-tip="${esc(label + "|" + tip + " Average " + share(u[k].avg) + " over minutes 0 to " + m + ".")}"><span class="util-name">${label}</span>` +
+      `<span class="util-bar"><i style="width:${share(u[k].now)}"></i><u style="left:${share(u[k].avg)}"></u></span>` +
+      `<span class="util-val"><b>${share(u[k].now)}</b><small>avg ${share(u[k].avg)}</small></span></div>`).join("");
+
+    $("agents").innerHTML = `<div class="section-head"><h2>Agents</h2><span class="sub">${B.meta.has_agents ? "status at this minute" : ""}</span></div>` + (!B.meta.has_agents
+      ? `<div class="empty" style="padding:2px 0 6px">This system has no agents: Python allocates resources by fixed rules.</div>`
+      : `<div class="ag-grid">` + frame.ag.map((a, i) => {
+        const tone = AGENT_COLOR[a.status], open = a.pending.reduce((n, [, c]) => n + c, 0);
+        const pend = a.pending.map(([l, c]) => `${c} ${l}`).join("; ");
+        return `<div class="ag"><div class="ag-top"><i class="dot${a.status === "idle" ? "" : " live"}" style="--tone:${tone}"></i><b>${AGENT_NAMES[i]}</b>` +
+          `<span class="ag-pend${open ? " has" : ""}" data-tip="${esc("Pending|" + pend)}">${open} pending</span></div>` +
+          `<div class="ag-last" data-tip="${esc(AGENT_NAMES[i] + " (" + a.status + ")|" + (a.last ? "Minute " + a.last_t + ": " + a.last : "No action yet"))}"><span class="ag-status" style="--tone:${tone}">${a.status}</span>${a.last ? esc(a.last) : `<span class="none">no action yet</span>`}</div></div>`;
+      }).join("") + `</div>`);
 
     $("hosps").innerHTML = B.hospitals.map((h, i) => {
       const [er, , promised, status] = frame.h[i], color = HOSPITAL_COLOR[status], cap = h.er_capacity;
@@ -467,7 +489,7 @@
       const [dr, rn] = frame.s[i];
       return `<div class="card hosp" data-tip="${esc(h.name + "|" + h.id + " - " + er + " of " + cap + " ER beds in use" + (promised ? "|" + promised + " more on the way" : ""))}">` +
         `<div class="hosp-top"><span class="hosp-name">${esc(h.name)}</span><span class="status" style="--tone:${color}"><i></i>${status}</span></div>` +
-        `<div class="beds">${beds}</div><div class="hosp-foot"><span>${er} of ${cap} beds in use${promised ? ` · +${promised} coming` : ""}</span><span>${h.doctors - dr} doctors, ${h.nurses - rn} nurses free</span></div></div>`;
+        `<div class="beds">${beds}</div><div class="hosp-foot"><span>${er}/${cap} beds in use${promised ? ` · +${promised} coming` : ""}</span><span>${h.doctors - dr} doctors, ${h.nurses - rn} nurses free</span></div></div>`;
     }).join("");
 
     renderTimeline(frame.n);
