@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t119-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room and free general/trauma treatment slots, and this general ALS patient should be accepted rather than preserved capacity is not needed for any closer critical patient."
+      }
+    ]
+  },
+  "tokens_in": 856,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.332816999987699,
+  "context": null
+}

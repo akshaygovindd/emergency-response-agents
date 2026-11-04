@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-22 with both burn victims.",
+  "tokens_in": 4585,
+  "tokens_out": 87,
+  "requests": 2,
+  "latency_s": 2.6734137919847853,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t111-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-22-2",
+            "V-22-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest urgent burn victims need rapid transport and one needs ALS.",
+        "time_min": 111
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "output": "Proposed AMB-01 for INC-21, INC-22, and INC-19.",
+  "tokens_in": 4744,
+  "tokens_out": 217,
+  "requests": 2,
+  "latency_s": 2.727298707992304,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-21-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS unit for the highest-urgency ALS patient.",
+        "time_min": 117
+      },
+      {
+        "proposal_id": "t117-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-22-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "ALS burn victim is urgent and this unit is nearest among free options.",
+        "time_min": 117
+      },
+      {
+        "proposal_id": "t117-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-19",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-19-1"
+          ]
+        },
+        "priority": 3,
+        "reason": "Nearest ALS transport for an urgent medical victim.",
+        "time_min": 117
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t101-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and no closer critical patient must be held for, so this load can be admitted there."
+      }
+    ]
+  },
+  "tokens_in": 681,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.2308154169586487,
+  "context": null
+}

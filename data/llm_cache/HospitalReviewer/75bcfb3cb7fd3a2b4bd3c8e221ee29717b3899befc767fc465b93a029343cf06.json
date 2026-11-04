@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t033-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both trauma patients and has the needed trauma slot and beds, so accepting does not jeopardize closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 872,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.2502429999876767,
+  "context": null
+}

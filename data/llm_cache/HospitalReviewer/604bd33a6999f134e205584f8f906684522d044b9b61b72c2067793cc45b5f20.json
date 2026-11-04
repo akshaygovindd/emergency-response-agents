@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t120-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capability and open treatment slots/beds, and accepting this patient does not strand any closer critical burn victim needing the last beds."
+      }
+    ]
+  },
+  "tokens_in": 627,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.6887519159936346,
+  "context": null
+}

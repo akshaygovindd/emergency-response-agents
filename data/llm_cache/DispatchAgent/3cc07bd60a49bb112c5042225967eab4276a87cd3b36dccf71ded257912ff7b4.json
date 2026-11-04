@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-03 for INC-22 to pick up V-22-2 and V-22-3.",
+  "tokens_in": 4653,
+  "tokens_out": 103,
+  "requests": 2,
+  "latency_s": 2.6216782919946127,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t114-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-22-2",
+            "V-22-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-urgency incident with urgent general victims that this ALS unit can reach quickly.",
+        "time_min": 114
+      }
+    ],
+    "invalid": []
+  }
+}

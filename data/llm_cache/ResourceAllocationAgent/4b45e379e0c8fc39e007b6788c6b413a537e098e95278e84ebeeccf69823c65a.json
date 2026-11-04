@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t116-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "P01 has the longest-waiting incident and reaches two victims, including one urgency-4, with the fastest arrival on the contested ambulance. The other proposals each serve only one urgency-4 victim, so they lose out on whole-system impact."
+  },
+  "tokens_in": 757,
+  "tokens_out": 79,
+  "requests": 1,
+  "latency_s": 1.51743725000415,
+  "context": null
+}

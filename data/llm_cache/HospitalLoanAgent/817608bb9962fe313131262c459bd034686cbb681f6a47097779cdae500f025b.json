@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "One queued general patient needs coverage; H-G is the only listed lender and 20 minutes should cover the queue plus travel buffer."
+      }
+    ]
+  },
+  "tokens_in": 531,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.0747104159672745,
+  "context": null
+}

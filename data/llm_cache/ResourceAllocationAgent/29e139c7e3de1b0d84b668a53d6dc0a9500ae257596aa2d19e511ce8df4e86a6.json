@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t071-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-04 should go to t071-P01 because it reaches an urgency-4 ALS burn victim fastest and that victim has already waited long enough to prioritize speed. The other two incidents have no unclaimed ambulance alternatives available, so no counter-proposals can be offered."
+  },
+  "tokens_in": 710,
+  "tokens_out": 83,
+  "requests": 1,
+  "latency_s": 1.0794384999899194,
+  "context": null
+}

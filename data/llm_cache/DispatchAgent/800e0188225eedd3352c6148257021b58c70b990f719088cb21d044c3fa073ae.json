@@ -1,0 +1,57 @@
+{
+  "output": "Proposed FIRE-1 to INC-14, RESCUE-1 to INC-17, and MED-1 to INC-17.",
+  "tokens_in": 4571,
+  "tokens_out": 179,
+  "requests": 2,
+  "latency_s": 2.6593173329601996,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t085-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "FIRE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free fire team to the fire incident with a critical ALS victim.",
+        "time_min": 85
+      },
+      {
+        "proposal_id": "t085-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "RESCUE-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free rescue team to the highest-priority ALS-heavy incident.",
+        "time_min": 85
+      },
+      {
+        "proposal_id": "t085-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Closest free medical team to support the urgent ALS victims there.",
+        "time_min": 85
+      }
+    ],
+    "invalid": []
+  }
+}

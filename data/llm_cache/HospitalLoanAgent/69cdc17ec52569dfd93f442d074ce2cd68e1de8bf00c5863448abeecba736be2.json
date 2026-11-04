@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one general slot/team to cover a critical queued ALS patient and prevent delay to our urgent general demand."
+      }
+    ]
+  },
+  "tokens_in": 614,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 1.3355857499991544,
+  "context": null
+}

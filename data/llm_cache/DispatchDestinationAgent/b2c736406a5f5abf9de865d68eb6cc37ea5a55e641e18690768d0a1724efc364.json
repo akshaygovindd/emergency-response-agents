@@ -1,0 +1,84 @@
+{
+  "output": "Requested destinations for all ambulances; one remains blocked by routing conflict.",
+  "tokens_in": 2939,
+  "tokens_out": 295,
+  "requests": 3,
+  "latency_s": 5.003826499974821,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t060-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-4",
+            "V-17-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center is the closest trauma-capable option for both ALS trauma victims.",
+        "time_min": 60
+      },
+      {
+        "proposal_id": "t060-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "Co-passenger is already routed to the burn unit, so this hospital matches the shared destination.",
+        "time_min": 60
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-13-2"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-13-4 is going to H-B"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      },
+      {
+        "time_min": 60,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

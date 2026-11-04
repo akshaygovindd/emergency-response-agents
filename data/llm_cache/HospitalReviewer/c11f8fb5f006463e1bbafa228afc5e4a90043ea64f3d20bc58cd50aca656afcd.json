@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t099-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has no general slots free, but H-T can take general patients and there is no need to reserve its last bed for closer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 844,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.4899301250115968,
+  "context": null
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t115-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "You have spare general capacity and no critical general queue; this short 1-team loan should be safe."
+      }
+    ]
+  },
+  "tokens_in": 579,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.0057531669735909,
+  "context": null
+}

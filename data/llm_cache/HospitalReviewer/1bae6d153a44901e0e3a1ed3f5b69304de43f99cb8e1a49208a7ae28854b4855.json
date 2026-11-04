@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t100-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T still has trauma capacity and 4 free beds, so it can take both critical trauma victims without displacing higher-priority waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 804,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.5209836660069413,
+  "context": null
+}

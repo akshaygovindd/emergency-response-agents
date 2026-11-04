@@ -1,0 +1,55 @@
+{
+  "output": "AMB-04\u2192H-B submitted; AMB-05 blocked by routing conflict with V-09-2 going to H-G.",
+  "tokens_in": 2468,
+  "tokens_out": 199,
+  "requests": 3,
+  "latency_s": 3.422687916958239,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-24-1",
+            "V-24-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest burn-capable hospital for the burn victim, with general care available for the companion.",
+        "time_min": 117
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 117,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      },
+      {
+        "time_min": 117,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      }
+    ]
+  }
+}

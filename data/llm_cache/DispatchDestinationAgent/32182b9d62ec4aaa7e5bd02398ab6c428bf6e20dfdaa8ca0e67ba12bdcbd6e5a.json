@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-01.",
+  "tokens_in": 2129,
+  "tokens_out": 129,
+  "requests": 3,
+  "latency_s": 3.865632542001549,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-15-1",
+            "V-15-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma-capable hospital with available trauma slot and beds, and H-T is over capacity.",
+        "time_min": 107
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 107,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-15-1",
+            "V-15-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

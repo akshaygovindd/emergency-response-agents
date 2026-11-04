@@ -1,0 +1,72 @@
+{
+  "output": "Two requests submitted; AMB-05 needs a different routing plan.",
+  "tokens_in": 2778,
+  "tokens_out": 212,
+  "requests": 3,
+  "latency_s": 3.622919208020903,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t070-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest burn unit with available burn slots.",
+        "time_min": 70
+      },
+      {
+        "proposal_id": "t070-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-22-1",
+            "V-22-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center with trauma capacity and short transport.",
+        "time_min": 70
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 70,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      },
+      {
+        "time_min": 70,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

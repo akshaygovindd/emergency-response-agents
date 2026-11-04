@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t101-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds available, and accepting this lower-urgency burn patient will not block the critical burn victims who are also closer to H-B."
+      }
+    ]
+  },
+  "tokens_in": 820,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.3399501660023816,
+  "context": null
+}

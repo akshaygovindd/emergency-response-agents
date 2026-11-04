@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t096-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma and has enough beds, and keeping its last trauma slot open is not justified given the listed critical waits."
+      }
+    ]
+  },
+  "tokens_in": 854,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.4961692910292186,
+  "context": null
+}

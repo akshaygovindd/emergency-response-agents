@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-B",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one general slot to cover the current general queue; H-B is the only candidate and a 40-minute loan should cover the queued patient."
+      }
+    ]
+  },
+  "tokens_in": 558,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.2148142090300098,
+  "context": null
+}

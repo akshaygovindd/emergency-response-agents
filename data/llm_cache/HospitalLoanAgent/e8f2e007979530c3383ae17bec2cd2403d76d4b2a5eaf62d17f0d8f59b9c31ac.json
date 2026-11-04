@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one general team to cover the highest-urgency queued general ALS patient now; shortest viable loan from the nearest lender."
+      }
+    ]
+  },
+  "tokens_in": 611,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.1849090830073692,
+  "context": null
+}

@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-01 for INC-21 and INC-03.",
+  "tokens_in": 5735,
+  "tokens_out": 166,
+  "requests": 2,
+  "latency_s": 2.7667895419872366,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t069-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-21-1",
+            "V-21-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest urgency victims at the nearest high-acuity incident.",
+        "time_min": 69
+      },
+      {
+        "proposal_id": "t069-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-03-1",
+            "V-03-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "This incident has multiple urgent victims and the ambulance is close.",
+        "time_min": 69
+      }
+    ],
+    "invalid": []
+  }
+}

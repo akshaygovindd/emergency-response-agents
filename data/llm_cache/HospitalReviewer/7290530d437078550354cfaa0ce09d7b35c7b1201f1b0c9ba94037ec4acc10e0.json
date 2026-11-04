@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t107-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity and beds available, and accepting this critical trauma pair does not block the closer waiting-critical trauma patient who is better matched to H-T."
+      }
+    ]
+  },
+  "tokens_in": 853,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.6423033750033937,
+  "context": null
+}

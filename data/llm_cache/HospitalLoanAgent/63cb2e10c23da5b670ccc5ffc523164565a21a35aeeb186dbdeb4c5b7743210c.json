@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t033-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "We have spare general capacity and idle teams, and no queued or en-route general demand."
+      }
+    ]
+  },
+  "tokens_in": 542,
+  "tokens_out": 56,
+  "requests": 1,
+  "latency_s": 1.346360417024698,
+  "context": null
+}

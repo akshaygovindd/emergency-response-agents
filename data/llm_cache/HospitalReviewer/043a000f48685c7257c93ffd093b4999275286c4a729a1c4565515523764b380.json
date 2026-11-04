@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t082-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center has trauma capacity and beds, and preserving its slots is not necessary here because the critical waiting trauma patients are closer to H-G or equally/less appropriately served there."
+      }
+    ]
+  },
+  "tokens_in": 872,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.667822666990105,
+  "context": null
+}

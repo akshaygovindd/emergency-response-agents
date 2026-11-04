@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one general slot/team to start clearing the general queue, including an urgent ALS case, and H-G is the only candidate with a near travel time."
+      }
+    ]
+  },
+  "tokens_in": 609,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.310159416985698,
+  "context": null
+}

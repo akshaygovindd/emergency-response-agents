@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-T for V-03-2.",
+  "tokens_in": 1259,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 2.238385666976683,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t077-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-03-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with room for an urgent trauma victim.",
+        "time_min": 77
+      }
+    ],
+    "invalid": []
+  }
+}

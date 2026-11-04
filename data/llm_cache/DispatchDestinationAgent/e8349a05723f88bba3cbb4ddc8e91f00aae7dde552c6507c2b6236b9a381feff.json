@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-18-1.",
+  "tokens_in": 1265,
+  "tokens_out": 57,
+  "requests": 2,
+  "latency_s": 2.6683218750404194,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t069-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-18-1"
+          ]
+        },
+        "priority": 4,
+        "reason": "Closest hospital with ample general capacity.",
+        "time_min": 69
+      }
+    ],
+    "invalid": []
+  }
+}

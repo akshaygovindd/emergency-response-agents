@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 for INC-17 with V-17-2 and V-17-3.",
+  "tokens_in": 4613,
+  "tokens_out": 113,
+  "requests": 2,
+  "latency_s": 3.7720967089990154,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-17-2",
+            "V-17-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance for an ALS-need incident with compatible general victims.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

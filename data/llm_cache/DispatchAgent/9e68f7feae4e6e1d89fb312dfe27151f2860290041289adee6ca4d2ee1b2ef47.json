@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-04 to INC-06 for V-06-1.",
+  "tokens_in": 5986,
+  "tokens_out": 84,
+  "requests": 2,
+  "latency_s": 2.3001094170031138,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t073-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest free ambulance for the oldest waiting ALS-needing general victim.",
+        "time_min": 73
+      }
+    ],
+    "invalid": []
+  }
+}

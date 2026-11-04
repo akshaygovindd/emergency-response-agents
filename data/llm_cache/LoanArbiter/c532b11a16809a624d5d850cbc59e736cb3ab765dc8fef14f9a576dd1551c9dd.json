@@ -1,0 +1,18 @@
+{
+  "output": {
+    "allocations": [
+      {
+        "request_id": "LN-t080-01",
+        "lender_id": "H-B",
+        "teams": 1,
+        "duration_min": 12,
+        "reason": "H-B can spare one general team for 12 minutes without risking its own near-term patient coverage, and this resolves the only queued request."
+      }
+    ]
+  },
+  "tokens_in": 319,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.3923942500259727,
+  "context": null
+}

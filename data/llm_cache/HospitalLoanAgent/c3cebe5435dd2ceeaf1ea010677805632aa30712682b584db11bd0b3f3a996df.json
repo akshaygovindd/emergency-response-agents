@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 2,
+        "duration_min": 40,
+        "reason": "Need to cover 2 uncovered general slots for queued patients, including an urgent ALS case, and H-G is the only listed near lender."
+      }
+    ]
+  },
+  "tokens_in": 555,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.1041335830232129,
+  "context": null
+}

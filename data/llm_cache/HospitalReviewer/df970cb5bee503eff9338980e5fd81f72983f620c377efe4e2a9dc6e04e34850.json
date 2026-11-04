@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t120-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and has free beds, and this ambulance carries critical trauma patients that should not be diverted."
+      }
+    ]
+  },
+  "tokens_in": 842,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.5242848750203848,
+  "context": null
+}

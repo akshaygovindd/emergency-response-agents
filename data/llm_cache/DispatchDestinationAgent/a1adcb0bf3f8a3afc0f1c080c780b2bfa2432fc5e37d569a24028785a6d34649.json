@@ -1,0 +1,48 @@
+{
+  "output": "Need a valid hospital for AMB-05 despite the routing conflict.",
+  "tokens_in": 2857,
+  "tokens_out": 168,
+  "requests": 4,
+  "latency_s": 4.451499458053149,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 68,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      },
+      {
+        "time_min": 68,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 68,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      }
+    ]
+  }
+}

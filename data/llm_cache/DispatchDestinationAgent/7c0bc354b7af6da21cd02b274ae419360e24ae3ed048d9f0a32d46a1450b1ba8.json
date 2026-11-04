@@ -1,0 +1,47 @@
+{
+  "output": "Requests submitted for both ambulances.",
+  "tokens_in": 1526,
+  "tokens_out": 129,
+  "requests": 2,
+  "latency_s": 6.564584125007968,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t055-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with available trauma slots for a critical trauma patient.",
+        "time_min": 55
+      },
+      {
+        "proposal_id": "t055-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with open general treatment slots for both ALS general patients.",
+        "time_min": 55
+      }
+    ],
+    "invalid": []
+  }
+}

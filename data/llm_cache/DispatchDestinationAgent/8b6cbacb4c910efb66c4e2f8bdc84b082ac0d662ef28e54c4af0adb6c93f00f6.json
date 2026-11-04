@@ -1,0 +1,29 @@
+{
+  "output": "Requested H-T for V-07-3.",
+  "tokens_in": 1255,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.131869042001199,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t054-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-07-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Trauma specialty with open trauma slots and shortest travel.",
+        "time_min": 54
+      }
+    ],
+    "invalid": []
+  }
+}

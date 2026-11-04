@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t117-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-01 should go to the urgency-5 victim it can reach fastest: INC-21 in 3 minutes. The other two are also urgent, but they are lower priority here because they would be reached later with the same contested unit."
+  },
+  "tokens_in": 707,
+  "tokens_out": 78,
+  "requests": 1,
+  "latency_s": 1.2645858330070041,
+  "context": null
+}

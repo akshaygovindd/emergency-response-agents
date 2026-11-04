@@ -1,0 +1,47 @@
+{
+  "output": "Proposed AMB-01 to INC-11 and AMB-04 to INC-09.",
+  "tokens_in": 4265,
+  "tokens_out": 173,
+  "requests": 2,
+  "latency_s": 2.9186177919618785,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t054-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-01",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "ALS is closest for the highest-urgency ALS trauma victim.",
+        "time_min": 54
+      },
+      {
+        "proposal_id": "t054-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-3",
+            "V-09-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "BLS is closest and can take the general victims, including the most urgent one first.",
+        "time_min": 54
+      }
+    ],
+    "invalid": []
+  }
+}

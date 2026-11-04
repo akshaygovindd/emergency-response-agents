@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t089-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Keep AMB-05 on t089-P01: it reaches a max-urgency burn pair fastest (7 min vs 10) and both victims are urgent. t089-P02 has waited longer, but with no alternative ambulance available in the conflict, it cannot be countered here."
+  },
+  "tokens_in": 662,
+  "tokens_out": 94,
+  "requests": 1,
+  "latency_s": 1.6808307910105214,
+  "context": null
+}

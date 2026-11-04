@@ -1,0 +1,18 @@
+{
+  "output": {
+    "allocations": [
+      {
+        "request_id": "LN-t069-01",
+        "lender_id": "none",
+        "teams": 0,
+        "duration_min": 0,
+        "reason": "No lender options are available, so the request cannot be fulfilled without risking another hospital's staffing."
+      }
+    ]
+  },
+  "tokens_in": 295,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.3585242920089513,
+  "context": null
+}

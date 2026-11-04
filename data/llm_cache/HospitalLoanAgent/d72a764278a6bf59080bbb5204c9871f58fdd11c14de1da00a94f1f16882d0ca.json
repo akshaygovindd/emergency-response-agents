@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t066-02",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "No queued or en-route general critical demand on my side, so I can spare one general team and slot for 40 minutes."
+      }
+    ]
+  },
+  "tokens_in": 569,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.5236822090228088,
+  "context": null
+}

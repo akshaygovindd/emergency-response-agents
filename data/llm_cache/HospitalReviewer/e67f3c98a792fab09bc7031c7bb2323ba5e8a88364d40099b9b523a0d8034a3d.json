@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t077-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat trauma and still has beds, and keeping capacity for waiting critical patients is more relevant to burn care at H-B than this trauma load."
+      }
+    ]
+  },
+  "tokens_in": 815,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.227790458011441,
+  "context": null
+}

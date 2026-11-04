@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-05 with V-05-1 and V-05-2.",
+  "tokens_in": 5284,
+  "tokens_out": 98,
+  "requests": 2,
+  "latency_s": 1.7518691250006668,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t092-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS-need trauma victims at the oldest incident with a free ambulance.",
+        "time_min": 92
+      }
+    ],
+    "invalid": []
+  }
+}

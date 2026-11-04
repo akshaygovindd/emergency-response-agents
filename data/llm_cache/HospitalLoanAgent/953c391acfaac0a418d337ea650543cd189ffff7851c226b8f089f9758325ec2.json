@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one general slot to cover our queued general patient while we have no idle general team and one general slot already occupied."
+      }
+    ]
+  },
+  "tokens_in": 581,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.178417208022438,
+  "context": null
+}

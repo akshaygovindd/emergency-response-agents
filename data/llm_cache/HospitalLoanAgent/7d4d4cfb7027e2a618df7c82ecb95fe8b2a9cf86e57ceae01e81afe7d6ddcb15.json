@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t075-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "No queued or en-route general patients here, so lending 1 team and 1 general slot for 20 minutes is safe."
+      }
+    ]
+  },
+  "tokens_in": 575,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.4911567080416717,
+  "context": null
+}

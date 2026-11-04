@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t041-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Sufficient spare general capacity and teams; no queued or en-route demand to protect."
+      }
+    ]
+  },
+  "tokens_in": 553,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.033826583006885,
+  "context": null
+}

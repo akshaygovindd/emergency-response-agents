@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Nearer lender and a short loan should cover the single queued general patient without overcommitting their capacity."
+      }
+    ]
+  },
+  "tokens_in": 596,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.3326569159980863,
+  "context": null
+}

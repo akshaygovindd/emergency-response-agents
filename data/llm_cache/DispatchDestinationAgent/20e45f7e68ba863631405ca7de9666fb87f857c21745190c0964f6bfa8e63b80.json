@@ -1,0 +1,47 @@
+{
+  "output": "Submitted both hospital requests.",
+  "tokens_in": 1532,
+  "tokens_out": 123,
+  "requests": 2,
+  "latency_s": 2.4296020829933695,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t026-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-03-3",
+            "V-03-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn unit is closest and has burn capacity for both critical burn victims.",
+        "time_min": 26
+      },
+      {
+        "proposal_id": "t026-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-04",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-04-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with capacity for a general ALS patient.",
+        "time_min": 26
+      }
+    ],
+    "invalid": []
+  }
+}

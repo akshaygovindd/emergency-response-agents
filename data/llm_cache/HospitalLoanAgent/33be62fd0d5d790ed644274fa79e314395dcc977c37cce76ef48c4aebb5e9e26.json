@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "trauma",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need urgent trauma coverage for two uncovered critical patients; one team is the minimum available option from the only candidate lender."
+      }
+    ]
+  },
+  "tokens_in": 613,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.2466662499937229,
+  "context": null
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "trauma",
+        "lender_id": "H-G",
+        "teams": 2,
+        "duration_min": 40,
+        "reason": "Need two trauma teams to cover the current trauma queue, including a critical urgency-4 patient, and H-G is the only candidate and nearby."
+      }
+    ]
+  },
+  "tokens_in": 562,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.3359263750026003,
+  "context": null
+}

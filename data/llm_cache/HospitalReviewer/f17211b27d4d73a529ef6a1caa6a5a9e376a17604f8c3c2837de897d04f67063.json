@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t069-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has open ER space and general treatment slots, and there is no need to reserve its last bed(s) for closer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 842,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.0956605829996988,
+  "context": null
+}

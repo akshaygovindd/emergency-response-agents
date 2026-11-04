@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need 1 general slot to cover the only uncovered queued patient; 20 minutes is enough to clear the queue and H-G is the nearest candidate."
+      }
+    ]
+  },
+  "tokens_in": 531,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.3334020840120502,
+  "context": null
+}

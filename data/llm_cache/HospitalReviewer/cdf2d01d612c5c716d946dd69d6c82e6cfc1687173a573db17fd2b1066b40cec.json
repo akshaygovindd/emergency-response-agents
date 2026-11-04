@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t091-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity and beds, and accepting these two trauma patients does not endanger nearby critical victims who are closer to H-T."
+      }
+    ]
+  },
+  "tokens_in": 855,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.3540360420010984,
+  "context": null
+}

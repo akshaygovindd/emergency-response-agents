@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t069-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity, and this low-acuity patient does not justify preserving beds for nearby critical victims."
+      }
+    ]
+  },
+  "tokens_in": 843,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.3553017919766717,
+  "context": null
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t048-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "I have spare general capacity and only one en-route general patient, so I can lend 1 team for 20 minutes without risking my own queue."
+      }
+    ]
+  },
+  "tokens_in": 585,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 0.8929771249531768,
+  "context": null
+}

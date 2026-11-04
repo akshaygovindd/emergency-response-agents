@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t119-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has the needed trauma slot and beds, and keeping capacity for nearby critical patients does not require preserving this slot."
+      }
+    ]
+  },
+  "tokens_in": 635,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.2740235000383109,
+  "context": null
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Cover one urgent general patient while preserving the minimum loan size and using the nearest available lender."
+      }
+    ]
+  },
+  "tokens_in": 582,
+  "tokens_out": 54,
+  "requests": 1,
+  "latency_s": 1.1936655419995077,
+  "context": null
+}

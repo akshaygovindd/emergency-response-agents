@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t071-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has enough beds, and H-G is closer but not requested; no critical patient should be held back by this load."
+      }
+    ]
+  },
+  "tokens_in": 851,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.3215070830192417,
+  "context": null
+}

@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 to INC-16 for V-16-2 and V-16-1.",
+  "tokens_in": 4720,
+  "tokens_out": 120,
+  "requests": 2,
+  "latency_s": 3.0949403749546036,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t101-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-16-2",
+            "V-16-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-urgency mixed trauma/general pair; BLS can handle the non-ALS victims fastest.",
+        "time_min": 101
+      }
+    ],
+    "invalid": []
+  }
+}

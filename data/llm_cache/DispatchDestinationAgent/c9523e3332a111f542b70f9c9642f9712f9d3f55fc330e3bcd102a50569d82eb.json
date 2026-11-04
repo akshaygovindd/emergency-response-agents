@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-G for V-12-1.",
+  "tokens_in": 1248,
+  "tokens_out": 58,
+  "requests": 2,
+  "latency_s": 2.4172872079652734,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t117-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Shortest travel and available general treatment slots.",
+        "time_min": 117
+      }
+    ],
+    "invalid": []
+  }
+}

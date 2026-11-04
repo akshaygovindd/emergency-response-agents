@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t104-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and still has beds; no need to preserve its remaining slots because the critical waiting patients are not strictly closer to H-T than to all other capable hospitals."
+      }
+    ]
+  },
+  "tokens_in": 872,
+  "tokens_out": 76,
+  "requests": 1,
+  "latency_s": 1.4205917500075884,
+  "context": null
+}

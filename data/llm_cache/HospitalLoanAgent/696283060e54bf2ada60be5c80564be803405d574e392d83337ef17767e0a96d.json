@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one general team to cover 2 queued general patients while a general loan is already in transfer-out; H-G is the only candidate and 40 min should cover the queue plus transfer time."
+      }
+    ]
+  },
+  "tokens_in": 657,
+  "tokens_out": 75,
+  "requests": 1,
+  "latency_s": 1.1253944159834646,
+  "context": null
+}

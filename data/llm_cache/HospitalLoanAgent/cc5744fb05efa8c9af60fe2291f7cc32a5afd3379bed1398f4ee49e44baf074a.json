@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t045-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "No queued or en-route general patients to protect, and we have spare general capacity and teams."
+      }
+    ]
+  },
+  "tokens_in": 560,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 1.304493750038091,
+  "context": null
+}

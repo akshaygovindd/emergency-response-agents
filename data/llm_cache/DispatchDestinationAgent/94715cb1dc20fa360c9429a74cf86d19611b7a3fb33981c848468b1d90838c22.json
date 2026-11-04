@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-T for both victims.",
+  "tokens_in": 1317,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 2.499815624963958,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t074-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-15-1",
+            "V-15-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with open trauma slot and room for both victims.",
+        "time_min": 74
+      }
+    ],
+    "invalid": []
+  }
+}

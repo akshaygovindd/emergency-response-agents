@@ -1,0 +1,25 @@
+{
+  "output": {
+    "allocations": [
+      {
+        "request_id": "LN-t069-01",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "H-G can cover this 1-team loan for 40 minutes, and this request serves the larger queued load (3 patients) among the competing needs."
+      },
+      {
+        "request_id": "LN-t069-02",
+        "lender_id": "none",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "No safe alternate allocation is available after prioritizing the higher total queued demand on the other request, so this one is left unfilled."
+      }
+    ]
+  },
+  "tokens_in": 327,
+  "tokens_out": 127,
+  "requests": 1,
+  "latency_s": 1.4809381660306826,
+  "context": null
+}

@@ -1,0 +1,48 @@
+{
+  "output": "Submitted both requests to H-G.",
+  "tokens_in": 1582,
+  "tokens_out": 131,
+  "requests": 2,
+  "latency_s": 2.602303374966141,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest viable hospital with general and trauma capacity for both victims.",
+        "time_min": 80
+      },
+      {
+        "proposal_id": "t080-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-20-1",
+            "V-20-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest viable hospital with trauma and general capacity for both victims.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

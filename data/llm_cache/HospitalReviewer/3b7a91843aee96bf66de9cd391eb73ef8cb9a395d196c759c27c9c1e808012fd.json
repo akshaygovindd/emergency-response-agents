@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t102-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has a general slot and beds available, and we should preserve capacity at H-T for closer critical trauma cases."
+      }
+    ]
+  },
+  "tokens_in": 859,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.343512041028589,
+  "context": null
+}

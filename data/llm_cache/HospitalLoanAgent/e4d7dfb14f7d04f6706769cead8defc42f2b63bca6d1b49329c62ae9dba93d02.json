@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need 2 general slots but only 1 lender candidate; requesting the minimum team loan likely to help clear the urgent queued general ALS patient."
+      }
+    ]
+  },
+  "tokens_in": 613,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.2462521669804119,
+  "context": null
+}

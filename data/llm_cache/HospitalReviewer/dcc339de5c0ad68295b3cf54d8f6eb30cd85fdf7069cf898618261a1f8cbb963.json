@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t106-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has a free bed, while nearby critical trauma patients are better served by H-G or H-T is not their closest capable option."
+      }
+    ]
+  },
+  "tokens_in": 838,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.6093037920072675,
+  "context": null
+}

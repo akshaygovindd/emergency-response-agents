@@ -1,0 +1,68 @@
+{
+  "output": "Submitted AMB-05 to H-B; AMB-03 needs a new burn-capable option.",
+  "tokens_in": 2593,
+  "tokens_out": 261,
+  "requests": 3,
+  "latency_s": 3.7095236250315793,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t065-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "priority": 4,
+        "reason": "Attached to co-passenger already routed to the burn unit.",
+        "time_min": 65
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 65,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 65,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-02-2"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-02-4 is going to H-B"
+      },
+      {
+        "time_min": 65,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

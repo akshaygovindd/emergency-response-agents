@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t113-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a free trauma slot and bed, and taking this mixed trauma pair does not block any closer critical trauma patient who lacks an alternative."
+      }
+    ]
+  },
+  "tokens_in": 850,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 3.1935456250212155,
+  "context": null
+}

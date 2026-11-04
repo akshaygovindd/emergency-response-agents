@@ -1,0 +1,48 @@
+{
+  "output": "Proposed AMB-02 to INC-12 and AMB-05 to INC-09.",
+  "tokens_in": 3656,
+  "tokens_out": 178,
+  "requests": 2,
+  "latency_s": 2.4197964160121046,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t035-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-2",
+            "V-12-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest free ambulance for the higher-priority general victims at this incident.",
+        "time_min": 35
+      },
+      {
+        "proposal_id": "t035-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "This incident has the most urgent victim and the ambulance is the closest free unit.",
+        "time_min": 35
+      }
+    ],
+    "invalid": []
+  }
+}

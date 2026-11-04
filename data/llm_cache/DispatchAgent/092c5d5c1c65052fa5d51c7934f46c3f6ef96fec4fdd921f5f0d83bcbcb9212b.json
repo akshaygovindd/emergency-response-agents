@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-02 to INC-24 for V-24-2 and V-24-3.",
+  "tokens_in": 5224,
+  "tokens_out": 98,
+  "requests": 2,
+  "latency_s": 2.3383902920177206,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t084-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-24-2",
+            "V-24-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-need burn victims needing ALS at the most urgent nearby incident.",
+        "time_min": 84
+      }
+    ],
+    "invalid": []
+  }
+}

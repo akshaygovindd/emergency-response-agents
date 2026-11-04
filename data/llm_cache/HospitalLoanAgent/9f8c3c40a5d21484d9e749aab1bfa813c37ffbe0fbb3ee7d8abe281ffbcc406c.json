@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need 1 general slot to cover queued general patient; 20 minutes is the minimum viable loan."
+      }
+    ]
+  },
+  "tokens_in": 557,
+  "tokens_out": 56,
+  "requests": 1,
+  "latency_s": 1.224581708025653,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t080-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has room and general/trauma capability, and this load should not be diverted since its beds are not needed to protect closer critical patients elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 881,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.2470516249886714,
+  "context": null
+}

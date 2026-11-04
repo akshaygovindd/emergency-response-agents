@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t117-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity, and no critical general patient would be stranded by accepting this non-critical general case."
+      }
+    ]
+  },
+  "tokens_in": 810,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.3635874580359086,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t068-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has general capacity and this single general patient does not require preserving H-G\u2019s last bed for any closer critical patient."
+      }
+    ]
+  },
+  "tokens_in": 775,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.6222098750295117,
+  "context": null
+}

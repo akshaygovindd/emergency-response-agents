@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t085-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capability and enough free treatment slots/beds for both victims, and rejecting would not better preserve capacity for any closer critical patient than H-T."
+      }
+    ]
+  },
+  "tokens_in": 873,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.3318794160149992,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t106-P03",
+        "action": "request_other",
+        "hospital_id": "H-T",
+        "reason": "H-T has available room and can provide timely care within 14 minutes."
+      }
+    ]
+  },
+  "tokens_in": 320,
+  "tokens_out": 51,
+  "requests": 1,
+  "latency_s": 1.0168619159958325,
+  "context": null
+}

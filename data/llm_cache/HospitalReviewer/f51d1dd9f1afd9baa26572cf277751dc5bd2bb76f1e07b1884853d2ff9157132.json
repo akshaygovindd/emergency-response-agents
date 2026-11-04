@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t109-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has trauma capacity and sufficient ER room, and we should not preserve beds here because the closest critical trauma patient is better served by H-T."
+      }
+    ]
+  },
+  "tokens_in": 857,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.1108131660148501,
+  "context": null
+}

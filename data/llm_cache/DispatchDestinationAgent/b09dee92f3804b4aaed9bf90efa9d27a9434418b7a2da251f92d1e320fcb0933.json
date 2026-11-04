@@ -1,0 +1,30 @@
+{
+  "output": "Submitted AMB-02 to H-T.",
+  "tokens_in": 1321,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 1.7966780829592608,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t113-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-3",
+            "V-14-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest trauma-capable hospital with remaining trauma slot and bed for the mixed trauma pair.",
+        "time_min": 113
+      }
+    ],
+    "invalid": []
+  }
+}

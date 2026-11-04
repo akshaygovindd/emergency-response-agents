@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-05.",
+  "tokens_in": 2121,
+  "tokens_out": 127,
+  "requests": 3,
+  "latency_s": 3.255547165987082,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-03",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-03-2",
+            "V-03-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "H-G can treat trauma, has room, and can accept both ALS trauma victims.",
+        "time_min": 91
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 91,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-03-2",
+            "V-03-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

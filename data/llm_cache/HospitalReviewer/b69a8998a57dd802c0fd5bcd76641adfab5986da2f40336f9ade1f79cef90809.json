@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t101-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has bed capacity and can treat both patients, while the critical waiting cases are not closer to H-T than to H-G, so no preservation hold is needed."
+      }
+    ]
+  },
+  "tokens_in": 871,
+  "tokens_out": 73,
+  "requests": 1,
+  "latency_s": 1.2825536250020377,
+  "context": null
+}

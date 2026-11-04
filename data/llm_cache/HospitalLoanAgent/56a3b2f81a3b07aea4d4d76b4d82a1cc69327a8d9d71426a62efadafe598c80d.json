@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t065-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 30,
+        "reason": "Capacity available and no queued or en-route critical demand on trauma."
+      }
+    ]
+  },
+  "tokens_in": 534,
+  "tokens_out": 51,
+  "requests": 1,
+  "latency_s": 1.3925166670233011,
+  "context": null
+}

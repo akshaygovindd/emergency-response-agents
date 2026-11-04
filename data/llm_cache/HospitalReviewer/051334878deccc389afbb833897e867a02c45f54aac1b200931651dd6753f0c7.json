@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t081-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B is burn-capable with 1 burn slot and 1 bed remaining, and accepting does not endanger closer critical burn victims because the last bed is not needed for a more proximal assessed burn patient."
+      },
+      {
+        "request_id": "t081-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has capacity for a general ALS patient and should not be preserved over nearby critical trauma/burn cases that do not depend on its last bed."
+      }
+    ]
+  },
+  "tokens_in": 952,
+  "tokens_out": 131,
+  "requests": 1,
+  "latency_s": 1.3059603750007227,
+  "context": null
+}

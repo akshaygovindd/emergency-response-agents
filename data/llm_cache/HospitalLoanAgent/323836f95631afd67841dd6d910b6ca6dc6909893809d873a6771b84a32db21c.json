@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "trauma",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one trauma team to cover two urgent queued trauma patients (urgency 4 and 5); a 40-minute loan should bridge the queue with near-lender H-T."
+      }
+    ]
+  },
+  "tokens_in": 564,
+  "tokens_out": 79,
+  "requests": 1,
+  "latency_s": 1.214239374967292,
+  "context": null
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-04 to INC-18 for V-18-1.",
+  "tokens_in": 5060,
+  "tokens_out": 82,
+  "requests": 2,
+  "latency_s": 2.5874648339813575,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t068-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-18",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-18-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable ambulance for the lowest-acuity waiting victim.",
+        "time_min": 68
+      }
+    ],
+    "invalid": []
+  }
+}

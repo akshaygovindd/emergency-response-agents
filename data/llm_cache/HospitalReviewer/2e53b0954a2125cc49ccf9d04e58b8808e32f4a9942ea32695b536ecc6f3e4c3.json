@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t113-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has enough trauma slots and beds for both ALS trauma victims, and keeping capacity there is not needed to preserve care for closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 856,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.5508156249998137,
+  "context": null
+}

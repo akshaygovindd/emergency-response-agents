@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t120-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "No queued or en-route general patients; can spare 1 general team/slot for a short urgent loan."
+      }
+    ]
+  },
+  "tokens_in": 545,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.2593637090176344,
+  "context": null
+}

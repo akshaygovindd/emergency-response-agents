@@ -1,0 +1,48 @@
+{
+  "output": "Unable to assign due to routing conflict with the co-passenger.",
+  "tokens_in": 2862,
+  "tokens_out": 159,
+  "requests": 4,
+  "latency_s": 4.668989458004944,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 66,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      },
+      {
+        "time_min": 66,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 66,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      }
+    ]
+  }
+}

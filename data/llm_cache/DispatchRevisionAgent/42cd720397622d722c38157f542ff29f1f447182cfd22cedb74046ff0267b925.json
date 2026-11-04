@@ -1,0 +1,17 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "t026-P02",
+        "action": "request_other",
+        "hospital_id": "H-G",
+        "reason": "H-G can take the ALS general patient in 14 minutes and has available room."
+      }
+    ]
+  },
+  "tokens_in": 313,
+  "tokens_out": 53,
+  "requests": 1,
+  "latency_s": 1.1552867909776978,
+  "context": null
+}

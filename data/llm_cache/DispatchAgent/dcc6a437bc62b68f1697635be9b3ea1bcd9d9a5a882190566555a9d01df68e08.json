@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-04 for INC-23 to pick up V-23-2.",
+  "tokens_in": 4902,
+  "tokens_out": 88,
+  "requests": 2,
+  "latency_s": 1.934817250003107,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t108-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-23-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Highest-urgency victim and closest suitable incident for the only free ambulance.",
+        "time_min": 108
+      }
+    ],
+    "invalid": []
+  }
+}

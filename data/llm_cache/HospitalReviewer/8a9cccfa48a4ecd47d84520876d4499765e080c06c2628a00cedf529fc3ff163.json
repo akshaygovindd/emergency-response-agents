@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t102-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and this patient should not be held back because there are no closer waiting critical general victims needing those last beds."
+      }
+    ]
+  },
+  "tokens_in": 823,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.2045324170030653,
+  "context": null
+}

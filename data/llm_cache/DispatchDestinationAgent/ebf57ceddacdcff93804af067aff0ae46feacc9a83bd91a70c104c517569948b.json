@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-B for AMB-01.",
+  "tokens_in": 1319,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 1.9449310000054538,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t067-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-15",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-15-1",
+            "V-15-5"
+          ]
+        },
+        "priority": 5,
+        "reason": "Closest hospital with general capacity for both victims.",
+        "time_min": 67
+      }
+    ],
+    "invalid": []
+  }
+}

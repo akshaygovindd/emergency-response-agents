@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t040-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Enough trauma capacity remains to cover own needs."
+      }
+    ]
+  },
+  "tokens_in": 569,
+  "tokens_out": 53,
+  "requests": 1,
+  "latency_s": 1.203372749965638,
+  "context": null
+}

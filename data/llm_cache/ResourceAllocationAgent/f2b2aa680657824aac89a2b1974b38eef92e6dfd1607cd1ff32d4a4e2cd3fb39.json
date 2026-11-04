@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t069-P01"
+    ],
+    "counter_proposals": [],
+    "reasoning": "AMB-01 should go to INC-21 because it contains a priority-5 trauma victim and can reach them quickly. INC-03 has only urgency-1 victims, so no alternative ambulance is warranted."
+  },
+  "tokens_in": 661,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 0.9795954579603858,
+  "context": null
+}

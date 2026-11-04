@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Two general patients are queued and three more are en route, so a single short loan should help clear general demand without overcommitting the lender."
+      }
+    ]
+  },
+  "tokens_in": 630,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.3110672499751672,
+  "context": null
+}

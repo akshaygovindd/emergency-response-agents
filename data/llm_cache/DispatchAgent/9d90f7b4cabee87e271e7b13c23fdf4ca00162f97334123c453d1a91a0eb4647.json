@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-03 to INC-11 for V-11-1.",
+  "tokens_in": 4335,
+  "tokens_out": 85,
+  "requests": 2,
+  "latency_s": 2.5836394170182757,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t116-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Longest-waiting ALS burn victim with fire team not yet assigned.",
+        "time_min": 116
+      }
+    ],
+    "invalid": []
+  }
+}

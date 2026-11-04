@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-04.",
+  "tokens_in": 2132,
+  "tokens_out": 128,
+  "requests": 3,
+  "latency_s": 4.950458417006303,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-05",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest hospital with trauma capability and available capacity for both critical trauma victims.",
+        "time_min": 96
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 96,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-05-1",
+            "V-05-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 8 of 6"
+      }
+    ]
+  }
+}

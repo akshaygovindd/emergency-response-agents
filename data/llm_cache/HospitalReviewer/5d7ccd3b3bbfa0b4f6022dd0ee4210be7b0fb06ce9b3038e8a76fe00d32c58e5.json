@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t054-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and this patient is the nearest trauma-capable destination, while critical waiting patients are not closer to H-T than alternate capable hospitals in a way that requires preserving this slot."
+      }
+    ]
+  },
+  "tokens_in": 847,
+  "tokens_out": 78,
+  "requests": 1,
+  "latency_s": 1.4321471659932286,
+  "context": null
+}

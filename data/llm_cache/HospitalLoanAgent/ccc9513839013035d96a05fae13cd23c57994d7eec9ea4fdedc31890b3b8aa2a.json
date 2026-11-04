@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-B",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one general slot/team to clear the queued general patient and keep the wait brief; H-B is the nearest candidate."
+      }
+    ]
+  },
+  "tokens_in": 559,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.4059392500203103,
+  "context": null
+}

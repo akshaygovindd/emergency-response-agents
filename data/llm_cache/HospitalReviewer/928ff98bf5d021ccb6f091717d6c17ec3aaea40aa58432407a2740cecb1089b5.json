@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t067-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general beds and slots available, and no closer critical general patient is waiting that would require reserving this capacity."
+      }
+    ]
+  },
+  "tokens_in": 848,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.385314124985598,
+  "context": null
+}

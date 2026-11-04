@@ -1,0 +1,47 @@
+{
+  "output": "Proposed AMB-02 for INC-12 and AMB-04 for INC-22.",
+  "tokens_in": 6031,
+  "tokens_out": 169,
+  "requests": 2,
+  "latency_s": 2.943644499988295,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t069-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-12",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-12-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest available unit for the most urgent ALS burn victim.",
+        "time_min": 69
+      },
+      {
+        "proposal_id": "t069-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-22",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-22-1",
+            "V-22-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Fastest available unit for the urgent trauma ALS victims at a very recent incident.",
+        "time_min": 69
+      }
+    ],
+    "invalid": []
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "output": "Proposed AMB-02 for INC-24.",
+  "tokens_in": 4605,
+  "tokens_out": 81,
+  "requests": 2,
+  "latency_s": 2.072481374954805,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t102-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-24-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest available ambulance for the ALS-requiring general victim at a non-team incident.",
+        "time_min": 102
+      }
+    ],
+    "invalid": []
+  }
+}

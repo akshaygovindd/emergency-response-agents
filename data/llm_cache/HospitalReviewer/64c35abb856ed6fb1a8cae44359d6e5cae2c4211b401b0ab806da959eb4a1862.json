@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t108-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center can treat the trauma victim, has free beds, and rejecting would not protect critical patients closer to H-T than other capable hospitals."
+      }
+    ]
+  },
+  "tokens_in": 857,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.1220431249821559,
+  "context": null
+}

@@ -1,0 +1,46 @@
+{
+  "output": "Proposed AMB-02 for INC-17 and INC-06.",
+  "tokens_in": 5164,
+  "tokens_out": 163,
+  "requests": 2,
+  "latency_s": 2.5586687910254113,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t096-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-17-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable BLS pickup for the most urgent transportable victim at this incident.",
+        "time_min": 96
+      },
+      {
+        "proposal_id": "t096-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-02",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-06-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Very close BLS unit for a waiting burn victim with no competing free ambulance.",
+        "time_min": 96
+      }
+    ],
+    "invalid": []
+  }
+}

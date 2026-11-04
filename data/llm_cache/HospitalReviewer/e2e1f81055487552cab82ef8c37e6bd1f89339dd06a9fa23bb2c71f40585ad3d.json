@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t089-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a free general slot and beds, and this urgent general ALS patient can be admitted without displacing closer critical burn cases."
+      }
+    ]
+  },
+  "tokens_in": 835,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.328001582995057,
+  "context": null
+}

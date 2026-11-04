@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "One queued general patient needs coverage, and H-G is the nearest available lender for a short loan long enough to cover the queue."
+      }
+    ]
+  },
+  "tokens_in": 529,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.230290958948899,
+  "context": null
+}

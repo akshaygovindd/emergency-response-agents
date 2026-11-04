@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t073-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and beds, and this load includes a critical trauma patient best served here."
+      }
+    ]
+  },
+  "tokens_in": 868,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.3507813339820132,
+  "context": null
+}

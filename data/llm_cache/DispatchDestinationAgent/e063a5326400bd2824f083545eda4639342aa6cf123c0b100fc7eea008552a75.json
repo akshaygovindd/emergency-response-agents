@@ -1,0 +1,44 @@
+{
+  "output": "Submitted H-G for AMB-03.",
+  "tokens_in": 2108,
+  "tokens_out": 132,
+  "requests": 3,
+  "latency_s": 3.350727957964409,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t088-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-06",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital that can treat both trauma and general victims and has enough capacity.",
+        "time_min": 88
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 88,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-06-2",
+            "V-06-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat general"
+      }
+    ]
+  }
+}

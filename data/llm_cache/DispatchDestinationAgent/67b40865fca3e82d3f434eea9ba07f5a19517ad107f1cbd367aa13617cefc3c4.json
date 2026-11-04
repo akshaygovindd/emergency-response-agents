@@ -1,0 +1,48 @@
+{
+  "output": "Need the co-passenger\u2019s destination before assigning this ambulance.",
+  "tokens_in": 2848,
+  "tokens_out": 154,
+  "requests": 4,
+  "latency_s": 4.381389916001353,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 107,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      },
+      {
+        "time_min": 107,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 107,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      }
+    ]
+  }
+}

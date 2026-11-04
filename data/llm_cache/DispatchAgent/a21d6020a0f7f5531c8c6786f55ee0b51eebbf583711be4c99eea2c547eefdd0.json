@@ -1,0 +1,45 @@
+{
+  "output": "Proposed MED-1 to INC-11 and AMB-03 for V-11-2/V-11-4.",
+  "tokens_in": 6114,
+  "tokens_out": 164,
+  "requests": 2,
+  "latency_s": 2.414247583015822,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t091-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_responder",
+          "ambulance_id": null,
+          "responder_id": "MED-1",
+          "hospital_id": null,
+          "victim_ids": []
+        },
+        "priority": 3,
+        "reason": "Multiple ALS-needed victims are waiting and this free medical team can support urgent care there.",
+        "time_min": 91
+      },
+      {
+        "proposal_id": "t091-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-11",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-03",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-11-2",
+            "V-11-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest ALS ambulance to the incident, carrying the most urgent ALS-relevant victims together.",
+        "time_min": 91
+      }
+    ],
+    "invalid": []
+  }
+}

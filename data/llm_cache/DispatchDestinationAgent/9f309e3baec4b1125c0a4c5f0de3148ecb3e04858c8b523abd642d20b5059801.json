@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-B for both burn victims.",
+  "tokens_in": 1303,
+  "tokens_out": 65,
+  "requests": 2,
+  "latency_s": 2.7471973749925382,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t114-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-24-2",
+            "V-24-3"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest burn unit with matching specialty and available burn slot.",
+        "time_min": 114
+      }
+    ],
+    "invalid": []
+  }
+}

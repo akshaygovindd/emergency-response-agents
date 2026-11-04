@@ -1,0 +1,146 @@
+{
+  "output": "Done.",
+  "tokens_in": 9362,
+  "tokens_out": 500,
+  "requests": 8,
+  "latency_s": 10.291114832973108,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t042-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-4"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit is the only capable hospital for the urgent burn victim and has burn slots.",
+        "time_min": 42
+      },
+      {
+        "proposal_id": "t042-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-13",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-13-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "General victim needs a hospital with available room.",
+        "time_min": 42
+      },
+      {
+        "proposal_id": "t042-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Burn unit is the only capable hospital for the urgent burn victim and has burn slots.",
+        "time_min": 42
+      },
+      {
+        "proposal_id": "t042-P04",
+        "proposer": "dispatch",
+        "incident_id": "INC-09",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-09-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "General victim needs a hospital with available room.",
+        "time_min": 42
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 42,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 42,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 42,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 42,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-09-1",
+            "V-09-2"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 42,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-13-2",
+            "V-13-4"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

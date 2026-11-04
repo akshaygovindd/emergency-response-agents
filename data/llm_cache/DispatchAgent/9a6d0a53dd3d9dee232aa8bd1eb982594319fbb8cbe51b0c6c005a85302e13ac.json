@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-05 to INC-21 for V-21-2 and V-21-1.",
+  "tokens_in": 4909,
+  "tokens_out": 99,
+  "requests": 2,
+  "latency_s": 2.3743989170179702,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t099-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-21-2",
+            "V-21-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest high-priority incident with an urgent ALS-needed victim and one additional victim.",
+        "time_min": 99
+      }
+    ],
+    "invalid": []
+  }
+}

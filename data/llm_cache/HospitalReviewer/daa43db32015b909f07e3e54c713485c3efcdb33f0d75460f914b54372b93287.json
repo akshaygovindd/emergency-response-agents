@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t066-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has enough ER capacity and beds, and this trauma pair can be treated there without displacing the closer critical trauma victim who is nearer to H-T."
+      }
+    ]
+  },
+  "tokens_in": 836,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.3881671669660136,
+  "context": null
+}

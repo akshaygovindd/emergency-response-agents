@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t026-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds, and preserving a bed here is not justified against the closer critical trauma victims waiting for H-T."
+      },
+      {
+        "request_id": "t026-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can take this general ALS patient now, and holding space here is unnecessary because the nearby critical trauma patients are better served at H-T."
+      }
+    ]
+  },
+  "tokens_in": 755,
+  "tokens_out": 115,
+  "requests": 1,
+  "latency_s": 1.779144375002943,
+  "context": null
+}

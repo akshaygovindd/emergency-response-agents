@@ -1,0 +1,82 @@
+{
+  "output": "AMB-02 to H-G accepted; AMB-03 unresolved because all burn-capable hospitals are full.",
+  "tokens_in": 4693,
+  "tokens_out": 317,
+  "requests": 5,
+  "latency_s": 6.203822416020557,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t069-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-20",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-20-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with general capacity and open ER space.",
+        "time_min": 69
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 69,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 69,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 69,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      },
+      {
+        "time_min": 69,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-12-4",
+            "V-12-5"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t116-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "One general slot/team is available and this loan is short enough to help cover the borrower\u2019s queue without harming our current capacity."
+      }
+    ]
+  },
+  "tokens_in": 541,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.1245339580345899,
+  "context": null
+}

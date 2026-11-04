@@ -1,0 +1,30 @@
+{
+  "output": "Proposed AMB-04 for INC-16 with V-16-1 and V-16-2.",
+  "tokens_in": 4693,
+  "tokens_out": 97,
+  "requests": 2,
+  "latency_s": 2.461360999965109,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t109-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-16",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-16-1",
+            "V-16-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Closest suitable BLS unit for two low-urgency general victims.",
+        "time_min": 109
+      }
+    ],
+    "invalid": []
+  }
+}

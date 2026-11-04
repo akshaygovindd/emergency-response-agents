@@ -1,0 +1,25 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t069-02",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "General capacity is currently sufficient and the request is modest; no queued or critical own general demand needs protection."
+      },
+      {
+        "request_id": "LN-t069-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "General capacity is currently sufficient and there is no queued or en-route own general pressure that requires keeping the team."
+      }
+    ]
+  },
+  "tokens_in": 666,
+  "tokens_out": 112,
+  "requests": 1,
+  "latency_s": 1.2464147919672541,
+  "context": null
+}

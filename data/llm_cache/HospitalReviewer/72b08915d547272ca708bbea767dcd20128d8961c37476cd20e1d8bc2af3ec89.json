@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t114-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has the needed burn specialty and one free burn slot, and accepting this load does not force a reject needed to preserve capacity for a closer critical patient."
+      }
+    ]
+  },
+  "tokens_in": 853,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.2718088330002502,
+  "context": null
+}

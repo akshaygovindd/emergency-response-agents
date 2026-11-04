@@ -1,0 +1,19 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "LN-t069-01",
+        "action": "escalate",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "No alternative lender options were provided and the request was rejected, so I cannot safely revise it to another hospital."
+      }
+    ]
+  },
+  "tokens_in": 704,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.228877082990948,
+  "context": null
+}

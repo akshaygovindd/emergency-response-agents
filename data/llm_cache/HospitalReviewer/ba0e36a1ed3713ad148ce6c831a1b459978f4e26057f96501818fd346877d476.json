@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t089-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample beds and general treatment capacity, and preserving beds for criticals does not require rejecting this load."
+      },
+      {
+        "request_id": "t089-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G still has sufficient general capacity and beds, so this non-critical general patient can be admitted safely."
+      }
+    ]
+  },
+  "tokens_in": 907,
+  "tokens_out": 103,
+  "requests": 1,
+  "latency_s": 1.0461057919892482,
+  "context": null
+}

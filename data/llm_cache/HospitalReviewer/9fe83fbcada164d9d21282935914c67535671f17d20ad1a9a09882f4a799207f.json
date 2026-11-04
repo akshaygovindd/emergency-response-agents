@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t119-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds available, and rejecting would not protect local critical capacity because the closest critical general patient is already nearer to H-B."
+      }
+    ]
+  },
+  "tokens_in": 809,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.4610202080220915,
+  "context": null
+}

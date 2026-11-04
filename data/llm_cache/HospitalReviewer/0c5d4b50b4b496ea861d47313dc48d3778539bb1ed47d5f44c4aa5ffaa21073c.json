@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t077-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity, and H-B should be preserved for burn-critical patients who are closer there."
+      }
+    ]
+  },
+  "tokens_in": 809,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.4461442499887198,
+  "context": null
+}

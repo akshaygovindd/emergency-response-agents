@@ -1,0 +1,36 @@
+{
+  "output": "Need corrected destinations for both ambulances due to routing conflicts.",
+  "tokens_in": 1474,
+  "tokens_out": 114,
+  "requests": 2,
+  "latency_s": 1.8200280829914846,
+  "context": {
+    "proposals": [],
+    "invalid": [
+      {
+        "time_min": 59,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-13-2"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-13-4 is going to H-B"
+      },
+      {
+        "time_min": 59,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-09-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-09-2 is going to H-G"
+      }
+    ]
+  }
+}

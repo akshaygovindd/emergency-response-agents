@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t080-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has the needed trauma/general capacity, and no nearby critical trauma patient is closer to another capable hospital enough to justify holding beds."
+      },
+      {
+        "request_id": "t080-P04",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and should take the closer trauma ALS case rather than diverting it."
+      }
+    ]
+  },
+  "tokens_in": 952,
+  "tokens_out": 106,
+  "requests": 1,
+  "latency_s": 1.7399177909828722,
+  "context": null
+}

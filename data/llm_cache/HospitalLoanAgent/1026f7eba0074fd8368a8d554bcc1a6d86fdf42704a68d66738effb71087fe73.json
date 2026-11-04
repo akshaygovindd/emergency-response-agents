@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "trauma",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one trauma slot to cover the current trauma queue; H-T is the only listed near lender."
+      }
+    ]
+  },
+  "tokens_in": 537,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 1.1903200839878991,
+  "context": null
+}

@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t041-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat trauma and has capacity, and we should not hold its last trauma bed away from this nearby critical trauma case."
+      },
+      {
+        "request_id": "t041-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has room and is the closest trauma-capable option for this mixed general/trauma load."
+      }
+    ]
+  },
+  "tokens_in": 918,
+  "tokens_out": 106,
+  "requests": 1,
+  "latency_s": 1.5660943340044469,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t073-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center has trauma capacity and these ALS trauma patients can be accommodated without blocking nearer critical trauma victims already waiting."
+      }
+    ]
+  },
+  "tokens_in": 857,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.252924082975369,
+  "context": null
+}

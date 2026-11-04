@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t051-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has capacity and trauma slots for both victims, and accepting does not threaten nearby critical patients who have better or equal alternatives."
+      }
+    ]
+  },
+  "tokens_in": 869,
+  "tokens_out": 65,
+  "requests": 1,
+  "latency_s": 1.2831514590070583,
+  "context": null
+}

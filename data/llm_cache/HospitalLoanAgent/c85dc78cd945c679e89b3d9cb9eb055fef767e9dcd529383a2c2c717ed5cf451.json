@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-B",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one general slot to clear a queued general patient and preserve flow while trauma is unavailable."
+      }
+    ]
+  },
+  "tokens_in": 585,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 2.021482916956302,
+  "context": null
+}

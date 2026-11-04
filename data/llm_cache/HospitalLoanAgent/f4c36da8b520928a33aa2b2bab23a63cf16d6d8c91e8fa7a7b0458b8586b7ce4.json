@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t051-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "No queued patients and all current en-route patients are covered without strain, so I can spare one general team for the minimum duration."
+      }
+    ]
+  },
+  "tokens_in": 628,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.548116999969352,
+  "context": null
+}

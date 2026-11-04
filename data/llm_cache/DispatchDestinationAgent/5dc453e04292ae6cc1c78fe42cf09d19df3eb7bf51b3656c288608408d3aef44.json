@@ -1,0 +1,30 @@
+{
+  "output": "Submitted H-T for AMB-02.",
+  "tokens_in": 1315,
+  "tokens_out": 72,
+  "requests": 2,
+  "latency_s": 2.9517413749708794,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t063-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-02",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-02-4",
+            "V-02-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with trauma capability for the urgency-4 victim and general care for both.",
+        "time_min": 63
+      }
+    ],
+    "invalid": []
+  }
+}

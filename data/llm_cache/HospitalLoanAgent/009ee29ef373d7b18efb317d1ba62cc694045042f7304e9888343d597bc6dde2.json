@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t041-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "We have spare trauma capacity and one available trauma team, so this short loan should not jeopardize our own patients."
+      }
+    ]
+  },
+  "tokens_in": 581,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.359349625010509,
+  "context": null
+}

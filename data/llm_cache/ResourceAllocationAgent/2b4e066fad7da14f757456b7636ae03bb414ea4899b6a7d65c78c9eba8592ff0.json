@@ -1,0 +1,14 @@
+{
+  "output": {
+    "winner_proposal_ids": [
+      "t096-P02"
+    ],
+    "counter_proposals": [],
+    "reasoning": "Both proposals need AMB-02, so only one can win. P02 should get it because INC-06 has waited longer and the ambulance reaches sooner, making it the better use of the contested unit."
+  },
+  "tokens_in": 623,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.3632352089625783,
+  "context": null
+}

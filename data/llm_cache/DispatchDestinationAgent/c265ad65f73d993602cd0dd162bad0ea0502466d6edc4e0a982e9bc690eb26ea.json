@@ -1,0 +1,56 @@
+{
+  "output": "Submitted H-G for V-23-2; V-24-2 and V-24-3 still need a valid burn-capable destination.",
+  "tokens_in": 2492,
+  "tokens_out": 205,
+  "requests": 3,
+  "latency_s": 3.247865416982677,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t113-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-23-2"
+          ]
+        },
+        "priority": 5,
+        "reason": "Shortest travel and general hospital has open general treatment capacity.",
+        "time_min": 113
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 113,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-24-2",
+            "V-24-3"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 7 of 5"
+      },
+      {
+        "time_min": 113,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-24-2",
+            "V-24-3"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      }
+    ]
+  }
+}

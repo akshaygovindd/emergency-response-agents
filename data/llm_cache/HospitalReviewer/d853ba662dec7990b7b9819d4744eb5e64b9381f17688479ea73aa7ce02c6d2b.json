@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t075-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and beds available, and accepting these two critical burn patients does not require holding the last bed for any closer critical victim."
+      }
+    ]
+  },
+  "tokens_in": 851,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.525900292035658,
+  "context": null
+}

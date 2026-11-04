@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t095-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has available general slots and beds, and no closer critical patient is at risk of being stranded by using this capacity."
+      }
+    ]
+  },
+  "tokens_in": 847,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.2072537500062026,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t068-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has ample general capacity, and keeping beds for critical victims is not necessary because no closer-capable hospital has available room for this general load."
+      }
+    ]
+  },
+  "tokens_in": 868,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.3134004999883473,
+  "context": null
+}

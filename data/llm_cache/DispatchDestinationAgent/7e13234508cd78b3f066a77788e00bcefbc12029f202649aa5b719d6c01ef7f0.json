@@ -1,0 +1,69 @@
+{
+  "output": "Submitted H-B for V-17-2 only.",
+  "tokens_in": 3973,
+  "tokens_out": 238,
+  "requests": 5,
+  "latency_s": 5.489689124980941,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t084-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-17-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Burn specialty for the critical victim and one free burn treatment slot is available.",
+        "time_min": 84
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 84,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-B ER would hold 6 of 5"
+      },
+      {
+        "time_min": 84,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-G cannot treat burn"
+      },
+      {
+        "time_min": 84,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "reason": "hospital_lacks_capability",
+        "detail": "H-T cannot treat burn"
+      }
+    ]
+  }
+}

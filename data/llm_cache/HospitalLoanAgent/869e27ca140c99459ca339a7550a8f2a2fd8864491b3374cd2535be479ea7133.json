@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need 1 general slot to clear the queued general patient and preserve flow while trauma demand is already saturated with critical en-route cases."
+      }
+    ]
+  },
+  "tokens_in": 665,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.4760449159657583,
+  "context": null
+}

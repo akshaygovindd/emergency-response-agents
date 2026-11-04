@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t051-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "You have capacity, and this short loan fits the stated need."
+      }
+    ]
+  },
+  "tokens_in": 550,
+  "tokens_out": 51,
+  "requests": 1,
+  "latency_s": 0.9969418330001645,
+  "context": null
+}

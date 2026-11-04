@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t065-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can take general patients and this low-acuity patient should not be diverted while preserving critical-capacity decisions."
+      }
+    ]
+  },
+  "tokens_in": 837,
+  "tokens_out": 62,
+  "requests": 1,
+  "latency_s": 1.3549125419813208,
+  "context": null
+}

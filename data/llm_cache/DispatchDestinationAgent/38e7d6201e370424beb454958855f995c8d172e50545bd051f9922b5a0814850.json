@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-B for both victims.",
+  "tokens_in": 1328,
+  "tokens_out": 68,
+  "requests": 2,
+  "latency_s": 2.5460354169481434,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-17-2",
+            "V-17-3"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with general care capacity and available beds for both ALS victims.",
+        "time_min": 107
+      }
+    ],
+    "invalid": []
+  }
+}

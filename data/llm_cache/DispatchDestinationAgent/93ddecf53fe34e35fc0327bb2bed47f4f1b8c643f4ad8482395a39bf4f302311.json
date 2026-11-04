@@ -1,0 +1,29 @@
+{
+  "output": "Submitted H-T for V-24-1.",
+  "tokens_in": 1254,
+  "tokens_out": 64,
+  "requests": 2,
+  "latency_s": 2.83172795799328,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t107-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-24",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-24-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Short transport and H-T has a free general slot with bed capacity.",
+        "time_min": 107
+      }
+    ],
+    "invalid": []
+  }
+}

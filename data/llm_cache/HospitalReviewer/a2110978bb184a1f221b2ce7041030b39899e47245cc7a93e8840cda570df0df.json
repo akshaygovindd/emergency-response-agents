@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t083-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and beds available, and keeping capacity for critical waiting patients does not require withholding this closest trauma case."
+      }
+    ]
+  },
+  "tokens_in": 787,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.5802164589986205,
+  "context": null
+}

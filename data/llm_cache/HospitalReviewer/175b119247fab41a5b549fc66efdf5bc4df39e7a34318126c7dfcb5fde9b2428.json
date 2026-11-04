@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t090-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and has enough general capacity, while critical waiting patients have clearer priority at other capable hospitals."
+      }
+    ]
+  },
+  "tokens_in": 852,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.4208326250081882,
+  "context": null
+}

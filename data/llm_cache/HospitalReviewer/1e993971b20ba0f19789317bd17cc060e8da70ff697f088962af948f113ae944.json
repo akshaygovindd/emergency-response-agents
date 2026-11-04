@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t059-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has capacity and is the closest capable hospital for this ALS general patient."
+      },
+      {
+        "request_id": "t059-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat the trauma victim and has enough remaining capacity for both patients."
+      }
+    ]
+  },
+  "tokens_in": 938,
+  "tokens_out": 91,
+  "requests": 1,
+  "latency_s": 1.319644708011765,
+  "context": null
+}

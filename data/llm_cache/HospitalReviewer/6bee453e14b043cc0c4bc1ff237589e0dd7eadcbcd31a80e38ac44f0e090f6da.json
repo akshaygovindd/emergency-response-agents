@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t106-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has capacity for the mixed low-urgency patients and no critical trauma patient is closer to H-G than to another capable hospital."
+      },
+      {
+        "request_id": "t106-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can take both patients, and preserving its single general slot is not necessary given the current critical burn load is elsewhere."
+      }
+    ]
+  },
+  "tokens_in": 961,
+  "tokens_out": 112,
+  "requests": 1,
+  "latency_s": 1.3432122910162434,
+  "context": null
+}

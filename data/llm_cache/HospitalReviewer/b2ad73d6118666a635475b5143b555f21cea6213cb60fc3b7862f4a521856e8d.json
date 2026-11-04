@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t107-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a free general slot and beds, and this load does not need to be held back for closer critical patients."
+      }
+    ]
+  },
+  "tokens_in": 839,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.3998792910133488,
+  "context": null
+}

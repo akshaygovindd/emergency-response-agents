@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-B",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "One uncovered general slot; a short 20-minute loan should cover the current queue and is the nearest available lender."
+      }
+    ]
+  },
+  "tokens_in": 559,
+  "tokens_out": 59,
+  "requests": 1,
+  "latency_s": 1.422897834039759,
+  "context": null
+}

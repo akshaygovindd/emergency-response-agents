@@ -1,0 +1,25 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "trauma",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one trauma slot to clear the urgent trauma queue and cover near-term en-route trauma demand."
+      },
+      {
+        "care": "general",
+        "lender_id": "H-B",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one general slot to handle queued and en-route general demand while keeping the loan near and sufficient."
+      }
+    ]
+  },
+  "tokens_in": 649,
+  "tokens_out": 99,
+  "requests": 1,
+  "latency_s": 1.6580417500226758,
+  "context": null
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t101-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 30,
+        "reason": "One general slot and one team are available, and preserving one team still leaves capacity for the en-route critical patient."
+      }
+    ]
+  },
+  "tokens_in": 558,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.3222759999916889,
+  "context": null
+}

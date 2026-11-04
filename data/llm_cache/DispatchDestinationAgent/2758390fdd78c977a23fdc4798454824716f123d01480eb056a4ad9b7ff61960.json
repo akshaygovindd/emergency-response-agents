@@ -1,0 +1,44 @@
+{
+  "output": "Submitted to H-G.",
+  "tokens_in": 2116,
+  "tokens_out": 122,
+  "requests": 3,
+  "latency_s": 3.0549987500417046,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t118-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-08",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma-capable hospital with room and closer than other suitable options.",
+        "time_min": 118
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 118,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-08-1",
+            "V-08-2"
+          ]
+        },
+        "reason": "hospital_full",
+        "detail": "H-T ER would hold 7 of 6"
+      }
+    ]
+  }
+}

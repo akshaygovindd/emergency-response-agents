@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t088-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both victims and still has capacity, while protecting nearer critical patients does not require reserving its beds here."
+      }
+    ]
+  },
+  "tokens_in": 851,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.4135125000029802,
+  "context": null
+}

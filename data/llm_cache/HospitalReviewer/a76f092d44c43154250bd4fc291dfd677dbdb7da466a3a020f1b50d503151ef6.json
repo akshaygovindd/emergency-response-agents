@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t051-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general beds and treatment slots available, and this low-urgency patient does not need protection of capacity for closer critical victims."
+      }
+    ]
+  },
+  "tokens_in": 734,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.4953377910424024,
+  "context": null
+}

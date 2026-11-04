@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Need one general slot to clear the queued general/overflow demand while preserving trauma capacity for multiple critical en-route trauma patients; H-G is the only candidate and is near."
+      }
+    ]
+  },
+  "tokens_in": 637,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 0.9940691660158336,
+  "context": null
+}

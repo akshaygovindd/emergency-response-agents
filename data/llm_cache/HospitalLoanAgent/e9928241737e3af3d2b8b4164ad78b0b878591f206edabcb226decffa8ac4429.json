@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t115-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "Enough free trauma capacity and idle teams remain to support this loan."
+      }
+    ]
+  },
+  "tokens_in": 541,
+  "tokens_out": 51,
+  "requests": 1,
+  "latency_s": 1.5080949579714797,
+  "context": null
+}

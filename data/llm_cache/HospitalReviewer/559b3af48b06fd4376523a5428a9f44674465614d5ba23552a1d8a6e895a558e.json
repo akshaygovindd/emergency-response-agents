@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t102-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "General Hospital has open general capacity and beds, and this ALS general critical patient can be accommodated without needing to preserve those beds for closer critical waiting patients."
+      }
+    ]
+  },
+  "tokens_in": 812,
+  "tokens_out": 69,
+  "requests": 1,
+  "latency_s": 1.3484372079838067,
+  "context": null
+}

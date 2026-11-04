@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t067-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "No queued or en-route patients to protect; can spare 1 general team and slot for 20 min."
+      }
+    ]
+  },
+  "tokens_in": 546,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.2503061249735765,
+  "context": null
+}

@@ -1,0 +1,42 @@
+{
+  "output": "One request rejected for routing conflict; the other was accepted.",
+  "tokens_in": 1490,
+  "tokens_out": 118,
+  "requests": 2,
+  "latency_s": 2.1900025839568116,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t089-P03",
+        "proposer": "dispatch",
+        "incident_id": "INC-07",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-B",
+          "victim_ids": [
+            "V-07-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with capacity for this general ALS patient.",
+        "time_min": 89
+      }
+    ],
+    "invalid": [
+      {
+        "time_min": 89,
+        "tool": "submit_admission_request",
+        "args": {
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-17-1"
+          ]
+        },
+        "reason": "routing_conflict",
+        "detail": "Co-passenger V-17-2 is going to H-B"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t058-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "General has spare slot and both queued demand and urgency are low, so lending 1 team for 40 minutes is acceptable."
+      }
+    ]
+  },
+  "tokens_in": 555,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.1565328750293702,
+  "context": null
+}

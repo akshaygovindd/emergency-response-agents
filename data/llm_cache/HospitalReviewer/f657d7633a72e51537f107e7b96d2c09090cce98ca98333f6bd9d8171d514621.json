@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t092-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has a trauma-capable slot for the ALS critical patient and sufficient general capacity for the second victim, and no capacity-preservation rule requires withholding this bed."
+      }
+    ]
+  },
+  "tokens_in": 876,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.4374690830009058,
+  "context": null
+}

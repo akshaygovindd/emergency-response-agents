@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t112-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has open general capacity and there are no closer waiting critical general victims that must be reserved for."
+      }
+    ]
+  },
+  "tokens_in": 864,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.098185167007614,
+  "context": null
+}

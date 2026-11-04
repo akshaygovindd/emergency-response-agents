@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t118-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "Trauma Center has trauma capacity and no nearby critical trauma victims are waiting for its last beds, so it can take both ALS trauma patients."
+      }
+    ]
+  },
+  "tokens_in": 789,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.2486482079839334,
+  "context": null
+}

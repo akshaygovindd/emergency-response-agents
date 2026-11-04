@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 60,
+        "reason": "Need general capacity to cover one critical queued patient and remaining queue; a near lender for the longest feasible loan."
+      }
+    ]
+  },
+  "tokens_in": 583,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.2398203329648823,
+  "context": null
+}

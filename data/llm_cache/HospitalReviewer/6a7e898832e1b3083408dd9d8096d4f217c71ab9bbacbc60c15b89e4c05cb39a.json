@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t074-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T can treat both victims and has an open trauma slot plus sufficient beds, while preserving critical capacity for nearby waiting patients who are closer to H-T."
+      }
+    ]
+  },
+  "tokens_in": 876,
+  "tokens_out": 70,
+  "requests": 1,
+  "latency_s": 1.2066207089810632,
+  "context": null
+}

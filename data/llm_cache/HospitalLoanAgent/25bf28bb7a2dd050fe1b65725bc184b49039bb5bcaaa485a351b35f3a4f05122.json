@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "One queued general patient needs coverage, and H-T is the nearest candidate."
+      }
+    ]
+  },
+  "tokens_in": 542,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 1.9911817079992034,
+  "context": null
+}

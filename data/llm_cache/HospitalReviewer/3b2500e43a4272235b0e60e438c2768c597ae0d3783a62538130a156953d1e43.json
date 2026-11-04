@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t067-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has general capacity for both victims, and keeping beds free for nearby critical patients does not require rejecting this load."
+      }
+    ]
+  },
+  "tokens_in": 850,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.255298167001456,
+  "context": null
+}

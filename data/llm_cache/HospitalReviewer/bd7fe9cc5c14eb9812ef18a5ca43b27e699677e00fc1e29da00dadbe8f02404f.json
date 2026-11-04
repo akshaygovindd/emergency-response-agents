@@ -1,0 +1,23 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t055-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-T has trauma capacity and this critical trauma patient is closest to H-T."
+      },
+      {
+        "request_id": "t055-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has enough general slots for both ALS general patients and is the closest suitable hospital."
+      }
+    ]
+  },
+  "tokens_in": 958,
+  "tokens_out": 93,
+  "requests": 1,
+  "latency_s": 1.61969175003469,
+  "context": null
+}

@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "general",
+        "lender_id": "H-G",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one general slot/team to cover the queued critical ALS patient and incoming general load; H-G is the only near candidate."
+      }
+    ]
+  },
+  "tokens_in": 610,
+  "tokens_out": 61,
+  "requests": 1,
+  "latency_s": 1.1253563750069588,
+  "context": null
+}

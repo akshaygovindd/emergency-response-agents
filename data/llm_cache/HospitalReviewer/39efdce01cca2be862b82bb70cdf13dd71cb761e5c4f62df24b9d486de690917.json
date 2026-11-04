@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t059-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and beds, and this single general patient does not need to be held back for any closer critical waiting victim."
+      }
+    ]
+  },
+  "tokens_in": 821,
+  "tokens_out": 60,
+  "requests": 1,
+  "latency_s": 1.378095416992437,
+  "context": null
+}

@@ -1,0 +1,46 @@
+{
+  "output": "Proposed AMB-04 to INC-23 and AMB-05 to INC-21.",
+  "tokens_in": 5973,
+  "tokens_out": 159,
+  "requests": 2,
+  "latency_s": 2.817087540985085,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t080-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-23",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-04",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-23-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest BLS unit to a lower-urgency general victim.",
+        "time_min": 80
+      },
+      {
+        "proposal_id": "t080-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "assign_ambulance",
+          "ambulance_id": "AMB-05",
+          "responder_id": null,
+          "hospital_id": null,
+          "victim_ids": [
+            "V-21-1"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest BLS unit to the nearest waiting victim.",
+        "time_min": 80
+      }
+    ],
+    "invalid": []
+  }
+}

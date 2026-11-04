@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t115-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has capacity for both burn and general care with a free bed, and accepting does not endanger nearby critical patients since this load fits its remaining resources."
+      }
+    ]
+  },
+  "tokens_in": 841,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.4863193329656497,
+  "context": null
+}

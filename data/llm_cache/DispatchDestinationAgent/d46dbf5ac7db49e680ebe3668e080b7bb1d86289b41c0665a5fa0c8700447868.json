@@ -1,0 +1,30 @@
+{
+  "output": "Submitted.",
+  "tokens_in": 1313,
+  "tokens_out": 63,
+  "requests": 2,
+  "latency_s": 2.323737416008953,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t118-P01",
+        "proposer": "dispatch",
+        "incident_id": "INC-17",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-17-1",
+            "V-17-2"
+          ]
+        },
+        "priority": 2,
+        "reason": "Closest hospital with capacity; accepts general and trauma, with trauma expertise nearby.",
+        "time_min": 118
+      }
+    ],
+    "invalid": []
+  }
+}

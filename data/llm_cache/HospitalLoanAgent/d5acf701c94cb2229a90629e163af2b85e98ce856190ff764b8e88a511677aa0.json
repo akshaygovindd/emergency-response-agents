@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t080-01",
+        "decision": "reject",
+        "teams": 0,
+        "duration_min": 0,
+        "reason": "Need to retain general capacity for my en-route critical burn patient coverage and preserve local surge flexibility."
+      }
+    ]
+  },
+  "tokens_in": 567,
+  "tokens_out": 57,
+  "requests": 1,
+  "latency_s": 1.9351774579845369,
+  "context": null
+}

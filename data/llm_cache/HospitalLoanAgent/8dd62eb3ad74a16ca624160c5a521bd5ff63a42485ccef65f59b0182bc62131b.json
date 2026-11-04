@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t078-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "I have one trauma slot free and one trauma team idle beyond my own critical trauma demand, so I can spare 1 team briefly."
+      }
+    ]
+  },
+  "tokens_in": 656,
+  "tokens_out": 71,
+  "requests": 1,
+  "latency_s": 1.303631583985407,
+  "context": null
+}

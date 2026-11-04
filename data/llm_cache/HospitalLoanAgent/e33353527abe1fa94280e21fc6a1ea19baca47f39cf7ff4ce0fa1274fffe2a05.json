@@ -1,0 +1,18 @@
+{
+  "output": {
+    "asks": [
+      {
+        "care": "trauma",
+        "lender_id": "H-T",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "Need one trauma slot/team to cover a critical queued trauma patient; 20 minutes is the minimum viable loan and H-T is the only candidate."
+      }
+    ]
+  },
+  "tokens_in": 560,
+  "tokens_out": 66,
+  "requests": 1,
+  "latency_s": 1.445126332982909,
+  "context": null
+}

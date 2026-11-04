@@ -1,0 +1,30 @@
+{
+  "output": "Requested H-T for AMB-05.",
+  "tokens_in": 1322,
+  "tokens_out": 69,
+  "requests": 2,
+  "latency_s": 2.368535958987195,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t082-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-14",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-T",
+          "victim_ids": [
+            "V-14-1",
+            "V-14-4"
+          ]
+        },
+        "priority": 1,
+        "reason": "Trauma center fits the critical trauma ALS patient and has trauma capacity.",
+        "time_min": 82
+      }
+    ],
+    "invalid": []
+  }
+}

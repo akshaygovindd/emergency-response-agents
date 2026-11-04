@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t080-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has a burn slot and this patient is closer than the waiting burn criticals, so accepting won\u2019t strand higher-priority victims."
+      }
+    ]
+  },
+  "tokens_in": 816,
+  "tokens_out": 67,
+  "requests": 1,
+  "latency_s": 1.479239541979041,
+  "context": null
+}

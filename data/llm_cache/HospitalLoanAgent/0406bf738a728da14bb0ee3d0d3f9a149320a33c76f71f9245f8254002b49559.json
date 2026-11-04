@@ -1,0 +1,18 @@
+{
+  "output": {
+    "answers": [
+      {
+        "request_id": "LN-t119-01",
+        "decision": "accept",
+        "teams": 1,
+        "duration_min": 20,
+        "reason": "General capacity is currently available and this is a small, urgent loan request."
+      }
+    ]
+  },
+  "tokens_in": 593,
+  "tokens_out": 53,
+  "requests": 1,
+  "latency_s": 1.2312651250394993,
+  "context": null
+}

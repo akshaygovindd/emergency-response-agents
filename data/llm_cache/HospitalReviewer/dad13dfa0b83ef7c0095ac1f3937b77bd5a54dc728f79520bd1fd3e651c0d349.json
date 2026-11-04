@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t074-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has burn capacity and enough beds, and accepting this load does not strand a closer critical burn patient given current availability."
+      }
+    ]
+  },
+  "tokens_in": 753,
+  "tokens_out": 64,
+  "requests": 1,
+  "latency_s": 1.4590475419536233,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t118-P01",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G can treat both patients and still has general capacity, so accepting avoids stranding these ALS trauma/general critical victims."
+      }
+    ]
+  },
+  "tokens_in": 865,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.317721083003562,
+  "context": null
+}

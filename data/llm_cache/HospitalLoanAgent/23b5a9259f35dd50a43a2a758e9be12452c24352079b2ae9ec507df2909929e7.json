@@ -1,0 +1,19 @@
+{
+  "output": {
+    "revisions": [
+      {
+        "request_id": "LN-t080-01",
+        "action": "escalate",
+        "lender_id": "H-B",
+        "teams": 1,
+        "duration_min": 40,
+        "reason": "We still need a general-capacity loan to cover our queued patient while preserving critical local coverage; no better lender option is available in this round."
+      }
+    ]
+  },
+  "tokens_in": 655,
+  "tokens_out": 77,
+  "requests": 1,
+  "latency_s": 1.622850916988682,
+  "context": null
+}

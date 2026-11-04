@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t057-P03",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can treat both victims, has capacity, and this noncritical load does not require preserving its only burn slot for any closer critical patient."
+      }
+    ]
+  },
+  "tokens_in": 855,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.358756415953394,
+  "context": null
+}

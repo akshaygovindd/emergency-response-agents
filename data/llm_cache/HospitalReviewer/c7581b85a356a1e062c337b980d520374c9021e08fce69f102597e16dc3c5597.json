@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t116-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B has enough burn slots and beds for both victims, and preserving capacity is not needed because the critical burn patient waiting for H-B has no closer alternative hospital."
+      }
+    ]
+  },
+  "tokens_in": 700,
+  "tokens_out": 72,
+  "requests": 1,
+  "latency_s": 1.585242124972865,
+  "context": null
+}

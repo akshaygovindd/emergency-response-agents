@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t105-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-B can take general patients and has free beds, and this low-urgency patient does not need the last critical-protective capacity."
+      }
+    ]
+  },
+  "tokens_in": 823,
+  "tokens_out": 68,
+  "requests": 1,
+  "latency_s": 1.260356458951719,
+  "context": null
+}

@@ -1,0 +1,17 @@
+{
+  "output": {
+    "reviews": [
+      {
+        "request_id": "t026-P02",
+        "decision": "accept",
+        "counter_hospital_id": "",
+        "reason": "H-G has general capacity and this patient is the closest suitable match; preserving beds for critical trauma patients does not require holding this slot at H-G."
+      }
+    ]
+  },
+  "tokens_in": 645,
+  "tokens_out": 63,
+  "requests": 1,
+  "latency_s": 1.3611062500276603,
+  "context": null
+}

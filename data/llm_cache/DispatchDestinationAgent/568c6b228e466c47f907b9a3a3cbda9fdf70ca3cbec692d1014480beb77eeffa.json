@@ -1,0 +1,30 @@
+{
+  "output": "Submitted to H-G.",
+  "tokens_in": 1324,
+  "tokens_out": 61,
+  "requests": 2,
+  "latency_s": 2.231760790979024,
+  "context": {
+    "proposals": [
+      {
+        "proposal_id": "t109-P02",
+        "proposer": "dispatch",
+        "incident_id": "INC-21",
+        "action": {
+          "action_type": "admit_patient",
+          "ambulance_id": null,
+          "responder_id": null,
+          "hospital_id": "H-G",
+          "victim_ids": [
+            "V-21-2",
+            "V-21-1"
+          ]
+        },
+        "priority": 1,
+        "reason": "Shortest travel and available general capacity for both victims.",
+        "time_min": 109
+      }
+    ],
+    "invalid": []
+  }
+}
