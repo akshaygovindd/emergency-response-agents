@@ -20,7 +20,9 @@ SCENARIOS = ["normal", "surge", "bottleneck"]
 SYSTEMS = ["naive", "greedy", "agents", "negotiation", "oracle"]
 AGENT_SYSTEMS = ["agents", "negotiation", "oracle"]
 TRIAGE = {"Immediate": (4, 5), "Delayed": (3,), "Minor": (1, 2)}
-FRAMES = {"v1": "v1 (frozen pilot)", "v2": "v2 (frozen, with hospital admission negotiation)"}
+FRAMES = {"v1": "v1 (frozen pilot)", "v2": "v2 (frozen, with hospital admission negotiation)",
+          "v3": "v3 (frozen, with staff-sharing loans; surge and bottleneck only)"}
+ANALYSIS_DIR = SCENARIO_DIR.parents[1] / "results" / "analysis"
 
 
 def runs_for(version: str) -> list[dict]:
@@ -181,6 +183,23 @@ def takeaway_cost(t: pd.DataFrame, version: str, vs_greedy: pd.DataFrame) -> str
             f"for a critical-service change of {_pts(gain)} points versus greedy (average of the scenario differences).")
 
 
+def v3_payload() -> dict:
+    """The pre-registered v3 comparison and the loan statistics, read from results/analysis/09_v3_*.csv (scripts/analysis_v3.py)."""
+    contrasts = pd.read_csv(ANALYSIS_DIR / "09_v3_contrasts.csv")
+    loans = pd.read_csv(ANALYSIS_DIR / "09_v3_loans.csv")
+    pairs = pd.read_csv(ANALYSIS_DIR / "09_v3_loan_pairs.csv")
+    keep = contrasts[contrasts["metric_name"].isin(["P1", "P2", "never_started", "CSR"])]
+    cols = ["contrast", "scenario", "metric_name", "pairs", "mean_a", "mean_b", "mean_diff", "ci_low", "ci_high", "wins/losses/ties",
+            "perm_p", "confirmatory", "holm_p"]
+    main = keep[keep["metric_name"].isin(["P1", "P2"]) & keep["contrast"].isin(["C1 agents (v3 - v2)", "C2 negotiation - agents (v3)"])]
+    excl = int(main["ci_excludes_zero"].sum())
+    done = int(loans["loans_executed_sum"].sum())
+    take = (f"(v3) Staff sharing changed nothing measurable: {excl} of {len(main)} paired P1/P2 comparisons have a 95% interval that excludes zero, "
+            f"and none of the 4 pre-registered tests survives Holm correction. Only {done} loans were carried out across {int(loans['runs'].sum())} runs.")
+    return {"contrasts": _records(keep[cols]), "loans": _records(loans), "pairs": _records(pairs),
+            "source": "results/analysis/09_v3_*.csv", "takeaway": take}
+
+
 # ───────── Everything the Results page draws, as plain JSON-able data ─────────
 def _records(df: pd.DataFrame) -> list[dict]:
     return json.loads(df.to_json(orient="records"))
@@ -193,7 +212,8 @@ def results_payload(version: str) -> dict:
     vs_greedy = {m: paired_table(runs, m, "greedy") for m in ("naive", "agents", "negotiation")}
     rq2, oracle = paired_table(runs, "negotiation", "agents"), paired_table(runs, "oracle", "negotiation")
     triage, cost = triage_table(runs), cost_table(runs)
-    return {
+    extra = {"v3": v3_payload()} if version == "v3" else {}
+    return {**extra,
         "version": version, "label": FRAMES[version], "source": f"results/{version}/runs.jsonl", "runs": len(runs),
         "csr": _records(csr), "vs_greedy": {m: _records(t) for m, t in vs_greedy.items()}, "rq2": _records(rq2),
         "oracle": _records(oracle), "triage": _records(triage), "cost": _records(cost),

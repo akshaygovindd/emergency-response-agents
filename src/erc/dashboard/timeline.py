@@ -14,12 +14,22 @@ WHO = {"Assessment": "Assessment", "Dispatch": "Dispatch", "Resource Alloc.": "R
        "Hospital": "Hospital", "System": "System"}
 ICON = {"Assessment": "brain-circuit", "Dispatch": "siren", "Resource Allocation": "sliders-horizontal",
         "Hospital": "hospital", "System": "shield-check"}
-TAGS = {"proposal": "Proposal", "counter": "Counter", "accept": "Accept", "reject": "Declined", "conflict": "Conflict",
+TAGS = {"request": "Loan request", "loan": "Staff", "proposal": "Proposal", "counter": "Counter", "accept": "Accept", "reject": "Declined", "conflict": "Conflict",
         "executed": "Executed", "escalate": "Escalated", "info": "Assessed"}
 SKIPPED = {"commit"}
 
 
+def _loan_sentence(row: dict) -> str:
+    kind, body = row["type"], plain_text(row["text"])
+    why = row["why"][:110] + ("..." if len(row["why"]) > 110 else "")
+    return {"request": f"Asked for staff: {body}", "counter": f"Offered instead: {body}", "accept": f"Agreed: {body}",
+            "reject": "Declined the staff loan" + (f": {why}" if why else ""), "escalate": f"Escalated loan to arbitration: {body}",
+            "loan": body[0].upper() + body[1:]}.get(kind, body)
+
+
 def _sentence(row: dict) -> str:
+    if row.get("loan"):
+        return _loan_sentence(row)
     kind, body = row["type"], plain_text(row["text"])
     short = body.removeprefix("send ")
     if kind == "proposal":
@@ -40,7 +50,7 @@ def _sentence(row: dict) -> str:
 
 
 def _item(row: dict, who: str) -> dict:
-    return {"id": row["id"], "a": row["i"], "b": row["i"], "t": row["t"], "who": who, "icon": ICON.get(who, "shield-check"),
+    return {"id": row["id"], "a": row["i"], "b": row["i"], "t": row["t"], "who": who, "icon": ICON.get(who) or ("hospital" if who.startswith("Hospital") else "shield-check"),
             "type": row["type"], "tag": TAGS.get(row["type"], row["type"].title()), "text": _sentence(row),
             "tip": f"{row['id']} - {row['why']}" if row["why"] else row["id"]}
 
@@ -55,10 +65,12 @@ def _join_and(names: list[str]) -> str:
 
 def executed_sentence(group: list[dict]) -> str:
     """'Dispatched Ambulance 3 and Ambulance 5 · admitted 3 patients': dispatches and admissions kept apart."""
-    units, admitted, diverted = [], 0, 0
+    units, admitted, diverted, lent = [], 0, 0, []
     for r in group:
         text = r["text"]
-        if text.startswith("sent "):
+        if text.startswith("lent "):
+            lent.append(plain_text(text.removeprefix("lent ")))
+        elif text.startswith("sent "):
             units.append(plain_text(text.removeprefix("sent ").split(" to ")[0]))
         elif text.startswith("admitted "):
             admitted += _count(text)
@@ -72,6 +84,8 @@ def executed_sentence(group: list[dict]) -> str:
     for verb, n in (("admitted", admitted), ("diverted", diverted)):
         if n:
             parts.append(f"{verb} {n} patient{'s' if n != 1 else ''}")
+    if lent:
+        parts.append("lent " + _join_and(lent))
     sentence = " · ".join(parts)
     return sentence[0].upper() + sentence[1:]
 

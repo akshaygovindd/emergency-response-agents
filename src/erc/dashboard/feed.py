@@ -68,13 +68,16 @@ def _action_text(action: dict | None) -> str:
             parts.append(action[key])
     if action.get("victim_ids"):
         parts.append("[" + ", ".join(action["victim_ids"]) + "]")
+    if action.get("loan"):
+        ln = action["loan"]
+        parts.append(f"{ln['lender_id']} → {ln['borrower_id']}, {ln['teams']} {ln['capability']} team(s), {ln['duration_min']} min")
     return " ".join(parts)
 
 
 @feed_event("agent_message", "agent")
 def _agent_message(e: dict) -> str:
     action = _action_text(e.get("proposed_action"))
-    head = f"{e['sender']} → {e['recipient']}: {e['message_type']}"
+    head = f"{e.get('sender_id', e['sender'])} → {e.get('recipient_id', e['recipient'])}: {e['message_type']}"
     if e.get("incident_id"):
         head += f" ({e['incident_id']})"
     if e.get("round"):
@@ -155,3 +158,18 @@ def _treatment_started(e: dict) -> str:
 @feed_event("victim_deteriorated", "incident")
 def _deteriorated(e: dict) -> str:
     return f"{e['victim_id']} deteriorated to severity {e['severity']}"
+
+
+@feed_event("loan_started", "hospital")
+def _loan_started(e: dict) -> str:
+    return f"{e['lender_id']} lends {e['teams']} {e['capability']} team(s) to {e['borrower_id']} (arrives minute {e['arrive_min']})"
+
+
+@feed_event("loan_arrived", "hospital")
+def _loan_arrived(e: dict) -> str:
+    return f"Loaned staff arrived at {e['borrower_id']} ({e['loan_id']})"
+
+
+@feed_event("loan_returned", "hospital")
+def _loan_returned(e: dict) -> str:
+    return f"Loaned staff back at {e['lender_id']} ({e['loan_id']})"

@@ -6,8 +6,8 @@
   const D = JSON.parse($("data").textContent);
   const R = D.records;
   const TONE = { conflict: "var(--warn)", proposal: "var(--accent-hover)", counter: "var(--warn)", accept: "var(--ok)", reject: "var(--danger)",
-    escalate: "var(--violet)", resolved: "var(--violet)", fallback: "var(--violet)", commit: "var(--violet)", info: "var(--text-3)" };
-  const FILTERS = [["all", "All"], ["conflict", "Conflicts"], ["admission", "Admissions"], ["notable", "Notable"]];
+    escalate: "var(--violet)", request: "var(--accent-hover)", resolved: "var(--violet)", fallback: "var(--violet)", commit: "var(--violet)", info: "var(--text-3)" };
+  const FILTERS = [["all", "All"], ["conflict", "Conflicts"], ["admission", "Admissions"], ["loan", "Staff loans"], ["notable", "Notable"]];
   const NOTABLE = new Set(R.filter((r) => r.notable).map((r) => r.id));
   let filter = "all", selected = null;
 
@@ -21,14 +21,14 @@
   UI.segmented($("filter"), (v) => { filter = v; drawList(); });
 
   const shown = () => R.filter((r) => filter === "all" || (filter === "notable" ? NOTABLE.has(r.id) : r.kind === filter));
-  function outcomeTone(r) { return r.method === "fallback" ? "var(--danger)" : r.method === "accepted" || r.method === "negotiation" ? "var(--ok)" : "var(--violet)"; }
+  function outcomeTone(r) { return r.method === "fallback" || /^Refused/.test(r.outcome) ? "var(--danger)" : r.method === "accepted" || r.method === "negotiation" ? "var(--ok)" : "var(--violet)"; }
 
   function drawList() {
     const rows = shown();
     $("count").textContent = `${rows.length} of ${R.length}`;
     if (!rows.length) { $("list").innerHTML = `<div class="empty-state" style="padding:24px 0">Nothing matches this filter.</div>`; }
     else $("list").innerHTML = rows.map((r) => {
-      const tone = r.kind === "conflict" ? "var(--warn)" : "var(--info)";
+      const tone = r.kind === "conflict" ? "var(--warn)" : r.kind === "loan" ? "var(--violet)" : "var(--info)";
       return `<button class="nc${r.id === selected ? " sel" : ""}" data-id="${esc(r.id)}" data-tip="${esc(r.id + "|" + r.type)}"><div class="min"><b>${r.t}</b><span>minute</span></div><div>` +
         `<div class="top"><span class="badge" style="--tone:${tone}"><i></i>${esc(r.type)}</span><span class="badge" style="--tone:${outcomeTone(r)}">${esc(r.outcome)}</span></div>` +
         `<div class="what">${esc(r.incidents_plain.join(", "))}</div><div class="meta">${esc(r.units_plain.join(", "))} · ${r.steps.length} steps · ${r.rounds} round${r.rounds === 1 ? "" : "s"}</div></div></button>`;
@@ -48,7 +48,7 @@
   function drawDetail(r) {
     if (!r) { $("detail").innerHTML = `<div class="empty-state"><div class="tile" style="--tone:var(--text-3)">${ico("messages-square", 24)}</div><h3>No negotiations in this run</h3>` +
       `The ${esc(UI.SYSTEM_LABEL[D.sel.m] || D.sel.m)} system had no conflicts or hospital negotiations here. Pick another system in the run selector.</div>`; return; }
-    const tone = r.kind === "conflict" ? "var(--warn)" : "var(--info)";
+    const tone = r.kind === "conflict" ? "var(--warn)" : r.kind === "loan" ? "var(--violet)" : "var(--info)";
     const steps = r.steps.map((s, i) => `<div class="step" style="--tone:${TONE[s.key] || "var(--text-3)"}"><div class="node">${ico(s.key === "conflict" ? "triangle-alert" : s.key === "accept" || s.key === "resolved" ? "circle-check" : s.key === "reject" ? "x" : "messages-square", 16)}</div>` +
       `<div class="box"><div class="row"><span class="badge" style="--tone:${TONE[s.key] || "var(--text-3)"}"><i></i>${esc(s.label)}</span><span class="who">${esc(s.from)}${s.to ? " → " + esc(s.to) : ""}</span><span class="at" data-tip="Message|${esc(s.id)}">minute ${s.t} · ${esc(s.id)}</span></div>` +
       `<div class="say">${esc(s.plain || s.text)}</div>${s.why ? `<div class="why">${esc(s.why)}</div>` : ""}` +

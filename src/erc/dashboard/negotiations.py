@@ -10,13 +10,16 @@ from __future__ import annotations
 
 from erc.dashboard.story import agent_label, conflict_text, feed_text, plain_text, resource_name
 
-STEP_LABELS = {"proposal": "Proposal", "counter_proposal": "Counter-offer", "accept": "Accept", "reject": "Reject",
+STEP_LABELS = {"request": "Loan request", "proposal": "Proposal", "counter_proposal": "Counter-offer", "accept": "Accept", "reject": "Reject",
                "escalate": "Arbitration", "info": "Info", "commit": "Commit"}
 STEP_KEYS = {"counter_proposal": "counter"}
 CONFLICT_TYPES = {"resource": "Resource conflict", "capacity": "Capacity conflict", "routing": "Routing conflict"}
 ADMISSION_OUTCOMES = {"accepted": "Accepted as proposed", "revised": "Revised after the hospital's counter",
                       "arbitrated": "Arbitrated by Resource Allocation", "pending": "Pending (no hospital could take them yet)",
                       "fallback": "Settled by fallback rule"}
+LOAN_OUTCOMES = {"accepted": "Lent as requested", "counter_accepted": "Lent on the lender's counter-offer", "revised": "Lent after a new request",
+                 "redirect": "Lent by another hospital (rule)", "arbitrated": "Arbitrated by Resource Allocation",
+                 "fallback": "Settled by fallback rule", "pending": "No loan (no hospital could spare the staff)"}
 CONFLICT_OUTCOMES = {"negotiation": "Settled by negotiation", "priority_rule": "Settled by the fixed priority rule",
                      "fallback": "Settled by fallback rule"}
 
@@ -32,13 +35,17 @@ def negotiation_records(events: list[dict]) -> list[dict]:
                for c in events if c["kind"] == "conflict_detected"]
     records += [_admission_record(e, messages.get(e["negotiation_id"], []))
                 for e in events if e["kind"] == "admission_resolved"]
+    refused = [e for e in events if e["kind"] == "action_rejected" and e["action"]["action_type"] == "loan_staff"]
+    records += [_loan_record(e, messages.get(e["negotiation_id"], []), refused)
+                for e in events if e["kind"] == "loan_resolved"]
     return sorted(records, key=lambda r: (r["t"], r["id"]))
 
 
 def _message_step(m: dict) -> dict:
     mtype = m["message_type"]
     return {"key": STEP_KEYS.get(mtype, mtype), "label": STEP_LABELS.get(mtype, mtype.title()), "t": m["t"],
-            "id": m["message_id"], "from": plain_text(agent_label(m["sender"])), "to": plain_text(agent_label(m["recipient"])),
+            "id": m["message_id"], "from": plain_text(agent_label(m.get("sender_id", m["sender"]))),
+            "to": plain_text(agent_label(m.get("recipient_id", m["recipient"]))),
             "text": feed_text(m.get("proposed_action"), m.get("incident_id")), "why": m.get("reason") or "", "raw": m,
             "plain": plain_text(feed_text(m.get("proposed_action"), m.get("incident_id")))}
 
@@ -79,8 +86,34 @@ def _admission_record(done: dict, messages: list[dict]) -> dict:
             "steps": steps, "outcome": ADMISSION_OUTCOMES.get(method, method), "method": method, "rounds": done["rounds"]}
 
 
+def _loan_record(done: dict, messages: list[dict], refused: list[dict]) -> dict:
+    """A staff-loan negotiation (v3): request, the lender's answer, any counter or arbitration, and what the validator did."""
+    steps = [_message_step(m) for m in messages]
+    method = done["method"]
+    if done["lender_id"]:
+        said = (f"{done['lender_id']} lends {done['teams']} {done['capability']} team{'s' if done['teams'] != 1 else ''} to "
+                f"{done['borrower_id']} for {done['duration_min']} min")
+    else:
+        said = f"{done['borrower_id']} gets no {done['capability']} loan"
+    steps.append({"key": "resolved", "label": "Outcome", "t": done["t"], "id": done["negotiation_id"], "from": "System", "to": "",
+                  "text": said, "plain": plain_text(said), "why": LOAN_OUTCOMES.get(method, method), "raw": done})
+    blocked = next((e for e in refused if e["t"] == done["t"] and e["action"]["loan"]["borrower_id"] == done["borrower_id"]
+                    and e["action"]["loan"]["lender_id"] == done["lender_id"]), None)
+    outcome = LOAN_OUTCOMES.get(method, method)
+    if blocked:
+        steps.append({"key": "fallback", "label": "Validator refused", "t": blocked["t"], "id": blocked["message_id"] or "", "from": "System", "to": "",
+                      "text": blocked["detail"], "plain": plain_text(blocked["detail"]), "why": blocked["reason"], "raw": blocked})
+        outcome = "Refused when carried out: " + blocked["reason"].replace("_", " ")
+    first = messages[0]["t"] if messages else done["t"]
+    incident = messages[0]["incident_id"] if messages else ""
+    places = [done["requested"], done["borrower_id"]] + ([done["lender_id"]] if done["lender_id"] not in (None, done["requested"]) else [])
+    return {"id": done["negotiation_id"], "kind": "loan", "t": first, "type": "Staff loan", "incidents": [incident],
+            "incidents_plain": [plain_text(incident)], "units": places, "units_plain": [plain_text(u) for u in places],
+            "steps": steps, "outcome": outcome, "method": method, "rounds": done["rounds"]}
+
+
 def is_notable(record: dict) -> bool:
     """A negotiation where something other than the first proposal happened (counter, rejection, arbitration, fallback)."""
-    if record["kind"] == "admission":
-        return record["method"] != "accepted"
+    if record["kind"] in ("admission", "loan"):
+        return record["method"] != "accepted" or any(s["key"] in ("counter", "reject", "fallback") for s in record["steps"])
     return record["method"] in ("negotiation", "fallback") or any(s["key"] in ("counter", "reject") for s in record["steps"])

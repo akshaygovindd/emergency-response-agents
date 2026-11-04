@@ -189,3 +189,8 @@ body[data-d="sm"] .feed { min-height: 88px; }
 
 /* Streamlit Community Cloud draws its badge over the bottom-right corner; keep the last step of the stepper clear of it */
 body:not(.mode-inline):not(.mode-compare) #neg.negotiation { padding-right: 92px; }
+/* v3 staff loans on the hospital cards */
+.loanrow { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.loanchip { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: rgba(139,92,246,.14); color: var(--violet); max-width: 100%; white-space: normal; line-height: 1.35; }
+.loanchip.in { background: rgba(45,212,191,.12); color: var(--ok); }
+.loanchip.slots { background: rgba(148,163,184,.14); color: var(--text-2); font-weight: 500; }

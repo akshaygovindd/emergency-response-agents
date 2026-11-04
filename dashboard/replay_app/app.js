@@ -24,8 +24,9 @@
   const STATUS_COLOR = { available: "var(--text-3)", en_route: "var(--info)", on_scene: "var(--ok)", transporting: "var(--violet)" };
   const HOSPITAL_COLOR = { "Stable": "var(--ok)", "Moderate": "var(--moderate)", "Near capacity": "var(--danger)" };
   const TYPE_COLOR = { proposal: "var(--accent)", counter: "var(--warn)", accept: "var(--ok)", reject: "var(--danger)", conflict: "var(--warn)",
-    executed: "var(--violet)", info: "var(--text-3)", escalate: "var(--warn)" };
-  const STORY = new Set(["conflict", "counter", "accept", "reject", "escalate", "executed"]);
+    executed: "var(--violet)", info: "var(--text-3)", escalate: "var(--warn)", request: "var(--accent)", loan: "var(--info)" };
+  const STORY = new Set(["conflict", "counter", "accept", "reject", "escalate", "executed", "request", "loan"]);
+  const LOAN_PHASE = { transfer_out: "on the way", active: "working here", recalled: "finishing up", transfer_back: "heading home" };
   const TEAM_ICON = { fire: "flame", rescue: "shield-check", medical: "activity" };
   const AGENT_NAMES = ["Assessment", "Dispatch", "Hospital Coordination", "Resource Allocation"];
   const AGENT_COLOR = { idle: "var(--text-3)", working: "var(--ok)", negotiating: "var(--warn)" };
@@ -168,7 +169,7 @@
     ARTERIALS.forEach((road) => el("polyline", { points: road.map(([x, y]) => `${G.X(x).toFixed(0)},${G.Y(y).toFixed(0)}`).join(" "), fill: "none",
       stroke: "rgba(148,163,184,.11)", "stroke-width": 3, "stroke-linecap": "round", "stroke-linejoin": "round" }, svg));
     layers = {};
-    ["routes", "conflict", "hospitals", "incidents", "units", "labels"].forEach((n) => (layers[n] = el("g", {}, svg)));
+    ["routes", "conflict", "loans", "hospitals", "incidents", "units", "labels"].forEach((n) => (layers[n] = el("g", {}, svg)));
 
     // Hospitals: glow, one ring arc per ER bed, icon tile
     hospitals = B.hospitals.map((h) => {
@@ -252,6 +253,19 @@
   // ───────── Drawing one moment ─────────
   let tau = 0, shownMinute = -1;
   const unitName = (id) => (id.startsWith("AMB") ? "Ambulance " + parseInt(id.split("-")[1], 10) : id.replace("RESCUE-1", "Rescue team").replace("FIRE-1", "Fire team").replace("MED-1", "Medical team"));
+  // Staff loans (v3): a dashed line from lender to borrower while a team travels, a thin dotted one while it works there
+  function drawLoans(loans) {
+    layers.loans.innerHTML = "";
+    loans.forEach(([lender, borrower, care, teams, phase]) => {
+      const a = where[lender], b = where[borrower]; if (!a || !b) return;
+      const travelling = phase === "transfer_out" || phase === "transfer_back", [from, to] = phase === "transfer_back" ? [b, a] : [a, b];
+      const x1 = G.X(from[0]), y1 = G.Y(from[1]), x2 = G.X(to[0]), y2 = G.Y(to[1]);
+      el("line", { x1, y1, x2, y2, stroke: "var(--violet)", "stroke-width": travelling ? 2.4 : 1.4, "stroke-dasharray": travelling ? "8 6" : "2 6",
+        "stroke-linecap": "round", opacity: 0.85 }, layers.loans);
+      const t = el("text", { x: (x1 + x2) / 2, y: (y1 + y2) / 2 - 6, "text-anchor": "middle", fill: "var(--violet)", "font-size": 11, "font-weight": 600 }, layers.loans);
+      t.textContent = `${teams} ${care} team${teams > 1 ? "s" : ""} · ${LOAN_PHASE[phase]}`;
+    });
+  }
   const incName = (id) => "Incident " + parseInt(id.split("-")[1], 10);
 
   function render(t) {
@@ -264,6 +278,8 @@
       hs.segs.forEach((s, k) => s.setAttribute("stroke", k < er ? color : k < er + promised ? "var(--info)" : "rgba(148,163,184,.22)"));
       hs.g.setAttribute("data-tip", `${hs.h.name}|${hs.h.id} - ${er} of ${cap} ER beds in use` + (promised ? `|${promised} more patient${promised > 1 ? "s" : ""} on the way` : "") + `|${status}`);
     });
+
+    drawLoans(frame.l || []);
 
     incidents.forEach((is) => {
       const arrived = m >= is.inc.arrival_min;
@@ -486,10 +502,17 @@
       const [er, , promised, status] = frame.h[i], color = HOSPITAL_COLOR[status], cap = h.er_capacity;
       const occ = Math.min(er, cap), prom = Math.min(promised, Math.max(0, cap - er));
       const beds = Array.from({ length: cap }, (_, b) => `<i class="bed ${b < occ ? "occ" : b < occ + prom ? "prom" : ""}" style="--tone:${color}"></i>`).join("");
-      const [dr, rn] = frame.s[i];
+      const loans = frame.l || [], lent = loans.filter((l) => l[0] === h.id), got = loans.filter((l) => l[1] === h.id);
+      const away = lent.reduce((n, l) => n + l[3], 0), here = got.filter((l) => l[4] === "active" || l[4] === "recalled").reduce((n, l) => n + l[3], 0);
+      const [dr, rn] = frame.s[i], docs = h.doctors - away + here, nurses = h.nurses - away + here;
+      const slots = frame.h[i][4], base = h.treatment_slots;
+      const name = (id) => (B.hospitals.find((x) => x.id === id) || { name: id }).name, short = (id) => (B.hospitals.find((x) => x.id === id) || { label: id }).label;
+      const chips = lent.map((l) => `<span class="loanchip out" data-tip="${esc("Staff loan " + l[5] + "|" + h.name + " lent " + l[3] + " " + l[2] + " team to " + name(l[1]) + "|Its " + l[2] + " treatment slot moved with the team")}">↗ ${l[3]} ${l[2]} team lent to ${esc(short(l[1]))} · ${LOAN_PHASE[l[4]]}</span>`).join("") +
+        got.map((l) => `<span class="loanchip in" data-tip="${esc("Staff loan " + l[5] + "|" + h.name + " borrowed " + l[3] + " " + l[2] + " team from " + name(l[0]) + "|One extra " + l[2] + " treatment slot while the team is here")}">↙ ${l[3]} ${l[2]} team from ${esc(short(l[0]))} · ${LOAN_PHASE[l[4]]}</span>`).join("");
       return `<div class="card hosp" data-tip="${esc(h.name + "|" + h.id + " - " + er + " of " + cap + " ER beds in use" + (promised ? "|" + promised + " more on the way" : ""))}">` +
         `<div class="hosp-top"><span class="hosp-name">${esc(h.name)}</span><span class="status" style="--tone:${color}"><i></i>${status}</span></div>` +
-        `<div class="beds">${beds}</div><div class="hosp-foot"><span>${er}/${cap} beds in use${promised ? ` · +${promised} coming` : ""}</span><span>${h.doctors - dr} doctors, ${h.nurses - rn} nurses free</span></div></div>`;
+        `<div class="beds">${beds}</div><div class="hosp-foot"><span>${er}/${cap} beds in use${promised ? ` · +${promised} coming` : ""}</span><span>${Math.max(0, docs - dr)} doctors, ${Math.max(0, nurses - rn)} nurses free</span></div>` +
+        (chips || slots !== base ? `<div class="loanrow">${chips}${slots !== base ? `<span class="loanchip slots" data-tip="Treatment slots|${slots} now, ${base} normally">${slots} treatment slots (normally ${base})</span>` : ""}</div>` : "") + `</div>`;
     }).join("");
 
     renderTimeline(frame.n);

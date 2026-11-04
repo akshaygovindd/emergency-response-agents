@@ -15,7 +15,7 @@ LOGS_DIR = ROOT / "logs"
 SCENARIOS_DIR = ROOT / "data" / "scenarios"
 MODE_ORDER = ["naive", "greedy", "agents", "negotiation", "oracle"]
 MOVING = ("en_route", "transporting")
-VERSIONS = ("v1", "v2")
+VERSIONS = ("v1", "v2", "v3")
 _LOG_NAME = re.compile(r"^(?P<scenario>[a-z]+)_seed(?P<seed>\d+)_(?P<mode>[a-z]+)\.jsonl$")
 
 

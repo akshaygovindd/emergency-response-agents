@@ -12,7 +12,7 @@ import re
 
 AGENT_LABELS = {"incident_assessment": "Assessment", "dispatch": "Dispatch", "resource_allocation": "Resource Alloc.",
                 "hospital_coordination": "Hospital", "python": "System"}
-BADGES = {"info": "INFO", "proposal": "PROPOSAL", "counter_proposal": "COUNTER", "accept": "ACCEPT",
+BADGES = {"info": "INFO", "request": "REQUEST", "proposal": "PROPOSAL", "counter_proposal": "COUNTER", "accept": "ACCEPT",
           "reject": "REJECT", "commit": "COMMIT", "escalate": "ESCALATE"}
 TYPE_KEYS = {"counter_proposal": "counter"}            # message type -> class key used by the player
 
@@ -37,7 +37,10 @@ def plain_text(text: str) -> str:
 
 
 def agent_label(name: str | None) -> str:
-    return AGENT_LABELS.get(name or "", (name or "").replace("_", " ").title())
+    """'hospital_coordination:H-T' (a v3 hospital instance) becomes 'Hospital H-T'."""
+    base, _, instance = (name or "").partition(":")
+    label = AGENT_LABELS.get(base, base.replace("_", " ").title())
+    return f"{label} {instance}" if instance else label
 
 
 def resource_name(resource: str) -> str:
@@ -59,7 +62,14 @@ def describe_action(action: dict | None, incident: str | None = None) -> str:
     if kind in ("admit_patient", "divert_patient"):
         verb = "admit" if kind == "admit_patient" else "divert"
         return f"{verb} {victims} to {action['hospital_id']}"
+    if kind == "loan_staff":
+        return _loan_phrase(action["loan"])
     return kind.replace("_", " ")
+
+
+def _loan_phrase(loan: dict, past: bool = False) -> str:
+    teams = f"{loan['teams']} {loan['capability']} team{'s' if loan['teams'] != 1 else ''}"
+    return f"{'lent' if past else 'lend'} {teams} {loan['lender_id']} → {loan['borrower_id']} for {loan['duration_min']} min"
 
 
 def feed_text(action: dict | None, incident: str | None = None, past: bool = False) -> str:
@@ -74,6 +84,8 @@ def feed_text(action: dict | None, incident: str | None = None, past: bool = Fal
     if kind in ("admit_patient", "divert_patient"):
         verb = ("admitted" if past else "admit") if kind == "admit_patient" else ("diverted" if past else "divert")
         return f"{verb} {victims} to {action['hospital_id']}"
+    if kind == "loan_staff":
+        return _loan_phrase(action["loan"], past)
     return kind.replace("_", " ")
 
 
@@ -91,22 +103,32 @@ def conflict_text(e: dict) -> str:
 def feed_messages(events: list[dict]) -> list[dict]:
     """Every message the player shows, in log order (the player lists them newest first)."""
     rows = []
+    loans = {e["loan_id"]: e for e in events if e["kind"] == "loan_started"}
     for e in events:
-        row = _message_row(e)
+        row = _message_row(e, loans)
         if row:
             rows.append({"i": len(rows), **row})
     return rows
 
 
-def _message_row(e: dict) -> dict | None:
+def _message_row(e: dict, loans: dict | None = None) -> dict | None:
     kind, t = e["kind"], e["t"]
+    if kind in ("loan_arrived", "loan_recalled", "loan_returned") and loans and e["loan_id"] in loans:
+        ln = loans[e["loan_id"]]
+        text = {"loan_arrived": f"staff from {ln['lender_id']} arrived at {ln['borrower_id']} ({ln['teams']} team, extra {ln['capability']} slot open)",
+                "loan_recalled": f"loan to {ln['borrower_id']} ended, extra slot closing",
+                "loan_returned": f"staff back at {ln['lender_id']}, its {ln['capability']} slot restored"}[kind]
+        return {"t": t, "id": e["loan_id"], "from": "System", "to": "", "type": "loan", "badge": "STAFF", "text": text,
+                "why": f"loan {e['loan_id']}", "inc": None, "adm": False, "loan": True}
     if kind == "agent_message":
         mtype = e["message_type"]
         negotiation = e.get("negotiation_id") or ""
-        return {"t": t, "id": e["message_id"], "from": agent_label(e["sender"]), "to": agent_label(e["recipient"]),
+        return {"t": t, "id": e["message_id"], "from": agent_label(e.get("sender_id", e["sender"])),
+                "to": agent_label(e.get("recipient_id", e["recipient"])),
                 "type": TYPE_KEYS.get(mtype, mtype), "badge": BADGES.get(mtype, mtype.upper()),
                 "text": feed_text(e.get("proposed_action"), e.get("incident_id")),
-                "why": e.get("reason") or "", "inc": e.get("incident_id"), "adm": negotiation.startswith("ADM-")}
+                "why": e.get("reason") or "", "inc": e.get("incident_id"), "adm": negotiation.startswith("ADM-"),
+                "loan": negotiation.startswith("LN-")}
     if kind == "conflict_detected":
         return {"t": t, "id": e["conflict_id"], "from": "System", "to": "all agents", "type": "conflict",
                 "badge": "CONFLICT", "text": conflict_text(e), "why": e["reason"],

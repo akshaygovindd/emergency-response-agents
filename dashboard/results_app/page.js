@@ -10,12 +10,15 @@
   const SCENARIOS = ["normal", "surge", "bottleneck"];
   const TRIAGE_COLOR = { Immediate: "#EF4444", Delayed: "#FACC15", Minor: "#22C55E" };
   const TABS = [["csr", "Service rate"], ["rq1", "RQ1 · vs greedy"], ["rq2", "RQ2 · negotiation vs agents"], ["oracle", "Oracle ablation"], ["triage", "Triage colour"], ["cost", "RQ4 · cost"]];
+  const V3_TAB = ["v3", "v3 · staff sharing"];
   let version = D.initial, tab = "csr";
+  const tabList = () => (D.versions[version].v3 ? [...TABS, V3_TAB] : TABS);
+  const drawTabs = () => { $("tabs").innerHTML = tabList().map(([k, t]) => `<b data-v="${k}"${k === tab ? ' class="on"' : ""}>${t}</b>`).join(""); };
 
   UI.mountRail("Results"); UI.mountTooltips();
   $("versions").innerHTML = Object.keys(D.versions).map((v) => `<b data-v="${v}"${v === version ? ' class="on"' : ""}>${v}</b>`).join("");
-  UI.segmented($("versions"), (v) => { version = v; draw(); });
-  $("tabs").innerHTML = TABS.map(([k, t]) => `<b data-v="${k}"${k === tab ? ' class="on"' : ""}>${t}</b>`).join("");
+  UI.segmented($("versions"), (v) => { version = v; if (tab === "v3" && !D.versions[v].v3) tab = "csr"; drawTabs(); draw(); });
+  drawTabs();
   UI.segmented($("tabs"), (k) => { tab = k; draw(); });
 
   const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs || {}) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
@@ -101,13 +104,31 @@
       tip: `${NAME[mode]} minus ${NAME[vs]}, ${SC[s]}|${pts(r.mean_diff)} (95% CI ${pts(r.ci_low)} to ${pts(r.ci_high)})|wins/losses/ties ${r.wins}/${r.losses}/${r.ties} over ${r.n} seeds${r.significant ? "|Interval excludes zero" : "|Interval includes zero"}` }; }) };
   }
 
+  const NAME_METRIC = { P1: "Critical treated within 10 min", P2: "Mean wait of treated critical (min)", never_started: "Critical never started (per run)", CSR: "Critical service rate" };
+  const fmtM = (m, v) => (v === null || v === undefined ? "–" : m === "P1" || m === "CSR" ? `${(v * 100).toFixed(1)}%` : v.toFixed(2));
+  const fmtD = (m, v) => (m === "P1" || m === "CSR" ? `${v >= 0 ? "+" : ""}${(v * 100).toFixed(1)} pts` : `${v >= 0 ? "+" : ""}${v.toFixed(2)}`);
+  function v3Tables(V) {
+    const keep = V.contrasts.filter((r) => r.contrast.startsWith("C1 agents") || r.contrast.startsWith("C2"));
+    const rows = ["P1", "P2", "never_started", "CSR"].flatMap((m) => ["surge", "bottleneck"].flatMap((s) => keep.filter((r) => r.metric_name === m && r.scenario === s)));
+    const t1 = rows.map((r) => `<tr><td>${esc(NAME_METRIC[r.metric_name])}</td><td>${SC[r.scenario]}</td><td>${r.contrast.startsWith("C1") ? "Loans: v2 agents → v3 agents" : "Negotiation vs agents (both v3)"}</td>` +
+      `<td>${fmtM(r.metric_name, r.mean_b)} → ${fmtM(r.metric_name, r.mean_a)}</td><td>${fmtD(r.metric_name, r.mean_diff)} [${fmtD(r.metric_name, r.ci_low)}, ${fmtD(r.metric_name, r.ci_high)}]</td>` +
+      `<td>${esc(r["wins/losses/ties"])}</td><td>${r.confirmatory ? `<b>${r.holm_p.toFixed(2)}</b>` : "<span class='dim'>exploratory</span>"}</td></tr>`).join("");
+    const t2 = V.loans.map((r) => `<tr><td>${SC[r.scenario]}</td><td>${NAME[r.mode]}</td><td>${r.runs_with_a_loan} of ${r.runs}</td><td>${r.loan_requests_sum}</td><td>${r.loans_accepted_sum}</td><td>${r.loans_rejected_sum}</td>` +
+      `<td>${r.loans_countered_sum}</td><td>${r.loans_arbitrated_sum}</td><td>${r.loan_fallbacks_sum}</td><td>${r.loans_executed_sum}</td><td>${r.loan_team_minutes_sum}</td></tr>`).join("");
+    $("chart").innerHTML = `<div class="v3wrap"><table class="v3t"><thead><tr><th>Metric</th><th>Scenario</th><th>Contrast</th><th>Baseline → system (mean)</th><th>Difference [95% CI]</th><th>W/L/T</th><th>Holm p</th></tr></thead><tbody>${t1}</tbody></table>` +
+      `<h3 class="v3h">Loan activity (totals over the runs)</h3><table class="v3t"><thead><tr><th>Scenario</th><th>System</th><th>Runs with a loan</th><th>Requests</th><th>Accepted</th><th>Rejected</th><th>Countered</th><th>Arbitrated</th><th>Fallback</th><th>Started</th><th>Team-min planned</th></tr></thead><tbody>${t2}</tbody></table></div>`;
+  }
+
   function draw() {
     const P = D.versions[version], T = P.takeaways;
     $("vlabel").textContent = P.label;
     $("source").textContent = `Computed from ${P.source} · ${P.runs} runs · version ${version} only`;
     const cats = scenarioCats(P);
     let title, sub, take;
-    if (tab === "csr") {
+    if (tab === "v3") {
+      title = "Staff sharing between hospitals (v3)"; sub = "Pre-registered comparison, paired by seed with 95% intervals; v3 runs diverge from v2 after the first loan"; take = P.v3.takeaway;
+      legend([]); v3Tables(P.v3);
+    } else if (tab === "csr") {
       title = "Critical patients served in time"; sub = `Mean per scenario with its 95% interval · version ${version}`; take = T.csr;
       const series = SYSTEMS.filter((m) => P.csr.some((r) => r.mode === m)).map((m) => ({ name: NAME[m] + (m === "oracle" ? " (3 seeds)" : ""), color: COLOR[m], vals: cats.map((c) => { const r = P.csr.find((x) => x.scenario === c.key && x.mode === m);
         return r && { v: r.mean, lo: r.ci_low, hi: r.ci_high, tip: `${NAME[m]}, ${c.label}|${pct(r.mean)} (95% CI ${pct(r.ci_low)} to ${pct(r.ci_high)})|${r.n} seeds` }; }) }));
@@ -140,7 +161,7 @@
   }
   window.addEventListener("resize", draw);
   const wanted = /[#&]tab=(\w+)/.exec(window.location.hash);            // page.html#tab=triage opens that tab (handy for screenshots)
-  if (wanted && TABS.some(([k]) => k === wanted[1])) { tab = wanted[1]; $("tabs").querySelectorAll("b").forEach((b) => b.classList.toggle("on", b.dataset.v === tab)); }
+  if (wanted && tabList().some(([k]) => k === wanted[1])) { tab = wanted[1]; drawTabs(); }
   draw();
   window.__page = { draw, setTab: (k) => { tab = k; draw(); }, setVersion: (v) => { version = v; draw(); } };
 })();

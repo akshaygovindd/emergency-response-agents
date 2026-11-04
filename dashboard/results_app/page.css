@@ -23,3 +23,9 @@ body[data-d="md"] .callout, body[data-d="sm"] .callout { padding: 12px 16px; fon
 body[data-d="sm"] .chart-head h2 { font-size: 16px; } body[data-d="sm"] .chart-head { gap: 16px; }
 .tabs-row { min-width: 0; flex-wrap: wrap; } #tabs { max-width: 100%; flex-wrap: wrap; } .seg b { white-space: nowrap; }
 body[data-d="sm"] .seg b { padding: 0 10px; font-size: 12.5px; }
+.v3wrap { height: 100%; overflow: auto; padding: 4px 8px 12px; }
+.v3t { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.v3t th { text-align: left; color: var(--text-3); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--panel); }
+.v3t td { padding: 6px 8px; border-bottom: 1px solid rgba(148,163,184,.1); color: var(--text); white-space: nowrap; }
+.v3t .dim { color: var(--text-3); }
+.v3h { font-size: 13px; margin: 18px 0 6px; color: var(--text-2); }

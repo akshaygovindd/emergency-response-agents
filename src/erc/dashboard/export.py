@@ -103,6 +103,23 @@ def promised_by_minute(events: list[dict], hospital_ids: list[str], last_minute:
     return out
 
 
+# ───────── Staff loans (v3) ─────────
+def loans_at(snapshot: dict) -> list[list]:
+    """[[lender, borrower, care, teams, phase, loan id]] for the loans in flight at this minute (v3 snapshots only)."""
+    return [[ln["lender"], ln["borrower"], ln["care"], ln["teams"], ln["phase"], ln["id"]] for ln in snapshot.get("loans", [])]
+
+
+def loan_summary(events: list[dict]) -> list[dict]:
+    """One row per loan with the minutes of its phases, for the card chips and the map."""
+    rows = {e["loan_id"]: {"id": e["loan_id"], "lender": e["lender_id"], "borrower": e["borrower_id"], "care": e["capability"],
+                           "teams": e["teams"], "staff": e["staff_ids"], "t_start": e["t"], "t_arrive": e["arrive_min"],
+                           "t_ends": e["ends_min"], "t_returned": None} for e in events if e["kind"] == "loan_started"}
+    for e in events:
+        if e["kind"] == "loan_returned":
+            rows[e["loan_id"]]["t_returned"] = e["t"]
+    return list(rows.values())
+
+
 # ───────── Trips ─────────
 def unit_trips(unit_id: str, kind: str, positions: list[tuple[float, float]], targets: list) -> list[dict]:
     """Straight-line moves of one unit, from its per-minute positions."""
@@ -191,11 +208,13 @@ def build_bundle(events: list[dict], scenario: dict, meta: dict) -> dict:
         frames.append({
             "t": t, "v": codes,
             "h": [[hospitals[h]["er_occupied"], hospitals[h]["treatment_in_use"], promised[t][h],
-                   hospital_status(hospitals[h]["er_occupied"], promised[t][h], hospitals[h]["er_capacity"])]
+                   hospital_status(hospitals[h]["er_occupied"], promised[t][h], hospitals[h]["er_capacity"]),
+                   hospitals[h]["treatment_slots"]]
                   for h in hospital_ids],
             "a": amb_rows, "r": team_rows, "k": kpis[t], "s": staff[t], "n": seen,
             "res": resources_for_frame(amb_rows, team_rows, [u["kind"] for u in responders]),
             "u": util[t], **({"ag": agent_rows[t]} if agents_on else {}),
+            **({"l": loans_at(replay.snapshots[t])} if replay.snapshots[t].get("loans") else {}),
         })
 
     trips = []
@@ -206,6 +225,7 @@ def build_bundle(events: list[dict], scenario: dict, meta: dict) -> dict:
     trips.sort(key=lambda tr: (tr["t0"], tr["unit"]))
 
     return {
+        "loans": loan_summary(events),
         "meta": {**meta, "last_minute": last, "grid_km": GRID_KM, "codes": CODE_NAMES, "has_agents": agents_on,
                  "critical_total": sum(v["severity"] >= 4 for v in victims)},
         "hospitals": [{"id": h["hospital_id"], "name": h["name"], "label": _hospital_label(h["name"]),
