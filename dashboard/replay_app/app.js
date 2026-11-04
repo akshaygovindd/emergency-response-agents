@@ -175,6 +175,8 @@
     hospitals = B.hospitals.map((h) => {
       const g = el("g", { transform: `translate(${G.X(h.x)},${G.Y(h.y)})`, "data-tip": "" }, layers.hospitals);
       const glow = el("circle", { r: 46, opacity: 0.1 }, g);
+      const pulse = el("circle", { r: 44, fill: "none", stroke: "var(--warn)", "stroke-width": 2, class: "pulse", opacity: 0 }, g);   // orange ring while a conflict is about this ER
+      pulse.style.display = "none";
       el("circle", { r: 34, fill: "url(#vignette)" }, g);
       const segs = [], gap = 0.16, step = (2 * Math.PI) / h.er_capacity;
       for (let k = 0; k < h.er_capacity; k++) {
@@ -184,7 +186,7 @@
       }
       el("circle", { r: 24, fill: "#131B2C", stroke: "rgba(148,163,184,.25)" }, g);
       useIcon(g, "hospital", 24, "#E6EAF2");
-      return { h, g, glow, segs, box: rectAt(G.X(h.x), G.Y(h.y), 92, 92) };
+      return { h, g, glow, pulse, segs, box: rectAt(G.X(h.x), G.Y(h.y), 92, 92) };
     });
 
     // Incidents: glow, ring, one dot per patient
@@ -254,16 +256,16 @@
   let tau = 0, shownMinute = -1;
   const unitName = (id) => (id.startsWith("AMB") ? "Ambulance " + parseInt(id.split("-")[1], 10) : id.replace("RESCUE-1", "Rescue team").replace("FIRE-1", "Fire team").replace("MED-1", "Medical team"));
   // Staff loans (v3): a dashed line from lender to borrower while a team travels, a thin dotted one while it works there
+  let loanLabels = [];
   function drawLoans(loans) {
-    layers.loans.innerHTML = "";
+    layers.loans.innerHTML = ""; loanLabels = [];
     loans.forEach(([lender, borrower, care, teams, phase]) => {
       const a = where[lender], b = where[borrower]; if (!a || !b) return;
       const travelling = phase === "transfer_out" || phase === "transfer_back", [from, to] = phase === "transfer_back" ? [b, a] : [a, b];
       const x1 = G.X(from[0]), y1 = G.Y(from[1]), x2 = G.X(to[0]), y2 = G.Y(to[1]);
       el("line", { x1, y1, x2, y2, stroke: "var(--violet)", "stroke-width": travelling ? 2.4 : 1.4, "stroke-dasharray": travelling ? "8 6" : "2 6",
         "stroke-linecap": "round", opacity: 0.85 }, layers.loans);
-      const t = el("text", { x: (x1 + x2) / 2, y: (y1 + y2) / 2 - 6, "text-anchor": "middle", fill: "var(--violet)", "font-size": 11, "font-weight": 600 }, layers.loans);
-      t.textContent = `${teams} ${care} team${teams > 1 ? "s" : ""} · ${LOAN_PHASE[phase]}`;
+      loanLabels.push([(x1 + x2) / 2, (y1 + y2) / 2, `${teams} ${care} team${teams > 1 ? "s" : ""} · ${LOAN_PHASE[phase]}`]);   // drawn with the other labels so it can avoid them
     });
   }
   const incName = (id) => "Incident " + parseInt(id.split("-")[1], 10);
@@ -272,9 +274,11 @@
     if (!G) return;
     const m = Math.min(N, Math.floor(t)), frame = B.frames[m];
 
+    const conflictAt = [...B.conflicts].reverse().find((k) => k.t <= m && m < k.t + CALLOUT_MIN) || null;
     hospitals.forEach((hs, i) => {
       const [er, , promised, status] = frame.h[i], cap = hs.h.er_capacity, color = HOSPITAL_COLOR[status];
       hs.glow.setAttribute("fill", color);
+      hs.pulse.style.display = conflictAt && conflictAt.resources.includes(hs.h.id) ? "" : "none";
       hs.segs.forEach((s, k) => s.setAttribute("stroke", k < er ? color : k < er + promised ? "var(--info)" : "rgba(148,163,184,.22)"));
       hs.g.setAttribute("data-tip", `${hs.h.name}|${hs.h.id} - ${er} of ${cap} ER beds in use` + (promised ? `|${promised} more patient${promised > 1 ? "s" : ""} on the way` : "") + `|${status}`);
     });
@@ -340,7 +344,8 @@
     });
     const placeUnit = (u, pos, w, h) => {
       const off = dock.get(u) || [0, 0];
-      u.px = clamp(G.X(pos.x) + off[0], 36, G.W - 36); u.py = clamp(G.Y(pos.y) + off[1], 22, G.H - Math.max(22, G.bottom - 14));        // never half off the map
+      const bar = document.querySelector(".playbar"), floor = bar && bar.offsetHeight ? bar.offsetTop - 22 : G.H - Math.max(22, G.bottom - 14);   // icons stay above the floating playback bar
+      u.px = clamp(G.X(pos.x) + off[0], 36, G.W - 36); u.py = clamp(G.Y(pos.y) + off[1], 22, floor);        // never half off the map
       u.g.setAttribute("transform", `translate(${u.px},${u.py})`);
       taken.push(rectAt(u.px, u.py, w, h));
     };
@@ -375,6 +380,7 @@
       live[u.r.id] = [u.px, u.py];
     });
 
+    hospitals.forEach((hs) => (live[hs.h.id] = [G.X(hs.h.x), G.Y(hs.h.y)]));
     drawLabels(m, taken);
     drawConflict(m, conflictNow, live);
     if (m !== shownMinute) { shownMinute = m; panels(m, frame); }
@@ -408,6 +414,7 @@
     shown.forEach((is, n) => place(is.px, is.py, incName(is.inc.id),
       (w) => { const side = w / 2 + 50; return (n % 2 === 0 ? [[-side, 0], [side, 0], [0, -56], [0, 56]] : [[side, 0], [-side, 0], [0, 56], [0, -56]]).concat([[side, -30], [-side, -30], [side, 30], [-side, 30]]); }, "var(--text-2)", false));
     responders.forEach((u) => place(u.px, u.py, TEAM_LABEL[u.r.kind], (w) => [[w / 2 + 42, 0], [-(w / 2 + 42), 0], [0, 32], [0, -32]], "var(--text-3)", false));
+    loanLabels.forEach(([x, y, text]) => place(x, y, text, (w) => [[0, -16], [0, 16], [0, -32], [0, 32], [w / 2 + 10, -14], [-(w / 2 + 10), -14], [w / 2 + 10, 14], [-(w / 2 + 10), 14]], "var(--violet)", false));
   }
 
   // Conflict: dashed lines from the contested unit to each incident, plus a card placed where it covers the least

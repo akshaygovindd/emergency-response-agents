@@ -52,3 +52,17 @@ def test_render_compare_embeds_two_players_and_no_placeholders():
     data = json.loads(html.split('id="data">')[1].split("</script>")[0].replace("<\\/", "</"))
     assert data["a"]["label"] == "greedy" and data["diff"]["t"] == 6
     assert 'class="embed"' in data["a"]["html"] and 'class="embed"' in data["b"]["html"]
+
+
+def test_identical_unit_choices_name_which_patients_went_with_whom():
+    def run(victims_a, victims_b):
+        return ([accepted_with(1, "INC-01", "AMB-05", victims_a)], [accepted_with(1, "INC-01", "AMB-05", victims_b)])
+    a, b = run(["V-01-1", "V-01-3"], ["V-01-1", "V-01-2"])
+    diff = first_difference(a, b, "Greedy", "Negotiation")
+    assert diff["a_plain"] == ["sent Ambulance 5 to Incident 1 with patients 1 and 3"]
+    assert diff["b_plain"] == ["sent Ambulance 5 to Incident 1 with patients 1 and 2"]
+
+
+def accepted_with(t, incident, ambulance, victims):
+    return {"kind": "action_accepted", "t": t, "incident_id": incident,
+            "action": {"action_type": "assign_ambulance", "ambulance_id": ambulance, "victim_ids": victims}}

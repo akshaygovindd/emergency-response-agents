@@ -6,6 +6,8 @@ there are described in plain words. Built from the event logs only.
 """
 from __future__ import annotations
 
+import re
+
 from erc.dashboard.story import feed_text, plain_text
 
 SYSTEM_NAMES = {"naive": "Naive", "greedy": "Greedy", "agents": "Agents (no negotiation)",
@@ -33,7 +35,19 @@ def first_difference(events_a: list[dict], events_b: list[dict], name_a: str, na
         only_b = [text for key, text in b.get(t, {}).items() if key not in a.get(t, {})]
         if only_a or only_b:
             say = lambda name, acts: f"{name} {'; '.join(acts)}" if acts else f"{name} made no different decision"
+            a_plain, b_plain = [plain_text(x) for x in only_a], [plain_text(x) for x in only_b]
+            if a_plain and sorted(a_plain) == sorted(b_plain):          # same units sent to the same incidents: the difference is who went with whom
+                a_plain, b_plain = [_with_patients(x) for x in only_a], [_with_patients(x) for x in only_b]
             return {"t": t, "a": only_a, "b": only_b,
-                    "a_plain": [plain_text(x) for x in only_a], "b_plain": [plain_text(x) for x in only_b],
+                    "a_plain": a_plain, "b_plain": b_plain,
                     "text": f"First difference at minute {t}: {say(name_a, only_a)}. {say(name_b, only_b)}."}
     return None
+
+
+def _with_patients(text: str) -> str:
+    """'sent AMB-05 to INC-01 (V-01-1, V-01-3)' -> 'sent Ambulance 5 to Incident 1 with patients 1 and 3'."""
+    m = re.search(r"\((V-[^)]*)\)", text)
+    nums = [v.rsplit("-", 1)[1] for v in re.findall(r"V-\d+-\d+", m.group(1))] if m else []
+    nums = sorted(nums, key=int)
+    who = "" if not nums else (" with patient " + nums[0] if len(nums) == 1 else " with patients " + ", ".join(nums[:-1]) + " and " + nums[-1])
+    return plain_text(text) + who

@@ -194,3 +194,15 @@ body:not(.mode-inline):not(.mode-compare) #neg.negotiation { padding-right: 136p
 .loanchip { font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: rgba(139,92,246,.14); color: var(--violet); max-width: 100%; white-space: normal; line-height: 1.35; }
 .loanchip.in { background: rgba(45,212,191,.12); color: var(--ok); }
 .loanchip.slots { background: rgba(148,163,184,.14); color: var(--text-2); font-weight: 500; }
+
+/* large screens: tighter panels so the feed keeps three rows and Latest negotiation stays fully visible without scrolling */
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) #grid { padding: 16px 24px 16px; gap: 20px; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) #side { gap: 8px; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .kpis { gap: 8px; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .kpi { padding: 8px 14px 6px; } body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .kpi-top .tile { display: none; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .resources { padding: 8px 14px; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .agents { padding: 8px 14px 6px; } body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .ag { padding: 2px 0; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .hosp { padding: 8px 14px; } body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .beds { margin: 6px 0 4px; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .negotiation { padding-top: 8px; padding-bottom: 6px; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) #side { overflow-y: auto; overflow-x: hidden; }
+body[data-d="lg"]:not(.mode-compare):not(.mode-inline) .feed { min-height: 198px; padding-top: 10px; }

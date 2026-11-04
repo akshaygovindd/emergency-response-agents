@@ -19,7 +19,7 @@
       stepper("amb", "Ambulances", `${LIM.amb[0]} to ${LIM.amb[1]} available`, LIM.amb[0], LIM.amb[1]) +
       stepper("inc", "Incidents", `${LIM.inc[0]} to ${LIM.inc[1]} in total`, LIM.inc[0], LIM.inc[1]) +
       stepper("seed", "Seed", "same seed, same emergency", 0, 9999) +
-      `<div class="runrow"><button class="runbtn${dirty() ? "" : " clean"}" id="run">${ico("flask-conical", 18)} Run</button><span class="hint">${dirty() ? "Settings changed. Press Run." : "Showing these settings."}</span></div>` +
+      `<div class="runrow"><button class="runbtn${dirty() ? "" : " clean"}" id="run"${dirty() ? "" : " disabled aria-disabled=\"true\""}>${ico("flask-conical", 18)} Run</button><span class="hint">${dirty() ? "Settings changed. Press Run." : "Showing these settings."}</span></div>` +
       `<div><div class="systems">${["naive", "greedy"].map((m) => `<span class="sys live"><i></i>${UI.SYSTEM_LABEL[m]}</span>`).join("")}` +
       `${["agents", "negotiation", "oracle"].map((m) => `<span class="sys off" data-tip="${UI.SYSTEM_LABEL[m]}|Agent runs take minutes and use API calls. See the saved runs.">${ico("x", 12)}${UI.SYSTEM_LABEL[m]}</span>`).join("")}</div>` +
       `<p class="note" style="margin:8px 0 0">Agent runs take minutes and use API calls; see the saved runs on Replay, Compare and Results.</p></div>`;

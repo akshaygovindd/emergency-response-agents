@@ -33,7 +33,12 @@
         `<div class="top"><span class="badge" style="--tone:${tone}"><i></i>${esc(r.type)}</span><span class="badge" style="--tone:${outcomeTone(r)}">${esc(r.outcome)}</span></div>` +
         `<div class="what">${esc(r.incidents_plain.join(", "))}</div><div class="meta">${esc(r.units_plain.join(", "))} · ${r.steps.length} steps · ${r.rounds} round${r.rounds === 1 ? "" : "s"}</div></div></button>`;
     }).join("");
-    if (rows.length && !rows.some((r) => r.id === selected)) { selected = rows[0].id; drawList(); return; }
+    if (!rows.length) {                                              // nothing matches: the detail panel clears too, instead of showing the previous card
+      $("detail").innerHTML = R.length ? `<div class="empty-state"><div class="tile" style="--tone:var(--text-3)">${ico("messages-square", 24)}</div><h3>No negotiations match this filter</h3>Pick another filter to see the rest of this run's negotiations.</div>` : "";
+      if (!R.length) drawDetail(undefined);
+      return;
+    }
+    if (!rows.some((r) => r.id === selected)) { selected = rows[0].id; drawList(); return; }
     drawDetail(R.find((r) => r.id === selected));
   }
   $("list").addEventListener("click", (e) => {
