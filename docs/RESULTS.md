@@ -294,6 +294,57 @@ Largest gap: normal seed 49 in both versions (0.30 versus 0.80, five critical vi
 v2 did not reduce infeasible proposals; they moved from the hospital agent to Dispatch (163 and 171 in agents and negotiation, versus 106 and 101 in v1). The validator caught every one. **Limitation:**
 a blocked proposal still costs a model call and may delay a decision; the table shows safety, not efficiency.
 
+## v3. Hospitals lend doctors, nurses and treatment slots to each other (`scripts/analysis_v3.py`, `09_v3_*.csv`)
+
+Design and the pre-registered metrics are in `docs/V3_DESIGN.md` (tag `v3-frozen`). In v3 a hospital with critical or other patients queued and no free slot can ask another hospital for a doctor + nurse team;
+the loan **moves** one treatment slot of that care type from lender to borrower (and the team, with travel time each way), so the lender really gives something up. One Hospital Coordination instance runs per hospital and sees only its own
+state. `agents` uses a fixed lender rule; `negotiation` lets the lender accept, reject or counter, with Resource Allocation arbitrating. Runs: surge 10 seeds and bottleneck 5 seeds, agents and negotiation (normal was not run). Naive and greedy are unchanged and
+byte-identical to v2 (checked by tests). v3 is never pooled with v1 or v2.
+
+**Pre-registered metrics.** P1: share of **all** critical victims whose treatment started within 10 minutes of reaching a hospital (a victim who never reached a hospital, or never started, counts as not treated in time). P2: mean wait of critical victims whose treatment started,
+reported with *critical never started*. The definitions were amended once before the freeze, after the surge 42 dev run (`V3_DESIGN.md`, "Pre-freeze change"). Contrasts are paired by seed: C1 = v3 minus v2 for the same system (effect of loans), C2 = v3 negotiation minus v3 agents.
+Confirmatory family: P1 and P2 in surge for C1 (agents) and C2 = 4 tests, Holm-corrected on exact sign-flip permutation p-values; everything else is exploratory.
+
+Surge, mean over 10 seeds, difference with paired 95% interval, wins/losses/ties by seed (`09_v3_contrasts.csv`):
+
+| metric | v2 agents | v3 agents | C1: v3 - v2 | C2: v3 negotiation - v3 agents | Holm p (C1 / C2) |
+|:--|--:|--:|:--|:--|:--|
+| P1, critical treated within 10 min | 33.8% | 31.7% | -2.1 pts [-6.9, +2.7] 2/4/4 | -1.1 pts [-3.0, +0.7] 0/2/8 | 1.0 / 1.0 |
+| P2, mean wait of those treated | 2.60 min | 2.80 min | +0.20 [-0.78, +1.17] 4/3/3 | +0.29 [-0.23, +0.81] 2/0/8 | 1.0 / 1.0 |
+| critical never started (of 22.9 per run) | 14.5 | 15.1 | +0.6 [-0.2, +1.4] | +0.2 [-0.1, +0.5] | exploratory |
+| critical service rate (first contact) | 25.8% | 24.7% | -1.1 pts [-3.8, +1.6] | -0.7 pts [-3.5, +2.1] | exploratory |
+
+Bottleneck, 5 seeds (exploratory): P1 31.0% to 32.2% (+1.3 pts [-13.0, +15.5]), P2 3.8 to 5.3 min (+1.5 [-5.6, +8.6]), critical never started 10.6 in both, critical service rate identical (20.1%); negotiation and agents are identical on P1, critical never started and critical service rate in all 5 seeds.
+Sensitivity (`09_v3_sensitivity.csv`): N = 5 and N = 15 minutes, and dropping the dev seed 42, give the same picture (surge C1 on P1: -1.7, -1.6 and -2.3 points, all intervals contain zero).
+v3 negotiation minus v2 negotiation (secondary) is likewise null: surge P1 -2.5 pts [-7.5, +2.5], P2 +0.44 min [-0.32, +1.20].
+
+**Loan activity** (`09_v3_loans.csv`, `09_v3_loan_pairs.csv`, `09_v3_loan_capacity.csv`; totals over the runs of each cell):
+
+| scenario, mode | runs with a loan | requests | accepted | rejected | countered | arbitrated | fallback | loans started | refused at execution | team-minutes planned / worked at borrower |
+|:--|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| surge, agents (10 runs) | 7 | 37 | 12 | 25 | 0 | 0 | 0 | 10 | 2 | 220 / 180 |
+| surge, negotiation (10) | 9 | 17 | 15 | 2 | 0 | 1 | 1 | 12 | 4 | 270 / 200 |
+| bottleneck, agents (5) | 5 | 12 | 11 | 1 | 0 | 0 | 0 | 11 | 0 | 330 / 249 |
+| bottleneck, negotiation (5) | 5 | 12 | 12 | 0 | 0 | 0 | 1 | 12 | 0 | 350 / 269 |
+
+* Loans are rare: about 1 per surge run and 2 per bottleneck run, each 20 to 60 minutes with one team. Staff were away from their home hospital 2 to 3 times longer than they worked at the borrower, because of travel and waiting to be idle before returning (`away_minutes` in the capacity table).
+* Hospital pairs follow the slot layout: in surge, mostly general-care loans from H-G (4 teams to H-T, 2-3 to H-B) plus H-B to H-T; in bottleneck, trauma loans H-G to H-T (3-4 teams) and H-T to H-G/H-B in the other direction.
+  Burn loans are impossible (only H-B has burn slots).
+* **Counter-proposals were never used** (0 of 78 requests), as the hospital counter path was never used in v2. In `agents` the fixed rule rejected 25 of 37 surge requests (a lender with a critical patient of its own, or no spare capacity); in `negotiation` the model lenders rejected only 2 of 17.
+  The model lender accepts more, so negotiation lends 12 times versus 10 in surge, with no measurable consequence.
+* 6 committed loans (2 + 4, all in surge) were refused by the engine at execution because earlier decisions in the same minute (admissions) made the lender short; this is the validator doing its job (`lender_understaffed`).
+
+**Divergence caveat.** A v3 run is identical to the v2 run of the same system and seed only until something loan-related happens: 29 of 30 v3 runs differ from their v2 counterpart (`09_v3_divergence.csv`). In 23 they first differ at the minute of the first loan; in the other 6
+earlier or without any loan, which is consistent with a loan trigger waking the policy for an extra decision round (the model then answers a slightly different prompt). After the first difference the LLM sees different slot counts and makes different ambulance choices, so v3 minus v2 is the loan system's effect **including** that noise,
+one run per seed. This is why critical service rate, which loans cannot touch directly, moves by a point or two (not significantly). Mean logical tokens per run rose 1-15% over v2 (surge agents 121k to 127k, bottleneck negotiation 49k to 57k; `09_v3_cost.csv`); the loan calls themselves are 1-3k tokens per run.
+
+**Takeaway.** In these scenarios, hospitals lending staff and slots to each other made **no measurable difference** to how quickly critical patients start treatment: every interval contains zero, no confirmatory test is close to significant, and the point estimates are small and mixed in sign.
+The reason is visible in the data: of about 23 critical victims per surge run, 15 never start treatment, almost all because no ambulance reaches them in time, and those who do reach a hospital already start treatment after 2.6 minutes on average. Treatment slots are a bottleneck for only a few patients,
+so moving a slot or two between hospitals cannot change much, and negotiation had almost nothing to negotiate (no counters, 2 rejections). The loan machinery works as designed and is safe (the validator caught every infeasible loan), but the evidence does not show a benefit.
+
+**Limitations.** One run per seed and system; 10 surge and 5 bottleneck seeds, so the intervals are wide (P2 in bottleneck spans -5.6 to +8.6 minutes). Normal was not run. The benefit rests on one modelling assumption (a loan transfers one slot per team) and on a fixed loan duration range; other staffing assumptions or a scenario with scarce staff could behave differently.
+The fixed rule and the model lender are only two lender policies. v3 and v2 differ after the first loan in ways the loans alone do not explain (above).
+
 ## Limitations (all sections)
 
 * Small samples: 10, 10 and 5 seeds per scenario, 3 for the oracle. No agent system differs significantly from greedy on critical service rate (the primary metric), so those findings are "no detectable difference", not "no difference"; agent systems do beat naive significantly (RQ1), and a few exploratory secondary-metric differences versus greedy exist (RQ4). Intervals are wide (about +/-20 points in normal, where a run has only 4-11 critical victims).
@@ -308,4 +359,4 @@ a blocked proposal still costs a model call and may delay a decision; the table 
 
 `results/analysis/`: `01_csr`, `01_rq1_paired_vs_greedy`, `01_rq1_vs_naive`, `01_rq1_permutation`, `01_rq2_negotiation_vs_agents`, `01_oracle_ablation`, `01_triage_by_color`, `02_divergence`, `02_divergence_summary`, `03_conflicts`,
 `03_conflict_summary`, `04_contention`, `05_admission_stats`, `05_admission_methods`, `05_v1_vs_v2_critical_service`, `06_failure_runs`, `06_failure_victims`, `06_invalid_proposals`, `06_reliability_summary`,
-`07_cost_benefit`, `07_cost_overall`, `08_secondary_metrics_exploratory`, `00_reconstruction_check` (all `.csv`), and `fig01` to `fig12` (`.png`).
+`07_cost_benefit`, `07_cost_overall`, `08_secondary_metrics_exploratory`, `09_v3_runs`, `09_v3_levels`, `09_v3_contrasts`, `09_v3_sensitivity`, `09_v3_loans`, `09_v3_loan_pairs`, `09_v3_loan_capacity`, `09_v3_divergence`, `09_v3_cost`, `00_reconstruction_check` (all `.csv`), and `fig01` to `fig12` (`.png`).

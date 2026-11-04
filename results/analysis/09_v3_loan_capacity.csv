@@ -1,0 +1,5 @@
+scenario,mode,teams,planned_min,capacity_minutes,away_minutes
+bottleneck,agents,11,330,249,481
+bottleneck,negotiation,12,350,269,523
+surge,agents,10,220,180,596
+surge,negotiation,12,270,200,655

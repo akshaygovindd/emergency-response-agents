@@ -83,8 +83,9 @@ flowchart LR
 
 * **v1** (frozen pilot): Hospital Coordination proposes destinations; negotiation only over conflicts. Tags `calibration-frozen`, `environment-frozen`, `agents-frozen`.
 * **v2** (tag `v2-frozen`): hospital admission negotiation added (Dispatch requests, hospital accepts / rejects / counters). Same agents otherwise; design in [docs/V2_DESIGN.md](docs/V2_DESIGN.md).
+* **v3** (tag `v3-frozen`): hospital staff-sharing negotiation (one Hospital Coordination instance per hospital lends a doctor + nurse team and a treatment slot to another). Surge and bottleneck only. Result: no measurable change in critical-patient treatment times (every paired interval contains zero); see the v3 section of [docs/RESULTS.md](docs/RESULTS.md) and the design in [docs/V3_DESIGN.md](docs/V3_DESIGN.md).
 * Dashboard tags: `dashboard-v1` (before the redesign) and `dashboard-v2` (final).
-* Results and logs live in `results/<version>/` and `logs/<version>/`. v1 is write-protected in the runner, every v2 run must pass `--version v2`, tables carry a `version` column, and v1 and v2 are never pooled. Naive and greedy are identical in both (verified).
+* Results and logs live in `results/<version>/` and `logs/<version>/`. v1 and v2 are write-protected in the runner, every v2/v3 run must pass `--version`, tables carry a `version` column, and v1 and v2 are never pooled. Naive and greedy are identical in both (verified).
 
 ## Setup and reproduction
 

@@ -1,0 +1,23 @@
+scenario,mode,pair,care,teams
+bottleneck,agents,H-B -> H-T,general,2
+bottleneck,agents,H-G -> H-B,general,1
+bottleneck,agents,H-G -> H-T,trauma,3
+bottleneck,agents,H-T -> H-B,general,2
+bottleneck,agents,H-T -> H-G,general,1
+bottleneck,agents,H-T -> H-G,trauma,2
+bottleneck,negotiation,H-B -> H-T,general,2
+bottleneck,negotiation,H-G -> H-B,general,1
+bottleneck,negotiation,H-G -> H-T,trauma,4
+bottleneck,negotiation,H-T -> H-B,general,2
+bottleneck,negotiation,H-T -> H-G,general,1
+bottleneck,negotiation,H-T -> H-G,trauma,2
+surge,agents,H-B -> H-T,general,2
+surge,agents,H-G -> H-B,general,2
+surge,agents,H-G -> H-T,general,4
+surge,agents,H-T -> H-B,general,1
+surge,agents,H-T -> H-G,trauma,1
+surge,negotiation,H-B -> H-T,general,3
+surge,negotiation,H-G -> H-B,general,3
+surge,negotiation,H-G -> H-T,general,4
+surge,negotiation,H-T -> H-B,general,1
+surge,negotiation,H-T -> H-G,trauma,1

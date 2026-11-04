@@ -1,0 +1,5 @@
+scenario,mode,runs,loan_requests_sum,loan_requests_mean,loans_accepted_sum,loans_accepted_mean,loans_rejected_sum,loans_rejected_mean,loans_countered_sum,loans_countered_mean,loan_counters_accepted_sum,loan_counters_accepted_mean,loans_arbitrated_sum,loans_arbitrated_mean,loan_fallbacks_sum,loan_fallbacks_mean,loan_redirects_sum,loan_redirects_mean,loans_executed_sum,loans_executed_mean,loan_team_minutes_sum,loan_team_minutes_mean,runs_with_a_loan,rejected_at_execution
+bottleneck,agents,5,12.0,2.4,11.0,2.2,1.0,0.2,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,11.0,2.2,330.0,66.0,5,0
+bottleneck,negotiation,5,12.0,2.4,12.0,2.4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.2,0.0,0.0,12.0,2.4,350.0,70.0,5,0
+surge,agents,10,37.0,3.7,12.0,1.2,25.0,2.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,10.0,1.0,220.0,22.0,7,2
+surge,negotiation,10,17.0,1.7,15.0,1.5,2.0,0.2,0.0,0.0,0.0,0.0,1.0,0.1,1.0,0.1,0.0,0.0,12.0,1.2,270.0,27.0,9,4

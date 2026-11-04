@@ -1,0 +1,9 @@
+version,scenario,mode,tokens_in,tokens_out,fresh_tokens,est_cost_usd,llm_calls,logical_tokens
+v2,bottleneck,agents,41007.8,2600.6,22316.4,0.042,25.0,43608.4
+v2,bottleneck,negotiation,46289.4,3045.2,4223.6,0.048,31.6,49334.6
+v2,surge,agents,114642.0,6774.6,81356.2,0.116,59.4,121416.6
+v2,surge,negotiation,127622.1,8033.7,17876.6,0.132,77.4,135655.80000000002
+v3,bottleneck,agents,46056.0,2857.2,18244.2,0.047,29.0,48913.2
+v3,bottleneck,negotiation,53180.6,3479.4,6512.0,0.056,38.6,56660.0
+v3,surge,agents,119890.9,7348.7,59785.7,0.123,63.8,127239.59999999999
+v3,surge,negotiation,129252.0,8353.0,17690.6,0.135,81.2,137605.0
