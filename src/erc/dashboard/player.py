@@ -94,5 +94,5 @@ def render_replay_app(bundle: dict, catalog: dict, app_dir: Path = APP_DIR, asse
 
 
 def app_stamp(app_dir: Path = APP_DIR) -> float:
-    """Changes whenever an app file changes (lets Streamlit's cache notice edits)."""
-    return max(f.stat().st_mtime for f in app_dir.glob("app.*"))
+    """Changes whenever an app file or a dashboard Python module changes (lets Streamlit's cache notice edits)."""
+    return max(f.stat().st_mtime for f in [*app_dir.glob("app.*"), *Path(__file__).parent.glob("*.py")])

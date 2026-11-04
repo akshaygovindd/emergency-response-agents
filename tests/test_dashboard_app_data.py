@@ -129,7 +129,7 @@ def test_expectant_icon_differs_from_the_conflict_icon():
 
 def test_app_has_resources_row_and_unit_legend():
     js = (Path(__file__).resolve().parents[1] / "dashboard" / "replay_app" / "app.js").read_text()
-    for needle in ("Ambulances", "Response teams", '["transporting", "transporting"]', '"on_scene", "on scene"', "ALS ambulance" if False else "ALS",
+    for needle in ("Ambulances", "First responders", "Utilization", "Agents", "ALS ambulance" if False else "ALS",
                    'ico("ambulance", 16)', 'ico("users", 16)', 'ico("hospital", 16)', "Response team"):
         assert needle in js, needle
 

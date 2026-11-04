@@ -60,7 +60,7 @@ def render_page(page_dir: Path, data: dict, *, body_class: str = "", assets_dir:
 
 def page_stamp(page_dir: Path, ui_dir: Path = UI_DIR) -> float:
     """Changes whenever one of the page's files (or the shared base) changes, so Streamlit's cache notices edits."""
-    files = [*page_dir.glob("page.*"), *ui_dir.glob("base.*"), *page_dir.glob("*.py")]
+    files = [*page_dir.glob("page.*"), *ui_dir.glob("base.*"), *page_dir.glob("*.py"), *Path(__file__).parent.glob("*.py")]
     return max(f.stat().st_mtime for f in files)
 
 

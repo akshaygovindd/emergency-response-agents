@@ -28,7 +28,8 @@ def snapshot(t):
     amb_status = "en_route" if 2 <= t < 6 else "on_scene" if t >= 6 else "available"
     return {
         "t": t, "kind": "snapshot", "time_min": t, "active_incidents": 1, "waiting_victims": 2,
-        "critical_waiting": 1, "ambulances_busy": 1, "ambulances_available": 0,
+        "critical_waiting": 1, "ambulances_busy": 1, "ambulances_available": 0, "responders_available": 1,
+        "er_occupancy": {"H1": 0.25 if t >= 7 else 0.0},
         "ambulances": [{"id": "AMB-01", "x": 4.0 if t >= 6 else 0.0, "y": 0.0, "status": amb_status,
                         "target": "INC-01" if t >= 2 else None, "onboard": []}],
         "responders": [{"id": "MED-1", "x": 1.0, "y": 1.0, "status": "available", "target": None}],

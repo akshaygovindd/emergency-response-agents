@@ -25,6 +25,7 @@ The write-up is in [docs/RESULTS.md](docs/RESULTS.md).
 
 The dashboard replays saved runs from their event logs (no simulation, no API calls): pick version, scenario, run and system, press play,
 and watch incidents appear, ambulances move, agent messages stream (proposal, conflict, counter-offer, accept, commit), hospitals fill and KPIs update.
+Two live panels sit beside the map: **Utilization** (ambulances, first responders, doctors, nurses and ER capacity: busy share now and the average so far; at the last minute the ambulance and responder averages equal the results table) and **Agents** (status of the four agents at the current minute: idle, working or negotiating, their last action and their pending requests). Both are computed in Python from the saved event log.
 Pages: Replay, Compare, What-if (re-runs naive and greedy live), Results, Negotiations.
 
 ## Research questions and results
@@ -98,7 +99,7 @@ python3.12 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt && pip install -e . --no-deps
 ```
 
-**Run the tests** (no API key needed; 244 tests, all offline):
+**Run the tests** (no API key needed; 251 tests, all offline):
 
 ```bash
 pytest -q
@@ -151,7 +152,7 @@ scripts/             run.py (experiments), trace.py (run log), analysis.py (fina
 data/                scenarios/, descriptions/, llm_cache/ (committed)
 logs/<version>/      event log per run;  results/<version>/ metrics and tables;  results/analysis/ final tables and figures
 docs/                RESULTS.md, ASSUMPTIONS.md, V2_DESIGN.md, DEPLOY.md, EXPERIMENT_LOG.md, design/
-tests/               244 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
+tests/               251 tests (simulation, validator, agents with fake LLM answers, dashboard data, analysis)
 ```
 
 Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), [docs/ASSUMPTIONS.md](docs/ASSUMPTIONS.md) (every simulation assumption),
@@ -159,7 +160,7 @@ Further reading: [docs/RESULTS.md](docs/RESULTS.md) (findings and limitations), 
 
 ## Testing
 
-`pytest -q` runs 244 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
+`pytest -q` runs 251 tests with no network access: physics and validator rules, scenario determinism, agent plumbing with fake LLM answers, conflict detection and negotiation,
 metrics and statistics, dashboard data (replay export, compare, what-if, results), and the analysis script (which checks that per-victim outcomes rebuilt from the logs
 match the saved metrics for all 206 runs). GitHub Actions runs the suite on every push.
 

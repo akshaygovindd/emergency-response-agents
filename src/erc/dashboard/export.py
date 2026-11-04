@@ -12,6 +12,8 @@ Bundle layout (all minutes are integers, positions are km on the 20 x 20 grid):
   frames[t]  {v: [triage code per victim], h: [[er, treatment_in_use, promised, status] per hospital],
               a: [[x, y, status, target, onboard] per ambulance], r: [[x, y, status, target] per responder],
               k: KPIs, res: ambulances/teams in use, s: [[doctors, nurses] in use per hospital], n: messages so far}
+  frames[t] also: u {amb, teams, doctors, nurses, er: {busy, total, now, avg}} (see live.py),
+              ag [{status, last, last_t, pending}] x 4 agents (see agent_status.py; only when the run has agents)
   messages   feed rows (see story.py)        conflicts  negotiation chains (see story.py)
   tour       [{t, title, caption}] bookmarked moments (see tour.py)
   timeline   plain-language agent activity items (see timeline.py)
@@ -25,9 +27,10 @@ import math
 from pathlib import Path
 
 from erc.dashboard.live import (
-    hospital_status, kpis_by_minute, resources_for_frame, staff_in_use_by_minute, staff_totals,
+    hospital_status, kpis_by_minute, resources_for_frame, staff_in_use_by_minute, staff_totals, utilization_by_minute,
 )
 from erc.dashboard.replay import LOGS_DIR, SCENARIOS_DIR, MOVING, Replay, interpolate_track
+from erc.dashboard.agent_status import agent_status_by_minute, has_agents
 from erc.dashboard.story import conflict_chains, feed_messages
 from erc.dashboard.spread import spread_positions
 from erc.dashboard.timeline import timeline_items
@@ -144,6 +147,9 @@ def build_bundle(events: list[dict], scenario: dict, meta: dict) -> dict:
     kpis = kpis_by_minute(victims, conflicts, last)
     staff = staff_in_use_by_minute(events, scenario, last)
     totals = staff_totals(scenario)
+    util = utilization_by_minute(events, scenario, staff, last)
+    agents_on = has_agents(events)
+    agent_rows = agent_status_by_minute(events, scenario, promised, last) if agents_on else None
     seen = 0
 
     ambulances = [{"id": a["ambulance_id"], "als": a["ambulance_type"] == "advanced_life_support"}
@@ -189,6 +195,7 @@ def build_bundle(events: list[dict], scenario: dict, meta: dict) -> dict:
                   for h in hospital_ids],
             "a": amb_rows, "r": team_rows, "k": kpis[t], "s": staff[t], "n": seen,
             "res": resources_for_frame(amb_rows, team_rows, [u["kind"] for u in responders]),
+            "u": util[t], **({"ag": agent_rows[t]} if agents_on else {}),
         })
 
     trips = []
@@ -199,7 +206,7 @@ def build_bundle(events: list[dict], scenario: dict, meta: dict) -> dict:
     trips.sort(key=lambda tr: (tr["t0"], tr["unit"]))
 
     return {
-        "meta": {**meta, "last_minute": last, "grid_km": GRID_KM, "codes": CODE_NAMES,
+        "meta": {**meta, "last_minute": last, "grid_km": GRID_KM, "codes": CODE_NAMES, "has_agents": agents_on,
                  "critical_total": sum(v["severity"] >= 4 for v in victims)},
         "hospitals": [{"id": h["hospital_id"], "name": h["name"], "label": _hospital_label(h["name"]),
                        "x": h["location"]["x"], "y": h["location"]["y"], "er_capacity": h["er_capacity"],
