@@ -19,7 +19,7 @@ from erc.models.state import SimulationState
 from erc.sim import loans as SL
 from erc.sim.engine import Decision, Engine
 from erc.sim.validator import validate
-from tests.conftest import loc, victim
+from conftest import loc, victim
 
 
 class Idle:

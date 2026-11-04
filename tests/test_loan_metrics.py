@@ -9,7 +9,7 @@ from erc.models.state import SimulationState
 
 def state_with(tiny_scenario, extra_critical=0):
     sc = tiny_scenario.model_copy(deep=True)
-    from tests.conftest import victim
+    from conftest import victim
     from erc.models.entities import Capability
     for i in range(extra_critical):
         sc.incidents[0].victims.append(victim(f"V-0{i + 3}", "INC-01", Severity.SEVERE, Capability.TRAUMA))
