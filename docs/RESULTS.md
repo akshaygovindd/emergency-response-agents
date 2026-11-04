@@ -123,6 +123,20 @@ v2 surge 2 (1 hurt, 1 tied); bottleneck never diverged in either version. Of the
 that negotiation resolved differently from the priority rule, 5 of them with an accepted counter-offer; 2 (both v2) start at an
 admission revision. Helped, hurt and tied compare CSR within the pair.
 
+Critical service rate difference (negotiation minus agents) among the diverged pairs only, by cell (descriptive and exploratory: a subset defined by where the runs differ, in cells of 2 to 5 pairs, with no test attached):
+
+| cell | diverged pairs | helped / hurt / tied | mean difference among diverged |
+|:--|--:|:--|--:|
+| v1 normal | 3 | 2 / 0 / 1 | +9.1 points |
+| v1 surge | 5 | 2 / 1 / 2 | +2.0 points |
+| v2 normal | 5 | 0 / 0 / 5 | 0.0 points |
+| v2 surge | 2 | 0 / 1 / 1 | -5.6 points |
+| all | 15 | 4 / 2 / 9 | +1.7 points (bootstrap 95% interval -1.4 to +5.1) |
+
+Across the 15 pairs negotiation reached a net 3 more critical victims in time (sign test on 4 better against 2 worse, p = 0.69). The sign and size change from cell to cell, which is what a small, noisy effect looks like.
+
+**What the design can detect.** The paired difference per seed in v1 normal has a standard deviation of about 6.2 points (derived from the interval in the table above). With 10 seeds, a two-sided 5% paired t-test then has 80% power only for a true difference of about 6 points ((2.26 + 0.84) x 6.2 / sqrt(10) = 6.1); bottleneck, with 5 seeds, can detect less. The +2.7 observed in v1 normal is well below that, comes almost entirely from two seeds (42 and 47), and would need on the order of 40 seeds to detect if it were real; the v2 normal estimate is exactly 0.0. So "not significant" here means "not detectable at this sample size", not "shown to be zero".
+
 * **Helped, v1 normal seed 42 (CSR 0.64 to 0.82).** At minute 6 Incident 1 and Incident 2 claimed Ambulance 1. The priority rule sent it to Incident 1;
   negotiation counter-offered Ambulance 3 for Incident 1 and let Ambulance 1 serve Incident 2. Two critical victims at Incident 10 were reached in time only in the negotiation run.
 * **Hurt, v2 surge seed 44 (CSR 0.296 to 0.185).** At minute 2 the only free ambulance, Ambulance 2, was claimed by Incident 3 (two non-critical victims, far south) and Incident 2 (one severity-3 victim).
@@ -141,7 +155,7 @@ The 7 critical victims in accepted counter-offers (6 in v1, 1 in v2) were all re
 the counter changed who waited, not whether these victims were served. Conflicts without a counter are mostly contested ambulances with little slack:
 critical victims in the contested proposals were reached in time for 5 of 21 (v1) and 2 of 21 (v2), because someone must wait when two incidents want one unit.
 
-**Takeaway.** Negotiation changes decisions rarely (15 of 50 pairs), and when it does the net effect on critical victims is small and goes both ways.
+**Takeaway.** Negotiation is safe and sometimes decisive; no average benefit detected. It changes decisions rarely (15 of 50 pairs), and when it does the net effect on critical victims is small and goes both ways.
 It helped in four pairs in v1 and in none in v2, and hurt in two.
 
 **Limitations.** Each pair is one run, so attribution is a single case, not a distribution. 4 helped versus 2 hurt is far too few for a conclusion.

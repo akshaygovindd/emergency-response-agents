@@ -1,4 +1,4 @@
-# Streamlit Community Cloud rebuilds the environment when this file changes (touched to force a redeploy of v3, and again after the final docs commit so the live build marker matches the final-submission tag)
+# Streamlit Community Cloud rebuilds the environment when this file changes (touched to force a redeploy of v3, and again after the final docs commit so the live build marker matches the final-submission tag; touched again for the RQ2 power note)
 altair==6.3.0
 annotated-types==0.8.0
 anyio==4.15.1
