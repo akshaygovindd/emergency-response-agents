@@ -1,5 +1,9 @@
 # Emergency Response Command Center
 
+> - **TL;DR, what it is:** four LLM agents (OpenAI Agents SDK) negotiate over contested ambulances and hospital capacity in a seeded 20 x 20 km, 120-minute city simulation; agents only propose, and Python validates and executes every action.
+> - **Guardrail result:** across all saved agent runs (v1-v3) the validator blocked 794 infeasible proposals before execution, and none was executed.
+> - **Honest headline result:** agent systems beat a naive baseline by +10.9 to +23.3 points of critical service rate (v1-v2) but show no detectable difference from a strong greedy rule (comparable, not shown equal); see [docs/RESULTS.md](docs/RESULTS.md).
+
 [![tests](https://github.com/akshaygovindd/emergency-response-agents/actions/workflows/tests.yml/badge.svg)](https://github.com/akshaygovindd/emergency-response-agents/actions/workflows/tests.yml)
 
 **Negotiation-based multi-agent emergency resource coordination**: when ambulances, responder teams and
